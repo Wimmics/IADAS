@@ -1,94 +1,162 @@
-@base <http://ia-das.org/mapping#> .
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
-@prefix iadas: <http://ia-das.org/onto#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix iadas: <http://ns.inria.fr/iadas/ontology/>.
+@prefix iadascategory: <http://ns.inria.fr/iadas/sport-category-vocab/>.
+@base <http://ns.inria.fr/iadas/sport-vocab/>.
 
 # ============================================
 # Mapping simple pour la hiérarchie des sports
 # ============================================
 
-# Mapping pour Class 1
-<#SportClass1>
-    rml:logicalSource [
-        rml:source "data-csv-converted/Sport-Hierarchy-cleaned.csv" ;
-        rml:referenceFormulation ql:CSV
-    ] ;
-    
-    rr:subjectMap [
-        rr:template "http://ia-das.org/onto#{Class 1}" ;
-        rr:class owl:Class
-    ] ;
-    
-    rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf ;
-        rr:objectMap [ rr:constant iadas:Sport ]
-    ] ;
-    
-    rr:predicateObjectMap [
-        rr:predicate rdfs:label ;
-        rr:objectMap [ rml:reference "Class 1" ]
-    ] .
+<#SportConceptSheme> a rr:TriplesMap ;
+rml:logicalSource [
+    rml:source "data-csv-converted/Sport-Hierarchy-cleaned.csv" ;
+    rml:referenceFormulation ql:CSV
+] ;
+
+rr:subjectMap [
+    rr:constant <http://ns.inria.fr/iadas/sport-category-vocab/Sport> ;
+    rr:class skos:ConceptScheme
+] ;
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:title ;
+    rr:objectMap [  rr:constant "IA-DAS - Thésaurus de sport";
+    rr:language "fr" ;
+  ]];
+
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:title ;
+     rr:objectMap [rr:constant "IA-DAS - Sport thesaurus";
+    rr:language "en" ;
+  ]];
+
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:description ;
+     rr:objectMap [ rr:constant "Thésaurus pour décrire les sports citées dans les articles";
+    rr:language "fr" ;
+  ]];
+
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:description ;
+     rr:objectMap [ rr:constant "Tesaurus descriping sport cited on scientific papers";
+    rr:language "en" ;
+  ]];
+
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:creator ;
+     rr:objectMap [ rr:constant "Équipe de recherche IA-DAS";
+    rr:language "en" ;
+  ]];
+
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:created ;
+     rr:objectMap [ rr:constant "2025-11-25";
+    rr:language "en" ;
+  ]
+  ];
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:version ;
+     rr:objectMap [ rr:constant "1.0";
+    rr:language "en" ;
+  ]
+  ];
+   .
 
 # Mapping pour Sub class 2
-<#SportClass2>
+<#SportClass2> a rr:TriplesMap ;
     rml:logicalSource [
         rml:source "data-csv-converted/Sport-Hierarchy-cleaned.csv" ;
         rml:referenceFormulation ql:CSV
     ] ;
     
     rr:subjectMap [
-        rr:template "http://ia-das.org/onto#{Sub class 2}" ;
-        rr:class owl:Class
+        rr:template "http://ns.inria.fr/iadas/sport-vocab/{Sub class 2}" ;
+        rr:class skos:Concept, iadas:Sport
     ] ;
     
+     # Associates each concept with its concept scheme
+ rr:predicateObjectMap [
+     rr:predicate skos:inScheme ;
+     rr:objectMap [
+         rr:constant <http://ns.inria.fr/iadas/sport-category-vocab/Sport> ;
+ ] ;
+ ] ;
+
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf ;
-        rr:objectMap [ rr:template "http://ia-das.org/onto#{Class 1}" ]
+        rr:predicate iadas:sportCategory ;
+        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/sport-category-vocab/{Class 1}" ]
     ] ;
     
+        
+rr:predicateObjectMap [
+    rr:predicate skos:narrower ;
+    rr:objectMap [ rr:template "http://ns.inria.fr/iadas/sport-vocab/{Sub class 3}" ]
+] ;
+
     rr:predicateObjectMap [
-        rr:predicate rdfs:label ;
+        rr:predicate skos:prefLabel ;
         rr:objectMap [ rml:reference "Sub class 2" ]
     ] ;
-    
-    rr:predicateObjectMap [
-        rr:predicate rdfs:comment ;
-        rr:objectMap [ rml:reference "Definition" ]
-    ] ;
-    
-    rr:predicateObjectMap [
-        rr:predicate dcterms:source ;
-        rr:objectMap [ rml:reference "Références" ]
-    ] .
+    # 
+    # rr:predicateObjectMap [
+        # rr:predicate skos:description ;
+        # rr:objectMap [ rml:reference "Definition" ]
+    # ] ;
+    # 
+    # rr:predicateObjectMap [
+        # rr:predicate dcterms:source ;
+        # rr:objectMap [ rml:reference "Références" ]
+    # ] 
+    .
 
 # Mapping pour Sub class 3
-<#SportClass3>
+<#SportClass3> a rr:TriplesMap ;
     rml:logicalSource [
         rml:source "data-csv-converted/Sport-Hierarchy-cleaned.csv" ;
         rml:referenceFormulation ql:CSV
     ] ;
+
+    rr:predicateObjectMap [
+    rr:predicate skos:inScheme ;
+    rr:objectMap [
+        rr:constant <http://ns.inria.fr/iadas/sport-category-vocab/Sport> ;
+] ;
+] ;
     
     rr:subjectMap [
-        rr:template "http://ia-das.org/onto#{Sub class 3}" ;
-        rr:class owl:Class
+        rr:template "http://ns.inria.fr/iadas/sport-vocab/{Sub class 3}" ;
+        rr:class skos:Concept, iadas:Sport
     ] ;
     
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf ;
-        rr:objectMap [ rr:template "http://ia-das.org/onto#{Sub class 2}" ]
+        rr:predicate skos:broader ;
+        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/sport-vocab/{Sub class 2}" ]
     ] ;
     
+     rr:predicateObjectMap [
+     rr:predicate iadas:sportCategory ;
+     rr:objectMap [ rr:template "http://ns.inria.fr/iadas/sport-category-vocab/{Class 1}" ]
+ ] ;
+ 
     rr:predicateObjectMap [
-        rr:predicate rdfs:label ;
+        rr:predicate skos:prefLabel ;
         rr:objectMap [ rml:reference "Sub class 3" ]
     ] ;
     
     rr:predicateObjectMap [
-        rr:predicate rdfs:comment ;
+        rr:predicate skos:description ;
         rr:objectMap [ rml:reference "Definition" ]
     ] ;
     

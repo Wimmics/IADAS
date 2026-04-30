@@ -1,0 +1,110 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix iadas: <http://ns.inria.fr/iadas/ontology/>.
+@base <http://ns.inria.fr/iadas/sport-category-vocab/>.
+
+<#CategoryConceptSheme> a rr:TriplesMap ;
+rml:logicalSource [
+    rml:source "data-csv-converted/Sport-Hierarchy-cleaned.csv" ;
+    rml:referenceFormulation ql:CSV
+] ;
+
+     
+rr:subjectMap [
+    rr:constant <http://ns.inria.fr/iadas/sport-category-vocab/Category> ;
+    rr:class skos:ConceptScheme
+] ;
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:title ;
+    rr:objectMap [  rr:constant "IA-DAS - Thésaurus des cathégories de sport";
+    rr:language "fr" ;
+  ]];
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:title ;
+     rr:objectMap [rr:constant "IA-DAS - Sport Category thesaurus";
+    rr:language "en" ;
+  ]];
+
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:description ;
+     rr:objectMap [ rr:constant "Thésaurus pour décrire les catégories de sport citées dans les articles";
+    rr:language "fr" ;
+  ]];
+
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:description ;
+     rr:objectMap [ rr:constant "Tesaurus descriping sport categories cited on scientific papers";
+    rr:language "en" ;
+  ]];
+
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:creator ;
+     rr:objectMap [ rr:constant "Équipe de recherche IA-DAS";
+    rr:language "en" ;
+  ]];
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:created ;
+     rr:objectMap [ rr:constant "2025-11-25";
+    rr:language "en" ;
+  ]
+  ];
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:version ;
+     rr:objectMap [ rr:constant "1.0";
+    rr:language "en" ;
+  ]
+  ];
+   .
+    #  
+# <http://ns.inria.fr/iadas/sport-category-vocab/>
+    # a  skos:ConceptScheme ;
+    # dcterms:title "IA-DAS - Thésaurus des cathégories de sport"@fr ;
+    # dcterms:title "IA-DAS - Sport Category thesaurus"@en ;
+    # dcterms:description "Thésaurus pour décrire les catégories de sport citées dans les articles"@fr ;
+    # dcterms:description "Tesaurus descriping sport categories cited on scientific papers"@en ;
+    # dcterms:creator "Équipe de recherche IA-DAS" ;
+    # dcterms:created "2025-11-25" ;
+    # owl:versionInfo "1.0" ;
+
+# ============================================
+# Mapping simple pour la hiérarchie des sports
+# ============================================
+
+# Mapping pour Class 1
+<#SportClass1> a rr:TriplesMap ;
+     rml:logicalSource [
+         rml:source "data-csv-converted/Sport-Hierarchy-cleaned.csv" ;
+         rml:referenceFormulation ql:CSV
+     ] ;
+     
+     rr:subjectMap [
+         rr:template "http://ns.inria.fr/iadas/sport-category-vocab/{Class 1}" ;
+         rr:class skos:Concept
+     ] ;
+ 
+     rr:predicateObjectMap [
+         rr:predicate skos:prefLabel ;
+         rr:objectMap [ rml:reference "Class 1"; 
+                        rr:language "en" ;]
+     ] ;
+
+        # Associates each concept with its concept scheme
+    rr:predicateObjectMap [
+        rr:predicate skos:inScheme ;
+        rr:objectMap [
+            rr:constant <http://ns.inria.fr/iadas/sport-category-vocab/Category> ;
+    ] ;
+    ] ;
+    .
