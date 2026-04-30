@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Interrogation personnalisé de l'ontologie</title>
+    <link rel="stylesheet" href="./doctor-page/doctor-page.css">
+    <link rel="stylesheet" href="./input-intorregation-component/input-intorregation-component.css">
+    <link rel="stylesheet" href="./graph-component/graph-component.css">
+    <link rel="stylesheet" href="./analysis-panel/analysis-panel.css">
+    <link rel="stylesheet" href="./components/loading-overlay.css">
+</head>
+
+<body>
+    <div id="initialization-overlay" class="init-overlay">
+        <div class="init-content">
+            <div class="init-logo">
+                <img src="./../assets/logo_IA-DAS-No-Background.png" alt="Logo IA-DAS" style="max-width: 150px;">
+            </div>
+            <h2>Initialisation d'IA-DAS</h2>
+            <p>Préparation de la base de données en cours...</p>
+            <p class="init-subtext">Cette étape ne prend qu'une minute, puis tout sera rapide !</p>
+            <div class="init-spinner"></div>
+        </div>
+    </div>
+
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h3 id="loading-title">Chargement des données...</h3>
+            <div id="loading-steps">
+                <div class="step" id="step-warmup">
+                    <span class="step-text">Préparation de Fuseki...</span>
+                </div>
+                <div class="step" id="step-query">
+                    <span class="step-text">Exécution de la requête...</span>
+                </div>
+                <div class="step" id="step-parsing">
+                    <span class="step-text">Traitement des résultats...</span>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <div id="loading-details">Initialisation...</div>
+            <div id="loading-timer">Temps écoulé: <span id="timer-value">0s</span></div>
+        </div>
+    </div>
+
+    <header>
+        <h1>Projet IA-DAS</h1>
+        <div class="logo-container">
+            <img src="./../assets/logo_IA-DAS-No-Background.png" alt="Logo IA-DAS" class="logo">
+            <span class="logo-subtitle">IA-DAS : Utilisation de l'Intelligence Artificielle pour mieux Détecter et prévenir les Attitudes et comportements alimentaires dysfonctionnels en Sport</span>
+        </div>
+        <div>
+            <button id="helpButton" class="header-btn">🔍 Aide</button>
+            <button id="switchChercheur" onclick="window.location.href='./index.html'" disabled>Accueil</button>
+        </div>
+    </header>
+
+    <div class="content-container">
+        <input-intorregation-component></input-intorregation-component>
+       
+        <div id="results">
+            <div id="result-controls" style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <button id="viewTable" class="view-btn active" disabled>Tableau</button>
+                <button id="viewGraph" class="view-btn" disabled>Graphique</button>
+                <button id="viewSparql" class="view-btn" disabled>SPARQL</button>
+                
+                <div style="margin-left: 20px; display: flex; gap: 10px; align-items: center;">
+                    <!-- <button id="exportPNG" class="view-btn" style="background: #17a2b8;" disabled>
+                        Export PNG
+                    </button> -->
+                    <button id="exportExcel" class="view-btn" style="background: #77ffaf;" disabled>
+                        Export Excel
+                    </button>
+                    <!-- <button id="exportTurtle" class="view-btn" style="background: #df96ff;" disabled>
+                        Export Turtle
+                    </button> -->
+                </div>
+            </div>
+            
+            <div id="result-display"></div>
+        </div>
+    </div>
+
+    <!-- Modal d'aide -->
+    <div id="helpModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4);">
+        <div style="background-color: white; margin: 2% auto; padding: 20px; border-radius: 10px; width: 80%; max-width: 800px; max-height: 90%; overflow-y: auto; position: relative;">
+            <span id="closeHelp" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+            
+            <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px;">🔍 Guide d'utilisation - Interface personnalisée</h2>
+            
+            <div style="margin: 20px 0;">
+                <h3 style="color: #2980b9; margin-top: 25px;">Interface de paramétrage</h3>
+                <p>Le panneau de gauche contient les filtres qui vous permettent de concevoir vos requêtes SPARQL :</p>
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li><strong>Section Variables Indépendantes (VI)</strong> : Permet de sélectionner les causes/facteurs d'entrée</li>
+                    <li><strong>Section Variables Dépendantes (VD)</strong> : Permet de sélectionner les effets/résultats</li>
+                    <li><strong>Section Critères démographiques</strong> : Filtres par âge, sexe, population</li>
+                    <li><strong>Section Résultats de relation</strong> : Type de corrélation (positive, négative, ambiguë, etc.)</li>
+                </ul>
+                
+                <div style="background-color: #d1ecf1; border: 1px solid #bee5eb; padding: 10px; border-radius: 5px; margin: 10px 0;">
+                    <strong>Exemple d'utilisation :</strong><br>
+                    Si vous sélectionnez "Femme" + "Dépression", la requête retournera toutes les analyses concernant la dépression chez les femmes.
+                </div>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <h3 style="color: #2980b9;">Modes de visualisation des résultats</h3>
+                
+                <h4 style="color: #27ae60; margin-top: 20px;">1. En tableau</h4>
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li>Affichage structuré sous forme de tableau</li>
+                    <li>En cliquant sur le lien d'ID analyse, un panneau s'ouvre avec l'analyse en question</li>
+                    <li>Il vous suffit de cliquer dessus pour avoir toutes les informations de cette analyse</li>
+                </ul>
+
+                <h4 style="color: #27ae60; margin-top: 20px;">2. En graphe</h4>
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li><strong>Double-clic sur un nœud</strong> : Permet d'ouvrir un panneau avec toutes les analyses liées à ce nœud</li>
+                    <li>Les analyses récupérées peuvent être exportées en PDF avec leurs références APA</li>
+                    <li>Si vous cliquez sur une analyse, vous avez toutes les informations de cette analyse qui s'affichent</li>
+                    <li><strong>Clic droit prolongé sur un nœud</strong> : Permet d'afficher la hiérarchie de la variable sélectionnée</li>
+                </ul>
+
+                <h4 style="color: #27ae60; margin-top: 20px;">3. En SPARQL</h4>
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li>Permet de voir la requête générée que vous pouvez utiliser dans un autre serveur</li>
+                    <li>Compatible avec GraphDB, Protégé et autres outils SPARQL</li>
+                </ul>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <h3 style="color: #2980b9;">Code couleur des visualisations</h3>
+                
+                <h4 style="color: #27ae60; margin-top: 20px;">Couleurs pour les Attitudes et Comportements Alimentaires Dysfonctionnels - ACAD (Variables Dépendantes)</h4>
+                <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background-color: #f2f2f2;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Catégorie Attitudes et Comportements Alimentaires Dysfonctionnels (ACAD)</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Couleur</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Description</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>DEAB</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; background-color: #821111; color: white; text-align: center;">■</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Rouge foncé - Troubles du comportement alimentaire définis</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Multiple</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; background-color: #f54542; color: white; text-align: center;">■</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Rouge moyen - Analyses concernant plusieurs Attitudes et Comportements Alimentaires Dysfonctionnels (ACAD)</td>
+                    </tr>
+                </table>
+
+                <h4 style="color: #27ae60; margin-top: 20px;">Couleurs pour les Facteurs (Variables Indépendantes)</h4>
+                <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background-color: #f2f2f2;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Catégorie de facteur</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Couleur</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Description</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Facteur interpersonnel lié aux DEAB</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; background-color: #00112b; color: white; text-align: center;">■</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Bleu très foncé - Relations sociales, famille, pairs</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Facteur intrapersonnel lié aux DEAB</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; background-color: #0050ac; color: white; text-align: center;">■</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Bleu foncé - Facteurs psychologiques individuels</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Autres comportements</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; background-color: #72a4d7; color: white; text-align: center;">■</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Bleu moyen - Comportements non spécifiques aux DEAB</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <h3 style="color: #2980b9;">Options d'export</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background-color: #f2f2f2;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Format</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Description</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Export Excel</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Exporte le résultat dans un fichier Excel pour analyse</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Export Turtle</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Récupère la partie de l'ontologie utilisable dans un autre outil</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./components/page-initializer.js"></script>
+    <script src="js/fuseki-analysis-retriever.js"></script>
+    <script src="./components/loading-manager.js"></script>
+    <script src="./data/excel-loader.js"></script>
+    <script src="./js/api-config.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="./analysis-panel/analysis-panel.js"></script>
+    <script src="./js/hierarchy-service.js"></script>
+    <script src="./graph-component/graph-component.js"></script>
+    <script src="./graph-component/data-parser.js"></script>
+    <script src="./graph-component/graph-renderer.js"></script>
+    <script src="./input-intorregation-component/input-intorregation-component.js"></script>
+    <script src="./doctor-page/doctor-page.js"></script>
+
+    <template id="error-template">
+    <div style="color: red; padding: 20px; background: #fff3f3; border: 1px solid #ffcdd2; border-radius: 5px;">
+        <h4>Erreur de recherche</h4>
+        <p><strong>Message:</strong> <span id="error-message"></span></p>
+        <p><strong>Suggestions:</strong></p>
+        <ul>
+            <li>Vérifiez que le serveur SPARQL Generator fonctionne (port 8003)</li>
+            <li>Essayez avec moins de filtres pour éviter les timeouts</li>
+            <li>Vérifiez la console pour plus de détails</li>
+        </ul>
+    </div>
+</template>
+
+<template id="result-controls-template">
+    <div id="result-controls" style="display: flex; align-items: center; gap: 10px; margin-bottom: 0px; flex-wrap: wrap;">
+        <button id="viewTable" class="view-btn active">Tableau</button>
+        <button id="viewGraph" class="view-btn">Graphique</button>
+        <button id="viewSparql" class="view-btn">SPARQL</button>
+        
+        <div style="margin-left: 20px; display: flex; gap: 10px; align-items: center;">
+            <button id="exportExcel" class="view-btn" style="background: #27ae60;">
+                Export Excel
+            </button>
+            <button id="exportTurtle" class="view-btn" style="background: #8e44ad;">
+                Export Turtle
+            </button>
+        </div>
+    </div>
+    <div id="result-display"></div>
+</template>
+
+<!-- Template pour la vue graphique -->
+<template id="graph-view-template">
+    <div id="graph-container"></div>
+</template>
+
+<!-- Template pour export PNG (existant) -->
+<template id="export-image-template">
+    <button id="exportGraph" class="view-btn" style="background: #99d5fd;">
+        Export PNG
+    </button>
+</template>
+
+<!-- Template pour export des données -->
+<template id="export-data-template">
+    <div class="export-data-controls" style="display: flex; gap: 10px; align-items: center;">
+        <select id="dataExportFormat" style="padding: 8px; border-radius: 4px; border: 1px solid #ddd;">
+            <option value="csv">CSV (Tableaux)</option>
+            <option value="turtle">Turtle (RDF)</option>
+        </select>
+        <button id="exportDataBtn" class="view-btn" style="background: #17a2b8;">
+            Export Données
+        </button>
+    </div>
+</template>
+
+<!-- Template pour la vue SPARQL -->
+<template id="sparql-view-template">
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 10px;">
+        <h4>Requête SPARQL générée :</h4>
+        <pre id="sparql-query" style="background: #2d3748; color: #e2e8f0; padding: 15px; border-radius: 5px; overflow-x: auto; white-space: pre-wrap;"></pre>
+        
+        <h4 style="margin-top: 20px;">Résultats JSON :</h4>
+        <pre id="sparql-results" style="background: #2d3748; color: #e2e8f0; padding: 15px; border-radius: 5px; overflow-x: auto; max-height: 400px; white-space: pre-wrap;"></pre>
+    </div>
+</template>
+
+<!-- Template pour l'erreur graphique -->
+<template id="graph-error-template">
+    <p>Erreur lors de l'affichage du graphique</p>
+</template>
+   
+</body>
+
+<footer>
+    <p>&copy; 2025 – IA-DAS. Tous droits réservés.</p>
+</footer>
+
+</html>

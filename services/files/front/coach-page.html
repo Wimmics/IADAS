@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Interrogation de l'ontologie</title>
+    <link rel="stylesheet" href="./coach-page/coach-page.css">
+</head>
+<body>
+    <h1>Bienvenue</h1>
+    <h3>Retour en mode standard : je réfléchirai à l’interface plus tard.</h3>
+    
+    <button id="switchHopePage" onclick="window.location.href = './index.html'">Page d’accueil</button>
+    
+    <h3>Veuillez saisir la VI</h3>
+    <input type="text" id="viInput" placeholder="Entrez la valeur de la VI">
+    
+    <h3>Veuillez saisir la VD</h3>
+    <input type="text" id="vdInput" placeholder="Entrez la valeur de la VD">
+    
+    <br><br>
+    <button onclick="interrogerFuseki()">Exécuter la requête</button>
+    
+    <div id="resultats"></div>
+
+    <script src="script.js"></script>
+    <script src="./js/api-config.js"></script>
+</body>
+</html>

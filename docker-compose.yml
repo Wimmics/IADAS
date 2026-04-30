@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./services/files
+    container_name: frontend
+    ports:
+      - "8002:8002" 
+    restart: unless-stopped
+    networks:
+      - webnet
+  sparql-generator:
+    build: ./services/SPARQL-Generator
+    container_name: sparql-generator
+    ports:
+      - "8003:8003"  
+    restart: unless-stopped
+    networks:
+      - webnet
+  gateway:
+    build: ./services/gateway
+    container_name: gateway
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    depends_on:
+      - frontend
+    networks:
+      - webnet
+  fuseki:
+    image: stain/jena-fuseki
+    container_name: fuseki
+    ports:
+      - "3030:3030"
+    volumes:
+      - ./fuseki:/fuseki
+    environment:
+      - FUSEKI_DATASET=ds
+      - ADMIN_PASSWORD=admin
+    command: ["/jena-fuseki/fuseki-server", "--config=/fuseki/config.ttl"]
+    networks:
+      - webnet
+  fuseki-init:
+    build: ./services/fuseki-service
+    container_name: fuseki-init
+    depends_on:
+      - fuseki
+    volumes:
+      - ./pipeline-ontologie/resultats/ia-das-ontology-clean.ttl:/init/ia-das-ontology-clean.ttl
+      - ./pipeline-ontologie/resultats/variable-hierarchy-clean.ttl:/init/variable-hierarchy-clean.ttl
+      - ./pipeline-ontologie/resultats/sport-hierarchy-simple-clean.ttl:/init/sport-hierarchy-simple-clean.ttl
+    networks:
+      - webnet
+  database-service:
+    build: ./services/database-service
+    container_name: database-service
+    ports:
+      - "8005:8005"
+    volumes:
+      - ./fuseki:/app/fuseki
+      - ./pipeline-ontologie:/app/pipeline-ontologie
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - webnet
+
+
+ 
+
+networks:
+  webnet:
+    driver: bridge

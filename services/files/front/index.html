@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" href="./home-page/home-page.css">
+</head>
+
+<body>
+    <header>
+        <h1>Projet IA-DAS</h1>
+        <div class="logo-container">
+            <img src="./assets/logo_IA-DAS-No-Background.png" alt="Logo IA-DAS" class="logo">
+            <span class="logo-subtitle" id="logoSubtitle"></span>
+        </div>
+    </header>
+
+    <div class="home-layout">
+        <section class="presentation">
+            <h2>Qu'est-ce que le projet IA-DAS ?</h2>
+            <p>
+                Le projet IA-DAS vise à offrir une plateforme intelligente d'assistance au diagnostic
+                et à la décision pour les professionnels de santé et les coachs. Il utilise une ontologie
+                pour optimiser la compréhension et l’exploitation
+                des données psychosociaux.
+            </p>
+            <div class="bottom-button">
+                <button id="EnSavoirPlus" onclick="window.location.href = './en-savoir-plus.html'">En savoir plus</button>
+                <button id="EnSavoirPlus" onclick="window.location.href = './contact.html'">Contact</button>
+
+            </div>
+        </section>
+
+        <div class="interaction-section">
+            <div class="center-box">
+                <h2>Interagir avec l'ontologie</h2>
+                <button id="switchDoctorPage" onclick="window.location.href = './doctor-page.html'">Interaction personnalisable</button>
+                <button id="predefinedPage" onclick="window.location.href = './competence-page.html'">Interaction guidée</button>
+                <button id="updateButton" onclick="showAuthModal()">Mise à jour de l'ontologie</button>
+            </div>
+            
+            <div class="data-info-box">
+                <div class="info-header">
+                    <span class="info-title">Données de l'ontologie</span>
+                </div>
+                <div class="last-update-info">
+                    Dernière mise à jour : <span id="lastUpdateDate">Chargement...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal d'authentification -->
+    <div id="authModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            <h2>Authentification requise</h2>
+            <p>Veuillez saisir le mot de passe administrateur pour accéder à la mise à jour de l'ontologie.</p>
+            <p><small>Si vous n'avez pas le mot de passe, merci de contacter l'équipe de recherche.</small></p>
+            <form id="authForm">
+                <input type="password" id="adminPassword" placeholder="Mot de passe" required>
+                <button type="submit">Se connecter</button>
+            </form>
+            <div id="authError" class="error-message" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="home-page.js"></script>
+    <script src="./js/api-config.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/logo-animation.js"></script>
+
+    <footer>
+        <p>&copy; 2025 – IA-DAS. Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+/* Styles pour le composant d'autocomplétion IA-DAS */
+
+/* Container principal */
+.autocomplete-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Input avec autocomplétion */
+.autocomplete-input {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Indicateur de chargement */
+.autocomplete-loading {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #666;
+    background: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    z-index: 3;
+    display: none;
+}
+
+/* Dropdown des suggestions */
+.autocomplete-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    font-size: 14px;
+}
+
+/* Suggestion individuelle */
+.autocomplete-suggestion {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.15s ease;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.autocomplete-suggestion:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-suggestion:hover,
+.autocomplete-suggestion.selected {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+.autocomplete-suggestion.selected {
+    background-color: #e3f2fd;
+    border-left: 3px solid #2196f3;
+}
+
+/* Suggestion de saisie libre */
+.autocomplete-suggestion.autocomplete-free-input {
+    background-color: #f9f9f9;
+    color: #666;
+    font-style: italic;
+    border-top: 1px solid #e0e0e0;
+    font-size: 13px;
+}
+
+.autocomplete-suggestion.autocomplete-free-input:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Scrollbar personnalisée pour le dropdown */
+.autocomplete-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.autocomplete-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.autocomplete-dropdown::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.autocomplete-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Animation d'apparition */
+.autocomplete-dropdown {
+    animation: fadeInDown 0.15s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* États de l'input */
+.autocomplete-input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+    outline: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .autocomplete-dropdown {
+        font-size: 16px; /* Éviter le zoom sur iOS */
+        max-height: 150px;
+    }
+    
+    .autocomplete-suggestion {
+        padding: 10px 12px;
+    }
+    
+    .autocomplete-loading {
+        font-size: 11px;
+        right: 8px;
+    }
+}
+
+/* Mode sombre (optionnel) */
+@media (prefers-color-scheme: dark) {
+    .autocomplete-dropdown {
+        background: #2d3748;
+        border-color: #4a5568;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .autocomplete-suggestion {
+        color: #e2e8f0;
+        border-bottom-color: #4a5568;
+    }
+    
+    .autocomplete-suggestion:hover,
+    .autocomplete-suggestion.selected {
+        background-color: #4a5568;
+        color: #f7fafc;
+    }
+    
+    .autocomplete-suggestion.selected {
+        background-color: #2b6cb0;
+        border-left-color: #63b3ed;
+    }
+    
+    .autocomplete-suggestion.autocomplete-free-input {
+        background-color: #1a202c;
+        color: #a0aec0;
+        border-top-color: #4a5568;
+    }
+    
+    .autocomplete-suggestion.autocomplete-free-input:hover {
+        background-color: #2d3748;
+        color: #e2e8f0;
+    }
+    
+    .autocomplete-loading {
+        background: #2d3748;
+        color: #a0aec0;
+    }
+}
+
+/* Intégration avec les styles existants du formulaire */
+.form-group .autocomplete-container {
+    width: 100%;
+}
+
+.form-group .autocomplete-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+/* États d'erreur */
+.form-group.error .autocomplete-input {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+}
+
+.form-group.error .autocomplete-input:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.3);
+}
+
+/* États de succès */
+.form-group.success .autocomplete-input {
+    border-color: #27ae60;
+    box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.2);
+}
+
+/* Indicateur de champ avec autocomplétion */
+.autocomplete-container::before {
+    content: "🔍";
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #999;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.autocomplete-container:hover::before,
+.autocomplete-input:focus + .autocomplete-container::before {
+    opacity: 1;
+}
+
+/* Masquer l'indicateur pendant le chargement */
+.autocomplete-container .autocomplete-loading ~ .autocomplete-container::before {
+    display: none;
+}
+
+/* Style pour les champs requis avec autocomplétion */
+.form-group label[for] .required + .autocomplete-container .autocomplete-input {
+    border-left: 3px solid #f39c12;
+}
+
+/* Améliorer la lisibilité sur les petits écrans */
+@media (max-width: 480px) {
+    .autocomplete-dropdown {
+        left: -5px;
+        right: -5px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .autocomplete-suggestion {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+}

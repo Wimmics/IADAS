@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA-DAS - Guide utilisateur</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+
+        h4 {
+            color: #27ae60;
+            margin-top: 20px;
+        }
+
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        ul,
+        ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .author-info {
+            background-color: #e8f4fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>IA-DAS - Guide utilisateur</h1>
+
+        <div class="author-info">
+            <p><strong>Auteur :</strong> Sara TAOUFIQ</p>
+            <p><strong>Équipe :</strong> Stephanie MERIAUX, Meggy HAYOTTE, Molka TOUNSI, Amandine DAUBRESSE</p>
+            <p><strong>Public :</strong> Toutes personnes souhaitant utiliser l'interface du projet IA-DAS</p>
+        </div>
+
+        <h2>Installation et déploiement</h2>
+
+        <h3>Version hébergée (Recommandée)</h3>
+        <p>
+            Une version hébergée en AWS est présente via le lien suivant :
+            <a href="http://51.44.188.162:8000/" target="_blank">
+                http://51.44.188.162:8000/
+            </a>
+        </p>
+
+
+        <h3>Version locale avec Docker</h3>
+        <p>Lien vers la video tutoriel pour télécharger docker : <a href="https://www.youtube.com/watch?v=example"
+                target="_blank">ici</a>.</p>
+
+        <h4>Prérequis :</h4>
+        <ul>
+            <li>Lien d'installation : <a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker
+                    Desktop</a></li>
+            <li>Docker et Docker Compose installés (<a href="https://docs.docker.com/get-docker/">Guide d'installation
+                    Docker</a>)</li>
+            <li>Ports 8000, 8002, 8003, 3030 disponibles</li>
+        </ul>
+
+        <div class="info">
+            <strong>Pas Docker ?</strong> Si vous n'avez pas Docker installé, consultez la section "Installation
+            alternative" plus bas.
+        </div>
+
+        <h4>Étapes d'installation :</h4>
+
+        <h5>Option 1 : Avec Git (recommandée)</h5>
+        <ol>
+            <li>
+                Cloner le projet :
+                <a href="https://github.com/Sara-tfq/IA-DAS" target="_blank">
+                    https://github.com/Sara-tfq/IA-DAS
+                </a>
+                <pre>
+git clone https://github.com/Sara-tfq/IA-DAS.git
+cd IA-DAS
+    </pre>
+            </li>
+
+            </li>
+            <li>Lancer l'application :
+                <pre>docker-compose up -d</pre>
+            </li>
+        </ol>
+
+        <h5>Option 2 : Sans Git (téléchargement direct)</h5>
+        <p>Video pour télécharger et lancer le projet dans un environnement local : <a
+                href="https://www.youtube.com/watch?v=example" target="_blank">ici</a>.</p>
+        <ol>
+            <li><strong>Télécharger le projet :</strong>
+                <p>Une vidéo explicative est disponible ici : <a href="https://www.youtube.com/watch?v=example"
+                        target="_blank">ici</a>.</p>
+                <ul>
+                    <li>Aller sur la page GitHub du projet : https://github.com/Sara-tfq/IA-DAS.git</li>
+                    <li>Cliquer sur le bouton vert <strong>"Code"</strong></li>
+                    <li>Sélectionner <strong>"Download ZIP"</strong></li>
+                    <li>Extraire le fichier ZIP dans le dossier de votre choix</li>
+                </ul>
+            </li>
+            <p> Clique droit sur le dossier extrait et sélectionnez "Ouvrir un terminal ici" (ou une option similaire).
+            </p>
+
+            <li><strong>Lancer l'application :</strong>
+                <pre># Naviguer dans le dossier extrait
+cd IA-DAS-main
+# Lancer les services
+docker compose up -d</pre>
+            </li>
+        </ol>
+
+        <ol start="3">
+            <li>Accéder à l'interface :
+                <ul>
+                    <li>Application principale : <a href="http://localhost:8000">http://localhost:8000</a></li>
+                    <li>Base de données Fuseki : <a href="http://localhost:3030">http://localhost:3030</a></li>
+                </ul>
+            </li>
+        </ol>
+
+        <h4>Services déployés :</h4>
+        <ul>
+            <li>Frontend : Interface utilisateur (port 8002)</li>
+            <li>Gateway : Serveur proxy et authentification (port 8000)</li>
+            <li>SPARQL Generator : Génération de requêtes (port 8003)</li>
+            <li>Fuseki : Base de données RDF (port 3030)</li>
+        </ul>
+
+        <h3>Installation alternative (sans Docker)</h3>
+
+        <div class="warning">
+            <strong>Plus complexe</strong> - Cette méthode nécessite des connaissances techniques
+        </div>
+
+        <h4>Prérequis :</h4>
+        <ul>
+            <li>Node.js (version 16 ou supérieure)</li>
+            <li>Java 11 ou supérieure (pour Fuseki)</li>
+        </ul>
+
+        <h4>Étapes :</h4>
+        <ol>
+            <li><strong>Télécharger le projet</strong> (même méthode que l'Option 2 ci-dessus)</li>
+            <li><strong>Installer Apache Jena Fuseki</strong> :
+                <ul>
+                    <li>Télécharger depuis : <a
+                            href="https://jena.apache.org/download/">https://jena.apache.org/download/</a></li>
+                    <li>Extraire et configurer avec les fichiers du dossier <code>fuseki/</code></li>
+                </ul>
+            </li>
+            <li><strong>Installer les dépendances pour chaque service</strong> :
+                <pre># Service frontend
+cd services/files
+npm install
+node index.js
+
+# Service gateway (nouveau terminal)
+cd services/gateway  
+npm install
+node index.js
+
+# Service SPARQL Generator (nouveau terminal)
+cd services/SPARQL-Generator
+npm install
+node index.js</pre>
+            </li>
+            <li><strong>Démarrer Fuseki</strong> avec la configuration du projet</li>
+        </ol>
+
+        <div class="info">
+            <strong>Recommandation</strong> : L'installation Docker est plus simple et évite les problèmes de
+            dépendances.
+        </div>
+
+        <h2>Présentation générale</h2>
+
+        <p>La suite de ce document présente le site de manière générale, une fois fini et pour mieux prendre en main l'interface IA-DAS je
+            vous invite à suivre les étapes dans le fichier "Scénario-utilisateurs.pdf"</p>
+
+        <h2>Navigation simple et présentation globale du site</h2>
+
+        <p>En arrivant sur la page d'accueil, vous avez 5 boutons à disposition :</p>
+
+        <h3>1. Interaction personnalisée</h3>
+        <p>Vous permet de naviguer vers la page où vous pouvez composer vos propres requêtes SPARQL selon :</p>
+        <ul>
+            <li>Les variables indépendantes (VI) / variables dépendantes (VD)</li>
+            <li>Le résultat de relation</li>
+            <li>L'âge, le sexe</li>
+            <li>Et autres critères personnalisés</li>
+        </ul>
+
+        <h3>2. Interaction prédéfinie</h3>
+        <p>Vous permet de naviguer vers la page avec des requêtes SPARQL déjà prêtes pour répondre aux questions de
+            compétences.</p>
+        <p><strong>Exemple de question :</strong><br>
+            "Quels sont les ACADS dont le résultat de relation est ambigu ?"</p>
+
+        <h3>3. Modifier l'ontologie</h3>
+        <p>Destiné à l'équipe de recherche et permet de modifier/ajouter/supprimer des analyses de l'ontologie. Un mot
+            de passe est néanmoins requis. Si vous ne faites pas partie de l'équipe, vous pouvez trouver le contact dans
+            la page contact.</p>
+
+        <h3>4. Contact</h3>
+        <p>Permet d'accéder aux informations de contact de l'équipe de recherche.</p>
+
+        <h3>5. En savoir plus</h3>
+        <p>Contient les nouveautés et des informations complémentaires à savoir du projet IA-DAS.</p>
+
+        <hr>
+
+        <h2>Page d'interaction personnalisée</h2>
+
+        <p>Sur cette page, vous avez deux sections principales :</p>
+        <ul>
+            <li><strong>Le desk (encadré en vert)</strong> : Zone de paramètres et filtres</li>
+            <li><strong>Le résultat (encadré en rouge)</strong> : Zone d'affichage des résultats</li>
+        </ul>
+
+        <h3>Interface de paramétrage</h3>
+        <p>Le desk contient les inputs qui vous permettent de concevoir vos requêtes SPARQL :</p>
+
+        <ul>
+            <li><strong>Section Variables Indépendantes (VI)</strong> : Permet de sélectionner les causes/facteurs
+                d'entrée</li>
+            <li><strong>Section Variables Dépendantes (VD)</strong> : Permet de sélectionner les effets/résultats</li>
+            <li><strong>Section Critères démographiques</strong> : Filtres par âge, sexe, population</li>
+            <li><strong>Section Résultats de relation</strong> : Type de corrélation (positive, négative, ambiguë, etc.)
+            </li>
+        </ul>
+
+        <p><strong>Exemple d'utilisation :</strong><br>
+            Si vous sélectionnez "Femme" + "Dépression", la requête retournera toutes les analyses concernant la
+            dépression chez les femmes.</p>
+
+        <h3>Modes de visualisation des résultats</h3>
+
+        <p>Pour les résultats, vous avez 3 boutons de visualisation :</p>
+
+        <h4>1. En tableau</h4>
+        <ul>
+            <li>Affichage structuré sous forme de tableau</li>
+            <li>En cliquant sur le lien d'ID analyse, un panneau s'ouvre avec l'analyse en question</li>
+            <li>Il vous suffit de cliquer dessus pour avoir toutes les informations de cette analyse</li>
+        </ul>
+
+        <h4>2. En graphe</h4>
+        <ul>
+            <li><strong>Double-clic sur un nœud</strong> : Permet d'ouvrir un panneau avec toutes les analyses liées à
+                ce nœud</li>
+            <li>Les analyses récupérées peuvent être exportées en PDF avec leurs références APA</li>
+            <li>Si vous cliquez sur une analyse, vous avez toutes les informations de cette analyse qui s'affichent</li>
+            <li><strong>Clic droit prolongé sur un nœud</strong> : Permet d'afficher la hiérarchie de la variable
+                sélectionnée</li>
+        </ul>
+
+        <h4>3. En SPARQL</h4>
+        <ul>
+            <li>Permet de voir la requête générée que vous pouvez utiliser dans un autre serveur</li>
+            <li>Compatible avec GraphDB, Protégé et autres outils SPARQL</li>
+        </ul>
+
+        <h3>Options d'export supplémentaires</h3>
+
+        <p>Vous avez 3 autres boutons d'export :</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Format</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Export PNG</strong></td>
+                    <td>Récupère une photo/capture du résultat visuel</td>
+                </tr>
+                <tr>
+                    <td><strong>Export Excel</strong></td>
+                    <td>Exporte le résultat dans un fichier Excel pour analyse</td>
+                </tr>
+                <tr>
+                    <td><strong>Export Turtle</strong></td>
+                    <td>Récupère la partie de l'ontologie utilisable dans un autre outil</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Page de compétences (Interaction prédéfinie)</h2>
+
+        <h3>Interface accordéon</h3>
+        <p>En arrivant, vous avez un desk accordéon qui vous permet de :</p>
+        <ul>
+            <li>Composer la question que vous souhaitez</li>
+            <li>Sélectionner le début et la suite de la question via des menus déroulants</li>
+            <li>Construire des requêtes guidées sans connaître SPARQL</li>
+        </ul>
+
+        <h3>Résultats</h3>
+        <p>Le résultat est identique à celui de la page personnalisée :</p>
+        <ul>
+            <li>Même options de visualisation (tableau, graphe, SPARQL)</li>
+            <li>Mêmes fonctionnalités d'export (PNG, Excel, Turtle)</li>
+            <li>Même interactivité sur les graphiques</li>
+        </ul>
+
+        <hr>
+
+        <h3>Code couleur des visualisations</h3>
+
+        <p>L'interface IA-DAS utilise un système de couleurs spécifique pour faciliter l'identification des différents éléments dans les visualisations graphiques :</p>
+
+        <h4>Palette de couleurs pour les ACADS (Variables Dépendantes)</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Catégorie ACAD</th>
+                    <th>Couleur</th>
+                    <th>Code couleur</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>DEAB</strong></td>
+                    <td style="background-color: #821111; color: white; text-align: center;">■</td>
+                    <td>#821111</td>
+                    <td>Rouge foncé - Troubles du comportement alimentaire définis</td>
+                </tr>
+                <tr>
+                    <td><strong>Multiple</strong></td>
+                    <td style="background-color: #f54542; color: white; text-align: center;">■</td>
+                    <td>#f54542</td>
+                    <td>Rouge moyen - Analyses concernant plusieurs ACADS</td>
+                </tr>
+                <tr>
+                    <td><strong>Par défaut</strong></td>
+                    <td style="background-color: #F44336; color: white; text-align: center;">■</td>
+                    <td>#F44336</td>
+                    <td>Rouge standard - Autres ACADS</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Palette de couleurs pour les Facteurs (Variables Indépendantes)</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Catégorie de facteur</th>
+                    <th>Couleur</th>
+                    <th>Code couleur</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Facteur interpersonnel lié aux DEAB</strong></td>
+                    <td style="background-color: #00112b; color: white; text-align: center;">■</td>
+                    <td>#00112b</td>
+                    <td>Bleu très foncé - Relations sociales, famille, pairs</td>
+                </tr>
+                <tr>
+                    <td><strong>Facteur intrapersonnel lié aux DEAB</strong></td>
+                    <td style="background-color: #0050ac; color: white; text-align: center;">■</td>
+                    <td>#0050ac</td>
+                    <td>Bleu foncé - Facteurs psychologiques individuels</td>
+                </tr>
+                <tr>
+                    <td><strong>Autres comportements</strong></td>
+                    <td style="background-color: #72a4d7; color: white; text-align: center;">■</td>
+                    <td>#72a4d7</td>
+                    <td>Bleu moyen - Comportements non spécifiques aux DEAB</td>
+                </tr>
+                <tr>
+                    <td><strong>Facteur socioculturel lié aux DEAB</strong></td>
+                    <td style="background-color: #bee0fd; color: black; text-align: center;">■</td>
+                    <td>#bee0fd</td>
+                    <td>Bleu clair - Influence culturelle et sociale</td>
+                </tr>
+                <tr>
+                    <td><strong>Par défaut</strong></td>
+                    <td style="background-color: #64B5F6; color: white; text-align: center;">■</td>
+                    <td>#64B5F6</td>
+                    <td>Bleu standard - Autres facteurs</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Page de modification (Administration)</h2>
+
+        <div class="warning">
+            <strong>Accès restreint</strong> - Cette page nécessite un mot de passe administrateur
+        </div>
+
+        <h3>Fonctionnalités disponibles</h3>
+
+        <h4>Bouton Modifier</h4>
+        <ul>
+            <li>Permet d'éditer les analyses existantes dans l'ontologie</li>
+            <li>Modification des métadonnées, relations, et propriétés</li>
+            <li>Sauvegarde automatique dans la base de données Fuseki</li>
+        </ul>
+
+        <h4>Bouton Ajouter/Supprimer</h4>
+        <ul>
+            <li><strong>Ajouter</strong> : Intégration de nouvelles analyses à l'ontologie</li>
+            <li><strong>Supprimer</strong> : Retrait d'analyses obsolètes ou erronées</li>
+            <li>Gestion des références bibliographiques et métadonnées</li>
+        </ul>
+
+        <h3>Sécurité</h3>
+        <ul>
+            <li>Authentification obligatoire pour accéder aux fonctions d'administration</li>
+            <li>Historique des modifications conservé</li>
+            <li>Sauvegarde automatique des données</li>
+        </ul>
+
+        <hr>
+
+        <h2>Support et assistance</h2>
+
+        <ul>
+            <li><strong>Contact équipe</strong> : Utilisez le bouton "Contact" de l'application</li>
+            <li><strong>Documentation</strong> : Consultez "En savoir plus" pour les détails techniques</li>
+            <li><strong>Problèmes techniques</strong> : L'équipe de recherche fournit le support</li>
+        </ul>
+
+        <hr>
+
+        <h2>Utilisation de l'ontologie avec Protégé</h2>
+
+        <p>Protégé est un éditeur d'ontologie open-source qui permet de visualiser et manipuler l'ontologie IA-DAS.</p>
+
+        <h3>Installation de Protégé</h3>
+        <ol>
+            <li>Télécharger Protégé depuis : <a href="https://protege.stanford.edu/products.php"
+                    target="_blank">https://protege.stanford.edu/products.php</a></li>
+            <li>Installer la version appropriée pour votre système d'exploitation</li>
+            <li>Lancer l'application</li>
+        </ol>
+
+        <h3>Chargement de l'ontologie</h3>
+        <ol>
+            <li><strong>Récupérer l'ontologie :</strong>
+                <ul>
+                    <li>Via l'interface IA-DAS : Utiliser le bouton "Export Turtle" pour récupérer l'ontologie</li>
+                    <li>Via le serveur Fuseki : <a href="http://localhost:3030"
+                            target="_blank">http://localhost:3030</a> → Sélectionner le dataset → Export</li>
+                </ul>
+            </li>
+            <li><strong>Ouvrir dans Protégé :</strong>
+                <ul>
+                    <li>File → Open → Sélectionner le fichier .ttl (Turtle) exporté</li>
+                    <li>L'ontologie se charge avec toutes ses classes, propriétés et instances</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Fonctionnalités disponibles</h3>
+        <ul>
+            <li><strong>Visualisation :</strong> Explorer la hiérarchie des classes et propriétés</li>
+            <li><strong>Requêtes SPARQL :</strong> Onglet "SPARQL Query" pour exécuter des requêtes personnalisées</li>
+            <li><strong>Validation :</strong> Vérifier la cohérence logique de l'ontologie</li>
+            <li><strong>Edition :</strong> Modifier les classes, propriétés et relations (pour les administrateurs)</li>
+        </ul>
+
+        <div class="info">
+            <strong>Conseil :</strong> Utilisez l'onglet "DL Query" pour effectuer des recherches rapides sur les
+            concepts.
+        </div>
+
+        <hr>
+
+        <h2>Utilisation de l'ontologie avec GraphDB</h2>
+
+        <p>GraphDB est une base de données de graphes sémantiques qui offre des fonctionnalités avancées pour l'analyse
+            d'ontologies.</p>
+
+        <h3>Installation de GraphDB</h3>
+        <ol>
+            <li>Télécharger GraphDB Free depuis : <a href="https://www.ontotext.com/products/graphdb/"
+                    target="_blank">https://www.ontotext.com/products/graphdb/</a></li>
+            <li>Créer un compte Ontotext (gratuit pour GraphDB Free)</li>
+            <li>Installer et lancer GraphDB</li>
+            <li>Accéder à l'interface web : <a href="http://localhost:7200" target="_blank">http://localhost:7200</a>
+            </li>
+        </ol>
+
+        <h3>Configuration du repository</h3>
+        <ol>
+            <li><strong>Créer un nouveau repository :</strong>
+                <ul>
+                    <li>Setup → Repositories → Create new repository</li>
+                    <li>Choisir "GraphDB Repository"</li>
+                    <li>Nommer le repository (ex: "IA-DAS-Ontology")</li>
+                    <li>Cliquer "Create"</li>
+                </ul>
+            </li>
+            <li><strong>Importer l'ontologie :</strong>
+                <ul>
+                    <li>Import → RDF → Upload RDF files</li>
+                    <li>Sélectionner le fichier .ttl exporté depuis IA-DAS</li>
+                    <li>Cliquer "Import"</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Requêtes SPARQL avancées</h3>
+        <p>GraphDB offre un éditeur SPARQL puissant avec auto-complétion :</p>
+
+        <pre># Exemple : Trouver toutes les analyses avec leurs variables
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT ?analyse ?vi ?vd WHERE {
+    ?analyse rdf:type :Analyse .
+    ?analyse :hasVI ?vi .
+    ?analyse :hasVD ?vd .
+}</pre>
+
+        <h3>Fonctionnalités avancées</h3>
+        <ul>
+            <li><strong>Visualisation de graphes :</strong> Onglet "Visual graph" pour explorer visuellement</li>
+            <li><strong>Analytics :</strong> Statistiques détaillées sur l'ontologie</li>
+            <li><strong>Reasoning :</strong> Inférence automatique de nouvelles connaissances</li>
+            <li><strong>API REST :</strong> Accès programmatique aux données via HTTP</li>
+        </ul>
+
+        <h3>Synchronisation avec IA-DAS</h3>
+        <div class="warning">
+            <strong>Important :</strong> Les modifications dans GraphDB ne sont pas automatiquement synchronisées avec
+            IA-DAS. Pour mettre à jour IA-DAS, exportez les données modifiées et réimportez-les via l'interface
+            d'administration.
+        </div>
+
+        <h4>Export depuis GraphDB vers IA-DAS :</h4>
+        <ol>
+            <li>Export → Export repository → Format Turtle (.ttl)</li>
+            <li>Utiliser l'interface d'administration IA-DAS pour réimporter</li>
+            <li>Ou remplacer directement dans le serveur Fuseki (avancé)</li>
+        </ol>
+
+        <hr>
+
+        <footer style="text-align: center; margin-top: 30px; font-style: italic; color: #666;">
+            Guide utilisateur IA-DAS - Version mise à jour
+        </footer>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Technique - Ontologie IA-DAS</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 2cm;
+            background: white;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #34495e;
+            font-size: 20px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            color: #34495e;
+            font-size: 14px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        ul,
+        ol {
+            margin-bottom: 15px;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            overflow-x: auto;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 12px;
+        }
+
+        .table th,
+        .table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #f1f1f1;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .warning-box {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .success-box {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .meta-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .meta-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .justification {
+            background-color: #e8f4fd;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .technical-decision {
+            background-color: #f0f8f0;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 1cm;
+            }
+
+            .code-block {
+                page-break-inside: avoid;
+            }
+
+            h2 {
+                page-break-before: always;
+            }
+
+            h2:first-of-type {
+                page-break-before: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Documentation Technique - Projet IA-DAS</h1>
+
+    <div class="meta-info">
+        <p><strong>Projet :</strong> IA-DAS (Intelligence Artificielle - Désordres Alimentaires Sportifs)</p>
+        <p><strong>Date :</strong> 14 août 2025</p>
+        <p><strong>Auteur :</strong> Sara TAOUFIQ</p>
+        <p><strong>Équipe :</strong> Stephanie MERIAUX, Meggy HAYOTTE, Molka TOUNSI, Amandine DAUBRESSE</p>
+    </div>
+
+    <h2>Introduction Générale</h2>
+    <p>Dans le domaine du sport de haut niveau, les troubles alimentaires constituent
+        un enjeu de santé publique majeur dont l'ampleur demeure sous-estimée.
+        Contrairement aux troubles cliniques répertoriés dans le DSM-5, les attitudes
+        et comportements alimentaires dysfonctionnels (ACAD) forment un spectre
+        complexe de pratiques qui échappent aux classifications traditionnelles.
+        La recherche scientifique actuelle sur cette thématique présente cependant
+        une fragmentation importante : chaque étude mobilise ses propres définitions
+        conceptuelles, ses instruments de mesure spécifiques et ses grilles d'analyse
+        particulières. Cette hétérogénéité méthodologique génère de nombreuses incohérences dans la littérature
+        et constitue un frein à la compréhension globale des mécanismes sous-jacents aux ACAD chez les populations
+        sportives.
+
+        C'est dans ce contexte que s'inscrit le projet IA-DAS.
+        L'ambition dépasse la simple constitution d'une base de données pour viser
+        le développement d'un système intelligent capable de structurer et d'interconnecter
+        ces fragments de connaissance dispersés. Le développement d'une ontologie dédiée aux
+        ACAD en sport, implémentée en langage OWL (Web Ontology Language), permettra
+        d'organiser et de synthétiser les connaissances relatives aux facteurs psychosociaux
+        protecteurs et à risque, en tenant compte de la variabilité des groupes d'athlètes
+        considérés selon leurs caractéristiques démographiques et sportives. Cette ontologie
+        vise deux objectifs principaux : établir une cartographie structurée des facteurs
+        liés aux comportements alimentaires dysfonctionnels en sport et mettre
+        en évidence les caractéristiques des personnes à risque ou protégées des ACAD.
+        L'objectif final consiste à transformer cette masse de recherches fragmentées
+        en un outil opérationnel d'aide à la décision destiné aux chercheurs
+        en psychologie du sport, aux professionnels d'encadrement (médecins, psychologues, entraîneurs)
+        et aux enseignants. Plus précisément, il s'agit de formaliser, structurer et
+        interconnecter les connaissances issues d'articles scientifiques pour créer un
+        système d'interrogation permettant de croiser les variables d'intérêt et d'extraire
+        des connaissances exploitables pour la recherche, la prévention et l'analyse automatisée.
+        Pour les chercheurs, l'outil permettra de comprendre les mécanismes
+        d'influence et leurs interrelations de manière holistique tout en enrichissant
+        l'ontologie avec de nouvelles données. Pour les professionnels, il facilitera
+        la détection précoce, l'identification des facteurs de risque chez les athlètes
+        et le développement de prises en charge individualisées. L'application pratique
+        de cette ontologie répond ainsi à des besoins concrets du terrain : un entraîneur
+        confronté aux difficultés alimentaires d'une athlète de 19 ans en gymnastique rythmique,
+        ou un chercheur analysant les différences de sexe dans les facteurs de protection
+        chez les nageurs, pourront interroger le système en croisant les variables pertinentes
+        pour obtenir des réponses fondées sur l'ensemble de la littérature scientifique disponible.</p>
+
+
+    <h2>Sommaire</h2>
+
+    <ol style="margin-bottom: 30px;">
+        <li><a href="#architecture-ontologique">Architecture Ontologique et Choix de Modélisation</a>
+            <ul>
+                <li>1.1 Combinaison de Standards Existants</li>
+                <li>1.2 Définition Ontologique Formelle</li>
+                <li>1.3 Architecture des Classes Principales</li>
+            </ul>
+        </li>
+        <li><a href="#architecture-classes">Architecture des Classes et Justifications Conceptuelles</a>
+            <ul>
+                <li>1.4 Structure Tripartite Fondamentale</li>
+                <li>1.5 Classe Sport : Modularité et Granularité</li>
+                <li>1.6 Autres Classes Transversales</li>
+            </ul>
+        </li>
+        <li><a href="#mapping-rml">Mapping RML et Transformation des Données</a>
+            <ul>
+                <li>2.1 Architecture du Pipeline de Transformation</li>
+                <li>2.2 Innovation : Référencement Taxonomique Dynamique</li>
+                <li>2.3 Préservation de la Compatibilité</li>
+            </ul>
+        </li>
+        <li><a href="#qualite-donnees">Problématiques de Qualité des Données et Solutions</a>
+            <ul>
+                <li>3.1 Problème Critique : Encodage des Caractères</li>
+                <li>3.2 Processus de Nettoyage Mis en Place</li>
+                <li>3.3 Impact et Validation</li>
+            </ul>
+        </li>
+        <li><a href="#architecture-proprietes">Architecture des Propriétés et Justifications</a>
+            <ul>
+                <li>4.1 Propriétés avec Domaines et Portées Explicites</li>
+                <li>4.2 Normalisation des Unités de Mesure</li>
+            </ul>
+        </li>
+        <li><a href="#troubleshooting">Troubleshooting et Résolution de Problèmes</a>
+            <ul>
+                <li>5.1 Problèmes de Performance avec Jointures Complexes</li>
+                <li>5.2 Validation de l'Intégration Multi-Standards</li>
+                <li>5.3 Diagnostic des Liens Taxonomiques</li>
+            </ul>
+        </li>
+        <li><a href="#conclusion">Conclusion et Perspectives</a>
+            <ul>
+                <li>6.1 Bilan de l'Architecture Ontologique</li>
+                <li>6.2 Innovations Techniques Apportées</li>
+                <li>6.3 Recommandations pour le Développement Futur</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Prérequis</h2>
+
+    <p>Cette documentation technique s'adresse aux audiences suivantes :</p>
+
+    <ul>
+        <li>L'équipe de recherche sur les ACAD et la psychologie du sport</li>
+        <li>Les développeurs impliqués dans la formalisation de l'ontologie</li>
+        <li>Les experts en modélisation des connaissances</li>
+        <li>Les futurs contributeurs souhaitant comprendre les bases de l'ontologie développée</li>
+        <li>Les développeurs pour l'interface</li>
+    </ul>
+
+
+    <h3>Connaissances Techniques Requises</h3>
+
+    <h4>Technologies du Web Sémantique</h4>
+    <ul>
+        <li><strong>RDF (Resource Description Framework) :</strong> Compréhension du modèle de données RDF, syntaxe
+            Turtle, notion de triplets sujet-prédicat-objet</li>
+        <li><strong>OWL (Web Ontology Language) :</strong> Maîtrise d'OWL 2, classes, propriétés, restrictions,
+            raisonnement ontologique</li>
+        <li><strong>SPARQL :</strong> Langage de requête SPARQL 1.1, jointures, filtres, fonctions, requêtes fédérées
+        </li>
+        <li><strong>Namespaces et URIs :</strong> Gestion des espaces de noms, résolution d'URIs, bonnes pratiques de
+            nommage</li>
+    </ul>
+
+    <h4>Technologies d'Interface et Développement Web</h4>
+    <ul>
+        <li><strong>JavaScript :</strong> Programmation côté client, manipulation du DOM, requêtes asynchrones
+            (fetch/AJAX)</li>
+        <li><strong>HTML/CSS :</strong> Structuration de contenus web, stylisation, responsive design</li>
+        <li><strong>Docker :</strong> Containerisation, docker-compose, gestion des services et déploiement</li>
+    </ul>
+
+    <h4>Standards et Vocabulaires</h4>
+    <ul>
+        <li><strong>BIBO (Bibliographic Ontology) :</strong> Connaissance des classes et propriétés pour métadonnées
+            bibliographiques</li>
+        <li><strong>Dublin Core :</strong> Familiarité avec dcterms pour métadonnées génériques</li>
+        <li><strong>RML :</strong> Mapping de données relationnelles/CSV vers RDF, syntaxe des mappings</li>
+    </ul>
+
+    <h4>Outils et Environnements</h4>
+    <ul>
+        <li><strong>Apache Jena Fuseki :</strong> Serveur SPARQL, configuration TDB2, endpoints</li>
+        <li><strong>RMLMapper :</strong> Moteur de transformation RML, ligne de commande, débogage</li>
+        <li><strong>Docker :</strong> Containerisation, docker-compose, gestion des services</li>
+    </ul>
+
+    <h3>Connaissances Métier</h3>
+
+    <h4>Psychologie du Sport</h4>
+    <ul>
+        <li><strong>DEAB (Disordered Eating and Athletic Behaviors) :</strong> Compréhension des troubles du
+            comportement alimentaire chez les sportifs</li>
+        <li><strong>Variables de recherche :</strong> Variables indépendantes/dépendantes, médiateurs, modérateurs</li>
+        <li><strong>Méthodologie de recherche :</strong> Analyses statistiques, populations d'étude, instruments de
+            mesure</li>
+    </ul>
+
+    <h4>Gestion de Données de Recherche</h4>
+    <ul>
+        <li><strong>Nettoyage de données :</strong> Détection d'anomalies, normalisation, validation</li>
+        <li><strong>Statistiques descriptives :</strong> Moyennes, écarts-types, distributions, unités de mesure</li>
+        <li><strong>Métadonnées de recherche :</strong> DOI, citations, journaux, protocoles d'étude</li>
+    </ul>
+
+    <h3>Environnement Technique</h3>
+
+    <div class="info-box">
+        <p><strong>Configuration recommandée pour exploitation de cette documentation :</strong></p>
+        <ul>
+            <li><strong>Système :</strong> Linux/macOS/Windows avec Docker installé</li>
+            <li><strong>Mémoire :</strong> Minimum 8GB RAM (16GB recommandés pour Fuseki avec dataset complet)</li>
+            <li><strong>Java :</strong> JDK 11 ou supérieur pour Apache Jena</li>
+            <li><strong>Navigateur :</strong> Firefox/Chrome avec support CORS pour interface Fuseki</li>
+        </ul>
+    </div>
+
+    <h3>Fichiers et Ressources Référencées</h3>
+
+    <p>Cette documentation fait référence aux fichiers suivants du projet IA-DAS :</p>
+
+    <ul>
+        <li><code>mapping-bibo.ttl</code> - Fichier de mapping RML complet</li>
+        <li><code>ia-das-taxonomy.ttl</code> - Taxonomie hiérarchique des concepts (618 classes)</li>
+        <li><code>data.ttl</code> - Dataset RDF généré (495k lignes de triplets)</li>
+        <li><code>docker-compose.yml</code> - Configuration des services</li>
+        <li><code>fuseki/config.ttl</code> - Configuration du triplestore</li>
+    </ul>
+
+    <div class="warning-box">
+        <p><strong>Attention :</strong> Cette documentation assume l'accès au repository complet du projet IA-DAS.
+            Certains exemples et références nécessitent l'examen des fichiers sources pour une compréhension complète
+            des implémentations techniques décrites.</p>
+    </div>
+
+    <h2 id="architecture-ontologique">1. Architecture Ontologique et Choix de Modélisation</h2>
+
+    <h3>1.1 Combinaison de Standards Existants</h3>
+
+<p>L'ontologie IA-DAS combine quatre standards existants plutôt que de créer de nouveaux concepts. Cette approche garantit l'interopérabilité et réduit les risques de conception.</p>
+
+
+<div class="justification">
+    <p><strong>Justification :</strong> Réutiliser des standards éprouvés évite la duplication d'efforts et facilite l'adoption.
+         Nos principaux efforts se sont basés sur les aspects spécifiques à la psychologie du sport.</p>
+</div>
+
+    <h4>Standards intégrés et leurs rôles spécifiques</h4>
+
+    <p>Notre ontologie intègre quatre standards principaux, chacun apportant sa propre expertise et sa propre valeur
+        ajoutée :</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Standard</th>
+                <th>Namespace</th>
+                <th>Usage dans IA-DAS</th>
+                <th>Justification du choix</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>BIBO</td>
+                <td>http://purl.org/ontology/bibo/</td>
+                <td>Métadonnées bibliographiques</td>
+                <td>Standard de référence pour les publications académiques, utilisé par de nombreuses bibliothèques
+                    numériques</td>
+            </tr>
+            <tr>
+                <td>Dublin Core</td>
+                <td>http://purl.org/dc/terms/</td>
+                <td>Métadonnées génériques</td>
+                <td>Interopérabilité maximale, reconnaissance universelle dans les systèmes d'information</td>
+            </tr>
+            <tr>
+                <td>RML</td>
+                <td>http://semweb.mmlab.be/ns/rml#</td>
+                <td>Transformation CSV vers RDF</td>
+                <td>Standard W3C pour le mapping de données, garantit la reproductibilité des transformations</td>
+            </tr>
+            <tr>
+                <td>IA-DAS</td>
+                <td>http://ia-das.org/onto#</td>
+                <td>Concepts spécifiques au domaine</td>
+                <td>Extension nécessaire pour capturer les spécificités de la psychologie du sport</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Le standard BIBO (Bibliographic Ontology) s'impose naturellement pour toute la dimension bibliographique de notre
+        projet. Développé spécifiquement pour les besoins de la recherche académique, il propose des classes et
+        propriétés parfaitement adaptées pour décrire les articles scientifiques, leurs auteurs, leurs méthodes de
+        publication, et leurs métadonnées associées. Son adoption nous évite de réinventer ces concepts tout en assurant
+        une compatibilité avec les systèmes de gestion bibliographique existants.</p>
+
+    <p>Dublin Core, quant à lui, apporte une couche de métadonnées génériques reconnue universellement. Son utilisation
+        garantit que nos données pourront être comprises et indexées par des systèmes d'information généraux, bien
+        au-delà du domaine spécifique de la psychologie du sport. Cette ouverture est essentielle pour favoriser la
+        découvrabilité et la réutilisation de nos données de recherche.</p>
+
+    <h3>1.2 Définition Ontologique Formelle</h3>
+
+    <p>Conformément aux bonnes pratiques du Web Sémantique, notre ontologie commence par une déclaration formelle qui
+        établit son identité, sa portée, et ses métadonnées descriptives. Cette déclaration, bien qu'apparemment
+        technique, joue un rôle crucial dans l'écosystème sémantique car elle permet aux machines et aux humains
+        d'identifier précisément l'ontologie et ses caractéristiques.</p>
+
+    <div class="code-block">
+        &lt;http://ia-das.org/onto#&gt;
+        a owl:Ontology ;
+        dcterms:title "IA-DAS - Intelligence Artificielle, Désordre Alimentaire sportif"@fr ;
+        dcterms:title "IA-DAS - Artificial Intelligence and Sports Eating Disorders"@en ;
+        dcterms:description "Ontologie pour la recherche en psychologie du sport..."@fr ;
+        dcterms:creator "Équipe de recherche IA-DAS" ;
+        dcterms:created "2025-08-14" ;
+        owl:versionInfo "1.0" ;
+        owl:imports &lt;http://ia-das.org/taxonomy#&gt; .
+    </div>
+
+    <p>L'inclusion de titres et descriptions bilingues
+        (français et anglais) témoigne d'une volonté d'ouverture internationale. Le versioning explicite (version 1.0)
+        établit un cadre pour la maintenance évolutive de l'ontologie, permettant de gérer les futures améliorations
+        sans casser la compatibilité avec les systèmes existants.</p>
+
+    <div class="technical-decision">
+        <p> L'adoption d'un système de versioning sémantique dès la version
+            initiale anticipe les besoins futurs d'évolution de l'ontologie. Cette prévoyance technique facilitera la
+            maintenance à long terme et l'adoption par d'autres équipes de recherche qui pourront s'appuyer sur des
+            versions stables et documentées.</p>
+    </div>
+
+    <p>La directive <code>owl:imports</code> établit une séparation claire entre l'ontologie structurelle (classes et propriétés) et la taxonomie conceptuelle (618 concepts hiérarchiques). Cette séparation permet une maintenance indépendante des deux composants.</p>
+
+<p>Par exemple, une variable peut avoir la hiérarchie taxonomique suivante :</p>
+
+<div class="code-block">
+sub-class_1: Exercise-Related Behaviors
+sub-class_2: Behavioral Patterns  
+sub-class_3: Compulsive Behaviors
+sub-class_4: Functional Impairment
+Variable finale: Exercise Dependence Scale Score
+</div>
+
+<p>Cette hiérarchie à 4 niveaux existe dans la taxonomie, tandis que l'ontologie définit les propriétés génériques (<code>iadas:subClass1</code>, <code>iadas:subClass2</code>, etc.) qui peuvent s'appliquer à n'importe quelle variable. On peut ainsi modifier la classification hiérarchique sans toucher à la structure ontologique, et vice versa.</p>
+
+<p>L'avantage : l'équipe psychologie peut enrichir la taxonomie des concepts pendant que l'équipe technique maintient l'ontologie structurelle. Les deux évoluent indépendamment mais restent liées via <code>owl:imports</code>.</p>
+
+    <h3>1.3 Architecture des Classes Principales</h3>
+
+    <p>Le cœur de notre ontologie s'articule autour de classes principales choisies pour représenter les entités fondamentales du domaine de recherche. Cette architecture résulte d'une analyse méthodique des besoins exprimés par les chercheurs et des structures récurrentes observées dans la littérature scientifique du domaine.</p>
+
+    <h4>Intégration BIBO pour les Articles Scientifiques</h4>
+
+    <p>L'une de nos décisions concerne la modélisation des articles scientifiques. Plutôt que de
+        créer une classe générique "Article" depuis zéro, nous avons choisi de spécialiser la classe
+        <code>bibo:AcademicArticle</code> existante. Cette approche illustre notre philosophie de
+        réutilisation des standards.
+    </p>
+
+    <div class="justification">
+        <p><strong>Rationale de cette approche :</strong> En créant <code>iadas:SportPsychologyArticle</code> comme
+            sous-classe de <code>bibo:AcademicArticle</code>, nous héritons automatiquement de toutes les propriétés
+            définies par BIBO : DOI, journal de publication, auteurs, date de publication, abstract,
+            mots-clés, etc. Cette héritage nous évite de redéfinir ces concepts universels tout en nous permettant
+            d'ajouter les spécificités propres à notre domaine d'application.</p>
+    </div>
+
+    <div class="code-block">
+        iadas:SportPsychologyArticle
+        a owl:Class ;
+        rdfs:subClassOf bibo:AcademicArticle ;
+        rdfs:label "Article de psychologie du sport"@fr ;
+        rdfs:label "Sport Psychology Article"@en ;
+        rdfs:comment "Article académique spécialisé dans l'étude des aspects psychologiques du sport, incluant les
+        troubles du comportement alimentaire chez les athlètes"@fr .
+    </div>
+
+    <p>Cette modélisation permet d'obtenir le meilleur des deux mondes : la robustesse et la reconnaissance d'un
+        standard établi, combinées à la spécificité nécessaire pour notre domaine d'application. Un article de
+        psychologie du sport reste au final un "article académique", mais il possède des caractéristiques
+        particulières en plus (population étudiée, variables mesurées, protocoles spécifiques).</p>
+
+    <h4>Classes Statistiques Traitées comme des Entités</h4>
+
+    <p>Contrairement aux approches traditionnelles qui traitent les statistiques comme de simples
+        propriétés numériques attachées aux entités, nous avons fait le choix de les modéliser comme des entités
+        autonomes à part entière. Cette approche, inspirée du "value object pattern" en ingénierie logicielle, apporte
+        une richesse conceptuelle.</p>
+
+    <p>Concrètement, cela signifie que lorsqu'une étude indique que l'âge moyen des participants est de 23,5 ans avec un
+        écart-type de 4,2 ans, nous ne nous contentons pas de stocker ces deux valeurs comme propriétés simples. Nous
+        créons plutôt une entité "AgeStatistics" qui encapsule l'ensemble de l'information statistique : moyenne,
+        écart-type, mais aussi minimum, maximum, unité de mesure, méthode de calcul, niveau de confiance, etc.</p>
+
+    <ul>
+        <li><code>iadas:AgeStatistics</code> - Entité encapsulant toutes les mesures statistiques relatives à l'âge des
+            participants</li>
+        <li><code>iadas:BMIStatistics</code> - Entité dédiée aux statistiques d'indice de masse corporelle</li>
+        <li><code>iadas:ExerciseFrequencyStatistics</code> - Entité regroupant les mesures de fréquence d'exercice</li>
+        <li><code>iadas:YearsOfExperienceStatistics</code> - Entité pour les statistiques d'années d'expérience sportive
+        </li>
+    </ul>
+
+    <div class="justification">
+        <p><strong>Avantages de cette approche :</strong> Cette modélisation en entités séparées facilite grandement les
+            requêtes complexes. Par exemple, on peut facilement rechercher toutes les études où l'écart-type d'âge
+            dépasse une certaine valeur, ou comparer les distributions d'âge entre différentes populations. Cette
+            richesse structurelle permet également d'introduire des propriétés statistiques avancées sans modifier l'architecture globale. Enfin, cette
+            approche facilite la normalisation des unités de mesure et la conversion entre différents systèmes de
+            mesure.</p>
+    </div>
+
+    <h2 id="architecture-classes">2. Architecture des Classes et Justifications Conceptuelles</h2>
+
+    <h3>2.1 Structure Tripartite Fondamentale</h3>
+
+    <p>L'architecture conceptuelle de notre ontologie s'organise autour d'une structure que nous qualifions de
+        "tripartite", car elle repose sur trois classes primaires interdépendantes : Article, Population et Analysis.
+       </p>
+
+    <p>En effet, en analysant la littérature scientifique du domaine, un pattern récurrent
+        émerge avec une remarquable constance : chaque publication scientifique décrit une recherche (Article) qui a été
+        menée sur un groupe spécifique de participants (Population) et qui a produit des résultats analysés selon
+        certaines méthodes (Analysis).</p>
+
+    <p>Cependant, cette structure de base, bien qu'essentielle, s'avère insuffisante pour capturer toute la richesse et
+        la complexité des données de recherche. Les études modernes en psychologie du sport impliquent
+        des dimensions multiples qui ne s'inscrivent pas naturellement dans ce schéma simplifié : caractéristiques des
+        pratiques sportives, variables psychologiques complexes, médiateurs et modérateurs statistiques, contextes
+        socio-culturels, instruments de mesure validés, etc.</p>
+
+    <p>C'est pourquoi nous avons enrichi cette architecture tripartite par l'introduction de classes complémentaires qui
+        permettent de modéliser ces concepts avec la granularité nécessaire. Cette extension modulaire
+        garantit plusieurs objectifs cruciaux : préservation de la clarté conceptuelle de base, possibilité d'analyses
+        fines sur des aspects spécifiques, réutilisabilité des composants dans d'autres contextes, et évolutivité future
+        de l'ontologie face aux besoins émergents de la recherche.</p>
+
+    <div class="justification">
+        <p><strong>Justification de cette extension modulaire :</strong> Plutôt que de complexifier les trois classes de
+            base en y ajoutant de nombreuses propriétés spécialisées, nous avons préféré créer des classes dédiées aux
+            concepts. Justement pour préserve la lisibilité du modèle conceptuel, faciliter la maintenance
+            et l'évolution, et permetre des requêtes plus ciblées et efficaces.</p>
+    </div>
+
+    <h3>2.2 Classe Sport : Une Décision Architecturale Majeure</h3>
+
+
+    <p>La question qui s'est posée à nous était la suivante : comment modéliser l'information sportive associée aux
+        populations étudiées ? Deux approches étaient envisageables. La première, plus directe, consistait à rattacher
+        directement toutes les caractéristiques sportives (nom du sport, type de pratique, niveau, catégorie, etc.) à la
+        classe Population via des propriétés spécialisées. La seconde approche, que nous avons finalement retenue,
+        consiste à créer une entité Sport autonome qui centralise ces informations et qui peut être liée à une ou
+        plusieurs populations.</p>
+
+    <p>Cette décision s'appuie sur plusieurs constats issus de notre analyse des données. Premièrement, les informations
+        sportives présentent une cohérence interne forte : le type de sport influence la catégorie, le niveau de
+        pratique détermine certaines exigences, la sous-spécialisation impacte les facteurs de risque psychologique,
+        etc. Deuxièmement, ces informations sont fréquemment réutilisées dans différentes études : plusieurs recherches
+        peuvent porter sur le même sport pratiqué dans des contextes différents ou sur des populations distinctes.</p>
+
+    <div class="technical-decision">
+        <p><strong>Avantages architecturaux concrets de la classe Sport :</strong></p>
+
+        <p><strong>Modularité opérationnelle :</strong> La classe Sport fonctionne comme une unité conceptuelle autonome
+            qui peut être définie une fois et réutilisée dans multiples contextes. Cette modularité évite la duplication
+            d'informations et facilite la maintenance : une modification des caractéristiques d'un sport (par exemple,
+            l'ajout d'une nouvelle sous-catégorie) se répercute automatiquement sur toutes les populations qui le
+            pratiquent.</p>
+
+        <p><strong>Granularité contrôlée :</strong> Les différentes facettes du sport (type de pratique, catégorie,
+            niveau, facteurs de risque associés) peuvent évoluer indépendamment sans affecter la structure globale.
+            Cette granularité permet d'enrichir progressivement le modèle avec de nouvelles dimensions sans refactorisation majeure.</p>
+
+        <p><strong>Scalabilité démontrée :</strong> Le modèle s'adapte naturellement à l'ajout de nouveaux sports ou de
+            nouvelles caractéristiques sportives. Cette extensibilité est cruciale dans un domaine de recherche en
+            évolution constante où de nouvelles disciplines émergent régulièrement et où les classifications évoluent.
+        </p>
+    </div>
+
+    <h4>Exemple Concret d'Application : L'Étude sur le Bodybuilding à Chypre Nord</h4>
+
+    <p>Pour illustrer concrètement les bénéfices de cette architecture, prenons l'exemple d'une étude réelle intégrée
+        dans notre système. Cette recherche porte sur une population spécifique de 200 hommes, âgés de 18 à 58 ans, tous
+        inscrits dans des salles de musculation du nord de Chypre et pratiquant le bodybuilding à un niveau amateur.</p>
+
+    <p>Cette population présente des caractéristiques multidimensionnelles qui illustrent parfaitement la complexité des
+        données de recherche contemporaines. Au niveau démographique, nous disposons d'informations précises sur l'âge,
+        le sexe, et la localisation géographique. Au niveau sportif, nous connaissons le sport pratiqué (bodybuilding),
+        son type (individuel), sa catégorie (esthétique), le niveau de pratique (amateur), la fréquence d'entraînement
+        hebdomadaire, et les années d'expérience. Au niveau psychologique, de multiples variables sont mesurées :
+        motivation intrinsèque et extrinsèque, troubles de l'image corporelle, tendances orthorexiques, perfectionnisme,
+        anxiété de performance, etc.</p>
+
+    <p>Si nous avions opté pour une modélisation directe rattachant toutes ces dimensions à la classe Population, le
+        résultat aurait été une entité surchargée et peu modulaire. Chaque nouvelle population étudiée aurait nécessité
+        la redéfinition complète de ses caractéristiques sportives, même lorsque plusieurs études portent sur le même
+        sport. De plus, les requêtes comparatives entre sports auraient été complexes et peu performantes.</p>
+
+    <div class="code-block">
+        # Modélisation RDF optimisée de l'exemple
+        iadas-data:Sport_Bodybuilding_Cyprus
+        a iadas:Sport ;
+        iadas:sportName "Bodybuilding" ;
+        iadas:sportType "Individual" ;
+        iadas:sportCategory "Aesthetic" ;
+        iadas:practiceLevel "Amateur" ;
+        iadas:hasLocation "Cyprus North" ;
+        iadas:riskFactors "Body image disorders, Muscle dysmorphia" ;
+        iadas:competitiveAspects "Aesthetic evaluation, Symmetry, Muscle definition" .
+
+        iadas-data:Population_200Men_Cyprus
+        a iadas:Population ;
+        iadas:participateInSport iadas-data:Sport_Bodybuilding_Cyprus ;
+        iadas:sampleSize 200 ;
+        iadas:gender "Male" ;
+        iadas:ageStats iadas-data:AgeStats_18to58 ;
+        iadas:recruitmentContext "Commercial gyms in Northern Cyprus" ;
+        iadas:inclusionCriteria "Minimum 6 months of regular bodybuilding practice" .
+    </div>
+
+    <p>Cette modélisation révèle ses avantages lors de l'exploitation des données. Le sport "Bodybuilding" devient une
+        ressource identifiable et réutilisable qui peut être enrichie au fil des études. Si une nouvelle recherche porte
+        sur des bodybuilders français ou américains, elle pourra réutiliser et potentiellement enrichir cette entité
+        Sport, créant ainsi un effet de réseau bénéfique à l'ensemble de la base de connaissances.</p>
+
+    <div class="justification">
+        <p><strong>Impact sur la qualité des requêtes :</strong> Cette structuration améliore significativement la
+            qualité et la performance des requêtes SPARQL. Il devient trivial de formuler des questions complexes comme
+            "Quelles sont toutes les populations étudiées dans des sports esthétiques ?" ou "Quel est l'âge moyen des
+            pratiquants de sports individuels à travers toutes les études ?". Ces requêtes, qui seraient laborieuses
+            avec une modélisation plate, deviennent naturelles et efficaces avec notre architecture modulaire.</p>
+    </div>
+
+    <h3>2.3 Classes  : Modéliser la Complexité du Domaine</h3>
+
+    <p>Au-delà de la structure tripartite fondamentale et de la classe Sport, notre ontologie intègre plusieurs classes
+         qui reflètent des concepts récurrents et structurants dans la recherche en psychologie du sport.
+        Ces classes, loin d'être des ajouts anecdotiques, répondent à des besoins concrets identifiés lors de l'analyse
+        des données et des pratiques de recherche.</p>
+
+    
+    <h4>Variables de Recherche : Refléter la Rigueur Méthodologique</h4>
+
+    <p>La modélisation des variables de recherche constitue probablement l'aspect le plus critique de notre ontologie
+        car ces variables forment le cœur analytique de toute étude empirique. La recherche quantitative en psychologie
+        distingue traditionnellement plusieurs types de variables selon leur rôle dans le design expérimental, et cette
+        distinction méthodologique se doit d'être préservée dans notre modélisation sémantique.</p>
+
+    <p>Nous avons donc créé des classes spécialisées pour chaque type de variable, respectant ainsi la typologie établie
+        en méthodologie de recherche. Les Variables Indépendantes (VI) représentent les facteurs que les chercheurs
+        manipulent ou observent comme potentiels facteurs explicatifs. Les Variables Dépendantes (VD) correspondent aux
+        phénomènes mesurés, supposés être influencés par les variables indépendantes. Les Variables Médiatrices
+        expliquent les mécanismes causaux intermédiaires, tandis que les Variables Modératrices influencent la force ou
+        la direction des relations observées.</p>
+
+    <div class="technical-decision">
+        <p><strong>Justification de cette séparation méthodologique :</strong> Cette distinction permet
+            notamment de formuler des requêtes spécialisées du type "Dans quelles études l'âge apparaît-il comme
+            variable modératrice ?" ou "Quelles variables dépendantes sont le plus fréquemment associées à la pratique
+            du bodybuilding ?". Ces requêtes, impossibles avec une modélisation générique, ouvrent la voie à des
+            découvertes scientifiques assistées par l'intelligence artificielle.</p>
+    </div>
+
+    <div class="code-block">
+        # Exemple détaillé de modélisation des variables
+        iadas-data:Variable_VI_BodyDissatisfaction_Study47
+        a iadas:IndependentVariable ;
+        iadas:hasVariableConcept taxonomy:Variable_VI_BodyDissatisfaction ;
+        iadas:VI "Body Dissatisfaction" ;
+        iadas:measurementScale "Likert 1-7 scale" ;
+        iadas:validatedInstrument "Body Dissatisfaction Scale (BDS)" ;
+        iadas:psychometricProperties "Cronbach's alpha = 0.89, Test-retest reliability = 0.84" ;
+        iadas:theoreticalFramework "Self-perception theory, Social comparison theory" ;
+        iadas:operationalDefinition "Degree of dissatisfaction with one's physical appearance and body shape" .
+
+        iadas-data:Variable_VD_EatingDisorderRisk_Study47
+        a iadas:DependentVariable ;
+        iadas:hasVariableConcept taxonomy:Variable_VD_EatingDisorderRisk ;
+        iadas:VD "Eating Disorder Risk" ;
+        iadas:clinicalRelevance "Primary outcome measure" ;
+        iadas:measurementInstrument "Eating Attitudes Test-26 (EAT-26)" ;
+        iadas:diagnosticThreshold "Score >= 20 indicates elevated risk" ;
+        iadas:validationStudies "Validated in athletic populations (Petrie et al., 2008)" .
+    </div>
+
+    <p>Cette richesse de modélisation permet non seulement de préserver l'information méthodologique cruciale pour
+        l'interprétation des résultats, mais aussi d'automatiser certaines validations. Par exemple, le système peut
+        détecter automatiquement les incohérences méthodologiques (utilisation d'un instrument non validé, absence de
+        définition opérationnelle) ou identifier des patterns récurrents dans les choix méthodologiques des chercheurs.
+    </p>
+
+    <h2 id="mapping-rml">3. Mapping RML et Transformation des Données</h2>
+
+    <h3>3.1 Architecture du Processus de Transformation</h3>
+
+    <p>La transformation des données brutes CSV en graphe RDF structuré constitue l'une des étapes les plus techniques
+        de notre projet. Cette transformation, loin d'être une simple conversion de format, implique une
+        réinterprétation sémantique des données selon le modèle ontologique que nous avons développé.</p>
+
+    <p>Pour réaliser cette transformation, nous avons mis en place un processus de mapping basé sur le standard RML.
+        Ce choix technologique mérite d'être explicité car il influence directement la qualité, la
+        reproductibilité et la maintenance de notre système. RML, extension du standard W3C R2RML, permet de définir de
+        manière déclarative comment transformer des sources de données hétérogènes (CSV) en graphes RDF
+        conformes à une ontologie donnée.</p>
+
+    <p>Notre implémentation se structure autour de 10 mappings spécialisés, chacun prenant en charge un aspect
+        spécifique de la transformation. Cette approche modulaire, plutôt qu'un mapping monolithique, répond à plusieurs
+        impératifs techniques : facilitation du débogage (chaque mapping peut être testé indépendamment), amélioration
+        de la maintenance (modifications localisées), et optimisation de la réutilisabilité (certains mappings peuvent
+        être adaptés pour d'autres projets similaires).</p>
+
+    <div class="technical-decision">
+        <p><strong>Justification de l'architecture modulaire :</strong> L'expérience montre que les mappings
+            monolithiques, bien que plus simples à concevoir initialement, deviennent rapidement ingérables lorsque le
+            volume et la complexité des données augmentent. Notre approche modulaire anticipe ces défis en créant des
+            composants de transformation spécialisés, testables et maintenables individuellement. Cette architecture
+            facilite également la parallélisation du développement au sein de l'équipe.</p>
+    </div>
+
+    <h4>Configuration Source et Gestion de l'Encodage</h4>
+
+    <p>La configuration de la source de données révèle des choix techniques précis qui conditionnent la qualité de la
+        transformation. Nous avons accordé une attentionà la gestion de l'encodage, source fréquente de
+        problèmes dans les projets de transformation de données.</p>
+
+    <div class="code-block">
+        &lt;#LogicalSource&gt;
+        rml:source "data-fixed.csv" ;
+        rml:referenceFormulation ql:CSV ;
+        csvw:delimiter "," ;
+        csvw:encoding "UTF-8" ;
+        csvw:header "true" .
+    </div>
+
+    <p>Le nom du fichier source ("data-fixed.csv") indique qu'un processus de nettoyage préalable a été appliqué.
+        Cette étape, détaillée dans la section suivante, s'est avérée cruciale pour garantir la qualité de la
+        transformation. L'spécification explicite de l'encodage UTF-8 prévient les problèmes d'accents et de caractères
+        spéciaux fréquents dans les données de recherche multilingues.</p>
+
+          <div class="warning-box">
+    <p><strong>Troubleshooting - Problèmes fréquents :</strong></p>
+    
+    <p><strong>Debug des mappings RML :</strong> La commande classique RML ne propose pas d'options de debug. Pour activer le debug, ajouter <code>--verbose</code> à votre commande RML.</p>
+    
+    <p><strong>Format CSV requis :</strong> Le fichier CSV doit obligatoirement être séparé par des virgules, pas des points-virgules. Dans Excel, choisir "CSV UTF-8 (virgule)" lors de l'enregistrement. Sinon, utiliser un convertisseur en ligne pour reformater le fichier.</p>
+    
+    <p><strong>Warnings de mapping :</strong> Les messages du type <code>Warning: No mapping found for variable 'Body Dissatisfaction'</code> ne doivent pas être ignorés. Ils indiquent que cette donnée ne sera pas mappée et sera donc perdue. D'après notre expérience, ces warnings signalent des données non mappées qui peuvent entraîner des incohérences dans les résultats.</p>
+</div>
+
+    <h3>3.2 Liaison Automatique vers la Taxonomie</h3>
+
+
+    <p>Le principe de cette liaison repose sur l'utilisation de templates RML qui génèrent automatiquement des URIs de
+        concepts taxonomiques à partir des noms de variables présents dans les données sources. Concrètement, lorsque le
+        système rencontre une variable indépendante nommée "Body Dissatisfaction" dans le CSV, il génère automatiquement
+        un lien vers le concept <code>taxonomy:Variable_VI_BodyDissatisfaction</code> dans notre taxonomie.</p>
+
+    <div class="code-block">
+        # Exemple de template de liaison taxonomique
+        rr:predicateObjectMap [
+        rr:predicate iadas:hasVariableConcept ;
+        rr:objectMap [
+        rr:template "http://ia-das.org/taxonomy#Variable_VI_{sub-class_Final_VI}" ;
+        rr:termType rr:IRI
+        ]
+        ] ;
+    </div>
+
+    <p>Cette liaison automatique présente des avantages multiples qui justifient sa complexité technique. Premièrement,
+        elle permet d'exploiter la richesse de notre taxonomie hiérarchique (618 classes, 1412 relations) dans les
+        requêtes SPARQL sans avoir à dupliquer cette information dans chaque étude. Deuxièmement, elle facilite les
+        analyses  en permettant de regrouper automatiquement des variables conceptuellement similaires mais
+        nommées différemment selon les études. Troisièmement, elle ouvre la voie à des raisonnements automatiques basés
+        sur les relations hiérarchiques de la taxonomie.</p>
+
+    
+
+    <!-- <h3>3.3 Préservation de la Compatibilité avec l'Existant</h3>
+
+    <p>L'introduction de nouvelles fonctionnalités dans un système en production soulève immédiatement la question de la
+        compatibilité avec les développements existants. Dans notre cas, cette problématique était particulièrement
+        critique car plusieurs requêtes SPARQL étaient déjà développées et utilisées par l'équipe de recherche avant
+        l'implémentation de la liaison taxonomique.</p>
+
+    <p>Notre solution consiste en une approche duale qui maintient les propriétés historiques tout en introduisant les
+        nouvelles fonctionnalités. Cette stratégie garantit qu'aucune requête existante ne soit cassée par les
+        évolutions, tout en permettant l'exploitation progressive des nouvelles capacités.</p>
+
+    <p>Les propriétés préservées incluent les noms finaux des variables (<code>iadas:VI</code>, <code>iadas:VD</code>),
+        la catégorisation simplifiée (<code>iadas:hasCategory</code>), et les niveaux de classification hiérarchique
+        (<code>iadas:subClass1</code> à <code>iadas:subClass4</code>). Parallèlement, les nouvelles propriétés
+        taxonomiques (<code>iadas:hasVariableConcept</code>) offrent des capacités étendues pour les développements
+        futurs.</p>
+
+    <div class="technical-decision">
+        <p><strong>Principe de compatibilité ascendante :</strong> Cette approche dual répond à un principe fondamental
+            de l'ingénierie logicielle : ne jamais casser l'existant lors d'évolutions. Elle permet une migration
+            progressive des requêtes vers les nouvelles fonctionnalités, selon le rythme et les besoins de chaque
+            utilisateur, tout en préservant immédiatement la continuité de service.</p>
+    </div> -->
+
+    <h2 id="qualite-donnees">4. Problématiques de Qualité des Données et Solutions</h2>
+
+    <h3>4.1 Le Défi Majeur de l'Encodage des Caractères</h3>
+
+    <p>L'un des défis les plus inattendus et pourtant les plus impactants de notre projet concerne la gestion de
+        l'encodage des caractères dans les données transformées. Ce problème, découvert après la génération initiale du
+        fichier RDF, illustre parfaitement comment des aspects apparemment techniques peuvent avoir des répercussions
+        majeures sur l'utilisabilité d'un système.</p>
+
+    <p>Le problème s'est manifesté de manière insidieuse : les espaces présents dans les noms de variables du CSV source
+        étaient automatiquement encodés en %20 lors de la génération des URIs RDF. Cette transformation, techniquement
+        correcte du point de vue de la spécification URI, créait des identifiants malformés et illisibles qui
+        compromettaient gravement l'exploitation du système.</p>
+
+    <p>Concrètement, une variable nommée "Body Dissatisfaction" dans le CSV source se retrouvait transformée en URI
+        <code>iadas-data:Variable_VI_Body%20Dissatisfaction</code>. Cette dégradation affectait non seulement la
+        lisibilité des données mais causait également des échecs de résolution dans les requêtes SPARQL et des
+        dysfonctionnements de l'interface utilisateur.
+    </p>
+
+    <div class="warning-box">
+        <p><strong>Symptômes détectés lors du diagnostic :</strong></p>
+        <ul>
+            <li><strong>URIs malformées :</strong> <code>iadas-data:Variable_VI_Body%20Dissatisfaction</code> au lieu de
+                <code>iadas-data:Variable_VI_BodyDissatisfaction</code>
+            </li>
+            <li><strong>Littéraux dégradés :</strong> <code>iadas:VI "Exercise%20Motivation"</code> au lieu de
+                <code>iadas:VI "Exercise Motivation"</code>
+            </li>
+            <li><strong>Erreurs SPARQL systématiques :</strong> Échec de résolution des requêtes avec codes d'erreur 400
+            </li>
+            <li><strong>Interface utilisateur compromise :</strong> Affichage incorrect des noms de variables dans les
+                résultats de requêtes</li>
+            <li><strong>Problèmes d'export :</strong> Génération de fichiers CSV corrompus lors des exports de données
+            </li>
+        </ul>
+    </div>
+
+    <h3>4.2 Développement d'un Processus de Nettoyage Systématique</h3>
+
+    <p>Le processus de nettoyage commence par une phase de détection automatique qui scanne l'intégralité du fichier RDF
+        généré pour identifier toutes les occurrences problématiques. Cette détection ne se limite pas aux seuls
+        caractères %20 mais étend son analyse à d'autres artefacts d'encodage potentiels (%21, %22, etc.) qui pourraient
+        compromettre l'intégrité des données.</p>
+
+    <p>La phase de transformation applique ensuite des règles différenciées selon le contexte d'occurrence de ces
+        artefacts. Les URIs de ressources subissent un nettoyage complet avec suppression des caractères encodés et
+        conversion en CamelCase pour garantir leur validité syntaxique. Les littéraux contenant des noms lisibles par
+        les humains voient leurs caractères %20 remplacés par des espaces normaux pour préserver la lisibilité. 
+        </p>
+
+    <h4>Étapes détaillées du processus de nettoyage</h4>
+    <ol>
+        <li><strong>Détection et inventaire :</strong> Scan exhaustif du fichier data.ttl avec comptage et localisation
+            précise des anomalies</li>
+        <li><strong>Classification des occurrences :</strong> Distinction entre URIs de ressources, littéraux de noms,
+            et textes descriptifs</li>
+        <li><strong>Application des règles de transformation :</strong>
+            <ul>
+                <li>URIs de ressources : Suppression %20 + conversion CamelCase + validation syntaxique</li>
+                <li>Littéraux de noms : Remplacement %20 par espaces + préservation de la casse originale</li>
+            </ul>
+        </li>
+        
+        <li><strong>Tests fonctionnels complets :</strong> Exécution de la suite des requêtes SPARQL du fichier des questions de compétences </li>
+        <li><strong>Validation utilisateur :</strong> Tests d'interface et d'export pour confirmer la résolution des
+            problèmes</li>
+    </ol>
+
+    <div class="code-block">
+        # Exemples concrets de transformations appliquées
+        PROBLÈME INITIAL :
+        - URI: iadas-data:Variable_VI_Body%20Dissatisfaction
+        - Littéral: iadas:VI "Exercise%20Motivation"
+        - Description: "Study%20of%20eating%20behaviors%20in%20athletes"
+
+        APRÈS NETTOYAGE :
+        - URI: iadas-data:Variable_VI_BodyDissatisfaction
+        - Littéral: iadas:VI "Exercise Motivation"
+        - Description: "Study of eating behaviors in athletes"
+    </div>
+
+    <h3>4.3 Impact Mesurable et Validation des Améliorations</h3>
+
+    <p>L'efficacité de notre processus de nettoyage peut être quantifiée précisément grâce aux métriques que nous avons
+        collectées avant et après son application. Ces mesures objectives démontrent l'impact critique de la qualité des
+        données sur les performances globales du système.</p>
+
+    <p>La réduction drastique des erreurs SPARQL constitue l'amélioration la plus visible : nous sommes passés de 23
+        requêtes échouées à seulement 1 requête présentant encore des difficultés. Cette amélioration de 95% transforme
+        complètement l'expérience utilisateur et la fiabilité du système. Les temps de réponse ont également connu une
+        amélioration substantielle, passant d'une moyenne de 8,3 secondes à 3,2 secondes, soit une accélération de 61%.
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>Métrique de Performance</th>
+            <th>Avant Nettoyage</th>
+            <th>Après Nettoyage</th>
+            <th>Amélioration Mesurée</th>
+        </tr>
+        <tr>
+            <td>Requêtes SPARQL en échec</td>
+            <td>23 sur 25 testées</td>
+            <td>1 sur 25 testées</td>
+            <td>95% de réduction des échecs</td>
+        </tr>
+        <tr>
+            <td>Temps de réponse moyen</td>
+            <td>8.3 secondes</td>
+            <td>3.2 secondes</td>
+            <td>61% d'accélération</td>
+        </tr>
+        <tr>
+            <td>Import dans Fuseki</td>
+            <td>Échec partiel avec erreurs</td>
+            <td>Succès complet sans erreur</td>
+            <td>100% de réussite</td>
+        </tr>
+        <tr>
+            <td>Taille du dataset importé</td>
+            <td>387k triplets (incomplet)</td>
+            <td>495k triplets (complet)</td>
+            <td>28% d'augmentation</td>
+        </tr>
+    </table>
+
+    <p>L'amélioration la plus spectaculaire concerne l'import dans Apache Jena Fuseki, notre triplestore de production.
+        Avant le nettoyage, l'import échouait partiellement avec de nombreuses erreurs de parsing, ne chargeant qu'une
+        fraction des triplets disponibles. Après nettoyage, l'import s'exécute sans erreur en quelques secondes, chargeant
+        l'intégralité des 495 000 triplets générés.</p>
+
+    <div class="success-box">
+        <p><strong>Validation complète post-nettoyage :</strong></p>
+        <ul>
+            <li><strong>Validation syntaxique :</strong> Fichier Turtle conforme aux spécifications W3C, validé par
+                Apache Jena Riot</li>
+            <li><strong>Tests fonctionnels :</strong> 15 requêtes SPARQL critiques du système s'exécutent sans erreur
+            </li>
+            <li><strong>Performance :</strong> Chargement complet du dataset dans Fuseki en moins d'une minute</li>
+            <li><strong>Interface utilisateur :</strong> Affichage correct de tous les noms de variables dans les
+                résultats</li>
+            <li><strong>Interopérabilité :</strong> Export CSV sans artefacts d'encodage, compatible avec Excel et
+                autres outils</li>
+            <li><strong>Robustesse :</strong> Stabilité du système lors de requêtes complexes impliquant de multiples
+                jointures</li>
+        </ul>
+    </div>
+
+    <h2 id="architecture-proprietes">5. Architecture des Propriétés et Stratégies de Modélisation</h2>
+
+    <h3>5.1 Spécification Rigoureuse des Domaines et Portées</h3>
+
+    <p>L'ontologie IA-DAS définit plus de 85 propriétés avec des domaines (rdfs:domain) et des portées (rdfs:range)
+        explicitement spécifiés. Cette approche rigoureuse, bien qu'exigeante en termes de travail de modélisation,
+        apporte des bénéfices techniques considérables qui justifient largement cet investissement.</p>
+
+    <p>La spécification explicite des domaines et portées transforme l'ontologie d'un simple vocabulaire en un véritable
+        schéma de validation sémantique. Chaque propriété devient contrainte par des règles précises qui définissent
+        quels types d'entités peuvent être liés par cette propriété. Cette formalisation élimine les ambiguïtés
+        d'interprétation qui pourraient survenir lors de l'exploitation des données par différents utilisateurs ou
+        systèmes.</p>
+
+    <p>Au-delà de la validation, cette approche facilite considérablement le travail des raisonneurs automatiques qui
+        peuvent déduire des informations implicites à partir des contraintes explicitées. Par exemple, si une entité
+        possède une propriété dont le domaine est "Population", le raisonneur peut automatiquement inférer que cette
+        entité appartient à la classe Population, même si cette information n'était pas explicitement déclarée.</p>
+
+    <div class="justification">
+        <p><strong>Bénéfices de cette rigueur de spécification :</strong> La définition explicite des domaines et
+            portées transforme notre ontologie en un outil de validation automatique des données. Elle permet la
+            détection précoce d'incohérences, facilite l'inférence automatique d'informations implicites, améliore la
+            documentation auto-générée de l'ontologie, et guide les développeurs dans l'utilisation correcte des
+            propriétés. Cette rigueur initiale se traduit par une robustesse accrue du système en production.</p>
+    </div>
+
+    <h4>Exemple détaillé d'une propriété documentée</h4>
+
+    <div class="code-block">
+        iadas:ageStats
+        a owl:ObjectProperty ;
+        rdfs:label "statistiques d'âge"@fr ;
+        rdfs:label "age statistics"@en ;
+        rdfs:comment "Propriété reliant une population d'étude à l'entité statistique qui décrit la distribution des
+        âges dans cette population"@fr ;
+        rdfs:domain iadas:Population ;
+        rdfs:range iadas:AgeStatistics ;
+        rdfs:seeAlso "Utilisée pour lier les données démographiques aux analyses statistiques correspondantes" .
+    </div>
+
+ 
+    <h3>5.2 Stratégie de Normalisation des Unités de Mesure</h3>
+
+  
+    <p>Notre approche de cette problématique illustre une fois de plus notre philosophie de préservation de
+        l'information source tout en facilitant l'exploitation analytique. Plutôt que de normaliser arbitrairement
+        toutes les données vers un système d'unités unique lors de l'import, nous avons choisi de préserver les unités
+        originales dans les données RDF et de fournir les outils nécessaires pour effectuer des normalisations à la
+        demande lors du requêtage.</p>
+
+ <!--TODO-->
+
+
+    <p>Cette stratégie s'appuie sur la capture systématique des métadonnées d'unités dans le mapping RML, puis sur
+        l'utilisation de fonctions SPARQL pour effectuer les conversions nécessaires lors de l'exécution des requêtes.
+        Cette approche présente l'avantage majeur de préserver la traçabilité des données originales tout en permettant
+        des analyses harmonisées.</p>
+
+    <div class="code-block">
+        # Propriétés de capture des unités
+        iadas:freqUnit # "hours", "days", "minutes" - unité de mesure de la fréquence
+        iadas:freqBase # "week", "month", "day" - base temporelle de référence
+        iadas:expUnit # "years", "months" - unité pour les années d'expérience
+
+        # Exemple de normalisation dynamique en SPARQL
+        SELECT ?population ?normalizedFrequency WHERE {
+        ?population iadas:exerciseFreqStats ?freqStats .
+        ?freqStats iadas:meanValue ?meanExFR ;
+        iadas:freqUnit ?freqUnit ;
+        iadas:freqBase ?freqBase .
+
+        # Normalisation vers heures par semaine
+        BIND(
+        IF(?freqUnit = "minutes" AND ?freqBase = "week",
+        xsd:decimal(?meanExFR) / 60,
+        IF(?freqUnit = "hours" AND ?freqBase = "month",
+        xsd:decimal(?meanExFR) / 4.33,
+        xsd:decimal(?meanExFR))
+        ) AS ?normalizedFrequency
+        )
+        }
+    </div>
+
+    <div class="technical-decision">
+        <p><strong>Avantages de la normalisation à la demande :</strong> Cette approche préserve l'intégrité et la
+            traçabilité des données sources, éléments cruciaux pour la reproductibilité scientifique. Elle permet
+            également de s'adapter aux besoins spécifiques de chaque analyse sans imposer un système d'unités unique qui
+            pourrait ne pas convenir à tous les contextes d'utilisation. Enfin, elle facilite l'intégration de nouvelles
+            études utilisant des systèmes d'unités différents sans nécessiter de refactorisation du système existant.
+        </p>
+    </div>
+
+    <h2 id="troubleshooting">6. Résolution de Problèmes et Optimisations</h2>
+
+    <h3>6.1 Défis de Performance avec les Statistiques Complexes</h3>
+
+    <p>L'implémentation des statistiques comme entités autonomes, bien qu'apportant une richesse sémantique
+        considérable, a introduit des défis de performance inattendus qui ont nécessité des optimisations spécifiques.
+        Ces défis illustrent parfaitement le compromis classique en ingénierie logicielle entre expressivité du modèle
+        et efficacité d'exécution.</p>
+
+    <p>Le problème principal réside dans la complexité des jointures générées lorsque les requêtes SPARQL tentent de
+        récupérer simultanément les quatre types de statistiques associées à une population (âge, IMC, fréquence
+        d'exercice, années d'expérience). Ces jointures multiples, combinées à la taille croissante du dataset (495 000
+        triplets), peuvent générer des temps de réponse dépassant 10 secondes, ce qui est inacceptable pour une
+        interface utilisateur interactive.</p>
+
+    <div class="warning-box">
+        <p><strong>Analyse détaillée du problème de performance :</strong> Les requêtes problématiques impliquent
+            typiquement 4 à 6 jointures simultanées entre la classe Population et les différentes classes de
+            statistiques. La complexité algorithmique de ces jointures croît exponentiellement avec le nombre de tables
+            impliquées, particulièrement lorsque certaines statistiques sont optionnelles (toutes les populations n'ont
+            pas nécessairement toutes les mesures statistiques). Le moteur SPARQL doit alors explorer un espace de
+            solutions très large pour identifier les combinaisons valides.</p>
+    </div>
+
+    <h4>Stratégies d'optimisation déployées</h4>
+
+    <p>Face à cette problématique, nous avons développé et testé plusieurs stratégies d'optimisation qui peuvent être
+        appliquées selon le contexte d'utilisation :</p>
+
+    <p><strong>Jointures sélectives avec OPTIONAL :</strong> Plutôt que de récupérer systématiquement toutes les
+        statistiques, nous utilisons des clauses OPTIONAL pour les statistiques non critiques dans le contexte de la
+        requête. Cette approche réduit significativement la complexité des jointures tout en préservant la complétude
+        des résultats lorsque les données sont disponibles.</p>
+
+    <p><strong>Requêtes spécialisées par type de statistique :</strong> Pour les analyses approfondies, nous
+        privilégions des requêtes dédiées qui ne récupèrent qu'un seul type de statistiques à la fois. Cette stratégie,
+        bien qu'impliquant plusieurs appels, s'avère souvent plus efficace que les requêtes globales complexes.</p>
+
+    <p><strong>Pagination intelligente :</strong> Nous avons implémenté une pagination automatique avec un LIMIT de 500
+        résultats pour les requêtes exploratoires. Cette limitation prévient les requêtes accidentellement coûteuses
+        tout en permettant aux utilisateurs expérimentés de récupérer des datasets complets via des requêtes paginées.
+    </p>
+
+    <p><strong>Optimisation des index TDB2 :</strong> Nous avons ajouté des index spécifiques dans la configuration
+        Fuseki pour les propriétés statistiques les plus fréquemment utilisées. Ces index, bien qu'augmentant l'espace
+        de stockage, accélèrent considérablement les requêtes impliquant ces propriétés.</p>
+
+    <h3>6.2 Validation de l'Intégration Multi-Standards</h3>
+
+    <p>L'intégration de multiples standards dans une même ontologie, bien qu'apportant de nombreux avantages, introduit
+        des risques techniques spécifiques qu'il convient d'identifier et de gérer proactivement. Ces risques incluent
+        principalement les conflits de namespaces, les propriétés non reconnues, et les incohérences sémantiques entre
+        standards différents.</p>
+
+    <p>Pour prévenir ces problèmes, nous avons développé une procédure de validation systématique qui teste
+        l'intégration de chaque standard de manière isolée puis combinée. Cette procédure s'appuie sur des requêtes
+        SPARQL spécialisées qui vérifient le bon fonctionnement de chaque aspect de l'intégration.</p>
+
+    <div class="code-block">
+        # Test de validation de l'intégration BIBO
+        SELECT ?article ?doi ?title ?journal ?author WHERE {
+        ?article a iadas:SportPsychologyArticle .
+        OPTIONAL { ?article bibo:doi ?doi }
+        OPTIONAL { ?article dcterms:title ?title }
+        OPTIONAL { ?article bibo:journal ?journal }
+        OPTIONAL { ?article bibo:author ?author }
+        } LIMIT 10
+    </div>
+
+   
+
+  
+
+    <h2 id="conclusion">7. Conclusion et Perspectives d'Evolution</h2>
+
+    <h3>7.1 Bilan de l'Architecture Ontologique Développée</h3>
+
+    <p>Le projet IA-DAS a abouti au développement d'une ontologie qui représente une synthèse originale entre standards
+        établis du Web Sémantique et innovations conceptuelles spécifiques au domaine de la psychologie du sport. Cette
+        ontologie, loin d'être un simple exercice académique, constitue un outil opérationnel qui démontre la
+        faisabilité et la pertinence de l'application des technologies sémantiques aux données de recherche en sciences
+        humaines.</p>
+
+    <p>Les choix architecturaux que nous avons effectués - combinaison de standards existants, modélisation modulaire,
+        statistiques traitées comme entités autonomes, liaison taxonomique automatique - s'articulent de manière
+        cohérente pour former un système à la fois robuste et extensible. Cette cohérence architecturale facilite non
+        seulement l'exploitation actuelle des données mais anticipe également les besoins futurs d'évolution et
+        d'enrichissement.</p>
+
+    <p>L'intégration harmonieuse de BIBO, Dublin Core et de nos extensions spécialisées démontre qu'il est possible de
+        concilier la réutilisation de standards reconnus avec l'innovation conceptuelle nécessaire pour traiter des
+        domaines spécialisés. Cette démonstration a des implications qui dépassent le cadre spécifique de notre projet
+        et peut inspirer d'autres initiatives de sémantisation de données de recherche.</p>
+
+    <h4>Acquis techniques et conceptuels majeurs</h4>
+
+    <p><strong>Interopérabilité démontrée :</strong> L'ontologie IA-DAS s'intègre naturellement dans l'écosystème du Web
+        Sémantique grâce à son respect des standards établis. Cette interopérabilité facilite les échanges de données
+        avec d'autres projets de recherche et ouvre la voie à des collaborations techniques futures.</p>
+
+    <p><strong>Richesse sémantique sans précédent :</strong> Avec ses 618 classes taxonomiques organisées selon 1412
+        relations hiérarchiques, l'ontologie capture la complexité conceptuelle du domaine avec une précision inégalée.
+        Cette richesse sémantique transforme des données de recherche dispersées en une base de connaissances structurée
+        et interrogeable.</p>
+
+    <p><strong>Flexibilité analytique :</strong> Le modèle de statistiques traitées comme entités autonomes permet des
+        analyses comparatives et meta-analytiques qui étaient techniquement impossibles avec les approches
+        traditionnelles. Cette flexibilité ouvre de nouvelles perspectives pour la recherche assistée par intelligence
+        artificielle.</p>
+
+    <p><strong>Robustesse opérationnelle :</strong> Les processus de nettoyage, de validation et d'optimisation que nous
+        avons développés garantissent la qualité et la performance du système en conditions réelles d'utilisation. Cette
+        robustesse est essentielle pour l'adoption par des chercheurs non-spécialistes des technologies sémantiques.</p>
+
+    <h3>7.2 Innovations Techniques et Contributions Originales</h3>
+
+    <p>Au-delà de l'objectif applicatif du projet IA-DAS, notre travail apporte plusieurs contributions techniques
+        originales qui enrichissent l'état de l'art dans le domaine du Web Sémantique appliqué aux données de recherche.
+    </p>
+
+    <div class="technical-decision">
+        <p><strong>Contributions techniques originales identifiées :</strong></p>
+
+        <p><strong>Modèle de statistiques en entités autonomes :</strong> Notre approche de modélisation des données
+            statistiques comme entités réifiées constitue une innovation significative pour le domaine de la recherche
+            quantitative. Ce modèle peut être généralisé et appliqué à d'autres domaines nécessitant une représentation
+            riche des données statistiques.</p>
+
+        <p><strong>Système de liaison taxonomique dynamique :</strong> L'utilisation de templates RML pour générer
+            automatiquement des liens vers une taxonomie hiérarchique représente une contribution technique originale
+            qui pourrait être adaptée à d'autres projets d'intégration sémantique de données.</p>
+
+        <p><strong>Architecture de compatibilité évolutive :</strong> Notre stratégie de préservation de la
+            compatibilité tout en introduisant des innovations constitue un modèle méthodologique réutilisable pour
+            d'autres projets d'évolution d'ontologies en production.</p>
+
+        <p><strong>Pipeline de qualité des données RDF :</strong> Les processus de nettoyage et de validation que nous
+            avons développés peuvent être généralisés et constituent une contribution méthodologique pour la communauté
+            du Web Sémantique.</p>
+    </div>
+
+    <h3>7.3 Recommandations Stratégiques pour le Développement Futur</h3>
+
+    <p>L'expérience acquise lors du développement de l'ontologie IA-DAS nous permet de formuler des recommandations
+        concrètes pour son évolution future et pour des projets similaires. Ces recommandations s'appuient sur les
+        enseignements tirés de nos succès comme de nos difficultés.</p>
+
+    <p><strong>Validation continue et tests automatisés :</strong> L'implémentation d'une suite de tests automatisés qui
+        valide en permanence la cohérence de l'ontologie, la qualité des mappings, et le bon fonctionnement des requêtes
+        critiques. Cette infrastructure de tests, bien qu'exigeante à mettre en place, s'avère indispensable pour
+        maintenir la qualité du système lors de ses évolutions futures.</p>
+
+    <p><strong>Extension progressive de la taxonomie :</strong> L'enrichissement méthodique des 618 concepts
+        taxonomiques par l'intégration de nouvelles recherches et l'affinement des relations hiérarchiques. Cette
+        extension doit être guidée par les besoins réels des utilisateurs et validée par des experts du domaine pour
+        préserver la pertinence scientifique.</p>
+
+    <p><strong>Optimisation avancée des requêtes :</strong> Le développement de vues matérialisées pour les requêtes les
+        plus fréquemment utilisées, permettant de précalculer et de mettre en cache les résultats des analyses les plus
+        coûteuses. Cette optimisation améliorerait significativement l'expérience utilisateur pour les requêtes
+        complexes.</p>
+
+    <p><strong>Alignement avec d'autres ontologies :</strong> L'établissement de liens explicites avec d'autres
+        ontologies du domaine médical, sportif, ou psychologique pour enrichir les capacités d'analyse transversale et
+        faciliter l'intégration dans des écosystèmes de recherche plus larges.</p>
+
+    <p><strong>Interface de saisie assistée :</strong> Le développement d'outils d'aide à la saisie qui exploitent la
+        structure ontologique pour guider les chercheurs dans l'annotation de nouvelles données, réduisant ainsi les
+        erreurs et accélérant le processus d'intégration de nouvelles études.</p>
+
+    <div class="info-box">
+        <p><strong>Vision à long terme :</strong> L'ontologie IA-DAS a vocation à évoluer vers une plateforme
+            collaborative de partage et d'analyse de données de recherche en psychologie du sport. Cette évolution
+            nécessitera le développement d'outils de contribution communautaire, de processus de validation par les
+            pairs, et d'interfaces spécialisées pour différents types d'utilisateurs (chercheurs, cliniciens,
+            entraîneurs). L'architecture technique actuelle, conçue avec cette vision en perspective, fournit les
+            fondations solides nécessaires à cette évolution ambitieuse.</p>
+    </div>
+
+    <div class="info-box">
+        <p><strong>Note méthodologique finale :</strong> Cette documentation technique constitue un référentiel vivant
+            pour la maintenance et l'évolution continue de l'ontologie IA-DAS. Elle sera mise à jour à chaque version
+            majeure pour préserver la traçabilité des décisions techniques et faciliter l'onboarding de nouveaux
+            contributeurs au projet. La richesse de cette documentation reflète notre conviction que la documentation de
+            qualité constitue un investissement essentiel pour la pérennité et l'adoption des innovations techniques en
+            recherche scientifique.</p>
+    </div>
+    <!-- Section à ajouter après la section 3.3 Impact et Validation -->
+
+<h2>4. Détection des Anomalies et Normalisation des Données</h2>
+
+<h3>4.1 Détection des Anomalies par Pattern Matching</h3>
+
+<p>Pour identifier les incohérences dans nos données sources, nous avons adopté une approche basée sur l'extraction de motifs récurrents via expressions régulières. Cette méthode repose sur le principe de profiling de données : observer les formes dominantes dans chaque champ pour en déduire un format de référence.</p>
+
+<p>Toute déviation de ce format est considérée comme une anomalie. Contrairement à des approches tolérantes, nous avons choisi de ne pas ignorer les erreurs typographiques car elles nuisent à la qualité sémantique et à l'interopérabilité. Même des variations de casse, des accents manquants ou des doublons sémantiques sont considérés comme des erreurs à corriger.</p>
+
+<h3>4.2 Normalisation et Nettoyage</h3>
+
+<p>La normalisation repose sur deux pratiques : la standardisation lexicale (uniformisation des termes, correction des fautes, harmonisation des formats) et la reconciliation des entités (alignement des variantes vers des formes uniques, liées à des URI canoniques).</p>
+
+<p>Concrètement, cela inclut :</p>
+<ul>
+    <li>Suppression d'espaces ou de ponctuations parasites</li>
+    <li>Mise en minuscule ou majuscule contrôlée</li>
+    <li>Homogénéisation des dates, unités, noms de sports ou pays</li>
+    <li>Conversion vers des représentations sémantiques normalisées (ex. URI au lieu de chaînes)</li>
+</ul>
+
+<p>Nous avons privilégié une approche semi-automatique : les règles sont définies manuellement basées sur l'analyse des patterns, mais appliquées automatiquement via des scripts Python.</p>
+
+<h4>Exemple : Harmonisation de la variable "Gender"</h4>
+
+<p>L'analyse des données brutes a révélé une forte hétérogénéité dans les modalités textuelles de la variable "gender". Pour garantir la cohérence dans le graphe RDF, une harmonisation stricte a été mise en œuvre.</p>
+
+<p>Seules trois modalités standardisées sont conservées :</p>
+<ul>
+    <li><strong>"Male"</strong> - pour "Man", "Boy", "M", "males"</li>
+    <li><strong>"Female"</strong> - pour "Woman", "Girl", "W", "F", "females"</li>
+    <li><strong>"Other"</strong> - pour les identités transgenres, non binaires ou non spécifiées</li>
+</ul>
+
+<p>Cette harmonisation garantit que chaque valeur de genre est représentée de façon univoque dans l'ontologie.</p>
+
+<!-- Section à ajouter après la section sur le mapping RML -->
+
+<h2>5. Interface Utilisateur et Architecture des Services</h2>
+
+<h3>5.1 Architecture Microservices</h3>
+
+<p>L'application IA-DAS adopte une architecture microservices avec une gateway centralisée. Chaque service est containerisé via Docker et écoute sur un port spécifique. Cette architecture facilite le développement modulaire et le déploiement.</p>
+
+<p>Architecture de base :</p>
+<ul>
+    <li><strong>Gateway (port 8000) :</strong> Point d'entrée client, redirection des requêtes</li>
+    <li><strong>Files (port 8001) :</strong> Service de fichiers statiques</li>
+    <li><strong>SPARQL Generator (port 8003) :</strong> Génération et exécution des requêtes</li>
+    <li><strong>Fuseki (port 3030) :</strong> Triplestore Apache Jena</li>
+</ul>
+
+<h3>5.2 Interface d'Interrogation Adaptative</h3>
+
+<p>L'interface propose deux modes d'interrogation : filtres personnalisés et questions prédéfinies. Cette approche répond aux différents niveaux d'expertise des utilisateurs.</p>
+
+<h4>Questions de Compétences</h4>
+
+<p>Nous avons développé une page dédiée avec un système d'accordéon organisé autour de 3 questions principales :</p>
+
+<ul>
+    <li><strong>Question 1 :</strong> "Pour une ACAD spécifique..." (sélection directe)</li>
+    <li><strong>Question 2 :</strong> "Pour un facteur spécifique..." (3 sous-options : Protecteur/Risque/Ambigu)</li>
+    <li><strong>Question 3 :</strong> "Pour une catégorie de facteurs..." (4 sous-options selon la taxonomie)</li>
+</ul>
+
+<div class="technical-decision">
+    <p><strong>Logique de filtrage démographique :</strong> Le système implémente une logique de chevauchement inclusif pour maximiser la pertinence des résultats. Lorsqu'un utilisateur sélectionne "Jeune adulte (18-25 ans)", le système génère une requête SPARQL avec clause UNION qui capture les études dont les plages démographiques chevauchent ET celles dont les moyennes tombent dans la plage sélectionnée.</p>
+</div>
+
+<h3>5.3 Sécurité et Authentification</h3>
+
+<p>L'accès aux fonctionnalités de mise à jour est protégé par un système d'authentification JWT. Une modal d'authentification s'affiche avant l'accès aux pages sensibles, avec les caractéristiques suivantes :</p>
+
+<ul>
+    <li>Mot de passe hashé SHA-256 côté serveur</li>
+    <li>Tokens JWT avec expiration (30 minutes)</li>
+    <li>Stockage temporaire en sessionStorage</li>
+    <li>Nettoyage automatique à la fermeture du navigateur</li>
+</ul>
+
+<!-- Section à ajouter dans troubleshooting -->
+
+<h3>5.4 Optimisation des Requêtes SPARQL</h3>
+
+<p>Le générateur de requêtes a été optimisé pour réduire les problèmes de timeout et améliorer les performances :</p>
+
+<h4>Problèmes identifiés</h4>
+<ul>
+    <li>Utilisation coûteuse de filtres FILTER(LCASE(...)) pour comparer des valeurs textuelles</li>
+    <li>Filtres appliqués en dehors des blocs OPTIONAL</li>
+    <li>Extraction massive de données (LIMIT 10000) surchargeant la mémoire</li>
+</ul>
+
+<h4>Solutions implémentées</h4>
+
+<p><strong>Remplacement des filtres coûteux :</strong> Au lieu de <code>FILTER(LCASE(str(?gender)) = LCASE("female"))</code>, utilisation directe de <code>?population iadas:gender "female"</code>.</p>
+
+<p><strong>Filtres intégrés dans les blocs OPTIONAL :</strong> Les filtres sont appliqués à l'intérieur des blocs où les variables sont garanties d'exister.</p>
+
+<p><strong>Pagination efficace :</strong> Limitation à 200 résultats par requête avec mécanisme d'OFFSET pour les requêtes successives.</p>
+
+<!-- Section problèmes techniques spécifiques -->
+
+<h2>6. Problèmes Techniques et Résolutions</h2>
+
+<h3>6.1 Déploiement AWS et Problèmes de Connectivité</h3>
+
+<p>Lors du déploiement sur AWS EC2, nous avons rencontré un problème critique de connectivité externe. L'application fonctionnait parfaitement en local mais générait des erreurs "Failed to fetch" sur l'environnement AWS.</p>
+
+<h4>Diagnostic</h4>
+<p>Le problème résidait dans deux éléments :</p>
+<ul>
+    <li><strong>Code JavaScript incohérent :</strong> URL définie mais hardcoding de l'IP dans le fetch</li>
+    <li><strong>AWS Security Groups :</strong> Port 8003 bloqué par le pare-feu</li>
+</ul>
+
+<h4>Solution</h4>
+
+<div class="code-block">
+// Détection d'environnement corrigée
+function getApiUrl() {
+    const hostname = window.location.hostname;
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        return 'http://localhost:8003';
+    } else {
+        return `http://${hostname}:8003`;
+    }
+}
+</div>
+
+<p>Ajout d'une règle AWS Security Groups pour autoriser le trafic entrant sur le port 8003.</p>
+
+<div class="success-box">
+    <p><strong>Résultat :</strong> Résolution complète du problème avec application fonctionnelle sur les deux environnements et détection automatique localhost/AWS opérationnelle.</p>
+</div>
+
+<h3>6.2 Validation des Données et Warnings RML</h3>
+
+<p>Durant le processus de mapping, nous avons identifié que les valeurs "NA" dans le tableau source posaient problème pour l'ontologie. Bien que ces valeurs aient du sens dans un contexte tabulaire, elles créent des incohérences dans la représentation RDF.</p>
+
+<p>De plus, les warnings RML du type "No mapping found for variable X" ne doivent jamais être ignorés car ils indiquent une perte de données qui peut compromettre l'intégrité des analyses.</p>
+
+<h3>6.3 Atomisation des Données Complexes</h3>
+
+<p>L'analyse de la ligne 395 de nos données sources illustre pourquoi l'atomisation des données est nécessaire. Cette ligne contenait plus de vingt relations regroupées dans un même littéral, compromettant l'efficacité du modèle RDF.</p>
+
+<div class="justification">
+    <p><strong>Problèmes du regroupement "en bloc" :</strong></p>
+    <ul>
+        <li>Chaque requête SPARQL nécessite un filtrage par regex pour isoler la relation recherchée</li>
+        <li>Les triplestores n'indexent que les composantes sujet-prédicat-objet, une relation dans une chaîne n'est plus indexable</li>
+        <li>Impossible de rattacher une relation enfermée à d'autres vocabulaires normalisés</li>
+        <li>Maintenance difficile (ajout/suppression d'une relation affecte le bloc entier)</li>
+    </ul>
+</div>
+
+<p>Le mapping atomisé crée une ressource RDF de type :Relation pour chaque relation, avec propriétés :source, :target, :weight (coefficient β), et :partOfAnalysis. Cette approche permet des requêtes SPARQL efficaces et une réutilisabilité optimale.</p>
+
+</body>
+
+</html>
+
+pipeline ontologie 

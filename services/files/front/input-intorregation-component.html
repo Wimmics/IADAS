@@ -1,0 +1,184 @@
+<div class="input-container">
+    <div class="header-controls">
+    </div>
+    <div id="formMode">
+        <div class="acad-section">
+            <h3>Attitudes et Comportements Alimentaires Dysfonctionnels (ACAD)</h3>
+
+            <div class="variable-row">
+                <label for="categoryVD">Catégorie ACAD :</label>
+                <select id="categoryVD">
+                    <option value="">Toutes les catégories</option>
+                </select>
+            </div>
+
+            <div class="variable-row">
+                <label for="variableVD">ACAD :</label>
+                <div class="autocomplete-container">
+                    <input type="text" id="variableVD" placeholder="Tapez pour rechercher un ACAD..." disabled>
+                    <div class="autocomplete-dropdown" id="variableVD-dropdown"></div>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="factors-section">
+            <h3>Variables reliées aux ACAD<br></h3>
+
+            <div class="variable-row">
+                <label for="categoryVI">Catégorie Variable :</label>
+                <select id="categoryVI">
+                    <option value="">Toutes les catégories</option>
+                </select>
+            </div>
+
+            <div class="variable-row">
+                <label for="variableVI">Facteur :</label>
+                <div class="autocomplete-container">
+                    <input type="text" id="variableVI" placeholder="Tapez pour rechercher un facteur..." disabled>
+                    <div class="autocomplete-dropdown" id="variableVI-dropdown"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relations-section">
+            <h3>Type de relations d'après la littérature scientifique</h3>
+
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="all-relations" name="relationDirection" value="">
+                    <label for="all-relations">Tout type de relation</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="positive" name="relationDirection" value="+">
+                    <label for="positive">À risque</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="negative" name="relationDirection" value="-">
+                    <label for="negative">Protecteur</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="non-significant" name="relationDirection" value="NS">
+                    <label for="non-significant">Ambigu</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="demographics-section">
+            <h3>Caractéristiques des populations étudiées</h3>
+            
+            <div class="overlap-toggle-container">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="includeOverlap" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label">Inclure les chevauchements de plages</span>
+            </div>
+
+            <div class="demographics-grid">
+                <!-- COLONNE 1: Sexe + Sport -->
+                <select id="gender">
+                    <option value="">Sexe</option>
+                    <option value="Female">Femme</option>
+                    <option value="Male">Homme</option>
+                    <option value="Mixed">Mixte</option>
+                </select>
+
+                <!-- COLONNE 2: Âge -->
+                <div class="age-container">
+                    <select id="ageCategory">
+                        <option value="">Catégorie d'âge</option>
+                        <option value="adolescent">Adolescent (15-19)</option>
+                        <option value="jeune-adulte">Jeune adulte (18-26)</option>
+                        <option value="adulte">Adulte (26-35)</option>
+                        <option value="adulte-mature">Adulte mature (35-50)</option>
+                        <option value="senior">Senior (50-80)</option>
+                        <option value="custom">Personnalisé...</option>
+                    </select>
+                    
+                    <div id="ageCustom" class="custom-fields hidden">
+                        <input type="number" id="minAge" placeholder="Âge min" min="0" max="120">
+                        <input type="number" id="maxAge" placeholder="Âge max" min="0" max="120">
+                        <input type="number" id="meanAge" placeholder="Âge moyen" min="0" max="120" title="Recherche ± 1 an autour de l'âge moyen">
+                    </div>
+                </div>
+
+                <!-- COLONNE 1: Catégorie Sport -->
+                <div class="variable-row">
+                    <select id="sportCategory">
+                        <option value="">Catégorie Sport</option>
+                    </select>
+                </div>
+
+                <!-- COLONNE 2: Fréquence -->
+                <div class="frequency-container">
+                    <select id="exerciseFrequency">
+                        <option value="">Fréquence d'exercice</option>
+                        <option value="faible">Faible (< 5h/semaine)</option>
+                        <option value="moderee">Modérée (5-10h/semaine)</option>
+                        <option value="elevee">Élevée (10-15h/semaine)</option>
+                        <option value="intensive">Intensive (15+ h/semaine)</option>
+                        <option value="custom">Personnalisé...</option>
+                    </select>
+                    
+                    <div id="frequencyCustom" class="custom-fields hidden">
+                        <input type="number" id="minExFR" placeholder="Min h/sem" min="0">
+                        <input type="number" id="maxExFR" placeholder="Max h/sem" min="0">
+                        <input type="number" id="meanExFR" placeholder="Freq moyenne" min="0" title="Recherche ± 1 h/semaine autour de la fréquence moyenne">
+                    </div>
+                </div>
+
+                <!-- COLONNE 1: Sport -->
+                <div class="autocomplete-container">
+                    <input type="text" id="sportType" placeholder="Chargement des sports..." disabled>
+                    <div class="autocomplete-dropdown" id="sportType-dropdown"></div>
+                </div>
+
+                <!-- COLONNE 2: Expérience -->
+                <div class="experience-container">
+                    <select id="experienceCategory">
+                        <option value="">Années d'expérience</option>
+                        <option value="debutant">Débutant (< 2 ans)</option>
+                        <option value="intermediaire">Intermédiaire (2-7 ans)</option>
+                        <option value="experimente">Expérimenté (7-15 ans)</option>
+                        <option value="expert">Expert (15+ ans)</option>
+                        <option value="custom">Personnalisé...</option>
+                    </select>
+                    
+                    <div id="experienceCustom" class="custom-fields hidden">
+                        <input type="number" id="minYOE" placeholder="Exp min (ans)" min="0">
+                        <input type="number" id="maxYOE" placeholder="Exp max (ans)" min="0">
+                        <input type="number" id="meanYOE" placeholder="Exp moyenne" min="0" title="Recherche ± 1 an autour des années d'expérience moyennes">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-section">
+            <button id="searchBtn" disabled>Rechercher</button>
+        </div>
+    </div>
+
+    <div id="sparqlMode" style="display: none;">
+        <div class="sparql-editor">
+            <h3>Éditeur SPARQL</h3>
+
+            <div class="sparql-controls">
+                <button id="loadExample" class="sparql-btn">Exemple</button>
+                <button id="clearQuery" class="sparql-btn">Effacer</button>
+            </div>
+
+            <textarea id="sparqlQuery" placeholder="PREFIX : <http://example.org/onto#>
+PREFIX ex: <http://example.org/data#>
+
+SELECT * WHERE {
+  ?s ?p ?o
+} 
+LIMIT 10" rows="8"></textarea>
+
+            <div class="query-validation" id="queryValidation"></div>
+
+            <button id="executeSparql" class="execute-btn">▶ Exécuter la requête</button>
+        </div>
+    </div>
+</div>

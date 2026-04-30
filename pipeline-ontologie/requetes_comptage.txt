@@ -1,0 +1,496 @@
+REQUETES DE COMPTAGE POUR VERIFICATION ONTOLOGIE IA-DAS
+========================================================
+
+# ANALYSES TOTALES
+-----------------
+Requete pour compter le nombre total d'analyses :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(*) AS ?totalAnalyses)
+WHERE {
+    ?analysis a iadas:Analysis .
+}
+
+
+# ANALYSES PAR GENRE
+-------------------
+Requete pour compter les analyses avec des femmes :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesFemmes)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasPopulation ?population .
+    ?population iadas:gender "Female" .
+}
+
+Requete pour compter les analyses avec des hommes :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesHommes)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasPopulation ?population .
+    ?population iadas:gender "Male" .
+}
+
+Requete pour compter les analyses avec population mixte :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesMixtes)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasPopulation ?population .
+    ?population iadas:gender "Mixed" .
+}
+
+Requete pour la repartition complete par genre :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT ?genre (COUNT(DISTINCT ?analysis) AS ?count)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasPopulation ?population .
+    ?population iadas:gender ?genre .
+}
+GROUP BY ?genre
+ORDER BY DESC(?count)
+
+
+# ANALYSES PAR PAYS
+------------------
+Requete pour compter les analyses par pays (top 10) :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+SELECT ?pays (COUNT(DISTINCT ?analysis) AS ?count)
+WHERE {
+    ?analysis a iadas:Analysis .
+    ?article iadas:hasAnalysis ?analysis ;
+            iadas:country ?pays .
+}
+GROUP BY ?pays
+ORDER BY DESC(?count)
+LIMIT 10
+
+Requete pour compter les analyses des USA :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesUSA)
+WHERE {
+    ?analysis a iadas:Analysis .
+    ?article iadas:hasAnalysis ?analysis ;
+            iadas:country "USA" .
+}
+
+Requete pour compter les analyses de France :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesFrance)
+WHERE {
+    ?analysis a iadas:Analysis .
+    ?article iadas:hasAnalysis ?analysis ;
+            iadas:country "France" .
+}
+
+
+# ANALYSES PAR SPORT
+-------------------
+Requete pour compter les analyses par sport (top 15) :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT ?sport (COUNT(DISTINCT ?analysis) AS ?count)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasSport ?sportEntity .
+    ?sportEntity iadas:sportName ?sport .
+}
+GROUP BY ?sport
+ORDER BY DESC(?count)
+LIMIT 15
+
+Requete pour compter les analyses sur la danse :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesDanse)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasSport ?sportEntity .
+    ?sportEntity iadas:sportName ?sport .
+    FILTER(CONTAINS(LCASE(?sport), "dance"))
+}
+
+Requete pour compter les analyses sur le football :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesFootball)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasSport ?sportEntity .
+    ?sportEntity iadas:sportName ?sport .
+    FILTER(CONTAINS(LCASE(?sport), "football"))
+}
+
+
+# VARIABLES DEPENDANTES
+----------------------
+Requete pour compter les types de variables dependantes :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT ?typeVD (COUNT(*) AS ?count)
+WHERE {
+    ?vd a iadas:VariableDependante ;
+        a ?typeVD .
+    FILTER(?typeVD != iadas:VariableDependante)
+}
+GROUP BY ?typeVD
+ORDER BY DESC(?count)
+LIMIT 20
+
+Requete pour compter les analyses avec "Eating disorders" comme VD :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesEatingDisorders)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasRelation ?relation .
+    ?relation iadas:hasDependentVariable ?vd .
+    ?vd a iadas:Eating_disorders .
+}
+
+Requete pour compter les analyses avec "Depression" comme VD :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesDepression)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasRelation ?relation .
+    ?relation iadas:hasDependentVariable ?vd .
+    ?vd a iadas:Depression .
+}
+
+Requete pour compter les analyses avec "Bulimia" comme VD :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesBulimia)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasRelation ?relation .
+    ?relation iadas:hasDependentVariable ?vd .
+    ?vd a iadas:Bulimia .
+}
+
+
+# VARIABLES INDEPENDANTES
+------------------------
+Requete pour compter les types de variables independantes :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT ?typeVI (COUNT(*) AS ?count)
+WHERE {
+    ?vi a iadas:VariableIndependante ;
+        a ?typeVI .
+    FILTER(?typeVI != iadas:VariableIndependante)
+}
+GROUP BY ?typeVI
+ORDER BY DESC(?count)
+LIMIT 20
+
+Requete pour compter les analyses avec "Self esteem" comme VI :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesSelfEsteem)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasRelation ?relation .
+    ?relation iadas:hasIndependentVariable ?vi .
+    ?vi a iadas:Self_esteem .
+}
+
+Requete pour compter les analyses avec "Depression" comme VI :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesDepressionVI)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasRelation ?relation .
+    ?relation iadas:hasIndependentVariable ?vi .
+    ?vi a iadas:Depression .
+}
+
+Requete pour compter les analyses avec "Anxiety" comme VI :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesAnxietyVI)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasRelation ?relation .
+    ?relation iadas:hasIndependentVariable ?vi .
+    ?vi a iadas:Anxiety .
+}
+
+
+# TYPES D'ACAD
+-------------
+Requete pour compter les analyses par type d'ACAD :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT ?acad (COUNT(DISTINCT ?analysis) AS ?count)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:acads ?acad .
+}
+GROUP BY ?acad
+ORDER BY DESC(?count)
+
+Requete pour compter les analyses sur EDNOS :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesEDNOS)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:acads "EDNOS" .
+}
+
+Requete pour compter les analyses sur Orthorexia :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesOrthorexia)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:acads "Orthorexia" .
+}
+
+
+# TYPES D'ETUDES
+---------------
+Requete pour compter les analyses par type d'etude :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT ?typeEtude (COUNT(DISTINCT ?analysis) AS ?count)
+WHERE {
+    ?analysis a iadas:Analysis .
+    ?article iadas:hasAnalysis ?analysis ;
+            iadas:studyType ?typeEtude .
+}
+GROUP BY ?typeEtude
+ORDER BY DESC(?count)
+
+Requete pour compter les etudes transversales :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?etudesTransversales)
+WHERE {
+    ?analysis a iadas:Analysis .
+    ?article iadas:hasAnalysis ?analysis ;
+            iadas:studyType "Cross-sectional studies" .
+}
+
+Requete pour compter les etudes longitudinales :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?etudesLongitudinales)
+WHERE {
+    ?analysis a iadas:Analysis .
+    ?article iadas:hasAnalysis ?analysis ;
+            iadas:studyType "Longitudinal" .
+}
+
+
+# RELATIONS STATISTIQUES
+-----------------------
+Requete pour compter les relations par type de resultat :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT ?resultat (COUNT(*) AS ?count)
+WHERE {
+    ?relation a iadas:Relations ;
+             iadas:resultatRelation ?resultat .
+}
+GROUP BY ?resultat
+ORDER BY DESC(?count)
+
+Requete pour compter les relations positives (protectrices) :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(*) AS ?relationsPositives)
+WHERE {
+    ?relation a iadas:Relations ;
+             iadas:resultatRelation "+" .
+}
+
+Requete pour compter les relations negatives (risque) :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(*) AS ?relationsNegatives)
+WHERE {
+    ?relation a iadas:Relations ;
+             iadas:resultatRelation "-" .
+}
+
+Requete pour compter les relations non significatives :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(*) AS ?relationsNS)
+WHERE {
+    ?relation a iadas:Relations ;
+             iadas:resultatRelation ?resultat .
+    FILTER(?resultat = "NS" || ?resultat = "N.S.")
+}
+
+
+# STATISTIQUES D'AGE
+-------------------
+Requete pour calculer l'age moyen des participants :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (AVG(xsd:decimal(?ageMoyen)) AS ?ageMoyenGeneral) (COUNT(*) AS ?nbPopulations)
+WHERE {
+    ?population a iadas:Population ;
+               iadas:ageStats ?ageStats .
+    ?ageStats iadas:meanAge ?ageMoyen .
+}
+
+Requete pour trouver l'age minimum et maximum :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (MIN(xsd:decimal(?ageMoyen)) AS ?ageMin) (MAX(xsd:decimal(?ageMoyen)) AS ?ageMax)
+WHERE {
+    ?population a iadas:Population ;
+               iadas:ageStats ?ageStats .
+    ?ageStats iadas:meanAge ?ageMoyen .
+}
+
+Requete pour compter les analyses avec des jeunes adultes (18-25 ans) :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesJeunesAdultes)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasPopulation ?population .
+    ?population iadas:ageStats ?ageStats .
+    ?ageStats iadas:meanAge ?ageMoyen .
+    FILTER(xsd:decimal(?ageMoyen) >= 18 && xsd:decimal(?ageMoyen) <= 25)
+}
+
+
+# TAILLES D'ECHANTILLON
+----------------------
+Requete pour calculer la taille moyenne d'echantillon :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (AVG(xsd:integer(?taille)) AS ?tailleMoyenne) (COUNT(*) AS ?nbPopulations)
+WHERE {
+    ?population a iadas:Population ;
+               iadas:sampleSize ?taille .
+}
+
+Requete pour trouver les tailles min et max :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (MIN(xsd:integer(?taille)) AS ?tailleMin) (MAX(xsd:integer(?taille)) AS ?tailleMax)
+WHERE {
+    ?population a iadas:Population ;
+               iadas:sampleSize ?taille .
+}
+
+Requete pour compter les petites etudes (< 100 participants) :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?petitesEtudes)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasPopulation ?population .
+    ?population iadas:sampleSize ?taille .
+    FILTER(xsd:integer(?taille) < 100)
+}
+
+Requete pour compter les grandes etudes (> 500 participants) :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?grandesEtudes)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasPopulation ?population .
+    ?population iadas:sampleSize ?taille .
+    FILTER(xsd:integer(?taille) > 500)
+}
+
+
+# COEFFICIENTS DE CORRELATION
+----------------------------
+Requete pour calculer le coefficient r moyen :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (AVG(xsd:decimal(?r)) AS ?rMoyen) (COUNT(*) AS ?nbRelations)
+WHERE {
+    ?relation a iadas:Relations ;
+             iadas:degreR ?r .
+}
+
+Requete pour trouver les correlations les plus fortes :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT ?r (COUNT(*) AS ?count)
+WHERE {
+    ?relation a iadas:Relations ;
+             iadas:degreR ?r .
+    FILTER(ABS(xsd:decimal(?r)) >= 0.5)
+}
+GROUP BY ?r
+ORDER BY DESC(ABS(xsd:decimal(?r)))
+
+Requete pour compter les relations avec p < 0.05 :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(*) AS ?relationsSignificatives)
+WHERE {
+    ?relation a iadas:Relations ;
+             iadas:degreP ?p .
+    FILTER(xsd:decimal(?p) < 0.05)
+}
+
+
+# REQUETES COMBINEES
+-------------------
+Requete pour les analyses sur femmes avec depression (VD) et anxiete (VI) :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesFemmesDepressionAnxiete)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasPopulation ?population ;
+              iadas:hasRelation ?relation .
+    ?population iadas:gender "Female" .
+    ?relation iadas:hasDependentVariable ?vd ;
+             iadas:hasIndependentVariable ?vi .
+    ?vd a iadas:Depression .
+    ?vi a iadas:Anxiety .
+}
+
+Requete pour les analyses sur danse avec troubles alimentaires :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(DISTINCT ?analysis) AS ?analysesDanseTroubles)
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasSport ?sportEntity ;
+              iadas:hasRelation ?relation .
+    ?sportEntity iadas:sportName ?sport .
+    ?relation iadas:hasDependentVariable ?vd .
+    ?vd a iadas:Eating_disorders .
+    FILTER(CONTAINS(LCASE(?sport), "dance"))
+}
+
+Requete pour les relations positives entre estime de soi et troubles alimentaires :
+
+PREFIX iadas: <http://ia-das.org/onto#>
+SELECT (COUNT(*) AS ?relationsPositivesSelfEsteemED)
+WHERE {
+    ?relation a iadas:Relations ;
+             iadas:resultatRelation "+" ;
+             iadas:hasDependentVariable ?vd ;
+             iadas:hasIndependentVariable ?vi .
+    ?vd a iadas:Eating_disorders .
+    ?vi a iadas:Self_esteem .
+}

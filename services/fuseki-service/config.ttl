@@ -1,0 +1,38 @@
+# Déclaration des préfixes utilisés pour raccourcir les URIs
+@prefix :      <#> .                                 # Préfixe local pour les ressources définies dans ce fichier
+@prefix fuseki: <http://jena.apache.org/fuseki#> .   # Préfixe pour les termes liés au serveur Fuseki
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  # Syntaxe RDF standard
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .        # RDF Schema pour les définitions de vocabulaire
+@prefix tdb2:  <http://jena.apache.org/2016/tdb#> .   # Préfixe pour TDB2 (le moteur de stockage RDF utilisé)
+@prefix ja:    <http://jena.hpl.hp.com/2005/11/Assembler#> .  # Préfixe pour l’assembleur Jena (permet la config par RDF)
+
+# Déclaration de l'objet serveur Fuseki et de la liste de services qu’il expose
+[] rdf:type fuseki:Server ;                          # Création d’un serveur Fuseki
+   fuseki:services (                                 # Liste des services SPARQL à démarrer
+     :service1                                       # Référence à un service défini plus bas
+   ) .
+
+# Définition du service nommé /ds
+:service1 rdf:type fuseki:Service ;                  # C’est un service Fuseki
+    fuseki:name       "ds" ;                         # Nom du service = URL http://.../ds
+    fuseki:serviceQuery    "query" ;                 # Active le point de terminaison SPARQL SELECT /ds/query
+    fuseki:serviceUpdate   "update" ;                # Active le point de terminaison SPARQL UPDATE /ds/update
+    fuseki:serviceUpload   "upload" ;                # Permet l’upload de fichiers RDF via /ds/upload
+    fuseki:serviceReadGraphStore true ;              # Active l’accès en lecture du graph store (SPARQL Graph Store Protocol)
+    fuseki:serviceReadWriteGraphStore true ;         # Active la lecture/écriture du graph store
+    fuseki:dataset :dataset .                        # Associe ce service à un dataset défini ci-dessous
+
+# Définition du dataset TDB2 qui stockera les données RDF
+:dataset rdf:type tdb2:DatasetTDB2 ;                 # Type du dataset : TDB2 (stockage persistant)
+    tdb2:location "DB" ;                             # Répertoire de stockage local des données dans le conteneur
+    tdb2:unionDefaultGraph true ;                    # Permet d’unir tous les graphes nommés dans le graphe par défaut
+    ja:loadClass "org.apache.jena.tdb2.TDB2Factory" ;# Classe Java qui permet de créer ce type de dataset
+    ja:data [                                         
+        ja:externalContent "ia-das-ontology-clean.ttl"        # Ontologie principale des données d'analyse
+    ] ;
+    ja:data [
+        ja:externalContent "variable-hierarchy-clean.ttl"     # Hiérarchie des variables d'analyse
+    ] ;
+    ja:data [
+        ja:externalContent "sport-hierarchy-simple-clean.ttl" # Hiérarchie simplifiée des sports
+    ] .

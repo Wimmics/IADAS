@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA-DAS - Scénarios d'utilisation détaillés</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            border-left: 5px solid #3498db;
+            padding-left: 20px;
+            background-color: #ecf0f1;
+            padding: 15px 20px;
+            border-radius: 5px;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 30px;
+            font-size: 1.3em;
+        }
+        h4 {
+            color: #27ae60;
+            margin-top: 25px;
+            font-size: 1.1em;
+        }
+        .scenario-context {
+            background-color: #e8f6f3;
+            border-left: 4px solid #1abc9c;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .step {
+            background-color: #f8f9fa;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #74b9ff;
+        }
+        .step-number {
+            font-weight: bold;
+            color: #0984e3;
+            font-size: 1.1em;
+        }
+        .action {
+            color: #2d3436;
+            font-weight: 600;
+        }
+        .result {
+            color: #636e72;
+            margin-top: 5px;
+            padding-left: 15px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        .warning {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 12px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            padding: 12px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .author-info {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .final-result {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>IA-DAS - Scénarios d'utilisation détaillés</h1>
+        
+        <div class="author-info">
+            <p><strong>Document :</strong> Guide de scénarios pratiques</p>
+            <p><strong>Auteur :</strong> Sara TAOUFIQ</p>
+            <p><strong>Équipe :</strong> Stephanie MERIAUX, Meggy HAYOTTE, Molka TOUNSI, Amandine DAUBRESSE</p>
+            <p><strong>Public :</strong> Utilisateurs souhaitant découvrir les fonctionnalités de l'interface IA-DAS</p>
+        </div>
+
+        <div> <strong>Pour réaliser ces scénarios , il faut d'abord lire la partie "Présentation générale" du guide utilisateur.</strong></div>
+
+        <h2>Scénario 1 : Recherche d'analyses sur la dépression chez les femmes</h2>
+        
+        <div class="scenario-context">
+            <strong>Contexte :</strong> En tant qu'utilisatrice passionnée par la recherche, je maîtrise déjà certaines notions de base. Je souhaite explorer des analyses spécifiques concernant la dépression chez les femmes. Je me dirige donc vers la page d'interaction personnalisée pour effectuer une recherche ciblée.
+        </div>
+
+        <h3>Parcours étape par étape :</h3>
+
+        <div class="step">
+            <div class="step-number">Étape 1 : Accès à la page d'interaction personnalisée</div>
+            <div class="action">Action :</div> Je clique sur le bouton <span class="highlight">"Interaction personnalisée"</span>
+            <div class="result">
+                <strong>Résultat :</strong> Le site commence à charger les données nécessaires. Cette opération prend quelques secondes pendant lesquelles un indicateur de chargement est visible. Une fois terminé, le système m'informe que la page est prête à l'utilisation.
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 2 : Sélection du critère démographique</div>
+            <div class="action">Action :</div> Je clique sur le menu déroulant de sélection du sexe
+            <div class="result">
+                <strong>Résultat :</strong> Trois options me sont proposées : <em>"Femme"</em>, <em>"Homme"</em>, <em>"Mixte"</em>
+            </div>
+            <div class="action">Action :</div> Je sélectionne <span class="highlight">"Femme"</span>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 3 : Exploration des catégories de variables</div>
+            <div class="action">Action :</div> Je clique sur la sélection des catégories de variables
+            <div class="result">
+                <strong>Résultat :</strong> Six choix différents me sont proposés pour catégoriser ma recherche
+            </div>
+            <div class="action">Décision :</div> Aucune catégorie ne correspond à mes besoins actuels, je ne sélectionne donc rien et laisse ce champ vide
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 4 : Saisie du facteur d'intérêt</div>
+            <div class="action">Action :</div> Je commence à saisir le mot <span class="highlight">"Dépression"</span> dans le champ de facteur
+            <div class="result">
+                <strong>Résultat :</strong> Un système d'autocomplétion intelligent s'active et affiche une liste de suggestions prédéfinies correspondant à ma saisie, facilitant ainsi la sélection du terme exact
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 5 : Lancement de la recherche initiale</div>
+            <div class="action">Action :</div> Je clique sur le bouton <span class="highlight">"Rechercher"</span>
+            <div class="result">
+                <strong>Résultat :</strong> Un popup de chargement s'affiche pour indiquer que la requête est en cours de traitement. Après quelques instants, les résultats apparaissent sous forme de tableau structuré.
+            </div>
+            <div class="final-result">
+                <strong>Résultats obtenus :</strong> 12 analyses traitant spécifiquement des femmes avec un facteur de dépression
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 6 : Basculement vers la visualisation graphique</div>
+            <div class="action">Action :</div> Je clique sur l'onglet <span class="highlight">"Graphique"</span>
+            <div class="result">
+                <strong>Résultat :</strong> Le tableau se transforme en représentation graphique avec un code couleur distinctif. Chaque nœud et connexion est coloré selon sa catégorie, facilitant l'interprétation visuelle des relations entre les données.
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 7 : Exploration interactive du graphique</div>
+            <div class="action">Action :</div> Je survole différents nœuds avec ma souris
+            <div class="result">
+                <strong>Résultat :</strong> Des informations préliminaires s'affichent au survol, donnant un aperçu rapide du contenu de chaque nœud sans nécessiter de clic
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 8 : Exploration de la hiérarchie conceptuelle</div>
+            <div class="action">Action :</div> Je maintiens un <span class="highlight">clic droit prolongé</span> sur un nœud de variable (par exemple "Anxiété")
+            <div class="result">
+                <strong>Résultat :</strong> Un panneau hiérarchique s'ouvre sur le côté, révélant :
+                <ul>
+                    <li>L'arborescence conceptuelle complète de cette variable</li>
+                    <li>Les concepts parents (catégories supérieures)</li>
+                    <li>Les concepts enfants (sous-catégories)</li>
+                    <li>Les relations sémantiques entre les différents niveaux</li>
+                </ul>
+            </div>
+            <div class="action">Navigation hiérarchique :</div> Je peux cliquer sur n'importe quel élément de la hiérarchie pour naviguer dans l'ontologie et comprendre la structure conceptuelle des données
+            <div class="action">Fermeture :</div> Je clique à côté du panneau ou utilise le bouton X pour le fermer
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 9 : Analyse approfondie d'un nœud spécifique</div>
+            <div class="action">Action :</div> Je double-clique sur le nœud <span class="highlight">"Dépression"</span>
+            <div class="result">
+                <strong>Résultat :</strong> Un panneau latéral s'ouvre, présentant toutes les analyses liées à ce nœud. Le panneau contient une liste détaillée avec :
+                <ul>
+                    <li>Le titre de chaque analyse formaté selon les normes APA</li>
+                    <li>L'identifiant unique de l'analyse</li>
+                    <li>Les variables indépendantes (VI) et dépendantes (VD) étudiées</li>
+                    <li>Le type de résultat de la relation observée</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 9 : Consultation détaillée d'une analyse</div>
+            <div class="action">Action :</div> Je clique sur une analyse spécifique dans la liste
+            <div class="result">
+                <strong>Résultat :</strong> Un nouveau panneau s'ouvre, affichant l'intégralité des informations concernant cette analyse : métadonnées complètes, méthodologie, résultats, références bibliographiques, etc.
+            </div>
+            <div class="action">Navigation :</div> J'utilise le bouton <span class="highlight">"Retour à la liste"</span> pour revenir au panneau précédent
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 10 : Export des résultats en PDF</div>
+            <div class="action">Action :</div> Je clique sur le bouton <span class="highlight">"Exporter PDF"</span>
+            <div class="result">
+                <strong>Résultat :</strong> La liste complète des analyses est automatiquement téléchargée sur mon ordinateur sous format PDF, prête pour archivage ou partage
+            </div>
+            <div class="action">Fermeture :</div> Je clique sur le bouton X pour fermer le panneau
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 11 : Export des données en Excel</div>
+            <div class="action">Action :</div> Je clique sur le bouton <span class="highlight">"Export Excel"</span>
+            <div class="result">
+                <strong>Résultat :</strong> Un fichier Excel (.xlsx) contenant toutes les données du tableau est automatiquement téléchargé sur mon ordinateur. Le fichier inclut :
+                <ul>
+                    <li>Les métadonnées de chaque analyse</li>
+                    <li>Les variables indépendantes et dépendantes</li>
+                    <li>Les informations démographiques</li>
+                    <li>Une mise en forme professionnelle pour faciliter l'analyse</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 12 : Consultation de la requête SPARQL générée</div>
+            <div class="action">Action :</div> Je clique sur l'onglet <span class="highlight">"SPARQL"</span>
+            <div class="result">
+                <strong>Résultat :</strong> La vue bascule vers l'affichage technique montrant :
+                <ul>
+                    <li>La requête SPARQL complète qui a été générée automatiquement</li>
+                    <li>Les résultats bruts au format JSON</li>
+                    <li>La structure des données telle qu'elle est interrogée dans l'ontologie</li>
+                </ul>
+            </div>
+            <div class="action">Avantage :</div> Cette vue permet aux utilisateurs techniques de comprendre comment leurs critères ont été traduits en requête sémantique et d'analyser la structure de l'ontologie
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 13 : Affinement par critère d'âge</div>
+            <div class="action">Action :</div> Je clique sur la sélection de catégorie d'âge
+            <div class="result">
+                <strong>Résultat :</strong> Plusieurs options s'affichent, incluant une option <em>"Personnalisée"</em>
+            </div>
+            <div class="action">Action :</div> Je sélectionne <span class="highlight">"Personnalisée"</span>
+            <div class="result">
+                <strong>Résultat :</strong> Trois champs de saisie apparaissent pour définir l'âge minimum, maximum et moyen
+            </div>
+            <div class="action">Saisie :</div> Je renseigne la valeur <span class="highlight">21</span> dans le champ approprié
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 14 : Recherche affinée et export final</div>
+            <div class="action">Contexte :</div> La requête traite maintenant spécifiquement les femmes d'environ 21 ans avec le facteur Dépression
+            <div class="action">Action :</div> Je clique à nouveau sur <span class="highlight">"Rechercher"</span>
+            <div class="result">
+                <strong>Résultat :</strong> Les résultats se sont affinés : il ne reste plus que 2 analyses correspondant à ces critères plus précis
+            </div>
+            <div class="action">Export :</div> Je clique sur <span class="highlight">"Exporter en PNG"</span>
+            <div class="final-result">
+                <strong>Export final :</strong> Une image haute définition du graphique est téléchargée sur mon ordinateur, incluant le logo du projet en qualité optimale (qualité 6)
+            </div>
+        </div>
+
+        <hr style="margin: 40px 0;">
+
+        <h2>Scénario 2 : Utilisation de la page de compétences (Interaction prédéfinie)</h2>
+
+        <div class="scenario-context">
+            <strong>Contexte :</strong> Je suis un professionnel de santé qui souhaite obtenir rapidement des réponses à des questions de compétences spécifiques sans avoir à construire moi-même des requêtes SPARQL. J'utilise donc la page d'interaction prédéfinie qui propose des questions préformulées.
+        </div>
+
+        <h3>Parcours étape par étape :</h3>
+
+        <div class="step">
+            <div class="step-number">Étape 1 : Accès à la page de compétences</div>
+            <div class="action">Action :</div> Je clique sur le bouton <span class="highlight">"Interaction prédéfinie"</span>
+            <div class="result">
+                <strong>Résultat :</strong> La page se charge et affiche une interface accordéon avec plusieurs sections repliables
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 2 : Exploration de l'interface accordéon</div>
+            <div class="action">Action :</div> Je parcours les différentes sections de l'accordéon
+            <div class="result">
+                <strong>Résultat :</strong> Chaque section contient des débuts de questions prédéfinies organisés par thématiques (compétences, relations, facteurs démographiques, etc.)
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 3 : Construction guidée d'une question</div>
+            <div class="action">Action :</div> Je sélectionne le début de question <span class="highlight">"Quels sont les ACADS"</span>
+            <div class="result">
+                <strong>Résultat :</strong> Un menu déroulant s'active pour choisir la suite de la question
+            </div>
+            <div class="action">Action :</div> Je sélectionne dans le menu déroulant <span class="highlight">"dont le résultat de relation est ambigu"</span>
+            <div class="result">
+                <strong>Résultat :</strong> La question complète se forme automatiquement : "Quels sont les ACADS dont le résultat de relation est ambigu ?"
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 4 : Exécution de la requête prédéfinie</div>
+            <div class="action">Action :</div> Je clique sur <span class="highlight">"Exécuter la requête"</span>
+            <div class="result">
+                <strong>Résultat :</strong> Les résultats s'affichent avec les mêmes options de visualisation que la page personnalisée : tableau, graphique, et vue SPARQL
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 5 : Analyse des résultats</div>
+            <div class="action">Action :</div> J'explore les résultats en basculant entre les différents modes de visualisation
+            <div class="result">
+                <strong>Résultat :</strong> Je bénéficie des mêmes fonctionnalités interactives qu'en mode personnalisé : double-clic sur les nœuds, export PDF, survol informatif, etc.
+            </div>
+        </div>
+
+        <hr style="margin: 40px 0;">
+
+        <h2>Scénario 3 : Page de modification (Administration)</h2>
+
+        <div class="scenario-context">
+            <strong>Contexte :</strong> Je suis membre de l'équipe de recherche et j'ai besoin de mettre à jour l'ontologie en ajoutant de nouvelles analyses issues d'une étude récente. J'accède donc à la page de modification avec mes identifiants administrateur.
+        </div>
+
+        <div class="warning">
+            <strong>Attention :</strong> Ce scénario nécessite des droits administrateur et un mot de passe d'accès.
+        </div>
+
+        <h3>Parcours étape par étape :</h3>
+
+        <div class="step">
+            <div class="step-number">Étape 1 : Accès sécurisé</div>
+            <div class="action">Action :</div> Je clique sur le bouton <span class="highlight">"Mise à jour de l'ontologie"</span>
+            <div class="result">
+                <strong>Résultat :</strong> Un modal d'authentification s'ouvre, demandant le mot de passe administrateur
+            </div>
+            <div class="action">Action :</div> Je saisis mon mot de passe administrateur
+            <div class="result">
+                <strong>Résultat :</strong> Après vérification, j'accède à l'interface d'administration
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 2 : Vue d'ensemble de l'interface d'administration</div>
+            <div class="result">
+                <strong>Interface disponible :</strong> Deux sections principales sont visibles :
+                <ul>
+                    <li>Section "Modifier les analyses existantes"</li>
+                    <li>Section "Ajouter/Supprimer des analyses"</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 3 : Ajout d'une nouvelle analyse</div>
+            <div class="action">Action :</div> Je clique sur <span class="highlight">"Ajouter une analyse"</span>
+            <div class="result">
+                <strong>Résultat :</strong> Un formulaire détaillé s'ouvre avec les champs suivants :
+                <ul>
+                    <li>Titre de l'analyse (format APA)</li>
+                    <li>Variables indépendantes (VI)</li>
+                    <li>Variables dépendantes (VD)</li>
+                    <li>Type de résultat de relation</li>
+                    <li>Métadonnées (auteurs, année, journal, etc.)</li>
+                    <li>Critères démographiques (âge, sexe, population)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 4 : Saisie des informations</div>
+            <div class="action">Action :</div> Je remplis tous les champs requis avec les données de la nouvelle étude
+            <div class="action">Validation :</div> Je clique sur <span class="highlight">"Valider et intégrer"</span>
+            <div class="result">
+                <strong>Résultat :</strong> Le système vérifie la cohérence des données et confirme l'intégration réussie dans l'ontologie. Un ID unique est automatiquement généré pour la nouvelle analyse.
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 5 : Modification d'une analyse existante</div>
+            <div class="action">Action :</div> Je clique sur <span class="highlight">"Modifier"</span> et recherche une analyse spécifique par son ID
+            <div class="result">
+                <strong>Résultat :</strong> L'analyse s'affiche dans un formulaire pré-rempli, permettant la modification de tous ses attributs
+            </div>
+            <div class="action">Modification :</div> Je corrige une erreur dans les métadonnées et sauvegarde
+            <div class="result">
+                <strong>Résultat :</strong> La modification est automatiquement sauvegardée dans la base Fuseki et un historique de la modification est conservé
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Étape 6 : Vérification et validation</div>
+            <div class="action">Action :</div> Je teste la nouvelle analyse ajoutée en retournant sur la page d'interaction personnalisée
+            <div class="result">
+                <strong>Résultat :</strong> La nouvelle analyse apparaît bien dans les résultats de recherche correspondants, confirmant que l'intégration s'est déroulée correctement
+            </div>
+        </div>
+
+        <div class="info">
+            <strong>Sécurité :</strong> Toutes les actions d'administration sont tracées et un backup automatique de l'ontologie est créé avant chaque modification importante.
+        </div>
+
+        <hr style="margin: 40px 0;">
+
+        <footer style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #ecf0f1; color: #7f8c8d; font-style: italic;">
+            Scénarios d'utilisation IA-DAS - Documentation détaillée - Version 1.0
+        </footer>
+    </div>
+</body>
+</html>

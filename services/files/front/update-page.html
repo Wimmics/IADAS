@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mise à jour de l'ontologie - IA-DAS</title>
+    <link rel="stylesheet" href="./update-page/update-page.css">
+</head>
+
+<body>
+    <header>
+        <h1>Mise à jour de l'ontologie IA-DAS</h1>
+        <div class="logo-container">
+            <img src="./assets/logo_IA-DAS-No-Background.png" alt="Logo IA-DAS" class="logo">
+            <span class="logo-subtitle">IA-DAS : Utilisation de l'Intelligence Artificielle pour mieux Détecter et prévenir les Attitudes et comportements alimentaires dysfonctionnels en Sport</span>
+        </div>
+        <button id="backToHome" onclick="window.location.href = './index.html'">Retour à l'accueil</button>
+    </header>
+
+    <div class="update-layout">
+        <section class="presentation">
+            <h2>Gestion des données de l'ontologie</h2>
+            <p>
+                Cette section vous permet de gérer les analyses empiriques stockées dans l'ontologie IA-DAS.
+                Vous pouvez ajouter de nouvelles analyses ou modifier celles existantes.
+            </p>
+            <p>
+                <strong>Ajouter une analyse :</strong> Créez une nouvelle entrée avec toutes les informations requises
+                (article, population, variables, relations statistiques, etc.).
+            </p>
+            <p>
+                <strong>Modifier une analyse :</strong> Sélectionnez une analyse existante par son ID pour 
+                la consulter et la modifier.
+            </p>
+            <div class="warning-box">
+                <h3>⚠️ Important</h3>
+                <p>Les modifications apportées seront directement sauvegardées dans la base de données Fuseki. 
+                Assurez-vous de la validité des informations avant de confirmer.</p>
+            </div>
+        </section>
+
+        <div class="center-box">
+            <h2>Choisir une action</h2>
+            <button id="addAnalysisBtn" class="action-btn">
+                Ajouter une analyse
+            </button>
+            <button id="modifyAnalysisBtn" class="action-btn">
+                Modifier une analyse
+            </button>
+            <button id="rebuildOntologyBtn" class="action-btn rebuild-btn">
+                Reconstruire ontologie
+            </button>
+        </div>
+    </div>
+<script src="./js/api-config.js"></script>
+    <script src="./js/update-auth.js"></script>
+    <script src="./update-page/update-page.js"></script>
+
+    <footer>
+        <p>&copy; 2025 – IA-DAS. Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>

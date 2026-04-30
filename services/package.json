@@ -1,0 +1,12 @@
+{
+  "name": "ontology-rebuild-server",
+  "version": "1.0.0",
+  "description": "Serveur dédié à la reconstruction d'ontologie IA-DAS",
+  "main": "ontology-rebuild-server.js",
+  "scripts": {
+    "start": "node ontology-rebuild-server.js"
+  },
+  "dependencies": {
+    "multiparty": "^4.2.3"
+  }
+}

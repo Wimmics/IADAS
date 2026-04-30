@@ -1,0 +1,223 @@
+/* CSS pour la page de mise à jour de l'ontologie */
+/* Basé sur le style de la page d'accueil */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ecf0f1;
+    padding: 8px 10px;
+    border-bottom: 2px solid #bdc3c7;
+}
+
+header h1 {
+    color: #2c3e50;
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    height: 32px;
+    margin-bottom: 3px;
+}
+
+.logo-subtitle {
+    font-size: 10px;
+    color: #666;
+    margin: 0;
+    white-space: nowrap;
+    font-style: italic;
+    line-height: 1;
+}
+
+#backToHome {
+    padding: 10px 16px;
+    font-size: 16px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#backToHome:hover {
+    background-color: #1c5980;
+}
+
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #ecf0f1;
+    border-top: 2px solid #bdc3c7;
+    margin-top: auto;
+}
+
+/* Layout horizontal - même style que la page d'accueil */
+.update-layout {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+/* Bloc de présentation à gauche - même style */
+.presentation {
+    flex: 1;
+    max-width: 50%;
+    min-height: 70vh;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.presentation h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.presentation p {
+    color: #34495e;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Box d'avertissement */
+.warning-box {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.warning-box h3 {
+    color: #856404;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.warning-box p {
+    color: #856404;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Centre box - même style que la page d'accueil */
+.center-box {
+    width: 320px;
+    height: 350px;
+    background-color: #ecf0f1;
+    border: 2px solid #bdc3c7;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.center-box h2 {
+    color: #2c3e50;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Boutons d'action avec icônes */
+.action-btn {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action-btn:hover {
+    background-color: #1c5980;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    font-size: 18px;
+}
+
+/* Style spécial pour le bouton de reconstruction */
+.rebuild-btn {
+    background-color: #e74c3c;
+}
+
+.rebuild-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .update-layout {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .presentation {
+        max-width: 90%;
+        min-height: auto;
+    }
+    
+    .center-box {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 18px;
+    }
+}

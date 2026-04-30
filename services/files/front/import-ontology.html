@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Reconstruire Ontologie - IA-DAS</title>
+    <link rel="stylesheet" href="./import-ontology/import-ontology.css">
+</head>
+<body>
+    <header>
+        <h1>Reconstruction complète de l'ontologie</h1>
+        <div class="logo-container">
+            <img src="./assets/logo_IA-DAS-No-Background.png" alt="Logo IA-DAS" class="logo">
+            <span class="logo-subtitle">IA-DAS : Utilisation de l'Intelligence Artificielle pour mieux Détecter et prévenir les Attitudes et comportements alimentaires dysfonctionnels en Sport</span>
+        </div>
+        <button id="backToUpdate" onclick="window.location.href = './update-page.html'">Retour</button>
+    </header>
+
+    <main class="import-container">
+        <section class="instructions">
+            <h2>⚠️ Reconstruction complète de l'ontologie</h2>
+            <div class="warning-box">
+                <h3>🚨 ATTENTION</h3>
+                <p>Cette opération va <strong>complètement remplacer</strong> l'ontologie existante dans Fuseki.</p>
+                <p>Toutes les données actuelles seront <strong>supprimées définitivement</strong>.</p>
+            </div>
+            
+            <div class="process-info">
+                <h3>🔄 Processus automatisé</h3>
+                <ol>
+                    <li>Upload des 3 fichiers CSV requis</li>
+                    <li>Exécution de la pipeline de traitement</li>
+                    <li>Génération de nouveaux fichiers TTL</li>
+                    <li>Suppression de l'ancien dataset Fuseki</li>
+                    <li>Import des nouvelles données ontologiques</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="upload-section">
+            <h2>📁 Upload des fichiers CSV</h2>
+            
+            <div class="upload-grid">
+                <div class="upload-zone" id="sportUpload">
+                    <div class="upload-content">
+                        <div class="upload-icon">📊</div>
+                        <h3>Sport-Hierarchy.csv</h3>
+                        <p>Hiérarchie des sports</p>
+                        <input type="file" id="sportFile" accept=".csv" hidden>
+                        <div class="upload-status">Cliquez pour sélectionner</div>
+                    </div>
+                </div>
+
+                <div class="upload-zone" id="classUpload">
+                    <div class="upload-content">
+                        <div class="upload-icon">🗂️</div>
+                        <h3>Class-Hierarchy-V1.csv</h3>
+                        <p>Hiérarchie des variables</p>
+                        <input type="file" id="classFile" accept=".csv" hidden>
+                        <div class="upload-status">Cliquez pour sélectionner</div>
+                    </div>
+                </div>
+
+                <div class="upload-zone" id="dataUpload">
+                    <div class="upload-content">
+                        <div class="upload-icon">📋</div>
+                        <h3>IA-DAS-Data.csv</h3>
+                        <p>Données principales</p>
+                        <input type="file" id="dataFile" accept=".csv" hidden>
+                        <div class="upload-status">Cliquez pour sélectionner</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-controls">
+                <button id="rebuildBtn" class="rebuild-btn" disabled>
+                    🚀 Reconstruire Ontologie
+                </button>
+                <button id="cancelBtn" class="cancel-btn">
+                    ❌ Annuler
+                </button>
+            </div>
+        </section>
+
+        <section class="progress-section" id="progressSection" style="display: none;">
+            <h2>🔄 Progression de la reconstruction</h2>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+                <div class="progress-text" id="progressText">0%</div>
+            </div>
+
+            <div class="console-output" id="consoleOutput">
+                <div class="console-header">📋 Console d'exécution</div>
+                <div class="console-content" id="consoleContent">
+                    En attente...
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 – IA-DAS. Tous droits réservés.</p>
+    </footer>
+
+    <script src="./js/api-config.js"></script>
+    <script src="./import-ontology/import-ontology.js"></script>
+</body>
+</html>

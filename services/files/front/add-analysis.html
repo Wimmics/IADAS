@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter une analyse - IA-DAS</title>
+    <link rel="stylesheet" href="./add-analysis/add-analysis.css">
+    <link rel="stylesheet" href="./add-analysis/autocomplete-styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Ajouter une nouvelle analyse</h1>
+        <div class="logo-container">
+            <img src="./assets/logo_IA-DAS-No-Background.png" alt="Logo IA-DAS" class="logo">
+            <span class="logo-subtitle">IA-DAS : Utilisation de l'Intelligence Artificielle pour mieux Détecter et prévenir les Attitudes et comportements alimentaires dysfonctionnels en Sport</span>
+        </div>
+        <button id="backToUpdate" onclick="window.location.href = './update-page.html'">Retour</button>
+    </header>
+
+    <main class="form-container">
+        <form id="addAnalysisForm">
+            
+            <section class="form-section">
+                <h2>Informations sur l'article</h2>
+                <div class="form-group">
+                    <label for="doi">DOI de l'article *</label>
+                    <input type="text" id="doi" name="doi" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Titre de l'article *</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="authors">Auteurs *</label>
+                    <input type="text" id="authors" name="authors" required>
+                </div>
+                <div class="form-group">
+                    <label for="journal">Journal *</label>
+                    <input type="text" id="journal" name="journal" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="year">Année *</label>
+                        <input type="number" id="year" name="year" min="1900" max="2030" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Pays *</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="studyType">Type d'étude *</label>
+                    <input type="text" id="studyType" name="studyType" required>
+                </div>
+            </section>
+
+            <section class="form-section" data-section="analyse">
+                <h2>Informations sur l'analyse</h2>
+                <div class="form-group">
+                    <label for="analysisId">ID de l'analyse *</label>
+                    <input type="text" id="analysisId" name="analysisId" required>
+                </div>
+                <div class="form-group">
+                    <label for="typeOfAnalysis">Type d'analyse *</label>
+                    <input type="text" id="typeOfAnalysis" name="typeOfAnalysis" required>
+                </div>
+                <div class="form-group">
+                    <label for="analysisMultiplicity">Multiplicité de l'analyse</label>
+                    <input type="text" id="analysisMultiplicity" name="analysisMultiplicity">
+                </div>
+                <div class="form-group">
+                    <label for="relationDegree">Degré de relation</label>
+                    <input type="text" id="relationDegree" name="relationDegree">
+                </div>
+                <div class="form-group">
+                    <label for="sampleSizeMobilized">Taille d'échantillon mobilisée</label>
+                    <input type="number" id="sampleSizeMobilized" name="sampleSizeMobilized" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="authorConclusion">Conclusions des auteurs</label>
+                    <textarea id="authorConclusion" name="authorConclusion" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="limites">Limites</label>
+                    <textarea id="limites" name="limites" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="perspectives">Perspectives</label>
+                    <textarea id="perspectives" name="perspectives" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="acads">ACADS</label>
+                    <input type="text" id="acads" name="acads">
+                </div>
+            </section>
+
+            <section class="form-section" data-section="population">
+                <h2>Population d'étude</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sampleSize">Taille d'échantillon total *</label>
+                        <input type="number" id="sampleSize" name="sampleSize" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Genre *</label>
+                        <input type="text" id="gender" name="gender" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="population">Description de la population</label>
+                    <textarea id="population" name="population" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="inclusionCriteria">Critères d'inclusion</label>
+                    <textarea id="inclusionCriteria" name="inclusionCriteria" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="hasSubgroup">Sous-groupe</label>
+                    <input type="text" id="hasSubgroup" name="hasSubgroup">
+                </div>
+                <div class="form-group">
+                    <label for="sportingPopulation">Population sportive</label>
+                    <input type="text" id="sportingPopulation" name="sportingPopulation">
+                </div>
+                <!-- <div class="form-row">
+                    <div class="form-group">
+                        <label for="sousGroupeAnalyse1">Sous-groupe d'analyse 1</label>
+                        <input type="text" id="sousGroupeAnalyse1" name="sousGroupeAnalyse1">
+                    </div>
+                    <div class="form-group">
+                        <label for="sousGroupeAnalyse2">Sous-groupe d'analyse 2</label>
+                        <input type="text" id="sousGroupeAnalyse2" name="sousGroupeAnalyse2">
+                    </div>
+                </div>
+                 -->
+                <h3>Statistiques d'âge</h3>
+                <div class="form-group">
+                    <label for="ageDescription">Description de l'âge</label>
+                    <input type="text" id="ageDescription" name="ageDescription">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="meanAge">Âge moyen</label>
+                        <input type="number" id="meanAge" name="meanAge" step="0.1" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="sdAge">Écart-type âge</label>
+                        <input type="number" id="sdAge" name="sdAge" step="0.1" min="0">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="minAge">Âge minimum</label>
+                        <input type="number" id="minAge" name="minAge" step="0.1" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="maxAge">Âge maximum</label>
+                        <input type="number" id="maxAge" name="maxAge" step="0.1" min="0">
+                    </div>
+                </div>
+
+                <h3>Statistiques d'IMC</h3>
+                <div class="form-group">
+                    <label for="bmiDescription">Description de l'IMC</label>
+                    <input type="text" id="bmiDescription" name="bmiDescription">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="meanBMI">IMC moyen</label>
+                        <input type="number" id="meanBMI" name="meanBMI" step="0.1" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="sdBMI">Écart-type IMC</label>
+                        <input type="number" id="sdBMI" name="sdBMI" step="0.1" min="0">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="minBMI">IMC minimum</label>
+                        <input type="number" id="minBMI" name="minBMI" step="0.1" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="maxBMI">IMC maximum</label>
+                        <input type="number" id="maxBMI" name="maxBMI" step="0.1" min="0">
+                    </div>
+                </div>
+
+                <h3>Statistiques de fréquence d'exercice</h3>
+                <div class="form-group">
+                    <label for="exerciseFreqDescription">Description de la fréquence d'exercice</label>
+                    <input type="text" id="exerciseFreqDescription" name="exerciseFreqDescription">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="meanExFR">Fréquence moyenne</label>
+                        <input type="number" id="meanExFR" name="meanExFR" step="0.1" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="sdExFR">Écart-type fréquence</label>
+                        <input type="number" id="sdExFR" name="sdExFR" step="0.1" min="0">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="minExFR">Fréquence minimum</label>
+                        <input type="number" id="minExFR" name="minExFR" step="0.1" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="maxExFR">Fréquence maximum</label>
+                        <input type="number" id="maxExFR" name="maxExFR" step="0.1" min="0">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="freqUnit">Unité de fréquence</label>
+                        <input type="text" id="freqUnit" name="freqUnit">
+                    </div>
+                    <div class="form-group">
+                        <label for="freqBase">Base de fréquence</label>
+                        <input type="text" id="freqBase" name="freqBase">
+                    </div>
+                </div>
+
+                <h3>Statistiques d'années d'expérience</h3>
+                <div class="form-group">
+                    <label for="experienceDescription">Description de l'expérience</label>
+                    <input type="text" id="experienceDescription" name="experienceDescription">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="meanYOE">Années d'expérience moyennes</label>
+                        <input type="number" id="meanYOE" name="meanYOE" step="0.1" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="sdYOE">Écart-type expérience</label>
+                        <input type="number" id="sdYOE" name="sdYOE" step="0.1" min="0">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="minYOE">Expérience minimum</label>
+                        <input type="number" id="minYOE" name="minYOE" step="0.1" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="maxYOE">Expérience maximum</label>
+                        <input type="number" id="maxYOE" name="maxYOE" step="0.1" min="0">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="expUnit">Unité d'expérience</label>
+                    <input type="text" id="expUnit" name="expUnit">
+                </div>
+            </section>
+
+            <section class="form-section" data-section="sport">
+                <h2>Activité sportive</h2>
+                <div class="form-group">
+                    <label for="sportName">Nom du sport *</label>
+                    <input type="text" id="sportName" name="sportName" required>
+                </div>
+                <div class="form-group">
+                    <label for="sportLevel">Niveau de pratique</label>
+                    <input type="text" id="sportLevel" name="sportLevel">
+                </div>
+                <div class="form-group">
+                    <label for="sportPracticeType">Type de pratique</label>
+                    <input type="text" id="sportPracticeType" name="sportPracticeType">
+                </div>
+                <div class="form-group">
+                    <label for="sportSubcategory">Sous-catégorie de sport</label>
+                    <input type="text" id="sportSubcategory" name="sportSubcategory">
+                </div>
+            </section>
+
+            <section class="form-section" data-section="variables">
+                <h2>Variables de l'étude</h2>
+                
+                <h3>Variable Dépendante (VD)</h3>
+                <div class="form-group">
+                    <label for="vdName">Nom de la VD (sub-class Final VD) *</label>
+                    <input type="text" id="vdName" name="vdName" required>
+                </div>
+                <div class="form-group">
+                    <label for="vdCategory">Catégorie VD (CLASS) *</label>
+                    <input type="text" id="vdCategory" name="vdCategory" required>
+                </div>
+                <div class="form-group">
+                    <label for="vdMeasure">Mesure de la VD</label>
+                    <input type="text" id="vdMeasure" name="vdMeasure">
+                </div>
+                <div class="form-group">
+                    <label for="vdSubClass1">Sous-classe 1 VD</label>
+                    <input type="text" id="vdSubClass1" name="vdSubClass1">
+                </div>
+                <div class="form-group">
+                    <label for="vdSubClass2">Sous-classe 2 VD</label>
+                    <input type="text" id="vdSubClass2" name="vdSubClass2">
+                </div>
+                <div class="form-group">
+                    <label for="vdSubClass3">Sous-classe 3 VD</label>
+                    <input type="text" id="vdSubClass3" name="vdSubClass3">
+                </div>
+                <div class="form-group">
+                    <label for="vdSubClass4">Sous-classe 4 VD</label>
+                    <input type="text" id="vdSubClass4" name="vdSubClass4">
+                </div>
+
+                <h3>Variable Indépendante (VI)</h3>
+                <div class="form-group">
+                    <label for="viName">Nom de la VI (sub-class Final VI) *</label>
+                    <input type="text" id="viName" name="viName" required>
+                </div>
+                <div class="form-group">
+                    <label for="viCategory">Catégorie VI (CLASS.1) *</label>
+                    <input type="text" id="viCategory" name="viCategory" required>
+                </div>
+                <div class="form-group">
+                    <label for="viMeasure">Mesure de la VI</label>
+                    <input type="text" id="viMeasure" name="viMeasure">
+                </div>
+                <div class="form-group">
+                    <label for="viSubClass1">Sous-classe 1 VI</label>
+                    <input type="text" id="viSubClass1" name="viSubClass1">
+                </div>
+                <div class="form-group">
+                    <label for="viSubClass2">Sous-classe 2 VI</label>
+                    <input type="text" id="viSubClass2" name="viSubClass2">
+                </div>
+                <div class="form-group">
+                    <label for="viSubClass3">Sous-classe 3 VI</label>
+                    <input type="text" id="viSubClass3" name="viSubClass3">
+                </div>
+                <div class="form-group">
+                    <label for="viSubClass4">Sous-classe 4 VI</label>
+                    <input type="text" id="viSubClass4" name="viSubClass4">
+                </div>
+            </section>
+
+            <section class="form-section" data-section="relations">
+                <h2>Relations statistiques</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="degreR">Coefficient r</label>
+                        <input type="number" id="degreR" name="degreR" step="0.001" min="-1" max="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="degreP">Valeur p</label>
+                        <input type="number" id="degreP" name="degreP" step="0.001" min="0" max="1">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="degreR2">R² (Degre_RS)</label>
+                        <input type="number" id="degreR2" name="degreR2" step="0.001" min="0" max="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="resultatRelation">Résultat de la relation *</label>
+                        <input type="text" id="resultatRelation" name="resultatRelation" required>
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="sousGroupeAnalyse">Sous-groupe d'analyse</label>
+                    <input type="text" id="sousGroupeAnalyse" name="sousGroupeAnalyse">
+                </div> -->
+
+                
+            </section>
+
+            <section class="form-section" data-section="mediateurs">
+                <h2>Médiateurs et Modérateurs (optionnel)</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="mediator">Médiateur</label>
+                        <input type="text" id="mediator" name="mediator">
+                    </div>
+                    <div class="form-group">
+                        <label for="mediatorMeasure">Mesure du médiateur</label>
+                        <input type="text" id="mediatorMeasure" name="mediatorMeasure">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="moderator">Modérateur</label>
+                        <input type="text" id="moderator" name="moderator">
+                    </div>
+                    <div class="form-group">
+                        <label for="moderatorMeasure">Mesure du modérateur</label>
+                        <input type="text" id="moderatorMeasure" name="moderatorMeasure">
+                    </div>
+                </div>
+            </section>
+
+            <div class="form-actions">
+                <button type="button" id="previewBtn" class="btn-secondary">Prévisualiser</button>
+                <button type="submit" id="submitBtn" class="btn-primary">Ajouter l'analyse</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="./js/ontology-autocomplete.js"></script>
+    <script src="./add-analysis/autocomplete-component.js"></script>
+    <script src="./add-analysis/add-analysis.js"></script>
+    <script src="./add-analysis/sparql-generator.js"></script>
+    <script src="./js/api-config.js"></script>
+    
+
+    <footer>
+        <p>&copy; 2025 – IA-DAS. Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+@base <http://ia-das.org/mapping#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix iadas: <http://ia-das.org/onto#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# ============================================
+# Mapping simple pour la hiérarchie des sports
+# ============================================
+
+# Mapping pour Class 1
+<#SportClass1>
+    rml:logicalSource [
+        rml:source "data-csv-converted/Sport-Hierarchy-cleaned.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://ia-das.org/onto#{Class 1}" ;
+        rr:class owl:Class
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:subClassOf ;
+        rr:objectMap [ rr:constant iadas:Sport ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rml:reference "Class 1" ]
+    ] .
+
+# Mapping pour Sub class 2
+<#SportClass2>
+    rml:logicalSource [
+        rml:source "data-csv-converted/Sport-Hierarchy-cleaned.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://ia-das.org/onto#{Sub class 2}" ;
+        rr:class owl:Class
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:subClassOf ;
+        rr:objectMap [ rr:template "http://ia-das.org/onto#{Class 1}" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rml:reference "Sub class 2" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:comment ;
+        rr:objectMap [ rml:reference "Definition" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate dcterms:source ;
+        rr:objectMap [ rml:reference "Références" ]
+    ] .
+
+# Mapping pour Sub class 3
+<#SportClass3>
+    rml:logicalSource [
+        rml:source "data-csv-converted/Sport-Hierarchy-cleaned.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://ia-das.org/onto#{Sub class 3}" ;
+        rr:class owl:Class
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:subClassOf ;
+        rr:objectMap [ rr:template "http://ia-das.org/onto#{Sub class 2}" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rml:reference "Sub class 3" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:comment ;
+        rr:objectMap [ rml:reference "Definition" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate dcterms:source ;
+        rr:objectMap [ rml:reference "Références" ]
+
+    ] .

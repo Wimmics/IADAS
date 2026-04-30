@@ -1,0 +1,70 @@
+<div class="analysis-panel-content">
+  <div class="analysis-panel-header">
+    <h2 class="analysis-panel-title">Détails de l'Analyse</h2>
+    <button id="close-analysis-panel" class="analysis-panel-close">×</button>
+  </div>
+  
+  <div id="analysis-content">
+    <div class="analysis-empty">
+      <p>Double-cliquez sur un nœud du graphique pour voir les détails de l'analyse</p>
+    </div>
+  </div>
+</div>
+
+<template id="analysis-content-template">
+  <div class="analysis-section identification">
+    <h3>Identification</h3>
+    <p><strong>ID Analyse:</strong> <span class="analysis-id"></span></p>
+    <p><strong>Titre APA:</strong> <span class="analysis-title"></span></p>
+  </div>
+
+  <div class="analysis-section relations">
+    <h3>Relations</h3>
+    
+    <div class="variable-info">
+      <div><strong>Variable Indépendante (VI):</strong></div>
+      <div class="variable-name vi-name"></div>
+      <div class="variable-category vi-category"></div>
+    </div>
+    
+    <div style="text-align: center; margin: 15px 0;">
+      <div class="relation-badge relation-type"></div>
+    </div>
+    
+    <div class="variable-info">
+      <div><strong>Variable Dépendante (VD):</strong></div>
+      <div class="variable-name vd-name"></div>
+      <div class="variable-category vd-category"></div>
+    </div>
+  </div>
+
+  <div class="analysis-section moderators">
+    <h3>Modérateurs & Médiateurs</h3>
+    <p><strong>Modérateur:</strong> <span class="moderator-value moderator-name"></span></p>
+    <p><strong>Médiateur:</strong> <span class="mediator-value mediator-name"></span></p>
+  </div>
+
+  <div class="analysis-section future">
+    <h3> Informations supplémentaires</h3>
+    <p>Titre complet APA, auteurs, journal, année, statistiques détaillées, etc.</p>
+    <p><em>À implémenter dans les prochaines versions...</em></p>
+  </div>
+
+  <div class="analysis-actions">
+    <button class="analysis-btn close" onclick="window.analysisPanel.close()">
+      Fermer
+    </button>
+    <button class="analysis-btn export" onclick="window.analysisPanel.exportAnalysis()">
+      Exporter
+    </button>
+  </div>
+</template>
+
+<template id="analysis-loading-template">
+  <div class="analysis-loading">
+    <p>Chargement des données pour l'analyse <span class="loading-analysis-id"></span>...</p>
+    <p style="font-size: 12px; color: #bdc3c7;">
+      <em>Intégration avec les données SPARQL en cours...</em>
+    </p>
+  </div>
+</template>

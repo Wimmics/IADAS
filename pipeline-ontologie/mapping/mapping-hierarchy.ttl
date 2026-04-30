@@ -1,0 +1,180 @@
+@base <http://ia-das.org/mapping#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix iadas: <http://ia-das.org/onto#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+
+
+<#VariableClass>
+    rml:logicalSource [
+        rml:source "data-csv-converted/Class-Hierarchy-V1-cleaned.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://ia-das.org/onto#{CLASS}" ;
+        rr:class owl:Class
+    ] ;
+    
+    # // To remove 
+    # rr:predicateObjectMap [
+    #     rr:predicate rdfs:subClassOf ;
+    #     rr:objectMap [ rr:constant iadas:Variable ]
+    # ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rml:reference "CLASS" ]
+    ] .
+
+
+<#VariableSubClass1>
+    rml:logicalSource [
+        rml:source "data-csv-converted/Class-Hierarchy-V1-cleaned.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://ia-das.org/onto#{sub-class 1}" ;
+        rr:class owl:Class
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:subClassOf ;
+        rr:objectMap [ rr:template "http://ia-das.org/onto#{CLASS}" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rml:reference "sub-class 1" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:comment ;
+        rr:objectMap [ rml:reference "Définition" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate iadas:synonym ;
+        rr:objectMap [ rml:reference "Synonym" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate iadas:measurementTool ;
+        rr:objectMap [ rml:reference "Outils" ]
+    ] .
+
+
+<#VariableSubClass2>
+    rml:logicalSource [
+        rml:source "data-csv-converted/Class-Hierarchy-V1-cleaned.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://ia-das.org/onto#{sub-class 2}" ;
+        rr:class owl:Class
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:subClassOf ;
+        rr:objectMap [ rr:template "http://ia-das.org/onto#{sub-class 1}" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rml:reference "sub-class 2" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:comment ;
+        rr:objectMap [ rml:reference "Définition" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate iadas:synonym ;
+        rr:objectMap [ rml:reference "Synonym" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate iadas:measurementTool ;
+        rr:objectMap [ rml:reference "Outils" ]
+    ] .
+
+
+<#VariableSubClass3>
+    rml:logicalSource [
+        rml:source "data-csv-converted/Class-Hierarchy-V1-cleaned.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://ia-das.org/onto#{sub-class 3}" ;
+        rr:class owl:Class
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:subClassOf ;
+        rr:objectMap [ rr:template "http://ia-das.org/onto#{sub-class 2}" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rml:reference "sub-class 3" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:comment ;
+        rr:objectMap [ rml:reference "Définition" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate iadas:synonym ;
+        rr:objectMap [ rml:reference "Synonym" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate iadas:measurementTool ;
+        rr:objectMap [ rml:reference "Outils" ]
+    ] .
+
+
+<#VariableSubClass4>
+    rml:logicalSource [
+        rml:source "data-csv-converted/Class-Hierarchy-V1-cleaned.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://ia-das.org/onto#{sub-class 4}" ;
+        rr:class owl:Class
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:subClassOf ;
+        rr:objectMap [ rr:template "http://ia-das.org/onto#{sub-class 3}" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rml:reference "sub-class 4" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate rdfs:comment ;
+        rr:objectMap [ rml:reference "Définition" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate iadas:synonym ;
+        rr:objectMap [ rml:reference "Synonym" ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate iadas:measurementTool ;
+        rr:objectMap [ rml:reference "Outils" ]
+    ] .

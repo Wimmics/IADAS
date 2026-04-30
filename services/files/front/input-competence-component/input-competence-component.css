@@ -1,0 +1,276 @@
+.competence-input-container {
+    width: 100%;
+    background-color: #6099bc;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.header-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.header-controls h2 {
+    margin: 0;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+/* Styles de l'accordéon */
+.accordion-section {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    border-left: 4px solid #8e44ad;
+    overflow: hidden;
+    height: 120px;
+    overflow-y: auto;
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.accordion-header:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-size: 0.65em;
+    font-weight: 600;
+    color: white;
+    flex-grow: 1;
+}
+
+.accordion-icon {
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+    margin-left: 6px;
+    color: white;
+}
+
+.accordion-header[data-toggle].expanded .accordion-icon {
+    transform: rotate(180deg);
+}
+
+/* Contenu de l'accordéon - HAUTEUR FIXE au lieu de grow */
+.accordion-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.accordion-content.expanded {
+    height: 80px;
+    overflow-y: auto;
+}
+
+.sub-option {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sub-option:last-child {
+    border-bottom: none;
+}
+
+.sub-option:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding-left: 15px;
+}
+
+.sub-option.selected {
+    background-color: rgba(142, 68, 173, 0.3);
+    border-left: 3px solid #8e44ad;
+}
+
+.sub-icon {
+    margin-right: 6px;
+    color: #8e44ad;
+    font-weight: bold;
+    font-size: 0.7em;
+}
+
+.sub-option span:last-child {
+    color: white;
+    font-weight: 500;
+    font-size: 0.6em;
+}
+
+/* Question sélectionnée - VERSION COMPACTE avec boutons à droite */
+.selected-question {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    border: 1px solid #8e44ad;
+}
+
+.selected-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.selected-info h4 {
+    margin: 0 0 2px 0;
+    color: #2c3e50;
+    font-size: 0.65em;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.selected-info p {
+    margin: 0;
+    color: #34495e;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 0.6em;
+    flex-grow: 1;
+}
+
+/* Boutons à droite de la question */
+.selected-question .button-group {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.selected-question button {
+    padding: 3px 8px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.55em;
+    white-space: nowrap;
+}
+
+#searchBtn {
+    background-color: #27ae60;
+    color: white;
+}
+
+#searchBtn:hover {
+    background-color: #2ecc71;
+    transform: translateY(-1px);
+}
+
+#resetBtn {
+    background-color: #7f8c8d;
+    color: white;
+}
+
+#resetBtn:hover {
+    background-color: #95a5a6;
+}
+
+/* Animation pour l'apparition de la question sélectionnée */
+.selected-question {
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar personnalisée pour l'accordéon */
+.accordion-section::-webkit-scrollbar,
+.accordion-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.accordion-section::-webkit-scrollbar-track,
+.accordion-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.accordion-section::-webkit-scrollbar-thumb,
+.accordion-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.accordion-section::-webkit-scrollbar-thumb:hover,
+.accordion-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .competence-input-container {
+        padding: 12px;
+    }
+    
+    .header-controls h2 {
+        font-size: 0.9em;
+    }
+    
+    .accordion-header {
+        padding: 8px 12px;
+    }
+    
+    .accordion-header h3 {
+        font-size: 0.7em;
+    }
+    
+    .sub-option {
+        padding: 6px 15px;
+    }
+    
+    .sub-option span:last-child {
+        font-size: 0.65em;
+    }
+    
+    .selected-question {
+        padding: 12px;
+    }
+    
+    .selected-question .button-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .selected-question button {
+        width: 100%;
+        padding: 10px;
+    }
+}

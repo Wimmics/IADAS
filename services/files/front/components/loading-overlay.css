@@ -1,0 +1,243 @@
+/* Loading Overlay Styles */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+.loading-overlay.hidden {
+    display: none;
+}
+
+.loading-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 450px;
+    max-width: 600px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+#loading-title {
+    color: #333;
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4CAF50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-steps {
+    margin: 25px 0;
+    text-align: left;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 8px;
+    background: #f8f9fa;
+    border-left: 4px solid #e0e0e0;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.step-icon {
+    font-size: 18px;
+    margin-right: 12px;
+    min-width: 25px;
+}
+
+.step-text {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.step.active {
+    opacity: 1;
+    background: #e3f2fd;
+    border-left-color: #2196F3;
+    transform: translateX(5px);
+}
+
+.step.active .step-icon {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.step.completed {
+    opacity: 1;
+    background: #e8f5e8;
+    border-left-color: #4CAF50;
+}
+
+.step.completed .step-icon::after {
+    content: ' ✅';
+}
+
+.step.error {
+    opacity: 1;
+    background: #ffebee;
+    border-left-color: #f44336;
+}
+
+.step.error .step-icon::after {
+    content: ' ❌';
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #f0f0f0;
+    border-radius: 6px;
+    margin: 25px 0;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #66BB6A);
+    border-radius: 6px;
+    width: 0%;
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+#loading-details {
+    color: #666;
+    font-size: 14px;
+    margin: 15px 0;
+    min-height: 20px;
+}
+
+#loading-timer {
+    color: #888;
+    font-size: 12px;
+    margin-top: 10px;
+    font-family: monospace;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .loading-content {
+        min-width: 90%;
+        max-width: 95%;
+        padding: 30px 20px;
+    }
+    
+    #loading-title {
+        font-size: 20px;
+    }
+    
+    .step {
+        padding: 10px 15px;
+    }
+    
+    .step-text {
+        font-size: 14px;
+    }
+}
+
+/* Overlay d'initialisation */
+.init-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.init-content {
+    text-align: center;
+    color: white;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.init-content h2 {
+    font-size: 28px;
+    margin: 20px 0 10px 0;
+    font-weight: 300;
+}
+
+.init-content p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.init-spinner {
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Complet - Pipeline Génération d'Ontologies IA-DAS</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            color: #7f8c8d;
+            margin-top: 25px;
+        }
+        
+        .alert {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+            background-color: #ebf3fd;
+        }
+        
+        .warning {
+            border-left-color: #f39c12;
+            background-color: #fef9e7;
+        }
+        
+        .success {
+            border-left-color: #27ae60;
+            background-color: #d5f4e6;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        pre {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        .file-structure {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .step {
+            counter-increment: step-counter;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .steps {
+            counter-reset: step-counter;
+        }
+        
+        .step::before {
+            content: counter(step-counter);
+            background-color: #3498db;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guide Complet - Pipeline de Génération d'Ontologies IA-DAS</h1>
+        
+        <div class="alert">
+            <strong>Objectif :</strong> Ce guide détaille la procédure complète pour générer automatiquement les ontologies IA-DAS à partir des données sources.
+        </div>
+        
+        <h2>Prérequis</h2>
+        
+        <h3>Logiciels requis</h3>
+        <ul>
+            <li><strong>Python 3.8+</strong> installé sur votre machine</li>
+            <li><strong>Java 8+</strong> (JDK ou JRE) - nécessaire pour RMLMapper</li>
+            <li><strong>RMLMapper JAR</strong> (détaillé ci-dessous)</li>
+        </ul>
+        
+        <h3>Vérification de Java</h3>
+        <p>Testez que Java est installé avec la commande :</p>
+        <pre>java -version</pre>
+        
+        <div class="alert warning">
+            <strong>Si Java n'est pas installé :</strong>
+            <ul>
+                <li><strong>Windows :</strong> Téléchargez OpenJDK ou Oracle JDK depuis le site officiel</li>
+                <li><strong>macOS :</strong> <code>brew install openjdk</code></li>
+                <li><strong>Linux :</strong> <code>sudo apt install default-jdk</code></li>
+            </ul>
+        </div>
+        
+        <h3>Téléchargement du RMLMapper</h3>
+        <div class="steps">
+            <div class="step">
+                <strong>Télécharger le JAR RMLMapper version 7.3.3-r374</strong><br>
+                Lien : <a href="https://github.com/RMLio/rmlmapper-java/releases/tag/7.3.3-r374" target="_blank">RMLMapper GitHub Release</a>
+            </div>
+            <div class="step">
+                <strong>Placer le fichier JAR</strong><br>
+                Copier <code>rmlmapper-7.3.3-r374-all.jar</code> dans le dossier <code>pipeline-ontologie/</code>
+            </div>
+        </div>
+        
+        <div class="alert warning">
+            <strong>Note :</strong> Vous pouvez utiliser une version différente du RMLMapper, mais vous devrez adapter les noms de fichiers dans le code Python correspondant.
+        </div>
+        
+        <h2>Données Sources</h2>
+        
+        <h3>Fichiers CSV requis</h3>
+        <p>Placez les 3 fichiers CSV sources dans le dossier <code>data-csv/</code> avec les noms exacts suivants :</p>
+        
+        <ul>
+            <li><code>IA-DAS-Data.csv</code> - Données principales des analyses</li>
+            <li><code>Sport-Hierarchy.csv</code> - Hiérarchie des sports</li>
+            <li><code>Class-Hierarchy-V1.csv</code> - Hiérarchie des classes de variables</li>
+        </ul>
+        
+        <div class="alert warning">
+            <strong>Format important :</strong> Les fichiers doivent être encodés en UTF-8, c'est à dire lors du téléchargement depuis excel pour choisissez csv-UTF-8. Si vous modifiez les noms, adaptez le fichier <code>pipeline_complet_ia_das.py</code> en conséquence.
+        </div>
+        
+        <h2>Exécution de la Pipeline</h2>
+        
+        <h3>Méthode recommandée : Exécution automatique</h3>
+        
+        <div class="step">
+            <strong>Lancer la pipeline complète</strong><br>
+            Ouvrez un terminal dans le dossier <code>pipeline-ontologie/</code> et exécutez :
+            <pre>python pipeline_complet_ia_das.py</pre>
+        </div>
+        
+        <h3>Processus automatisé</h3>
+        <p>Le script <code>pipeline_complet_ia_das.py</code> exécute séquentiellement :</p>
+        
+        <ol>
+            <li><strong>Nettoyage des fichiers CSV</strong>
+                <ul>
+                    <li>Suppression des lignes et colonnes vides</li>
+                    <li>Standardisation de l'encodage</li>
+                </ul>
+            </li>
+            <li><strong>Adaptation pour RMLMapper</strong>
+                <ul>
+                    <li>Création d'identifiants uniques pour les données principales</li>
+                    <li>Conversion des séparateurs de <code>;</code> vers <code>,</code> (exigence RMLMapper)</li>
+                </ul>
+            </li>
+            <li><strong>Génération des ontologies</strong>
+                <ul>
+                    <li>Utilisation des mappings RML du dossier <code>mapping/</code></li>
+                    <li>Création de 3 ontologies distinctes</li>
+                </ul>
+            </li>
+            <li><strong>Post-traitement</strong>
+                <ul>
+                    <li>Nettoyage des URIs (suppression des %20)</li>
+                    <li>Optimisation du format Turtle</li>
+                </ul>
+            </li>
+        </ol>
+        
+        <h2>Structure des Résultats</h2>
+
+        
+        <h3>Ontologies générées</h3>
+        
+        <div class="success">
+            <strong>Résultats finaux dans le dossier <code>resultats/</code> :</strong>
+            <ul>
+                <li><strong>ia-das-ontology-clean.ttl</strong> - Ontologie principale des données d'analyse</li>
+                <li><strong>sport-hierarchy-simple-clean.ttl</strong> - Hiérarchie des sports simplifiée</li>
+                <li><strong>variable-hierarchy-clean.ttl</strong> - Classification des variables d'analyse</li>
+            </ul>
+        </div>
+        
+        <h2>Fichiers de Mappings</h2>
+        
+        <p>Les règles de transformation sont définies dans le dossier <code>mapping/</code> :</p>
+        <ul>
+            <li><code>mapping-ontology.ttl</code> - Mapping des données principales</li>
+            <li><code>mapping-sport.ttl</code> - Mapping de la hiérarchie des sports</li>
+            <li><code>mapping-hierarchy.ttl</code> - Mapping de la hiérarchie des variables</li>
+        </ul>
+        
+        <h2>Dépannage</h2>
+        
+        <h3>Problèmes courants</h3>
+        <ul>
+            <li><strong>Erreur Java :</strong> Vérifiez que Java est installé et accessible</li>
+            <li><strong>Fichier JAR introuvable :</strong> Vérifiez l'emplacement et le nom du fichier RMLMapper</li>
+            <li><strong>Erreur d'encodage :</strong> Assurez-vous que vos CSV sont en UTF-8</li>
+            <li><strong>Données manquantes :</strong> Vérifiez la présence et le nommage des fichiers sources</li>
+        </ul>
+        
+        <h3>Scripts de vérification</h3>
+        <ul>
+            <li><code>verification_donnees.py</code> - Vérifie l'intégrité des données sources</li>
+            <li><code>verification_statistiques.py</code> - Génère des statistiques sur les résultats</li>
+        </ul>
+    </div>
+</body>
+</html> 
+
+
