@@ -35,6 +35,34 @@ class InputCompetenceComponent extends HTMLElement {
                 text: 'Pour les autres comportements, à quels types d\'ACAD sont-ils reliés ?',
                 description: 'Étudie les liens entre les autres comportements et les différents types d\'ACAD.'
             },
+            'q4-male': {
+                text: 'Quelles sont les relations ACAD-facteurs selon le genre - Populations masculines ?',
+                description: 'Explore les relations spécifiques entre ACAD et facteurs dans les populations masculines.'
+            },
+            'q4-female': {
+                text: 'Quelles sont les relations ACAD-facteurs selon le genre - Populations féminines ?',
+                description: 'Explore les relations spécifiques entre ACAD et facteurs dans les populations féminines.'
+            },
+            'q4-mixed': {
+                text: 'Quelles sont les relations ACAD-facteurs selon le genre - Populations mixtes ?',
+                description: 'Explore les relations spécifiques entre ACAD et facteurs dans les populations mixtes.'
+            },
+            'q5-individual': {
+                text: 'Quelles sont les relations ACAD-facteurs pour les sports individuels ?',
+                description: 'Explore les relations spécifiques entre ACAD et facteurs dans les sports individuels.'
+            },
+            'q5-team': {
+                text: 'Quelles sont les relations ACAD-facteurs pour les sports d\'équipe ?',
+                description: 'Explore les relations spécifiques entre ACAD et facteurs dans les sports d\'équipe.'
+            },
+            'q5-mixed': {
+                text: 'Quelles sont les relations ACAD-facteurs pour les sports mixtes ?',
+                description: 'Explore les relations spécifiques entre ACAD et facteurs dans les sports mixtes.'
+            },
+            'q5-aesthetic': {
+                text: 'Quelles sont les relations ACAD-facteurs pour les sports esthétiques ?',
+                description: 'Explore les relations spécifiques entre ACAD et facteurs dans les sports esthétiques.'
+            },
             'q6-female': {
                 text: 'Quelles sont les relations ACAD-facteurs selon le sexe - Femme ?',
                 description: 'Explore les relations spécifiques entre ACAD et facteurs dans les populations féminines.'
