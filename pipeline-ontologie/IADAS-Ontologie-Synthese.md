@@ -133,6 +133,14 @@ L'annotation de cet article a mis en évidence deux lacunes dans l'ontologie :
 - Validation via les shapes SHACL (`pipeline-ontologie/mapping/shacl-iadas.ttl`) — 8 shapes couvrant toutes les classes principales
 - Tests automatisés de toutes les requêtes SPARQL de l'interface (16/16 questions fonctionnelles)
 
+**Résultats de la validation SHACL (20 mai 2026) :**
+- Outil utilisé : `pyshacl` (v0.31.0)
+- Données testées : 3 articles complets (Article_1, Article_2, Article_3) avec toutes leurs ressources liées (Analysis, Population, Relations, Variable) — 168 triples
+- Résultat : **Conforms: True** — 0 violation sur les 8 shapes
+- Les données Fuseki respectent l'intégralité des contraintes définies
+
+**Note :** Les classes `VariableIndependante` et `VariableDependante` ont été ajoutées à l'OWL lors de l'enrichissement (étape 6) mais les données actuelles utilisent encore le type générique `iadas:Variable`. La migration vers les sous-classes nécessiterait un re-run du pipeline RML.
+
 **À faire :**
 - Test inter-annotateur : deux personnes annotent le même article indépendamment et comparent les résultats
 
