@@ -1,0 +1,957 @@
+@base <http://ia-das.org/mapping#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix iadas-data: <http://ia-das.org/data#> .
+@prefix iadas: <http://ia-das.org/onto#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================
+# Définition de l'ontologie principale
+# ============================================
+
+# Corriger le niveau de sport ne pas le mettre dans sport mais plutot dans population.
+# Ajouter l'hierarchie des sports.
+# Faire le lien vers les variables en appelant le lien depuis d'analyse.
+
+
+<http://ia-das.org/onto#>
+    a owl:Ontology ;
+    dcterms:title "IA-DAS - Intelligence Artificielle , Désordre Alimentaire sportif"@fr ;
+    dcterms:title "IA-DAS - Artificial Intelligence and Sports Eating Disorders"@en ;
+    dcterms:description "Ontologie pour la recherche en psychologie du sport et l'analyse des données d'activité sportive avec intelligence artificielle"@fr ;
+    dcterms:description "Ontology for sport psychology research and sports activity data analysis with artificial intelligence"@en ;
+    dcterms:creator "Équipe de recherche IA-DAS" ;
+    dcterms:created "2025-08-14" ;
+    owl:versionInfo "1.0" ;
+    owl:imports <http://ia-das.org/taxonomy#> .
+
+# ============================================
+# Classes principales avec documentation
+# ============================================
+
+# Article comme sous-classe de BIBO
+iadas:SportPsychologyArticle
+    a owl:Class ;
+    rdfs:subClassOf bibo:AcademicArticle ;
+    rdfs:label "Article de psychologie du sport"@fr ;
+    rdfs:label "Sport Psychology Article"@en ;
+    rdfs:comment "Article académique traitant de psychologie du sport et contenant des analyses empiriques"@fr ;
+    rdfs:comment "Academic article dealing with sport psychology and containing empirical analyses"@en .
+
+iadas:Analysis
+    a owl:Class ;
+    rdfs:label "Analyse empirique"@fr ;
+    rdfs:label "Empirical Analysis"@en ;
+    rdfs:comment "Analyse statistique ou empirique menée dans le cadre d'une recherche en psychologie du sport"@fr ;
+    rdfs:comment "Statistical or empirical analysis conducted within sport psychology research"@en .
+
+iadas:Population
+    a owl:Class ;
+    rdfs:label "Population d'étude"@fr ;
+    rdfs:label "Study Population"@en ;
+    rdfs:comment "Groupe de participants impliqués dans une étude de psychologie du sport"@fr ;
+    rdfs:comment "Group of participants involved in a sport psychology study"@en .
+
+iadas:Sport
+    a owl:Class ;
+    rdfs:label "Activité sportive"@fr ;
+    rdfs:label "Sport Activity"@en ;
+    rdfs:comment "Sport ou activité physique pratiqué(e) par les participants"@fr ;
+    rdfs:comment "Sport or physical activity practiced by participants"@en .
+
+iadas:Relations
+    a owl:Class ;
+    rdfs:label "Relations statistiques"@fr ;
+    rdfs:label "Statistical Relations"@en ;
+    rdfs:comment "Relations statistiques observées entre des variables dans une analyse"@fr ;
+    rdfs:comment "Statistical relations observed between variables in an analysis"@en .
+
+iadas:Variable
+    a owl:Class ;
+    rdfs:label "Variable de recherche"@fr ;
+    rdfs:label "Research Variable"@en ;
+    rdfs:comment "Variable mesurée ou manipulée dans le cadre d'une recherche"@fr ;
+    rdfs:comment "Variable measured or manipulated within research"@en .
+
+# Classes de statistiques
+iadas:AgeStatistics
+    a owl:Class ;
+    rdfs:label "Statistiques d'âge"@fr ;
+    rdfs:label "Age Statistics"@en ;
+    rdfs:comment "Statistiques descriptives concernant l'âge des participants"@fr ;
+    rdfs:comment "Descriptive statistics concerning participants' age"@en .
+
+iadas:BMIStatistics
+    a owl:Class ;
+    rdfs:label "Statistiques d'IMC"@fr ;
+    rdfs:label "BMI Statistics"@en ;
+    rdfs:comment "Statistiques descriptives concernant l'indice de masse corporelle"@fr ;
+    rdfs:comment "Descriptive statistics concerning body mass index"@en .
+
+iadas:ExerciseFrequencyStatistics
+    a owl:Class ;
+    rdfs:label "Statistiques de fréquence d'exercice"@fr ;
+    rdfs:label "Exercise Frequency Statistics"@en ;
+    rdfs:comment "Statistiques descriptives concernant la fréquence d'exercice"@fr ;
+    rdfs:comment "Descriptive statistics concerning exercise frequency"@en .
+
+iadas:YearsOfExperienceStatistics
+    a owl:Class ;
+    rdfs:label "Statistiques d'années d'expérience"@fr ;
+    rdfs:label "Years of Experience Statistics"@en ;
+    rdfs:comment "Statistiques descriptives concernant les années d'expérience sportive"@fr ;
+    rdfs:comment "Descriptive statistics concerning years of sports experience"@en .
+
+# ============================================
+# Propriétés avec domaines et ranges
+# ============================================
+
+# Propriétés liées aux articles
+iadas:country
+    a owl:DatatypeProperty ;
+    rdfs:label "pays"@fr ;
+    rdfs:label "country"@en ;
+    rdfs:comment "Pays où l'étude a été menée"@fr ;
+    rdfs:comment "Country where the study was conducted"@en ;
+    rdfs:domain iadas:SportPsychologyArticle ;
+    rdfs:range xsd:string .
+
+iadas:studyType
+    a owl:DatatypeProperty ;
+    rdfs:label "type d'étude"@fr ;
+    rdfs:label "study type"@en ;
+    rdfs:comment "Type méthodologique de l'étude"@fr ;
+    rdfs:comment "Methodological type of the study"@en ;
+    rdfs:domain iadas:SportPsychologyArticle ;
+    rdfs:range xsd:string .
+
+iadas:hasAnalysis
+    a owl:ObjectProperty ;
+    rdfs:label "a pour analyse"@fr ;
+    rdfs:label "has analysis"@en ;
+    rdfs:comment "Relie un article à ses analyses empiriques"@fr ;
+    rdfs:comment "Links an article to its empirical analyses"@en ;
+    rdfs:domain iadas:SportPsychologyArticle ;
+    rdfs:range iadas:Analysis .
+
+# Propriétés liées aux analyses
+iadas:analysisId
+    a owl:DatatypeProperty ;
+    rdfs:label "identifiant d'analyse"@fr ;
+    rdfs:label "analysis identifier"@en ;
+    rdfs:comment "Identifiant unique de l'analyse"@fr ;
+    rdfs:comment "Unique identifier of the analysis"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:hasPopulation
+    a owl:ObjectProperty ;
+    rdfs:label "a pour population"@fr ;
+    rdfs:label "has population"@en ;
+    rdfs:comment "Relie une analyse à sa population d'étude"@fr ;
+    rdfs:comment "Links an analysis to its study population"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range iadas:Population .
+
+iadas:hasSport
+    a owl:ObjectProperty ;
+    rdfs:label "concerne le sport"@fr ;
+    rdfs:label "concerns sport"@en ;
+    rdfs:comment "Relie une analyse au sport étudié"@fr ;
+    rdfs:comment "Links an analysis to the studied sport"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range iadas:Sport .
+
+iadas:hasRelation
+    a owl:ObjectProperty ;
+    rdfs:label "a pour relation"@fr ;
+    rdfs:label "has relation"@en ;
+    rdfs:comment "Relie une analyse à ses relations statistiques"@fr ;
+    rdfs:comment "Links an analysis to its statistical relations"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range iadas:Relations .
+
+iadas:typeOfAnalysis
+    a owl:DatatypeProperty ;
+    rdfs:label "type d'analyse"@fr ;
+    rdfs:label "type of analysis"@en ;
+    rdfs:comment "Type d'analyse statistique utilisée"@fr ;
+    rdfs:comment "Type of statistical analysis used"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:authorConclusion
+    a owl:DatatypeProperty ;
+    rdfs:label "conclusion des auteurs"@fr ;
+    rdfs:label "authors' conclusion"@en ;
+    rdfs:comment "Conclusion principale tirée par les auteurs"@fr ;
+    rdfs:comment "Main conclusion drawn by the authors"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:sampleSizeMobilized
+    a owl:DatatypeProperty ;
+    rdfs:label "taille d'échantillon mobilisée"@fr ;
+    rdfs:label "mobilized sample size"@en ;
+    rdfs:comment "Nombre de participants mobilisés dans l'analyse"@fr ;
+    rdfs:comment "Number of participants mobilized in the analysis"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:integer .
+
+# Propriétés des relations statistiques
+iadas:hasDependentVariable
+    a owl:ObjectProperty ;
+    rdfs:label "a pour variable dépendante"@fr ;
+    rdfs:label "has dependent variable"@en ;
+    rdfs:comment "Variable dépendante dans la relation"@fr ;
+    rdfs:comment "Dependent variable in the relation"@en ;
+    rdfs:domain iadas:Relations ;
+    rdfs:range iadas:Variable .
+
+iadas:hasIndependentVariable
+    a owl:ObjectProperty ;
+    rdfs:label "a pour variable indépendante"@fr ;
+    rdfs:label "has independent variable"@en ;
+    rdfs:comment "Variable indépendante dans la relation"@fr ;
+    rdfs:comment "Independent variable in the relation"@en ;
+    rdfs:domain iadas:Relations ;
+    rdfs:range iadas:Variable .
+
+iadas:degreR
+    a owl:DatatypeProperty ;
+    rdfs:label "degré r"@fr ;
+    rdfs:label "r degree"@en ;
+    rdfs:comment "Coefficient de corrélation"@fr ;
+    rdfs:comment "Correlation coefficient"@en ;
+    rdfs:domain iadas:Relations ;
+    rdfs:range xsd:decimal .
+
+iadas:degreP
+    a owl:DatatypeProperty ;
+    rdfs:label "degré p"@fr ;
+    rdfs:label "p degree"@en ;
+    rdfs:comment "Valeur de signification statistique"@fr ;
+    rdfs:comment "Statistical significance value"@en ;
+    rdfs:domain iadas:Relations ;
+    rdfs:range xsd:decimal .
+
+# Propriétés des populations
+iadas:sampleSize
+    a owl:DatatypeProperty ;
+    rdfs:label "taille d'échantillon"@fr ;
+    rdfs:label "sample size"@en ;
+    rdfs:comment "Nombre total de participants dans la population"@fr ;
+    rdfs:comment "Total number of participants in the population"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range xsd:integer .
+
+iadas:gender
+    a owl:DatatypeProperty ;
+    rdfs:label "genre"@fr ;
+    rdfs:label "gender"@en ;
+    rdfs:comment "Distribution des genres dans la population"@fr ;
+    rdfs:comment "Gender distribution in the population"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range xsd:string .
+
+iadas:ageStats
+    a owl:ObjectProperty ;
+    rdfs:label "statistiques d'âge"@fr ;
+    rdfs:label "age statistics"@en ;
+    rdfs:comment "Relie une population à ses statistiques d'âge"@fr ;
+    rdfs:comment "Links a population to its age statistics"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range iadas:AgeStatistics .
+
+# Propriétés des sports
+iadas:sportName
+    a owl:DatatypeProperty ;
+    rdfs:label "nom du sport"@fr ;
+    rdfs:label "sport name"@en ;
+    rdfs:comment "Nom de l'activité sportive"@fr ;
+    rdfs:comment "Name of the sport activity"@en ;
+    rdfs:domain iadas:Sport ;
+    rdfs:range xsd:string .
+
+iadas:sportLevel
+    a owl:DatatypeProperty ;
+    rdfs:label "niveau de sport"@fr ;
+    rdfs:label "sport level"@en ;
+    rdfs:comment "Niveau de pratique sportive"@fr ;
+    rdfs:comment "Level of sport practice"@en ;
+    rdfs:domain iadas:Sport ;
+    rdfs:range xsd:string .
+
+# Propriétés de liaison taxonomique
+iadas:hasVariableConcept
+    a owl:ObjectProperty ;
+    rdfs:label "a pour concept de variable"@fr ;
+    rdfs:label "has variable concept"@en ;
+    rdfs:comment "Relie une variable à son concept dans la taxonomie IA-DAS"@fr ;
+    rdfs:comment "Links a variable to its concept in the IA-DAS taxonomy"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range owl:Thing .
+
+# Propriétés existantes conservées pour compatibilité
+iadas:hasCategory
+    a owl:DatatypeProperty ;
+    rdfs:label "a pour catégorie"@fr ;
+    rdfs:label "has category"@en ;
+    rdfs:comment "Catégorie de la variable (DEAB, interpersonnel, intrapersonnel, etc.)"@fr ;
+    rdfs:comment "Category of the variable (DEAB, interpersonal, intrapersonal, etc.)"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range xsd:string .
+
+iadas:VD
+    a owl:DatatypeProperty ;
+    rdfs:label "variable dépendante"@fr ;
+    rdfs:label "dependent variable"@en ;
+    rdfs:comment "Nom de la variable dépendante finale"@fr ;
+    rdfs:comment "Final dependent variable name"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range xsd:string .
+
+iadas:VI
+    a owl:DatatypeProperty ;
+    rdfs:label "variable indépendante"@fr ;
+    rdfs:label "independent variable"@en ;
+    rdfs:comment "Nom de la variable indépendante finale"@fr ;
+    rdfs:comment "Final independent variable name"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range xsd:string .
+
+iadas:variableType
+    a owl:DatatypeProperty ;
+    rdfs:label "type de variable"@fr ;
+    rdfs:label "variable type"@en ;
+    rdfs:comment "Type de variable (VD ou VI)"@fr ;
+    rdfs:comment "Type of variable (DV or IV)"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range xsd:string .
+
+iadas:measure
+    a owl:DatatypeProperty ;
+    rdfs:label "mesure"@fr ;
+    rdfs:label "measure"@en ;
+    rdfs:comment "Instrument ou méthode de mesure de la variable"@fr ;
+    rdfs:comment "Instrument or method for measuring the variable"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range xsd:string .
+
+iadas:subClass1
+    a owl:DatatypeProperty ;
+    rdfs:label "sous-classe 1"@fr ;
+    rdfs:label "sub-class 1"@en ;
+    rdfs:comment "Premier niveau de sous-classification"@fr ;
+    rdfs:comment "First level of sub-classification"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range xsd:string .
+
+iadas:subClass2
+    a owl:DatatypeProperty ;
+    rdfs:label "sous-classe 2"@fr ;
+    rdfs:label "sub-class 2"@en ;
+    rdfs:comment "Deuxième niveau de sous-classification"@fr ;
+    rdfs:comment "Second level of sub-classification"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range xsd:string .
+
+iadas:subClass3
+    a owl:DatatypeProperty ;
+    rdfs:label "sous-classe 3"@fr ;
+    rdfs:label "sub-class 3"@en ;
+    rdfs:comment "Troisième niveau de sous-classification"@fr ;
+    rdfs:comment "Third level of sub-classification"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range xsd:string .
+
+iadas:subClass4
+    a owl:DatatypeProperty ;
+    rdfs:label "sous-classe 4"@fr ;
+    rdfs:label "sub-class 4"@en ;
+    rdfs:comment "Quatrième niveau de sous-classification (VI seulement)"@fr ;
+    rdfs:comment "Fourth level of sub-classification (IV only)"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range xsd:string .
+
+iadas:finalClass
+    a owl:DatatypeProperty ;
+    rdfs:label "classe finale"@fr ;
+    rdfs:label "final class"@en ;
+    rdfs:comment "Classification finale de la variable"@fr ;
+    rdfs:comment "Final classification of the variable"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range xsd:string .
+
+# Propriétés supplémentaires documentées
+iadas:analysisMultiplicity
+    a owl:DatatypeProperty ;
+    rdfs:label "multiplicité de l'analyse"@fr ;
+    rdfs:label "analysis multiplicity"@en ;
+    rdfs:comment "Indique si l'analyse porte sur plusieurs variables ou conditions"@fr ;
+    rdfs:comment "Indicates whether the analysis covers multiple variables or conditions"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:relationDegree
+    a owl:DatatypeProperty ;
+    rdfs:label "degré de relation"@fr ;
+    rdfs:label "relation degree"@en ;
+    rdfs:comment "Force ou intensité de la relation observée"@fr ;
+    rdfs:comment "Strength or intensity of the observed relation"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:limites
+    a owl:DatatypeProperty ;
+    rdfs:label "limites"@fr ;
+    rdfs:label "limitations"@en ;
+    rdfs:comment "Limites méthodologiques ou conceptuelles de l'analyse"@fr ;
+    rdfs:comment "Methodological or conceptual limitations of the analysis"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:perspectives
+    a owl:DatatypeProperty ;
+    rdfs:label "perspectives"@fr ;
+    rdfs:label "perspectives"@en ;
+    rdfs:comment "Perspectives de recherche future identifiées"@fr ;
+    rdfs:comment "Future research perspectives identified"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:hasModerator
+    a owl:DatatypeProperty ;
+    rdfs:label "a pour modérateur"@fr ;
+    rdfs:label "has moderator"@en ;
+    rdfs:comment "Variable modératrice dans l'analyse"@fr ;
+    rdfs:comment "Moderating variable in the analysis"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:moderatorMeasure
+    a owl:DatatypeProperty ;
+    rdfs:label "mesure du modérateur"@fr ;
+    rdfs:label "moderator measure"@en ;
+    rdfs:comment "Instrument de mesure du modérateur"@fr ;
+    rdfs:comment "Measurement instrument for the moderator"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:hasMediator
+    a owl:DatatypeProperty ;
+    rdfs:label "a pour médiateur"@fr ;
+    rdfs:label "has mediator"@en ;
+    rdfs:comment "Variable médiatrice dans l'analyse"@fr ;
+    rdfs:comment "Mediating variable in the analysis"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:mediatorMeasure
+    a owl:DatatypeProperty ;
+    rdfs:label "mesure du médiateur"@fr ;
+    rdfs:label "mediator measure"@en ;
+    rdfs:comment "Instrument de mesure du médiateur"@fr ;
+    rdfs:comment "Measurement instrument for the mediator"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:acads
+    a owl:DatatypeProperty ;
+    rdfs:label "ACADS"@fr ;
+    rdfs:label "ACADS"@en ;
+    rdfs:comment "Score ou mesure ACADS (spécifique au domaine)"@fr ;
+    rdfs:comment "ACADS score or measure (domain-specific)"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+# Propriétés des statistiques d'âge
+iadas:ageDescription
+    a owl:DatatypeProperty ;
+    rdfs:label "description de l'âge"@fr ;
+    rdfs:label "age description"@en ;
+    rdfs:comment "Description textuelle des caractéristiques d'âge"@fr ;
+    rdfs:comment "Textual description of age characteristics"@en ;
+    rdfs:domain iadas:AgeStatistics ;
+    rdfs:range xsd:string .
+
+iadas:meanAge
+    a owl:DatatypeProperty ;
+    rdfs:label "âge moyen"@fr ;
+    rdfs:label "mean age"@en ;
+    rdfs:comment "Âge moyen des participants"@fr ;
+    rdfs:comment "Mean age of participants"@en ;
+    rdfs:domain iadas:AgeStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:sdAge
+    a owl:DatatypeProperty ;
+    rdfs:label "écart-type de l'âge"@fr ;
+    rdfs:label "age standard deviation"@en ;
+    rdfs:comment "Écart-type de l'âge des participants"@fr ;
+    rdfs:comment "Standard deviation of participants' age"@en ;
+    rdfs:domain iadas:AgeStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:minAge
+    a owl:DatatypeProperty ;
+    rdfs:label "âge minimum"@fr ;
+    rdfs:label "minimum age"@en ;
+    rdfs:comment "Âge minimum des participants"@fr ;
+    rdfs:comment "Minimum age of participants"@en ;
+    rdfs:domain iadas:AgeStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:maxAge
+    a owl:DatatypeProperty ;
+    rdfs:label "âge maximum"@fr ;
+    rdfs:label "maximum age"@en ;
+    rdfs:comment "Âge maximum des participants"@fr ;
+    rdfs:comment "Maximum age of participants"@en ;
+    rdfs:domain iadas:AgeStatistics ;
+    rdfs:range xsd:decimal .
+
+# Propriétés des statistiques d'IMC
+iadas:bmiDescription
+    a owl:DatatypeProperty ;
+    rdfs:label "description de l'IMC"@fr ;
+    rdfs:label "BMI description"@en ;
+    rdfs:comment "Description textuelle des caractéristiques d'IMC"@fr ;
+    rdfs:comment "Textual description of BMI characteristics"@en ;
+    rdfs:domain iadas:BMIStatistics ;
+    rdfs:range xsd:string .
+
+iadas:meanBMI
+    a owl:DatatypeProperty ;
+    rdfs:label "IMC moyen"@fr ;
+    rdfs:label "mean BMI"@en ;
+    rdfs:comment "IMC moyen des participants"@fr ;
+    rdfs:comment "Mean BMI of participants"@en ;
+    rdfs:domain iadas:BMIStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:sdBMI
+    a owl:DatatypeProperty ;
+    rdfs:label "écart-type de l'IMC"@fr ;
+    rdfs:label "BMI standard deviation"@en ;
+    rdfs:comment "Écart-type de l'IMC des participants"@fr ;
+    rdfs:comment "Standard deviation of participants' BMI"@en ;
+    rdfs:domain iadas:BMIStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:minBMI
+    a owl:DatatypeProperty ;
+    rdfs:label "IMC minimum"@fr ;
+    rdfs:label "minimum BMI"@en ;
+    rdfs:comment "IMC minimum des participants"@fr ;
+    rdfs:comment "Minimum BMI of participants"@en ;
+    rdfs:domain iadas:BMIStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:maxBMI
+    a owl:DatatypeProperty ;
+    rdfs:label "IMC maximum"@fr ;
+    rdfs:label "maximum BMI"@en ;
+    rdfs:comment "IMC maximum des participants"@fr ;
+    rdfs:comment "Maximum BMI of participants"@en ;
+    rdfs:domain iadas:BMIStatistics ;
+    rdfs:range xsd:decimal .
+
+# Propriétés des relations statistiques supplémentaires
+iadas:signeP
+    a owl:DatatypeProperty ;
+    rdfs:label "signe p"@fr ;
+    rdfs:label "p sign"@en ;
+    rdfs:comment "Signe de la valeur p"@fr ;
+    rdfs:comment "Sign of the p-value"@en ;
+    rdfs:domain iadas:Relations ;
+    rdfs:range xsd:string .
+
+iadas:degreBeta
+    a owl:DatatypeProperty ;
+    rdfs:label "degré bêta"@fr ;
+    rdfs:label "beta degree"@en ;
+    rdfs:comment "Coefficient bêta de régression"@fr ;
+    rdfs:comment "Beta regression coefficient"@en ;
+    rdfs:domain iadas:Relations ;
+    rdfs:range xsd:decimal .
+
+iadas:degreR2
+    a owl:DatatypeProperty ;
+    rdfs:label "degré R²"@fr ;
+    rdfs:label "R² degree"@en ;
+    rdfs:comment "Coefficient de détermination R²"@fr ;
+    rdfs:comment "R² coefficient of determination"@en ;
+    rdfs:domain iadas:Relations ;
+    rdfs:range xsd:decimal .
+
+iadas:resultatRelation
+    a owl:DatatypeProperty ;
+    rdfs:label "résultat de relation"@fr ;
+    rdfs:label "relation result"@en ;
+    rdfs:comment "Résultat ou conclusion de la relation statistique"@fr ;
+    rdfs:comment "Result or conclusion of the statistical relation"@en ;
+    rdfs:domain iadas:Relations ;
+    rdfs:range xsd:string .
+
+iadas:sousGroupeAnalyse
+    a owl:DatatypeProperty ;
+    rdfs:label "sous-groupe d'analyse"@fr ;
+    rdfs:label "analysis subgroup"@en ;
+    rdfs:comment "Sous-groupe spécifique pour l'analyse"@fr ;
+    rdfs:comment "Specific subgroup for the analysis"@en ;
+    rdfs:domain iadas:Relations ;
+    rdfs:range xsd:string .
+
+iadas:sousGroupeAnalyse2
+    a owl:DatatypeProperty ;
+    rdfs:label "sous-groupe d'analyse 2"@fr ;
+    rdfs:label "analysis subgroup 2"@en ;
+    rdfs:comment "Deuxième sous-groupe pour l'analyse"@fr ;
+    rdfs:comment "Second subgroup for the analysis"@en ;
+    rdfs:domain iadas:Relations ;
+    rdfs:range xsd:string .
+
+iadas:relationDegreeSecondary
+    a owl:DatatypeProperty ;
+    rdfs:label "degré de relation secondaire"@fr ;
+    rdfs:label "secondary relation degree"@en ;
+    rdfs:comment "Degré de relation secondaire ou alternative"@fr ;
+    rdfs:comment "Secondary or alternative relation degree"@en ;
+    rdfs:domain iadas:Relations ;
+    rdfs:range xsd:string .
+
+# Propriétés supplémentaires des populations
+iadas:population
+    a owl:DatatypeProperty ;
+    rdfs:label "population"@fr ;
+    rdfs:label "population"@en ;
+    rdfs:comment "Description de la population d'étude"@fr ;
+    rdfs:comment "Description of the study population"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range xsd:string .
+
+iadas:hasSubgroup
+    a owl:DatatypeProperty ;
+    rdfs:label "a pour sous-groupe"@fr ;
+    rdfs:label "has subgroup"@en ;
+    rdfs:comment "Sous-groupe spécifique de la population"@fr ;
+    rdfs:comment "Specific subgroup of the population"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range xsd:string .
+
+iadas:sportingPopulation
+    a owl:DatatypeProperty ;
+    rdfs:label "population sportive"@fr ;
+    rdfs:label "sporting population"@en ;
+    rdfs:comment "Caractéristiques de la population sportive"@fr ;
+    rdfs:comment "Characteristics of the sporting population"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range xsd:string .
+
+iadas:inclusionCriteria
+    a owl:DatatypeProperty ;
+    rdfs:label "critères d'inclusion"@fr ;
+    rdfs:label "inclusion criteria"@en ;
+    rdfs:comment "Critères d'inclusion pour la participation à l'étude"@fr ;
+    rdfs:comment "Inclusion criteria for study participation"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range xsd:string .
+
+iadas:sousGroupeAnalyse1
+    a owl:DatatypeProperty ;
+    rdfs:label "sous-groupe d'analyse 1"@fr ;
+    rdfs:label "analysis subgroup 1"@en ;
+    rdfs:comment "Premier sous-groupe pour l'analyse de population"@fr ;
+    rdfs:comment "First subgroup for population analysis"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range xsd:string .
+
+iadas:sousGroupeAnalyse2
+    a owl:DatatypeProperty ;
+    rdfs:label "sous-groupe d'analyse 2"@fr ;
+    rdfs:label "analysis subgroup 2"@en ;
+    rdfs:comment "Deuxième sous-groupe pour l'analyse de population"@fr ;
+    rdfs:comment "Second subgroup for population analysis"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range xsd:string .
+
+# Propriétés supplémentaires des sports
+iadas:sportPracticeType
+    a owl:DatatypeProperty ;
+    rdfs:label "type de pratique sportive"@fr ;
+    rdfs:label "sport practice type"@en ;
+    rdfs:comment "Type ou modalité de pratique sportive"@fr ;
+    rdfs:comment "Type or modality of sport practice"@en ;
+    rdfs:domain iadas:Sport ;
+    rdfs:range xsd:string .
+
+iadas:sportSubcategory
+    a owl:DatatypeProperty ;
+    rdfs:label "sous-catégorie de sport"@fr ;
+    rdfs:label "sport subcategory"@en ;
+    rdfs:comment "Sous-catégorie ou spécialisation du sport"@fr ;
+    rdfs:comment "Subcategory or specialization of the sport"@en ;
+    rdfs:domain iadas:Sport ;
+    rdfs:range xsd:string .
+
+# Propriétés supplémentaires des statistiques
+iadas:bmiStats
+    a owl:ObjectProperty ;
+    rdfs:label "statistiques d'IMC"@fr ;
+    rdfs:label "BMI statistics"@en ;
+    rdfs:comment "Relie une population à ses statistiques d'IMC"@fr ;
+    rdfs:comment "Links a population to its BMI statistics"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range iadas:BMIStatistics .
+
+iadas:exerciseFreqStats
+    a owl:ObjectProperty ;
+    rdfs:label "statistiques de fréquence d'exercice"@fr ;
+    rdfs:label "exercise frequency statistics"@en ;
+    rdfs:comment "Relie une population à ses statistiques de fréquence d'exercice"@fr ;
+    rdfs:comment "Links a population to its exercise frequency statistics"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range iadas:ExerciseFrequencyStatistics .
+
+iadas:experienceStats
+    a owl:ObjectProperty ;
+    rdfs:label "statistiques d'expérience"@fr ;
+    rdfs:label "experience statistics"@en ;
+    rdfs:comment "Relie une population à ses statistiques d'années d'expérience"@fr ;
+    rdfs:comment "Links a population to its years of experience statistics"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range iadas:YearsOfExperienceStatistics .
+
+# Propriétés des statistiques de fréquence d'exercice
+iadas:exerciseFreqDescription
+    a owl:DatatypeProperty ;
+    rdfs:label "description de la fréquence d'exercice"@fr ;
+    rdfs:label "exercise frequency description"@en ;
+    rdfs:comment "Description textuelle de la fréquence d'exercice"@fr ;
+    rdfs:comment "Textual description of exercise frequency"@en ;
+    rdfs:domain iadas:ExerciseFrequencyStatistics ;
+    rdfs:range xsd:string .
+
+iadas:meanExFR
+    a owl:DatatypeProperty ;
+    rdfs:label "fréquence d'exercice moyenne"@fr ;
+    rdfs:label "mean exercise frequency"@en ;
+    rdfs:comment "Fréquence d'exercice moyenne"@fr ;
+    rdfs:comment "Mean exercise frequency"@en ;
+    rdfs:domain iadas:ExerciseFrequencyStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:sdExFR
+    a owl:DatatypeProperty ;
+    rdfs:label "écart-type de la fréquence d'exercice"@fr ;
+    rdfs:label "exercise frequency standard deviation"@en ;
+    rdfs:comment "Écart-type de la fréquence d'exercice"@fr ;
+    rdfs:comment "Standard deviation of exercise frequency"@en ;
+    rdfs:domain iadas:ExerciseFrequencyStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:minExFR
+    a owl:DatatypeProperty ;
+    rdfs:label "fréquence d'exercice minimum"@fr ;
+    rdfs:label "minimum exercise frequency"@en ;
+    rdfs:comment "Fréquence d'exercice minimum"@fr ;
+    rdfs:comment "Minimum exercise frequency"@en ;
+    rdfs:domain iadas:ExerciseFrequencyStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:maxExFR
+    a owl:DatatypeProperty ;
+    rdfs:label "fréquence d'exercice maximum"@fr ;
+    rdfs:label "maximum exercise frequency"@en ;
+    rdfs:comment "Fréquence d'exercice maximum"@fr ;
+    rdfs:comment "Maximum exercise frequency"@en ;
+    rdfs:domain iadas:ExerciseFrequencyStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:freqUnit
+    a owl:DatatypeProperty ;
+    rdfs:label "unité de fréquence"@fr ;
+    rdfs:label "frequency unit"@en ;
+    rdfs:comment "Unité de mesure de la fréquence"@fr ;
+    rdfs:comment "Unit of frequency measurement"@en ;
+    rdfs:domain iadas:ExerciseFrequencyStatistics ;
+    rdfs:range xsd:string .
+
+iadas:freqBase
+    a owl:DatatypeProperty ;
+    rdfs:label "base de fréquence"@fr ;
+    rdfs:label "frequency base"@en ;
+    rdfs:comment "Base temporelle de la fréquence (par semaine, par mois, etc.)"@fr ;
+    rdfs:comment "Temporal base of frequency (per week, per month, etc.)"@en ;
+    rdfs:domain iadas:ExerciseFrequencyStatistics ;
+    rdfs:range xsd:string .
+
+# Propriétés des statistiques d'expérience
+iadas:experienceDescription
+    a owl:DatatypeProperty ;
+    rdfs:label "description de l'expérience"@fr ;
+    rdfs:label "experience description"@en ;
+    rdfs:comment "Description textuelle des années d'expérience"@fr ;
+    rdfs:comment "Textual description of years of experience"@en ;
+    rdfs:domain iadas:YearsOfExperienceStatistics ;
+    rdfs:range xsd:string .
+
+iadas:meanYOE
+    a owl:DatatypeProperty ;
+    rdfs:label "années d'expérience moyennes"@fr ;
+    rdfs:label "mean years of experience"@en ;
+    rdfs:comment "Nombre moyen d'années d'expérience"@fr ;
+    rdfs:comment "Mean number of years of experience"@en ;
+    rdfs:domain iadas:YearsOfExperienceStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:sdYOE
+    a owl:DatatypeProperty ;
+    rdfs:label "écart-type des années d'expérience"@fr ;
+    rdfs:label "years of experience standard deviation"@en ;
+    rdfs:comment "Écart-type des années d'expérience"@fr ;
+    rdfs:comment "Standard deviation of years of experience"@en ;
+    rdfs:domain iadas:YearsOfExperienceStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:minYOE
+    a owl:DatatypeProperty ;
+    rdfs:label "années d'expérience minimum"@fr ;
+    rdfs:label "minimum years of experience"@en ;
+    rdfs:comment "Nombre minimum d'années d'expérience"@fr ;
+    rdfs:comment "Minimum number of years of experience"@en ;
+    rdfs:domain iadas:YearsOfExperienceStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:maxYOE
+    a owl:DatatypeProperty ;
+    rdfs:label "années d'expérience maximum"@fr ;
+    rdfs:label "maximum years of experience"@en ;
+    rdfs:comment "Nombre maximum d'années d'expérience"@fr ;
+    rdfs:comment "Maximum number of years of experience"@en ;
+    rdfs:domain iadas:YearsOfExperienceStatistics ;
+    rdfs:range xsd:decimal .
+
+iadas:expUnit
+    a owl:DatatypeProperty ;
+    rdfs:label "unité d'expérience"@fr ;
+    rdfs:label "experience unit"@en ;
+    rdfs:comment "Unité de mesure de l'expérience (années, mois, etc.)"@fr ;
+    rdfs:comment "Unit of experience measurement (years, months, etc.)"@en ;
+    rdfs:domain iadas:YearsOfExperienceStatistics ;
+    rdfs:range xsd:string .
+
+# Nouvelles propriétés — données 2026
+iadas:continent
+    a owl:DatatypeProperty ;
+    rdfs:label "continent"@fr ;
+    rdfs:label "continent"@en ;
+    rdfs:comment "Continent où l'étude a été menée"@fr ;
+    rdfs:comment "Continent where the study was conducted"@en ;
+    rdfs:domain iadas:SportPsychologyArticle ;
+    rdfs:range xsd:string .
+
+iadas:numberOfSportStudied
+    a owl:DatatypeProperty ;
+    rdfs:label "nombre de sports étudiés"@fr ;
+    rdfs:label "number of sport studied"@en ;
+    rdfs:comment "Nombre de sports distincts inclus dans l'analyse"@fr ;
+    rdfs:comment "Number of distinct sports included in the analysis"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:integer .
+
+iadas:complexityOfAnalysis
+    a owl:DatatypeProperty ;
+    rdfs:label "complexité de l'analyse"@fr ;
+    rdfs:label "complexity of analysis"@en ;
+    rdfs:comment "Niveau de complexité de l'analyse statistique"@fr ;
+    rdfs:comment "Complexity level of the statistical analysis"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:groupStatisticalAnalysis
+    a owl:DatatypeProperty ;
+    rdfs:label "groupe d'analyse statistique"@fr ;
+    rdfs:label "group statistical analysis"@en ;
+    rdfs:comment "Groupe ou catégorie de la méthode d'analyse statistique utilisée"@fr ;
+    rdfs:comment "Group or category of the statistical analysis method used"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+# Enrichissement OWL — Jour 9 (méthode SELAR3, étape 6 : Relations)
+
+# Sous-classes de Variable
+iadas:VariableIndependante
+    a owl:Class ;
+    rdfs:subClassOf iadas:Variable ;
+    rdfs:label "Variable indépendante"@fr ;
+    rdfs:label "Independent Variable"@en ;
+    rdfs:comment "Facteur psychologique ou contextuel dont on étudie l'influence sur un comportement alimentaire"@fr ;
+    rdfs:comment "Psychological or contextual factor whose influence on an eating behaviour is studied"@en .
+
+iadas:VariableDependante
+    a owl:Class ;
+    rdfs:subClassOf iadas:Variable ;
+    rdfs:label "Variable dépendante"@fr ;
+    rdfs:label "Dependent Variable"@en ;
+    rdfs:comment "Comportement alimentaire dysfonctionnel mesuré dans l'étude (sous la catégorie DEAB)"@fr ;
+    rdfs:comment "Dysfunctional eating behaviour measured in the study (under the DEAB category)"@en .
+
+# Propriétés inverses
+iadas:isAnalysisOf
+    a owl:ObjectProperty ;
+    owl:inverseOf iadas:hasAnalysis ;
+    rdfs:label "est l'analyse de"@fr ;
+    rdfs:label "is analysis of"@en ;
+    rdfs:comment "Relie une analyse à l'article dont elle est issue"@fr ;
+    rdfs:comment "Links an analysis back to its source article"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range iadas:SportPsychologyArticle .
+
+iadas:isPopulationOf
+    a owl:ObjectProperty ;
+    owl:inverseOf iadas:hasPopulation ;
+    rdfs:label "est la population de"@fr ;
+    rdfs:label "is population of"@en ;
+    rdfs:comment "Relie une population à l'analyse qui la référence"@fr ;
+    rdfs:comment "Links a population back to the analysis that references it"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range iadas:Analysis .
+
+# Lien sémantique Variable → concept ACAD-vocab
+iadas:refersToVariable
+    a owl:ObjectProperty ;
+    rdfs:label "réfère à la variable"@fr ;
+    rdfs:label "refers to variable"@en ;
+    rdfs:comment "Relie une variable (VI ou VD) à son concept correspondant dans le vocabulaire SKOS ACAD-vocab"@fr ;
+    rdfs:comment "Links a research variable (IV or DV) to its corresponding concept in the ACAD-vocab SKOS taxonomy"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range skos:Concept .
+
+# Statistiques descriptives généralisées
+iadas:hasStatistics
+    a owl:ObjectProperty ;
+    rdfs:label "a pour statistiques"@fr ;
+    rdfs:label "has statistics"@en ;
+    rdfs:comment "Relie une population à ses statistiques descriptives (âge, IMC, fréquence d'exercice, expérience)"@fr ;
+    rdfs:comment "Links a population to its descriptive statistics (age, BMI, exercise frequency, experience)"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range iadas:AgeStatistics .
+
+# Force du lien statistique (suggestion encadrante)
+iadas:effectSize
+    a owl:DatatypeProperty ;
+    rdfs:label "taille d'effet"@fr ;
+    rdfs:label "effect size"@en ;
+    rdfs:comment "Force ou magnitude de la relation statistique entre VI et VD, selon les conventions de Cohen (faible, modéré, fort)"@fr ;
+    rdfs:comment "Strength or magnitude of the statistical relation between IV and DV, following Cohen's conventions (small, medium, large)"@en ;
+    rdfs:domain iadas:Relations ;
+    rdfs:range xsd:string .
