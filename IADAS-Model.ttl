@@ -4,6 +4,7 @@
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix iadas-data: <http://ia-das.org/data#> .
 @prefix iadas: <http://ia-das.org/onto#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix csvw: <http://www.w3.org/ns/csvw#> .
@@ -846,4 +847,111 @@ iadas:expUnit
     rdfs:comment "Unité de mesure de l'expérience (années, mois, etc.)"@fr ;
     rdfs:comment "Unit of experience measurement (years, months, etc.)"@en ;
     rdfs:domain iadas:YearsOfExperienceStatistics ;
+    rdfs:range xsd:string .
+
+# Nouvelles propriétés — données 2026
+iadas:continent
+    a owl:DatatypeProperty ;
+    rdfs:label "continent"@fr ;
+    rdfs:label "continent"@en ;
+    rdfs:comment "Continent où l'étude a été menée"@fr ;
+    rdfs:comment "Continent where the study was conducted"@en ;
+    rdfs:domain iadas:SportPsychologyArticle ;
+    rdfs:range xsd:string .
+
+iadas:numberOfSportStudied
+    a owl:DatatypeProperty ;
+    rdfs:label "nombre de sports étudiés"@fr ;
+    rdfs:label "number of sport studied"@en ;
+    rdfs:comment "Nombre de sports distincts inclus dans l'analyse"@fr ;
+    rdfs:comment "Number of distinct sports included in the analysis"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:integer .
+
+iadas:complexityOfAnalysis
+    a owl:DatatypeProperty ;
+    rdfs:label "complexité de l'analyse"@fr ;
+    rdfs:label "complexity of analysis"@en ;
+    rdfs:comment "Niveau de complexité de l'analyse statistique"@fr ;
+    rdfs:comment "Complexity level of the statistical analysis"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+iadas:groupStatisticalAnalysis
+    a owl:DatatypeProperty ;
+    rdfs:label "groupe d'analyse statistique"@fr ;
+    rdfs:label "group statistical analysis"@en ;
+    rdfs:comment "Groupe ou catégorie de la méthode d'analyse statistique utilisée"@fr ;
+    rdfs:comment "Group or category of the statistical analysis method used"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range xsd:string .
+
+# Enrichissement OWL — Jour 9 (méthode SELAR3, étape 6 : Relations)
+
+# Sous-classes de Variable
+iadas:VariableIndependante
+    a owl:Class ;
+    rdfs:subClassOf iadas:Variable ;
+    rdfs:label "Variable indépendante"@fr ;
+    rdfs:label "Independent Variable"@en ;
+    rdfs:comment "Facteur psychologique ou contextuel dont on étudie l'influence sur un comportement alimentaire"@fr ;
+    rdfs:comment "Psychological or contextual factor whose influence on an eating behaviour is studied"@en .
+
+iadas:VariableDependante
+    a owl:Class ;
+    rdfs:subClassOf iadas:Variable ;
+    rdfs:label "Variable dépendante"@fr ;
+    rdfs:label "Dependent Variable"@en ;
+    rdfs:comment "Comportement alimentaire dysfonctionnel mesuré dans l'étude (sous la catégorie DEAB)"@fr ;
+    rdfs:comment "Dysfunctional eating behaviour measured in the study (under the DEAB category)"@en .
+
+# Propriétés inverses
+iadas:isAnalysisOf
+    a owl:ObjectProperty ;
+    owl:inverseOf iadas:hasAnalysis ;
+    rdfs:label "est l'analyse de"@fr ;
+    rdfs:label "is analysis of"@en ;
+    rdfs:comment "Relie une analyse à l'article dont elle est issue"@fr ;
+    rdfs:comment "Links an analysis back to its source article"@en ;
+    rdfs:domain iadas:Analysis ;
+    rdfs:range iadas:SportPsychologyArticle .
+
+iadas:isPopulationOf
+    a owl:ObjectProperty ;
+    owl:inverseOf iadas:hasPopulation ;
+    rdfs:label "est la population de"@fr ;
+    rdfs:label "is population of"@en ;
+    rdfs:comment "Relie une population à l'analyse qui la référence"@fr ;
+    rdfs:comment "Links a population back to the analysis that references it"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range iadas:Analysis .
+
+# Lien sémantique Variable → concept ACAD-vocab
+iadas:refersToVariable
+    a owl:ObjectProperty ;
+    rdfs:label "réfère à la variable"@fr ;
+    rdfs:label "refers to variable"@en ;
+    rdfs:comment "Relie une variable (VI ou VD) à son concept correspondant dans le vocabulaire SKOS ACAD-vocab"@fr ;
+    rdfs:comment "Links a research variable (IV or DV) to its corresponding concept in the ACAD-vocab SKOS taxonomy"@en ;
+    rdfs:domain iadas:Variable ;
+    rdfs:range skos:Concept .
+
+# Statistiques descriptives généralisées
+iadas:hasStatistics
+    a owl:ObjectProperty ;
+    rdfs:label "a pour statistiques"@fr ;
+    rdfs:label "has statistics"@en ;
+    rdfs:comment "Relie une population à ses statistiques descriptives (âge, IMC, fréquence d'exercice, expérience)"@fr ;
+    rdfs:comment "Links a population to its descriptive statistics (age, BMI, exercise frequency, experience)"@en ;
+    rdfs:domain iadas:Population ;
+    rdfs:range iadas:AgeStatistics .
+
+# Force du lien statistique (suggestion encadrante)
+iadas:effectSize
+    a owl:DatatypeProperty ;
+    rdfs:label "taille d'effet"@fr ;
+    rdfs:label "effect size"@en ;
+    rdfs:comment "Force ou magnitude de la relation statistique entre VI et VD, selon les conventions de Cohen (faible, modéré, fort)"@fr ;
+    rdfs:comment "Strength or magnitude of the statistical relation between IV and DV, following Cohen's conventions (small, medium, large)"@en ;
+    rdfs:domain iadas:Relations ;
     rdfs:range xsd:string .

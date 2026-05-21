@@ -1,0 +1,280 @@
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix iadas:  <http://ns.inria.fr/iadas/ontology/> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix bibo:   <http://purl.org/ontology/bibo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sh-iadas: <http://ns.inria.fr/iadas/shacl/> .
+
+# =============================================================================
+# SHACL Shapes — Ontologie IA-DAS
+# Auteure : Imane Amraoui — Stage IA-DAS, Mai 2026
+# Description : Contraintes de validation pour l'ontologie IA-DAS
+#               Garantit la cohérence des données chargées dans Fuseki
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Shape 1 : SportPsychologyArticle
+# Chaque article doit avoir un DOI, un titre, une année et au moins une analyse
+# -----------------------------------------------------------------------------
+sh-iadas:SportPsychologyArticleShape a sh:NodeShape ;
+    sh:targetClass iadas:SportPsychologyArticle ;
+    sh:name "Article de psychologie du sport" ;
+    sh:description "Contraintes sur les articles scientifiques de la base IA-DAS" ;
+
+    sh:property [
+        sh:path bibo:doi ;
+        sh:name "DOI" ;
+        sh:description "Identifiant DOI de l'article" ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Un article doit avoir un DOI."
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:name "Titre" ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Un article doit avoir un titre."
+    ] ;
+    sh:property [
+        sh:path dcterms:date ;
+        sh:name "Année de publication" ;
+        sh:minCount 1 ;
+        sh:message "Un article doit avoir une année de publication."
+    ] ;
+    sh:property [
+        sh:path iadas:hasAnalysis ;
+        sh:name "Lien vers l'analyse" ;
+        sh:minCount 1 ;
+        sh:class iadas:Analysis ;
+        sh:message "Un article doit être associé à au moins une analyse."
+    ] ;
+    sh:property [
+        sh:path iadas:country ;
+        sh:name "Pays" ;
+        sh:minCount 1 ;
+        sh:message "Un article doit indiquer le pays de l'étude."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 2 : Analysis
+# Chaque analyse doit avoir une relation, une population, une direction
+# -----------------------------------------------------------------------------
+sh-iadas:AnalysisShape a sh:NodeShape ;
+    sh:targetClass iadas:Analysis ;
+    sh:name "Analyse statistique" ;
+    sh:description "Contraintes sur les analyses reliant VI et VD" ;
+
+    sh:property [
+        sh:path iadas:analysisId ;
+        sh:name "Identifiant de l'analyse" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Chaque analyse doit avoir un identifiant unique."
+    ] ;
+    sh:property [
+        sh:path iadas:hasRelation ;
+        sh:name "Relation VI-VD" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class iadas:Relations ;
+        sh:message "Chaque analyse doit avoir exactement une relation (VI → VD)."
+    ] ;
+    sh:property [
+        sh:path iadas:hasPopulation ;
+        sh:name "Population étudiée" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class iadas:Population ;
+        sh:message "Chaque analyse doit référencer une population."
+    ] ;
+    sh:property [
+        sh:path iadas:relationDirection ;
+        sh:name "Direction de la relation" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ( "+" "-" "NS" "NA" "N.A." ) ;
+        sh:message "La direction de la relation doit être : +, -, NS, NA ou N.A."
+    ] ;
+    sh:property [
+        sh:path iadas:typeOfAnalysis ;
+        sh:name "Type d'analyse" ;
+        sh:minCount 1 ;
+        sh:message "Le type d'analyse statistique doit être renseigné."
+    ] ;
+    sh:property [
+        sh:path iadas:hasSport ;
+        sh:name "Sport étudié" ;
+        sh:minCount 1 ;
+        sh:message "Chaque analyse doit référencer un sport."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 3 : Relations (lien entre VI et VD)
+# -----------------------------------------------------------------------------
+sh-iadas:RelationsShape a sh:NodeShape ;
+    sh:targetClass iadas:Relations ;
+    sh:name "Relation entre variable indépendante et dépendante" ;
+
+    sh:property [
+        sh:path iadas:hasIndependentVariable ;
+        sh:name "Variable indépendante" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class iadas:VariableIndependante ;
+        sh:message "Une relation doit avoir exactement une variable indépendante (VI)."
+    ] ;
+    sh:property [
+        sh:path iadas:hasDependentVariable ;
+        sh:name "Variable dépendante" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class iadas:VariableDependante ;
+        sh:message "Une relation doit avoir exactement une variable dépendante (VD)."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 4 : VariableDependante (VD)
+# La VD doit pointer vers un concept du vocabulaire ACAD
+# -----------------------------------------------------------------------------
+sh-iadas:VariableDependanteShape a sh:NodeShape ;
+    sh:targetClass iadas:VariableDependante ;
+    sh:name "Variable dépendante (comportement DEAB)" ;
+
+    sh:property [
+        sh:path iadas:variableName ;
+        sh:name "Nom de la variable" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "La VD doit avoir un nom (colonne VD du fichier de données)."
+    ] ;
+    sh:property [
+        sh:path iadas:refersToVariable ;
+        sh:name "Concept ACAD-vocab" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://ns\\.inria\\.fr/iadas/ACAD-vocab/" ;
+        sh:message "La VD doit référencer un concept dans le vocabulaire ACAD (VD_final_sub-class)."
+    ] ;
+    sh:property [
+        sh:path iadas:specification ;
+        sh:name "Spécification" ;
+        sh:minCount 1 ;
+        sh:message "La spécification de la VD doit être renseignée (N.A. si aucune)."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 5 : VariableIndependante (VI)
+# La VI doit pointer vers un concept du vocabulaire ACAD
+# -----------------------------------------------------------------------------
+sh-iadas:VariableIndependanteShape a sh:NodeShape ;
+    sh:targetClass iadas:VariableIndependante ;
+    sh:name "Variable indépendante (facteur psychologique)" ;
+
+    sh:property [
+        sh:path iadas:variableName ;
+        sh:name "Nom de la variable" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "La VI doit avoir un nom (colonne VI du fichier de données)."
+    ] ;
+    sh:property [
+        sh:path iadas:refersToVariable ;
+        sh:name "Concept ACAD-vocab" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://ns\\.inria\\.fr/iadas/ACAD-vocab/" ;
+        sh:message "La VI doit référencer un concept dans le vocabulaire ACAD (VI_final_sub-class)."
+    ] ;
+    sh:property [
+        sh:path iadas:specification ;
+        sh:name "Spécification" ;
+        sh:minCount 1 ;
+        sh:message "La spécification de la VI doit être renseignée (N.A. si aucune)."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 6 : Population
+# -----------------------------------------------------------------------------
+sh-iadas:PopulationShape a sh:NodeShape ;
+    sh:targetClass iadas:Population ;
+    sh:name "Population étudiée" ;
+
+    sh:property [
+        sh:path iadas:gender ;
+        sh:name "Sexe de la population" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ( "Male" "Female" "Mixed" "N.A." ) ;
+        sh:message "Le sexe de la population doit être : Male, Female, Mixed ou N.A."
+    ] ;
+    sh:property [
+        sh:path iadas:sampleSize ;
+        sh:name "Taille de l'échantillon" ;
+        sh:minCount 1 ;
+        sh:message "La taille de l'échantillon (N) doit être renseignée."
+    ] ;
+    sh:property [
+        sh:path iadas:hasStatistics ;
+        sh:name "Statistiques associées" ;
+        sh:minCount 1 ;
+        sh:message "La population doit avoir au moins une statistique (âge, IMC...)."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 7 : AgeStatistics
+# -----------------------------------------------------------------------------
+sh-iadas:AgeStatisticsShape a sh:NodeShape ;
+    sh:targetClass iadas:AgeStatistics ;
+    sh:name "Statistiques d'âge" ;
+
+    sh:property [
+        sh:path iadas:hasMeanValue ;
+        sh:name "Moyenne d'âge" ;
+        sh:minCount 1 ;
+        sh:message "Les statistiques d'âge doivent contenir la valeur moyenne."
+    ] ;
+    sh:property [
+        sh:path iadas:hasRange ;
+        sh:name "Plage d'âge" ;
+        sh:minCount 1 ;
+        sh:message "Les statistiques d'âge doivent contenir la plage (Range_Age)."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 8 : Concept SKOS du vocabulaire ACAD
+# Chaque concept doit avoir un prefLabel et un broader (sauf top-concepts)
+# -----------------------------------------------------------------------------
+sh-iadas:ACADConceptShape a sh:NodeShape ;
+    sh:targetClass skos:Concept ;
+    sh:name "Concept du vocabulaire ACAD" ;
+
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:name "Label préférentiel" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Chaque concept SKOS doit avoir exactement un prefLabel."
+    ] ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:name "Scheme SKOS" ;
+        sh:minCount 1 ;
+        sh:message "Chaque concept doit appartenir à un ConceptScheme."
+    ] .

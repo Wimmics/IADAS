@@ -49,6 +49,27 @@ function formatTime(seconds) {
   return `${minutes}m ${remainingSeconds}s`;
 }
 
+async function getTripletCount() {
+  try {
+    const res = await fetch(SPARQL_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/sparql-query',
+        'Accept': 'application/sparql-results+json',
+        'Authorization': `Basic ${auth}`
+      },
+      body: 'SELECT (COUNT(*) as ?count) WHERE { ?s ?p ?o }'
+    });
+    if (res.ok) {
+      const result = await res.json();
+      return parseInt(result.results.bindings[0]?.count?.value || '0');
+    }
+  } catch (e) {
+    console.log(`  Impossible de compter les triples: ${e.message}`);
+  }
+  return 0;
+}
+
 async function waitForFuseki(retries = 0) {
   if (retries === 0) {
     startTime = Date.now();
@@ -73,9 +94,20 @@ async function waitForFuseki(retries = 0) {
     if (res.ok) {
       const elapsedTime = Math.round((Date.now() - startTime) / 1000);
       console.log(`\nFUSEKI PRÊT! Temps d'attente: ${formatTime(elapsedTime)}`);
-      console.log(' Début du chargement des données RDF...\n');
-      
-      // NOUVEAU: Charger les trois fichiers séquentiellement
+
+      // Vérifier si des données sont déjà chargées (éviter les doublons)
+      const existingCount = await getTripletCount();
+      console.log(`\n Triples déjà présents dans Fuseki: ${existingCount}`);
+
+      if (existingCount > 1000) {
+        console.log(' Données déjà chargées — chargement ignoré pour éviter les doublons.');
+        console.log(` Dataset "ds" contient ${existingCount} triples. Aucune action nécessaire.`);
+        return;
+      }
+
+      console.log(' Dataset vide ou insuffisant — chargement des données RDF...\n');
+
+      // Charger les trois fichiers séquentiellement
       await uploadMainOntology();
       await uploadVariableHierarchy();
       await uploadSportHierarchy();

@@ -12,8 +12,8 @@ function convertSparqlToTurtle(sparqlResults, metadata = {}) {
   const timestamp = new Date().toISOString();
   
   // En-tête Turtle avec préfixes
-  let turtle = `@prefix iadas: <http://ia-das.org/onto#> .
-@prefix iadas-data: <http://ia-das.org/data#> .
+  let turtle = `@prefix iadas: <http://ns.inria.fr/iadas/ontology/> .
+@prefix iadas-data: <http://ns.inria.fr/iadas/data/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -105,30 +105,32 @@ async function performStartupWarmup() {
     {
       name: "Requête DEAB (la plus utilisée)",
       query: `
-PREFIX iadas: <http://ia-das.org/onto#>
-PREFIX iadas-data: <http://ia-das.org/data#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX iadas-data: <http://ns.inria.fr/iadas/data/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatRelation WHERE {
+SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationDirection WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    ?variableVD iadas:hasCategory "DEAB" .
+    ?vdSKOS skos:prefLabel ?vdLabel .
+    ?vdSKOS skos:broader+ <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> .
     
     OPTIONAL { 
-      ?relation iadas:resultatRelation ?resultatRelation 
+      ?analysis iadas:relationDirection ?relationDirection 
     }
     
     OPTIONAL { ?analysis iadas:hasMediator ?mediator }
@@ -141,31 +143,32 @@ ORDER BY ?analysis
     {
       name: "Requête Male (courante)",
       query: `
-PREFIX iadas: <http://ia-das.org/onto#>
-PREFIX iadas-data: <http://ia-das.org/data#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX iadas-data: <http://ns.inria.fr/iadas/data/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatRelation WHERE {
+SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationDirection WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
     ?analysis iadas:hasPopulation ?population .
     ?population iadas:gender "Male" .
     
     OPTIONAL { 
-      ?relation iadas:resultatRelation ?resultatRelation 
+      ?analysis iadas:relationDirection ?relationDirection 
     }
     
     OPTIONAL { ?analysis iadas:hasMediator ?mediator }
@@ -177,28 +180,29 @@ ORDER BY ?analysis`,
     {
       name: "Requête large (sans filtres - LIMIT 1500)",
       query: `
-PREFIX iadas: <http://ia-das.org/onto#>
-PREFIX iadas-data: <http://ia-das.org/data#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX iadas-data: <http://ns.inria.fr/iadas/data/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatRelation WHERE {
+SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationDirection WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
     OPTIONAL { 
-      ?relation iadas:resultatRelation ?resultatRelation 
+      ?analysis iadas:relationDirection ?relationDirection 
     }
     
     OPTIONAL { ?analysis iadas:hasMediator ?mediator }
@@ -211,28 +215,29 @@ LIMIT 800`,
     {
       name: "Requête Q1 compétence",
       query: `
-PREFIX iadas: <http://ia-das.org/onto#>
-PREFIX iadas-data: <http://ia-das.org/data#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX iadas-data: <http://ns.inria.fr/iadas/data/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT DISTINCT ?vd ?vi ?categoryVI ?categoryVD ?resultatRelation ?mediator ?moderator ?analysis 
+SELECT DISTINCT ?vd ?vi ?categoryVI ?categoryVD ?relationDirection ?mediator ?moderator ?analysis 
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     OPTIONAL { ?analysis iadas:hasMediator ?mediator }
     OPTIONAL { ?analysis iadas:hasModerator ?moderator }
 }
@@ -311,7 +316,8 @@ function generateHierarchyQuery(conceptLabel) {
   
   // Générer la requête SPARQL complète
   const prefixes = `
-PREFIX iadas: <http://ia-das.org/onto#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX taxonomy: <http://ia-das.org/taxonomy#>`;
 
@@ -319,7 +325,7 @@ PREFIX taxonomy: <http://ia-das.org/taxonomy#>`;
 
 SELECT ?concept ?conceptLabel ?relation ?related ?relatedLabel ?level WHERE {
   # Le concept principal
-  BIND(<http://ia-das.org/onto#${conceptUri.replace('iadas:', '')}> AS ?mainConcept)
+  BIND(<http://ns.inria.fr/iadas/ontology/${conceptUri.replace('iadas:', '')}> AS ?mainConcept)
   
   {
     # PARENTS du concept avec comptage de niveaux
@@ -501,28 +507,29 @@ function generateSparqlQuery(filters) {
   console.log("=== SPARQL GENERATOR avec FILTRES MIN/MAX CORRIGÉS ===");
 
   const prefixes = `
-PREFIX iadas: <http://ia-das.org/onto#>
-PREFIX iadas-data: <http://ia-das.org/data#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX iadas-data: <http://ns.inria.fr/iadas/data/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>`;
 
   let query = `${prefixes}
 
-SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatRelation ?reference ?gender ?populationType ?sportName WHERE {
+SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationDirection ?reference ?gender ?populationType ?sportName WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
     # Nouvelles colonnes ajoutées
     OPTIONAL { ?analysis iadas:analysisId ?reference }
@@ -533,8 +540,8 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
     }
     
     OPTIONAL { 
-        ?analysis iadas:hasSport ?sport .
-        ?sport iadas:sportName ?sportName .
+        ?analysis iadas:hasSport ?sportURI .
+    BIND(REPLACE(STR(?sportURI), ".*sport-vocab/", "") AS ?sportName)
     }`;
 
   // === FILTRES D'ÂGE - AVEC SÉLECTIONS MULTIPLES ===
@@ -548,8 +555,10 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
     
     # Filtrer sur l'âge moyen ± 1 (correction virgules → points)
     ?analysis iadas:hasPopulation ?population .
-    ?population iadas:ageStats ?ageStats .
-    ?ageStats iadas:meanAge ?meanAgeStr .
+    ?population iadas:hasStatistics ?ageStats .
+    ?ageStats a iadas:AgeStatistics .
+    ?ageStats iadas:hasMeanValue ?meanAgeRaw .
+    BIND(IF(REGEX(?meanAgeRaw, "^M="), REPLACE(?meanAgeRaw, "M=([0-9.,]+).*", "$1"), "") AS ?meanAgeStr)
     BIND(xsd:decimal(REPLACE(?meanAgeStr, ",", ".")) AS ?meanAge)
     FILTER(?meanAge >= ${minAge} && ?meanAge <= ${maxAge})`;
 
@@ -575,17 +584,20 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
         return `{
           # Catégorie ${category} - Mode inclusif
           ?analysis iadas:hasPopulation ?population .
-          ?population iadas:ageStats ?ageStats .
+          ?population iadas:hasStatistics ?ageStats .
+          ?ageStats a iadas:AgeStatistics .
           {
             # Âges moyens dans la plage ${range.minAge}-${range.maxAge}
-            ?ageStats iadas:meanAge ?meanAgeStr .
+            ?ageStats iadas:hasMeanValue ?meanAgeRaw .
+            BIND(IF(REGEX(?meanAgeRaw, "^M="), REPLACE(?meanAgeRaw, "M=([0-9.,]+).*", "$1"), "") AS ?meanAgeStr)
             FILTER(?meanAgeStr != "" && xsd:decimal(REPLACE(?meanAgeStr, ",", ".")) >= ${range.minAge} && xsd:decimal(REPLACE(?meanAgeStr, ",", ".")) <= ${range.maxAge})
           }
           UNION
           {
             # Plages qui chevauchent
-            ?ageStats iadas:minAge ?minAgeStr .
-            ?ageStats iadas:maxAge ?maxAgeStr .
+            ?ageStats iadas:hasRange ?rangeStr .
+            BIND(IF(REGEX(?rangeStr, "^["), REPLACE(?rangeStr, "[([0-9.]+)-.*", "$1"), "") AS ?minAgeStr)
+            BIND(IF(REGEX(?rangeStr, "^["), REPLACE(?rangeStr, ".*-([0-9.]+)]", "$1"), "") AS ?maxAgeStr)
             FILTER(?minAgeStr != "" && ?maxAgeStr != "")
             BIND(xsd:decimal(REPLACE(?minAgeStr, ",", ".")) AS ?minAge)
             BIND(xsd:decimal(REPLACE(?maxAgeStr, ",", ".")) AS ?maxAge)
@@ -596,8 +608,10 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
         return `{
           # Catégorie ${category} - Mode strict
           ?analysis iadas:hasPopulation ?population .
-          ?population iadas:ageStats ?ageStats .
-          ?ageStats iadas:meanAge ?meanAgeStr .
+          ?population iadas:hasStatistics ?ageStats .
+          ?ageStats a iadas:AgeStatistics .
+          ?ageStats iadas:hasMeanValue ?meanAgeRaw .
+          BIND(IF(REGEX(?meanAgeRaw, "^M="), REPLACE(?meanAgeRaw, "M=([0-9.,]+).*", "$1"), "") AS ?meanAgeStr)
           FILTER(?meanAgeStr != "" && xsd:decimal(REPLACE(?meanAgeStr, ",", ".")) >= ${range.minAge} && xsd:decimal(REPLACE(?meanAgeStr, ",", ".")) <= ${range.maxAge})
         }`;
       }
@@ -624,8 +638,10 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
     
     # Mode strict : seulement les âges moyens dans la plage
     ?analysis iadas:hasPopulation ?population .
-    ?population iadas:ageStats ?ageStats .
-    ?ageStats iadas:meanAge ?meanAgeStr .
+    ?population iadas:hasStatistics ?ageStats .
+    ?ageStats a iadas:AgeStatistics .
+    ?ageStats iadas:hasMeanValue ?meanAgeRaw .
+    BIND(IF(REGEX(?meanAgeRaw, "^M="), REPLACE(?meanAgeRaw, "M=([0-9.,]+).*", "$1"), "") AS ?meanAgeStr)
     FILTER(?meanAgeStr != "" && xsd:decimal(REPLACE(?meanAgeStr, ",", ".")) >= ${filters.minAge} && xsd:decimal(REPLACE(?meanAgeStr, ",", ".")) <= ${filters.maxAge})`;
         
         console.log(` Filtre âge strict: seulement moyennes ${filters.minAge}-${filters.maxAge}`);
@@ -636,25 +652,29 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
     
     # Mode inclusif : moyennes + chevauchements de plages
     ?analysis iadas:hasPopulation ?population .
-    ?population iadas:ageStats ?ageStats .
+    ?population iadas:hasStatistics ?ageStats .
+    ?ageStats a iadas:AgeStatistics .
     
     {
       # Option 1 (PRIORITAIRE): Âges moyens dans la plage
-      ?ageStats iadas:meanAge ?meanAgeStr .
+      ?ageStats iadas:hasMeanValue ?meanAgeRaw .
+      BIND(IF(REGEX(?meanAgeRaw, "^M="), REPLACE(?meanAgeRaw, "M=([0-9.,]+).*", "$1"), "") AS ?meanAgeStr)
       FILTER(?meanAgeStr != "" && xsd:decimal(REPLACE(?meanAgeStr, ",", ".")) >= ${filters.minAge} && xsd:decimal(REPLACE(?meanAgeStr, ",", ".")) <= ${filters.maxAge})
     }
     UNION
     {
       # Option 2 (INCLUSIF): Plages qui chevauchent
-      ?ageStats iadas:minAge ?minAgeStr .
-      ?ageStats iadas:maxAge ?maxAgeStr .
+      ?ageStats iadas:hasRange ?rangeStr .
+      BIND(IF(REGEX(?rangeStr, "^["), REPLACE(?rangeStr, "[([0-9.]+)-.*", "$1"), "") AS ?minAgeStr)
+      BIND(IF(REGEX(?rangeStr, "^["), REPLACE(?rangeStr, ".*-([0-9.]+)]", "$1"), "") AS ?maxAgeStr)
       FILTER(?minAgeStr != "" && ?maxAgeStr != "")
       BIND(xsd:decimal(REPLACE(?minAgeStr, ",", ".")) AS ?minAge)
       BIND(xsd:decimal(REPLACE(?maxAgeStr, ",", ".")) AS ?maxAge)
       FILTER(?maxAge >= ${filters.minAge} && ?minAge <= ${filters.maxAge})
       # Éviter doublons avec les moyennes
       FILTER NOT EXISTS {
-        ?ageStats iadas:meanAge ?meanCheck .
+        ?ageStats iadas:hasMeanValue ?meanCheckRaw .
+        BIND(IF(REGEX(?meanCheckRaw, "^M="), REPLACE(?meanCheckRaw, "M=([0-9.,]+).*", "$1"), "") AS ?meanCheck)
         FILTER(?meanCheck != "" && xsd:decimal(?meanCheck) >= ${filters.minAge} && xsd:decimal(?meanCheck) <= ${filters.maxAge})
       }
     }`;
@@ -668,13 +688,15 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
     
     # Filtrer sur les vraies propriétés minAge et maxAge
     ?analysis iadas:hasPopulation ?population .
-    ?population iadas:ageStats ?ageStats .`;
+    ?population iadas:hasStatistics ?ageStats .
+    ?ageStats a iadas:AgeStatistics .`;
 
       if (filters.minAge !== undefined && filters.maxAge !== undefined) {
         // Les deux : minAge ET maxAge
         query += `
-    ?ageStats iadas:minAge ?minAgeStr .
-    ?ageStats iadas:maxAge ?maxAgeStr .
+    ?ageStats iadas:hasRange ?rangeStr .
+    BIND(IF(REGEX(?rangeStr, "^["), REPLACE(?rangeStr, "[([0-9.]+)-.*", "$1"), "") AS ?minAgeStr)
+    BIND(IF(REGEX(?rangeStr, "^["), REPLACE(?rangeStr, ".*-([0-9.]+)]", "$1"), "") AS ?maxAgeStr)
     BIND(xsd:decimal(REPLACE(?minAgeStr, ",", ".")) AS ?minAge)
     BIND(xsd:decimal(REPLACE(?maxAgeStr, ",", ".")) AS ?maxAge)
     FILTER(?minAge >= ${filters.minAge} && ?maxAge <= ${filters.maxAge})`;
@@ -683,7 +705,8 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
       } else if (filters.minAge !== undefined) {
         // Seulement minAge
         query += `
-    ?ageStats iadas:minAge ?minAgeStr .
+    ?ageStats iadas:hasRange ?rangeStr .
+    BIND(IF(REGEX(?rangeStr, "^["), REPLACE(?rangeStr, "[([0-9.]+)-.*", "$1"), "") AS ?minAgeStr)
     BIND(xsd:decimal(?minAgeStr) AS ?minAge)
     FILTER(?minAge >= ${filters.minAge})`;
 
@@ -691,7 +714,8 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
       } else if (filters.maxAge !== undefined) {
         // Seulement maxAge
         query += `
-    ?ageStats iadas:maxAge ?maxAgeStr .
+    ?ageStats iadas:hasRange ?rangeStr .
+    BIND(IF(REGEX(?rangeStr, "^["), REPLACE(?rangeStr, ".*-([0-9.]+)]", "$1"), "") AS ?maxAgeStr)
     BIND(xsd:decimal(?maxAgeStr) AS ?maxAge)
     FILTER(?maxAge <= ${filters.maxAge})`;
 
@@ -1281,8 +1305,10 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
   if (filters.categoryVD && filters.categoryVD !== '') {
     query += `
     
-    # Filtrer sur les VD de catégorie
-    ?variableVD iadas:hasCategory "${filters.categoryVD}" .`;
+    # Filtrer sur les VD de catégorie via SKOS (prefLabel matching)
+    ?vdFilterSKOS skos:prefLabel ?vdLabel .
+    ?vdFilterSKOS skos:broader+ ?vdTopCatFilter .
+    ?vdTopCatFilter skos:prefLabel "${filters.categoryVD}" .`;
     console.log(" Filtre catégorie VD ajouté:", filters.categoryVD);
   }
 
@@ -1298,7 +1324,7 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
   // Filtre catégories sport multiples
   if (filters.sportCategories && filters.sportCategories.length > 0) {
     const sportCategoryConditions = filters.sportCategories.map(category => 
-      `?sport iadas:sportSubcategory "${category}"`
+      `?sport iadas:sportPracticeType "${category}"`
     );
     
     query += `
@@ -1319,8 +1345,8 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
     query += `
     
     # Filtrer sur les sports multiples
-    ?analysis iadas:hasSport ?sport .
-    ?sport iadas:sportName ?sportName .
+    ?analysis iadas:hasSport ?sportURI .
+    BIND(REPLACE(STR(?sportURI), ".*sport-vocab/", "") AS ?sportName)
     FILTER(${sportConditions.join(' || ')})`;
     
     console.log("⚽ Filtres sports multiples ajoutés:", filters.selectedSports.join(', '));
@@ -1331,8 +1357,8 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
     query += `
     
     # Filtrer sur les sports
-    ?analysis iadas:hasSport ?sport .
-    ?sport iadas:sportName ?sportName .
+    ?analysis iadas:hasSport ?sportURI .
+    BIND(REPLACE(STR(?sportURI), ".*sport-vocab/", "") AS ?sportName)
     FILTER(CONTAINS(LCASE(?sportName), "${filters.sportType.toLowerCase()}"))`;
     console.log(" Filtre sport ajouté:", filters.sportType);
   }
@@ -1360,8 +1386,8 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
     query += `
     
     # Filtrer sur résultat de relation spécifique
-    ?relation iadas:resultatRelation "${filters.relationDirection}" .
-    BIND("${filters.relationDirection}" AS ?resultatRelation)`;
+    ?analysis iadas:relationDirection "${filters.relationDirection}" .
+    BIND("${filters.relationDirection}" AS ?relationDirection)`;
     console.log(" Filtre relation ajouté:", filters.relationDirection);
   } else {
     // Récupérer tous les résultats de relation
@@ -1369,7 +1395,7 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatR
     
     # Récupérer le résultat de relation (OPTIONAL)
     OPTIONAL { 
-      ?relation iadas:resultatRelation ?resultatRelation 
+      ?analysis iadas:relationDirection ?relationDirection 
     }`;
   }
 
@@ -1490,9 +1516,11 @@ function generateCompetenceQuery(questionId) {
   }
 
   const prefixes = `
-PREFIX iadas: <http://ia-das.org/onto#>
-PREFIX iadas-data: <http://ia-das.org/data#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>`;
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX iadas-data: <http://ns.inria.fr/iadas/data/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>`;
 
   console.log(" Prefixes SPARQL définis");
 
@@ -1510,24 +1538,24 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>`;
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vd ?vi ?categoryVI ?categoryVD ?resultatRelation ?mediator ?moderator ?analysis 
+SELECT DISTINCT ?vd ?vi ?categoryVI ?categoryVD ?relationDirection ?mediator ?moderator ?analysis 
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     OPTIONAL { ?analysis iadas:hasMediator ?mediator }
     OPTIONAL { ?analysis iadas:hasModerator ?moderator }
 }
@@ -1538,30 +1566,30 @@ LIMIT 10000`;
     case 'q2-protecteur':
       console.log(" CASE Q2-PROTECTEUR DÉTECTÉ: Facteurs protecteurs → ACAD");
       selectedCase = 'q2-protecteur - Facteurs protecteurs UNIQUEMENT';
-      expectedResults = '200-400 relations avec resultatRelation = "-"';
+      expectedResults = '200-400 relations avec relationDirection = "-"';
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?resultatRelation
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?relationDirection
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
     
     ?relation iadas:hasIndependentVariable ?variableVI ;
-              iadas:hasDependentVariable ?variableVD ;
-              iadas:resultatRelation "-" .
+              iadas:hasDependentVariable ?variableVD .
+    ?analysis iadas:relationDirection "-" .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    BIND("-" AS ?resultatRelation)
+    BIND("-" AS ?relationDirection)
 }
 ORDER BY ?vi ?vd
 `;
@@ -1570,30 +1598,30 @@ ORDER BY ?vi ?vd
     case 'q2-risque':
       console.log(" CASE Q2-RISQUE DÉTECTÉ: Facteurs de risque → ACAD");
       selectedCase = 'q2-risque - Facteurs de risque UNIQUEMENT';
-      expectedResults = '300-600 relations avec resultatRelation = "+"';
+      expectedResults = '300-600 relations avec relationDirection = "+"';
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?resultatRelation
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?relationDirection
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
     
     ?relation iadas:hasIndependentVariable ?variableVI ;
-              iadas:hasDependentVariable ?variableVD ;
-              iadas:resultatRelation "+" .
+              iadas:hasDependentVariable ?variableVD .
+    ?analysis iadas:relationDirection "+" .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    BIND("+" AS ?resultatRelation)
+    BIND("+" AS ?relationDirection)
 }
 ORDER BY ?vi ?vd
 `;
@@ -1602,62 +1630,135 @@ ORDER BY ?vi ?vd
     case 'q2-ambigu':
       console.log(" CASE Q2-AMBIGU DÉTECTÉ: Facteurs ambigus → ACAD");
       selectedCase = 'q2-ambigu - Facteurs ambigus UNIQUEMENT';
-      expectedResults = '100-300 relations avec resultatRelation = "NS"';
+      expectedResults = '100-300 relations avec relationDirection = "NS"';
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?resultatRelation
-WHERE {
-    ?analysis a iadas:Analysis .
-    ?analysis iadas:hasRelation ?relation .
-    
-    ?relation iadas:hasIndependentVariable ?variableVI ;
-              iadas:hasDependentVariable ?variableVD ;
-              iadas:resultatRelation "NS" .
-    
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
-    
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
-    
-    BIND("NS" AS ?resultatRelation)
-}
-ORDER BY ?vi ?vd
-`;
-      break;
-
-    case 'q3-socioenvironnementaux':
-      console.log(" CASE Q3-SOCIO DÉTECTÉ: Facteurs socio-environnementaux → ACAD");
-      selectedCase = 'q3-socioenvironnementaux - Catégorie Sociocultural factor related to DEAB';
-      expectedResults = '50-150 relations de cette catégorie';
-
-      query = `${prefixes}
-
-SELECT DISTINCT ?vi ?vd ?categoryVD ?resultatRelation ?analysis ?categoryVI
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?relationDirection
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
     
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
+    ?analysis iadas:relationDirection "NS" .
     
-    ?variableVI rdf:type ?viType ;
-                iadas:hasCategory "Sociocultural factor related to DEAB" .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    BIND("Sociocultural factor related to DEAB" AS ?categoryVI)
+    BIND("NS" AS ?relationDirection)
+}
+ORDER BY ?vi ?vd
+`;
+      break;
+
+    case 'q3-intrapersonnels':
+      console.log(" CASE Q3-INTRA DÉTECTÉ: Facteurs intrapersonnels → ACAD");
+      selectedCase = 'q3-intrapersonnels - Catégorie Intrapersonal factor related to DEAB';
+      expectedResults = '200-500 relations de cette catégorie';
+
+      query = `${prefixes}
+
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?relationDirection ?analysis
+WHERE {
+    ?analysis a iadas:Analysis .
+    ?analysis iadas:hasRelation ?relation .
+
+    ?relation iadas:hasIndependentVariable ?variableVI ;
+              iadas:hasDependentVariable ?variableVD .
+
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+
+    ?viConcept skos:prefLabel ?viLabel .
+    ?viConcept skos:broader+ ?viTopCat .
+    ?viTopCat skos:prefLabel "Intrapersonal factor related to DEAB" .
+
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept2 skos:prefLabel ?viLabel . ?viConcept2 skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
+
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
+}
+ORDER BY ?vi ?vd
+LIMIT 300`;
+      break;
+
+    case 'q3-interpersonnels':
+      console.log(" CASE Q3-INTER DÉTECTÉ: Facteurs interpersonnels → ACAD");
+      selectedCase = 'q3-interpersonnels - Catégorie Interpersonal factor related to DEAB';
+      expectedResults = '200-300 relations de cette catégorie';
+
+      query = `${prefixes}
+
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?relationDirection ?analysis
+WHERE {
+    ?analysis a iadas:Analysis .
+    ?analysis iadas:hasRelation ?relation .
+
+    ?relation iadas:hasIndependentVariable ?variableVI ;
+              iadas:hasDependentVariable ?variableVD .
+
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+
+    ?viConcept skos:prefLabel ?viLabel .
+    ?viConcept skos:broader+ ?viTopCat .
+    ?viTopCat skos:prefLabel "Interpersonal factor related to DEAB" .
+
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept2 skos:prefLabel ?viLabel . ?viConcept2 skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
+
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
+}
+ORDER BY ?vi ?vd
+LIMIT 300`;
+      break;
+
+    case 'q3-socioenvironnementaux':
+      console.log(" CASE Q3-SOCIO DÉTECTÉ: Facteurs socio-environnementaux → ACAD");
+      selectedCase = 'q3-socioenvironnementaux - Catégorie Sociocultural factor related to DEAB';
+      expectedResults = '50-200 relations de cette catégorie';
+
+      query = `${prefixes}
+
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?relationDirection ?analysis
+WHERE {
+    ?analysis a iadas:Analysis .
+    ?analysis iadas:hasRelation ?relation .
+
+    ?relation iadas:hasIndependentVariable ?variableVI ;
+              iadas:hasDependentVariable ?variableVD .
+
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+
+    ?viConcept skos:prefLabel ?viLabel .
+    ?viConcept skos:broader+ ?viTopCat .
+    ?viTopCat skos:prefLabel "Sociocultural factor related to DEAB" .
+
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept2 skos:prefLabel ?viLabel . ?viConcept2 skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
+
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
 }
 ORDER BY ?vi ?vd
 LIMIT 300`;
@@ -1666,30 +1767,33 @@ LIMIT 300`;
     case 'q3-autres':
       console.log(" CASE Q3-AUTRES DÉTECTÉ: Autres comportements → ACAD");
       selectedCase = 'q3-autres - Catégorie Other behaviors';
-      expectedResults = '50-100 relations de cette catégorie';
+      expectedResults = '50-150 relations de cette catégorie';
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVD ?resultatRelation ?analysis ?categoryVI
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?relationDirection ?analysis
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
-    
+
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
-    
-    ?variableVI rdf:type ?viType ;
-                iadas:hasCategory "Other behaviors" .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
-    
-    BIND("Other behaviors" AS ?categoryVI)
+
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+
+    ?viConcept skos:prefLabel ?viLabel .
+    ?viConcept skos:broader+ ?viTopCat .
+    ?viTopCat skos:prefLabel "Other behaviors" .
+
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept2 skos:prefLabel ?viLabel . ?viConcept2 skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
+
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
 }
 ORDER BY ?vi ?vd
 LIMIT 300`;
@@ -1702,7 +1806,7 @@ LIMIT 300`;
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?resultatRelation ?analysis ?gender
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?relationDirection ?analysis ?gender
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
@@ -1710,20 +1814,20 @@ WHERE {
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
     ?analysis iadas:hasPopulation ?population .
     ?population iadas:gender "Male" .
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Male" AS ?gender)
 }
 ORDER BY ?vi ?vd
@@ -1737,7 +1841,7 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?resultatRelation ?analysis ?gender
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?relationDirection ?analysis ?gender
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
@@ -1745,20 +1849,20 @@ WHERE {
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
     ?analysis iadas:hasPopulation ?population .
     ?population iadas:gender "Female" .
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Female" AS ?gender)
 }
 ORDER BY ?vi ?vd
@@ -1772,7 +1876,7 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?resultatRelation ?analysis ?gender
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?relationDirection ?analysis ?gender
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
@@ -1780,20 +1884,20 @@ WHERE {
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
     ?analysis iadas:hasPopulation ?population .
     ?population iadas:gender "Mixed" .
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Mixed" AS ?gender)
 }
 ORDER BY ?vi ?vd
@@ -1807,7 +1911,7 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?resultatRelation ?analysis ?sportType
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?relationDirection ?analysis ?sportType
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
@@ -1815,20 +1919,19 @@ WHERE {
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    ?analysis iadas:hasSport ?sport .
-    ?sport iadas:sportPracticeType "Individual sport" .
+    ?analysis iadas:sportPracticeType "Individual sport" .
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Individual sport" AS ?sportType)
 }
 ORDER BY ?vi ?vd
@@ -1842,7 +1945,7 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?resultatRelation ?analysis ?sportType
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?relationDirection ?analysis ?sportType
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
@@ -1850,20 +1953,19 @@ WHERE {
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    ?analysis iadas:hasSport ?sport .
-    ?sport iadas:sportPracticeType "Team sport" .
+    ?analysis iadas:sportPracticeType "Team sport" .
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Team sport" AS ?sportType)
 }
 ORDER BY ?vi ?vd
@@ -1877,7 +1979,7 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?resultatRelation ?analysis ?sportType
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?relationDirection ?analysis ?sportType
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
@@ -1885,20 +1987,19 @@ WHERE {
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    ?analysis iadas:hasSport ?sport .
-    ?sport iadas:sportPracticeType "Mixed sport" .
+    ?analysis iadas:sportPracticeType "Mixed sport" .
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Mixed sport" AS ?sportType)
 }
 ORDER BY ?vi ?vd
@@ -1912,7 +2013,7 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?resultatRelation ?analysis ?sportType
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?relationDirection ?analysis ?sportType
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
@@ -1920,20 +2021,19 @@ WHERE {
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    ?analysis iadas:hasSport ?sport .
-    ?sport iadas:sportPracticeType "Aesthetic sport" .
+    ?analysis iadas:sportPracticeType "Aesthetic sport" .
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Aesthetic sport" AS ?sportType)
 }
 ORDER BY ?vi ?vd
@@ -1947,7 +2047,7 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?resultatRelation ?gender
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?relationDirection ?gender
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation ;
@@ -1958,17 +2058,17 @@ WHERE {
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Female" AS ?gender)
 }
 ORDER BY ?vi ?vd
@@ -1982,7 +2082,7 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?resultatRelation ?gender
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?relationDirection ?gender
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation ;
@@ -1993,17 +2093,17 @@ WHERE {
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Male" AS ?gender)
 }
 ORDER BY ?vi ?vd
@@ -2017,7 +2117,7 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?resultatRelation ?gender
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?relationDirection ?gender
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation ;
@@ -2028,17 +2128,17 @@ WHERE {
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Mixed" AS ?gender)
 }
 ORDER BY ?vi ?vd
@@ -2052,36 +2152,38 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?resultatRelation ?gender ?sport ?meanAge
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?relationDirection ?gender ?sport ?meanAge
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation ;
               iadas:hasPopulation ?population ;
               iadas:hasSport ?sport_info .
     
-    ?population iadas:gender "Male" ;
-                iadas:ageStats ?ageStats .
+    ?population iadas:gender "Male" .
+    ?population iadas:hasStatistics ?ageStats .
+    ?ageStats a iadas:AgeStatistics .
     
-    ?ageStats iadas:meanAge ?meanAge .
-    FILTER(?meanAge >= 20 && ?meanAge <= 22)
+    ?ageStats iadas:hasMeanValue ?meanAgeRaw .
+    BIND(xsd:decimal(REPLACE(REPLACE(?meanAgeRaw, ".*M=([0-9]+)[,.]([0-9]+).*", "$1.$2"), ",", ".")) AS ?meanAge)
+    FILTER(?meanAge >= 18 && ?meanAge <= 22)
     
-    ?sport_info iadas:sportName ?sport .
+    BIND(REPLACE(STR(?sport_info), ".*sport-vocab/", "") AS ?sport)
     FILTER(CONTAINS(LCASE(?sport), "volleyball") || CONTAINS(LCASE(?sport), "volley"))
     
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Male" AS ?gender)
 }
 ORDER BY ?meanAge ?vi ?vd
@@ -2095,28 +2197,28 @@ ORDER BY ?meanAge ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?resultatRelation ?sportCategory
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?relationDirection ?sportCategory
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation ;
               iadas:hasSport ?sport_info .
     
-    ?sport_info iadas:sportPracticeType "Individual sport" .
+    ?analysis iadas:sportPracticeType "Individual sport" .
     
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Individual sport" AS ?sportCategory)
 }
 ORDER BY ?vi ?vd
@@ -2130,28 +2232,28 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?resultatRelation ?sportCategory
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?relationDirection ?sportCategory
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation ;
               iadas:hasSport ?sport_info .
     
-    ?sport_info iadas:sportPracticeType "Team sport" .
+    ?analysis iadas:sportPracticeType "Team sport" .
     
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Team sport" AS ?sportCategory)
 }
 ORDER BY ?vi ?vd
@@ -2165,28 +2267,28 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?resultatRelation ?sportCategory
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?relationDirection ?sportCategory
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation ;
               iadas:hasSport ?sport_info .
     
-    ?sport_info iadas:sportPracticeType "Mixed sport" .
+    ?analysis iadas:sportPracticeType "Mixed sport" .
     
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Mixed sport" AS ?sportCategory)
 }
 ORDER BY ?vi ?vd
@@ -2200,28 +2302,28 @@ ORDER BY ?vi ?vd
 
       query = `${prefixes}
 
-SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?resultatRelation ?sportCategory
+SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?relationDirection ?sportCategory
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation ;
               iadas:hasSport ?sport_info .
     
-    ?sport_info iadas:sportSubcategory "Aesthetic" .
+    ?analysis iadas:sportPracticeType "Aesthetic" .
     
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     BIND("Aesthetic" AS ?sportCategory)
 }
 ORDER BY ?vi ?vd
@@ -2246,7 +2348,7 @@ ORDER BY ?vi ?vd
       // Requête par défaut plus ciblée
       query = `${prefixes}
 
-SELECT DISTINCT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?resultatRelation 
+SELECT DISTINCT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?relationDirection 
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
@@ -2254,17 +2356,17 @@ WHERE {
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
 }
 ORDER BY ?analysis
 LIMIT 200`;
@@ -2304,27 +2406,28 @@ function generateFallbackQuery() {
   console.log(" GÉNÉRATION REQUÊTE DE FALLBACK");
 
   return `
-PREFIX iadas: <http://ia-das.org/onto#>
-PREFIX iadas-data: <http://ia-das.org/data#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX iadas-data: <http://ns.inria.fr/iadas/data/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?resultatRelation WHERE {
+SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationDirection WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
-    OPTIONAL { ?variableVI iadas:hasCategory ?categoryVI }
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
+    BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
+    OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
-    OPTIONAL { ?variableVD iadas:hasCategory ?categoryVD }
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
+    BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
+    OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
-    OPTIONAL { ?relation iadas:resultatRelation ?resultatRelation }
+    OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     OPTIONAL { ?analysis iadas:hasMediator ?mediator }
     OPTIONAL { ?analysis iadas:hasModerator ?moderator }
 }
@@ -2359,20 +2462,23 @@ http.createServer(async (req, res) => {
       // Requêtes pour alimenter l'interface depuis les ontologies hiérarchiques
       const queries = {
         acads: `
-PREFIX iadas: <http://ia-das.org/onto#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT ?acad (COUNT(*) as ?count) 
 WHERE {
     ?analysis a iadas:Analysis .
-    ?analysis iadas:hasPopulation ?population .
-    ?population iadas:practicesSport ?sport .
-    ?sport iadas:sportName ?acad .
+    ?analysis iadas:hasRelation ?relation .
+    ?relation iadas:hasDependentVariable ?vd .
+    ?vd iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?acad)
 }
 GROUP BY ?acad
 ORDER BY DESC(?count)`,
 
         factorsVI: `
-PREFIX iadas: <http://ia-das.org/onto#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 SELECT DISTINCT ?vi (COUNT(*) as ?count)
@@ -2381,17 +2487,17 @@ WHERE {
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasIndependentVariable ?variableVI .
     
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    BIND(REPLACE(REPLACE(STR(?viType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vi)
+    ?variableVI iadas:refersToVariable ?viURI .
+    BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
     
-    ${params.get('categoryVI') ? `?variableVI iadas:hasCategory "${params.get('categoryVI')}" .` : ''}
+    ${params.get('categoryVI') ? `?viFilterSKOS skos:prefLabel ?viLabel . ?viFilterSKOS skos:broader+ ?viTopCat . ?viTopCat skos:prefLabel "${params.get('categoryVI')}" .` : ''}
 }
 GROUP BY ?vi
 ORDER BY DESC(?count)`,
 
         factorsVD: `
-PREFIX iadas: <http://ia-das.org/onto#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 SELECT DISTINCT ?vd (COUNT(*) as ?count)
@@ -2400,30 +2506,34 @@ WHERE {
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasDependentVariable ?variableVD .
     
-    ?variableVD rdf:type ?vdType .
-    FILTER(?vdType != iadas:VariableDependante)
-    BIND(REPLACE(REPLACE(STR(?vdType), "http://ia-das.org/onto#", ""), "_", " ") AS ?vd)
+    ?variableVD iadas:refersToVariable ?vdURI .
+    BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
     
-    ${params.get('categoryVD') ? `?variableVD iadas:hasCategory "${params.get('categoryVD')}" .` : ''}
+    ${params.get('categoryVD') ? `?vdFilterSKOS skos:prefLabel ?vdLabel . ?vdFilterSKOS skos:broader+ ?vdTopCat . ?vdTopCat skos:prefLabel "${params.get('categoryVD')}" .` : ''}
 }
 GROUP BY ?vd
 ORDER BY DESC(?count)`,
 
         categoriesVD: `
-PREFIX iadas: <http://ia-das.org/onto#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT ?category (COUNT(*) as ?count)
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasDependentVariable ?variableVD .
-    ?variableVD iadas:hasCategory ?category .
+    ?variableVD iadas:refersToVariable ?vdCatURI .
+    ?vdCatURI skos:broader+ ?catURI .
+    FILTER NOT EXISTS { ?catURI skos:broader ?x }
+    ?catURI skos:prefLabel ?category .
 }
 GROUP BY ?category
 ORDER BY DESC(?count)`,
 
         categoriesVI: `
-PREFIX iadas: <http://ia-das.org/onto#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 SELECT DISTINCT ?category (COUNT(*) as ?count)
@@ -2431,9 +2541,10 @@ WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasIndependentVariable ?variableVI .
-    ?variableVI rdf:type ?viType .
-    FILTER(?viType != iadas:VariableIndependante)
-    ?variableVI iadas:hasCategory ?category .
+    ?variableVI iadas:refersToVariable ?viURI .
+    ?viURI skos:broader+ ?catURI .
+    FILTER NOT EXISTS { ?catURI skos:broader ?x }
+    ?catURI skos:prefLabel ?category .
 }
 GROUP BY ?category
 ORDER BY DESC(?count)`,
@@ -2441,21 +2552,16 @@ ORDER BY DESC(?count)`,
         sports: `
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX iadas: <http://ia-das.org/onto#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT DISTINCT ?sport 
+SELECT DISTINCT ?sport
 WHERE {
-    ?concept a owl:Class .
-    ?concept rdfs:label ?sportLabel .
-    BIND(?sportLabel AS ?sport)
-    FILTER NOT EXISTS { ?child rdfs:subClassOf ?concept }
-    FILTER(?sportLabel != "Sport" && ?sportLabel != "Physical_activity" && ?sportLabel != "Athletic" && 
-           ?sportLabel != "Individual_sport" && ?sportLabel != "Team_sport" && ?sportLabel != "Combat_sport" &&
-           ?sportLabel != "Aesthetic" && ?sportLabel != "Endurance" && ?sportLabel != "Power" && ?sportLabel != "Technical")
+    ?analysis a iadas:Analysis .
+    ?analysis iadas:hasSport ?sportURI .
+    BIND(REPLACE(STR(?sportURI), ".*sport-vocab/", "") AS ?sport)
     ${params.get('sportCategory') ? `
-    # Filtrer les sports par catégorie
-    ?concept rdfs:subClassOf* ?categoryClass .
-    ?categoryClass rdfs:label "${params.get('sportCategory')}" .
+    ?analysis iadas:sportPracticeType "${params.get('sportCategory')}" .
     ` : ''}
 }
 ORDER BY ?sport`,
@@ -2463,27 +2569,26 @@ ORDER BY ?sport`,
         sportCategories: `
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX iadas: <http://ia-das.org/onto#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT ?category 
 WHERE {
-    ?concept a owl:Class .
-    ?concept rdfs:label ?category .
-    # Récupérer les Class 1 (catégories principales) qui sont directement sous Sport
-    ?concept rdfs:subClassOf iadas:Sport .
-    # S'assurer qu'il y a des sous-classes (pour évider les catégories vides)
-    ?child rdfs:subClassOf ?concept .
+    ?analysis a iadas:Analysis .
+    ?analysis iadas:sportPracticeType ?category .
 }
 ORDER BY ?category`,
 
         countries: `
-PREFIX iadas: <http://ia-das.org/onto#>
+PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT ?country (COUNT(*) as ?count)
 WHERE {
     ?analysis a iadas:Analysis .
-    ?analysis iadas:hasPopulation ?population .
-    ?population iadas:country ?country .
+    ?article a iadas:SportPsychologyArticle .
+    ?article iadas:hasAnalysis ?analysis .
+    ?article iadas:country ?country .
 }
 GROUP BY ?country
 ORDER BY DESC(?count)`
@@ -2814,7 +2919,7 @@ ORDER BY DESC(?count)`
         if (resultCount > 0) {
           const firstResult = data.results.bindings[0];
           const availableVars = Object.keys(firstResult);
-          const expectedVars = ['analysis', 'vi', 'vd', 'categoryVI', 'categoryVD', 'mediator', 'moderator', 'resultatRelation'];
+          const expectedVars = ['analysis', 'vi', 'vd', 'categoryVI', 'categoryVD', 'mediator', 'moderator', 'relationDirection'];
 
           console.log(" VÉRIFICATION COMPATIBILITÉ PARSER:");
           console.log(`   Variables disponibles: ${availableVars.join(', ')}`);
