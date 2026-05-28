@@ -173,40 +173,26 @@ async function fixSkosUriMismatch() {
   console.log('\n=== FIX URI MISMATCH SKOS (underscore vs %20) ===');
   const UPDATE_URL = `${FUSEKI_URL}/update`;
 
-  const updateQuery = `
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+  const queryVI = `PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX iadas: <http://ns.inria.fr/iadas/ontology/> INSERT { ?u skos:broader ?b . } WHERE { ?vi a iadas:VariableIndependante ; iadas:refersToVariable ?u . FILTER(CONTAINS(STR(?u), 'ACAD-vocab')) FILTER(!CONTAINS(STR(?u), 'N.A')) BIND(REPLACE(REPLACE(STR(?u), 'http://ns.inria.fr/iadas/ACAD-vocab/', ''), '_', ' ') AS ?lbl) ?pct skos:prefLabel ?lbl ; skos:broader ?b . FILTER(CONTAINS(STR(?pct), 'ACAD-vocab')) }`;
 
-INSERT { ?underscoreURI skos:broader ?broader . }
-WHERE {
-  { ?vi a iadas:VariableIndependante ; iadas:refersToVariable ?underscoreURI . }
-  UNION
-  { ?vi a iadas:VariableDependante ; iadas:refersToVariable ?underscoreURI . }
-  FILTER(CONTAINS(STR(?underscoreURI), 'ACAD-vocab'))
-  FILTER(!CONTAINS(STR(?underscoreURI), 'N.A'))
-  BIND(REPLACE(REPLACE(STR(?underscoreURI), 'http://ns.inria.fr/iadas/ACAD-vocab/', ''), '_', ' ') AS ?decodedLabel)
-  ?pctURI skos:prefLabel ?label ; skos:broader ?broader .
-  FILTER(CONTAINS(STR(?pctURI), 'ACAD-vocab'))
-  FILTER(STR(?label) = ?decodedLabel)
-}`;
+  const queryVD = `PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX iadas: <http://ns.inria.fr/iadas/ontology/> INSERT { ?u skos:broader ?b . } WHERE { ?vd a iadas:VariableDependante ; iadas:refersToVariable ?u . FILTER(CONTAINS(STR(?u), 'ACAD-vocab')) FILTER(!CONTAINS(STR(?u), 'N.A')) BIND(REPLACE(REPLACE(STR(?u), 'http://ns.inria.fr/iadas/ACAD-vocab/', ''), '_', ' ') AS ?lbl) ?pct skos:prefLabel ?lbl ; skos:broader ?b . FILTER(CONTAINS(STR(?pct), 'ACAD-vocab')) }`;
 
-  try {
-    const res = await fetch(UPDATE_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/sparql-update',
-        'Authorization': `Basic ${auth}`
-      },
-      body: updateQuery
-    });
-    if (res.ok) {
-      console.log('  Fix URI mismatch applique avec succes (VI + VD).');
-    } else {
-      const err = await res.text();
-      console.log(`  Erreur fix URI: ${err}`);
+  for (const [label, query] of [['VI', queryVI], ['VD', queryVD]]) {
+    try {
+      const res = await fetch(UPDATE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/sparql-update', 'Authorization': `Basic ${auth}` },
+        body: query
+      });
+      const body = await res.text();
+      if (res.ok) {
+        console.log(`  Fix ${label} applique avec succes.`);
+      } else {
+        console.log(`  Erreur fix ${label} — status: ${res.status} — body: ${body}`);
+      }
+    } catch (e) {
+      console.log(`  Exception fix ${label}: ${e.message}`);
     }
-  } catch (e) {
-    console.log(`  Exception fix URI: ${e.message}`);
   }
 }
 
