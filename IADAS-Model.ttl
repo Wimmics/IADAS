@@ -951,7 +951,7 @@ iadas:effectSize
     a owl:DatatypeProperty ;
     rdfs:label "taille d'effet"@fr ;
     rdfs:label "effect size"@en ;
-    rdfs:comment "Force ou magnitude de la relation statistique entre VI et VD, selon les conventions de Cohen (faible, modéré, fort)"@fr ;
-    rdfs:comment "Strength or magnitude of the statistical relation between IV and DV, following Cohen's conventions (small, medium, large)"@en ;
+    rdfs:comment "Force ou magnitude de la relation statistique entre VI et VD, classifiée selon le coefficient r : négligeable (<0.1), faible (0.1-0.3), modéré (0.3-0.5), fort (>0.5)"@fr ;
+    rdfs:comment "Strength or magnitude of the statistical relation between IV and DV, classified by r coefficient: negligible (<0.1), weak (0.1-0.3), moderate (0.3-0.5), strong (>0.5)"@en ;
     rdfs:domain iadas:Relations ;
     rdfs:range xsd:string .
