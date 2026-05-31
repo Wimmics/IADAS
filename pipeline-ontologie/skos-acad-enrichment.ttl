@@ -1,0 +1,799 @@
+# =============================================================================
+# Enrichissement SKOS — Vocabulaire ACAD-vocab
+# Auteure : Imane Amraoui — Stage IA-DAS, LAMHESS / Wimmics, Inria
+# Date : Mai 2026
+# Description : 157 concepts SKOS ajoutés au vocabulaire ACAD-vocab
+#               (145 variables indépendantes VI + 17 variables dépendantes VD)
+#               Ces concepts s'ajoutent aux 621 concepts générés par le pipeline RML
+#               Source originale : pipeline-ontologie/output/variable-hierarchy.ttl
+# Chargement : ce fichier doit être chargé dans Fuseki après le pipeline RML
+# =============================================================================
+
+@prefix iadas-vocab: <http://ns.inria.fr/iadas/ACAD-vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+iadas-vocab:Appearance%20comparison a skos:Concept ;
+    skos:broader iadas-vocab:External%20comments ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Appearance comparison" .
+
+iadas-vocab:Appearance%20pressure%20from%20teammates a skos:Concept ;
+    skos:broader iadas-vocab:Social%20and%20Sport%20pressure%20related%20to%20significant%20others ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Appearance pressure from teammates" .
+
+iadas-vocab:Athletes%20perceptions%20of%20power%20balances%20with%20their%20coach%20training%20staff a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Athletes perceptions of power balances with their coach training staff" .
+
+iadas-vocab:Attention%20deficit%20hyperactivity%20disorders a skos:Concept ;
+    skos:broader iadas-vocab:Psychological%20symptoms ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Attention deficit hyperactivity disorders" .
+
+iadas-vocab:Attitude%20towards%20unhealthy%20exercising%20behavior a skos:Concept ;
+    skos:broader iadas-vocab:Sociocultural%20factor%20related%20to%20DEAB ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Attitude towards unhealthy exercising behavior" .
+
+iadas-vocab:Attitude%20towards%20unhealthy%20weight%20loss%20behavior a skos:Concept ;
+    skos:broader iadas-vocab:Sociocultural%20factor%20related%20to%20DEAB ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Attitude towards unhealthy weight loss behavior" .
+
+iadas-vocab:Basic%20needs%20satisfaction%20in%20sport a skos:Concept ;
+    skos:broader iadas-vocab:Perceived%20competence ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Basic needs satisfaction in sport" .
+
+iadas-vocab:Belongingness a skos:Concept ;
+    skos:broader iadas-vocab:Advice%20and%20Normative%20Influences ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Belongingness" .
+
+iadas-vocab:Body%20change a skos:Concept ;
+    skos:broader iadas-vocab:Body%20image ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Body change" .
+
+iadas-vocab:Body%20checking a skos:Concept ;
+    skos:broader iadas-vocab:Body%20checking%20and%20avoidance ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Body checking" .
+
+iadas-vocab:Body%20dysmorphic%20concerns a skos:Concept ;
+    skos:broader iadas-vocab:Body%20image ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Body dysmorphic concerns" .
+
+iadas-vocab:Body%20dysmorphic%20disorder a skos:Concept ;
+    skos:broader iadas-vocab:Body%20image ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Body dysmorphic disorder" .
+
+iadas-vocab:Coach%20leadership%20style%20active%20management a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach leadership style active management" .
+
+iadas-vocab:Coach%20leadership%20style%20individualization a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach leadership style individualization" .
+
+iadas-vocab:Coach%20leadership%20style%20inspiration a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach leadership style inspiration" .
+
+iadas-vocab:Coach%20leadership%20style%20instruction a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach leadership style instruction" .
+
+iadas-vocab:Coach%20leadership%20style%20negative%20feedback a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach leadership style negative feedback" .
+
+iadas-vocab:Coach%20leadership%20style%20passive%20management a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach leadership style passive management" .
+
+iadas-vocab:Coach%20leadership%20style%20positive%20feedback a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach leadership style positive feedback" .
+
+iadas-vocab:Coach%20leadership%20style%20support a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach leadership style support" .
+
+iadas-vocab:Coach%20leadership%20style%20vision a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach leadership style vision" .
+
+iadas-vocab:Coach%20relationship%20quality a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach relationship quality" .
+
+iadas-vocab:Coach%20s%20focus%20on%20results a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach s focus on results" .
+
+iadas-vocab:Coach%20s%20negative%20feedback a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach s negative feedback" .
+
+iadas-vocab:Coach%20s%20pressure%20in%20relation%20to%20nutrition a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach s pressure in relation to nutrition" .
+
+iadas-vocab:Coach-athlete%20relationship a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach-athlete relationship" .
+
+iadas-vocab:Cognitive%20flexibility a skos:Concept ;
+    skos:broader iadas-vocab:Personality%20traits ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Cognitive flexibility" .
+
+iadas-vocab:Compulsive%20spending a skos:Concept ;
+    skos:broader iadas-vocab:Compulsive%20and%20behavioral%20addiction ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Compulsive spending" .
+
+iadas-vocab:Concentration a skos:Concept ;
+    skos:broader iadas-vocab:Perceived%20competence ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Concentration" .
+
+iadas-vocab:Confidence%20achievement%20motivation a skos:Concept ;
+    skos:broader iadas-vocab:Exercise%20Motivation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Confidence achievement motivation" .
+
+iadas-vocab:Current%20body%20weight-ideal%20body%20weight a skos:Concept ;
+    skos:broader iadas-vocab:Body%20dissatisfaction ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Current body weight-ideal body weight" .
+
+iadas-vocab:Degree%20of%20muscle%20dysmorphia%20bigorexia%20nervosa a skos:Concept ;
+    skos:broader iadas-vocab:Muscle%20Dysmorphia ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Degree of muscle dysmorphia bigorexia nervosa" .
+
+iadas-vocab:Depressed%20sad a skos:Concept ;
+    skos:broader iadas-vocab:Emotional%20states ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Depressed sad" .
+
+iadas-vocab:Depression%20anxiety%20and%20stress a skos:Concept ;
+    skos:broader iadas-vocab:Psychological%20symptoms ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Depression anxiety and stress" .
+
+iadas-vocab:Diet a skos:Concept ;
+    skos:broader iadas-vocab:Eating%20behavior ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Diet" .
+
+iadas-vocab:Diet_trailing a skos:Concept ;
+    skos:broader iadas-vocab:Eating%20behavior ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Diet " .
+
+iadas-vocab:Dietary a skos:Concept ;
+    skos:broader iadas-vocab:Eating%20behavior ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Dietary" .
+
+iadas-vocab:Dietary%20restraint a skos:Concept ;
+    skos:broader iadas-vocab:Restrictions ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Dietary restraint" .
+
+iadas-vocab:Dietary_trailing a skos:Concept ;
+    skos:broader iadas-vocab:Eating%20behavior ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Dietary " .
+
+iadas-vocab:Difficulty%20describing%20feelings a skos:Concept ;
+    skos:broader iadas-vocab:Emotion%20regulation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Difficulty describing feelings" .
+
+iadas-vocab:Discouragement%20sabotage%20from%20friends%20to%20eat%20healthy a skos:Concept ;
+    skos:broader iadas-vocab:Advice%20and%20Normative%20Influences ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Discouragement sabotage from friends to eat healthy" .
+
+iadas-vocab:Disordered%20eating%20attitudes a skos:Concept ;
+    skos:broader iadas-vocab:Disturbed%20eating%20attitudes%20and%20behaviors ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Disordered eating attitudes" .
+
+iadas-vocab:Disordered%20eating%20behavior a skos:Concept ;
+    skos:broader iadas-vocab:Disturbed%20eating%20attitudes%20and%20behaviors ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Disordered eating behavior" .
+
+iadas-vocab:Drive%20for%20muscularity a skos:Concept ;
+    skos:broader iadas-vocab:Muscle%20Dysmorphia ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Drive for muscularity" .
+
+iadas-vocab:Drive%20for%20muscularity%20thoughts a skos:Concept ;
+    skos:broader iadas-vocab:Muscle%20Dysmorphia ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Drive for muscularity thoughts" .
+
+iadas-vocab:Drive%20for%20muscularity-oriented%20behavior a skos:Concept ;
+    skos:broader iadas-vocab:Muscle%20Dysmorphia ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Drive for muscularity-oriented behavior" .
+
+iadas-vocab:Eating%20behavior%20self-determined%20motivational a skos:Concept ;
+    skos:broader iadas-vocab:Exercise%20Motivation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Eating behavior self-determined motivational" .
+
+iadas-vocab:Eating%20pathology a skos:Concept ;
+    skos:broader iadas-vocab:Eating%20psychopathology ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Eating pathology" .
+
+iadas-vocab:Emotional%20reaction a skos:Concept ;
+    skos:broader iadas-vocab:Emotional%20states ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Emotional reaction" .
+
+iadas-vocab:Evaluation%20sensitivity a skos:Concept ;
+    skos:broader iadas-vocab:Personality%20traits ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Evaluation sensitivity" .
+
+iadas-vocab:Exercise%20dependence%20intention%20effect a skos:Concept ;
+    skos:broader iadas-vocab:Addictiveness ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Exercise dependence intention effect" .
+
+iadas-vocab:Exercise%20dependence%20lack%20of%20control a skos:Concept ;
+    skos:broader iadas-vocab:Addictiveness ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Exercise dependence lack of control" .
+
+iadas-vocab:Exercise%20dependence%20reduction%20in%20other%20activities a skos:Concept ;
+    skos:broader iadas-vocab:Addictiveness ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Exercise dependence reduction in other activities" .
+
+iadas-vocab:Exercise%20dependence%20withdrawal a skos:Concept ;
+    skos:broader iadas-vocab:Addictiveness ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Exercise dependence withdrawal" .
+
+iadas-vocab:Exercise%20for%20social a skos:Concept ;
+    skos:broader iadas-vocab:Exercise%20Motivation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Exercise for social" .
+
+iadas-vocab:Exercising%20for%20health%20fitness a skos:Concept ;
+    skos:broader iadas-vocab:Exercise%20Motivation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Exercising for health fitness" .
+
+iadas-vocab:External%20ingestion a skos:Concept ;
+    skos:broader iadas-vocab:External%20eating%20behavior ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "External ingestion" .
+
+iadas-vocab:External%20locus%20coach%20and%20friends a skos:Concept ;
+    skos:broader iadas-vocab:Locus%20of%20control ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "External locus coach and friends" .
+
+iadas-vocab:External%20locus%20family a skos:Concept ;
+    skos:broader iadas-vocab:Locus%20of%20control ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "External locus family" .
+
+iadas-vocab:External%20locus%20luck a skos:Concept ;
+    skos:broader iadas-vocab:Locus%20of%20control ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "External locus luck" .
+
+iadas-vocab:Extrinsic%20regulation%20for%20sport a skos:Concept ;
+    skos:broader iadas-vocab:Exercise%20Motivation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Extrinsic regulation for sport" .
+
+iadas-vocab:Fitness%20and%20health%20illness%20evaluation a skos:Concept ;
+    skos:broader iadas-vocab:Perception%20of%20health%20and%20well-being ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Fitness and health illness evaluation" .
+
+iadas-vocab:Food%20and%20alcohol%20disturbance-alcohol a skos:Concept ;
+    skos:broader iadas-vocab:Other%20behaviors ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Food and alcohol disturbance-alcohol" .
+
+iadas-vocab:Generic%20disturbed%20eating%20attitudes%20and%20behaviors a skos:Concept ;
+    skos:broader iadas-vocab:Disturbed%20eating%20attitudes%20and%20behaviors ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Generic disturbed eating attitudes and behaviors" .
+
+iadas-vocab:Global%20physical%20self a skos:Concept ;
+    skos:broader iadas-vocab:Physical%20self-esteem ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Global physical self" .
+
+iadas-vocab:Global%20self-worth a skos:Concept ;
+    skos:broader iadas-vocab:Self-esteem ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Global self-worth" .
+
+iadas-vocab:Guilt%20shame a skos:Concept ;
+    skos:broader iadas-vocab:Emotional%20states ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Guilt shame" .
+
+iadas-vocab:Hated%20self a skos:Concept ;
+    skos:broader iadas-vocab:Emotional%20states ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Hated self" .
+
+iadas-vocab:Health-related%20quality%20of%20life a skos:Concept ;
+    skos:broader iadas-vocab:Perception%20of%20health%20and%20well-being ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Health-related quality of life" .
+
+iadas-vocab:Impulsiveness a skos:Concept ;
+    skos:broader iadas-vocab:Personality%20traits ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Impulsiveness" .
+
+iadas-vocab:Inadequate%20self a skos:Concept ;
+    skos:broader iadas-vocab:Self-esteem ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Inadequate self" .
+
+iadas-vocab:Injury a skos:Concept ;
+    skos:broader iadas-vocab:Other%20behaviors ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Injury" .
+
+iadas-vocab:Insensitivity%20to%20athletes%20well-being a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Insensitivity to athletes well-being" .
+
+iadas-vocab:Intention%20to%20gain%20muscle%20mass%20to%20lean%20body%20mass a skos:Concept ;
+    skos:broader iadas-vocab:Muscularity%20and%20Sports%20Practices ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Intention to gain muscle mass to lean body mass" .
+
+iadas-vocab:Internalization%20of%20muscular%20athletic a skos:Concept ;
+    skos:broader iadas-vocab:Norms%20internalization ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Internalization of muscular athletic" .
+
+iadas-vocab:Internalization%20of%20thin%20low%20body%20fat a skos:Concept ;
+    skos:broader iadas-vocab:Norms%20internalization ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Internalization of thin low body fat" .
+
+iadas-vocab:Internet%20addiction a skos:Concept ;
+    skos:broader iadas-vocab:Compulsive%20and%20behavioral%20addiction ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Internet addiction" .
+
+iadas-vocab:Laxatives%20diuretics a skos:Concept ;
+    skos:broader iadas-vocab:Compensatory%20behavior ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Laxatives diuretics" .
+
+iadas-vocab:Loss%20of%20confidence a skos:Concept ;
+    skos:broader iadas-vocab:Self-esteem ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Loss of confidence" .
+
+iadas-vocab:Mental%20health a skos:Concept ;
+    skos:broader iadas-vocab:Psychological%20symptoms ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Mental health" .
+
+iadas-vocab:Mood a skos:Concept ;
+    skos:broader iadas-vocab:Emotional%20states ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Mood" .
+
+iadas-vocab:Muscle%20checking a skos:Concept ;
+    skos:broader iadas-vocab:Body%20checking%20and%20avoidance ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Muscle checking" .
+
+iadas-vocab:Muscle%20dysmorphia a skos:Concept ;
+    skos:broader iadas-vocab:Muscle%20Dysmorphia ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Muscle dysmorphia" .
+
+iadas-vocab:Muscle%20dysmorphic%20tendencies%20avoidance%20and%20psychological%20symptoms a skos:Concept ;
+    skos:broader iadas-vocab:Muscle%20Dysmorphia ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Muscle dysmorphic tendencies avoidance and psychological symptoms" .
+
+iadas-vocab:Muscle%20dysmorphic%20tendencies%20behaviours%20and%20thoughts a skos:Concept ;
+    skos:broader iadas-vocab:Muscle%20Dysmorphia ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Muscle dysmorphic tendencies behaviours and thoughts" .
+
+iadas-vocab:Muscle%20talk a skos:Concept ;
+    skos:broader iadas-vocab:Body%20talk ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Muscle talk" .
+
+iadas-vocab:Muscularity%20oriented%20eating a skos:Concept ;
+    skos:broader iadas-vocab:Muscle%20Dysmorphia ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Muscularity oriented eating" .
+
+iadas-vocab:Muscularity-oriented%20attitudes a skos:Concept ;
+    skos:broader iadas-vocab:Muscularity%20and%20Sports%20Practices ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Muscularity-oriented attitudes" .
+
+iadas-vocab:Muscularity-oriented%20body%20image a skos:Concept ;
+    skos:broader iadas-vocab:Muscularity%20and%20Sports%20Practices ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Muscularity-oriented body image" .
+
+iadas-vocab:Negative%20reaction%20to%20imperfection a skos:Concept ;
+    skos:broader iadas-vocab:Perfectionism ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Negative reaction to imperfection" .
+
+iadas-vocab:Orthorexic%20attitude%20and%20behavior a skos:Concept ;
+    skos:broader iadas-vocab:Orthorexia ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Orthorexic attitude and behavior" .
+
+iadas-vocab:Orthorexic%20eating%20behavior a skos:Concept ;
+    skos:broader iadas-vocab:Orthorexia ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Orthorexic eating behavior" .
+
+iadas-vocab:Pathological%20gambling a skos:Concept ;
+    skos:broader iadas-vocab:Compulsive%20and%20behavioral%20addiction ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Pathological gambling" .
+
+iadas-vocab:Perceived%20coach%20beliefs a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Perceived coach beliefs" .
+
+iadas-vocab:Perceived%20coach%20pressure a skos:Concept ;
+    skos:broader iadas-vocab:Authority%20and%20Leadership%20Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Perceived coach pressure" .
+
+iadas-vocab:Perceived%20pressure%20for%20a%20single%20ideal%20body%20in%20sport a skos:Concept ;
+    skos:broader iadas-vocab:Social%20and%20sport%20pressure%20related%20to%20individual ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Perceived pressure for a single ideal body in sport" .
+
+iadas-vocab:Perceived%20sociocultural%20pressure%20have%20a%20perfect%20body a skos:Concept ;
+    skos:broader iadas-vocab:Social%20and%20sport%20pressure%20related%20to%20individual ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Perceived sociocultural pressure have a perfect body" .
+
+iadas-vocab:Perceived%20teammate%20beliefs a skos:Concept ;
+    skos:broader iadas-vocab:Advice%20and%20Normative%20Influences ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Perceived teammate beliefs" .
+
+iadas-vocab:Perception%20of%20health%20evaluation a skos:Concept ;
+    skos:broader iadas-vocab:Perception%20of%20health%20and%20well-being ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Perception of health evaluation" .
+
+iadas-vocab:Perception%20of%20one%20s%20own%20body%20and%20self a skos:Concept ;
+    skos:broader iadas-vocab:Body%20self%20perception ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Perception of one s own body and self" .
+
+iadas-vocab:Perception%20of%20sociocultural%20pressure a skos:Concept ;
+    skos:broader iadas-vocab:Social%20and%20sport%20pressure%20related%20to%20individual ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Perception of sociocultural pressure" .
+
+iadas-vocab:Perception%20of%20sociocultural%20pressure%20from%20media a skos:Concept ;
+    skos:broader iadas-vocab:Media%20exposure ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Perception of sociocultural pressure from media" .
+
+iadas-vocab:Perfectionism%20self-oriented a skos:Concept ;
+    skos:broader iadas-vocab:Perfectionism ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Perfectionism self-oriented" .
+
+iadas-vocab:Performance a skos:Concept ;
+    skos:broader iadas-vocab:Perceived%20competence ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Performance" .
+
+iadas-vocab:Performance%20cognitive%20anxiety a skos:Concept ;
+    skos:broader iadas-vocab:Fear%20and%20anxiety ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Performance cognitive anxiety" .
+
+iadas-vocab:Physical%20competence%20evaluation a skos:Concept ;
+    skos:broader iadas-vocab:Perceived%20competence ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Physical competence evaluation" .
+
+iadas-vocab:Physical%20competence%20orientation a skos:Concept ;
+    skos:broader iadas-vocab:Perceived%20competence ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Physical competence orientation" .
+
+iadas-vocab:Physical%20fitness a skos:Concept ;
+    skos:broader iadas-vocab:Perception%20of%20health%20and%20well-being ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Physical fitness" .
+
+iadas-vocab:Physical%20self%20concept%20of%20Health a skos:Concept ;
+    skos:broader iadas-vocab:Physical%20self-esteem ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Physical self concept of Health" .
+
+iadas-vocab:Physical%20self%20concept%20of%20health a skos:Concept ;
+    skos:broader iadas-vocab:Physical%20self-esteem ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Physical self concept of health" .
+
+iadas-vocab:Physical%20self-worth a skos:Concept ;
+    skos:broader iadas-vocab:Physical%20self-esteem ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Physical self-worth" .
+
+iadas-vocab:Pressure%20from%20TV%20movies a skos:Concept ;
+    skos:broader iadas-vocab:Media%20exposure ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Pressure from TV movies" .
+
+iadas-vocab:Pressure%20from%20boy%20girlfriend a skos:Concept ;
+    skos:broader iadas-vocab:Social%20and%20Sport%20pressure%20related%20to%20significant%20others ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Pressure from boy girlfriend" .
+
+iadas-vocab:Pressure%20from%20magazines%20fashion a skos:Concept ;
+    skos:broader iadas-vocab:Media%20exposure ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Pressure from magazines fashion" .
+
+iadas-vocab:Pressure%20regarding%20appearance%20and%20performance a skos:Concept ;
+    skos:broader iadas-vocab:Social%20and%20Sport%20pressure%20related%20to%20significant%20others ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Pressure regarding appearance and performance" .
+
+iadas-vocab:Pressures%20to%20lose%20weight%20change%20shape%20from%20teammates a skos:Concept ;
+    skos:broader iadas-vocab:Social%20and%20Sport%20pressure%20related%20to%20significant%20others ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Pressures to lose weight change shape from teammates" .
+
+iadas-vocab:Psychosocial%20health a skos:Concept ;
+    skos:broader iadas-vocab:Psychological%20symptoms ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Psychosocial health" .
+
+iadas-vocab:Psychotic%20disorder a skos:Concept ;
+    skos:broader iadas-vocab:Psychological%20symptoms ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Psychotic disorder" .
+
+iadas-vocab:Restrained%20eating a skos:Concept ;
+    skos:broader iadas-vocab:Restrictions ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Restrained eating" .
+
+iadas-vocab:Restrictive%20eating a skos:Concept ;
+    skos:broader iadas-vocab:Restrictions ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Restrictive eating" .
+
+iadas-vocab:Romantic%20pressure a skos:Concept ;
+    skos:broader iadas-vocab:Social%20and%20Sport%20pressure%20related%20to%20significant%20others ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Romantic pressure" .
+
+iadas-vocab:Self-compassion a skos:Concept ;
+    skos:broader iadas-vocab:Kindness%20and%20compassion ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-compassion" .
+
+iadas-vocab:Self-critical%20perfectionism a skos:Concept ;
+    skos:broader iadas-vocab:Perfectionism ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-critical perfectionism" .
+
+iadas-vocab:Self-criticism a skos:Concept ;
+    skos:broader iadas-vocab:Personality%20traits ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-criticism" .
+
+iadas-vocab:Self-determination%20for%20sport a skos:Concept ;
+    skos:broader iadas-vocab:Exercise%20Motivation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-determination for sport" .
+
+iadas-vocab:Self-efficacy a skos:Concept ;
+    skos:broader iadas-vocab:Self%20efficacy ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-efficacy" .
+
+iadas-vocab:Self-evaluative%20perfectionism a skos:Concept ;
+    skos:broader iadas-vocab:Perfectionism ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-evaluative perfectionism" .
+
+iadas-vocab:Self-identity a skos:Concept ;
+    skos:broader iadas-vocab:Self-esteem ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-identity" .
+
+iadas-vocab:Self-judgment a skos:Concept ;
+    skos:broader iadas-vocab:Self-esteem ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-judgment" .
+
+iadas-vocab:Self-objectivation a skos:Concept ;
+    skos:broader iadas-vocab:Body%20self%20perception ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-objectivation" .
+
+iadas-vocab:Self-regulation%20in%20context%20of%20compensatory%20strategies a skos:Concept ;
+    skos:broader iadas-vocab:Emotion%20regulation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-regulation in context of compensatory strategies" .
+
+iadas-vocab:Self-regulation%20in%20context%20of%20food%20temptation a skos:Concept ;
+    skos:broader iadas-vocab:Emotion%20regulation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-regulation in context of food temptation" .
+
+iadas-vocab:Self-regulation%20in%20context%20of%20lack%20of%20anticipation%20of%20consequences%20on%20performance a skos:Concept ;
+    skos:broader iadas-vocab:Emotion%20regulation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-regulation in context of lack of anticipation of consequences on performance" .
+
+iadas-vocab:Self-regulation%20in%20context%20of%20negative%20affect a skos:Concept ;
+    skos:broader iadas-vocab:Emotion%20regulation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-regulation in context of negative affect" .
+
+iadas-vocab:Self-regulation%20in%20context%20of%20social%20interaction a skos:Concept ;
+    skos:broader iadas-vocab:Emotion%20regulation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-regulation in context of social interaction" .
+
+iadas-vocab:Self-regulation%20of%20eating%20attitude a skos:Concept ;
+    skos:broader iadas-vocab:Emotion%20regulation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-regulation of eating attitude" .
+
+iadas-vocab:Sexual%20abuse a skos:Concept ;
+    skos:broader iadas-vocab:Conflicted%20and%20Negative%20Relationships ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Sexual abuse" .
+
+iadas-vocab:Sexual%20attractiveness a skos:Concept ;
+    skos:broader iadas-vocab:Physical%20self-esteem ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Sexual attractiveness" .
+
+iadas-vocab:Sexual%20harassment a skos:Concept ;
+    skos:broader iadas-vocab:Conflicted%20and%20Negative%20Relationships ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Sexual harassment" .
+
+iadas-vocab:Sexual%20violence a skos:Concept ;
+    skos:broader iadas-vocab:Conflicted%20and%20Negative%20Relationships ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Sexual violence" .
+
+iadas-vocab:Size%20symmetry%20concerns a skos:Concept ;
+    skos:broader iadas-vocab:Body%20image ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Size symmetry concerns" .
+
+iadas-vocab:Social%20dysfunction a skos:Concept ;
+    skos:broader iadas-vocab:Psychological%20symptoms ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Social dysfunction" .
+
+iadas-vocab:Sociocultural%20attitudes%20toward%20appearance a skos:Concept ;
+    skos:broader iadas-vocab:Sociocultural%20factor%20related%20to%20DEAB ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Sociocultural attitudes toward appearance" .
+
+iadas-vocab:Sociocultural%20factors a skos:Concept ;
+    skos:broader iadas-vocab:Sociocultural%20factor%20related%20to%20DEAB ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Sociocultural factors" .
+
+iadas-vocab:Sociocultural%20pressure%20concern%20about%20being%20fat a skos:Concept ;
+    skos:broader iadas-vocab:Social%20and%20sport%20pressure%20related%20to%20individual ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Sociocultural pressure concern about being fat" .
+
+iadas-vocab:Sport%20specific%20pressures a skos:Concept ;
+    skos:broader iadas-vocab:Social%20and%20Sport%20pressure%20related%20to%20significant%20others ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Sport specific pressures" .
+
+iadas-vocab:Sport%20specific%20self-confidence a skos:Concept ;
+    skos:broader iadas-vocab:Self%20efficacy ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Sport specific self-confidence" .
+
+iadas-vocab:Subjective%20norm%20related%20to%20gain%20muscle%20mass a skos:Concept ;
+    skos:broader iadas-vocab:Norms%20internalization ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Subjective norm related to gain muscle mass" .
+
+iadas-vocab:Substance%20addiction a skos:Concept ;
+    skos:broader iadas-vocab:Compulsive%20and%20behavioral%20addiction ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Substance addiction" .
+
+iadas-vocab:Supportive%20friendships a skos:Concept ;
+    skos:broader iadas-vocab:Positive%20relationships%20with%20significant%20others ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Supportive friendships" .
+
+iadas-vocab:Thinness%20related%20learning a skos:Concept ;
+    skos:broader iadas-vocab:Norms%20internalization ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Thinness related learning" .
+
+iadas-vocab:Thinness%20restricting%20expectancies a skos:Concept ;
+    skos:broader iadas-vocab:Norms%20internalization ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Thinness restricting expectancies" .
+
+iadas-vocab:Uniform%20influences a skos:Concept ;
+    skos:broader iadas-vocab:Social%20and%20Sport%20pressure%20related%20to%20significant%20others ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Uniform influences" .
+
+iadas-vocab:Upper%20body%20strength a skos:Concept ;
+    skos:broader iadas-vocab:Perceived%20competence ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Upper body strength" .
+
+iadas-vocab:Vomit a skos:Concept ;
+    skos:broader iadas-vocab:Compensatory%20behavior ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Vomit" .
+
+iadas-vocab:Weight%20preoccupation a skos:Concept ;
+    skos:broader iadas-vocab:Weight%20Control ;
+    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:prefLabel "Weight preoccupation" .
+
+iadas-vocab:Weight%20pressure%20coach%20teammate a skos:Concept ;
+    skos:broader iadas-vocab:Social%20and%20Sport%20pressure%20related%20to%20significant%20others ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Weight pressure coach teammate" .
+
