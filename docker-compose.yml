@@ -49,6 +49,7 @@ services:
       - ./pipeline-ontologie/resultats/ia-das-ontology-clean.ttl:/init/ia-das-ontology-clean.ttl
       - ./pipeline-ontologie/resultats/variable-hierarchy-clean.ttl:/init/variable-hierarchy-clean.ttl
       - ./pipeline-ontologie/resultats/sport-hierarchy-simple-clean.ttl:/init/sport-hierarchy-simple-clean.ttl
+      - ./pipeline-ontologie/skos-acad-enrichment.ttl:/init/skos-acad-enrichment.ttl
     networks:
       - webnet
   database-service:

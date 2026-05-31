@@ -6,10 +6,11 @@ const crypto = require('crypto');
 
 console.log(' === DÉBUT DEBUG FUSEKI LOADER (3 NOUVEAUX FICHIERS) ===');
 
-// Lecture et analyse des TROIS fichiers TTL
+// Lecture et analyse des QUATRE fichiers TTL
 const mainOntology = fs.readFileSync('/init/ia-das-ontology-clean.ttl', 'utf8');
 const variableHierarchy = fs.readFileSync('/init/variable-hierarchy-clean.ttl', 'utf8');
 const sportHierarchy = fs.readFileSync('/init/sport-hierarchy-simple-clean.ttl', 'utf8');
+const skosEnrichment = fs.readFileSync('/init/skos-acad-enrichment.ttl', 'utf8');
 
 const FUSEKI_URL = 'http://fuseki:3030/ds';
 const DATA_URL = `${FUSEKI_URL}/data`;
@@ -100,17 +101,20 @@ async function waitForFuseki(retries = 0) {
       console.log(`\n Triples déjà présents dans Fuseki: ${existingCount}`);
 
       if (existingCount > 1000) {
-        console.log(' Données déjà chargées — chargement ignoré pour éviter les doublons.');
-        console.log(` Dataset "ds" contient ${existingCount} triples. Aucune action nécessaire.`);
+        console.log(' Données déjà chargées — chargement TTL ignoré pour éviter les doublons.');
+        console.log(` Dataset "ds" contient ${existingCount} triples.`);
+        await fixSkosUriMismatch();
         return;
       }
 
       console.log(' Dataset vide ou insuffisant — chargement des données RDF...\n');
 
-      // Charger les trois fichiers séquentiellement
+      // Charger les quatre fichiers séquentiellement
       await uploadMainOntology();
       await uploadVariableHierarchy();
       await uploadSportHierarchy();
+      await uploadSkosEnrichment();
+      await fixSkosUriMismatch();
       
     } else {
       const errorText = await res.text();
@@ -158,6 +162,38 @@ async function uploadVariableHierarchy() {
 async function uploadSportHierarchy() {
   console.log('\n=== UPLOAD SPORT-HIERARCHY-SIMPLE-CLEAN.TTL ===');
   return await uploadFile(sportHierarchy, 'sport-hierarchy-simple-clean.ttl', 'SPT');
+}
+
+async function uploadSkosEnrichment() {
+  console.log('\n=== UPLOAD SKOS-ACAD-ENRICHMENT.TTL ===');
+  return await uploadFile(skosEnrichment, 'skos-acad-enrichment.ttl', 'SKS');
+}
+
+async function fixSkosUriMismatch() {
+  console.log('\n=== FIX URI MISMATCH SKOS (underscore vs %20) ===');
+  const UPDATE_URL = `${FUSEKI_URL}/update`;
+
+  const queryVI = `PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX iadas: <http://ns.inria.fr/iadas/ontology/> INSERT { ?u skos:broader ?b . } WHERE { ?vi a iadas:VariableIndependante ; iadas:refersToVariable ?u . FILTER(CONTAINS(STR(?u), 'ACAD-vocab')) FILTER(!CONTAINS(STR(?u), 'N.A')) BIND(REPLACE(REPLACE(STR(?u), 'http://ns.inria.fr/iadas/ACAD-vocab/', ''), '_', ' ') AS ?lbl) ?pct skos:prefLabel ?lbl ; skos:broader ?b . FILTER(CONTAINS(STR(?pct), 'ACAD-vocab')) }`;
+
+  const queryVD = `PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX iadas: <http://ns.inria.fr/iadas/ontology/> INSERT { ?u skos:broader ?b . } WHERE { ?vd a iadas:VariableDependante ; iadas:refersToVariable ?u . FILTER(CONTAINS(STR(?u), 'ACAD-vocab')) FILTER(!CONTAINS(STR(?u), 'N.A')) BIND(REPLACE(REPLACE(STR(?u), 'http://ns.inria.fr/iadas/ACAD-vocab/', ''), '_', ' ') AS ?lbl) ?pct skos:prefLabel ?lbl ; skos:broader ?b . FILTER(CONTAINS(STR(?pct), 'ACAD-vocab')) }`;
+
+  for (const [label, query] of [['VI', queryVI], ['VD', queryVD]]) {
+    try {
+      const res = await fetch(UPDATE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/sparql-update', 'Authorization': `Basic ${auth}` },
+        body: query
+      });
+      const body = await res.text();
+      if (res.ok) {
+        console.log(`  Fix ${label} applique avec succes.`);
+      } else {
+        console.log(`  Erreur fix ${label} — status: ${res.status} — body: ${body}`);
+      }
+    } catch (e) {
+      console.log(`  Exception fix ${label}: ${e.message}`);
+    }
+  }
 }
 
 async function uploadFile(ttlContent, fileName, icon) {

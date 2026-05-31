@@ -26,9 +26,9 @@
         rr:predicate bibo:doi ; 
         rr:objectMap [ rml:reference "DOI" ] 
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate dcterms:title ; 
-        rr:objectMap [ rml:reference "Référence" ] 
+    rr:predicateObjectMap [
+        rr:predicate dcterms:title ;
+        rr:objectMap [ rml:reference "Title" ]
     ] ;
     rr:predicateObjectMap [ 
         rr:predicate dcterms:date ; 
@@ -42,11 +42,15 @@
         rr:predicate bibo:journal ; 
         rr:objectMap [ rml:reference "Journal" ] 
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:country ; 
-        rr:objectMap [ rml:reference "Country" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:country ;
+        rr:objectMap [ rml:reference "Country" ]
     ] ;
-    rr:predicateObjectMap [ 
+    rr:predicateObjectMap [
+        rr:predicate iadas:continent ;
+        rr:objectMap [ rml:reference "Continent" ]
+    ] ;
+    rr:predicateObjectMap [
         rr:predicate iadas:studyType ; 
         rr:objectMap [ rml:reference "Types of study" ] 
     ] ;
@@ -66,49 +70,49 @@
         rr:predicate iadas:analysisId ; 
         rr:objectMap [ rml:reference "Analysis_ID" ] 
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:analysisMultiplicity ; 
-        rr:objectMap [ rml:reference "Multiplicity_analyse" ] 
-    ] ;
+    # rr:predicateObjectMap [
+    #     rr:predicate iadas:analysisMultiplicity ;
+    #     rr:objectMap [ rml:reference "Multiplicity_analyse" ]
+    # ] ; # Colonne absente des données 2026
     rr:predicateObjectMap [ 
         rr:predicate iadas:hasPopulation ; 
         rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/Population_{Analysis_ID}" ] 
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:relationDegree ; 
-        rr:objectMap [ rml:reference "Degre_de_relation" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:relationDegree ;
+        rr:objectMap [ rml:reference "Degree of relationship" ]
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:typeOfAnalysis ; 
-        rr:objectMap [ rml:reference "Type_of_analysis" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:typeOfAnalysis ;
+        rr:objectMap [ rml:reference "Type of analysis" ]
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:authorConclusion ; 
-        rr:objectMap [ rml:reference "Authors_conclusions" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:authorConclusion ;
+        rr:objectMap [ rml:reference "Authors' conclusions" ]
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:limites ; 
-        rr:objectMap [ rml:reference "Limites" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:limites ;
+        rr:objectMap [ rml:reference "Limits" ]
     ] ;
     rr:predicateObjectMap [ 
         rr:predicate iadas:perspectives ; 
         rr:objectMap [ rml:reference "Perspectives" ] 
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasModerator ; 
-        rr:objectMap [ rml:reference "Moderator" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:hasModerator ;
+        rr:objectMap [ rml:reference "Moderator" ]
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:moderatorMeasure ; 
-        rr:objectMap [ rml:reference "Measure_Moderator" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:moderatorMeasure ;
+        rr:objectMap [ rml:reference "Measure Moderator" ]
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasMediator ; 
-        rr:objectMap [ rml:reference "Mediator" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:hasMediator ;
+        rr:objectMap [ rml:reference "Mediator" ]
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:mediatorMeasure ; 
-        rr:objectMap [ rml:reference "Measure_Mediator" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:mediatorMeasure ;
+        rr:objectMap [ rml:reference "Measure Mediator" ]
     ] ;
     #  rr:predicateObjectMap [ 
         #  rr:predicate iadas:acads ; 
@@ -119,18 +123,34 @@
         rr:objectMap [ rr:template "http://ns.inria.fr/iadas/sport-vocab/{Sport_name}" ] 
     ] ;
 
-     rr:predicateObjectMap [ 
-     rr:predicate iadas:sportPracticeType ; 
-     rr:objectMap [ rml:reference "Type_of_sport_practice" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:sportPracticeType ;
+        rr:objectMap [ rml:reference "Type of sport practice" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:numberOfSportStudied ;
+        rr:objectMap [ rml:reference "Number of sport studied" ]
     ] ;
 
     rr:predicateObjectMap [ 
         rr:predicate iadas:hasRelation ; 
         rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/Relations_{Analysis_ID}" ] 
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:sampleSizeMobilized ; 
-        rr:objectMap [ rml:reference "N_mobilise_dans_les analyse" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:sampleSizeMobilized ;
+        rr:objectMap [ rml:reference "N mobilized in analyses" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:complexityOfAnalysis ;
+        rr:objectMap [ rml:reference "Complexity of Analysis" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:relationDirection ;
+        rr:objectMap [ rml:reference "Direction of the relationship" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:groupStatisticalAnalysis ;
+        rr:objectMap [ rml:reference "Group of statistical analysis" ]
     ] .
 
 
@@ -174,10 +194,10 @@
         rr:objectMap [ rml:reference "Resultat_de_relation" ] 
     ] ;
      
-     rr:predicateObjectMap [ 
-         rr:predicate iadas:relationDegreeSecondary ; 
-         rr:objectMap [ rml:reference "Degre_de_relation" ] 
-     ]
+    rr:predicateObjectMap [
+        rr:predicate iadas:relationDegreeSecondary ;
+        rr:objectMap [ rml:reference "Degree of relationship" ]
+    ]
      .
 
 <#VariableMapVD> a rr:TriplesMap ;
@@ -186,17 +206,24 @@
          rr:template "http://ns.inria.fr/iadas/data/Variable_VD_{Analysis_ID}" ;
          rr:class iadas:VariableDependante
      ] ;
-  #  Double typage avec le concept spécifique
-     rr:predicateObjectMap [
-         rr:predicate iadas:refersToVariable ;
-         rr:objectMap [ 
-             rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class_Final_VD}" 
-         ]
-     ] ;
-
-     rr:predicateObjectMap [ 
-         rr:predicate iadas:measure ; 
-         rr:objectMap [ rr:template  "http://ns.inria.fr/iadas/measurementTools-vocab/{Measure_VD}" ] 
+    #  Double typage avec le concept spécifique
+    rr:predicateObjectMap [
+        rr:predicate iadas:refersToVariable ;
+        rr:objectMap [
+            rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{VD_final_sub-class}"
+        ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:measure ;
+        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/measurementTools-vocab/{Measure_VD}" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:variableName ;
+        rr:objectMap [ rml:reference "VD" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:specification ;
+        rr:objectMap [ rml:reference "Specification VD" ]
     ] .
 
  <#VariableMapVI> a rr:TriplesMap ;
@@ -205,17 +232,25 @@
          rr:template "http://ns.inria.fr/iadas/data/Variable_VI_{Analysis_ID}" ;
          rr:class iadas:VariableIndependante
      ] ;
-  #  Double typage avec le concept spécifique
-     rr:predicateObjectMap [
-         rr:predicate iadas:refersToVariable ;
-         rr:objectMap [ 
-             rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class_Final_VI}" 
-         ]
-     ] ;
-     rr:predicateObjectMap [ 
-         rr:predicate iadas:measure ; 
-         rr:objectMap [rr:template "http://ns.inria.fr/iadas/measurementTools-vocab/{Measure_VI}" ] 
-     ] .
+    #  Double typage avec le concept spécifique
+    rr:predicateObjectMap [
+        rr:predicate iadas:refersToVariable ;
+        rr:objectMap [
+            rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{VI_final_sub-class}"
+        ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:measure ;
+        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/measurementTools-vocab/{Measure_VI}" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:variableName ;
+        rr:objectMap [ rml:reference "VI" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:specification ;
+        rr:objectMap [ rml:reference "Specification VI" ]
+    ] .
 # 
 # 
 
@@ -227,7 +262,7 @@
     ] ;
     rr:predicateObjectMap [ 
         rr:predicate iadas:gender ; 
-        rr:objectMap [ rml:reference "Sexe" ] 
+        rr:objectMap [ rml:reference "Sex" ] 
     ] ;
     rr:predicateObjectMap [ 
         rr:predicate iadas:sampleSize ; 
@@ -259,7 +294,7 @@
     ] ;
     rr:predicateObjectMap [ 
         rr:predicate iadas:sportingPopulation ; 
-        rr:objectMap [ rml:reference "Sporting_population" ] 
+        rr:objectMap [ rml:reference "Sporting population" ] 
     ] ;
     rr:predicateObjectMap [ 
         rr:predicate iadas:inclusionCriteria ; 
@@ -267,7 +302,7 @@
     ] ;
     rr:predicateObjectMap [ 
         rr:predicate iadas:sportLevel ; 
-        rr:objectMap [ rml:reference "Sport_level" ] 
+        rr:objectMap [ rml:reference "Sport level" ] 
     ] .
 
 # <#SportMap> a rr:TriplesMap ;
@@ -288,125 +323,65 @@
 
 <#AgeStatsMap> a rr:TriplesMap ;
     rml:logicalSource <#LogicalSource> ;
-    rr:subjectMap [ 
-        rr:template "http://ns.inria.fr/iadas/data/AgeStats_{Analysis_ID}" ; 
-        rr:class iadas:AgeStatistics 
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/iadas/data/AgeStats_{Analysis_ID}" ;
+        rr:class iadas:AgeStatistics
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasDescription ; 
-        rr:objectMap [ rml:reference "Age" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:hasMeanValue ;
+        rr:objectMap [ rml:reference "Mean_Age" ]
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasMeanValue ; 
-        rr:objectMap [ rml:reference "AgeForAnalysis_Mean" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasSdValue ; 
-        rr:objectMap [ rml:reference "SDAnalysis" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasMinValue ; 
-        rr:objectMap [ rml:reference "MinAge" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasMaxValue ; 
-        rr:objectMap [ rml:reference "MaxAge" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:hasRange ;
+        rr:objectMap [ rml:reference "Range_Age" ]
     ] .
 
 
 <#BmiStatsMap> a rr:TriplesMap ;
     rml:logicalSource <#LogicalSource> ;
-    rr:subjectMap [ 
-        rr:template "http://ns.inria.fr/iadas/data/BmiStats_{Analysis_ID}" ; 
-        rr:class iadas:BMIStatistics 
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/iadas/data/BmiStats_{Analysis_ID}" ;
+        rr:class iadas:BMIStatistics
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasDescription ; 
-        rr:objectMap [ rml:reference "BMI" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:hasMeanValue ;
+        rr:objectMap [ rml:reference "Mean_BMI" ]
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasmeanValue ; 
-        rr:objectMap [ rml:reference "BMI_Mean" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasSdValue ; 
-        rr:objectMap [ rml:reference "BMI_SD" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasMinValue ; 
-        rr:objectMap [ rml:reference "BMI_Min" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasMaxValue ; 
-        rr:objectMap [ rml:reference "BMI_Max" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:hasRange ;
+        rr:objectMap [ rml:reference "Range_BMI" ]
     ] .
 
 
 
 <#ExFreqStatsMap> a rr:TriplesMap ;
     rml:logicalSource <#LogicalSource> ;
-    rr:subjectMap [ 
-        rr:template "http://ns.inria.fr/iadas/data/ExFreqStats_{Analysis_ID}" ; 
-        rr:class iadas:ExerciseFrequencyStatistics 
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/iadas/data/ExFreqStats_{Analysis_ID}" ;
+        rr:class iadas:ExerciseFrequencyStatistics
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasDescription ; 
-        rr:objectMap [ rml:reference "Exercise_frequency" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:hasMeanValue ;
+        rr:objectMap [ rml:reference "Mean_Exercise frequency" ]
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasMeanValue ; 
-        rr:objectMap [ rml:reference "Freq_Mean" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasSdValue ; 
-        rr:objectMap [ rml:reference "Freq_SD" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasMinValue ; 
-        rr:objectMap [ rml:reference "Freq_Min" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasMaxValue ; 
-        rr:objectMap [ rml:reference "Freq_Max" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasStatUnit ; 
-        rr:objectMap [ rml:reference "Freq_Unit" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasStatBase ; 
-        rr:objectMap [ rml:reference "Freq_Base" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:hasRange ;
+        rr:objectMap [ rml:reference "Range_Exercise frequency" ]
     ] .
 
 
 
 <#ExpStatsMap> a rr:TriplesMap ;
     rml:logicalSource <#LogicalSource> ;
-    rr:subjectMap [ 
-        rr:template "http://ns.inria.fr/iadas/data/ExpStats_{Analysis_ID}" ; 
-        rr:class iadas:YearsOfExperienceStatistics 
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/iadas/data/ExpStats_{Analysis_ID}" ;
+        rr:class iadas:YearsOfExperienceStatistics
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasDescription ; 
-        rr:objectMap [ rml:reference "Years_of_experience" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:hasMeanValue ;
+        rr:objectMap [ rml:reference "Mean_Years of experience" ]
     ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasmeanValue ; 
-        rr:objectMap [ rml:reference "Exp_Mean" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hassdValue ; 
-        rr:objectMap [ rml:reference "Exp_SD" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasminValue; 
-        rr:objectMap [ rml:reference "Exp_Min" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasmaxValue ; 
-        rr:objectMap [ rml:reference "Exp_Max" ] 
-    ] ;
-    rr:predicateObjectMap [ 
-        rr:predicate iadas:hasStatUnit ; 
-        rr:objectMap [ rml:reference "Exp_Unit" ] 
+    rr:predicateObjectMap [
+        rr:predicate iadas:hasRange ;
+        rr:objectMap [ rml:reference "Range_Years of experience" ]
     ] .
