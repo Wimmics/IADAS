@@ -517,6 +517,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>`;
 
 SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationDirection ?reference ?gender ?populationType ?sportName WHERE {
     ?analysis a iadas:Analysis .
+    ?analysis iadas:complexityOfAnalysis ?complexity .
+    FILTER(?complexity = "Simple analyses" || ?complexity = "simple analyses")
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
@@ -2413,20 +2415,22 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationDirection WHERE {
     ?analysis a iadas:Analysis .
+    ?analysis iadas:complexityOfAnalysis ?complexity .
+    FILTER(?complexity = "Simple analyses" || ?complexity = "simple analyses")
     ?analysis iadas:hasRelation ?relation .
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
-    
+
     ?variableVI iadas:refersToVariable ?viURI .
     BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
     BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
     OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
-    
+
     ?variableVD iadas:refersToVariable ?vdURI .
     BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
     BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
     OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
-    
+
     OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
     OPTIONAL { ?analysis iadas:hasMediator ?mediator }
     OPTIONAL { ?analysis iadas:hasModerator ?moderator }
