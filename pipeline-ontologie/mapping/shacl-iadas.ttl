@@ -12,26 +12,29 @@
 # SHACL Shapes — Ontologie IA-DAS
 # Auteure : Imane Amraoui — Stage IA-DAS, Mai 2026
 # Description : Contraintes de validation pour l'ontologie IA-DAS
-#               Garantit la cohérence des données chargées dans Fuseki
+#
+# Convention :
+#   sh:minCount 1 = propriété obligatoire (toujours présente, N.A. est une valeur valide)
+#   sh:minCount 0 = propriété optionnelle (peut être absente)
 # =============================================================================
 
 
 # -----------------------------------------------------------------------------
 # Shape 1 : SportPsychologyArticle
-# Chaque article doit avoir un DOI, un titre, une année et au moins une analyse
 # -----------------------------------------------------------------------------
 sh-iadas:SportPsychologyArticleShape a sh:NodeShape ;
     sh:targetClass iadas:SportPsychologyArticle ;
     sh:name "Article de psychologie du sport" ;
     sh:description "Contraintes sur les articles scientifiques de la base IA-DAS" ;
 
+    # Obligatoires
     sh:property [
         sh:path bibo:doi ;
         sh:name "DOI" ;
-        sh:description "Identifiant DOI de l'article" ;
+        sh:description "Obligatoire — N.A. si le DOI n'est pas disponible" ;
         sh:minCount 1 ;
         sh:datatype xsd:string ;
-        sh:message "Un article doit avoir un DOI."
+        sh:message "Un article doit avoir un DOI (N.A. si absent)."
     ] ;
     sh:property [
         sh:path dcterms:title ;
@@ -58,18 +61,28 @@ sh-iadas:SportPsychologyArticleShape a sh:NodeShape ;
         sh:name "Pays" ;
         sh:minCount 1 ;
         sh:message "Un article doit indiquer le pays de l'étude."
+    ] ;
+    sh:property [
+        sh:path iadas:continent ;
+        sh:name "Continent" ;
+        sh:minCount 1 ;
+        sh:message "Un article doit indiquer le continent de l'étude."
     ] .
 
 
 # -----------------------------------------------------------------------------
 # Shape 2 : Analysis
-# Chaque analyse doit avoir une relation, une population, une direction
+# Convention : hasMediator, hasModerator, mediatorMeasure, moderatorMeasure
+#   sont obligatoires dans les données mais valent "N.A." pour les analyses
+#   simples (pas de médiateur/modérateur). sh:minCount 1 est correct car la
+#   propriété est toujours présente — N.A. est la valeur quand non applicable.
 # -----------------------------------------------------------------------------
 sh-iadas:AnalysisShape a sh:NodeShape ;
     sh:targetClass iadas:Analysis ;
     sh:name "Analyse statistique" ;
     sh:description "Contraintes sur les analyses reliant VI et VD" ;
 
+    # Obligatoires — toujours présents
     sh:property [
         sh:path iadas:analysisId ;
         sh:name "Identifiant de l'analyse" ;
@@ -108,20 +121,111 @@ sh-iadas:AnalysisShape a sh:NodeShape ;
         sh:message "Le type d'analyse statistique doit être renseigné."
     ] ;
     sh:property [
+        sh:path iadas:complexityOfAnalysis ;
+        sh:name "Complexité de l'analyse" ;
+        sh:minCount 1 ;
+        sh:in ( "Simple analyses" "simple analyses" "Complex analyses" ) ;
+        sh:message "La complexité de l'analyse doit être renseignée."
+    ] ;
+    sh:property [
         sh:path iadas:hasSport ;
         sh:name "Sport étudié" ;
         sh:minCount 1 ;
         sh:message "Chaque analyse doit référencer un sport."
+    ] ;
+    sh:property [
+        sh:path iadas:relationDegree ;
+        sh:name "Degré de la relation (texte brut)" ;
+        sh:minCount 1 ;
+        sh:message "Le degré de la relation doit être renseigné."
+    ] ;
+    sh:property [
+        sh:path iadas:groupStatisticalAnalysis ;
+        sh:name "Analyse statistique de groupe" ;
+        sh:minCount 1 ;
+        sh:message "L'analyse de groupe doit être renseignée."
+    ] ;
+    sh:property [
+        sh:path iadas:sportPracticeType ;
+        sh:name "Type de pratique sportive" ;
+        sh:minCount 1 ;
+        sh:message "Le type de pratique sportive doit être renseigné."
+    ] ;
+    sh:property [
+        sh:path iadas:sampleSizeMobilized ;
+        sh:name "Taille d'échantillon mobilisée" ;
+        sh:minCount 1 ;
+        sh:message "La taille d'échantillon mobilisée doit être renseignée."
+    ] ;
+    sh:property [
+        sh:path iadas:numberOfSportStudied ;
+        sh:name "Nombre de sports étudiés" ;
+        sh:minCount 1 ;
+        sh:message "Le nombre de sports étudiés doit être renseigné."
+    ] ;
+
+    # Obligatoires — N.A. quand non applicable (analyses simples)
+    sh:property [
+        sh:path iadas:hasMediator ;
+        sh:name "Médiateur" ;
+        sh:description "Obligatoire — vaut N.A. pour les analyses simples (pas de médiateur)" ;
+        sh:minCount 1 ;
+        sh:message "Le médiateur doit être renseigné (N.A. si analyse simple)."
+    ] ;
+    sh:property [
+        sh:path iadas:hasModerator ;
+        sh:name "Modérateur" ;
+        sh:description "Obligatoire — vaut N.A. pour les analyses simples (pas de modérateur)" ;
+        sh:minCount 1 ;
+        sh:message "Le modérateur doit être renseigné (N.A. si analyse simple)."
+    ] ;
+    sh:property [
+        sh:path iadas:mediatorMeasure ;
+        sh:name "Mesure du médiateur" ;
+        sh:description "Obligatoire — vaut N.A. si pas de médiateur" ;
+        sh:minCount 1 ;
+        sh:message "La mesure du médiateur doit être renseignée (N.A. si absent)."
+    ] ;
+    sh:property [
+        sh:path iadas:moderatorMeasure ;
+        sh:name "Mesure du modérateur" ;
+        sh:description "Obligatoire — vaut N.A. si pas de modérateur" ;
+        sh:minCount 1 ;
+        sh:message "La mesure du modérateur doit être renseignée (N.A. si absent)."
+    ] ;
+    sh:property [
+        sh:path iadas:authorConclusion ;
+        sh:name "Conclusion des auteurs" ;
+        sh:description "Obligatoire — N.A. si non renseigné dans l'article" ;
+        sh:minCount 1 ;
+        sh:message "La conclusion des auteurs doit être renseignée (N.A. si absente)."
+    ] ;
+    sh:property [
+        sh:path iadas:limites ;
+        sh:name "Limites de l'étude" ;
+        sh:description "Obligatoire — N.A. si non renseigné" ;
+        sh:minCount 1 ;
+        sh:message "Les limites de l'étude doivent être renseignées (N.A. si absentes)."
+    ] ;
+    sh:property [
+        sh:path iadas:perspectives ;
+        sh:name "Perspectives" ;
+        sh:description "Obligatoire — N.A. si non renseigné" ;
+        sh:minCount 1 ;
+        sh:message "Les perspectives doivent être renseignées (N.A. si absentes)."
     ] .
 
 
 # -----------------------------------------------------------------------------
 # Shape 3 : Relations (lien entre VI et VD)
+# effectSize est OPTIONNEL : calculé uniquement pour les valeurs r= dans
+# relationDegreeSecondary. Absent si la valeur est beta, rho ou non renseignée.
 # -----------------------------------------------------------------------------
 sh-iadas:RelationsShape a sh:NodeShape ;
     sh:targetClass iadas:Relations ;
     sh:name "Relation entre variable indépendante et dépendante" ;
 
+    # Obligatoires
     sh:property [
         sh:path iadas:hasIndependentVariable ;
         sh:name "Variable indépendante" ;
@@ -137,37 +241,55 @@ sh-iadas:RelationsShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:class iadas:VariableDependante ;
         sh:message "Une relation doit avoir exactement une variable dépendante (VD)."
+    ] ;
+    sh:property [
+        sh:path iadas:relationDegreeSecondary ;
+        sh:name "Degré de relation secondaire (r, beta, rho...)" ;
+        sh:minCount 1 ;
+        sh:message "La valeur brute du degré de relation doit être renseignée."
+    ] ;
+
+    # Optionnel — calculé automatiquement depuis relationDegreeSecondary (r= uniquement)
+    sh:property [
+        sh:path iadas:effectSize ;
+        sh:name "Taille d'effet" ;
+        sh:description "Optionnel — calculé uniquement pour les valeurs r=. Absent si beta, rho ou valeur non extractible." ;
+        sh:minCount 0 ;
+        sh:in ( "negligible" "weak" "moderate" "strong" ) ;
+        sh:message "effectSize doit être : negligible, weak, moderate ou strong."
     ] .
 
 
 # -----------------------------------------------------------------------------
 # Shape 4 : VariableDependante (VD)
-# La VD doit pointer vers un concept du vocabulaire ACAD
 # -----------------------------------------------------------------------------
 sh-iadas:VariableDependanteShape a sh:NodeShape ;
     sh:targetClass iadas:VariableDependante ;
     sh:name "Variable dépendante (comportement DEAB)" ;
 
+    # Obligatoires
     sh:property [
         sh:path iadas:variableName ;
         sh:name "Nom de la variable" ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
-        sh:message "La VD doit avoir un nom (colonne VD du fichier de données)."
+        sh:message "La VD doit avoir un nom."
     ] ;
     sh:property [
         sh:path iadas:refersToVariable ;
         sh:name "Concept ACAD-vocab" ;
+        sh:description "Obligatoire — pointe vers N.A. si la variable n'est pas classifiable" ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:pattern "^http://ns\\.inria\\.fr/iadas/ACAD-vocab/" ;
-        sh:message "La VD doit référencer un concept dans le vocabulaire ACAD (VD_final_sub-class)."
+        sh:message "La VD doit référencer un concept dans le vocabulaire ACAD."
     ] ;
     sh:property [
         sh:path iadas:specification ;
         sh:name "Spécification" ;
+        sh:description "Obligatoire — N.A. si aucune spécification" ;
         sh:minCount 1 ;
         sh:message "La spécification de la VD doit être renseignée (N.A. si aucune)."
     ] .
@@ -175,32 +297,34 @@ sh-iadas:VariableDependanteShape a sh:NodeShape ;
 
 # -----------------------------------------------------------------------------
 # Shape 5 : VariableIndependante (VI)
-# La VI doit pointer vers un concept du vocabulaire ACAD
 # -----------------------------------------------------------------------------
 sh-iadas:VariableIndependanteShape a sh:NodeShape ;
     sh:targetClass iadas:VariableIndependante ;
     sh:name "Variable indépendante (facteur psychologique)" ;
 
+    # Obligatoires
     sh:property [
         sh:path iadas:variableName ;
         sh:name "Nom de la variable" ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
-        sh:message "La VI doit avoir un nom (colonne VI du fichier de données)."
+        sh:message "La VI doit avoir un nom."
     ] ;
     sh:property [
         sh:path iadas:refersToVariable ;
         sh:name "Concept ACAD-vocab" ;
+        sh:description "Obligatoire — pointe vers N.A. si la variable n'est pas classifiable" ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:pattern "^http://ns\\.inria\\.fr/iadas/ACAD-vocab/" ;
-        sh:message "La VI doit référencer un concept dans le vocabulaire ACAD (VI_final_sub-class)."
+        sh:message "La VI doit référencer un concept dans le vocabulaire ACAD."
     ] ;
     sh:property [
         sh:path iadas:specification ;
         sh:name "Spécification" ;
+        sh:description "Obligatoire — N.A. si aucune spécification" ;
         sh:minCount 1 ;
         sh:message "La spécification de la VI doit être renseignée (N.A. si aucune)."
     ] .
@@ -208,18 +332,21 @@ sh-iadas:VariableIndependanteShape a sh:NodeShape ;
 
 # -----------------------------------------------------------------------------
 # Shape 6 : Population
+# sportingPopulation et hasSubgroup valent souvent N.A. mais sont toujours
+# présents dans les données → sh:minCount 1, N.A. est une valeur valide.
 # -----------------------------------------------------------------------------
 sh-iadas:PopulationShape a sh:NodeShape ;
     sh:targetClass iadas:Population ;
     sh:name "Population étudiée" ;
 
+    # Obligatoires
     sh:property [
         sh:path iadas:gender ;
         sh:name "Sexe de la population" ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:in ( "Male" "Female" "Mixed" "N.A." ) ;
-        sh:message "Le sexe de la population doit être : Male, Female, Mixed ou N.A."
+        sh:message "Le sexe doit être : Male, Female, Mixed ou N.A."
     ] ;
     sh:property [
         sh:path iadas:sampleSize ;
@@ -231,12 +358,49 @@ sh-iadas:PopulationShape a sh:NodeShape ;
         sh:path iadas:hasStatistics ;
         sh:name "Statistiques associées" ;
         sh:minCount 1 ;
-        sh:message "La population doit avoir au moins une statistique (âge, IMC...)."
+        sh:message "La population doit avoir au moins une statistique."
+    ] ;
+    sh:property [
+        sh:path iadas:population ;
+        sh:name "Description de la population" ;
+        sh:minCount 1 ;
+        sh:message "La description de la population doit être renseignée."
+    ] ;
+    sh:property [
+        sh:path iadas:sportLevel ;
+        sh:name "Niveau sportif" ;
+        sh:minCount 1 ;
+        sh:message "Le niveau sportif doit être renseigné."
+    ] ;
+    sh:property [
+        sh:path iadas:inclusionCriteria ;
+        sh:name "Critères d'inclusion" ;
+        sh:description "Obligatoire — N.A. si non renseigné" ;
+        sh:minCount 1 ;
+        sh:message "Les critères d'inclusion doivent être renseignés (N.A. si absents)."
+    ] ;
+
+    # Obligatoires — N.A. quand non applicable
+    sh:property [
+        sh:path iadas:hasSubgroup ;
+        sh:name "Sous-groupe" ;
+        sh:description "Obligatoire — N.A. si pas de sous-groupe (926/2373 cas)" ;
+        sh:minCount 1 ;
+        sh:message "Le sous-groupe doit être renseigné (N.A. si absent)."
+    ] ;
+    sh:property [
+        sh:path iadas:sportingPopulation ;
+        sh:name "Population sportive" ;
+        sh:description "Obligatoire — N.A. si non applicable (1067/2373 cas)" ;
+        sh:minCount 1 ;
+        sh:message "La population sportive doit être renseignée (N.A. si non applicable)."
     ] .
 
 
 # -----------------------------------------------------------------------------
 # Shape 7 : AgeStatistics
+# hasMeanValue et hasRange peuvent valoir N.A. (77 et 1508 cas respectivement)
+# mais la propriété est toujours présente → sh:minCount 1, N.A. est valide.
 # -----------------------------------------------------------------------------
 sh-iadas:AgeStatisticsShape a sh:NodeShape ;
     sh:targetClass iadas:AgeStatistics ;
@@ -245,20 +409,21 @@ sh-iadas:AgeStatisticsShape a sh:NodeShape ;
     sh:property [
         sh:path iadas:hasMeanValue ;
         sh:name "Moyenne d'âge" ;
+        sh:description "Obligatoire — N.A. si non renseigné (77 cas)" ;
         sh:minCount 1 ;
-        sh:message "Les statistiques d'âge doivent contenir la valeur moyenne."
+        sh:message "La valeur moyenne d'âge doit être renseignée (N.A. si absente)."
     ] ;
     sh:property [
         sh:path iadas:hasRange ;
         sh:name "Plage d'âge" ;
+        sh:description "Obligatoire — N.A. si non renseigné (1508 cas)" ;
         sh:minCount 1 ;
-        sh:message "Les statistiques d'âge doivent contenir la plage (Range_Age)."
+        sh:message "La plage d'âge doit être renseignée (N.A. si absente)."
     ] .
 
 
 # -----------------------------------------------------------------------------
 # Shape 8 : Concept SKOS du vocabulaire ACAD
-# Chaque concept doit avoir un prefLabel et un broader (sauf top-concepts)
 # -----------------------------------------------------------------------------
 sh-iadas:ACADConceptShape a sh:NodeShape ;
     sh:targetClass skos:Concept ;
