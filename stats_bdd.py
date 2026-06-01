@@ -53,10 +53,8 @@ print(f"  {'Analyses complexes':<35} {analyses_complexes:>6}")
 print("\n  AUTRES CLASSES")
 print("  " + "-" * 40)
 for cls, label in [
-    ("Population",           "Populations"),
-    ("VariableIndependante", "Variables indépendantes (VI)"),
-    ("VariableDependante",   "Variables dépendantes (VD)"),
-    ("Relations",            "Relations"),
+    ("Population", "Populations"),
+    ("Relations",  "Relations"),
 ]:
     n = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE {{ ?x a iadas:{cls} }}")
     print(f"  {label:<35} {n:>6}")
