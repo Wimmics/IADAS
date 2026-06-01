@@ -28,25 +28,35 @@ def count(sparql):
 PREFIX = """
 PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
 """
 
 print("=" * 55)
 print(f"  STATS BDD IADAS — {datetime.now().strftime('%d/%m/%Y %H:%M')}")
 print("=" * 55)
 
-# --- Instances par classe ---
-classes = [
-    ("SportPsychologyArticle", "Articles"),
-    ("Analysis",               "Analyses"),
-    ("Population",             "Populations"),
-    ("VariableIndependante",   "Variables indépendantes (VI)"),
-    ("VariableDependante",     "Variables dépendantes (VD)"),
-    ("Relations",              "Relations"),
-]
-
-print("\n  INSTANCES PAR CLASSE")
+# --- Articles ---
+print("\n  ARTICLES")
 print("  " + "-" * 40)
-for cls, label in classes:
+articles_uniques = count(f"{PREFIX} PREFIX dct: <http://purl.org/dc/terms/> SELECT (COUNT(DISTINCT ?title) AS ?n) WHERE {{ ?a a iadas:SportPsychologyArticle ; dct:title ?title }}")
+analyses_total   = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE {{ ?x a iadas:Analysis }}")
+analyses_simples = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE {{ ?x a iadas:Analysis ; iadas:complexityOfAnalysis ?c . FILTER(?c = 'Simple analyses' || ?c = 'simple analyses') }}")
+analyses_complexes = analyses_total - analyses_simples
+print(f"  {'Articles uniques (titres distincts)':<35} {articles_uniques:>6}")
+print(f"  {'Analyses (total)':<35} {analyses_total:>6}")
+print(f"  {'Analyses simples':<35} {analyses_simples:>6}")
+print(f"  {'Analyses complexes':<35} {analyses_complexes:>6}")
+
+# --- Autres classes ---
+autres = [
+    ("Population",           "Populations"),
+    ("VariableIndependante", "Variables indépendantes (VI)"),
+    ("VariableDependante",   "Variables dépendantes (VD)"),
+    ("Relations",            "Relations"),
+]
+print("\n  AUTRES CLASSES")
+print("  " + "-" * 40)
+for cls, label in autres:
     n = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE {{ ?x a iadas:{cls} }}")
     print(f"  {label:<35} {n:>6}")
 
