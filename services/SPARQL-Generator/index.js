@@ -2011,32 +2011,32 @@ ORDER BY ?vi ?vd
     case 'q5-aesthetic':
       console.log(" CASE Q5-AESTHETIC DÉTECTÉ: Relations ACAD-facteurs pour sports esthétiques");
       selectedCase = 'q5-aesthetic - Sports esthétiques';
-      expectedResults = '50-100 relations pour sports esthétiques';
+      expectedResults = '100-300 relations pour sports esthétiques (gymnastics, figure skating, dance, rhythmic...)';
 
       query = `${prefixes}
 
 SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?relationDirection ?analysis ?sportType
 WHERE {
     ?analysis a iadas:Analysis .
-    ?analysis iadas:hasRelation ?relation .
-    
+    ?analysis iadas:hasRelation ?relation ;
+              iadas:hasSport ?sportURI .
+    FILTER(REGEX(STR(?sportURI), 'aesthetic|gymnastics|figure.skat|rhythmic|danc|synchro|ballet|diving', 'i'))
+
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
-    
+
     ?variableVI iadas:refersToVariable ?viURI .
     BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
     BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
     OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
-    
+
     ?variableVD iadas:refersToVariable ?vdURI .
     BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
     BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
     OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
-    
-    ?analysis iadas:sportPracticeType "Aesthetic sport" .
-    
+
     OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
-    BIND("Aesthetic sport" AS ?sportType)
+    BIND(REPLACE(STR(?sportURI), '.*/([^/]+)$', '$1') AS ?sportType)
 }
 ORDER BY ?vi ?vd
 `;
@@ -2300,7 +2300,7 @@ ORDER BY ?vi ?vd
     case 'q8-aesthetic':
       console.log(" CASE Q8-AESTHETIC DÉTECTÉ: Sports esthétiques");
       selectedCase = 'q8-aesthetic - Sports esthétiques';
-      expectedResults = '250-500 relations pour sports esthétiques';
+      expectedResults = '200-500 relations pour sports esthétiques (gymnastics, figure skating, dance, rhythmic...)';
 
       query = `${prefixes}
 
@@ -2308,25 +2308,24 @@ SELECT DISTINCT ?vi ?vd ?categoryVI ?categoryVD ?analysis ?relationDirection ?sp
 WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation ;
-              iadas:hasSport ?sport_info .
-    
-    ?analysis iadas:sportPracticeType "Aesthetic" .
-    
+              iadas:hasSport ?sportURI .
+    FILTER(REGEX(STR(?sportURI), 'aesthetic|gymnastics|figure.skat|rhythmic|danc|synchro|ballet|diving', 'i'))
+
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
-    
+
     ?variableVI iadas:refersToVariable ?viURI .
     BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
     BIND(REPLACE(?vi, '_', ' ') AS ?viLabel)
     OPTIONAL { SELECT ?viLabel (MIN(REPLACE(REPLACE(STR(?catVIURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVI) WHERE { ?viConcept skos:prefLabel ?viLabel . ?viConcept skos:broader ?catVIURIRaw } GROUP BY ?viLabel }
-    
+
     ?variableVD iadas:refersToVariable ?vdURI .
     BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
     BIND(REPLACE(?vd, '_', ' ') AS ?vdLabel)
     OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
-    
+
     OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
-    BIND("Aesthetic" AS ?sportCategory)
+    BIND(REPLACE(STR(?sportURI), '.*/([^/]+)$', '$1') AS ?sportCategory)
 }
 ORDER BY ?vi ?vd
 `;
