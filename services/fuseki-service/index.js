@@ -194,6 +194,31 @@ async function fixSkosUriMismatch() {
       console.log(`  Exception fix ${label}: ${e.message}`);
     }
   }
+
+  await populateEffectSize();
+}
+
+async function populateEffectSize() {
+  console.log('\n=== POPULATE EFFECT SIZE (r classification) ===');
+  const UPDATE_URL = `${FUSEKI_URL}/update`;
+
+  const query = `PREFIX iadas: <http://ns.inria.fr/iadas/ontology/> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> INSERT { ?rel iadas:effectSize ?category . } WHERE { ?rel iadas:relationDegreeSecondary ?val . FILTER(REGEX(?val, '^r=')) BIND(REPLACE(?val, '^r=-?([0-9.]+).*', '$1') AS ?absRStr) BIND(xsd:decimal(?absRStr) AS ?absR) BIND(IF(?absR < 0.1, 'negligible', IF(?absR < 0.3, 'weak', IF(?absR < 0.5, 'moderate', 'strong'))) AS ?category) FILTER NOT EXISTS { ?rel iadas:effectSize ?existing } }`;
+
+  try {
+    const res = await fetch(UPDATE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/sparql-update', 'Authorization': `Basic ${auth}` },
+      body: query
+    });
+    const body = await res.text();
+    if (res.ok) {
+      console.log('  effectSize peuple avec succes.');
+    } else {
+      console.log(`  Erreur effectSize — status: ${res.status} — body: ${body}`);
+    }
+  } catch (e) {
+    console.log(`  Exception effectSize: ${e.message}`);
+  }
 }
 
 async function uploadFile(ttlContent, fileName, icon) {
