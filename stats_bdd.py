@@ -153,6 +153,71 @@ GROUP BY ?catLabel ORDER BY DESC(?n)
 for b in d_vd["results"]["bindings"]:
     print(f"  {b['catLabel']['value']:<35} {b['n']['value']:>6}")
 
+# --- Direction des relations par categorie de VI (analyses simples) ---
+print("\n  DIRECTION PAR CATEGORIE VI (analyses simples)")
+print("  " + "-" * 40)
+d_dir_vi = query(f"""
+{PREFIX}
+SELECT ?catLabel ?direction (COUNT(*) AS ?n)
+WHERE {{
+  ?analysis a iadas:Analysis ; iadas:complexityOfAnalysis ?c ;
+            iadas:relationDirection ?direction ; iadas:hasRelation ?rel .
+  FILTER({FILTER_SIMPLES})
+  ?rel iadas:hasIndependentVariable ?v .
+  ?v iadas:refersToVariable ?concept .
+  ?concept skos:broader+ ?top .
+  ?top skos:prefLabel ?catLabel .
+  FILTER NOT EXISTS {{ ?top skos:broader ?x . FILTER(CONTAINS(STR(?x), 'ACAD-vocab')) }}
+}}
+GROUP BY ?catLabel ?direction
+ORDER BY ?catLabel ?direction
+""")
+# Pivoter les resultats par categorie
+from collections import defaultdict
+dir_by_cat = defaultdict(dict)
+for b in d_dir_vi["results"]["bindings"]:
+    cat = b["catLabel"]["value"]
+    d_ = b["direction"]["value"]
+    dir_by_cat[cat][d_] = int(b["n"]["value"])
+for cat, dirs in sorted(dir_by_cat.items(), key=lambda x: -sum(x[1].values())):
+    total = sum(dirs.values())
+    pos = dirs.get("+", 0)
+    neg = dirs.get("-", 0)
+    ns  = dirs.get("NS", 0) + dirs.get("N.A.", 0) + dirs.get("NA", 0)
+    print(f"  {cat:<35} total={total:>5}  +={pos:>4}  -={neg:>4}  NS={ns:>4}")
+
+# --- Direction par sport (top 10, analyses simples) ---
+print("\n  DIRECTION PAR SPORT (top 10, analyses simples)")
+print("  " + "-" * 40)
+d_dir_sport = query(f"""
+{PREFIX}
+SELECT ?sportNom ?direction (COUNT(*) AS ?n)
+WHERE {{
+  ?analysis a iadas:Analysis ; iadas:complexityOfAnalysis ?c ;
+            iadas:relationDirection ?direction ; iadas:hasSport ?sport .
+  FILTER({FILTER_SIMPLES})
+  BIND(REPLACE(STR(?sport), '.*/([^/]+)$', '$1') AS ?sportNom)
+}}
+GROUP BY ?sportNom ?direction
+ORDER BY ?sportNom ?direction
+""")
+dir_by_sport = defaultdict(dict)
+for b in d_dir_sport["results"]["bindings"]:
+    sp = b["sportNom"]["value"].replace("_", " ")
+    d_ = b["direction"]["value"]
+    dir_by_sport[sp][d_] = int(b["n"]["value"])
+top_sports = sorted(
+    [(sp, dirs) for sp, dirs in dir_by_sport.items() if sp.strip() not in ("N.A.", "NA", "")],
+    key=lambda x: -sum(x[1].values())
+)[:10]
+for sp, dirs in top_sports:
+    total = sum(dirs.values())
+    pos = dirs.get("+", 0)
+    neg = dirs.get("-", 0)
+    ns  = dirs.get("NS", 0) + dirs.get("N.A.", 0) + dirs.get("NA", 0)
+    label = sp[:35]
+    print(f"  {label:<35} total={total:>5}  +={pos:>4}  -={neg:>4}  NS={ns:>4}")
+
 # --- Qualite des donnees : detection doublons ---
 print("\n  QUALITE DES DONNEES")
 print("  " + "-" * 40)
