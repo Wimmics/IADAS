@@ -218,6 +218,22 @@ for sp, dirs in top_sports:
     label = sp[:35]
     print(f"  {label:<35} total={total:>5}  +={pos:>4}  -={neg:>4}  NS={ns:>4}")
 
+# --- Qualite SKOS ---
+print("\n  QUALITE SKOS (vocabulaire ACAD)")
+print("  " + "-" * 40)
+total_concepts = count(f"{PREFIX} SELECT (COUNT(*) AS ?n) WHERE {{ ?c a skos:Concept . FILTER(CONTAINS(STR(?c), 'ACAD-vocab')) }}")
+sans_label_skos = count(f"{PREFIX} SELECT (COUNT(*) AS ?n) WHERE {{ ?c a skos:Concept . FILTER(CONTAINS(STR(?c), 'ACAD-vocab')) FILTER NOT EXISTS {{ ?c skos:prefLabel ?l }} }}")
+sans_scheme = count(f"{PREFIX} SELECT (COUNT(*) AS ?n) WHERE {{ ?c a skos:Concept . FILTER(CONTAINS(STR(?c), 'ACAD-vocab')) FILTER NOT EXISTS {{ ?c skos:inScheme ?s }} }}")
+d_cycles = query(f"{PREFIX} SELECT (COUNT(*) AS ?n) WHERE {{ SELECT ?a WHERE {{ ?a skos:broader ?b . ?b skos:broader ?a . FILTER(CONTAINS(STR(?a), 'ACAD-vocab')) }} }}")
+nb_cycles = int(d_cycles["results"]["bindings"][0]["n"]["value"])
+d_roots = query(f"{PREFIX} SELECT (COUNT(*) AS ?n) WHERE {{ ?c a skos:Concept . FILTER(CONTAINS(STR(?c), 'ACAD-vocab')) FILTER NOT EXISTS {{ ?c skos:broader ?x }} }}")
+nb_roots = int(d_roots["results"]["bindings"][0]["n"]["value"])
+print(f"  {'Total concepts ACAD':<35} {total_concepts:>6}")
+print(f"  {'Concepts racines (topConceptOf)':<35} {nb_roots:>6}  [DEAB, Intra, Inter, Other, Socio]")
+print(f"  {'Sans prefLabel':<35} {sans_label_skos:>6}  {'[OK]' if sans_label_skos == 0 else '[!]'}")
+print(f"  {'Sans inScheme':<35} {sans_scheme:>6}  {'[OK]' if sans_scheme == 0 else '[!]'}")
+print(f"  {'Cycles skos:broader':<35} {nb_cycles:>6}  {'[OK]' if nb_cycles == 0 else '[!]'}")
+
 # --- Qualite des donnees : detection doublons ---
 print("\n  QUALITE DES DONNEES")
 print("  " + "-" * 40)

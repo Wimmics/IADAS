@@ -12,6 +12,23 @@
 @prefix iadas-vocab: <http://ns.inria.fr/iadas/ACAD-vocab/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
+# -----------------------------------------------------------------------------
+# Déclaration formelle des 5 concepts racines (topConceptOf)
+# Qualité SKOS : les concepts racines doivent déclarer leur appartenance au scheme
+# -----------------------------------------------------------------------------
+iadas-vocab:Variable skos:hasTopConcept
+    iadas-vocab:DEAB ,
+    iadas-vocab:Intrapersonal_factor_related_to_DEAB ,
+    iadas-vocab:Interpersonal_factor_related_to_DEAB ,
+    iadas-vocab:Other_behaviors ,
+    iadas-vocab:Sociocultural_factor_related_to_DEAB .
+
+iadas-vocab:DEAB skos:topConceptOf iadas-vocab:Variable .
+iadas-vocab:Intrapersonal_factor_related_to_DEAB skos:topConceptOf iadas-vocab:Variable .
+iadas-vocab:Interpersonal_factor_related_to_DEAB skos:topConceptOf iadas-vocab:Variable .
+iadas-vocab:Other_behaviors skos:topConceptOf iadas-vocab:Variable .
+iadas-vocab:Sociocultural_factor_related_to_DEAB skos:topConceptOf iadas-vocab:Variable .
+
 iadas-vocab:Appearance_comparison a skos:Concept ;
     skos:broader iadas-vocab:External_comments ;
     skos:inScheme iadas-vocab:Variable ;
