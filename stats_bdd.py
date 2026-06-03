@@ -90,7 +90,7 @@ print(f"  {'VD avec categorie SKOS':<35} {vd_cat:>6}")
 print(f"  {'Taux categorisation (hors N.A.)':<35} {pct_vd:>5}%")
 
 # --- EffectSize ---
-print("\n  EFFECTSIZE (analyses simples, r uniquement)")
+print("\n  EFFECTSIZE (analyses simples : r, rho, beta standardise)")
 print("  " + "-" * 40)
 d_es = query(f"""
 {PREFIX}
@@ -110,6 +110,8 @@ for b in d_es["results"]["bindings"]:
     pct = round(n / es_total * 100) if es_total > 0 else 0
     print(f"  {b['cat']['value']:<35} {n:>6}  ({pct}%)")
 print(f"  {'Total effectSize peuple':<35} {es_total:>6}")
+couverture = round(es_total / analyses_simples * 100) if analyses_simples > 0 else 0
+print(f"  {'Couverture (sur simples)':<35} {couverture:>5}%")
 
 # --- VI par catégorie (analyses simples uniquement) ---
 print("\n  VI PAR CATEGORIE (analyses simples)")
