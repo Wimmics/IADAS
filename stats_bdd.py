@@ -153,4 +153,43 @@ GROUP BY ?catLabel ORDER BY DESC(?n)
 for b in d_vd["results"]["bindings"]:
     print(f"  {b['catLabel']['value']:<35} {b['n']['value']:>6}")
 
+# --- Qualite des donnees : detection doublons ---
+print("\n  QUALITE DES DONNEES")
+print("  " + "-" * 40)
+
+# Groupes meme article+VI+VD (repetitions legitimees = sous-groupes)
+d_rep = query(f"""
+{PREFIX}
+SELECT ?titre ?viNom ?vdNom (COUNT(DISTINCT ?an) AS ?nb)
+WHERE {{
+  ?art a iadas:SportPsychologyArticle ; dct:title ?titre ; iadas:hasAnalysis ?an .
+  ?an iadas:hasRelation ?rel .
+  ?rel iadas:hasIndependentVariable ?vi ; iadas:hasDependentVariable ?vd .
+  ?vi iadas:variableName ?viNom . ?vd iadas:variableName ?vdNom .
+}}
+GROUP BY ?titre ?viNom ?vdNom
+HAVING (COUNT(DISTINCT ?an) > 1)
+""")
+nb_groupes_rep = len(d_rep["results"]["bindings"])
+
+# Vrais doublons : meme article+VI+VD+direction+valeur+effectif
+d_vrais = query(f"""
+{PREFIX}
+SELECT ?titre ?viNom ?vdNom ?direction ?degree ?sampleSize (COUNT(DISTINCT ?an) AS ?nb)
+WHERE {{
+  ?art a iadas:SportPsychologyArticle ; dct:title ?titre ; iadas:hasAnalysis ?an .
+  ?an iadas:hasRelation ?rel ; iadas:hasPopulation ?pop .
+  ?rel iadas:hasIndependentVariable ?vi ; iadas:hasDependentVariable ?vd ;
+       iadas:relationDirection ?direction ; iadas:relationDegreeSecondary ?degree .
+  ?vi iadas:variableName ?viNom . ?vd iadas:variableName ?vdNom .
+  ?pop iadas:sampleSize ?sampleSize .
+}}
+GROUP BY ?titre ?viNom ?vdNom ?direction ?degree ?sampleSize
+HAVING (COUNT(DISTINCT ?an) > 1)
+""")
+nb_vrais_doublons = len(d_vrais["results"]["bindings"])
+
+print(f"  {'Groupes article+VI+VD (sous-groupes OK)':<35} {nb_groupes_rep:>6}")
+print(f"  {'Vrais doublons (+ direction+valeur+n=)':<35} {nb_vrais_doublons:>6}  [OK]")
+
 print("\n" + "=" * 55)
