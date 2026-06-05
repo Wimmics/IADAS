@@ -336,16 +336,25 @@ for b in d_mods["results"]["bindings"][:10]:
     print(f"  {label:<35} {b['n']['value']:>6}")
 
 # --- Categorisation VI/VD dans les complexes ---
+# Note : dans les analyses complexes, une VI peut contenir plusieurs variables
+# bundlees (ex: "BMI\nAge\nGender") → refersToVariable = N.A. (normal et intentionnel).
+# Seules les analyses a VI unique et bien definie obtiennent un mapping ACAD.
 print("\n  CATEGORISATION VI/VD (analyses complexes)")
 print("  " + "-" * 40)
 cx_vi_total = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?v) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . FILTER({FILTER_COMPLEXES}) ?rel iadas:hasIndependentVariable ?v }}")
+cx_vi_na    = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?v) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . FILTER({FILTER_COMPLEXES}) ?rel iadas:hasIndependentVariable ?v . ?v iadas:refersToVariable ?concept . FILTER(CONTAINS(STR(?concept),'N.A')) }}")
 cx_vi_cat   = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?v) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . FILTER({FILTER_COMPLEXES}) ?rel iadas:hasIndependentVariable ?v . ?v iadas:refersToVariable ?concept . ?concept skos:broader ?b }}")
 cx_vd_total = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?v) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . FILTER({FILTER_COMPLEXES}) ?rel iadas:hasDependentVariable ?v }}")
 cx_vd_cat   = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?v) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . FILTER({FILTER_COMPLEXES}) ?rel iadas:hasDependentVariable ?v . ?v iadas:refersToVariable ?concept . ?concept skos:broader ?b }}")
+# Analyses avec au moins une VI catégorisée (métrique pertinente pour les complexes)
+cx_an_with_vi_cat = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . FILTER({FILTER_COMPLEXES}) ?rel iadas:hasIndependentVariable ?v . ?v iadas:refersToVariable ?concept . ?concept skos:broader ?b }}")
 pct_cx_vi = round(cx_vi_cat / cx_vi_total * 100) if cx_vi_total > 0 else 0
 pct_cx_vd = round(cx_vd_cat / cx_vd_total * 100) if cx_vd_total > 0 else 0
+pct_cx_an = round(cx_an_with_vi_cat / cx_total * 100) if cx_total > 0 else 0
 print(f"  {'VI total (complexes)':<35} {cx_vi_total:>6}")
+print(f"  {'VI bundles (N.A. — normal)':<35} {cx_vi_na:>6}  (multi-predicteurs)")
 print(f"  {'VI avec categorie SKOS':<35} {cx_vi_cat:>6}  ({pct_cx_vi}%)")
+print(f"  {'Analyses avec >=1 VI categ.':<35} {cx_an_with_vi_cat:>6}  ({pct_cx_an}% des complexes)")
 print(f"  {'VD total (complexes)':<35} {cx_vd_total:>6}")
 print(f"  {'VD avec categorie SKOS':<35} {cx_vd_cat:>6}  ({pct_cx_vd}%)")
 
