@@ -31,7 +31,8 @@ PREFIX bibo: <http://purl.org/ontology/bibo/>
 PREFIX dct: <http://purl.org/dc/terms/>
 """
 
-FILTER_SIMPLES = '?c = "Simple analyses" || ?c = "simple analyses"'
+FILTER_SIMPLES   = '?c = "Simple analyses" || ?c = "simple analyses"'
+FILTER_COMPLEXES = '?c = "Complex analyses"'
 
 print("=" * 55)
 print(f"  STATS BDD IADAS — {datetime.now().strftime('%d/%m/%Y %H:%M')}")
@@ -272,5 +273,80 @@ nb_vrais_doublons = len(d_vrais["results"]["bindings"])
 
 print(f"  {'Groupes article+VI+VD (sous-groupes OK)':<35} {nb_groupes_rep:>6}")
 print(f"  {'Vrais doublons (+ direction+valeur+n=)':<35} {nb_vrais_doublons:>6}  [OK]")
+
+# --- Analyses complexes : vue d'ensemble ---
+print("\n  ANALYSES COMPLEXES — VUE D'ENSEMBLE")
+print("  " + "-" * 40)
+cx_total  = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c . FILTER({FILTER_COMPLEXES}) }}")
+cx_med    = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasMediator ?m . FILTER({FILTER_COMPLEXES}) FILTER(?m != 'N.A.') }}")
+cx_mod    = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasModerator ?m . FILTER({FILTER_COMPLEXES}) FILTER(?m != 'N.A.') }}")
+cx_medmod = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasMediator ?med ; iadas:hasModerator ?mod . FILTER({FILTER_COMPLEXES}) FILTER(?med != 'N.A.') FILTER(?mod != 'N.A.') }}")
+print(f"  {'Total analyses complexes':<35} {cx_total:>6}")
+print(f"  {'Avec mediateur renseigne':<35} {cx_med:>6}")
+print(f"  {'Avec moderateur renseigne':<35} {cx_mod:>6}")
+print(f"  {'Avec mediateur ET moderateur':<35} {cx_medmod:>6}")
+
+# --- Repartition par type d'analyse ---
+print("\n  TYPES D'ANALYSES COMPLEXES (top 10)")
+print("  " + "-" * 40)
+d_types = query(f"""
+{PREFIX}
+SELECT ?type (COUNT(*) AS ?n)
+WHERE {{
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:typeOfAnalysis ?type .
+  FILTER({FILTER_COMPLEXES})
+}}
+GROUP BY ?type ORDER BY DESC(?n)
+""")
+for b in d_types["results"]["bindings"][:10]:
+    print(f"  {b['type']['value'][:35]:<35} {b['n']['value']:>6}")
+
+# --- Top mediateurs ---
+print("\n  TOP MEDIATEURS (analyses complexes)")
+print("  " + "-" * 40)
+d_meds = query(f"""
+{PREFIX}
+SELECT ?mediateur (COUNT(DISTINCT ?a) AS ?n)
+WHERE {{
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasMediator ?mediateur .
+  FILTER({FILTER_COMPLEXES})
+  FILTER(?mediateur != "N.A.")
+}}
+GROUP BY ?mediateur ORDER BY DESC(?n)
+""")
+for b in d_meds["results"]["bindings"][:10]:
+    label = b["mediateur"]["value"][:35]
+    print(f"  {label:<35} {b['n']['value']:>6}")
+
+# --- Top moderateurs ---
+print("\n  TOP MODERATEURS (analyses complexes)")
+print("  " + "-" * 40)
+d_mods = query(f"""
+{PREFIX}
+SELECT ?moderateur (COUNT(DISTINCT ?a) AS ?n)
+WHERE {{
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasModerator ?moderateur .
+  FILTER({FILTER_COMPLEXES})
+  FILTER(?moderateur != "N.A.")
+}}
+GROUP BY ?moderateur ORDER BY DESC(?n)
+""")
+for b in d_mods["results"]["bindings"][:10]:
+    label = b["moderateur"]["value"][:35]
+    print(f"  {label:<35} {b['n']['value']:>6}")
+
+# --- Categorisation VI/VD dans les complexes ---
+print("\n  CATEGORISATION VI/VD (analyses complexes)")
+print("  " + "-" * 40)
+cx_vi_total = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?v) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . FILTER({FILTER_COMPLEXES}) ?rel iadas:hasIndependentVariable ?v }}")
+cx_vi_cat   = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?v) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . FILTER({FILTER_COMPLEXES}) ?rel iadas:hasIndependentVariable ?v . ?v iadas:refersToVariable ?concept . ?concept skos:broader ?b }}")
+cx_vd_total = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?v) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . FILTER({FILTER_COMPLEXES}) ?rel iadas:hasDependentVariable ?v }}")
+cx_vd_cat   = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?v) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . FILTER({FILTER_COMPLEXES}) ?rel iadas:hasDependentVariable ?v . ?v iadas:refersToVariable ?concept . ?concept skos:broader ?b }}")
+pct_cx_vi = round(cx_vi_cat / cx_vi_total * 100) if cx_vi_total > 0 else 0
+pct_cx_vd = round(cx_vd_cat / cx_vd_total * 100) if cx_vd_total > 0 else 0
+print(f"  {'VI total (complexes)':<35} {cx_vi_total:>6}")
+print(f"  {'VI avec categorie SKOS':<35} {cx_vi_cat:>6}  ({pct_cx_vi}%)")
+print(f"  {'VD total (complexes)':<35} {cx_vd_total:>6}")
+print(f"  {'VD avec categorie SKOS':<35} {cx_vd_cat:>6}  ({pct_cx_vd}%)")
 
 print("\n" + "=" * 55)
