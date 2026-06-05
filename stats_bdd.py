@@ -358,4 +358,60 @@ print(f"  {'Analyses avec >=1 VI categ.':<35} {cx_an_with_vi_cat:>6}  ({pct_cx_a
 print(f"  {'VD total (complexes)':<35} {cx_vd_total:>6}")
 print(f"  {'VD avec categorie SKOS':<35} {cx_vd_cat:>6}  ({pct_cx_vd}%)")
 
+# --- Top chemins de médiation VI → Médiateur → VD ---
+print("\n  TOP CHEMINS DE MEDIATION (VI --> Mediateur --> VD)")
+print("  " + "-" * 40)
+d_chemins = query(f"""
+{PREFIX}
+SELECT ?viNom ?mediateur ?vdNom (COUNT(DISTINCT ?a) AS ?n)
+WHERE {{
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ;
+     iadas:hasMediator ?mediateur ; iadas:hasRelation ?rel .
+  FILTER({FILTER_COMPLEXES})
+  FILTER(?mediateur != "N.A.")
+  ?rel iadas:hasIndependentVariable ?vi ; iadas:hasDependentVariable ?vd .
+  ?vi iadas:variableName ?viNom . ?vd iadas:variableName ?vdNom .
+}}
+GROUP BY ?viNom ?mediateur ?vdNom
+ORDER BY DESC(?n)
+""")
+for b in d_chemins["results"]["bindings"][:12]:
+    vi  = b["viNom"]["value"].split("\n")[0].strip()[:22]
+    med = b["mediateur"]["value"][:22]
+    vd  = b["vdNom"]["value"].split("\n")[0].strip()[:18]
+    n   = b["n"]["value"]
+    print(f"  [{vi}] --[{med}]--> [{vd}]  (n={n})")
+
+# --- Médiateurs par catégorie de VI (SKOS) ---
+print("\n  MEDIATEURS PAR CATEGORIE DE VI (SKOS)")
+print("  " + "-" * 40)
+d_med_cat = query(f"""
+{PREFIX}
+SELECT ?catVI ?mediateur (COUNT(DISTINCT ?a) AS ?n)
+WHERE {{
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ;
+     iadas:hasMediator ?mediateur ; iadas:hasRelation ?rel .
+  FILTER({FILTER_COMPLEXES})
+  FILTER(?mediateur != "N.A.")
+  ?rel iadas:hasIndependentVariable ?vi .
+  ?vi iadas:refersToVariable ?concept .
+  ?concept skos:broader+ ?top .
+  ?top skos:prefLabel ?catVI .
+  FILTER NOT EXISTS {{ ?top skos:broader ?x . FILTER(CONTAINS(STR(?x), 'ACAD-vocab')) }}
+}}
+GROUP BY ?catVI ?mediateur
+ORDER BY ?catVI DESC(?n)
+""")
+from collections import defaultdict
+med_by_cat = defaultdict(list)
+for b in d_med_cat["results"]["bindings"]:
+    cat = b["catVI"]["value"]
+    med = b["mediateur"]["value"].split("\n")[0].strip()[:35]
+    n   = int(b["n"]["value"])
+    med_by_cat[cat].append((med, n))
+for cat, meds in sorted(med_by_cat.items()):
+    print(f"  {cat[:40]}")
+    for med, n in meds[:4]:
+        print(f"    --> {med:<35} (n={n})")
+
 print("\n" + "=" * 55)
