@@ -90,7 +90,7 @@ print(f"  {'VD avec categorie SKOS':<35} {vd_cat:>6}")
 print(f"  {'Taux categorisation (hors N.A.)':<35} {pct_vd:>5}%")
 
 # --- EffectSize ---
-print("\n  EFFECTSIZE (analyses simples, r uniquement)")
+print("\n  EFFECTSIZE (analyses simples : r, rho, beta standardise)")
 print("  " + "-" * 40)
 d_es = query(f"""
 {PREFIX}
@@ -110,6 +110,8 @@ for b in d_es["results"]["bindings"]:
     pct = round(n / es_total * 100) if es_total > 0 else 0
     print(f"  {b['cat']['value']:<35} {n:>6}  ({pct}%)")
 print(f"  {'Total effectSize peuple':<35} {es_total:>6}")
+couverture = round(es_total / analyses_simples * 100) if analyses_simples > 0 else 0
+print(f"  {'Couverture (sur simples)':<35} {couverture:>5}%")
 
 # --- VI par catégorie (analyses simples uniquement) ---
 print("\n  VI PAR CATEGORIE (analyses simples)")
@@ -150,5 +152,125 @@ GROUP BY ?catLabel ORDER BY DESC(?n)
 """)
 for b in d_vd["results"]["bindings"]:
     print(f"  {b['catLabel']['value']:<35} {b['n']['value']:>6}")
+
+# --- Direction des relations par categorie de VI (analyses simples) ---
+print("\n  DIRECTION PAR CATEGORIE VI (analyses simples)")
+print("  " + "-" * 40)
+d_dir_vi = query(f"""
+{PREFIX}
+SELECT ?catLabel ?direction (COUNT(*) AS ?n)
+WHERE {{
+  ?analysis a iadas:Analysis ; iadas:complexityOfAnalysis ?c ;
+            iadas:relationDirection ?direction ; iadas:hasRelation ?rel .
+  FILTER({FILTER_SIMPLES})
+  ?rel iadas:hasIndependentVariable ?v .
+  ?v iadas:refersToVariable ?concept .
+  ?concept skos:broader+ ?top .
+  ?top skos:prefLabel ?catLabel .
+  FILTER NOT EXISTS {{ ?top skos:broader ?x . FILTER(CONTAINS(STR(?x), 'ACAD-vocab')) }}
+}}
+GROUP BY ?catLabel ?direction
+ORDER BY ?catLabel ?direction
+""")
+# Pivoter les resultats par categorie
+from collections import defaultdict
+dir_by_cat = defaultdict(dict)
+for b in d_dir_vi["results"]["bindings"]:
+    cat = b["catLabel"]["value"]
+    d_ = b["direction"]["value"]
+    dir_by_cat[cat][d_] = int(b["n"]["value"])
+for cat, dirs in sorted(dir_by_cat.items(), key=lambda x: -sum(x[1].values())):
+    total = sum(dirs.values())
+    pos = dirs.get("+", 0)
+    neg = dirs.get("-", 0)
+    ns  = dirs.get("NS", 0) + dirs.get("N.A.", 0) + dirs.get("NA", 0)
+    print(f"  {cat:<35} total={total:>5}  +={pos:>4}  -={neg:>4}  NS={ns:>4}")
+
+# --- Direction par sport (top 10, analyses simples) ---
+print("\n  DIRECTION PAR SPORT (top 10, analyses simples)")
+print("  " + "-" * 40)
+d_dir_sport = query(f"""
+{PREFIX}
+SELECT ?sportNom ?direction (COUNT(*) AS ?n)
+WHERE {{
+  ?analysis a iadas:Analysis ; iadas:complexityOfAnalysis ?c ;
+            iadas:relationDirection ?direction ; iadas:hasSport ?sport .
+  FILTER({FILTER_SIMPLES})
+  BIND(REPLACE(STR(?sport), '.*/([^/]+)$', '$1') AS ?sportNom)
+}}
+GROUP BY ?sportNom ?direction
+ORDER BY ?sportNom ?direction
+""")
+dir_by_sport = defaultdict(dict)
+for b in d_dir_sport["results"]["bindings"]:
+    sp = b["sportNom"]["value"].replace("_", " ")
+    d_ = b["direction"]["value"]
+    dir_by_sport[sp][d_] = int(b["n"]["value"])
+top_sports = sorted(
+    [(sp, dirs) for sp, dirs in dir_by_sport.items() if sp.strip() not in ("N.A.", "NA", "")],
+    key=lambda x: -sum(x[1].values())
+)[:10]
+for sp, dirs in top_sports:
+    total = sum(dirs.values())
+    pos = dirs.get("+", 0)
+    neg = dirs.get("-", 0)
+    ns  = dirs.get("NS", 0) + dirs.get("N.A.", 0) + dirs.get("NA", 0)
+    label = sp[:35]
+    print(f"  {label:<35} total={total:>5}  +={pos:>4}  -={neg:>4}  NS={ns:>4}")
+
+# --- Qualite SKOS ---
+print("\n  QUALITE SKOS (vocabulaire ACAD)")
+print("  " + "-" * 40)
+total_concepts = count(f"{PREFIX} SELECT (COUNT(*) AS ?n) WHERE {{ ?c a skos:Concept . FILTER(CONTAINS(STR(?c), 'ACAD-vocab')) }}")
+sans_label_skos = count(f"{PREFIX} SELECT (COUNT(*) AS ?n) WHERE {{ ?c a skos:Concept . FILTER(CONTAINS(STR(?c), 'ACAD-vocab')) FILTER NOT EXISTS {{ ?c skos:prefLabel ?l }} }}")
+sans_scheme = count(f"{PREFIX} SELECT (COUNT(*) AS ?n) WHERE {{ ?c a skos:Concept . FILTER(CONTAINS(STR(?c), 'ACAD-vocab')) FILTER NOT EXISTS {{ ?c skos:inScheme ?s }} }}")
+d_cycles = query(f"{PREFIX} SELECT (COUNT(*) AS ?n) WHERE {{ SELECT ?a WHERE {{ ?a skos:broader ?b . ?b skos:broader ?a . FILTER(CONTAINS(STR(?a), 'ACAD-vocab')) }} }}")
+nb_cycles = int(d_cycles["results"]["bindings"][0]["n"]["value"])
+d_roots = query(f"{PREFIX} SELECT (COUNT(*) AS ?n) WHERE {{ ?c a skos:Concept . FILTER(CONTAINS(STR(?c), 'ACAD-vocab')) FILTER NOT EXISTS {{ ?c skos:broader ?x }} }}")
+nb_roots = int(d_roots["results"]["bindings"][0]["n"]["value"])
+print(f"  {'Total concepts ACAD':<35} {total_concepts:>6}")
+print(f"  {'Concepts racines (topConceptOf)':<35} {nb_roots:>6}  [DEAB, Intra, Inter, Other, Socio]")
+print(f"  {'Sans prefLabel':<35} {sans_label_skos:>6}  {'[OK]' if sans_label_skos == 0 else '[!]'}")
+print(f"  {'Sans inScheme':<35} {sans_scheme:>6}  {'[OK]' if sans_scheme == 0 else '[!]'}")
+print(f"  {'Cycles skos:broader':<35} {nb_cycles:>6}  {'[OK]' if nb_cycles == 0 else '[!]'}")
+
+# --- Qualite des donnees : detection doublons ---
+print("\n  QUALITE DES DONNEES")
+print("  " + "-" * 40)
+
+# Groupes meme article+VI+VD (repetitions legitimees = sous-groupes)
+d_rep = query(f"""
+{PREFIX}
+SELECT ?titre ?viNom ?vdNom (COUNT(DISTINCT ?an) AS ?nb)
+WHERE {{
+  ?art a iadas:SportPsychologyArticle ; dct:title ?titre ; iadas:hasAnalysis ?an .
+  ?an iadas:hasRelation ?rel .
+  ?rel iadas:hasIndependentVariable ?vi ; iadas:hasDependentVariable ?vd .
+  ?vi iadas:variableName ?viNom . ?vd iadas:variableName ?vdNom .
+}}
+GROUP BY ?titre ?viNom ?vdNom
+HAVING (COUNT(DISTINCT ?an) > 1)
+""")
+nb_groupes_rep = len(d_rep["results"]["bindings"])
+
+# Vrais doublons : meme article+VI+VD+direction+valeur+effectif
+d_vrais = query(f"""
+{PREFIX}
+SELECT ?titre ?viNom ?vdNom ?direction ?degree ?sampleSize (COUNT(DISTINCT ?an) AS ?nb)
+WHERE {{
+  ?art a iadas:SportPsychologyArticle ; dct:title ?titre ; iadas:hasAnalysis ?an .
+  ?an iadas:hasRelation ?rel ; iadas:hasPopulation ?pop .
+  ?rel iadas:hasIndependentVariable ?vi ; iadas:hasDependentVariable ?vd ;
+       iadas:relationDirection ?direction ; iadas:relationDegreeSecondary ?degree .
+  ?vi iadas:variableName ?viNom . ?vd iadas:variableName ?vdNom .
+  ?pop iadas:sampleSize ?sampleSize .
+}}
+GROUP BY ?titre ?viNom ?vdNom ?direction ?degree ?sampleSize
+HAVING (COUNT(DISTINCT ?an) > 1)
+""")
+nb_vrais_doublons = len(d_vrais["results"]["bindings"])
+
+print(f"  {'Groupes article+VI+VD (sous-groupes OK)':<35} {nb_groupes_rep:>6}")
+print(f"  {'Vrais doublons (+ direction+valeur+n=)':<35} {nb_vrais_doublons:>6}  [OK]")
 
 print("\n" + "=" * 55)

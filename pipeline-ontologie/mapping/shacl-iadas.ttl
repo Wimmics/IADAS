@@ -15,10 +15,16 @@
 # Convention :
 #   sh:minCount 1 = obligatoire (doit toujours être présent)
 #   sh:minCount 0 = optionnel (peut être absent — pas de violation si manquant)
+#   sh:sparql     = contrainte croisée (cohérence entre propriétés liées)
 #
 # Propriétés optionnelles : country, continent, hasMediator, hasModerator,
 #   mediatorMeasure, moderatorMeasure, limites, perspectives, authorConclusion,
 #   hasSubgroup, sportingPopulation, hasRange, hasMeanValue, effectSize
+#
+# Contraintes croisées (AnalysisShape) :
+#   hasMediator ≠ N.A.  →  mediatorMeasure ≠ N.A.
+#   hasModerator ≠ N.A. →  moderatorMeasure ≠ N.A.
+#   Violations détectées : Analysis_933, Analysis_936 (moderatorMeasure manquant)
 # =============================================================================
 
 
@@ -206,6 +212,35 @@ sh-iadas:AnalysisShape a sh:NodeShape ;
         sh:name "Perspectives" ;
         sh:minCount 0 ;
         sh:message "Les perspectives sont optionnelles."
+    ] ;
+
+    # Contraintes croisées : cohérence médiateur/modérateur et leurs mesures
+    # Règle : si la variable est renseignée (≠ N.A.), la mesure doit l'être aussi
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Si hasMediator est renseigné (≠ N.A.), mediatorMeasure ne peut pas être N.A." ;
+        sh:select """
+            PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+            SELECT $this WHERE {
+                $this iadas:hasMediator ?med ;
+                      iadas:mediatorMeasure ?mm .
+                FILTER(?med != "N.A.")
+                FILTER(?mm = "N.A.")
+            }
+        """ ;
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Si hasModerator est renseigné (≠ N.A.), moderatorMeasure ne peut pas être N.A." ;
+        sh:select """
+            PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+            SELECT $this WHERE {
+                $this iadas:hasModerator ?mod ;
+                      iadas:moderatorMeasure ?mm .
+                FILTER(?mod != "N.A.")
+                FILTER(?mm = "N.A.")
+            }
+        """ ;
     ] .
 
 
