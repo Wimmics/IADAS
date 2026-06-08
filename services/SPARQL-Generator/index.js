@@ -2011,7 +2011,7 @@ ORDER BY ?vi ?vd
     case 'q5-aesthetic':
       console.log(" CASE Q5-AESTHETIC DÉTECTÉ: Relations ACAD-facteurs pour sports esthétiques");
       selectedCase = 'q5-aesthetic - Sports esthétiques';
-      expectedResults = '100-300 relations pour sports esthétiques (gymnastics, figure skating, dance, rhythmic...)';
+      expectedResults = '~145 relations pour sports catégorisés "Aesthetic" (via sportCategory)';
 
       query = `${prefixes}
 
@@ -2020,7 +2020,9 @@ WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation ;
               iadas:hasSport ?sportURI .
-    FILTER(REGEX(STR(?sportURI), 'aesthetic|gymnastics|figure.skat|rhythmic|danc|synchro|ballet|diving', 'i'))
+    ?sportURI iadas:sportCategory ?sportCatConcept .
+    ?sportCatConcept skos:prefLabel ?sportCatLabel .
+    FILTER(STR(?sportCatLabel) = "Aesthetic")
 
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
@@ -2300,7 +2302,7 @@ ORDER BY ?vi ?vd
     case 'q8-aesthetic':
       console.log(" CASE Q8-AESTHETIC DÉTECTÉ: Sports esthétiques");
       selectedCase = 'q8-aesthetic - Sports esthétiques';
-      expectedResults = '200-500 relations pour sports esthétiques (gymnastics, figure skating, dance, rhythmic...)';
+      expectedResults = '~145 relations pour sports catégorisés "Aesthetic" (via sportCategory)';
 
       query = `${prefixes}
 
@@ -2309,7 +2311,9 @@ WHERE {
     ?analysis a iadas:Analysis .
     ?analysis iadas:hasRelation ?relation ;
               iadas:hasSport ?sportURI .
-    FILTER(REGEX(STR(?sportURI), 'aesthetic|gymnastics|figure.skat|rhythmic|danc|synchro|ballet|diving', 'i'))
+    ?sportURI iadas:sportCategory ?sportCatConcept .
+    ?sportCatConcept skos:prefLabel ?sportCatLabel .
+    FILTER(STR(?sportCatLabel) = "Aesthetic")
 
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
