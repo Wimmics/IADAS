@@ -204,11 +204,6 @@ iadas-vocab:Diet a skos:Concept ;
     skos:inScheme iadas-vocab:ACAD-Vocabulary ;
     skos:prefLabel "Diet" .
 
-iadas-vocab:Diet_trailing a skos:Concept ;
-    skos:broader iadas-vocab:Eating_behavior ;
-    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
-    skos:prefLabel "Diet " .
-
 iadas-vocab:Dietary a skos:Concept ;
     skos:broader iadas-vocab:Eating_behavior ;
     skos:inScheme iadas-vocab:ACAD-Vocabulary ;
@@ -218,11 +213,6 @@ iadas-vocab:Dietary_restraint a skos:Concept ;
     skos:broader iadas-vocab:Restrictions ;
     skos:inScheme iadas-vocab:ACAD-Vocabulary ;
     skos:prefLabel "Dietary restraint" .
-
-iadas-vocab:Dietary_trailing a skos:Concept ;
-    skos:broader iadas-vocab:Eating_behavior ;
-    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
-    skos:prefLabel "Dietary " .
 
 iadas-vocab:Difficulty_describing_feelings a skos:Concept ;
     skos:broader iadas-vocab:Emotion_regulation ;
