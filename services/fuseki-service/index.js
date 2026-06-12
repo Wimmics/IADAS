@@ -194,47 +194,6 @@ async function fixSkosUriMismatch() {
       console.log(`  Exception fix ${label}: ${e.message}`);
     }
   }
-
-  await populateEffectSize();
-}
-
-async function populateEffectSize() {
-  console.log('\n=== POPULATE EFFECT SIZE (r / rho / beta) ===');
-  const UPDATE_URL = `${FUSEKI_URL}/update`;
-
-  const THRESHOLDS = "BIND(IF(?absR < 0.1, 'negligible', IF(?absR < 0.3, 'weak', IF(?absR < 0.5, 'moderate', 'strong'))) AS ?category)";
-  const GUARD = 'FILTER NOT EXISTS { ?rel iadas:effectSize ?existing }';
-  const PFX = 'PREFIX iadas: <http://ns.inria.fr/iadas/ontology/> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>';
-
-  // r= Pearson : espaces en debut toleres (^ *r *=), rejeter |r|>1 (valeurs malformees)
-  const qR = `${PFX} INSERT { ?rel iadas:effectSize ?category . } WHERE { ?rel iadas:relationDegreeSecondary ?val . FILTER(REGEX(?val, '^ *r *=')) BIND(REPLACE(?val, '^ *r *=-?([0-9.]+).*', '$1') AS ?absRStr) BIND(xsd:decimal(?absRStr) AS ?absR) FILTER(BOUND(?absR) && ?absR <= 1.0) ${THRESHOLDS} ${GUARD} }`;
-
-  // rho= Spearman : memes seuils que r (echelle -1 a +1 identique)
-  const qRho = `${PFX} INSERT { ?rel iadas:effectSize ?category . } WHERE { ?rel iadas:relationDegreeSecondary ?val . FILTER(REGEX(?val, '^ *rho=')) BIND(REPLACE(?val, '^ *rho=-?([0-9.]+).*', '$1') AS ?absRStr) BIND(xsd:decimal(?absRStr) AS ?absR) FILTER(BOUND(?absR)) ${THRESHOLDS} ${GUARD} }`;
-
-  // β standardise (β U+03B2 et 𝛃 U+1D6C3) : equivalent a r en regression simple
-  // FILTER |β|<=1 pour rejeter les betas non standardises (beta>1 = regression multiple)
-  const qBeta = `${PFX} INSERT { ?rel iadas:effectSize ?category . } WHERE { ?rel iadas:relationDegreeSecondary ?val . FILTER(REGEX(?val, '^ *[β\u{1D6C3}] *=')) BIND(REPLACE(?val, '^ *[β\u{1D6C3}] *=-?([0-9.]+).*', '$1') AS ?absRStr) BIND(xsd:decimal(?absRStr) AS ?absR) FILTER(BOUND(?absR) && ?absR <= 1.0) ${THRESHOLDS} ${GUARD} }`;
-
-  const queries = [['r=', qR], ['rho=', qRho], ['β/𝛃=', qBeta]];
-
-  for (const [label, query] of queries) {
-    try {
-      const res = await fetch(UPDATE_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/sparql-update', 'Authorization': `Basic ${auth}` },
-        body: query
-      });
-      const body = await res.text();
-      if (res.ok) {
-        console.log(`  effectSize [${label}] peuple avec succes.`);
-      } else {
-        console.log(`  Erreur effectSize [${label}] — status: ${res.status} — body: ${body}`);
-      }
-    } catch (e) {
-      console.log(`  Exception effectSize [${label}]: ${e.message}`);
-    }
-  }
 }
 
 async function uploadFile(ttlContent, fileName, icon) {

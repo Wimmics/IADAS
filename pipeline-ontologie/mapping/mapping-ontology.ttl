@@ -197,6 +197,10 @@
     rr:predicateObjectMap [
         rr:predicate iadas:relationDegreeSecondary ;
         rr:objectMap [ rml:reference "Degree of relationship" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:effectSize ;
+        rr:objectMap [ rml:reference "effectSize" ]
     ]
      .
 
