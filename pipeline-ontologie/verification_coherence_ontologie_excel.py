@@ -28,6 +28,7 @@ PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
 
 BASE_DIR = Path(__file__).resolve().parent           # pipeline-ontologie/
 RML_OUTPUT = BASE_DIR / "output" / "variable-hierarchy.ttl"
+RML_OUTPUT_CLEAN = BASE_DIR / "output" / "variable-hierarchy-clean.ttl"
 ENRICHMENT_TTL = BASE_DIR / "skos-acad-enrichment.ttl"
 EXCEL_HIERARCHY = BASE_DIR.parent.parent / "Class_Hierarchy_VF_09avr26xlsx.xlsx"
 
@@ -87,8 +88,37 @@ if ENRICHMENT_TTL.exists():
 print(f"\n[3] Concepts ajoutes manuellement (skos-acad-enrichment.ttl) = {enrich_count}")
 print(f"    Source : comptage Python sur {ENRICHMENT_TTL.relative_to(BASE_DIR.parent)}")
 
-print(f"\n    => Verification : {rml_count} (RML) + {enrich_count} (manuel) = {rml_count + enrich_count}"
-      f"  {'OK' if rml_count + enrich_count == total_ontologie else '!! NE CORRESPOND PAS A [1] !!'}")
+print(f"\n    => {rml_count} (RML) + {enrich_count} (manuel) = {rml_count + enrich_count}"
+      f"  {'OK' if rml_count + enrich_count == total_ontologie else '(brut, voir [3bis] pour le chevauchement)'}")
+
+# -----------------------------------------------------------------------
+# 3bis. Chevauchement RML <-> enrichissement (memes URIs apres %20->_ )
+#       L'enrichissement re-declare 'a skos:Concept' pour des concepts deja
+#       crees par le RML (pour y ajouter skos:broader/narrower/exactMatch...)
+# -----------------------------------------------------------------------
+rml_clean_uris = set()
+if RML_OUTPUT_CLEAN.exists():
+    with open(RML_OUTPUT_CLEAN, encoding="utf-8") as f:
+        for line in f:
+            if "rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept>" in line:
+                uri = line.split(">")[0].lstrip("<")
+                rml_clean_uris.add(uri.split("/")[-1])
+
+enrich_uris = set()
+if ENRICHMENT_TTL.exists():
+    with open(ENRICHMENT_TTL, encoding="utf-8") as f:
+        for line in f:
+            m = re.match(r"^iadas-vocab:(\S+) a skos:Concept", line)
+            if m:
+                enrich_uris.add(m.group(1))
+
+overlap = rml_clean_uris & enrich_uris
+union_count = len(rml_clean_uris | enrich_uris)
+print(f"\n[3bis] Chevauchement RML (clean) <-> enrichissement (memes URIs, apres %20->_) = {len(overlap)}")
+print(f"     Source : comptage Python sur output/variable-hierarchy-clean.ttl + skos-acad-enrichment.ttl")
+print(f"     => {len(rml_clean_uris)} (RML clean) + {enrich_count} (manuel) - {len(overlap)} (chevauchement)"
+      f" = {union_count}"
+      f"  {'OK, correspond a [1]' if union_count == total_ontologie else '!! NE CORRESPOND PAS A [1] !!'}")
 
 # -----------------------------------------------------------------------
 # 4. Taxonomie de reference Excel (Class_Hierarchy_VF)
