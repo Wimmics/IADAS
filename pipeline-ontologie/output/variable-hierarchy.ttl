@@ -354,18 +354,6 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self> <http://www.w3.org/2004/02/skos/core#prefLabel> "Body self" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20one%27s%20own%20body%20and%20self> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20ability> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20attractiveness> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20strength> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20consciousness%20of%20weight%20and%20appearance> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-classified%20weight> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-objectivation> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-surveillance> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> <http://www.w3.org/2004/02/skos/core#prefLabel> "Body self perception" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/2004/02/skos/core#altLabel> "Body satisfaction for body factors" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/2004/02/skos/core#altLabel> "General body image dissatisfaction" .
@@ -402,6 +390,18 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20shape%20concerns%20and%20dissatisfaction> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20weight%20satisfaction> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/2004/02/skos/core#prefLabel> "Body self-esteem" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20one%27s%20own%20body%20and%20self> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20ability> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20attractiveness> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20strength> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20consciousness%20of%20weight%20and%20appearance> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-classified%20weight> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-objectivation> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-surveillance> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> <http://www.w3.org/2004/02/skos/core#prefLabel> "Body self-perception" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20shame> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20shame> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20shame> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -566,16 +566,16 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Competitive%20state%20anxiety> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Fear%20and%20anxiety> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Competitive%20state%20anxiety> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Competitive%20state%20anxiety> <http://www.w3.org/2004/02/skos/core#prefLabel> "Competitive state anxiety" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Other%20behaviors> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20buying> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20alcohol%20disturbance-acohol> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Hypersexual%20behavior> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Pathological%20computer%20gaming> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> <http://www.w3.org/2004/02/skos/core#prefLabel> "Compulsive and behavioral addiction" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Other%20behaviors> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20buying> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20alcohol%20disturbance-acohol> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Hypersexual%20behavior> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Pathological%20computer%20gaming> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#prefLabel> "Compulsive and behavioral addictions" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20buying> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20buying> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20buying> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20buying> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20buying> <http://www.w3.org/2004/02/skos/core#prefLabel> "Compulsive buying" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20exercise> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -1196,7 +1196,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Fluids%20avoidance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Fluids%20avoidance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Fluids avoidance" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20alcohol%20disturbance-acohol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20alcohol%20disturbance-acohol> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20alcohol%20disturbance-acohol> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20alcohol%20disturbance-acohol> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20alcohol%20disturbance-acohol> <http://www.w3.org/2004/02/skos/core#prefLabel> "Food and alcohol disturbance-acohol" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20weight%20related%20concerns> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -1323,7 +1323,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Hours%20spent%20on%20social%20media> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Hours%20spent%20on%20social%20media> <http://www.w3.org/2004/02/skos/core#prefLabel> "Hours spent on social media" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Hypersexual%20behavior> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Hypersexual%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Hypersexual%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Hypersexual%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Hypersexual%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "Hypersexual behavior" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Ideal%20physique%20perception> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -1809,10 +1809,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Obsessive%20passion%20toward%20an%20activity> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Passion> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Obsessive%20passion%20toward%20an%20activity> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Obsessive%20passion%20toward%20an%20activity> <http://www.w3.org/2004/02/skos/core#prefLabel> "Obsessive passion toward an activity" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Openess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Openess> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Personality%20traits> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Openess> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Openess> <http://www.w3.org/2004/02/skos/core#prefLabel> "Openess" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Openness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Openness> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Personality%20traits> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Openness> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Openness> <http://www.w3.org/2004/02/skos/core#prefLabel> "Openness" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Oral%20control> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Oral%20control> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compensatory%20behavior> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Oral%20control> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -1840,7 +1840,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Other%20behaviors> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Other%20behaviors> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Alcohol%20use> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Other%20behaviors> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Avoidance%20behaviors> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Other%20behaviors> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Other%20behaviors> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Other%20behaviors> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20activity> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Other%20behaviors> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Healthy%20lifestyle> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Other%20behaviors> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Injury> .
@@ -1901,7 +1901,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Paternal%20relationship> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Paternal%20relationship> <http://www.w3.org/2004/02/skos/core#prefLabel> "Paternal relationship" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Pathological%20computer%20gaming> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Pathological%20computer%20gaming> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addiction> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Pathological%20computer%20gaming> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Pathological%20computer%20gaming> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Pathological%20computer%20gaming> <http://www.w3.org/2004/02/skos/core#prefLabel> "Pathological computer gaming" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Peaking%20under%20pressure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -2042,7 +2042,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Well-being> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perception of health and well-being" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20one%27s%20own%20body%20and%20self> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20one%27s%20own%20body%20and%20self> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20one%27s%20own%20body%20and%20self> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20one%27s%20own%20body%20and%20self> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20one%27s%20own%20body%20and%20self> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perception of one's own body and self" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20social%20support> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -2173,7 +2173,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Personality%20traits> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Interpersonal%20sensitivity> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Personality%20traits> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Narcissism> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Personality%20traits> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Obsessive%20compulsive> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Personality%20traits> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Openess> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Personality%20traits> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Openness> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Personality%20traits> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Psychological%20inflexibility> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Personality%20traits> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Psychoticism> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Personality%20traits> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-sufficiency> .
@@ -2209,15 +2209,15 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self%20worth> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self%20worth> <http://www.w3.org/2004/02/skos/core#prefLabel> "Physical self worth" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20ability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20ability> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20ability> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20ability> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20ability> <http://www.w3.org/2004/02/skos/core#prefLabel> "Physical self-concept related to ability" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20attractiveness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20attractiveness> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20attractiveness> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20attractiveness> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20attractiveness> <http://www.w3.org/2004/02/skos/core#prefLabel> "Physical self-concept related to attractiveness" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20strength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20strength> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20strength> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20strength> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20strength> <http://www.w3.org/2004/02/skos/core#prefLabel> "Physical self-concept related to strength" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -2498,7 +2498,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20compassion> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20compassion> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self compassion" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20consciousness%20of%20weight%20and%20appearance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20consciousness%20of%20weight%20and%20appearance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self%20consciousness%20of%20weight%20and%20appearance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20consciousness%20of%20weight%20and%20appearance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20consciousness%20of%20weight%20and%20appearance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self consciousness of weight and appearance" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20critical%20perfectionism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -2540,7 +2540,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Appearance%20evaluation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Athletes%20perceptions%20of%20power%20balances%20with%20their%20coach%2Ftraining%20staff> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Attachment%20avoidance> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Impression%20construction> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Impression%20motivation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20evaluation> .
@@ -2556,7 +2556,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20presentation%20processes> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20presentation%20processes> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self presentation processes" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-classified%20weight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self-classified%20weight> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-classified%20weight> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-classified%20weight> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-classified%20weight> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-classified weight" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-criticism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -2579,7 +2579,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-kindness> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-kindness> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-kindness" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-objectivation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self-objectivation> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-objectivation> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-objectivation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-objectivation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-objectivation" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-sufficiency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -2587,7 +2587,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-sufficiency> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-sufficiency> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-sufficiency" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-surveillance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self-surveillance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self%20perception> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-surveillance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-surveillance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-surveillance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-surveillance" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Severity%20of%20critical%20comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .

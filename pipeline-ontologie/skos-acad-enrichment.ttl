@@ -165,7 +165,7 @@ iadas-vocab:Cognitive_flexibility a skos:Concept ;
     skos:prefLabel "Cognitive flexibility" .
 
 iadas-vocab:Compulsive_spending a skos:Concept ;
-    skos:broader iadas-vocab:Compulsive_and_behavioral_addiction ;
+    skos:broader iadas-vocab:Compulsive_and_behavioral_addictions ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Compulsive spending" .
 
@@ -400,7 +400,7 @@ iadas-vocab:Internalization_of_thin_low_body_fat a skos:Concept ;
     skos:prefLabel "Internalization of thin low body fat" .
 
 iadas-vocab:Internet_addiction a skos:Concept ;
-    skos:broader iadas-vocab:Compulsive_and_behavioral_addiction ;
+    skos:broader iadas-vocab:Compulsive_and_behavioral_addictions ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Internet addiction" .
 
@@ -480,7 +480,7 @@ iadas-vocab:Orthorexic_eating_behavior a skos:Concept ;
     skos:prefLabel "Orthorexic eating behavior" .
 
 iadas-vocab:Pathological_gambling a skos:Concept ;
-    skos:broader iadas-vocab:Compulsive_and_behavioral_addiction ;
+    skos:broader iadas-vocab:Compulsive_and_behavioral_addictions ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Pathological gambling" .
 
@@ -515,7 +515,7 @@ iadas-vocab:Perception_of_health_evaluation a skos:Concept ;
     skos:prefLabel "Perception of health evaluation" .
 
 iadas-vocab:Perception_of_one_s_own_body_and_self a skos:Concept ;
-    skos:broader iadas-vocab:Body_self_perception ;
+    skos:broader iadas-vocab:Body_self-perception ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Perception of one s own body and self" .
 
@@ -665,7 +665,7 @@ iadas-vocab:Self-judgment a skos:Concept ;
     skos:prefLabel "Self-judgment" .
 
 iadas-vocab:Self-objectivation a skos:Concept ;
-    skos:broader iadas-vocab:Body_self_perception ;
+    skos:broader iadas-vocab:Body_self-perception ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Self-objectivation" .
 
@@ -760,7 +760,7 @@ iadas-vocab:Subjective_norm_related_to_gain_muscle_mass a skos:Concept ;
     skos:prefLabel "Subjective norm related to gain muscle mass" .
 
 iadas-vocab:Substance_addiction a skos:Concept ;
-    skos:broader iadas-vocab:Compulsive_and_behavioral_addiction ;
+    skos:broader iadas-vocab:Compulsive_and_behavioral_addictions ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Substance addiction" .
 
