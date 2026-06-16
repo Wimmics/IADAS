@@ -304,20 +304,20 @@ iadas-vocab:External_ingestion a skos:Concept ;
     skos:inScheme iadas-vocab:ACAD-Vocabulary ;
     skos:prefLabel "External ingestion" .
 
-iadas-vocab:External_locus_coach_and_friends a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/External_locus%3A_coach_and_friends> a skos:Concept ;
     skos:broader iadas-vocab:Locus_of_control ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "External locus coach and friends" .
+    skos:prefLabel "External locus: coach and friends" .
 
-iadas-vocab:External_locus_family a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/External_locus%3A_family> a skos:Concept ;
     skos:broader iadas-vocab:Locus_of_control ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "External locus family" .
+    skos:prefLabel "External locus: family" .
 
-iadas-vocab:External_locus_luck a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/External_locus%3A_luck> a skos:Concept ;
     skos:broader iadas-vocab:Locus_of_control ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "External locus luck" .
+    skos:prefLabel "External locus: luck" .
 
 iadas-vocab:Extrinsic_regulation_for_sport a skos:Concept ;
     skos:broader iadas-vocab:Exercise_Motivation ;
@@ -404,10 +404,10 @@ iadas-vocab:Internet_addiction a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Internet addiction" .
 
-iadas-vocab:Laxatives_diuretics a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Laxatives%2C_diuretics> a skos:Concept ;
     skos:broader iadas-vocab:Compensatory_behavior ;
     skos:inScheme iadas-vocab:ACAD-Vocabulary ;
-    skos:prefLabel "Laxatives diuretics" .
+    skos:prefLabel "Laxatives, diuretics" .
 
 iadas-vocab:Loss_of_confidence a skos:Concept ;
     skos:broader iadas-vocab:Self-esteem ;
@@ -574,30 +574,30 @@ iadas-vocab:Physical_self-worth a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Physical self-worth" .
 
-iadas-vocab:Pressure_from_TV_movies a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Pressure_from_TV%2Fmovies> a skos:Concept ;
     skos:broader iadas-vocab:Media_exposure ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Pressure from TV movies" .
+    skos:prefLabel "Pressure from TV/movies" .
 
-iadas-vocab:Pressure_from_boy_girlfriend a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Pressure_from_boy%2Fgirlfriend> a skos:Concept ;
     skos:broader iadas-vocab:Social_and_Sport_pressure_related_to_significant_others ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Pressure from boy girlfriend" .
+    skos:prefLabel "Pressure from boy/girlfriend" .
 
-iadas-vocab:Pressure_from_magazines_fashion a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Pressure_from_magazines%2Ffashion> a skos:Concept ;
     skos:broader iadas-vocab:Media_exposure ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Pressure from magazines fashion" .
+    skos:prefLabel "Pressure from magazines/fashion" .
 
 iadas-vocab:Pressure_regarding_appearance_and_performance a skos:Concept ;
     skos:broader iadas-vocab:Social_and_Sport_pressure_related_to_significant_others ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Pressure regarding appearance and performance" .
 
-iadas-vocab:Pressures_to_lose_weight_change_shape_from_teammates a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Pressures_to_lose_weight%2Fchange_shape_from_teammates> a skos:Concept ;
     skos:broader iadas-vocab:Social_and_Sport_pressure_related_to_significant_others ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Pressures to lose weight change shape from teammates" .
+    skos:prefLabel "Pressures to lose weight/change shape from teammates" .
 
 iadas-vocab:Psychosocial_health a skos:Concept ;
     skos:broader iadas-vocab:Psychological_symptoms ;
@@ -719,10 +719,10 @@ iadas-vocab:Sexual_violence a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Sexual violence" .
 
-iadas-vocab:Size_symmetry_concerns a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Size%2Fsymmetry_concerns> a skos:Concept ;
     skos:broader iadas-vocab:Body_image ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Size symmetry concerns" .
+    skos:prefLabel "Size/symmetry concerns" .
 
 iadas-vocab:Social_dysfunction a skos:Concept ;
     skos:broader iadas-vocab:Psychological_symptoms ;
@@ -799,8 +799,8 @@ iadas-vocab:Weight_preoccupation a skos:Concept ;
     skos:inScheme iadas-vocab:ACAD-Vocabulary ;
     skos:prefLabel "Weight preoccupation" .
 
-iadas-vocab:Weight_pressure_coach_teammate a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Weight_pressure_coach%2Fteammate> a skos:Concept ;
     skos:broader iadas-vocab:Social_and_Sport_pressure_related_to_significant_others ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Weight pressure coach teammate" .
+    skos:prefLabel "Weight pressure coach/teammate" .
 
