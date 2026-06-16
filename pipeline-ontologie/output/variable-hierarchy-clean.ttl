@@ -220,7 +220,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Body_checking_and_avoidance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body_checking_and_avoidance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body_checking_and_avoidance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body_checking_and_avoidance> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Body_dysmorphic> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body_checking_and_avoidance> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Body_dysmorphic_disorder> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body_checking_and_avoidance> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscle_building_behaviors> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body_checking_and_avoidance> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscle_checking> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body_checking_and_avoidance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Body checking and avoidance" .
@@ -254,10 +254,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Body_dissatisfaction_related_to_sport_performance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body_self-esteem> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body_dissatisfaction_related_to_sport_performance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body_dissatisfaction_related_to_sport_performance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Body dissatisfaction related to sport performance" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body_dysmorphic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body_dysmorphic> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body_checking_and_avoidance> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body_dysmorphic> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body_dysmorphic> <http://www.w3.org/2004/02/skos/core#prefLabel> "Body dysmorphic" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body_dysmorphic_disorder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body_dysmorphic_disorder> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body_checking_and_avoidance> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body_dysmorphic_disorder> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body_dysmorphic_disorder> <http://www.w3.org/2004/02/skos/core#prefLabel> "Body dysmorphic disorder" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body_esteem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body_esteem> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body_self-esteem> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body_esteem> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -2670,7 +2670,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Sport_related_weight_pressures> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Sport_thin-fat-others> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Thin-fat-others_daily_life> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Thinness_related_learning_parcels> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Thinness_related_learning> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Weight_pressure_appearance> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Weight_pressure_coach%2Fteammate> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Weight_pressure_from_coach%2Fskating_peers%2Fsport> .
@@ -3006,10 +3006,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Thinness_and_restricting_expectancy> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Weight_Control> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Thinness_and_restricting_expectancy> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Thinness_and_restricting_expectancy> <http://www.w3.org/2004/02/skos/core#prefLabel> "Thinness and restricting expectancy" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Thinness_related_learning_parcels> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Thinness_related_learning_parcels> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Thinness_related_learning_parcels> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Thinness_related_learning_parcels> <http://www.w3.org/2004/02/skos/core#prefLabel> "Thinness related learning parcels" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Thinness_related_learning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Thinness_related_learning> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Thinness_related_learning> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Thinness_related_learning> <http://www.w3.org/2004/02/skos/core#prefLabel> "Thinness related learning" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Threat_perception> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Threat_perception> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Fear_and_anxiety> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Threat_perception> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
