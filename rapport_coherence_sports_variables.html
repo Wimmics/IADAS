@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Rapport de cohérence — Sports &amp; Variables — IADAS</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap');
+  :root {
+    --primary:#1a3a5c; --accent:#2e86de; --green:#10ac84;
+    --red:#ee5a24; --orange:#f39c12; --light:#f8f9fa; --border:#dee2e6;
+    --code-bg:#1e2330; --code-fg:#e2e8f0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter','Segoe UI',sans-serif;font-size:13px;line-height:1.7;color:#2d3436;
+    background:#fff;max-width:960px;margin:0 auto;padding:40px 50px;}
+  .cover{text-align:center;padding:55px 0 45px;border-bottom:3px solid var(--primary);margin-bottom:45px;}
+  .cover .lab{font-size:11px;color:#636e72;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;}
+  .cover h1{font-size:22px;font-weight:700;color:var(--primary);line-height:1.4;margin-bottom:10px;}
+  .cover .subtitle{font-size:13px;color:#636e72;margin-bottom:26px;}
+  .cover .meta{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;}
+  .cover .meta-item .label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#b2bec3;}
+  .cover .meta-item .value{font-size:12px;font-weight:600;color:var(--primary);}
+  .section{margin-bottom:50px;}
+  .section-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:22px;
+    padding-bottom:12px;border-bottom:2px solid var(--border);}
+  .section-num{background:var(--primary);color:#fff;width:36px;height:36px;border-radius:8px;
+    display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;flex-shrink:0;}
+  .section-title h2{font-size:16px;font-weight:700;color:var(--primary);}
+  .section-title .sub{font-size:11px;color:#636e72;margin-top:3px;}
+  h3{font-size:13px;font-weight:600;color:var(--primary);margin:18px 0 8px;
+    display:flex;align-items:center;gap:8px;}
+  h3::before{content:'';display:block;width:4px;height:14px;background:var(--accent);border-radius:2px;}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:12px;}
+  th{background:var(--primary);color:#fff;padding:9px 12px;text-align:left;font-weight:600;}
+  td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+  tr:nth-child(even) td{background:var(--light);}
+  td.ok{color:var(--green);font-weight:700;}
+  td.warn{color:var(--orange);font-weight:700;}
+  td.err{color:var(--red);font-weight:700;}
+  td.skip{color:#999;font-style:italic;}
+  code{font-family:'Fira Code','Consolas',monospace;font-size:11px;background:#f1f2f6;
+    padding:2px 5px;border-radius:3px;color:#c0392b;}
+  pre{font-family:'Fira Code','Consolas',monospace;font-size:11px;background:var(--code-bg);
+    color:var(--code-fg);padding:14px 16px;border-radius:6px;margin:10px 0;overflow-x:auto;line-height:1.6;}
+  .badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:10px;font-weight:600;text-transform:uppercase;}
+  .badge-ok{background:#d4edda;color:#155724;}
+  .badge-warn{background:#fff3cd;color:#856404;}
+  .badge-err{background:#f8d7da;color:#721c24;}
+  .badge-info{background:#cce5ff;color:#004085;}
+  .callout{border-left:4px solid;padding:12px 16px;border-radius:0 6px 6px 0;margin:12px 0;font-size:12.5px;}
+  .callout-ok{border-color:var(--green);background:#eafaf1;}
+  .callout-warn{border-color:var(--orange);background:#fef9e7;}
+  .callout-err{border-color:var(--red);background:#fff0ee;}
+  .callout-info{border-color:var(--accent);background:#ebf5fb;}
+  .callout strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;opacity:.7;}
+  .result-box{display:flex;gap:12px;margin:12px 0;flex-wrap:wrap;}
+  .metric{flex:1;min-width:100px;background:var(--light);border:1px solid var(--border);
+    border-radius:8px;padding:12px 14px;text-align:center;}
+  .metric .val{font-size:24px;font-weight:700;color:var(--accent);}
+  .metric .val.green{color:var(--green);}
+  .metric .val.orange{color:var(--orange);}
+  .metric .val.red{color:var(--red);}
+  .metric .lbl{font-size:10px;color:#636e72;margin-top:3px;}
+  hr{border:none;border-top:1px solid var(--border);margin:35px 0;}
+  p{margin-bottom:8px;}
+  ul,ol{padding-left:20px;margin-bottom:8px;}
+  li{margin:3px 0;}
+  .file{font-family:'Fira Code','Consolas',monospace;font-size:11px;background:#f1f2f6;
+    padding:1px 6px;border-radius:3px;border:1px solid var(--border);}
+  .flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0;font-size:12px;}
+  .flow-box{background:var(--light);border:1px solid var(--border);border-radius:6px;
+    padding:6px 10px;font-family:'Fira Code','Consolas',monospace;font-size:11px;}
+  .flow-arrow{color:#b2bec3;font-size:16px;}
+  @media print{body{max-width:100%;padding:20px 30px;}.section{page-break-inside:avoid;}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="lab">Inria Sophia Antipolis · Équipe Wimmics · LAMHESS</div>
+  <h1>Rapport de cohérence — Sports &amp; Variables<br>Ontologie IADAS vs sources de données</h1>
+  <div class="subtitle">2373 analyses · 151 sports · 617 variables · Vérification complète pipeline RML</div>
+  <div class="meta">
+    <div class="meta-item"><div class="label">Projet</div><div class="value">IADAS</div></div>
+    <div class="meta-item"><div class="label">Date</div><div class="value">16 juin 2026</div></div>
+    <div class="meta-item"><div class="label">Triplestore</div><div class="value">Fuseki localhost:3030/ds</div></div>
+    <div class="meta-item"><div class="label">Pipeline</div><div class="value">pipeline_complet_ia_das.py</div></div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 1 : SPORTS ===================== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div class="section-title">
+      <h2>Analyse des sports</h2>
+      <div class="sub">Vocabulaire sport-vocab (151 concepts) · 20 sports mobilisés dans les 2373 analyses</div>
+    </div>
+  </div>
+
+  <h3>Fichiers source et pipeline</h3>
+  <div class="flow">
+    <div class="flow-box">data-csv/Sport-Hierarchy-cleaned.csv<br><span style="color:#636e72;font-size:10px">160 feuilles · 9 catégories · 3 niveaux</span></div>
+    <div class="flow-arrow">→ RML →</div>
+    <div class="flow-box">output/sport-hierarchy-clean.ttl<br><span style="color:#636e72;font-size:10px">151 concepts skos:Concept</span></div>
+    <div class="flow-arrow">→ copie →</div>
+    <div class="flow-box">resultats/sport-hierarchy-simple-clean.ttl<br><span style="color:#636e72;font-size:10px">chargé dans Fuseki</span></div>
+  </div>
+  <div class="flow">
+    <div class="flow-box">output/sport-category.ttl<br><span style="color:#636e72;font-size:10px">9 catégories sport-category-vocab</span></div>
+    <div class="flow-arrow">→ chargé dans Fuseki →</div>
+    <div class="flow-box">localhost:3030/ds</div>
+  </div>
+
+  <h3>Vocabulaire sport — CSV vs SKOS</h3>
+  <div class="result-box">
+    <div class="metric"><div class="val">160</div><div class="lbl">Feuilles dans<br>Sport-Hierarchy-cleaned.csv</div></div>
+    <div class="metric"><div class="val orange">151</div><div class="lbl">Concepts dans<br>sport-hierarchy-clean.ttl</div></div>
+    <div class="metric"><div class="val green">9</div><div class="lbl">Catégories<br>sport-category.ttl</div></div>
+    <div class="metric"><div class="val green">20</div><div class="lbl">Sports distincts<br>mobilisés (hasSport)</div></div>
+  </div>
+
+  <div class="callout callout-warn">
+    <strong>Écart CSV vs SKOS</strong>
+    Le fichier <span class="file">pipeline-ontologie/data-csv/Sport-Hierarchy-cleaned.csv</span> contient
+    <strong>160 noms distincts</strong> en feuille, mais le pipeline RML n'a généré que
+    <strong>151 concepts</strong> dans <span class="file">pipeline-ontologie/output/sport-hierarchy-clean.ttl</span>.
+    Écart de <strong>9</strong>. Cause probable : doublons entre niveaux (ex. "Dance" apparaît
+    en Classe 2 ET comme préfixe en Classe 3), ou entrées filtrées lors du nettoyage.
+  </div>
+
+  <h3>Structure hiérarchique du vocabulaire sport</h3>
+  <p>Le CSV source (<span class="file">pipeline-ontologie/data-csv/Sport-Hierarchy-cleaned.csv</span>) a 3 niveaux :</p>
+  <table>
+    <tr><th>Niveau</th><th>Rôle</th><th>Nombre</th><th>Exemples</th></tr>
+    <tr><td>Classe 1</td><td>Catégorie sport — dans <span class="file">output/sport-category.ttl</span></td><td>9</td><td><code>Aesthetic</code>, <code>Endurance</code>, <code>Ball game</code>…</td></tr>
+    <tr><td>Classe 2</td><td>Sport principal</td><td>~105</td><td><code>Dance</code>, <code>Bodybuilding</code>, <code>Swimming</code>…</td></tr>
+    <tr><td>Classe 3</td><td>Sous-sport (discipline)</td><td>~55</td><td><code>Dance ballet</code>, <code>Dance jazz/modern</code>…</td></tr>
+  </table>
+
+  <div class="callout callout-info">
+    <strong>Note architecture</strong>
+    Dans le SKOS généré (<span class="file">pipeline-ontologie/output/sport-hierarchy-clean.ttl</span>),
+    les 151 concepts n'ont <strong>pas de lien <code>skos:broader</code></strong> entre eux —
+    la hiérarchie CSV (Catégorie → Sport → Sous-sport) n'est pas reflétée dans le SKOS.
+    Les 9 catégories sont dans un vocabulaire séparé (<span class="file">output/sport-category.ttl</span>,
+    namespace <code>sport-category-vocab</code>). Ce choix architectural est intentionnel.
+  </div>
+
+  <h3>9 catégories (sport-category-vocab) — correspondance avec les données</h3>
+  <table>
+    <tr><th>Catégorie (sport-category.ttl)</th><th>Nb analyses (col. Subcategory of sport)</th><th>Statut</th></tr>
+    <tr><td><code>Aesthetic</code></td><td>446</td><td class="ok">✓ OK</td></tr>
+    <tr><td><code>Endurance</code></td><td>117</td><td class="ok">✓ OK</td></tr>
+    <tr><td><code>Power</code></td><td>111</td><td class="ok">✓ OK</td></tr>
+    <tr><td><code>Weight class</code></td><td>92</td><td class="ok">✓ OK</td></tr>
+    <tr><td><code>Ball game</code></td><td>20</td><td class="ok">✓ OK</td></tr>
+    <tr><td><code>Technical</code></td><td>12</td><td class="ok">✓ OK</td></tr>
+    <tr><td><code>Combined</code></td><td>3</td><td class="ok">✓ OK</td></tr>
+    <tr><td><code>Antigravitation</code></td><td>2</td><td class="ok">✓ OK</td></tr>
+    <tr><td><code>Gymgoer weights</code></td><td>0</td><td class="warn">⚠ Jamais utilisée dans les données</td></tr>
+    <tr><td><em>« Multisport »</em> — dans les données mais absent du vocabulaire</td><td>1 570</td><td class="err">⚠ Pas de concept SKOS correspondant</td></tr>
+  </table>
+
+  <div class="callout callout-warn">
+    <strong>Valeur "Multisport" sans concept SKOS</strong>
+    La colonne <em>Subcategory of sport</em> dans
+    <span class="file">pipeline-ontologie/data-csv/IA-DAS-Data.csv</span>
+    contient <strong>1 570 fois</strong> la valeur <code>Multisport</code>, mais ce terme
+    n'est pas un concept dans <span class="file">output/sport-category.ttl</span>.
+    Les analyses concernées n'ont pas de lien RDF vers une catégorie de sport.
+    Cette valeur est liée aux analyses <code>Mixed sport</code> (voir ci-dessous).
+  </div>
+
+  <h3>Type de pratique sportive (<code>sportPracticeType</code>)</h3>
+  <table>
+    <tr><th>Valeur (col. Type of sport practice)</th><th>Nb analyses</th><th>% total</th><th>Statut</th></tr>
+    <tr><td><code>Individual sport</code></td><td>900</td><td>38 %</td><td class="ok">✓ OK</td></tr>
+    <tr><td><code>Team sport</code></td><td>21</td><td>1 %</td><td class="ok">✓ OK</td></tr>
+    <tr><td><code>Mixed sport</code></td><td>1 452</td><td>61 %</td><td class="err">⚠ PROBLÈME — en attente décision encadrantes</td></tr>
+  </table>
+
+  <div class="callout callout-err">
+    <strong>Problème "Mixed sport" — décision encadrantes requise</strong>
+    <strong>61 % des analyses</strong> (1 452 / 2 373) sont étiquetées <code>Mixed sport</code> —
+    elles portent sur plusieurs sports simultanément, sans sport précis identifiable.
+    Amandine propose de <em>supprimer</em> "Mixed sport" et de lister les sports individuels.
+    Décision en attente de Meggy et Stéphanie.
+    Fichier concerné : colonne <em>Type of sport practice</em> dans
+    <span class="file">pipeline-ontologie/data-csv/IA-DAS-Data.csv</span>.
+  </div>
+
+  <h3>Sports mobilisés dans les analyses (via <code>hasSport</code>)</h3>
+  <p>20 sports distincts sur 151 dans le vocabulaire sont liés à au moins une analyse.
+  131 sports du vocabulaire ne sont liés à aucune analyse dans le corpus actuel (hors corpus).</p>
+  <table>
+    <tr><th>Sport</th><th>Nb analyses</th><th>Sport</th><th>Nb analyses</th></tr>
+    <tr><td><code>Crossfit</code></td><td>68</td><td><code>Karate</code></td><td>14</td></tr>
+    <tr><td><code>Bodybuilding</code></td><td>55</td><td><code>Rowing</code></td><td>14</td></tr>
+    <tr><td><code>Fitness</code></td><td>54</td><td><code>Figure skating</code></td><td>12</td></tr>
+    <tr><td><code>Dance</code></td><td>36</td><td><code>Skating</code></td><td>12</td></tr>
+    <tr><td><code>Taekwondo</code></td><td>31</td><td><code>Basketball</code></td><td>5</td></tr>
+    <tr><td><code>Running</code></td><td>21</td><td><code>Muscular fitness</code></td><td>4</td></tr>
+    <tr><td><code>Wrestling</code></td><td>21</td><td><code>Soccer</code></td><td>3</td></tr>
+    <tr><td><code>Weightlifting</code></td><td>20</td><td><code>Judo</code></td><td>2</td></tr>
+    <tr><td><code>Swimming</code></td><td>17</td><td><code>Surf</code></td><td>2</td></tr>
+    <tr><td><code>Weight training</code></td><td>17</td><td><code>Volleyball</code></td><td>1</td></tr>
+  </table>
+
+  <h3>Problèmes de label dans le vocabulaire sport</h3>
+  <table>
+    <tr><th>Label actuel (sport-hierarchy-clean.ttl)</th><th>Problème</th><th>Correction suggérée</th></tr>
+    <tr>
+      <td><code>"Circus  "</code> <em>(2 espaces en fin de label)</em></td>
+      <td class="warn">Espaces parasites dans <code>skos:prefLabel</code></td>
+      <td><code>"Circus"</code></td>
+    </tr>
+    <tr>
+      <td><code>Canoing</code></td>
+      <td class="warn">Faute d'orthographe (e manquant)</td>
+      <td><code>Canoeing</code></td>
+    </tr>
+    <tr>
+      <td><code>Strenght training</code></td>
+      <td class="warn">Faute d'orthographe (h et g inversés)</td>
+      <td><code>Strength training</code></td>
+    </tr>
+  </table>
+  <p style="color:#636e72;font-size:11px">À corriger dans : <span class="file">pipeline-ontologie/data-csv/Sport-Hierarchy-cleaned.csv</span>, puis régénérer via le pipeline.</p>
+
+  <h3>Requêtes SPARQL — sports</h3>
+  <pre><span style="color:#81ecec"># Nombre total de concepts sport-vocab dans Fuseki</span>
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+SELECT (COUNT(?c) AS ?n) WHERE {
+  ?c a skos:Concept .
+  FILTER(CONTAINS(STR(?c), "sport-vocab"))
+}
+<span style="color:#b2bec3">→ 151</span>
+
+<span style="color:#81ecec"># Sports distincts mobilisés dans les analyses</span>
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+PREFIX iadas: &lt;http://ns.inria.fr/iadas/ontology/&gt;
+SELECT ?sport_label (COUNT(DISTINCT ?a) AS ?n) WHERE {
+  ?a a iadas:Analysis .
+  ?a iadas:hasSport ?sport .
+  ?sport skos:prefLabel ?sport_label
+} GROUP BY ?sport_label ORDER BY DESC(?n)
+<span style="color:#b2bec3">→ 20 sports distincts (Crossfit:68, Bodybuilding:55, Fitness:54…)</span>
+
+<span style="color:#81ecec"># Répartition par type de pratique sportive</span>
+PREFIX iadas: &lt;http://ns.inria.fr/iadas/ontology/&gt;
+SELECT ?type (COUNT(?a) AS ?n) WHERE {
+  ?a a iadas:Analysis .
+  ?a iadas:sportPracticeType ?type
+} GROUP BY ?type ORDER BY DESC(?n)
+<span style="color:#b2bec3">→ Mixed sport:1452 · Individual sport:900 · Team sport:21</span>
+
+<span style="color:#81ecec"># Répartition par sous-catégorie de sport</span>
+PREFIX iadas: &lt;http://ns.inria.fr/iadas/ontology/&gt;
+SELECT ?cat (COUNT(?a) AS ?n) WHERE {
+  ?a a iadas:Analysis .
+  ?a iadas:sportPracticeSubcategory ?cat
+} GROUP BY ?cat ORDER BY DESC(?n)
+<span style="color:#b2bec3">→ Multisport:1570 · Aesthetic:446 · Endurance:117 · Power:111 · Weight class:92…</span></pre>
+</div>
+
+<!-- ===================== SECTION 2 : VARIABLES ===================== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div class="section-title">
+      <h2>Analyse des variables</h2>
+      <div class="sub">617 concepts ACAD-vocab · 616 dans l'Excel · 545 mobilisées dans les analyses</div>
+    </div>
+  </div>
+
+  <h3>Fichiers source et pipeline</h3>
+  <div class="flow">
+    <div class="flow-box">data-csv/Class-Hierarchy-V1.csv<br><span style="color:#636e72;font-size:10px">variables pipeline RML</span></div>
+    <div class="flow-arrow">+</div>
+    <div class="flow-box">skos-acad-enrichment.ttl<br><span style="color:#636e72;font-size:10px">132 concepts enrichissement manuel</span></div>
+    <div class="flow-arrow">→ RML →</div>
+    <div class="flow-box">output/variable-hierarchy-clean.ttl<br><span style="color:#636e72;font-size:10px">617 concepts skos:Concept</span></div>
+    <div class="flow-arrow">→ copie →</div>
+    <div class="flow-box">resultats/variable-hierarchy-clean.ttl<br><span style="color:#636e72;font-size:10px">chargé dans Fuseki</span></div>
+  </div>
+  <div class="flow">
+    <div class="flow-box">Class_Hierarchy_VF_09avr26xlsx.xlsx (feuille "Hierarchy")<br><span style="color:#636e72;font-size:10px">référence Excel — 616 concepts distincts</span></div>
+    <div class="flow-arrow">→ comparaison via →</div>
+    <div class="flow-box">verification_coherence_ontologie_excel.py</div>
+  </div>
+
+  <h3>SKOS (ontologie) vs Excel de référence</h3>
+  <div class="result-box">
+    <div class="metric"><div class="val green">617</div><div class="lbl">Concepts ACAD<br>dans Fuseki (SKOS)</div></div>
+    <div class="metric"><div class="val">616</div><div class="lbl">Concepts dans l'Excel<br>Class_Hierarchy_VF</div></div>
+    <div class="metric"><div class="val green">501</div><div class="lbl">Communs<br>(intersection)</div></div>
+    <div class="metric"><div class="val orange">116</div><div class="lbl">Ontologie seulement<br>(absents de l'Excel)</div></div>
+    <div class="metric"><div class="val orange">115</div><div class="lbl">Excel seulement<br>(absents de l'onto)</div></div>
+  </div>
+
+  <table>
+    <tr><th>Catégorie</th><th>Nombre</th><th>Exemples</th><th>Statut</th></tr>
+    <tr>
+      <td><strong>Communs</strong> — présents des deux côtés</td>
+      <td class="ok">501</td>
+      <td><code>Self-esteem</code>, <code>Body dissatisfaction</code>, <code>Anxiety</code>…</td>
+      <td class="ok">✓ OK</td>
+    </tr>
+    <tr>
+      <td><strong>Ontologie seulement</strong> — dans <span class="file">skos-acad-enrichment.ttl</span> mais absent de l'Excel</td>
+      <td class="warn">116</td>
+      <td><code>Anger</code>, <code>Asceticism</code>, <code>Body image inflexibility</code>…</td>
+      <td class="warn">⚠ Décision requise : ajouter à l'Excel ou confirmer hors-hiérarchie</td>
+    </tr>
+    <tr>
+      <td><strong>Excel seulement</strong> — dans <span class="file">Class_Hierarchy_VF_09avr26xlsx.xlsx</span> mais absent de l'onto</td>
+      <td class="warn">115</td>
+      <td><code>Body self-perception</code>, <code>Sleep</code>, <code>Coach leadership style</code>…</td>
+      <td class="warn">⚠ Décision requise : implémenter dans le pipeline ou retirer de l'Excel</td>
+    </tr>
+    <tr>
+      <td><strong>Quasi-doublons</strong> — même label, URIs différentes</td>
+      <td class="ok">0</td>
+      <td>—</td>
+      <td class="ok">✓ OK — Tâche 3 terminée (était 31 au départ)</td>
+    </tr>
+  </table>
+
+  <h3>Hiérarchie ACAD — 5 concepts racines</h3>
+  <p>Les 617 concepts sont organisés sous 5 concepts racines (sans <code>skos:broader</code>) dans
+  <span class="file">pipeline-ontologie/resultats/variable-hierarchy-clean.ttl</span> :</p>
+  <table>
+    <tr><th>Racine (skos:prefLabel)</th><th>Rôle dans la taxonomie</th></tr>
+    <tr><td><code>DEAB</code></td><td>Dysfunctional Eating and Athletic Behaviors (domaine principal)</td></tr>
+    <tr><td><code>Intrapersonal factor related to DEAB</code></td><td>Facteurs internes (émotions, cognitions, image corporelle…)</td></tr>
+    <tr><td><code>Interpersonal factor related to DEAB</code></td><td>Facteurs relationnels (coach, pairs, famille…)</td></tr>
+    <tr><td><code>Sociocultural factor related to DEAB</code></td><td>Facteurs socioculturels (pression médias, normes sociales…)</td></tr>
+    <tr><td><code>Other behaviors</code></td><td>Comportements associés (addictions, troubles alimentaires connexes…)</td></tr>
+  </table>
+
+  <h3>Variables mobilisées dans les analyses</h3>
+  <div class="result-box">
+    <div class="metric"><div class="val green">545</div><div class="lbl">Variables mobilisées<br>(refersToVariable)</div></div>
+    <div class="metric"><div class="val">617</div><div class="lbl">Total ACAD-vocab<br>dans Fuseki</div></div>
+    <div class="metric"><div class="val orange">72</div><div class="lbl">Jamais mobilisées<br>(hors corpus actuel)</div></div>
+  </div>
+
+  <h3>Top 10 variables — plus fréquentes comme variable indépendante (VI)</h3>
+  <table>
+    <tr><th>Variable (VI)</th><th>Nb utilisations</th><th>Variable (VI)</th><th>Nb utilisations</th></tr>
+    <tr><td><code>Self-esteem</code></td><td>53</td><td><code>Athlete identity</code></td><td>27</td></tr>
+    <tr><td><code>Body dissatisfaction</code></td><td>37</td><td><code>Anxiety</code></td><td>24</td></tr>
+    <tr><td><code>Social physique anxiety</code></td><td>36</td><td><code>Body satisfaction</code></td><td>23</td></tr>
+    <tr><td><code>Depression</code></td><td>33</td><td><code>Pressure from teammates</code></td><td>23</td></tr>
+    <tr><td><code>Drive for muscularity</code></td><td>33</td><td><code>Perfectionism</code></td><td>20</td></tr>
+  </table>
+  <p style="color:#636e72;font-size:11px">Lien RDF : <code>VariableIndependante → refersToVariable → ACAD-vocab/[concept]</code></p>
+
+  <h3>Requêtes SPARQL — variables</h3>
+  <pre><span style="color:#81ecec"># Nombre total de variables ACAD dans le triplestore</span>
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+SELECT (COUNT(?c) AS ?n) WHERE {
+  ?c a skos:Concept .
+  FILTER(CONTAINS(STR(?c), "ACAD-vocab"))
+}
+<span style="color:#b2bec3">→ 617</span>
+
+<span style="color:#81ecec"># Variables mobilisées dans au moins une analyse (VI ou VD)</span>
+PREFIX iadas: &lt;http://ns.inria.fr/iadas/ontology/&gt;
+SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
+  ?v a ?type .
+  FILTER(?type = iadas:VariableIndependante || ?type = iadas:VariableDependante)
+  ?v &lt;http://ns.inria.fr/iadas/ontology/refersToVariable&gt; ?c .
+  FILTER(CONTAINS(STR(?c), "ACAD-vocab"))
+}
+<span style="color:#b2bec3">→ 545</span>
+
+<span style="color:#81ecec"># Concepts racines ACAD (sans skos:broader)</span>
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+SELECT ?label WHERE {
+  ?c a skos:Concept . FILTER(CONTAINS(STR(?c), "ACAD-vocab"))
+  FILTER NOT EXISTS { ?c skos:broader ?p }
+  ?c skos:prefLabel ?label
+}
+<span style="color:#b2bec3">→ 5 racines : DEAB · Intrapersonal · Interpersonal · Sociocultural · Other behaviors</span>
+
+<span style="color:#81ecec"># Top 10 variables les plus utilisées comme VI</span>
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+PREFIX iadas: &lt;http://ns.inria.fr/iadas/ontology/&gt;
+SELECT ?label (COUNT(?v) AS ?n) WHERE {
+  ?v a iadas:VariableIndependante .
+  ?v &lt;http://ns.inria.fr/iadas/ontology/refersToVariable&gt; ?c .
+  ?c skos:prefLabel ?label
+} GROUP BY ?label ORDER BY DESC(?n) LIMIT 10
+<span style="color:#b2bec3">→ Self-esteem:53 · Body dissatisfaction:37 · Social physique anxiety:36…</span>
+
+<span style="color:#81ecec"># Quasi-doublons (labels identiques, URIs différentes) — doit retourner 0</span>
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+SELECT ?label (COUNT(?c) AS ?n) WHERE {
+  ?c a skos:Concept . FILTER(CONTAINS(STR(?c), "ACAD-vocab"))
+  ?c skos:prefLabel ?label
+} GROUP BY ?label HAVING (COUNT(?c) &gt; 1)
+<span style="color:#b2bec3">→ 0 résultats ✓</span></pre>
+</div>
+
+<!-- ===================== SECTION 3 : GRAND TABLEAU ===================== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div class="section-title">
+      <h2>Grand tableau récapitulatif</h2>
+      <div class="sub">Tous les chiffres clés avec statut — OK / Problème / Décision requise</div>
+    </div>
+  </div>
+
+  <table>
+    <tr>
+      <th style="width:22%">Élément</th>
+      <th style="width:28%">Fichier source</th>
+      <th style="width:18%">SKOS / Ontologie</th>
+      <th style="width:14%">Données (Fuseki)</th>
+      <th style="width:18%">Statut</th>
+    </tr>
+
+    <!-- ANALYSES -->
+    <tr style="background:#eaf6f6">
+      <td colspan="5" style="font-weight:700;color:var(--primary);padding:10px 12px;font-size:12px;">
+        Analyses
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Total analyses</strong></td>
+      <td><span class="file">IA-DAS-Data.csv</span></td>
+      <td><span class="file">ia-das-ontology-clean.ttl</span></td>
+      <td class="ok">2 373</td>
+      <td><span class="badge badge-ok">✓ OK</span></td>
+    </tr>
+    <tr>
+      <td><strong>Analyses avec sport lié</strong></td>
+      <td>col. <em>Sport_name</em></td>
+      <td><code>hasSport</code></td>
+      <td class="ok">2 373 / 2 373</td>
+      <td><span class="badge badge-ok">✓ OK</span></td>
+    </tr>
+    <tr>
+      <td><strong>Analyses — un sport</strong></td>
+      <td>col. <em>Number of sport studied</em></td>
+      <td>—</td>
+      <td>645 (27 %)</td>
+      <td><span class="badge badge-ok">✓ OK</span></td>
+    </tr>
+    <tr>
+      <td><strong>Analyses — plusieurs sports</strong></td>
+      <td>col. <em>Number of sport studied</em></td>
+      <td>—</td>
+      <td>1 728 (73 %)</td>
+      <td><span class="badge badge-ok">✓ OK</span></td>
+    </tr>
+
+    <!-- SPORTS -->
+    <tr style="background:#eaf6f6">
+      <td colspan="5" style="font-weight:700;color:var(--primary);padding:10px 12px;font-size:12px;">
+        Sports
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Concepts sport-vocab</strong></td>
+      <td><span class="file">Sport-Hierarchy-cleaned.csv</span> (160 feuilles)</td>
+      <td><span class="file">sport-hierarchy-simple-clean.ttl</span><br><strong>151</strong> concepts</td>
+      <td>—</td>
+      <td><span class="badge badge-warn">⚠ CSV=160, SKOS=151</span></td>
+    </tr>
+    <tr>
+      <td><strong>Sports mobilisés (distincts)</strong></td>
+      <td>col. <em>Sport_name</em></td>
+      <td><code>hasSport</code></td>
+      <td><strong>20</strong> distincts / 151</td>
+      <td><span class="badge badge-ok">✓ OK</span></td>
+    </tr>
+    <tr>
+      <td><strong>Catégories sport</strong></td>
+      <td><span class="file">Sport-Hierarchy-cleaned.csv</span> Cl. 1</td>
+      <td><span class="file">sport-category.ttl</span><br><strong>9</strong> catégories</td>
+      <td>9 valeurs distinctes</td>
+      <td><span class="badge badge-ok">✓ OK</span></td>
+    </tr>
+    <tr>
+      <td><strong>"Multisport" dans les données</strong></td>
+      <td>col. <em>Subcategory of sport</em></td>
+      <td>Absent de <span class="file">sport-category.ttl</span></td>
+      <td>1 570 analyses</td>
+      <td><span class="badge badge-warn">⚠ Pas de concept SKOS</span></td>
+    </tr>
+    <tr>
+      <td><strong>Type "Mixed sport"</strong></td>
+      <td>col. <em>Type of sport practice</em></td>
+      <td>—</td>
+      <td><strong>1 452</strong> (61 %)</td>
+      <td><span class="badge badge-err">⚠ Décision encadrantes requise</span></td>
+    </tr>
+    <tr>
+      <td><strong>Typos vocab sport</strong></td>
+      <td><span class="file">Sport-Hierarchy-cleaned.csv</span></td>
+      <td><code>Circus  </code> · <code>Canoing</code> · <code>Strenght training</code></td>
+      <td>—</td>
+      <td><span class="badge badge-warn">⚠ 3 labels à corriger</span></td>
+    </tr>
+
+    <!-- VARIABLES -->
+    <tr style="background:#eaf6f6">
+      <td colspan="5" style="font-weight:700;color:var(--primary);padding:10px 12px;font-size:12px;">
+        Variables (ACAD-vocab)
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Variables dans l'ontologie</strong></td>
+      <td><span class="file">Class-Hierarchy-V1.csv</span> +<br><span class="file">skos-acad-enrichment.ttl</span></td>
+      <td><span class="file">variable-hierarchy-clean.ttl</span><br><strong>617</strong> concepts</td>
+      <td>—</td>
+      <td><span class="badge badge-ok">✓ OK</span></td>
+    </tr>
+    <tr>
+      <td><strong>Variables dans l'Excel</strong></td>
+      <td><span class="file">Class_Hierarchy_VF_09avr26xlsx.xlsx</span></td>
+      <td><strong>616</strong> concepts distincts</td>
+      <td>—</td>
+      <td><span class="badge badge-ok">✓ OK (écart de 1)</span></td>
+    </tr>
+    <tr>
+      <td><strong>Intersection onto ∩ Excel</strong></td>
+      <td>—</td>
+      <td>—</td>
+      <td><strong>501</strong> communs</td>
+      <td><span class="badge badge-ok">✓ OK</span></td>
+    </tr>
+    <tr>
+      <td><strong>Ontologie seulement</strong></td>
+      <td><span class="file">skos-acad-enrichment.ttl</span></td>
+      <td><strong>116</strong> concepts</td>
+      <td>—</td>
+      <td><span class="badge badge-warn">⚠ Décision encadrantes</span></td>
+    </tr>
+    <tr>
+      <td><strong>Excel seulement</strong></td>
+      <td><span class="file">Class_Hierarchy_VF_09avr26xlsx.xlsx</span></td>
+      <td>Absent de l'onto</td>
+      <td><strong>115</strong> labels</td>
+      <td><span class="badge badge-warn">⚠ Décision encadrantes</span></td>
+    </tr>
+    <tr>
+      <td><strong>Quasi-doublons</strong></td>
+      <td>—</td>
+      <td><strong>0</strong></td>
+      <td>—</td>
+      <td><span class="badge badge-ok">✓ OK — Tâche 3 finie</span></td>
+    </tr>
+    <tr>
+      <td><strong>Variables mobilisées</strong></td>
+      <td><span class="file">IA-DAS-Data.csv</span></td>
+      <td><code>refersToVariable</code></td>
+      <td><strong>545</strong> / 617 (88 %)</td>
+      <td><span class="badge badge-ok">✓ OK</span></td>
+    </tr>
+    <tr>
+      <td><strong>Variables jamais mobilisées</strong></td>
+      <td>—</td>
+      <td>—</td>
+      <td><strong>72</strong> variables</td>
+      <td><span class="badge badge-info">ℹ Hors corpus actuel</span></td>
+    </tr>
+
+    <!-- QUALITE -->
+    <tr style="background:#eaf6f6">
+      <td colspan="5" style="font-weight:700;color:var(--primary);padding:10px 12px;font-size:12px;">
+        Qualité — labels et types RDF
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Corrections labels appliquées</strong></td>
+      <td>—</td>
+      <td>60 corrections (7 lots)</td>
+      <td>—</td>
+      <td><span class="badge badge-ok">✓ OK</span></td>
+    </tr>
+    <tr>
+      <td><strong>Type RDF des concepts</strong></td>
+      <td>—</td>
+      <td><code>skos:Concept</code> uniquement<br>(0 <code>skos:Class</code>)</td>
+      <td>—</td>
+      <td><span class="badge badge-ok">✓ OK — vérifié output/ et resultats/</span></td>
+    </tr>
+  </table>
+
+  <div class="callout callout-ok" style="margin-top:20px">
+    <strong>Résumé</strong>
+    Les éléments techniques principaux sont cohérents : 2373 analyses, 617 variables ACAD, 151 sports,
+    9 catégories, 0 quasi-doublon, 0 <code>skos:Class</code>.
+    Les deux points ouverts nécessitent une décision des encadrantes :
+    (1) 116 variables dans l'ontologie absentes de l'Excel / 115 dans l'Excel absentes de l'ontologie ;
+    (2) le problème "Mixed sport" (1452 analyses, 61 %).
+  </div>
+</div>
+
+<hr>
+<p style="text-align:center;color:#b2bec3;font-size:11px;">
+  Endpoint Fuseki · <code>localhost:3030/ds</code> · TDB2 reconstruit le 16/06/2026 ·
+  Vérification : <span class="file">pipeline-ontologie/verification_coherence_ontologie_excel.py</span>
+</p>
+
+</body>
+</html>
