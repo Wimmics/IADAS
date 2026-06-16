@@ -194,10 +194,10 @@ iadas-vocab:Current_body_weight-ideal_body_weight a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Depressed/sad" .
 
-iadas-vocab:Depression_anxiety_and_stress a skos:Concept ;
+iadas-vocab:Depression_Anxiety_and_Stress a skos:Concept ;
     skos:broader iadas-vocab:Psychological_symptoms ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Depression anxiety and stress" .
+    skos:prefLabel "Depression Anxiety and Stress" .
 
 iadas-vocab:Diet a skos:Concept ;
     skos:broader iadas-vocab:Eating_behavior ;
@@ -539,10 +539,10 @@ iadas-vocab:Performance a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Performance" .
 
-iadas-vocab:Performance_cognitive_anxiety a skos:Concept ;
+iadas-vocab:Performance_Cognitive_Anxiety a skos:Concept ;
     skos:broader iadas-vocab:Fear_and_anxiety ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Performance cognitive anxiety" .
+    skos:prefLabel "Performance Cognitive Anxiety" .
 
 iadas-vocab:Physical_competence_evaluation a skos:Concept ;
     skos:broader iadas-vocab:Perceived_competence ;
@@ -563,11 +563,6 @@ iadas-vocab:Physical_self_concept_of_Health a skos:Concept ;
     skos:broader iadas-vocab:Physical_self-esteem ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Physical self concept of Health" .
-
-iadas-vocab:Physical_self_concept_of_health a skos:Concept ;
-    skos:broader iadas-vocab:Physical_self-esteem ;
-    skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Physical self concept of health" .
 
 iadas-vocab:Physical_self-worth a skos:Concept ;
     skos:broader iadas-vocab:Physical_self-esteem ;

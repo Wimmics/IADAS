@@ -42,7 +42,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Alexithymia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Alexithymia> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Emotions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Alexithymia> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Alexithymia> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20Describing%20Feelings> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Alexithymia> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20describing%20feelings> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Alexithymia> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20identifying%20feelings> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Alexithymia> <http://www.w3.org/2004/02/skos/core#prefLabel> "Alexithymia" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Amotivation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -113,7 +113,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Athlete%20identity> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20identity> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Athlete%20identity> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Injury%20tolerance> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Athlete%20identity> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Negative%20affectivity%20identity> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Athlete%20identity> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20identity> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Athlete%20identity> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-identity> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Athlete%20identity> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Social%20identity> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Athlete%20identity> <http://www.w3.org/2004/02/skos/core#prefLabel> "Athlete identity" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Athlete%20satisfaction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -149,14 +149,14 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Attachment%20avoidance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Attachment%20avoidance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Attachment%20avoidance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Attachment avoidance" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20%20Unhealthy%20weight%20loss%20behavior> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20%20Unhealthy%20weight%20loss%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20%20Unhealthy%20weight%20loss%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20%20Unhealthy%20weight%20loss%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "Attitude towards  Unhealthy weight loss behavior" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20Unhealthy%20exercising%20behavior> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20Unhealthy%20exercising%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20Unhealthy%20exercising%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20Unhealthy%20exercising%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "Attitude towards Unhealthy exercising behavior" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20unhealthy%20exercising%20behavior> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20unhealthy%20exercising%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20unhealthy%20exercising%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20unhealthy%20exercising%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "Attitude towards unhealthy exercising behavior" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20unhealthy%20weight%20loss%20behavior> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20unhealthy%20weight%20loss%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20unhealthy%20weight%20loss%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20unhealthy%20weight%20loss%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "Attitude towards unhealthy weight loss behavior" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Personality%20traits> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -357,7 +357,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/2004/02/skos/core#altLabel> "Body satisfaction for body factors" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/2004/02/skos/core#altLabel> "General body image dissatisfaction" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20esteem> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20appreciation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20as%20a%20tool> .
@@ -485,11 +485,6 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20athlete%20relationship%20for%20complementarity> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20athlete%20relationship%20for%20complementarity> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20athlete%20relationship%20for%20complementarity> <http://www.w3.org/2004/02/skos/core#prefLabel> "Coach athlete relationship for complementarity" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Coach%20athlete-relationship> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Coach%20athlete-relationship> <http://www.w3.org/2004/02/skos/core#altLabel> "Coach relatedness" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Coach%20athlete-relationship> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Coach%20athlete-relationship> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Coach%20athlete-relationship> <http://www.w3.org/2004/02/skos/core#prefLabel> "Coach athlete-relationship" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20conflict> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20conflict> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Conflicted%20and%20Negative%20Relationships> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20conflict> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -527,6 +522,11 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s%20pressure%20in%20relation%20to%20nutrition> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20Sport%20pressure%20related%20to%20significant%20others> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s%20pressure%20in%20relation%20to%20nutrition> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s%20pressure%20in%20relation%20to%20nutrition> <http://www.w3.org/2004/02/skos/core#prefLabel> "Coach's pressure in relation to nutrition" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Coach-athlete%20relationship> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Coach-athlete%20relationship> <http://www.w3.org/2004/02/skos/core#altLabel> "Coach relatedness" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Coach-athlete%20relationship> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Coach-athlete%20relationship> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Coach-athlete%20relationship> <http://www.w3.org/2004/02/skos/core#prefLabel> "Coach-athlete relationship" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Cognitive%20appraisal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Cognitive%20appraisal> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Fear%20and%20anxiety> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Cognitive%20appraisal> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -598,7 +598,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Confidence%20and%20trust> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Personality> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Confidence%20and%20trust> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Confidence%20and%20trust> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Sport%20confidence> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Confidence%20and%20trust> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Sport%20specific%20self%20confidence> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Confidence%20and%20trust> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Sport%20specific%20self-confidence> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Confidence%20and%20trust> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Team%20trust> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Confidence%20and%20trust> <http://www.w3.org/2004/02/skos/core#prefLabel> "Confidence and trust" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Confidence%2Fachievement%20motivation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -667,10 +667,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Criticism%20received%20by%20coach> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Conflicted%20and%20Negative%20Relationships> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Criticism%20received%20by%20coach> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Criticism%20received%20by%20coach> <http://www.w3.org/2004/02/skos/core#prefLabel> "Criticism received by coach" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Current%20body%20weight%20-%20ideal%20body%20weight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Current%20body%20weight%20-%20ideal%20body%20weight> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Current%20body%20weight%20-%20ideal%20body%20weight> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Current%20body%20weight%20-%20ideal%20body%20weight> <http://www.w3.org/2004/02/skos/core#prefLabel> "Current body weight - ideal body weight" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Current%20body%20weight-ideal%20body%20weight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Current%20body%20weight-ideal%20body%20weight> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Current%20body%20weight-ideal%20body%20weight> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Current%20body%20weight-ideal%20body%20weight> <http://www.w3.org/2004/02/skos/core#prefLabel> "Current body weight-ideal body weight" .
 <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20checking%20and%20avoidance> .
@@ -763,10 +763,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Difficulties%20engaging%20in%20goal-directed%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Emotion%20regulation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Difficulties%20engaging%20in%20goal-directed%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Difficulties%20engaging%20in%20goal-directed%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "Difficulties engaging in goal-directed behavior" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20Describing%20Feelings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20Describing%20Feelings> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Alexithymia> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20Describing%20Feelings> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20Describing%20Feelings> <http://www.w3.org/2004/02/skos/core#prefLabel> "Difficulty Describing Feelings" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20describing%20feelings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20describing%20feelings> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Alexithymia> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20describing%20feelings> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20describing%20feelings> <http://www.w3.org/2004/02/skos/core#prefLabel> "Difficulty describing feelings" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20identifying%20feelings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20identifying%20feelings> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Alexithymia> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Difficulty%20identifying%20feelings> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -803,10 +803,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Motivations%20and%20Goals%20for%20Exercise-Related%20Behaviors> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity> <http://www.w3.org/2004/02/skos/core#prefLabel> "Drive for muscularity" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity%20oriented%20behavior> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity%20oriented%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity%20oriented%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity%20oriented%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "Drive for muscularity oriented behavior" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity-oriented%20behavior> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity-oriented%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity-oriented%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity-oriented%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "Drive for muscularity-oriented behavior" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20size> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20size> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -827,10 +827,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20non-self%20determined%20motivational> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20non-self%20determined%20motivational> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20non-self%20determined%20motivational> <http://www.w3.org/2004/02/skos/core#prefLabel> "Eating behavior non-self determined motivational" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20self%20determined%20motivational> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20self%20determined%20motivational> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20self%20determined%20motivational> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20self%20determined%20motivational> <http://www.w3.org/2004/02/skos/core#prefLabel> "Eating behavior self determined motivational" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20self-determined%20motivational> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20self-determined%20motivational> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20self-determined%20motivational> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20self-determined%20motivational> <http://www.w3.org/2004/02/skos/core#prefLabel> "Eating behavior self-determined motivational" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20concern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20concern> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20weight%20related%20concerns> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20concern> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -1001,14 +1001,14 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Amotivation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Assimilation> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20%20Unhealthy%20weight%20loss%20behavior> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20Unhealthy%20exercising%20behavior> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20unhealthy%20exercising%20behavior> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Attitude%20towards%20unhealthy%20weight%20loss%20behavior> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Autonomous%20motivation%20for%20sport> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20related%20motive> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Commitment%20to%20exercise> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Controlled%20motivation%20for%20sport> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20leanness%20for%20performance> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity%20oriented%20behavior> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20muscularity-oriented%20behavior> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Drive%20for%20size> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20dependence%20continuance> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20dependence%20time> .
@@ -1029,7 +1029,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Obligatory%20exercise> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20exercise> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Reduction%20in%20other%20activities> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20determination%20for%20sport> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-determination%20for%20sport> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20Control> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20control%20exercise> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20management%20motivation%20for%20exercise> .
@@ -1260,10 +1260,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Global%20physical%20self> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Global%20physical%20self> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Global%20physical%20self> <http://www.w3.org/2004/02/skos/core#prefLabel> "Global physical self" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Global%20self%20worth%20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Global%20self%20worth%20> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Global%20self%20worth%20> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Global%20self%20worth%20> <http://www.w3.org/2004/02/skos/core#prefLabel> "Global self worth " .
+<http://ns.inria.fr/iadas/ACAD-vocab/Global%20self-worth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Global%20self-worth> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Global%20self-worth> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Global%20self-worth> <http://www.w3.org/2004/02/skos/core#prefLabel> "Global self-worth" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Global%20sport-state%20self-esteem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Global%20sport-state%20self-esteem> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Global%20sport-state%20self-esteem> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -1344,13 +1344,13 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Appearance%20orientation> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Current%20body%20weight%20-%20ideal%20body%20weight> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Current%20body%20weight-ideal%20body%20weight> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Desire%20to%20be%20leaner%20to%20improve%20sport%20performance> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Ideal%20physique%20perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Intention%20to%20gain%20muscle%20mass> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Intention%20to%20gain%20muscle%20mass%2Fto%20lean%20body%20mass> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20attitudes> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20body%20image> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20attitudes> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20body%20image> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Teammate%20body%20comparison> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> <http://www.w3.org/2004/02/skos/core#prefLabel> "Impetus of bodily expectations" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Importance%20of%20weight%20and%20appearance%20to%20family%20and%20friends> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -1486,9 +1486,8 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20social%20support> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Personality> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Psychological%20symptoms> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20efficacy> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20esteem> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-efficacy> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> <http://www.w3.org/2004/02/skos/core#prefLabel> "Intrapersonal factor related to DEAB" .
@@ -1515,8 +1514,8 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Isolation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Mindfulness> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Over%20identification> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20compassion> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20judgment> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-compassion> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-judgment> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-kindness> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> <http://www.w3.org/2004/02/skos/core#prefLabel> "Kindness and compassion" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Knowledge%20and%20perceived%20benefits%20and%20risks> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -1639,7 +1638,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Achievement%20goals> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Basic%20needs%20frustration%20in%20sport> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20non-self%20determined%20motivational> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20self%20determined%20motivational> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20behavior%20self-determined%20motivational> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Ego%20orientation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> .
@@ -1713,9 +1712,9 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Other%20behaviors> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Bodybuilding%20dependence> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20behaviors> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20body%20image> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20sport> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20behaviors> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20body%20image> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscularity and Sports Practices" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20concern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20concern> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20weight%20related%20concerns> .
@@ -1729,19 +1728,6 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20evaluation> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20evaluation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20evaluation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscularity evaluation" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20attitudes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20attitudes> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20attitudes> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20attitudes> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscularity oriented attitudes" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20behaviors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20behaviors> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20behaviors> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20behaviors> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscularity oriented behaviors" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20body%20image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20body%20image> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20body%20image> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20body%20image> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20body%20image> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscularity oriented body image" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20disordered%20eating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20disordered%20eating> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20disordered%20eating> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -1754,6 +1740,19 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20sport> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20sport> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20sport> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscularity sport" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20attitudes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20attitudes> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20attitudes> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20attitudes> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscularity-oriented attitudes" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20behaviors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20behaviors> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20behaviors> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20behaviors> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscularity-oriented behaviors" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20body%20image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20body%20image> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Impetus%20of%20bodily%20expectations> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20body%20image> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20body%20image> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity-oriented%20body%20image> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscularity-oriented body image" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Narcissism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Narcissism> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Personality%20traits> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Narcissism> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -1933,7 +1932,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20autonomy> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20autonomy> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perceived autonomy" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20behavioral%20control%20related%20to%20gain%20muscle%20mass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20behavioral%20control%20related%20to%20gain%20muscle%20mass> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20efficacy> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20behavioral%20control%20related%20to%20gain%20muscle%20mass> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self-efficacy> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20behavioral%20control%20related%20to%20gain%20muscle%20mass> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20behavioral%20control%20related%20to%20gain%20muscle%20mass> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perceived behavioral control related to gain muscle mass" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20benefits%20of%20gaining%20muscle%20mass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -1973,10 +1972,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20physical%20appearance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20physical%20appearance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20physical%20appearance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perceived physical appearance" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressure%20for%20a%20single%20%22ideal%22%20body%20in%20sport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressure%20for%20a%20single%20%22ideal%22%20body%20in%20sport> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressure%20for%20a%20single%20%22ideal%22%20body%20in%20sport> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressure%20for%20a%20single%20%22ideal%22%20body%20in%20sport> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perceived pressure for a single \"ideal\" body in sport" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressure%20for%20a%20single%20ideal%20body%20in%20sport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressure%20for%20a%20single%20ideal%20body%20in%20sport> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressure%20for%20a%20single%20ideal%20body%20in%20sport> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressure%20for%20a%20single%20ideal%20body%20in%20sport> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perceived pressure for a single ideal body in sport" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressures%20from%20family> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressures%20from%20family> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressures%20from%20family> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -2025,15 +2024,11 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20weight%20related%20coach%20pressure> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20weight%20related%20coach%20pressure> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20weight%20related%20coach%20pressure> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perceived weight related coach pressure" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20Health%20evaluation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20Health%20evaluation> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20Health%20evaluation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20Health%20evaluation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perception of Health evaluation" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/General%20health> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20Health%20evaluation> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20evaluation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self%20concept%20of%20Health> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20well-being> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Psychological%20well-being> .
@@ -2041,6 +2036,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Psychological%20well-being%20environmental%20mastery> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Well-being> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perception of health and well-being" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20evaluation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20evaluation> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20evaluation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20evaluation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perception of health evaluation" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20one%27s%20own%20body%20and%20self> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20one%27s%20own%20body%20and%20self> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20one%27s%20own%20body%20and%20self> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -2088,8 +2087,8 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Performance%20perfectionism> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Personal%20standards> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20perfectionism> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20critical%20perfectionism> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20evaluative%20perfectionism> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-critical%20perfectionism> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self-evaluative%20perfectionism> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Social%20oriented%20perfectionism> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Striving> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Striving%20for%20perfection> .
@@ -2184,6 +2183,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Phobic%20anxiety> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Fear%20and%20anxiety> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Phobic%20anxiety> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Phobic%20anxiety> <http://www.w3.org/2004/02/skos/core#prefLabel> "Phobic anxiety" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20Self-Worth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20Self-Worth> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20Self-Worth> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20Self-Worth> <http://www.w3.org/2004/02/skos/core#prefLabel> "Physical Self-Worth" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20activity%20and%20sport%20anxiety> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20activity%20and%20sport%20anxiety> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Fear%20and%20anxiety> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20activity%20and%20sport%20anxiety> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -2204,10 +2207,6 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self%20concept%20of%20Health> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Perception%20of%20health%20and%20well-being> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self%20concept%20of%20Health> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self%20concept%20of%20Health> <http://www.w3.org/2004/02/skos/core#prefLabel> "Physical self concept of Health" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self%20worth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self%20worth> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self%20worth> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self%20worth> <http://www.w3.org/2004/02/skos/core#prefLabel> "Physical self worth" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20ability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20ability> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-concept%20related%20to%20ability> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -2226,8 +2225,8 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Athletic%20self%20appraisal> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Global%20physical%20self> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Global%20sport-state%20self-esteem> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20Self-Worth> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20fatigue> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self%20worth> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20strength> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Sport%20competence> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> <http://www.w3.org/2004/02/skos/core#prefLabel> "Physical self-esteem" .
@@ -2268,10 +2267,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20athlete%20relationship%20for%20closeness> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20athlete%20relationship%20for%20commitment> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20athlete%20relationship%20for%20complementarity> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20athlete-relationship> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20relationship%20quality> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20social%20support> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Coach%20support> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Coach-athlete%20relationship> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Depth%20of%20teammate%20relationships> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Family%20environment> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20relationships%20with%20significant%20others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Family%20of%20origin> .
@@ -2493,47 +2492,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Satisfied%20with%20overall%20body> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Satisfaction%20with%20body%20and%20appearance> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Satisfied%20with%20overall%20body> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Satisfied%20with%20overall%20body> <http://www.w3.org/2004/02/skos/core#prefLabel> "Satisfied with overall body" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20compassion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20compassion> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20compassion> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20compassion> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self compassion" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20consciousness%20of%20weight%20and%20appearance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20consciousness%20of%20weight%20and%20appearance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20consciousness%20of%20weight%20and%20appearance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20consciousness%20of%20weight%20and%20appearance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self consciousness of weight and appearance" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20critical%20perfectionism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20critical%20perfectionism> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20critical%20perfectionism> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20critical%20perfectionism> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self critical perfectionism" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20determination%20for%20sport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20determination%20for%20sport> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20determination%20for%20sport> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20determination%20for%20sport> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self determination for sport" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20efficacy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20efficacy> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20efficacy> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20efficacy> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20behavioral%20control%20related%20to%20gain%20muscle%20mass> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20efficacy> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self efficacy" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20esteem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20esteem> <http://www.w3.org/2004/02/skos/core#altLabel> "Body satisfaction for body factors" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20esteem> <http://www.w3.org/2004/02/skos/core#altLabel> "General body image dissatisfaction" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20esteem> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20esteem> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20influences%20esteem> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20esteem> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self esteem" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20evaluative%20perfectionism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20evaluative%20perfectionism> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20evaluative%20perfectionism> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20evaluative%20perfectionism> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self evaluative perfectionism" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20identity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20identity> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Athlete%20identity> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20identity> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20identity> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self identity" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20judgment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20judgment> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20judgment> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self%20judgment> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self judgment" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -2559,21 +2521,54 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-classified%20weight> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-classified%20weight> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-classified%20weight> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-classified weight" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-compassion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-compassion> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-compassion> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-compassion> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-compassion" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-critical%20perfectionism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-critical%20perfectionism> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-critical%20perfectionism> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-critical%20perfectionism> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-critical perfectionism" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-criticism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-criticism> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20perception> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-criticism> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-criticism> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-criticism" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-determination%20for%20sport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-determination%20for%20sport> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20motivation> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-determination%20for%20sport> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-determination%20for%20sport> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-determination for sport" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-efficacy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-efficacy> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-efficacy> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-efficacy> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20behavioral%20control%20related%20to%20gain%20muscle%20mass> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-efficacy> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-efficacy" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> <http://www.w3.org/2004/02/skos/core#altLabel> "Body satisfaction for body factors" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> <http://www.w3.org/2004/02/skos/core#altLabel> "General body image dissatisfaction" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Global%20self%20worth%20> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20self-esteem> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Global%20self-worth> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20self-esteem> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20presentation%20processes> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20influences%20esteem> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-esteem" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-evaluative%20perfectionism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-evaluative%20perfectionism> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-evaluative%20perfectionism> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-evaluative%20perfectionism> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-evaluative perfectionism" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-harm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-harm> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Violence> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-harm> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-harm> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-harm" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-identity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-identity> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Athlete%20identity> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-identity> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-identity> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-identity" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-judgment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-judgment> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-judgment> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-judgment> <http://www.w3.org/2004/02/skos/core#prefLabel> "Self-judgment" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-kindness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-kindness> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Kindness%20and%20compassion> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Self-kindness> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -2694,7 +2689,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20appearance%20based%20pressures%20from%20the%20media> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20coach%20pressure> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20parental%20pressure> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressure%20for%20a%20single%20%22ideal%22%20body%20in%20sport> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressure%20for%20a%20single%20ideal%20body%20in%20sport> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressures%20from%20family> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressures%20from%20media> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20individual> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Perceived%20pressures%20from%20peer> .
@@ -2767,12 +2762,12 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20factor%20related%20to%20DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance%20-%20comparison> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance-comparison> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sociocultural attitudes toward appearance" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance%20-%20comparison> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance%20-%20comparison> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance%20-%20comparison> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance%20-%20comparison> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sociocultural attitudes toward appearance - comparison" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance-comparison> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance-comparison> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance-comparison> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance-comparison> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sociocultural attitudes toward appearance-comparison" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance-internalization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance-internalization> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Norms%20internalization> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural%20attitudes%20toward%20appearance-internalization> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -2832,10 +2827,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Sport%20related%20weight%20pressures> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20Sport%20pressure%20related%20to%20significant%20others> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sport%20related%20weight%20pressures> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sport%20related%20weight%20pressures> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sport related weight pressures" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Sport%20specific%20self%20confidence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Sport%20specific%20self%20confidence> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Confidence%20and%20trust> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Sport%20specific%20self%20confidence> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Sport%20specific%20self%20confidence> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sport specific self confidence" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Sport%20specific%20self-confidence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Sport%20specific%20self-confidence> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Confidence%20and%20trust> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Sport%20specific%20self-confidence> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Sport%20specific%20self-confidence> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sport specific self-confidence" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sport%20thin-fat-others> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sport%20thin-fat-others> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20Sport%20pressure%20related%20to%20significant%20others> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sport%20thin-fat-others> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -3098,7 +3093,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20control%20exercise> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20control%20exercise> <http://www.w3.org/2004/02/skos/core#prefLabel> "Weight control exercise" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20influences%20esteem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Weight%20influences%20esteem> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self%20esteem> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Weight%20influences%20esteem> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Self-esteem> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20influences%20esteem> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20influences%20esteem> <http://www.w3.org/2004/02/skos/core#prefLabel> "Weight influences esteem" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20management%20motivation%20for%20exercise> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
