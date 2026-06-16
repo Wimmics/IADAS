@@ -39,10 +39,10 @@ iadas-vocab:Appearance_pressure_from_teammates a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Appearance pressure from teammates" .
 
-iadas-vocab:Athletes_perceptions_of_power_balances_with_their_coach_training_staff a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Athletes_perceptions_of_power_balances_with_their_coach%2Ftraining_staff> a skos:Concept ;
     skos:broader iadas-vocab:Authority_and_Leadership_Styles ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Athletes perceptions of power balances with their coach training staff" .
+    skos:prefLabel "Athletes perceptions of power balances with their coach/training staff" .
 
 iadas-vocab:Attention_deficit_hyperactivity_disorders a skos:Concept ;
     skos:broader iadas-vocab:Psychological_symptoms ;
@@ -174,25 +174,25 @@ iadas-vocab:Concentration a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Concentration" .
 
-iadas-vocab:Confidence_achievement_motivation a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Confidence%2Fachievement_motivation> a skos:Concept ;
     skos:broader iadas-vocab:Exercise_Motivation ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Confidence achievement motivation" .
+    skos:prefLabel "Confidence/achievement motivation" .
 
 iadas-vocab:Current_body_weight-ideal_body_weight a skos:Concept ;
     skos:broader iadas-vocab:Body_dissatisfaction ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Current body weight-ideal body weight" .
 
-iadas-vocab:Degree_of_muscle_dysmorphia_bigorexia_nervosa a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Degree_of_muscle_dysmorphia%2Fbigorexia_nervosa> a skos:Concept ;
     skos:broader iadas-vocab:Muscle_Dysmorphia ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Degree of muscle dysmorphia bigorexia nervosa" .
+    skos:prefLabel "Degree of muscle dysmorphia/bigorexia nervosa" .
 
-iadas-vocab:Depressed_sad a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Depressed%2Fsad> a skos:Concept ;
     skos:broader iadas-vocab:Emotional_states ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Depressed sad" .
+    skos:prefLabel "Depressed/sad" .
 
 iadas-vocab:Depression_anxiety_and_stress a skos:Concept ;
     skos:broader iadas-vocab:Psychological_symptoms ;
@@ -219,10 +219,10 @@ iadas-vocab:Difficulty_describing_feelings a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Difficulty describing feelings" .
 
-iadas-vocab:Discouragement_sabotage_from_friends_to_eat_healthy a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Discouragement%2Fsabotage_from_friends_to_eat_healthy> a skos:Concept ;
     skos:broader iadas-vocab:Advice_and_Normative_Influences ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Discouragement sabotage from friends to eat healthy" .
+    skos:prefLabel "Discouragement/sabotage from friends to eat healthy" .
 
 iadas-vocab:Disordered_eating_attitudes a skos:Concept ;
     skos:broader iadas-vocab:Disturbed_eating_attitudes_and_behaviors ;
@@ -294,10 +294,10 @@ iadas-vocab:Exercise_for_social a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Exercise for social" .
 
-iadas-vocab:Exercising_for_health_fitness a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Exercising_for_health%2Ffitness> a skos:Concept ;
     skos:broader iadas-vocab:Exercise_Motivation ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Exercising for health fitness" .
+    skos:prefLabel "Exercising for health/fitness" .
 
 iadas-vocab:External_ingestion a skos:Concept ;
     skos:broader iadas-vocab:External_eating_behavior ;
@@ -349,10 +349,10 @@ iadas-vocab:Global_self-worth a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Global self-worth" .
 
-iadas-vocab:Guilt_shame a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Guilt%2Fshame> a skos:Concept ;
     skos:broader iadas-vocab:Emotional_states ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Guilt shame" .
+    skos:prefLabel "Guilt/shame" .
 
 iadas-vocab:Hated_self a skos:Concept ;
     skos:broader iadas-vocab:Emotional_states ;
@@ -384,20 +384,20 @@ iadas-vocab:Insensitivity_to_athletes_well-being a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Insensitivity to athletes well-being" .
 
-iadas-vocab:Intention_to_gain_muscle_mass_to_lean_body_mass a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Intention_to_gain_muscle_mass%2Fto_lean_body_mass> a skos:Concept ;
     skos:broader iadas-vocab:Muscularity_and_Sports_Practices ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Intention to gain muscle mass to lean body mass" .
+    skos:prefLabel "Intention to gain muscle mass/to lean body mass" .
 
-iadas-vocab:Internalization_of_muscular_athletic a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Internalization_of_muscular%2Fathletic> a skos:Concept ;
     skos:broader iadas-vocab:Norms_internalization ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Internalization of muscular athletic" .
+    skos:prefLabel "Internalization of muscular/athletic" .
 
-iadas-vocab:Internalization_of_thin_low_body_fat a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Internalization_of_thin%2Flow_body_fat> a skos:Concept ;
     skos:broader iadas-vocab:Norms_internalization ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Internalization of thin low body fat" .
+    skos:prefLabel "Internalization of thin/low body fat" .
 
 iadas-vocab:Internet_addiction a skos:Concept ;
     skos:broader iadas-vocab:Compulsive_and_behavioral_addictions ;
@@ -434,15 +434,15 @@ iadas-vocab:Muscle_dysmorphia a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Muscle dysmorphia" .
 
-iadas-vocab:Muscle_dysmorphic_tendencies_avoidance_and_psychological_symptoms a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscle_dysmorphic_tendencies_%28avoidance_and_psychological_symptoms%29> a skos:Concept ;
     skos:broader iadas-vocab:Muscle_Dysmorphia ;
     skos:inScheme iadas-vocab:ACAD-Vocabulary ;
-    skos:prefLabel "Muscle dysmorphic tendencies avoidance and psychological symptoms" .
+    skos:prefLabel "Muscle dysmorphic tendencies (avoidance and psychological symptoms)" .
 
-iadas-vocab:Muscle_dysmorphic_tendencies_behaviours_and_thoughts a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscle_dysmorphic_tendencies_%28behaviours_and_thoughts%29> a skos:Concept ;
     skos:broader iadas-vocab:Muscle_Dysmorphia ;
     skos:inScheme iadas-vocab:ACAD-Vocabulary ;
-    skos:prefLabel "Muscle dysmorphic tendencies behaviours and thoughts" .
+    skos:prefLabel "Muscle dysmorphic tendencies (behaviours and thoughts)" .
 
 iadas-vocab:Muscle_talk a skos:Concept ;
     skos:broader iadas-vocab:Body_talk ;
