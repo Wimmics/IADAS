@@ -2331,6 +2331,92 @@ ORDER BY ?vi ?vd
 `;
       break;
 
+    case 'q9-mediators':
+      console.log(" CASE Q9-MEDIATORS DÉTECTÉ: Analyses complexes — tous les médiateurs");
+      selectedCase = 'q9-mediators - Médiateurs dans les analyses complexes';
+      expectedResults = '100-150 analyses avec médiateur renseigné';
+
+      query = `${prefixes}
+
+SELECT DISTINCT ?vi ?vd ?mediator ?mediatorMeasure ?typeAnalysis ?direction ?analysis
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:complexityOfAnalysis "Complex analyses" ;
+              iadas:hasMediator ?mediator ;
+              iadas:mediatorMeasure ?mediatorMeasure ;
+              iadas:typeOfAnalysis ?typeAnalysis ;
+              iadas:hasRelation ?relation .
+    FILTER(?mediator != "N.A.")
+
+    ?relation iadas:hasIndependentVariable ?variableVI ;
+              iadas:hasDependentVariable ?variableVD .
+    ?variableVI iadas:variableName ?vi .
+    ?variableVD iadas:variableName ?vd .
+
+    OPTIONAL { ?analysis iadas:relationDirection ?direction }
+}
+ORDER BY ?mediator ?vi
+`;
+      break;
+
+    case 'q9-moderators':
+      console.log(" CASE Q9-MODERATORS DÉTECTÉ: Analyses complexes — tous les modérateurs");
+      selectedCase = 'q9-moderators - Modérateurs dans les analyses complexes';
+      expectedResults = '25-40 analyses avec modérateur renseigné';
+
+      query = `${prefixes}
+
+SELECT DISTINCT ?vi ?vd ?moderator ?moderatorMeasure ?typeAnalysis ?direction ?analysis
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:complexityOfAnalysis "Complex analyses" ;
+              iadas:hasModerator ?moderator ;
+              iadas:moderatorMeasure ?moderatorMeasure ;
+              iadas:typeOfAnalysis ?typeAnalysis ;
+              iadas:hasRelation ?relation .
+    FILTER(?moderator != "N.A.")
+
+    ?relation iadas:hasIndependentVariable ?variableVI ;
+              iadas:hasDependentVariable ?variableVD .
+    ?variableVI iadas:variableName ?vi .
+    ?variableVD iadas:variableName ?vd .
+
+    OPTIONAL { ?analysis iadas:relationDirection ?direction }
+}
+ORDER BY ?moderator ?vi
+`;
+      break;
+
+    case 'q9-mediation-by-category':
+      console.log(" CASE Q9-MEDIATION-BY-CATEGORY DÉTECTÉ: Médiateurs par catégorie SKOS de VI");
+      selectedCase = 'q9-mediation-by-category - Chemins de médiation par catégorie';
+      expectedResults = '60-80 chemins de médiation avec catégorie VI identifiée';
+
+      query = `${prefixes}
+
+SELECT DISTINCT ?categoryVI ?vi ?mediator ?vd ?typeAnalysis ?analysis
+WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:complexityOfAnalysis "Complex analyses" ;
+              iadas:hasMediator ?mediator ;
+              iadas:typeOfAnalysis ?typeAnalysis ;
+              iadas:hasRelation ?relation .
+    FILTER(?mediator != "N.A.")
+
+    ?relation iadas:hasIndependentVariable ?variableVI ;
+              iadas:hasDependentVariable ?variableVD .
+    ?variableVI iadas:variableName ?vi ;
+                iadas:refersToVariable ?viConcept .
+    ?viConcept skos:broader+ ?top .
+    ?top skos:prefLabel ?categoryVI .
+    FILTER NOT EXISTS { ?top skos:broader ?x . FILTER(CONTAINS(STR(?x), 'ACAD-vocab')) }
+
+    ?variableVD iadas:variableName ?vd .
+}
+ORDER BY ?categoryVI ?mediator
+`;
+      break;
+
     default:
       console.error(" CASE DEFAULT DÉCLENCHÉ !");
       console.error(" Question ID non reconnue:", questionId);
@@ -2341,6 +2427,8 @@ ORDER BY ?vi ?vd
       console.error("   - q6-female, q6-male, q6-mixed");
       console.error("   - q7-volleyball-men-21");
       console.error("   - q8-individual, q8-team, q8-mixed, q8-aesthetic");
+      console.error("   [Analyses complexes]");
+      console.error("   - q9-mediators, q9-moderators, q9-mediation-by-category");
       console.log("🔧 Utilisation d'une requête par défaut...");
 
       selectedCase = 'DEFAULT - Requête générale de secours';
