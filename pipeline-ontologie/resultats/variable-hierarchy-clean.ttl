@@ -164,15 +164,15 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority_and_Leadership_Styles> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority_and_Leadership_Styles> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Interpersonal_factor_related_to_DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority_and_Leadership_Styles> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Authority_and_Leadership_Styles> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Autocratic_> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Authority_and_Leadership_Styles> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Autocratic> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority_and_Leadership_Styles> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s_focus_on_results> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority_and_Leadership_Styles> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s_negative_feedback> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority_and_Leadership_Styles> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Democratic> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority_and_Leadership_Styles> <http://www.w3.org/2004/02/skos/core#prefLabel> "Authority and Leadership Styles" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Autocratic_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Autocratic_> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Authority_and_Leadership_Styles> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Autocratic_> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Autocratic_> <http://www.w3.org/2004/02/skos/core#prefLabel> "Autocratic " .
+<http://ns.inria.fr/iadas/ACAD-vocab/Autocratic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Autocratic> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Authority_and_Leadership_Styles> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Autocratic> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Autocratic> <http://www.w3.org/2004/02/skos/core#prefLabel> "Autocratic" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Autonomous_motivation_for_sport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Autonomous_motivation_for_sport> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise_motivation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Autonomous_motivation_for_sport> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -692,7 +692,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Healthy_eating_behavior> .
 <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscle_Dysmorphia> .
 <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexia> .
-<http://ns.inria.fr/iadas/ACAD-vocab/DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Overeating_> .
+<http://ns.inria.fr/iadas/ACAD-vocab/DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Overeating> .
 <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Restrictions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Uncontrolled_eating> .
 <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Weight_Control> .
@@ -1852,10 +1852,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Over_identification> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Kindness_and_compassion> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Over_identification> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Over_identification> <http://www.w3.org/2004/02/skos/core#prefLabel> "Over identification" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Overeating_> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Overeating_> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Overeating_> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Overeating_> <http://www.w3.org/2004/02/skos/core#prefLabel> "Overeating " .
+<http://ns.inria.fr/iadas/ACAD-vocab/Overeating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Overeating> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Overeating> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Overeating> <http://www.w3.org/2004/02/skos/core#prefLabel> "Overeating" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Overweight_preoccupation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Overweight_preoccupation> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Food_and_weight_related_concerns> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Overweight_preoccupation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -2663,7 +2663,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Social_pressure_from_the_sports_environment> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Social_pressure_on_body_shape> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Social_pressure_on_eating> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Societal_pressure_from_the_media_to_be_thin%09> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Societal_pressure_from_the_media_to_be_thin> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Sport_appearance_pressures> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Sport_performance_pressure> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Sport_pressures> .
@@ -2755,10 +2755,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_support> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Positive_relationships_with_significant_others> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_support> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social_support> <http://www.w3.org/2004/02/skos/core#prefLabel> "Social support" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Societal_pressure_from_the_media_to_be_thin%09> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Societal_pressure_from_the_media_to_be_thin%09> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Societal_pressure_from_the_media_to_be_thin%09> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Societal_pressure_from_the_media_to_be_thin%09> <http://www.w3.org/2004/02/skos/core#prefLabel> "Societal pressure from the media to be thin\t" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Societal_pressure_from_the_media_to_be_thin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Societal_pressure_from_the_media_to_be_thin> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social_and_Sport_pressure_related_to_significant_others> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Societal_pressure_from_the_media_to_be_thin> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Societal_pressure_from_the_media_to_be_thin> <http://www.w3.org/2004/02/skos/core#prefLabel> "Societal pressure from the media to be thin" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural_attitudes_toward_appearance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural_attitudes_toward_appearance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural_factor_related_to_DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Sociocultural_attitudes_toward_appearance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .

@@ -139,20 +139,20 @@ iadas-vocab:Coach_relationship_quality a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Coach relationship quality" .
 
-iadas-vocab:Coach_s_focus_on_results a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s_focus_on_results> a skos:Concept ;
     skos:broader iadas-vocab:Authority_and_Leadership_Styles ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Coach s focus on results" .
+    skos:prefLabel "Coach's focus on results" .
 
-iadas-vocab:Coach_s_negative_feedback a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s_negative_feedback> a skos:Concept ;
     skos:broader iadas-vocab:Authority_and_Leadership_Styles ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Coach s negative feedback" .
+    skos:prefLabel "Coach's negative feedback" .
 
-iadas-vocab:Coach_s_pressure_in_relation_to_nutrition a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s_pressure_in_relation_to_nutrition> a skos:Concept ;
     skos:broader iadas-vocab:Authority_and_Leadership_Styles ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Coach s pressure in relation to nutrition" .
+    skos:prefLabel "Coach's pressure in relation to nutrition" .
 
 iadas-vocab:Coach-athlete_relationship a skos:Concept ;
     skos:broader iadas-vocab:Authority_and_Leadership_Styles ;
@@ -514,10 +514,10 @@ iadas-vocab:Perception_of_health_evaluation a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Perception of health evaluation" .
 
-iadas-vocab:Perception_of_one_s_own_body_and_self a skos:Concept ;
+<http://ns.inria.fr/iadas/ACAD-vocab/Perception_of_one%27s_own_body_and_self> a skos:Concept ;
     skos:broader iadas-vocab:Body_self-perception ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Perception of one s own body and self" .
+    skos:prefLabel "Perception of one's own body and self" .
 
 iadas-vocab:Perception_of_sociocultural_pressure a skos:Concept ;
     skos:broader iadas-vocab:Social_and_sport_pressure_related_to_individual ;
@@ -564,10 +564,10 @@ iadas-vocab:Physical_self_concept_of_Health a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Physical self concept of Health" .
 
-iadas-vocab:Physical_self-worth a skos:Concept ;
+iadas-vocab:Physical_Self-Worth a skos:Concept ;
     skos:broader iadas-vocab:Physical_self-esteem ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Physical self-worth" .
+    skos:prefLabel "Physical Self-Worth" .
 
 <http://ns.inria.fr/iadas/ACAD-vocab/Pressure_from_TV%2Fmovies> a skos:Concept ;
     skos:broader iadas-vocab:Media_exposure ;
@@ -759,10 +759,10 @@ iadas-vocab:Substance_addiction a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Substance addiction" .
 
-iadas-vocab:Supportive_friendshipss a skos:Concept ;
+iadas-vocab:Supportive_friendships a skos:Concept ;
     skos:broader iadas-vocab:Positive_relationships_with_significant_others ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Supportive friendshipss" .
+    skos:prefLabel "Supportive friendships" .
 
 iadas-vocab:Thinness_related_learning a skos:Concept ;
     skos:broader iadas-vocab:Norms_internalization ;
@@ -774,10 +774,10 @@ iadas-vocab:Thinness%2Frestricting_expectancies a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Thinness/restricting expectancies" .
 
-iadas-vocab:Uniform_influencess a skos:Concept ;
+iadas-vocab:Uniform_influences a skos:Concept ;
     skos:broader iadas-vocab:Social_and_Sport_pressure_related_to_significant_others ;
     skos:inScheme iadas-vocab:Variable ;
-    skos:prefLabel "Uniform influencess" .
+    skos:prefLabel "Uniform influences" .
 
 iadas-vocab:Upper_body_strength a skos:Concept ;
     skos:broader iadas-vocab:Perceived_competence ;
