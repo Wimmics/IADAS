@@ -60,6 +60,7 @@ services:
     volumes:
       - ./fuseki:/app/fuseki
       - ./pipeline-ontologie:/app/pipeline-ontologie
+      - ./stats_bdd.py:/app/stats_bdd.py
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - webnet

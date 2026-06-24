@@ -208,6 +208,31 @@ http.createServer(async (req, res) => {
         details: parseError.message
       }));
     }
+  } else if (req.url === '/stats' && req.method === 'GET') {
+    console.log('\n=== CALCUL STATISTIQUES BDD ===');
+    const pipelineDir = path.resolve(__dirname, '/app/pipeline-ontologie');
+    const statsScript = path.resolve(__dirname, '/app/stats_bdd.py');
+
+    res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+
+    const py = spawn('python', [statsScript], {
+      cwd: pipelineDir,
+      env: { ...process.env, FUSEKI_URL: 'http://fuseki:3030/ds/sparql' }
+    });
+    let output = '';
+    let errorOut = '';
+
+    py.stdout.on('data', d => { output += d.toString(); });
+    py.stderr.on('data', d => { errorOut += d.toString(); });
+
+    py.on('close', code => {
+      if (code !== 0) {
+        res.end(JSON.stringify({ success: false, error: errorOut }));
+      } else {
+        res.end(JSON.stringify({ success: true, output, timestamp: new Date().toISOString() }));
+      }
+    });
+
   } else {
     res.writeHead(404, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ error: 'Endpoint non trouvé' }));
@@ -215,6 +240,7 @@ http.createServer(async (req, res) => {
 }).listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Database Service démarré sur http://localhost:${PORT}`);
   console.log(`📡 Endpoint: POST /rebuild-ontology`);
+  console.log(`📊 Endpoint: GET  /stats`);
   console.log(`🎯 Fonction: Reconstruction dataset ds avec nouveaux CSV`);
   console.log(`🐳 Docker: Redémarrage automatique de fuseki-init`);
 });

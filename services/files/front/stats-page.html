@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Statistiques — IA-DAS</title>
+  <link rel="stylesheet" href="./home-page/home-page.css">
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; }
+
+    header { background: linear-gradient(90deg, #1a3a5c, #2e6da4); color: white; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+    header h1 { font-size: 20px; margin: 0; }
+    header button { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px; }
+    header button:hover { background: rgba(255,255,255,0.25); }
+
+    .main { max-width: 1100px; margin: 24px auto; padding: 0 20px; }
+
+    .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .top-bar h2 { color: #1a3a5c; font-size: 22px; }
+    .btn-run { background: #2e6da4; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+    .btn-run:hover { background: #1a5276; }
+    .btn-run:disabled { background: #aaa; cursor: not-allowed; }
+    .last-run { font-size: 12px; color: #888; }
+
+    .spinner { display: none; text-align: center; padding: 40px; color: #2e6da4; font-size: 16px; }
+    .spinner.active { display: block; }
+
+    /* KPI Cards */
+    .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+    .kpi-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-top: 4px solid #2e6da4; }
+    .kpi-card.green { border-top-color: #27ae60; }
+    .kpi-card.orange { border-top-color: #e67e22; }
+    .kpi-num { font-size: 32px; font-weight: 700; color: #1a3a5c; }
+    .kpi-label { font-size: 13px; color: #666; margin-top: 4px; }
+    .kpi-sub { font-size: 11px; color: #999; margin-top: 2px; }
+
+    /* Sections */
+    .section { background: white; border-radius: 10px; padding: 20px 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
+    .section h3 { color: #1a3a5c; font-size: 16px; margin-bottom: 14px; border-bottom: 2px solid #eaf2fb; padding-bottom: 8px; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th { background: #1a3a5c; color: white; padding: 8px 12px; text-align: left; }
+    thead th.right { text-align: right; }
+    tbody td { padding: 7px 12px; border-bottom: 1px solid #eee; }
+    tbody td.right { text-align: right; }
+    tbody tr:hover td { background: #f0f7ff; }
+    tbody tr.cat td:first-child { font-weight: 600; color: #1a3a5c; }
+    tbody tr.sub td:first-child { padding-left: 24px; color: #555; }
+    tbody tr.total td { font-weight: 700; background: #eaf2fb; border-top: 2px solid #2e6da4; }
+
+    /* Bar chart */
+    .bar-section { margin-top: 16px; }
+    .bar-row { display: flex; align-items: center; margin-bottom: 10px; }
+    .bar-label { width: 120px; font-size: 13px; color: #444; }
+    .bar-bg { flex: 1; background: #eee; border-radius: 4px; height: 22px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; color: white; font-size: 12px; font-weight: 600; transition: width 1s ease; }
+    .bar-val { width: 60px; text-align: right; font-size: 13px; color: #555; padding-left: 8px; }
+
+    /* Alert */
+    .alert { background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 10px 14px; font-size: 13px; color: #856404; margin-top: 12px; }
+    .alert.ok { background: #d4edda; border-color: #28a745; color: #155724; }
+
+    /* Grid 2 cols */
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    #errorBox { display: none; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; padding: 16px; color: #721c24; margin-bottom: 20px; }
+    #content { display: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Statistiques — Ontologie IA-DAS</h1>
+  <button onclick="window.location.href='./index.html'">← Retour à l'accueil</button>
+</header>
+
+<div class="main">
+
+  <div class="top-bar">
+    <div>
+      <h2>Tableau de bord</h2>
+      <div class="last-run" id="lastRun">Cliquez sur "Calculer" pour charger les statistiques</div>
+    </div>
+    <button class="btn-run" id="btnRun" onclick="loadStats()">
+      <span>⟳</span> Calculer les statistiques
+    </button>
+  </div>
+
+  <div id="errorBox"></div>
+
+  <div class="spinner" id="spinner">
+    Calcul en cours, veuillez patienter (environ 30 secondes)…
+  </div>
+
+  <div id="content">
+
+    <!-- KPIs -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-num" id="kpiAnalyses">—</div>
+        <div class="kpi-label">Analyses au total</div>
+        <div class="kpi-sub" id="kpiAnalysesSub"></div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-num" id="kpiEffectSize">—</div>
+        <div class="kpi-label">Couverture effectSize</div>
+        <div class="kpi-sub" id="kpiEffectSizeSub"></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num" id="kpiVariables">—</div>
+        <div class="kpi-label">Variables distinctes mobilisées</div>
+        <div class="kpi-sub">VI + VD dans les analyses</div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-num" id="kpiCatVI">—</div>
+        <div class="kpi-label">Taux catégorisation VI</div>
+        <div class="kpi-sub">Hors N.A.</div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-num" id="kpiDoublons">0</div>
+        <div class="kpi-label">Doublons détectés</div>
+        <div class="kpi-sub">✓ Aucun vrai doublon</div>
+      </div>
+      <div class="kpi-card orange">
+        <div class="kpi-num" id="kpiConcepts">—</div>
+        <div class="kpi-label">Concepts ACAD total</div>
+        <div class="kpi-sub">Dans la base de données</div>
+      </div>
+    </div>
+
+    <!-- EffectSize global -->
+    <div class="section">
+      <h3>Répartition globale de l'effectSize (analyses simples)</h3>
+      <div class="grid2">
+        <div>
+          <table>
+            <thead><tr><th>Catégorie</th><th class="right">Nb</th><th class="right">%</th></tr></thead>
+            <tbody id="esGlobalTable"></tbody>
+          </table>
+        </div>
+        <div class="bar-section" id="esGlobalBars"></div>
+      </div>
+    </div>
+
+    <!-- EffectSize par catégorie VI -->
+    <div class="section">
+      <h3>EffectSize par catégorie de variable indépendante (analyses simples)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Catégorie VI</th>
+            <th class="right">Strong</th>
+            <th class="right">Moderate</th>
+            <th class="right">Weak</th>
+            <th class="right">Negligible</th>
+            <th class="right">Total</th>
+            <th class="right">%</th>
+          </tr>
+        </thead>
+        <tbody id="esCatTable"></tbody>
+      </table>
+    </div>
+
+    <!-- EffectSize par sous-classe -->
+    <div class="section">
+      <h3>EffectSize par sous-classe niveau 2</h3>
+      <div id="esSubTables"></div>
+    </div>
+
+    <!-- Alertes qualité -->
+    <div class="section">
+      <h3>Qualité des données</h3>
+      <div id="qualityAlerts"></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="./js/api-config.js"></script>
+<script>
+const COLORS = { strong: '#1a5276', moderate: '#2e86c1', weak: '#85c1e9', negligible: '#d6eaf8' };
+const COLORS_TEXT = { strong: 'white', moderate: 'white', weak: '#1a3a5c', negligible: '#1a3a5c' };
+
+function loadStats() {
+  const btn = document.getElementById('btnRun');
+  const spinner = document.getElementById('spinner');
+  const content = document.getElementById('content');
+  const errorBox = document.getElementById('errorBox');
+
+  btn.disabled = true;
+  spinner.classList.add('active');
+  content.style.display = 'none';
+  errorBox.style.display = 'none';
+
+  const base = window.API_BASE_URL || 'http://localhost:8005';
+
+  fetch(`${base}/stats`)
+    .then(r => r.json())
+    .then(data => {
+      spinner.classList.remove('active');
+      btn.disabled = false;
+      if (!data.success) {
+        errorBox.textContent = 'Erreur : ' + data.error;
+        errorBox.style.display = 'block';
+        return;
+      }
+      document.getElementById('lastRun').textContent = 'Dernière mise à jour : ' + new Date(data.timestamp).toLocaleString('fr-FR');
+      renderStats(data.output);
+      content.style.display = 'block';
+    })
+    .catch(err => {
+      spinner.classList.remove('active');
+      btn.disabled = false;
+      errorBox.textContent = 'Impossible de contacter le serveur : ' + err.message;
+      errorBox.style.display = 'block';
+    });
+}
+
+function parseValue(text, label) {
+  const re = new RegExp(label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s+(\\d+)');
+  const m = text.match(re);
+  return m ? parseInt(m[1]) : null;
+}
+
+function parsePct(text, label) {
+  const re = new RegExp(label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s+(\\d+)%');
+  const m = text.match(re);
+  return m ? m[1] + '%' : null;
+}
+
+function renderStats(output) {
+  // KPIs
+  const analyses = parseValue(output, 'Analyses (total)');
+  const simples = parseValue(output, 'Analyses simples');
+  const complexes = parseValue(output, 'Analyses complexes');
+  const esTotal = parseValue(output, 'Total effectSize peuple');
+  const couverture = parsePct(output, 'Couverture (sur simples)');
+  const catVI = parsePct(output, 'Taux categorisation (hors N.A.)');
+  const concepts = parseValue(output, 'Total concepts ACAD');
+
+  document.getElementById('kpiAnalyses').textContent = analyses?.toLocaleString('fr-FR') || '—';
+  document.getElementById('kpiAnalysesSub').textContent = simples && complexes ? `${simples.toLocaleString('fr-FR')} simples / ${complexes.toLocaleString('fr-FR')} complexes` : '';
+  document.getElementById('kpiEffectSize').textContent = couverture || '—';
+  document.getElementById('kpiEffectSizeSub').textContent = esTotal ? `${esTotal.toLocaleString('fr-FR')} analyses renseignées` : '';
+  document.getElementById('kpiCatVI').textContent = catVI || '—';
+  document.getElementById('kpiConcepts').textContent = concepts?.toLocaleString('fr-FR') || '—';
+
+  // EffectSize global
+  const esLabels = ['weak', 'moderate', 'strong', 'negligible'];
+  const esData = {};
+  esLabels.forEach(l => { esData[l] = parseValue(output, l); });
+  const esSum = Object.values(esData).reduce((a, b) => (a || 0) + (b || 0), 0);
+
+  let globalRows = '';
+  let globalBars = '';
+  esLabels.forEach(l => {
+    const n = esData[l] || 0;
+    const pct = esSum ? Math.round(n / esSum * 100) : 0;
+    globalRows += `<tr><td style="text-transform:capitalize">${l}</td><td class="right">${n.toLocaleString('fr-FR')}</td><td class="right">${pct}%</td></tr>`;
+    globalBars += `<div class="bar-row">
+      <span class="bar-label" style="text-transform:capitalize">${l}</span>
+      <div class="bar-bg"><div class="bar-fill" style="width:${pct}%; background:${COLORS[l]}; color:${COLORS_TEXT[l]}">${pct}%</div></div>
+      <span class="bar-val">${n.toLocaleString('fr-FR')}</span>
+    </div>`;
+  });
+  document.getElementById('esGlobalTable').innerHTML = globalRows;
+  document.getElementById('esGlobalBars').innerHTML = globalBars;
+
+  // EffectSize par catégorie
+  const catSection = output.match(/EFFECTSIZE PAR CATEGORIE DE VI[\s\S]*?(?=\n\n  [A-Z]|\n\n  VI PAR)/);
+  if (catSection) {
+    const lines = catSection[0].split('\n').filter(l => l.trim() && !l.includes('---') && !l.includes('Categorie') && !l.includes('EFFECTSIZE'));
+    let catRows = '';
+    let catTotal = [0,0,0,0,0];
+    lines.forEach(line => {
+      const m = line.match(/^\s{2}(.+?)\s{2,}(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)/);
+      if (m) {
+        const [, name, s, mo, w, n, tot] = m;
+        const pct = esSum ? Math.round(parseInt(tot) / esSum * 100) : 0;
+        catRows += `<tr class="cat"><td>${name.trim()}</td><td class="right">${s}</td><td class="right">${mo}</td><td class="right">${w}</td><td class="right">${n}</td><td class="right"><strong>${tot}</strong></td><td class="right">${pct}%</td></tr>`;
+        catTotal = catTotal.map((v, i) => v + parseInt([0,s,mo,w,n,tot][i+1]||0));
+      }
+    });
+    document.getElementById('esCatTable').innerHTML = catRows;
+  }
+
+  // EffectSize par sous-classe
+  const subSection = output.match(/EFFECTSIZE PAR SOUS-CLASSE NIVEAU 2[\s\S]*?(?=\n  VI PAR CATEGORIE)/);
+  if (subSection) {
+    const blocks = subSection[0].split(/>> /g).slice(1);
+    let html = '';
+    blocks.forEach(block => {
+      const titleM = block.match(/^(.+?)\s+\(total: (\d+)\)/);
+      if (!titleM) return;
+      const [, title, total] = titleM;
+      html += `<div style="margin-bottom:20px"><div style="font-weight:600; color:#1a3a5c; margin-bottom:8px; font-size:14px;">▸ ${title.trim()} <span style="font-weight:400; color:#888; font-size:12px;">(${parseInt(total).toLocaleString('fr-FR')} analyses)</span></div>`;
+      html += '<table><thead><tr><th>Sous-classe</th><th class="right">Strong</th><th class="right">Moderate</th><th class="right">Weak</th><th class="right">Negligible</th><th class="right">Total</th></tr></thead><tbody>';
+      const rows = block.split('\n').slice(3);
+      rows.forEach(row => {
+        const m = row.match(/^\s{4}(.+?)\s{2,}(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)/);
+        if (m) {
+          const [, name, s, mo, w, n, tot] = m;
+          html += `<tr class="sub"><td>${name.trim()}</td><td class="right">${s}</td><td class="right">${mo}</td><td class="right">${w}</td><td class="right">${n}</td><td class="right"><strong>${tot}</strong></td></tr>`;
+        }
+      });
+      html += '</tbody></table></div>';
+    });
+    document.getElementById('esSubTables').innerHTML = html || '<p style="color:#888">Données non disponibles</p>';
+  }
+
+  // Qualité
+  const cycles = parseValue(output, 'Cycles skos:broader');
+  const doublons = parseValue(output, 'Vrais doublons');
+  let qualHtml = '';
+  qualHtml += `<div class="alert ok">✓ Doublons détectés : ${doublons ?? 0} — aucun vrai doublon dans la base de données.</div>`;
+  if (cycles && cycles > 0) {
+    qualHtml += `<div class="alert">⚠ ${cycles} cycle(s) détecté(s) dans la hiérarchie SKOS — à corriger.</div>`;
+  } else {
+    qualHtml += `<div class="alert ok">✓ Aucun cycle dans la hiérarchie SKOS.</div>`;
+  }
+  document.getElementById('qualityAlerts').innerHTML = qualHtml;
+}
+</script>
+
+<footer style="text-align:center; padding:16px; color:#aaa; font-size:12px; margin-top:40px;">
+  &copy; 2025 – IA-DAS. Tous droits réservés.
+</footer>
+</body>
+</html>

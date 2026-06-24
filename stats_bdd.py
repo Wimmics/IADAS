@@ -6,9 +6,10 @@ Usage : python stats_bdd.py
 import urllib.request
 import urllib.parse
 import json
+import os
 from datetime import datetime
 
-FUSEKI = "http://localhost:3030/ds/sparql"
+FUSEKI = os.environ.get("FUSEKI_URL", "http://localhost:3030/ds/sparql")
 
 def query(sparql):
     params = urllib.parse.urlencode({"query": sparql})
