@@ -113,6 +113,107 @@ print(f"  {'Total effectSize peuple':<35} {es_total:>6}")
 couverture = round(es_total / analyses_simples * 100) if analyses_simples > 0 else 0
 print(f"  {'Couverture (sur simples)':<35} {couverture:>5}%")
 
+# --- EffectSize par catégorie et sous-classe de VI (analyses simples) ---
+
+# Etape 1 : charger la hierarchie SKOS ACAD en Python
+# Query A : tous les liens skos:broader (y compris concepts "nus" sans prefLabel)
+d_broader = query(f"""
+{PREFIX}
+SELECT ?concept ?broader WHERE {{
+  ?concept skos:broader ?broader .
+  FILTER(CONTAINS(STR(?concept), 'ACAD-vocab'))
+  FILTER(CONTAINS(STR(?broader), 'ACAD-vocab'))
+}}
+""")
+# Query B : labels des concepts proprement declares
+d_labels = query(f"""
+{PREFIX}
+SELECT ?concept ?label WHERE {{
+  ?concept a skos:Concept .
+  FILTER(CONTAINS(STR(?concept), 'ACAD-vocab'))
+  ?concept skos:prefLabel ?label .
+}}
+""")
+_label_of = {_b["concept"]["value"]: _b["label"]["value"] for _b in d_labels["results"]["bindings"]}
+_broader_of = {_b["concept"]["value"]: _b["broader"]["value"] for _b in d_broader["results"]["bindings"]}
+# Racines = concepts dans label_of qui n'ont pas de broader
+_root_uris = {_uri for _uri in _label_of if _uri not in _broader_of}
+
+def _get_root_and_level2(concept_uri):
+    path, current, visited = [], concept_uri, set()
+    while current in _broader_of and current not in visited:
+        visited.add(current)
+        path.append(current)
+        current = _broader_of[current]
+    if current not in _root_uris:
+        return None, None
+    root_lbl = _label_of[current]
+    if not path:
+        return root_lbl, None          # concept IS a root
+    return root_lbl, _label_of.get(path[-1])  # path[-1] = direct child of root
+
+# Etape 2 : recuperer (concept, esLevel, count) pour analyses simples
+d_vi_es = query(f"""
+{PREFIX}
+SELECT ?concept ?esLevel (COUNT(DISTINCT ?analysis) AS ?nb)
+WHERE {{
+  ?analysis a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel .
+  FILTER({FILTER_SIMPLES})
+  ?rel iadas:hasIndependentVariable ?vi ; iadas:effectSize ?esLevel .
+  ?vi iadas:refersToVariable ?concept .
+  FILTER(CONTAINS(STR(?concept), 'ACAD-vocab'))
+}}
+GROUP BY ?concept ?esLevel
+""")
+
+# Etape 3 : aggregation par categorie et sous-classe
+from collections import defaultdict as _dd
+_es_cat = _dd(lambda: _dd(int))
+_es_sub = _dd(lambda: _dd(lambda: _dd(int)))
+for _b in d_vi_es["results"]["bindings"]:
+    _uri = _b["concept"]["value"]
+    _lvl = _b["esLevel"]["value"]
+    _nb  = int(_b["nb"]["value"])
+    _root_lbl, _sub_lbl = _get_root_and_level2(_uri)
+    if _root_lbl:
+        _es_cat[_root_lbl][_lvl] += _nb
+        _es_sub[_root_lbl][_sub_lbl or "(direct)"][_lvl] += _nb
+
+_ES = ["strong", "moderate", "weak", "negligible"]
+_HDR = f"  {{:<42}} {{:>8}} {{:>10}} {{:>8}} {{:>12}} {{:>8}}"
+_ROW = f"  {{:<42}} {{:>8}} {{:>10}} {{:>8}} {{:>12}} {{:>8}}"
+
+print("\n  EFFECTSIZE PAR CATEGORIE DE VI (analyses simples)")
+print("  " + "-" * 40)
+print(_HDR.format("Categorie", "Strong", "Moderate", "Weak", "Negligible", "Total"))
+print("  " + "-" * 90)
+for _cat in sorted(_es_cat.keys(), key=lambda c: -sum(_es_cat[c].values())):
+    _d = _es_cat[_cat]
+    _p = [_d.get(l, 0) for l in _ES]
+    print(_ROW.format(_cat[:42], *_p, sum(_p)))
+
+_ROOTS_ORDER = [
+    "Intrapersonal factor related to DEAB",
+    "Interpersonal factor related to DEAB",
+    "DEAB",
+    "Sociocultural factor related to DEAB",
+    "Other behaviors",
+]
+print("\n  EFFECTSIZE PAR SOUS-CLASSE NIVEAU 2 (analyses simples)")
+print("  " + "-" * 40)
+for _top in _ROOTS_ORDER:
+    if _top not in _es_sub:
+        continue
+    _top_total = sum(sum(_d.values()) for _d in _es_sub[_top].values())
+    print(f"\n  >> {_top}  (total: {_top_total})")
+    print(_HDR.format("  Sous-classe", "Strong", "Moderate", "Weak", "Negligible", "Total"))
+    print("  " + "-" * 90)
+    for _sub in sorted(_es_sub[_top].keys(), key=lambda s: -sum(_es_sub[_top][s].values())):
+        _d = _es_sub[_top][_sub]
+        _p = [_d.get(l, 0) for l in _ES]
+        _lbl = ("  " + _sub)[:42]
+        print(_ROW.format(_lbl, *_p, sum(_p)))
+
 # --- VI par catégorie (analyses simples uniquement) ---
 print("\n  VI PAR CATEGORIE (analyses simples)")
 print("  " + "-" * 40)
