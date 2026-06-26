@@ -71,6 +71,31 @@ async function getTripletCount() {
   return 0;
 }
 
+async function ensureDataset() {
+  console.log('\n=== CRÉATION DATASET "ds" (si absent) ===');
+  const ADMIN_DATASETS_URL = 'http://fuseki:3030/$/datasets';
+  try {
+    const res = await fetch(ADMIN_DATASETS_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': `Basic ${auth}`
+      },
+      body: 'dbName=ds&dbType=mem'
+    });
+    if (res.ok) {
+      console.log('  Dataset "ds" créé avec succès.');
+    } else if (res.status === 409) {
+      console.log('  Dataset "ds" déjà existant — OK.');
+    } else {
+      const text = await res.text();
+      console.log(`  Avertissement création dataset: ${res.status} — ${text}`);
+    }
+  } catch (e) {
+    console.log(`  Exception création dataset: ${e.message}`);
+  }
+}
+
 async function waitForFuseki(retries = 0) {
   if (retries === 0) {
     startTime = Date.now();
@@ -83,18 +108,21 @@ async function waitForFuseki(retries = 0) {
   try {
     console.log(`\n PING Fuseki (tentative ${retries + 1}):`);
     console.log(`   URL: ${PING_URL}`);
-    
-    const res = await fetch(PING_URL, { 
+
+    const res = await fetch(PING_URL, {
       method: 'GET',
       timeout: 3000
     });
-    
+
     console.log(`    Réponse: Status ${res.status} ${res.statusText}`);
     console.log(`  🔗 Headers: ${JSON.stringify(Object.fromEntries(res.headers))}`);
-    
+
     if (res.ok) {
       const elapsedTime = Math.round((Date.now() - startTime) / 1000);
       console.log(`\nFUSEKI PRÊT! Temps d'attente: ${formatTime(elapsedTime)}`);
+
+      // S'assurer que le dataset "ds" existe (Fuseki 5.x ne le crée pas toujours automatiquement)
+      await ensureDataset();
 
       // Vérifier si des données sont déjà chargées (éviter les doublons)
       const existingCount = await getTripletCount();
