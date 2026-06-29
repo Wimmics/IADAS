@@ -154,14 +154,30 @@ document.addEventListener('DOMContentLoaded', function() {
             const uniqueVIs = [...new Set(dataRows.map(r => r['VI']).filter(Boolean))];
             const uniqueACADS = [...new Set(dataRows.map(r => r['ACADS']).filter(Boolean))];
 
-            // Classer les VD inconnues : casse différente vs vraiment absentes
+            // Synonymes connus via skos:altLabel dans skos-acad-enrichment.ttl
+            const KNOWN_ALT_LABELS = new Set([
+                'Coach leadership style negative feedback',
+                'Compulsive spending',
+                'Negative reaction to imperfection',
+                'Psychotic disorder',
+                'Self-regulation of eating attitude',
+                'Orthorexic eating behavior',
+                'Restrictive eating',
+                'Eating pathology',
+                'Restrained eating',
+                'Dietary restraint',
+            ]);
+
+            // Classer les VD inconnues : casse différente / synonyme altLabel / vraiment absentes
             const IGNORED_VDS = new Set(['N.A.', 'n.a.', 'NA', 'N/A', 'n/a', '-', '']);
             const caseMismatch = []; // { inData, inHierarchy }
+            const knownAltLabels = [];
             const trulyAbsent = [];
             uniqueVDs.forEach(vd => {
                 if (hierarchyConcepts.has(vd) || IGNORED_VDS.has(vd)) return;
                 const match = hierarchyLower.get(vd.toLowerCase());
                 if (match) caseMismatch.push({ inData: vd, inHierarchy: match });
+                else if (KNOWN_ALT_LABELS.has(vd)) knownAltLabels.push(vd);
                 else trulyAbsent.push(vd);
             });
 
@@ -172,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             showValidationReport({
                 nbAnalyses, uniqueVDs, uniqueVIs, uniqueACADS,
-                caseMismatch, trulyAbsent, missingCols, emptyVD, emptyVI, emptyACADS
+                caseMismatch, knownAltLabels, trulyAbsent, missingCols, emptyVD, emptyVI, emptyACADS
             });
 
         } catch (err) {
@@ -184,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showValidationReport(r) {
         const hasErrors = r.missingCols.length > 0;
-        const hasWarnings = r.caseMismatch.length > 0 || r.trulyAbsent.length > 0 || r.emptyVD > 0 || r.emptyVI > 0 || r.emptyACADS > 0;
+        const hasWarnings = r.caseMismatch.length > 0 || r.trulyAbsent.length > 0 || r.emptyVD > 0 || r.emptyVI > 0 || r.emptyACADS > 0 || r.knownAltLabels.length > 0;
 
         let verdictClass, verdictText;
         if (hasErrors) {
@@ -213,6 +229,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         <td style="padding:4px 8px;color:#27ae60;">${m.inHierarchy}</td>
                     </tr>`).join('')}
                 </table>
+            </div>` : '';
+
+        const knownAltLabelsHtml = r.knownAltLabels.length > 0 ? `
+            <div class="unknown-variables altlabel">
+                <h4>Synonymes connus via altLabel (${r.knownAltLabels.length}) — OK, déjà enregistrés dans l'ontologie</h4>
+                <p style="font-size:12px;color:#1a5276;margin-bottom:8px;">Ces VD ne sont pas dans la hiérarchie CSV mais ont un <code>skos:altLabel</code> dans l'ontologie. Elles sont reconnues.</p>
+                <ul>${r.knownAltLabels.map(v => `<li>${v}</li>`).join('')}</ul>
             </div>` : '';
 
         const trulyAbsentHtml = r.trulyAbsent.length > 0 ? `
@@ -265,6 +288,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     ? `<div class="check-item warning"><span class="check-icon">⚠</span>${r.caseMismatch.length} VD avec problème de casse (concept existant mais orthographe différente)</div>`
                     : ''
                 }
+                ${r.knownAltLabels.length > 0
+                    ? `<div class="check-item info"><span class="check-icon">ℹ</span>${r.knownAltLabels.length} VD reconnue(s) comme synonyme(s) (skos:altLabel)</div>`
+                    : ''
+                }
                 ${r.trulyAbsent.length > 0
                     ? `<div class="check-item warning"><span class="check-icon">⚠</span>${r.trulyAbsent.length} VD absente(s) de la hiérarchie ACAD</div>`
                     : `<div class="check-item ok"><span class="check-icon">✓</span>Toutes les VD reconnues dans la hiérarchie ACAD</div>`
@@ -272,6 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             ${caseMismatchHtml}
+            ${knownAltLabelsHtml}
             ${trulyAbsentHtml}
 
             <div class="validation-verdict ${verdictClass}">${verdictText}</div>
