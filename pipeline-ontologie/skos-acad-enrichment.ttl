@@ -799,3 +799,30 @@ iadas-vocab:Weight_preoccupation a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Weight pressure coach/teammate" .
 
+# =============================================================================
+# Synonymes (skos:altLabel) — décisions encadrantes 27/06/2026
+# Variables présentes dans la base sous un nom alternatif
+# =============================================================================
+
+# 1. "Coach leadership style negative feedback" est un synonyme de "Coach's negative feedback"
+#    (confirmé par Meggy — présent colonne H dans Class_Hierarchy_VF_09avr26.xlsx)
+<http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s_negative_feedback>
+    skos:altLabel "Coach leadership style negative feedback" .
+
+# 2. "Compulsive spending" est un synonyme de "Compulsive buying"
+#    (confirmé par Meggy — présent colonne H dans Class_Hierarchy_VF_09avr26.xlsx)
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive_buying>
+    skos:altLabel "Compulsive spending" .
+
+# 3. "Negative reaction to imperfection" (singulier) = "Negative reactions to imperfection" (pluriel)
+<http://ns.inria.fr/iadas/ACAD-vocab/Negative_reactions_to_imperfection>
+    skos:altLabel "Negative reaction to imperfection" .
+
+# 4. "Psychotic disorder" (singulier) = "Psychotic disorders" (pluriel)
+<http://ns.inria.fr/iadas/ACAD-vocab/Psychotic_disorders>
+    skos:altLabel "Psychotic disorder" .
+
+# 5. "Self-regulation of eating attitude" = synonyme de "Self-regulatory eating attitude in sport"
+#    (ajouté par Amandine Daubresse le 27/06/2026)
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-regulatory_eating_attitude_in_sport>
+    skos:altLabel "Self-regulation of eating attitude" .
