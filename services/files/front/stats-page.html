@@ -347,6 +347,14 @@ function renderStats(output) {
     qualHtml += `<div class="alert ok">✓ Aucun cycle dans la hiérarchie SKOS.</div>`;
   }
   document.getElementById('qualityAlerts').innerHTML = qualHtml;
+
+  // Stocker le résumé qualité pour le bandeau de l'accueil
+  localStorage.setItem('qualitySummary', JSON.stringify({
+    timestamp: new Date().toISOString(),
+    analyses: analyses ?? 0,
+    cycles: cycles ?? 0,
+    doublons: doublons ?? 0,
+  }));
 }
 
 function renderCharts(esData, esSum, output) {

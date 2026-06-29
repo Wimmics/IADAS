@@ -1,6 +1,7 @@
 // Fonctionnalité de date de dernière mise à jour
 document.addEventListener('DOMContentLoaded', function() {
     loadLastUpdateDate();
+    loadQualityBanner();
 });
 
 async function loadLastUpdateDate() {
@@ -91,3 +92,32 @@ function updateHomePageDate() {
 
 // Rendre la fonction accessible globalement
 window.updateHomePageDate = updateHomePageDate;
+
+function loadQualityBanner() {
+    const banner = document.getElementById('qualityBanner');
+    if (!banner) return;
+
+    const raw = localStorage.getItem('qualitySummary');
+    if (!raw) {
+        banner.style.display = 'none';
+        return;
+    }
+
+    let q;
+    try { q = JSON.parse(raw); } catch { banner.style.display = 'none'; return; }
+
+    const issues = (q.cycles || 0) + (q.doublons || 0);
+    const date = q.timestamp ? new Date(q.timestamp).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
+
+    let icon, text, bg, color, border;
+    if (issues === 0) {
+        icon = '✓'; text = 'Ontologie en bon état'; bg = '#d4edda'; color = '#155724'; border = '#28a745';
+    } else if (issues <= 2) {
+        icon = '⚠'; text = `${issues} anomalie(s) détectée(s)`; bg = '#fff3cd'; color = '#856404'; border = '#ffc107';
+    } else {
+        icon = '✕'; text = `${issues} anomalies — vérification requise`; bg = '#f8d7da'; color = '#721c24'; border = '#dc3545';
+    }
+
+    banner.style.cssText = `display:flex; align-items:center; gap:8px; margin-top:10px; border-radius:6px; padding:9px 12px; font-size:13px; background:${bg}; color:${color}; border:1px solid ${border};`;
+    banner.innerHTML = `<strong style="font-size:16px">${icon}</strong> <span>${text}</span><span style="margin-left:auto; font-size:11px; opacity:0.7">${date}</span>`;
+}
