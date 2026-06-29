@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     loadLastUpdateDate();
     loadQualityBanner();
+    loadHistory();
 });
 
 async function loadLastUpdateDate() {
@@ -92,6 +93,33 @@ function updateHomePageDate() {
 
 // Rendre la fonction accessible globalement
 window.updateHomePageDate = updateHomePageDate;
+
+function loadHistory() {
+    const section = document.getElementById('historySection');
+    const list = document.getElementById('historyList');
+    if (!section || !list) return;
+
+    const history = JSON.parse(localStorage.getItem('updateHistory') || '[]');
+    if (history.length === 0) { section.style.display = 'none'; return; }
+
+    section.style.display = 'block';
+    list.innerHTML = history.slice(0, 5).map(entry => {
+        const d = new Date(entry.date);
+        const label = d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+        const analyses = entry.analyses ? ` — ${entry.analyses.toLocaleString('fr-FR')} analyses` : '';
+        return `<li style="padding:3px 0; border-bottom:1px solid #eee;">📅 ${label}${analyses}</li>`;
+    }).join('');
+}
+
+function toggleHistory() {
+    const list = document.getElementById('historyList');
+    const chevron = document.getElementById('historyChevron');
+    if (!list) return;
+    const open = list.style.display !== 'none';
+    list.style.display = open ? 'none' : 'block';
+    if (chevron) chevron.textContent = open ? '▼' : '▲';
+}
+window.toggleHistory = toggleHistory;
 
 function loadQualityBanner() {
     const banner = document.getElementById('qualityBanner');

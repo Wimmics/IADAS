@@ -379,6 +379,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.success) {
                 updateProgress(100, 'Reconstruction terminée !');
                 logToConsole('Reconstruction terminée avec succès !');
+                // Enregistrer l'entrée dans l'historique
+                const history = JSON.parse(localStorage.getItem('updateHistory') || '[]');
+                history.unshift({ date: new Date().toISOString(), analyses: null });
+                localStorage.setItem('updateHistory', JSON.stringify(history.slice(0, 20)));
                 setTimeout(() => {
                     alert('Ontologie reconstruite avec succès !\nVous pouvez maintenant utiliser la nouvelle ontologie.');
                     window.location.href = './index.html';

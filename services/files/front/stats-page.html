@@ -348,6 +348,15 @@ function renderStats(output) {
   }
   document.getElementById('qualityAlerts').innerHTML = qualHtml;
 
+  // Enrichir la dernière entrée d'historique avec le nombre d'analyses
+  if (analyses) {
+    const history = JSON.parse(localStorage.getItem('updateHistory') || '[]');
+    if (history.length > 0 && !history[0].analyses) {
+      history[0].analyses = analyses;
+      localStorage.setItem('updateHistory', JSON.stringify(history));
+    }
+  }
+
   // Stocker le résumé qualité pour le bandeau de l'accueil
   localStorage.setItem('qualitySummary', JSON.stringify({
     timestamp: new Date().toISOString(),
