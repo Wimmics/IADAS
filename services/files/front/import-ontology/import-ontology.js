@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 logToConsole('Reconstruction terminée avec succès !');
                 setTimeout(() => {
                     alert('Ontologie reconstruite avec succès !\nVous pouvez maintenant utiliser la nouvelle ontologie.');
-                    window.location.href = './update-page.html';
+                    window.location.href = './index.html';
                 }, 2000);
             }
         } catch (e) {
