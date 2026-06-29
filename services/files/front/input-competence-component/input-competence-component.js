@@ -129,9 +129,16 @@ class InputCompetenceComponent extends HTMLElement {
                     <h2>Questions de Compétences</h2>
                 </div>
 
+                <div class="category-filters" style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+                    <button class="cat-filter active" data-filter="all"        style="padding:6px 14px; border-radius:20px; border:2px solid #2e6da4; background:#2e6da4; color:white; font-size:13px; cursor:pointer;">Tout</button>
+                    <button class="cat-filter"        data-filter="facteurs"   style="padding:6px 14px; border-radius:20px; border:2px solid #2e6da4; background:white; color:#2e6da4; font-size:13px; cursor:pointer;">Facteurs</button>
+                    <button class="cat-filter"        data-filter="population" style="padding:6px 14px; border-radius:20px; border:2px solid #2e6da4; background:white; color:#2e6da4; font-size:13px; cursor:pointer;">Population</button>
+                    <button class="cat-filter"        data-filter="sport"      style="padding:6px 14px; border-radius:20px; border:2px solid #2e6da4; background:white; color:#2e6da4; font-size:13px; cursor:pointer;">Sport</button>
+                </div>
+
                 <div class="accordion-section">
                     <!-- Question 1 : ACAD spécifique (pas de sous-options) -->
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-category="facteurs">
                         <div class="accordion-header" data-question="q1">
                             <h3>Pour une ACAD spécifique, quel est l'ensemble des facteurs psychosociaux associés ?</h3>
                             <span class="accordion-icon">🔍</span>
@@ -139,7 +146,7 @@ class InputCompetenceComponent extends HTMLElement {
                     </div>
 
                     <!-- Question 2 : Facteur spécifique (avec sous-options) -->
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-category="facteurs">
                         <div class="accordion-header" data-toggle="accordion-2">
                             <h3>Pour un facteur spécifique, à quels types d'ACAD sont-ils reliés ?</h3>
                             <span class="accordion-icon">▼</span>
@@ -161,7 +168,7 @@ class InputCompetenceComponent extends HTMLElement {
                     </div>
 
                     <!-- Question 3 : Catégorie de facteurs (avec sous-options) -->
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-category="facteurs">
                         <div class="accordion-header" data-toggle="accordion-3">
                             <h3>Pour une catégorie de facteurs, à quels types d'ACAD sont-ils reliés ?</h3>
                             <span class="accordion-icon">▼</span>
@@ -187,7 +194,7 @@ class InputCompetenceComponent extends HTMLElement {
                     </div>
 
                     <!-- Question 4 : Relations selon le genre -->
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-category="population">
                         <div class="accordion-header" data-toggle="accordion-4">
                             <h3>Quelles sont les relations ACAD-facteurs selon le genre ?</h3>
                             <span class="accordion-icon">▼</span>
@@ -209,7 +216,7 @@ class InputCompetenceComponent extends HTMLElement {
                     </div>
 
                     <!-- Question 5 : Relations selon le type de sport -->
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-category="sport">
                         <div class="accordion-header" data-toggle="accordion-5">
                             <h3>Quelles sont les relations ACAD-facteurs selon le type de sport pratiqué ?</h3>
                             <span class="accordion-icon">▼</span>
@@ -235,7 +242,7 @@ class InputCompetenceComponent extends HTMLElement {
                     </div>
 
                     <!-- Question 6 : Relations selon le sexe -->
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-category="population">
                         <div class="accordion-header" data-toggle="accordion-6">
                             <h3>Quelles sont les relations ACAD-facteurs selon le sexe ?</h3>
                             <span class="accordion-icon">▼</span>
@@ -257,7 +264,7 @@ class InputCompetenceComponent extends HTMLElement {
                     </div>
 
                     <!-- Question 7 : Volleyball hommes 21 ans -->
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-category="population">
                         <div class="accordion-header" data-question="q7-volleyball-men-21">
                             <h3>Quelles sont les relations ACAD-facteurs chez les hommes pratiquant le volleyball avec un âge moyen de 21 ans ?</h3>
                             <span class="accordion-icon">▼</span>
@@ -265,7 +272,7 @@ class InputCompetenceComponent extends HTMLElement {
                     </div>
 
                     <!-- Question 8 : Catégories de sport -->
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-category="sport">
                         <div class="accordion-header" data-toggle="accordion-8">
                             <h3>Quelles sont les relations ACAD-facteurs selon la catégorie de sport ?</h3>
                             <span class="accordion-icon">▼</span>
