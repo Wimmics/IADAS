@@ -12,21 +12,17 @@ function exportSparqlToCSV(sparqlData, filename) {
     const bindings = sparqlData.results.bindings;
     const headers = sparqlData.head.vars;
 
-    const rows = [headers];
+    function escapeCell(val) {
+        const s = (val || '').replace(/"/g, '""');
+        return '"' + s + '"';
+    }
+
+    const rows = [headers.map(escapeCell)];
     bindings.forEach(row => {
-        rows.push(headers.map(h => {
-            const cell = row[h];
-            if (!cell) return '';
-            const val = cell.value || '';
-            // Échapper les guillemets et encadrer si nécessaire
-            if (val.includes(';') || val.includes('"') || val.includes('\n')) {
-                return '"' + val.replace(/"/g, '""') + '"';
-            }
-            return val;
-        }));
+        rows.push(headers.map(h => escapeCell(row[h] ? row[h].value : '')));
     });
 
-    const csvContent = rows.map(r => r.join(';')).join('\r\n');
+    const csvContent = rows.map(r => r.join(',')).join('\r\n');
     const bom = '﻿'; // BOM pour Excel UTF-8
     const blob = new Blob([bom + csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
