@@ -328,6 +328,22 @@ class InputCompetenceComponent extends HTMLElement {
             });
         });
 
+        // Filtres par catégorie
+        this.querySelectorAll('.cat-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                this.querySelectorAll('.cat-filter').forEach(b => {
+                    b.style.background = 'white';
+                    b.style.color = '#2e6da4';
+                });
+                btn.style.background = '#2e6da4';
+                btn.style.color = 'white';
+                this.querySelectorAll('.accordion-item[data-category]').forEach(item => {
+                    item.style.display = (filter === 'all' || item.getAttribute('data-category') === filter) ? '' : 'none';
+                });
+            });
+        });
+
         // Bouton rechercher
         const searchBtn = this.querySelector('#searchBtn');
         if (searchBtn) {
