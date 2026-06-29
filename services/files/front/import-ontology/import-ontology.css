@@ -363,6 +363,164 @@ footer {
     margin-top: auto;
 }
 
+/* VALIDATE BUTTON */
+.validate-btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.validate-btn:hover:not(:disabled) {
+    background-color: #219a52;
+    transform: translateY(-2px);
+}
+
+.validate-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* VALIDATION SECTION */
+.validation-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.validation-section h2 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.validation-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+    border-top: 4px solid #3498db;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-top: 6px;
+}
+
+.validation-checks {
+    margin-bottom: 20px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.check-item.ok {
+    background: #d5f4e6;
+    color: #1e8449;
+}
+
+.check-item.warning {
+    background: #fef9e7;
+    color: #d68910;
+    border-left: 4px solid #f39c12;
+}
+
+.check-item.error {
+    background: #fadbd8;
+    color: #c0392b;
+    border-left: 4px solid #e74c3c;
+}
+
+.check-icon {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.unknown-variables {
+    background: #fff3cd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 4px solid #f39c12;
+}
+
+.unknown-variables h4 {
+    color: #856404;
+    margin-bottom: 8px;
+}
+
+.unknown-variables ul {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.unknown-variables ul li {
+    font-size: 13px;
+    color: #856404;
+    padding: 4px 0;
+    border-bottom: 1px solid #ffeeba;
+}
+
+.validation-verdict {
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.verdict-ok {
+    background: #d5f4e6;
+    color: #1e8449;
+    border: 2px solid #27ae60;
+}
+
+.verdict-warning {
+    background: #fef9e7;
+    color: #d68910;
+    border: 2px solid #f39c12;
+}
+
+.verdict-error {
+    background: #fadbd8;
+    color: #c0392b;
+    border: 2px solid #e74c3c;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .import-container {

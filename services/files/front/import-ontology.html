@@ -72,11 +72,24 @@
             </div>
 
             <div class="action-controls">
-                <button id="rebuildBtn" class="rebuild-btn" disabled>
-                    🚀 Reconstruire Ontologie
+                <button id="rebuildBtn" class="validate-btn" disabled>
+                    Valider les données
                 </button>
                 <button id="cancelBtn" class="cancel-btn">
                     ❌ Annuler
+                </button>
+            </div>
+        </section>
+
+        <section class="validation-section" id="validationSection" style="display: none;">
+            <h2>Rapport de validation des données</h2>
+            <div id="validationContent"></div>
+            <div class="action-controls" id="validationControls">
+                <button id="confirmRebuildBtn" class="rebuild-btn">
+                    🚀 Confirmer et reconstruire
+                </button>
+                <button id="backToUploadBtn" class="cancel-btn">
+                    Modifier les fichiers
                 </button>
             </div>
         </section>
