@@ -1,0 +1,457 @@
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix iadas:  <http://ns.inria.fr/iadas/ontology/> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix bibo:   <http://purl.org/ontology/bibo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sh-iadas: <http://ns.inria.fr/iadas/shacl/> .
+
+# =============================================================================
+# SHACL Shapes — Ontologie IA-DAS
+# Auteure : Imane Amraoui — Stage IA-DAS, Mai 2026
+#
+# Convention :
+#   sh:minCount 1 = obligatoire (doit toujours être présent)
+#   sh:minCount 0 = optionnel (peut être absent — pas de violation si manquant)
+#   sh:sparql     = contrainte croisée (cohérence entre propriétés liées)
+#
+# Propriétés optionnelles : country, continent, hasMediator, hasModerator,
+#   mediatorMeasure, moderatorMeasure, limites, perspectives, authorConclusion,
+#   hasSubgroup, sportingPopulation, hasRange, hasMeanValue, effectSize
+#
+# Contraintes croisées (AnalysisShape) :
+#   hasMediator ≠ N.A.  →  mediatorMeasure ≠ N.A.
+#   hasModerator ≠ N.A. →  moderatorMeasure ≠ N.A.
+#   Violations détectées : Analysis_933, Analysis_936 (moderatorMeasure manquant)
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Shape 1 : SportPsychologyArticle
+# -----------------------------------------------------------------------------
+sh-iadas:SportPsychologyArticleShape a sh:NodeShape ;
+    sh:targetClass iadas:SportPsychologyArticle ;
+    sh:name "Article de psychologie du sport" ;
+    sh:description "Contraintes sur les articles scientifiques de la base IA-DAS" ;
+
+    # Obligatoires
+    sh:property [
+        sh:path bibo:doi ;
+        sh:name "DOI" ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Un article doit avoir un DOI (N.A. si non disponible)."
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:name "Titre" ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Un article doit avoir un titre."
+    ] ;
+    sh:property [
+        sh:path dcterms:date ;
+        sh:name "Année de publication" ;
+        sh:minCount 1 ;
+        sh:message "Un article doit avoir une année de publication."
+    ] ;
+    sh:property [
+        sh:path iadas:hasAnalysis ;
+        sh:name "Lien vers l'analyse" ;
+        sh:minCount 1 ;
+        sh:class iadas:Analysis ;
+        sh:message "Un article doit être associé à au moins une analyse."
+    ] ;
+
+    # Optionnels — peuvent être absents (étude internationale, données incomplètes)
+    sh:property [
+        sh:path iadas:country ;
+        sh:name "Pays" ;
+        sh:minCount 0 ;
+        sh:message "Le pays de l'étude est optionnel."
+    ] ;
+    sh:property [
+        sh:path iadas:continent ;
+        sh:name "Continent" ;
+        sh:minCount 0 ;
+        sh:message "Le continent de l'étude est optionnel."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 2 : Analysis
+# -----------------------------------------------------------------------------
+sh-iadas:AnalysisShape a sh:NodeShape ;
+    sh:targetClass iadas:Analysis ;
+    sh:name "Analyse statistique" ;
+    sh:description "Contraintes sur les analyses reliant VI et VD" ;
+
+    # Obligatoires
+    sh:property [
+        sh:path iadas:analysisId ;
+        sh:name "Identifiant de l'analyse" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Chaque analyse doit avoir un identifiant unique."
+    ] ;
+    sh:property [
+        sh:path iadas:hasRelation ;
+        sh:name "Relation VI-VD" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class iadas:Relations ;
+        sh:message "Chaque analyse doit avoir exactement une relation (VI → VD)."
+    ] ;
+    sh:property [
+        sh:path iadas:hasPopulation ;
+        sh:name "Population étudiée" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class iadas:Population ;
+        sh:message "Chaque analyse doit référencer une population."
+    ] ;
+    sh:property [
+        sh:path iadas:relationDirection ;
+        sh:name "Direction de la relation" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ( "+" "-" "NS" "NA" "N.A." ) ;
+        sh:message "La direction doit être : +, -, NS, NA ou N.A."
+    ] ;
+    sh:property [
+        sh:path iadas:typeOfAnalysis ;
+        sh:name "Type d'analyse" ;
+        sh:minCount 1 ;
+        sh:message "Le type d'analyse doit être renseigné."
+    ] ;
+    sh:property [
+        sh:path iadas:complexityOfAnalysis ;
+        sh:name "Complexité de l'analyse" ;
+        sh:minCount 1 ;
+        sh:in ( "Simple analyses" "simple analyses" "Complex analyses" ) ;
+        sh:message "La complexité de l'analyse doit être renseignée."
+    ] ;
+    sh:property [
+        sh:path iadas:hasSport ;
+        sh:name "Sport étudié" ;
+        sh:minCount 1 ;
+        sh:message "Chaque analyse doit référencer un sport."
+    ] ;
+    sh:property [
+        sh:path iadas:relationDegree ;
+        sh:name "Degré de la relation" ;
+        sh:minCount 1 ;
+        sh:message "Le degré de la relation doit être renseigné."
+    ] ;
+    sh:property [
+        sh:path iadas:groupStatisticalAnalysis ;
+        sh:name "Analyse statistique de groupe" ;
+        sh:minCount 1 ;
+        sh:message "L'analyse de groupe doit être renseignée."
+    ] ;
+    sh:property [
+        sh:path iadas:sportPracticeType ;
+        sh:name "Type de pratique sportive" ;
+        sh:minCount 1 ;
+        sh:message "Le type de pratique sportive doit être renseigné."
+    ] ;
+    sh:property [
+        sh:path iadas:sampleSizeMobilized ;
+        sh:name "Taille d'échantillon mobilisée" ;
+        sh:minCount 1 ;
+        sh:message "La taille d'échantillon mobilisée doit être renseignée."
+    ] ;
+    sh:property [
+        sh:path iadas:numberOfSportStudied ;
+        sh:name "Nombre de sports étudiés" ;
+        sh:minCount 1 ;
+        sh:message "Le nombre de sports étudiés doit être renseigné."
+    ] ;
+
+    # Optionnels — absents ou N.A. pour les analyses simples
+    sh:property [
+        sh:path iadas:hasMediator ;
+        sh:name "Médiateur" ;
+        sh:minCount 0 ;
+        sh:message "Le médiateur est optionnel (absent pour les analyses simples)."
+    ] ;
+    sh:property [
+        sh:path iadas:hasModerator ;
+        sh:name "Modérateur" ;
+        sh:minCount 0 ;
+        sh:message "Le modérateur est optionnel (absent pour les analyses simples)."
+    ] ;
+    sh:property [
+        sh:path iadas:mediatorMeasure ;
+        sh:name "Mesure du médiateur" ;
+        sh:minCount 0 ;
+        sh:message "La mesure du médiateur est optionnelle."
+    ] ;
+    sh:property [
+        sh:path iadas:moderatorMeasure ;
+        sh:name "Mesure du modérateur" ;
+        sh:minCount 0 ;
+        sh:message "La mesure du modérateur est optionnelle."
+    ] ;
+    sh:property [
+        sh:path iadas:authorConclusion ;
+        sh:name "Conclusion des auteurs" ;
+        sh:minCount 0 ;
+        sh:message "La conclusion des auteurs est optionnelle."
+    ] ;
+    sh:property [
+        sh:path iadas:limites ;
+        sh:name "Limites de l'étude" ;
+        sh:minCount 0 ;
+        sh:message "Les limites de l'étude sont optionnelles."
+    ] ;
+    sh:property [
+        sh:path iadas:perspectives ;
+        sh:name "Perspectives" ;
+        sh:minCount 0 ;
+        sh:message "Les perspectives sont optionnelles."
+    ] ;
+
+    # Contraintes croisées : cohérence médiateur/modérateur et leurs mesures
+    # Règle : si la variable est renseignée (≠ N.A.), la mesure doit l'être aussi
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Si hasMediator est renseigné (≠ N.A.), mediatorMeasure ne peut pas être N.A." ;
+        sh:select """
+            PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+            SELECT $this WHERE {
+                $this iadas:hasMediator ?med ;
+                      iadas:mediatorMeasure ?mm .
+                FILTER(?med != "N.A.")
+                FILTER(?mm = "N.A.")
+            }
+        """ ;
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Si hasModerator est renseigné (≠ N.A.), moderatorMeasure ne peut pas être N.A." ;
+        sh:select """
+            PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+            SELECT $this WHERE {
+                $this iadas:hasModerator ?mod ;
+                      iadas:moderatorMeasure ?mm .
+                FILTER(?mod != "N.A.")
+                FILTER(?mm = "N.A.")
+            }
+        """ ;
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 3 : Relations
+# effectSize est OPTIONNEL : calculé uniquement pour les valeurs r=
+# -----------------------------------------------------------------------------
+sh-iadas:RelationsShape a sh:NodeShape ;
+    sh:targetClass iadas:Relations ;
+    sh:name "Relation entre variable indépendante et dépendante" ;
+
+    # Obligatoires
+    sh:property [
+        sh:path iadas:hasIndependentVariable ;
+        sh:name "Variable indépendante" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class iadas:VariableIndependante ;
+        sh:message "Une relation doit avoir exactement une VI."
+    ] ;
+    sh:property [
+        sh:path iadas:hasDependentVariable ;
+        sh:name "Variable dépendante" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class iadas:VariableDependante ;
+        sh:message "Une relation doit avoir exactement une VD."
+    ] ;
+    sh:property [
+        sh:path iadas:relationDegreeSecondary ;
+        sh:name "Degré de relation secondaire" ;
+        sh:minCount 1 ;
+        sh:message "La valeur brute du degré de relation doit être renseignée."
+    ] ;
+
+    # Optionnel — calculé uniquement pour les valeurs r= (absent pour 889/2373)
+    sh:property [
+        sh:path iadas:effectSize ;
+        sh:name "Taille d'effet" ;
+        sh:minCount 0 ;
+        sh:in ( "negligible" "weak" "moderate" "strong" ) ;
+        sh:message "effectSize doit être : negligible, weak, moderate ou strong."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 4 : VariableDependante (VD)
+# -----------------------------------------------------------------------------
+sh-iadas:VariableDependanteShape a sh:NodeShape ;
+    sh:targetClass iadas:VariableDependante ;
+    sh:name "Variable dépendante (comportement DEAB)" ;
+
+    sh:property [
+        sh:path iadas:variableName ;
+        sh:name "Nom de la variable" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "La VD doit avoir un nom."
+    ] ;
+    sh:property [
+        sh:path iadas:refersToVariable ;
+        sh:name "Concept ACAD-vocab" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://ns\\.inria\\.fr/iadas/ACAD-vocab/" ;
+        sh:message "La VD doit référencer un concept dans le vocabulaire ACAD."
+    ] ;
+    sh:property [
+        sh:path iadas:specification ;
+        sh:name "Spécification" ;
+        sh:minCount 1 ;
+        sh:message "La spécification de la VD doit être renseignée (N.A. si aucune)."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 5 : VariableIndependante (VI)
+# -----------------------------------------------------------------------------
+sh-iadas:VariableIndependanteShape a sh:NodeShape ;
+    sh:targetClass iadas:VariableIndependante ;
+    sh:name "Variable indépendante (facteur psychologique)" ;
+
+    sh:property [
+        sh:path iadas:variableName ;
+        sh:name "Nom de la variable" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "La VI doit avoir un nom."
+    ] ;
+    sh:property [
+        sh:path iadas:refersToVariable ;
+        sh:name "Concept ACAD-vocab" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://ns\\.inria\\.fr/iadas/ACAD-vocab/" ;
+        sh:message "La VI doit référencer un concept dans le vocabulaire ACAD."
+    ] ;
+    sh:property [
+        sh:path iadas:specification ;
+        sh:name "Spécification" ;
+        sh:minCount 1 ;
+        sh:message "La spécification de la VI doit être renseignée (N.A. si aucune)."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 6 : Population
+# -----------------------------------------------------------------------------
+sh-iadas:PopulationShape a sh:NodeShape ;
+    sh:targetClass iadas:Population ;
+    sh:name "Population étudiée" ;
+
+    # Obligatoires
+    sh:property [
+        sh:path iadas:gender ;
+        sh:name "Sexe de la population" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ( "Male" "Female" "Mixed" "N.A." ) ;
+        sh:message "Le sexe doit être : Male, Female, Mixed ou N.A."
+    ] ;
+    sh:property [
+        sh:path iadas:sampleSize ;
+        sh:name "Taille de l'échantillon" ;
+        sh:minCount 1 ;
+        sh:message "La taille de l'échantillon doit être renseignée."
+    ] ;
+    sh:property [
+        sh:path iadas:hasStatistics ;
+        sh:name "Statistiques associées" ;
+        sh:minCount 1 ;
+        sh:message "La population doit avoir au moins une statistique."
+    ] ;
+    sh:property [
+        sh:path iadas:population ;
+        sh:name "Description de la population" ;
+        sh:minCount 1 ;
+        sh:message "La description de la population doit être renseignée."
+    ] ;
+    sh:property [
+        sh:path iadas:sportLevel ;
+        sh:name "Niveau sportif" ;
+        sh:minCount 1 ;
+        sh:message "Le niveau sportif doit être renseigné."
+    ] ;
+    sh:property [
+        sh:path iadas:inclusionCriteria ;
+        sh:name "Critères d'inclusion" ;
+        sh:minCount 1 ;
+        sh:message "Les critères d'inclusion doivent être renseignés (N.A. si absents)."
+    ] ;
+
+    # Optionnels
+    sh:property [
+        sh:path iadas:hasSubgroup ;
+        sh:name "Sous-groupe" ;
+        sh:minCount 0 ;
+        sh:message "Le sous-groupe est optionnel."
+    ] ;
+    sh:property [
+        sh:path iadas:sportingPopulation ;
+        sh:name "Population sportive" ;
+        sh:minCount 0 ;
+        sh:message "La population sportive est optionnelle."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 7 : AgeStatistics
+# hasMeanValue et hasRange sont optionnels (données parfois non disponibles)
+# -----------------------------------------------------------------------------
+sh-iadas:AgeStatisticsShape a sh:NodeShape ;
+    sh:targetClass iadas:AgeStatistics ;
+    sh:name "Statistiques d'âge" ;
+
+    sh:property [
+        sh:path iadas:hasMeanValue ;
+        sh:name "Moyenne d'âge" ;
+        sh:minCount 0 ;
+        sh:message "La moyenne d'âge est optionnelle."
+    ] ;
+    sh:property [
+        sh:path iadas:hasRange ;
+        sh:name "Plage d'âge" ;
+        sh:minCount 0 ;
+        sh:message "La plage d'âge est optionnelle."
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# Shape 8 : Concept SKOS du vocabulaire ACAD
+# -----------------------------------------------------------------------------
+sh-iadas:ACADConceptShape a sh:NodeShape ;
+    sh:targetClass skos:Concept ;
+    sh:name "Concept du vocabulaire ACAD" ;
+
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:name "Label préférentiel" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Chaque concept SKOS doit avoir exactement un prefLabel."
+    ] ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:name "Scheme SKOS" ;
+        sh:minCount 1 ;
+        sh:message "Chaque concept doit appartenir à un ConceptScheme."
+    ] .

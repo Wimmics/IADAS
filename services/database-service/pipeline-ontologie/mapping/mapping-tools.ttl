@@ -1,0 +1,118 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix iadas: <http://ia-das.org/onto#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://ns.inria.fr/iadas/ACAD-vocab/>.
+
+<#ToolsConceptSheme> a rr:TriplesMap ;
+rml:logicalSource [
+    rml:source "data-csv-converted/IA-DAS-Data-unique-ids.csv" ;
+    rml:referenceFormulation ql:CSV
+] ;
+     
+rr:subjectMap [
+    rr:constant <http://ns.inria.fr/iadas/measurementTools-vocab/Tools> ;
+    rr:class skos:ConceptScheme
+] ;
+rr:predicateObjectMap [
+    rr:predicate dcterms:title ;
+    rr:objectMap [  rr:constant "IA-DAS - Thésaurus des outils de mesures";
+    rr:language "fr" ;
+  ]];
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:title ;
+     rr:objectMap [rr:constant "IA-DAS - Measurement tools thesaurus";
+    rr:language "en" ;
+  ]];
+
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:description ;
+     rr:objectMap [ rr:constant "Thésaurus pour décrire les outils de mesure citées dans les articles";
+    rr:language "fr" ;
+  ]];
+
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:description ;
+     rr:objectMap [ rr:constant "Tesaurus descriping measurement tools cited on scientific papers";
+    rr:language "en" ;
+  ]];
+
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:creator ;
+     rr:objectMap [ rr:constant "Équipe de recherche IA-DAS";
+    rr:language "en" ;
+  ]];
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:created ;
+     rr:objectMap [ rr:constant "2025-11-25";
+    rr:language "en" ;
+  ]
+  ];
+
+
+rr:predicateObjectMap [
+    rr:predicate dcterms:version ;
+     rr:objectMap [ rr:constant "1.0";
+    rr:language "en" ;
+  ]
+  ];
+   .
+
+
+<#Measure_VDClass> a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source "data-csv-converted/IA-DAS-Data-unique-ids.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/iadas/measurementTools-vocab/{Measure_VD}" ;
+        rr:class skos:Concept,iadas:MeasurementTools;
+    ] ;
+
+        
+  #  Associates each concept with its concept scheme
+ rr:predicateObjectMap [
+     rr:predicate skos:inScheme ;
+     rr:objectMap [
+         rr:constant <http://ns.inria.fr/iadas/measurementTools-vocab/Tools> ;
+ ] ;
+ ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate skos:prefLabel ;
+        rr:objectMap [ rml:reference "Measure_VD" ]
+    ] .
+
+
+<#Measure_VI> a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source "data-csv-converted/IA-DAS-Data-unique-ids.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+    
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/iadas/measurementTools-vocab/{Measure_VI}" ;
+        rr:class skos:Concept
+    ] ;
+    rr:predicateObjectMap [
+    rr:predicate skos:inScheme ;
+    rr:objectMap [
+        rr:constant  <http://ns.inria.fr/iadas/measurementTools-vocab/Tools>;
+] ;
+] ;
+
+    rr:predicateObjectMap [
+        rr:predicate skos:prefLabel ;
+        rr:objectMap [ rml:reference "Measure_VI" ]
+    ] ;
+.
