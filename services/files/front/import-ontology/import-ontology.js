@@ -148,7 +148,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const uniqueACADS = [...new Set(dataRows.map(r => r['ACADS']).filter(Boolean))];
 
             // Variables inconnues (VD non présentes dans la hiérarchie)
-            const unknownVDs = uniqueVDs.filter(vd => !hierarchyConcepts.has(vd));
+            const IGNORED_VDS = new Set(['N.A.', 'n.a.', 'NA', 'N/A', 'n/a', '-', '']);
+            const unknownVDs = uniqueVDs.filter(vd => !hierarchyConcepts.has(vd) && !IGNORED_VDS.has(vd));
 
             // Lignes avec champs critiques vides
             const emptyVD = dataRows.filter(r => !r['VD']).length;
