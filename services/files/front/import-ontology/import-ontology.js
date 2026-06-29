@@ -130,10 +130,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const dataRows = parseCSV(dataText).filter(r => Object.values(r).some(v => v));
             const classRows = parseCSV(classText);
 
-            // Construire le référentiel de noms de concepts de la hiérarchie
+            // Construire le référentiel de noms de concepts de la hiérarchie (exact + insensible à la casse)
             const hierarchyConcepts = new Set();
+            const hierarchyLower = new Map(); // clé lowercase → valeur exacte dans la hiérarchie
             ['CLASS', 'sub-class 1', 'sub-class 2', 'sub-class 3', 'sub-class 4', 'sub-class 5'].forEach(col => {
-                classRows.forEach(row => { if (row[col]) hierarchyConcepts.add(row[col].trim()); });
+                classRows.forEach(row => {
+                    if (row[col]) {
+                        const v = row[col].trim();
+                        hierarchyConcepts.add(v);
+                        hierarchyLower.set(v.toLowerCase(), v);
+                    }
+                });
             });
 
             // Colonnes obligatoires
@@ -147,9 +154,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const uniqueVIs = [...new Set(dataRows.map(r => r['VI']).filter(Boolean))];
             const uniqueACADS = [...new Set(dataRows.map(r => r['ACADS']).filter(Boolean))];
 
-            // Variables inconnues (VD non présentes dans la hiérarchie)
+            // Classer les VD inconnues : casse différente vs vraiment absentes
             const IGNORED_VDS = new Set(['N.A.', 'n.a.', 'NA', 'N/A', 'n/a', '-', '']);
-            const unknownVDs = uniqueVDs.filter(vd => !hierarchyConcepts.has(vd) && !IGNORED_VDS.has(vd));
+            const caseMismatch = []; // { inData, inHierarchy }
+            const trulyAbsent = [];
+            uniqueVDs.forEach(vd => {
+                if (hierarchyConcepts.has(vd) || IGNORED_VDS.has(vd)) return;
+                const match = hierarchyLower.get(vd.toLowerCase());
+                if (match) caseMismatch.push({ inData: vd, inHierarchy: match });
+                else trulyAbsent.push(vd);
+            });
 
             // Lignes avec champs critiques vides
             const emptyVD = dataRows.filter(r => !r['VD']).length;
@@ -158,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             showValidationReport({
                 nbAnalyses, uniqueVDs, uniqueVIs, uniqueACADS,
-                unknownVDs, missingCols, emptyVD, emptyVI, emptyACADS
+                caseMismatch, trulyAbsent, missingCols, emptyVD, emptyVI, emptyACADS
             });
 
         } catch (err) {
@@ -170,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showValidationReport(r) {
         const hasErrors = r.missingCols.length > 0;
-        const hasWarnings = r.unknownVDs.length > 0 || r.emptyVD > 0 || r.emptyVI > 0 || r.emptyACADS > 0;
+        const hasWarnings = r.caseMismatch.length > 0 || r.trulyAbsent.length > 0 || r.emptyVD > 0 || r.emptyVI > 0 || r.emptyACADS > 0;
 
         let verdictClass, verdictText;
         if (hasErrors) {
@@ -184,12 +198,29 @@ document.addEventListener('DOMContentLoaded', function() {
             verdictText = `Fichier valide — prêt pour la reconstruction`;
         }
 
-        const unknownVDsHtml = r.unknownVDs.length > 0 ? `
-            <div class="unknown-variables">
-                <h4>Variables dépendantes (VD) absentes de la hiérarchie (${r.unknownVDs.length})</h4>
-                <p style="font-size:12px;color:#856404;margin-bottom:8px;">Ces VD n'ont pas de correspondance dans Class-Hierarchy-V1.csv</p>
-                <ul>${r.unknownVDs.slice(0, 20).map(v => `<li>${v}</li>`).join('')}
-                    ${r.unknownVDs.length > 20 ? `<li style="font-style:italic">...et ${r.unknownVDs.length - 20} autres</li>` : ''}
+        const caseMismatchHtml = r.caseMismatch.length > 0 ? `
+            <div class="unknown-variables mismatch">
+                <h4>Problèmes de casse (${r.caseMismatch.length}) — même concept, orthographe différente</h4>
+                <p style="font-size:12px;color:#7b6000;margin-bottom:8px;">Ces VD existent dans la hiérarchie mais avec une casse différente. Correction recommandée dans IA-DAS-Data.csv.</p>
+                <table style="width:100%;font-size:13px;border-collapse:collapse;">
+                    <tr style="font-weight:bold;border-bottom:1px solid #e0c070;">
+                        <td style="padding:4px 8px;">Dans les données</td>
+                        <td style="padding:4px 8px;">Dans la hiérarchie</td>
+                    </tr>
+                    ${r.caseMismatch.map(m => `
+                    <tr style="border-bottom:1px solid #ffeeba;">
+                        <td style="padding:4px 8px;color:#c0392b;">${m.inData}</td>
+                        <td style="padding:4px 8px;color:#27ae60;">${m.inHierarchy}</td>
+                    </tr>`).join('')}
+                </table>
+            </div>` : '';
+
+        const trulyAbsentHtml = r.trulyAbsent.length > 0 ? `
+            <div class="unknown-variables absent">
+                <h4>VD absentes de la hiérarchie (${r.trulyAbsent.length}) — à valider avec les encadrantes</h4>
+                <p style="font-size:12px;color:#856404;margin-bottom:8px;">Ces VD n'ont aucune correspondance dans Class-Hierarchy-V1.csv. Vérifier si elles doivent être ajoutées.</p>
+                <ul>${r.trulyAbsent.slice(0, 20).map(v => `<li>${v}</li>`).join('')}
+                    ${r.trulyAbsent.length > 20 ? `<li style="font-style:italic">...et ${r.trulyAbsent.length - 20} autres</li>` : ''}
                 </ul>
             </div>` : '';
 
@@ -230,13 +261,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     ? `<div class="check-item warning"><span class="check-icon">⚠</span>${r.emptyACADS} ligne(s) sans ACADS</div>`
                     : `<div class="check-item ok"><span class="check-icon">✓</span>Aucune ligne sans ACADS</div>`
                 }
-                ${r.unknownVDs.length > 0
-                    ? `<div class="check-item warning"><span class="check-icon">⚠</span>${r.unknownVDs.length} VD non reconnue(s) dans la hiérarchie ACAD</div>`
+                ${r.caseMismatch.length > 0
+                    ? `<div class="check-item warning"><span class="check-icon">⚠</span>${r.caseMismatch.length} VD avec problème de casse (concept existant mais orthographe différente)</div>`
+                    : ''
+                }
+                ${r.trulyAbsent.length > 0
+                    ? `<div class="check-item warning"><span class="check-icon">⚠</span>${r.trulyAbsent.length} VD absente(s) de la hiérarchie ACAD</div>`
                     : `<div class="check-item ok"><span class="check-icon">✓</span>Toutes les VD reconnues dans la hiérarchie ACAD</div>`
                 }
             </div>
 
-            ${unknownVDsHtml}
+            ${caseMismatchHtml}
+            ${trulyAbsentHtml}
 
             <div class="validation-verdict ${verdictClass}">${verdictText}</div>
         `;

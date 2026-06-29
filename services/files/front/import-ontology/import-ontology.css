@@ -475,6 +475,16 @@ footer {
     border-left: 4px solid #f39c12;
 }
 
+.unknown-variables.mismatch {
+    background: #fef9e7;
+    border-left-color: #e67e22;
+}
+
+.unknown-variables.absent {
+    background: #fff3cd;
+    border-left-color: #f39c12;
+}
+
 .unknown-variables h4 {
     color: #856404;
     margin-bottom: 8px;
