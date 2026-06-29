@@ -63,6 +63,12 @@
     /* Grid 2 cols */
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
+    /* Charts */
+    .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+    .chart-card { background: white; border-radius: 10px; padding: 20px 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .chart-card h3 { color: #1a3a5c; font-size: 15px; margin-bottom: 16px; border-bottom: 2px solid #eaf2fb; padding-bottom: 8px; }
+    .chart-wrapper { position: relative; height: 260px; }
+
     #errorBox { display: none; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; padding: 16px; color: #721c24; margin-bottom: 20px; }
     #content { display: none; }
   </style>
@@ -128,6 +134,22 @@
       </div>
     </div>
 
+    <!-- Graphiques visuels -->
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h3>Répartition de l'effectSize</h3>
+        <div class="chart-wrapper">
+          <canvas id="esDonutChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>Analyses par catégorie de VI</h3>
+        <div class="chart-wrapper">
+          <canvas id="esCatBarChart"></canvas>
+        </div>
+      </div>
+    </div>
+
     <!-- EffectSize global -->
     <div class="section">
       <h3>Répartition globale de l'effectSize (analyses simples)</h3>
@@ -176,10 +198,13 @@
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="./js/api-config.js"></script>
 <script>
 const COLORS = { strong: '#1a5276', moderate: '#2e86c1', weak: '#85c1e9', negligible: '#d6eaf8' };
 const COLORS_TEXT = { strong: 'white', moderate: 'white', weak: '#1a3a5c', negligible: '#1a3a5c' };
+let esDonutInstance = null;
+let esCatBarInstance = null;
 
 function loadStats() {
   const btn = document.getElementById('btnRun');
@@ -308,6 +333,9 @@ function renderStats(output) {
     document.getElementById('esSubTables').innerHTML = html || '<p style="color:#888">Données non disponibles</p>';
   }
 
+  // Graphiques
+  renderCharts(esData, esSum, output);
+
   // Qualité
   const cycles = parseValue(output, 'Cycles skos:broader');
   const doublons = parseValue(output, 'Vrais doublons');
@@ -319,6 +347,72 @@ function renderStats(output) {
     qualHtml += `<div class="alert ok">✓ Aucun cycle dans la hiérarchie SKOS.</div>`;
   }
   document.getElementById('qualityAlerts').innerHTML = qualHtml;
+}
+
+function renderCharts(esData, esSum, output) {
+  // Détruire les instances précédentes si recalcul
+  if (esDonutInstance) { esDonutInstance.destroy(); esDonutInstance = null; }
+  if (esCatBarInstance) { esCatBarInstance.destroy(); esCatBarInstance = null; }
+
+  // --- Donut effectSize ---
+  const donutLabels = ['Strong', 'Moderate', 'Weak', 'Negligible'];
+  const donutValues = [esData.strong || 0, esData.moderate || 0, esData.weak || 0, esData.negligible || 0];
+  esDonutInstance = new Chart(document.getElementById('esDonutChart'), {
+    type: 'doughnut',
+    data: {
+      labels: donutLabels,
+      datasets: [{ data: donutValues, backgroundColor: [COLORS.strong, COLORS.moderate, COLORS.weak, COLORS.negligible], borderWidth: 2 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { size: 12 } } },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.label} : ${ctx.raw.toLocaleString('fr-FR')} (${esSum ? Math.round(ctx.raw/esSum*100) : 0}%)` } }
+      }
+    }
+  });
+
+  // --- Barres catégories VI ---
+  const catSection = output.match(/EFFECTSIZE PAR CATEGORIE DE VI[\s\S]*?(?=\n\n  [A-Z]|\n\n  VI PAR)/);
+  const catNames = [], catTotals = [], catStrong = [], catModerate = [], catWeak = [], catNeg = [];
+  if (catSection) {
+    catSection[0].split('\n').forEach(line => {
+      const m = line.match(/^\s{2}(.+?)\s{2,}(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)/);
+      if (m) {
+        const [, name, s, mo, w, n] = m;
+        const label = name.trim().replace(/_/g, ' ');
+        catNames.push(label.length > 28 ? label.slice(0, 26) + '…' : label);
+        catStrong.push(parseInt(s));
+        catModerate.push(parseInt(mo));
+        catWeak.push(parseInt(w));
+        catNeg.push(parseInt(n));
+        catTotals.push(parseInt(s) + parseInt(mo) + parseInt(w) + parseInt(n));
+      }
+    });
+  }
+  if (catNames.length > 0) {
+    esCatBarInstance = new Chart(document.getElementById('esCatBarChart'), {
+      type: 'bar',
+      data: {
+        labels: catNames,
+        datasets: [
+          { label: 'Strong',     data: catStrong,   backgroundColor: COLORS.strong,     stack: 'es' },
+          { label: 'Moderate',   data: catModerate, backgroundColor: COLORS.moderate,   stack: 'es' },
+          { label: 'Weak',       data: catWeak,     backgroundColor: COLORS.weak,       stack: 'es' },
+          { label: 'Negligible', data: catNeg,      backgroundColor: COLORS.negligible, stack: 'es' }
+        ]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'bottom', labels: { font: { size: 11 } } } },
+        scales: {
+          x: { stacked: true, ticks: { font: { size: 11 } } },
+          y: { stacked: true, ticks: { font: { size: 11 } } }
+        }
+      }
+    });
+  }
 }
 </script>
 
