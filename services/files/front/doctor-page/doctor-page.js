@@ -65,12 +65,20 @@ function setupInitialExportButtons() {
     if (exportPNGBtn) {
         exportPNGBtn.onclick = () => exportGraphToPNG();
     }
-    
+
     const exportExcelBtn = document.getElementById('exportExcel');
     if (exportExcelBtn) {
         exportExcelBtn.onclick = () => exportToExcel();
     }
-    
+
+    const exportCSVBtn = document.getElementById('exportCSV');
+    if (exportCSVBtn) {
+        exportCSVBtn.onclick = () => {
+            const ts = new Date().toISOString().slice(0,19).replace(/:/g,'-');
+            exportSparqlToCSV(currentData, `requetes_${ts}.csv`);
+        };
+    }
+
     const exportTurtleBtn = document.getElementById('exportTurtle');
     if (exportTurtleBtn) {
         exportTurtleBtn.onclick = () => exportToTurtle();
@@ -250,13 +258,15 @@ function enableResultControls() {
     const viewSparql = document.getElementById('viewSparql');
     const exportPNG = document.getElementById('exportPNG');
     const exportExcel = document.getElementById('exportExcel');
+    const exportCSV = document.getElementById('exportCSV');
     const exportTurtle = document.getElementById('exportTurtle');
-    
+
     if (viewTable) viewTable.disabled = false;
     if (viewGraph) viewGraph.disabled = false;
     if (viewSparql) viewSparql.disabled = false;
     if (exportPNG) exportPNG.disabled = false;
     if (exportExcel) exportExcel.disabled = false;
+    if (exportCSV) exportCSV.disabled = false;
     if (exportTurtle) exportTurtle.disabled = false;
     
     // Configurer les événements si pas déjà fait
