@@ -83,12 +83,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function parseCSV(text, delimiter = ';') {
-        const lines = text.split('\n').filter(l => l.trim());
-        if (lines.length === 0) return [];
-        const headers = lines[0].split(delimiter).map(h => h.trim().replace(/^﻿/, ''));
-        return lines.slice(1).map(line => {
-            const vals = line.split(delimiter).map(v => v.trim());
-            return Object.fromEntries(headers.map((h, i) => [h, vals[i] || '']));
+        // Parser respectant les champs entre guillemets (y compris multi-lignes)
+        const normalized = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+        const rawRows = [];
+        let row = '';
+        let inQuotes = false;
+        for (const ch of normalized) {
+            if (ch === '"') { inQuotes = !inQuotes; row += ch; }
+            else if (ch === '\n' && !inQuotes) { if (row.trim()) rawRows.push(row); row = ''; }
+            else { row += ch; }
+        }
+        if (row.trim()) rawRows.push(row);
+        if (rawRows.length === 0) return [];
+
+        function splitRow(line) {
+            const vals = [];
+            let val = '';
+            let inQ = false;
+            for (const ch of line) {
+                if (ch === '"') { inQ = !inQ; }
+                else if (ch === delimiter && !inQ) { vals.push(val.trim()); val = ''; }
+                else { val += ch; }
+            }
+            vals.push(val.trim());
+            return vals;
+        }
+
+        const headers = splitRow(rawRows[0]).map(h => h.replace(/^﻿/, '').replace(/^"|"$/g, ''));
+        return rawRows.slice(1).map(line => {
+            const vals = splitRow(line);
+            return Object.fromEntries(headers.map((h, i) => [h, (vals[i] || '').replace(/^"|"$/g, '')]));
         });
     }
 
