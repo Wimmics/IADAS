@@ -131,54 +131,67 @@ http.createServer(async (req, res) => {
             }
             
             try {
-              sendProgress(50, 'Pipeline terminée, reconstruction dataset...', '🗄️ Suppression ancien dataset ds');
-              
-              // ÉTAPE 3: Supprimer ancien dataset ds
-              const dsPath = '/app/fuseki/databases/ds';
-              if (fs.existsSync(dsPath)) {
-                console.log(`🗑️ Suppression ${dsPath}`);
-                fs.rmSync(dsPath, { recursive: true, force: true });
-                sendProgress(60, 'Ancien dataset supprimé');
-              }
-              
-              sendProgress(70, 'Nouveaux TTL générés avec succès');
-              sendProgress(80, 'Attente finalisation écriture TTL...', '⏳ Synchronisation fichiers');
-              
-              // Attendre 5 secondes pour que les gros TTL soient complètement écrits
-              setTimeout(() => {
-                sendProgress(85, 'Redémarrage service Fuseki...', '🔄 Rechargement dataset ds');
-                
-                // ÉTAPE 4: Redémarrer fuseki-init via Docker
-                exec('docker restart fuseki-init', (error, stdout, stderr) => {
-                if (error) {
-                  console.error('❌ Erreur restart fuseki-init:', error);
-                  sendProgress(90, 'Erreur redémarrage - vérifiez manuellement');
-                  
-                  res.write(JSON.stringify({ 
-                    success: false,
-                    error: 'Erreur redémarrage Fuseki',
-                    message: 'Les nouveaux TTL sont prêts mais Fuseki n\'a pas pu être redémarré',
-                    manual_action: 'Exécutez: docker restart fuseki-init',
-                    timestamp: new Date().toISOString(),
-                    processingTime: Date.now() - startTime
-                  }) + '\n');
-                  
-                } else {
-                  console.log('✅ Fuseki-init redémarré:', stdout);
-                  sendProgress(100, 'Reconstruction terminée !');
-                  
-                  res.write(JSON.stringify({ 
-                    success: true, 
-                    message: 'Ontologie reconstruite avec succès - Dataset ds rechargé automatiquement',
-                    timestamp: new Date().toISOString(),
-                    processingTime: Date.now() - startTime,
-                    fuseki_restart: 'success'
-                  }) + '\n');
+              sendProgress(50, 'Pipeline terminée, chargement dans Fuseki...');
+
+              // ÉTAPE 3 : Upload HTTP direct vers Fuseki (sans Docker restart)
+              const fusekiBase = process.env.FUSEKI_URL
+                ? process.env.FUSEKI_URL.replace('/ds/sparql', '')
+                : 'http://fuseki:3030';
+              const fusekiAuth = 'Basic ' + Buffer.from('admin:admin').toString('base64');
+
+              // Supprimer le dataset existant
+              sendProgress(55, 'Suppression ancien dataset...', '🗑️ DELETE /ds');
+              try {
+                await fetch(`${fusekiBase}/$/datasets/ds`, {
+                  method: 'DELETE',
+                  headers: { Authorization: fusekiAuth }
+                });
+              } catch (e) { /* dataset peut ne pas exister */ }
+
+              // Recréer le dataset
+              sendProgress(60, 'Création nouveau dataset...', '🆕 POST /$/datasets');
+              await fetch(`${fusekiBase}/$/datasets`, {
+                method: 'POST',
+                headers: { Authorization: fusekiAuth, 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'dbName=ds&dbType=tdb2'
+              });
+
+              // Charger les 4 fichiers TTL dans l'ordre
+              const resultatsDir = path.join(pipelineDir, 'resultats');
+              const skosFile = path.join(pipelineDir, 'skos-acad-enrichment.ttl');
+              const ttlFiles = [
+                { file: path.join(resultatsDir, 'ia-das-ontology-clean.ttl'),       label: 'ia-das-ontology-clean.ttl' },
+                { file: path.join(resultatsDir, 'variable-hierarchy-clean.ttl'),    label: 'variable-hierarchy-clean.ttl' },
+                { file: path.join(resultatsDir, 'sport-hierarchy-simple-clean.ttl'),label: 'sport-hierarchy-simple-clean.ttl' },
+                { file: skosFile,                                                    label: 'skos-acad-enrichment.ttl' },
+              ];
+
+              let step = 65;
+              for (const { file, label } of ttlFiles) {
+                if (!fs.existsSync(file)) {
+                  console.warn(`⚠️ Fichier manquant: ${file}`);
+                  continue;
                 }
-                
-                res.end();
-                }); // Fin exec docker restart
-              }, 5000); // Fin setTimeout - attendre 5 secondes
+                sendProgress(step, `Upload ${label}...`, `📤 ${label}`);
+                const content = fs.readFileSync(file);
+                const uploadRes = await fetch(`${fusekiBase}/ds/data?default`, {
+                  method: 'POST',
+                  headers: { Authorization: fusekiAuth, 'Content-Type': 'text/turtle' },
+                  body: content
+                });
+                if (!uploadRes.ok) throw new Error(`Upload ${label} échoué: ${uploadRes.status}`);
+                console.log(`✅ ${label} chargé`);
+                step += 7;
+              }
+
+              sendProgress(100, 'Reconstruction terminée !', '✅ Ontologie rechargée dans Fuseki');
+              res.write(JSON.stringify({
+                success: true,
+                message: 'Ontologie reconstruite avec succès',
+                timestamp: new Date().toISOString(),
+                processingTime: Date.now() - startTime
+              }) + '\n');
+              res.end();
               
             } catch (dbError) {
               console.error('❌ Erreur reconstruction DB:', dbError);
