@@ -856,3 +856,8 @@ iadas-vocab:Weight_preoccupation a skos:Concept ;
 # 12. "Diet" = synonyme de "Dieting" (confirmé par Amandine Daubresse — 30/06/2026)
 <http://ns.inria.fr/iadas/ACAD-vocab/Dieting>
     skos:altLabel "Diet" .
+
+# 13. "Physical competence evaluation" = synonyme de "Perceived physical ability"
+#     (confirmé par Meggy Hayotte — colonne H Class-Hierarchy-V1.csv — 30/06/2026)
+<http://ns.inria.fr/iadas/ACAD-vocab/Perceived_physical_ability>
+    skos:altLabel "Physical competence evaluation" .
