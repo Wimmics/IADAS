@@ -1063,7 +1063,9 @@ function getCompetenceQuestionTitle(questionType) {
         'q9-mediators': 'Analyses complexes — Médiateurs (VI→médiation→VD)',
         'q9-moderators': 'Analyses complexes — Modérateurs',
         'q9-mediation-by-category': 'Analyses complexes — Médiation par catégorie SKOS de VI',
-        'q10-direction-by-category': 'Comparaison croisée — Protecteur/Risque/Ambigu par catégorie de VI'
+        'q10-direction-by-category': 'Comparaison croisée — Protecteur/Risque/Ambigu par catégorie de VI',
+        'q11-effectsize-by-gender': 'Comparaison croisée — EffectSize par genre (Homme/Femme/Mixte)',
+        'q12-effectsize-by-sport': 'Comparaison croisée — EffectSize par type de sport'
     };
 
     return titles[questionType] || 'Question de compétence';

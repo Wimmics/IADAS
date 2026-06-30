@@ -2471,6 +2471,44 @@ ORDER BY ?analysis
 LIMIT 200`;
       break;
 
+    case 'q11-effectsize-by-gender':
+      console.log(" CASE Q11-EFFECTSIZE-BY-GENDER: Distribution effectSize par genre");
+      selectedCase = 'q11-effectsize-by-gender - EffectSize Male/Female/Mixed';
+      expectedResults = '12 lignes (3 genres × 4 niveaux effectSize)';
+
+      query = `${prefixes}
+
+SELECT ?gender ?effectSize (COUNT(DISTINCT ?analysis) AS ?count) WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:hasRelation ?relation ;
+              iadas:hasPopulation ?population .
+    ?population iadas:gender ?gender .
+    ?relation iadas:effectSize ?effectSize .
+    FILTER(?gender IN ("Male", "Female", "Mixed"))
+}
+GROUP BY ?gender ?effectSize
+ORDER BY ?gender ?effectSize
+`;
+      break;
+
+    case 'q12-effectsize-by-sport':
+      console.log(" CASE Q12-EFFECTSIZE-BY-SPORT: Distribution effectSize par type de sport");
+      selectedCase = 'q12-effectsize-by-sport - EffectSize Individual/Team/Mixed sport';
+      expectedResults = '~12 lignes (types de sport × 4 niveaux effectSize)';
+
+      query = `${prefixes}
+
+SELECT ?sportType ?effectSize (COUNT(DISTINCT ?analysis) AS ?count) WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:sportPracticeType ?sportType ;
+              iadas:hasRelation ?relation .
+    ?relation iadas:effectSize ?effectSize .
+}
+GROUP BY ?sportType ?effectSize
+ORDER BY ?sportType ?effectSize
+`;
+      break;
+
     case 'q10-direction-by-category':
       console.log(" CASE Q10-DIRECTION-BY-CATEGORY: Direction de relation par catégorie de VI");
       selectedCase = 'q10-direction-by-category - Protecteur/risque/ambigu par catégorie';
@@ -2521,7 +2559,9 @@ function getFilterDescription(questionId) {
     'q9-mediators': 'Analyses complexes — MÉDIATEURS (VI→médiation→VD)',
     'q9-moderators': 'Analyses complexes — MODÉRATEURS (variable de modération)',
     'q9-mediation-by-category': 'Chemins de médiation par CATÉGORIE SKOS de VI',
-    'q10-direction-by-category': 'Direction de relation (protecteur/risque/ambigu) par catégorie de VI'
+    'q10-direction-by-category': 'Direction de relation (protecteur/risque/ambigu) par catégorie de VI',
+    'q11-effectsize-by-gender': 'Comparaison effectSize HOMME / FEMME / MIXTE',
+    'q12-effectsize-by-sport': 'Comparaison effectSize par TYPE DE SPORT pratiqué'
   };
 
   return descriptions[questionId] || 'Requête générale par défaut';

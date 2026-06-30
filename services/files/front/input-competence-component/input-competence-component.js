@@ -110,6 +110,14 @@ class InputCompetenceComponent extends HTMLElement {
             'q10-direction-by-category': {
                 text: 'Pour chaque catégorie de facteur, quelle est la répartition protecteur / à risque / ambigu ?',
                 description: 'Comparaison croisée : pour chaque grande catégorie de VI (Intrapersonnel, Interpersonnel, Socioculturel, Autres comportements, DEAB), combien de relations sont protectrices (-), à risque (+), ou ambiguës (NS) ?'
+            },
+            'q11-effectsize-by-gender': {
+                text: 'La force des relations (effectSize) diffère-t-elle entre hommes, femmes et populations mixtes ?',
+                description: 'Comparaison croisée : distribution des niveaux d\'effectSize (strong/moderate/weak/negligible) par genre. Permet de voir si les relations sont plus fortes dans les études féminines ou masculines.'
+            },
+            'q12-effectsize-by-sport': {
+                text: 'La force des relations (effectSize) diffère-t-elle selon le type de sport pratiqué ?',
+                description: 'Comparaison croisée : distribution des niveaux d\'effectSize (strong/moderate/weak/negligible) par type de sport (Individual sport / Team sport / Mixed sport). Identifie si certains contextes sportifs concentrent des relations plus fortes.'
             }
         };
     }
@@ -315,11 +323,25 @@ class InputCompetenceComponent extends HTMLElement {
                         </div>
                     </div>
 
-                    <!-- Question 10 : Comparaison croisée direction par catégorie -->
+                    <!-- Questions 10-12 : Comparaisons croisées -->
                     <div class="accordion-item" data-category="comparaison">
-                        <div class="accordion-header" data-question="q10-direction-by-category">
-                            <h3>Pour chaque catégorie de facteur, quelle est la répartition protecteur / à risque / ambigu ?</h3>
-                            <span class="accordion-icon">🔍</span>
+                        <div class="accordion-header" data-toggle="accordion-10">
+                            <h3>Comparaisons croisées — effectSize et direction par sous-groupe</h3>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content" id="accordion-10">
+                            <div class="sub-option" data-question="q10-direction-by-category">
+                                <span class="sub-icon">➤</span>
+                                <span>Direction (protecteur/risque/ambigu) par catégorie de facteur</span>
+                            </div>
+                            <div class="sub-option" data-question="q11-effectsize-by-gender">
+                                <span class="sub-icon">➤</span>
+                                <span>EffectSize par genre (Homme / Femme / Mixte)</span>
+                            </div>
+                            <div class="sub-option" data-question="q12-effectsize-by-sport">
+                                <span class="sub-icon">➤</span>
+                                <span>EffectSize par type de sport (Individuel / Équipe / Mixte)</span>
+                            </div>
                         </div>
                     </div>
 
