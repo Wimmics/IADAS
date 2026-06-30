@@ -1059,9 +1059,12 @@ function getCompetenceQuestionTitle(questionType) {
         'q5-individual': 'Relations ACAD-facteurs (Sports individuels)',
         'q5-team': 'Relations ACAD-facteurs (Sports d\'équipe)',
         'q5-mixed': 'Relations ACAD-facteurs (Sports mixtes)',
-        'q5-aesthetic': 'Relations ACAD-facteurs (Sports esthétiques)'
+        'q5-aesthetic': 'Relations ACAD-facteurs (Sports esthétiques)',
+        'q9-mediators': 'Analyses complexes — Médiateurs (VI→médiation→VD)',
+        'q9-moderators': 'Analyses complexes — Modérateurs',
+        'q9-mediation-by-category': 'Analyses complexes — Médiation par catégorie SKOS de VI'
     };
-    
+
     return titles[questionType] || 'Question de compétence';
 }
 

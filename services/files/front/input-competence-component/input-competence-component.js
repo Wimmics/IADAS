@@ -94,6 +94,18 @@ class InputCompetenceComponent extends HTMLElement {
             'q8-aesthetic': {
                 text: 'Quelles sont les relations ACAD-facteurs pour les sports esthétiques ?',
                 description: 'Explore les relations spécifiques entre ACAD et facteurs dans les sports esthétiques.'
+            },
+            'q9-mediators': {
+                text: 'Quels sont les médiateurs dans les analyses complexes (VI → médiateur → VD) ?',
+                description: 'Identifie les variables médiatrices dans les 398 analyses complexes : quelles variables jouent un rôle intermédiaire entre un facteur et un comportement alimentaire dysfonctionnel ?'
+            },
+            'q9-moderators': {
+                text: 'Quels sont les modérateurs dans les analyses complexes ?',
+                description: 'Identifie les variables modératrices : quelles variables modifient la force ou la direction de la relation entre un facteur et un ACAD ?'
+            },
+            'q9-mediation-by-category': {
+                text: 'Quels sont les chemins de médiation par catégorie SKOS de la variable indépendante ?',
+                description: 'Regroupe les chemins de médiation par catégorie de VI (Intrapersonnel, Interpersonnel, etc.) pour identifier les patterns de médiation les plus fréquents dans le corpus.'
             }
         };
     }
@@ -134,6 +146,7 @@ class InputCompetenceComponent extends HTMLElement {
                     <button class="cat-filter"        data-filter="facteurs"   style="padding:6px 14px; border-radius:20px; border:2px solid #2e6da4; background:white; color:#2e6da4; font-size:13px; cursor:pointer;">Facteurs</button>
                     <button class="cat-filter"        data-filter="population" style="padding:6px 14px; border-radius:20px; border:2px solid #2e6da4; background:white; color:#2e6da4; font-size:13px; cursor:pointer;">Population</button>
                     <button class="cat-filter"        data-filter="sport"      style="padding:6px 14px; border-radius:20px; border:2px solid #2e6da4; background:white; color:#2e6da4; font-size:13px; cursor:pointer;">Sport</button>
+                    <button class="cat-filter"        data-filter="complexe"   style="padding:6px 14px; border-radius:20px; border:2px solid #8e44ad; background:white; color:#8e44ad; font-size:13px; cursor:pointer;">Complexe</button>
                 </div>
 
                 <div class="accordion-section">
@@ -293,6 +306,28 @@ class InputCompetenceComponent extends HTMLElement {
                             <div class="sub-option" data-question="q8-aesthetic">
                                 <span class="sub-icon">➤</span>
                                 <span>Sports esthétiques</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 : Analyses complexes (médiateurs / modérateurs) -->
+                    <div class="accordion-item" data-category="complexe">
+                        <div class="accordion-header" data-toggle="accordion-9">
+                            <h3>Analyses complexes — médiateurs et modérateurs (398 analyses)</h3>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content" id="accordion-9">
+                            <div class="sub-option" data-question="q9-mediators">
+                                <span class="sub-icon">➤</span>
+                                <span>Médiateurs (VI → médiation → VD)</span>
+                            </div>
+                            <div class="sub-option" data-question="q9-moderators">
+                                <span class="sub-icon">➤</span>
+                                <span>Modérateurs</span>
+                            </div>
+                            <div class="sub-option" data-question="q9-mediation-by-category">
+                                <span class="sub-icon">➤</span>
+                                <span>Chemins de médiation par catégorie SKOS de VI</span>
                             </div>
                         </div>
                     </div>
