@@ -2470,6 +2470,29 @@ WHERE {
 ORDER BY ?analysis
 LIMIT 200`;
       break;
+
+    case 'q10-direction-by-category':
+      console.log(" CASE Q10-DIRECTION-BY-CATEGORY: Direction de relation par catégorie de VI");
+      selectedCase = 'q10-direction-by-category - Protecteur/risque/ambigu par catégorie';
+      expectedResults = '15 lignes (5 catégories × 3 directions)';
+
+      query = `${prefixes}
+
+SELECT ?categoryVI ?direction (COUNT(DISTINCT ?analysis) AS ?count) WHERE {
+    ?analysis a iadas:Analysis ;
+              iadas:relationDirection ?direction ;
+              iadas:hasRelation ?relation .
+    ?relation iadas:hasIndependentVariable ?variableVI .
+    ?variableVI iadas:refersToVariable ?viConcept .
+    ?viConcept skos:broader+ ?top .
+    ?top skos:prefLabel ?categoryVI .
+    FILTER NOT EXISTS { ?top skos:broader ?x . FILTER(CONTAINS(STR(?x), 'ACAD-vocab')) }
+    FILTER(?direction IN ('+', '-', 'NS'))
+}
+GROUP BY ?categoryVI ?direction
+ORDER BY ?categoryVI ?direction
+`;
+      break;
   }
 
 
@@ -2497,7 +2520,8 @@ function getFilterDescription(questionId) {
     'q8-aesthetic': 'Relations SPORTS ESTHÉTIQUES',
     'q9-mediators': 'Analyses complexes — MÉDIATEURS (VI→médiation→VD)',
     'q9-moderators': 'Analyses complexes — MODÉRATEURS (variable de modération)',
-    'q9-mediation-by-category': 'Chemins de médiation par CATÉGORIE SKOS de VI'
+    'q9-mediation-by-category': 'Chemins de médiation par CATÉGORIE SKOS de VI',
+    'q10-direction-by-category': 'Direction de relation (protecteur/risque/ambigu) par catégorie de VI'
   };
 
   return descriptions[questionId] || 'Requête générale par défaut';

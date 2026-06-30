@@ -106,6 +106,10 @@ class InputCompetenceComponent extends HTMLElement {
             'q9-mediation-by-category': {
                 text: 'Quels sont les chemins de médiation par catégorie SKOS de la variable indépendante ?',
                 description: 'Regroupe les chemins de médiation par catégorie de VI (Intrapersonnel, Interpersonnel, etc.) pour identifier les patterns de médiation les plus fréquents dans le corpus.'
+            },
+            'q10-direction-by-category': {
+                text: 'Pour chaque catégorie de facteur, quelle est la répartition protecteur / à risque / ambigu ?',
+                description: 'Comparaison croisée : pour chaque grande catégorie de VI (Intrapersonnel, Interpersonnel, Socioculturel, Autres comportements, DEAB), combien de relations sont protectrices (-), à risque (+), ou ambiguës (NS) ?'
             }
         };
     }
@@ -146,7 +150,8 @@ class InputCompetenceComponent extends HTMLElement {
                     <button class="cat-filter"        data-filter="facteurs"   style="padding:6px 14px; border-radius:20px; border:2px solid #2e6da4; background:white; color:#2e6da4; font-size:13px; cursor:pointer;">Facteurs</button>
                     <button class="cat-filter"        data-filter="population" style="padding:6px 14px; border-radius:20px; border:2px solid #2e6da4; background:white; color:#2e6da4; font-size:13px; cursor:pointer;">Population</button>
                     <button class="cat-filter"        data-filter="sport"      style="padding:6px 14px; border-radius:20px; border:2px solid #2e6da4; background:white; color:#2e6da4; font-size:13px; cursor:pointer;">Sport</button>
-                    <button class="cat-filter"        data-filter="complexe"   style="padding:6px 14px; border-radius:20px; border:2px solid #8e44ad; background:white; color:#8e44ad; font-size:13px; cursor:pointer;">Complexe</button>
+                    <button class="cat-filter"        data-filter="complexe"     style="padding:6px 14px; border-radius:20px; border:2px solid #8e44ad; background:white; color:#8e44ad; font-size:13px; cursor:pointer;">Complexe</button>
+                    <button class="cat-filter"        data-filter="comparaison"  style="padding:6px 14px; border-radius:20px; border:2px solid #27ae60; background:white; color:#27ae60; font-size:13px; cursor:pointer;">Comparaison</button>
                 </div>
 
                 <div class="accordion-section">
@@ -307,6 +312,14 @@ class InputCompetenceComponent extends HTMLElement {
                                 <span class="sub-icon">➤</span>
                                 <span>Sports esthétiques</span>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 : Comparaison croisée direction par catégorie -->
+                    <div class="accordion-item" data-category="comparaison">
+                        <div class="accordion-header" data-question="q10-direction-by-category">
+                            <h3>Pour chaque catégorie de facteur, quelle est la répartition protecteur / à risque / ambigu ?</h3>
+                            <span class="accordion-icon">🔍</span>
                         </div>
                     </div>
 

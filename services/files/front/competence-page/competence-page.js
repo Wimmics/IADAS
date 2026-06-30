@@ -1062,7 +1062,8 @@ function getCompetenceQuestionTitle(questionType) {
         'q5-aesthetic': 'Relations ACAD-facteurs (Sports esthétiques)',
         'q9-mediators': 'Analyses complexes — Médiateurs (VI→médiation→VD)',
         'q9-moderators': 'Analyses complexes — Modérateurs',
-        'q9-mediation-by-category': 'Analyses complexes — Médiation par catégorie SKOS de VI'
+        'q9-mediation-by-category': 'Analyses complexes — Médiation par catégorie SKOS de VI',
+        'q10-direction-by-category': 'Comparaison croisée — Protecteur/Risque/Ambigu par catégorie de VI'
     };
 
     return titles[questionType] || 'Question de compétence';
