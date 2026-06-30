@@ -201,9 +201,9 @@ async function fixSkosUriMismatch() {
   console.log('\n=== FIX URI MISMATCH SKOS (underscore vs %20) ===');
   const UPDATE_URL = `${FUSEKI_URL}/update`;
 
-  const queryVI = `PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX iadas: <http://ns.inria.fr/iadas/ontology/> INSERT { ?u skos:broader ?b . } WHERE { ?vi a iadas:VariableIndependante ; iadas:refersToVariable ?u . FILTER(CONTAINS(STR(?u), 'ACAD-vocab')) FILTER(!CONTAINS(STR(?u), 'N.A')) BIND(REPLACE(REPLACE(STR(?u), 'http://ns.inria.fr/iadas/ACAD-vocab/', ''), '_', ' ') AS ?lbl) ?pct skos:prefLabel ?lbl ; skos:broader ?b . FILTER(CONTAINS(STR(?pct), 'ACAD-vocab')) }`;
+  const queryVI = `PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX iadas: <http://ns.inria.fr/iadas/ontology/> INSERT { ?u skos:broader ?b . } WHERE { ?vi a iadas:VariableIndependante ; iadas:refersToVariable ?u . FILTER(CONTAINS(STR(?u), 'ACAD-vocab')) FILTER(!CONTAINS(STR(?u), 'N.A')) BIND(REPLACE(REPLACE(REPLACE(STR(?u), "http://ns.inria.fr/iadas/ACAD-vocab/", ""), "_", " "), "%27", "'") AS ?lbl) ?pct skos:prefLabel ?lbl ; skos:broader ?b . FILTER(CONTAINS(STR(?pct), 'ACAD-vocab')) }`;
 
-  const queryVD = `PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX iadas: <http://ns.inria.fr/iadas/ontology/> INSERT { ?u skos:broader ?b . } WHERE { ?vd a iadas:VariableDependante ; iadas:refersToVariable ?u . FILTER(CONTAINS(STR(?u), 'ACAD-vocab')) FILTER(!CONTAINS(STR(?u), 'N.A')) BIND(REPLACE(REPLACE(STR(?u), 'http://ns.inria.fr/iadas/ACAD-vocab/', ''), '_', ' ') AS ?lbl) ?pct skos:prefLabel ?lbl ; skos:broader ?b . FILTER(CONTAINS(STR(?pct), 'ACAD-vocab')) }`;
+  const queryVD = `PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX iadas: <http://ns.inria.fr/iadas/ontology/> INSERT { ?u skos:broader ?b . } WHERE { ?vd a iadas:VariableDependante ; iadas:refersToVariable ?u . FILTER(CONTAINS(STR(?u), 'ACAD-vocab')) FILTER(!CONTAINS(STR(?u), 'N.A')) BIND(REPLACE(REPLACE(REPLACE(STR(?u), "http://ns.inria.fr/iadas/ACAD-vocab/", ""), "_", " "), "%27", "'") AS ?lbl) ?pct skos:prefLabel ?lbl ; skos:broader ?b . FILTER(CONTAINS(STR(?pct), 'ACAD-vocab')) }`;
 
   for (const [label, query] of [['VI', queryVI], ['VD', queryVD]]) {
     try {
@@ -239,14 +239,15 @@ async function uploadFile(ttlContent, fileName, icon) {
       process.stdout.write('.');
     }, 500);
     
+    const bodyBytes = Buffer.from(ttlContent, 'utf8');
     const requestOptions = {
       method: 'POST',
       headers: {
         'Content-Type': 'text/turtle',
         'Authorization': `Basic ${auth}`,
-        'Content-Length': ttlContent.length.toString()
+        'Content-Length': bodyBytes.length.toString()
       },
-      body: ttlContent
+      body: bodyBytes
     };
     
     console.log(`\n OPTIONS REQUEST ${fileName}:`);
