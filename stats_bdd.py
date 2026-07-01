@@ -32,7 +32,8 @@ PREFIX bibo: <http://purl.org/ontology/bibo/>
 PREFIX dct: <http://purl.org/dc/terms/>
 """
 
-FILTER_SIMPLES = '?c = "Simple analyses" || ?c = "simple analyses"'
+FILTER_SIMPLES   = '?c = "Simple analyses" || ?c = "simple analyses"'
+FILTER_COMPLEXES = '?c = "Complex analyses"'
 
 print("=" * 55)
 print(f"  STATS BDD IADAS — {datetime.now().strftime('%d/%m/%Y %H:%M')}")
@@ -319,6 +320,120 @@ for sp, dirs in top_sports:
     ns  = dirs.get("NS", 0) + dirs.get("N.A.", 0) + dirs.get("NA", 0)
     label = sp[:35]
     print(f"  {label:<35} total={total:>5}  +={pos:>4}  -={neg:>4}  NS={ns:>4}")
+
+# --- Analyses complexes ---
+print("\n  ANALYSES COMPLEXES — VUE D'ENSEMBLE")
+print("  " + "-" * 40)
+cx_total  = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c . FILTER({FILTER_COMPLEXES}) }}")
+cx_med    = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasMediator ?m . FILTER({FILTER_COMPLEXES}) FILTER(?m != 'N.A.') }}")
+cx_mod    = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasModerator ?m . FILTER({FILTER_COMPLEXES}) FILTER(?m != 'N.A.') }}")
+cx_medmod = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasMediator ?med ; iadas:hasModerator ?mod . FILTER({FILTER_COMPLEXES}) FILTER(?med != 'N.A.') FILTER(?mod != 'N.A.') }}")
+print(f"  {'Total analyses complexes':<35} {cx_total:>6}")
+print(f"  {'Avec mediateur renseigne':<35} {cx_med:>6}")
+print(f"  {'Avec moderateur renseigne':<35} {cx_mod:>6}")
+print(f"  {'Avec mediateur ET moderateur':<35} {cx_medmod:>6}")
+
+# --- Types d'analyses complexes ---
+print("\n  TYPES D'ANALYSES COMPLEXES (top 10)")
+print("  " + "-" * 40)
+d_types = query(f"""
+{PREFIX}
+SELECT ?type (COUNT(*) AS ?n)
+WHERE {{
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:typeOfAnalysis ?type .
+  FILTER({FILTER_COMPLEXES})
+}}
+GROUP BY ?type ORDER BY DESC(?n)
+""")
+for b in d_types["results"]["bindings"][:10]:
+    print(f"  {b['type']['value'][:35]:<35} {b['n']['value']:>6}")
+
+# --- Top médiateurs ---
+print("\n  TOP MEDIATEURS (analyses complexes)")
+print("  " + "-" * 40)
+d_meds = query(f"""
+{PREFIX}
+SELECT ?mediateur (COUNT(DISTINCT ?a) AS ?n)
+WHERE {{
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasMediator ?mediateur .
+  FILTER({FILTER_COMPLEXES})
+  FILTER(?mediateur != "N.A.")
+}}
+GROUP BY ?mediateur ORDER BY DESC(?n)
+""")
+for b in d_meds["results"]["bindings"][:10]:
+    print(f"  {b['mediateur']['value'][:35]:<35} {b['n']['value']:>6}")
+
+# --- Top modérateurs ---
+print("\n  TOP MODERATEURS (analyses complexes)")
+print("  " + "-" * 40)
+d_mods = query(f"""
+{PREFIX}
+SELECT ?moderateur (COUNT(DISTINCT ?a) AS ?n)
+WHERE {{
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasModerator ?moderateur .
+  FILTER({FILTER_COMPLEXES})
+  FILTER(?moderateur != "N.A.")
+}}
+GROUP BY ?moderateur ORDER BY DESC(?n)
+""")
+for b in d_mods["results"]["bindings"][:10]:
+    print(f"  {b['moderateur']['value'][:35]:<35} {b['n']['value']:>6}")
+
+# --- Top chemins de médiation VI → Médiateur → VD ---
+print("\n  TOP CHEMINS DE MEDIATION (VI --> Mediateur --> VD)")
+print("  " + "-" * 40)
+d_chemins = query(f"""
+{PREFIX}
+SELECT ?viNom ?mediateur ?vdNom (COUNT(DISTINCT ?a) AS ?n)
+WHERE {{
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ;
+     iadas:hasMediator ?mediateur ; iadas:hasRelation ?rel .
+  FILTER({FILTER_COMPLEXES})
+  FILTER(?mediateur != "N.A.")
+  ?rel iadas:hasIndependentVariable ?vi ; iadas:hasDependentVariable ?vd .
+  ?vi iadas:variableName ?viNom . ?vd iadas:variableName ?vdNom .
+}}
+GROUP BY ?viNom ?mediateur ?vdNom
+ORDER BY DESC(?n)
+""")
+for b in d_chemins["results"]["bindings"][:12]:
+    vi  = b["viNom"]["value"].split("\n")[0].strip()[:22]
+    med = b["mediateur"]["value"][:22]
+    vd  = b["vdNom"]["value"].split("\n")[0].strip()[:18]
+    n   = b["n"]["value"]
+    print(f"  [{vi}] --[{med}]--> [{vd}]  (n={n})")
+
+# --- Médiateurs par catégorie de VI (SKOS) ---
+print("\n  MEDIATEURS PAR CATEGORIE DE VI (SKOS)")
+print("  " + "-" * 40)
+d_med_cat = query(f"""
+{PREFIX}
+SELECT ?catVI ?mediateur (COUNT(DISTINCT ?a) AS ?n)
+WHERE {{
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ;
+     iadas:hasMediator ?mediateur ; iadas:hasRelation ?rel .
+  FILTER({FILTER_COMPLEXES})
+  FILTER(?mediateur != "N.A.")
+  ?rel iadas:hasIndependentVariable ?vi .
+  ?vi iadas:refersToVariable ?concept .
+  ?concept skos:broader+ ?top .
+  ?top skos:prefLabel ?catVI .
+  FILTER NOT EXISTS {{ ?top skos:broader ?x . FILTER(CONTAINS(STR(?x), 'ACAD-vocab')) }}
+}}
+GROUP BY ?catVI ?mediateur
+ORDER BY ?catVI DESC(?n)
+""")
+med_by_cat = defaultdict(list)
+for b in d_med_cat["results"]["bindings"]:
+    cat = b["catVI"]["value"]
+    med = b["mediateur"]["value"].split("\n")[0].strip()[:35]
+    n   = int(b["n"]["value"])
+    med_by_cat[cat].append((med, n))
+for cat, meds in sorted(med_by_cat.items()):
+    print(f"  {cat[:40]}")
+    for med, n in meds[:4]:
+        print(f"    --> {med:<35} (n={n})")
 
 # --- Qualite SKOS ---
 print("\n  QUALITE SKOS (vocabulaire ACAD)")
