@@ -39,6 +39,8 @@ http.createServer(function (request, response) {
             proxy.web(request, response, { target: "http://database-service:8005" });
         } else if (filePath[1] === "api" && filePath[2] === "fuseki-counts" && request.method === "GET") {
             queryFusekiCounts(response);
+        } else if (filePath[1] === "api" && filePath[2] === "quality-check" && request.method === "GET") {
+            queryFusekiQuality(response);
         } else if (request.url.includes('update-page.html')) {
             // TEMPORAIRE: Protection côté client uniquement (voir rapport sécurité)
             console.log("Accès à update-page.html - redirection vers frontend");
@@ -84,6 +86,56 @@ function handleAuth(request, response) {
         response.writeHead(405);
         response.end();
     }
+}
+
+function queryFusekiQuality(response) {
+    const sparql = `PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?doublons ?broken WHERE {
+  { SELECT (COUNT(DISTINCT ?label) AS ?doublons) WHERE {
+      ?a skos:prefLabel ?label ; a skos:Concept .
+      ?b skos:prefLabel ?label ; a skos:Concept .
+      FILTER(?a != ?b)
+      FILTER(CONTAINS(STR(?a), 'ACAD-vocab'))
+      FILTER(CONTAINS(STR(?b), 'ACAD-vocab'))
+  } }
+  { SELECT (COUNT(DISTINCT ?analysis) AS ?broken) WHERE {
+      ?analysis a iadas:Analysis ; iadas:hasRelation ?rel .
+      { ?rel iadas:hasIndependentVariable ?var } UNION { ?rel iadas:hasDependentVariable ?var }
+      ?var iadas:refersToVariable ?concept .
+      FILTER NOT EXISTS { ?concept a skos:Concept }
+  } }
+}`;
+    const body = 'query=' + encodeURIComponent(sparql);
+    const options = {
+        hostname: 'fuseki', port: 3030, path: '/ds/sparql', method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/sparql-results+json', 'Content-Length': Buffer.byteLength(body) }
+    };
+    const req = http.request(options, (fusekiRes) => {
+        let data = '';
+        fusekiRes.on('data', chunk => { data += chunk; });
+        fusekiRes.on('end', () => {
+            try {
+                const parsed = JSON.parse(data);
+                const binding = parsed.results.bindings[0] || {};
+                response.writeHead(200, { 'Content-Type': 'application/json' });
+                response.end(JSON.stringify({
+                    doublons: parseInt(binding.doublons?.value || '0'),
+                    broken: parseInt(binding.broken?.value || '0'),
+                    timestamp: new Date().toISOString()
+                }));
+            } catch (e) {
+                response.writeHead(500, { 'Content-Type': 'application/json' });
+                response.end(JSON.stringify({ error: e.message }));
+            }
+        });
+    });
+    req.on('error', (err) => {
+        response.writeHead(503, { 'Content-Type': 'application/json' });
+        response.end(JSON.stringify({ error: 'Fuseki non disponible', details: err.message }));
+    });
+    req.write(body);
+    req.end();
 }
 
 function queryFusekiCounts(response) {

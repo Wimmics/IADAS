@@ -1,8 +1,8 @@
 // Fonctionnalité de date de dernière mise à jour
 document.addEventListener('DOMContentLoaded', function() {
     loadLastUpdateDate();
-    loadQualityBanner();
     loadHistory();
+    refreshQualityBanner();
 });
 
 async function loadLastUpdateDate() {
@@ -121,6 +121,32 @@ function toggleHistory() {
 }
 window.toggleHistory = toggleHistory;
 
+async function refreshQualityBanner() {
+    const raw = localStorage.getItem('qualitySummary');
+    if (raw) {
+        try {
+            const q = JSON.parse(raw);
+            const age = Date.now() - new Date(q.timestamp).getTime();
+            if (age < 3600000) { loadQualityBanner(); return; } // cache 1h
+        } catch {}
+    }
+    try {
+        const res = await fetch('/api/quality-check');
+        if (!res.ok) throw new Error('unavailable');
+        const data = await res.json();
+        if (data.error) throw new Error(data.error);
+        localStorage.setItem('qualitySummary', JSON.stringify({
+            doublons: data.doublons || 0,
+            broken: data.broken || 0,
+            cycles: 0,
+            timestamp: data.timestamp || new Date().toISOString()
+        }));
+    } catch (e) {
+        console.warn('Quality check non disponible:', e.message);
+    }
+    loadQualityBanner();
+}
+
 function loadQualityBanner() {
     const banner = document.getElementById('qualityBanner');
     if (!banner) return;
@@ -134,18 +160,24 @@ function loadQualityBanner() {
     let q;
     try { q = JSON.parse(raw); } catch { banner.style.display = 'none'; return; }
 
-    const issues = (q.cycles || 0) + (q.doublons || 0);
+    const doublons = q.doublons || 0;
+    const broken = q.broken || 0;
+    const issues = doublons + (q.cycles || 0);
     const date = q.timestamp ? new Date(q.timestamp).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
 
     let icon, text, bg, color, border;
     if (issues === 0) {
         icon = '✓'; text = 'Ontologie en bon état'; bg = '#d4edda'; color = '#155724'; border = '#28a745';
     } else if (issues <= 2) {
-        icon = '⚠'; text = `${issues} anomalie(s) détectée(s)`; bg = '#fff3cd'; color = '#856404'; border = '#ffc107';
+        icon = '⚠'; text = `${issues} doublon(s) de labels détecté(s)`; bg = '#fff3cd'; color = '#856404'; border = '#ffc107';
     } else {
-        icon = '✕'; text = `${issues} anomalies — vérification requise`; bg = '#f8d7da'; color = '#721c24'; border = '#dc3545';
+        icon = '✕'; text = `${issues} doublons — vérification requise`; bg = '#f8d7da'; color = '#721c24'; border = '#dc3545';
     }
 
-    banner.style.cssText = `display:flex; align-items:center; gap:8px; margin-top:10px; border-radius:6px; padding:9px 12px; font-size:13px; background:${bg}; color:${color}; border:1px solid ${border};`;
-    banner.innerHTML = `<strong style="font-size:16px">${icon}</strong> <span>${text}</span><span style="margin-left:auto; font-size:11px; opacity:0.7">${date}</span>`;
+    const brokenLine = broken > 0
+        ? `<div style="font-size:11px; margin-top:3px; opacity:0.75;">${broken} analyse(s) avec variable non hiérarchisée</div>`
+        : '';
+
+    banner.style.cssText = `display:flex; flex-direction:column; margin-top:10px; border-radius:6px; padding:9px 12px; font-size:13px; background:${bg}; color:${color}; border:1px solid ${border};`;
+    banner.innerHTML = `<div style="display:flex; align-items:center; gap:8px;"><strong style="font-size:16px">${icon}</strong> <span>${text}</span><span style="margin-left:auto; font-size:11px; opacity:0.7">${date}</span></div>${brokenLine}`;
 }

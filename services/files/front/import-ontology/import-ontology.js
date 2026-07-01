@@ -431,6 +431,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 const history = JSON.parse(localStorage.getItem('updateHistory') || '[]');
                 history.unshift({ date: now, analyses: lastValidatedCount });
                 localStorage.setItem('updateHistory', JSON.stringify(history.slice(0, 20)));
+                // Rafraîchir le cache qualité après rebuild
+                fetch(`${serverURL}/api/quality-check`).then(r => r.json()).then(data => {
+                    if (!data.error) {
+                        localStorage.setItem('qualitySummary', JSON.stringify({
+                            doublons: data.doublons || 0,
+                            broken: data.broken || 0,
+                            cycles: 0,
+                            timestamp: data.timestamp || new Date().toISOString()
+                        }));
+                    }
+                }).catch(() => {});
                 setTimeout(() => {
                     alert('Ontologie reconstruite avec succès !\nVous pouvez maintenant utiliser la nouvelle ontologie.');
                     window.location.href = './index.html';
