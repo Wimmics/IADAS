@@ -22,8 +22,8 @@ function exportSparqlToCSV(sparqlData, filename) {
         rows.push(headers.map(h => escapeCell(row[h] ? row[h].value : '')));
     });
 
-    const csvContent = rows.map(r => r.join(',')).join('\r\n');
-    const bom = '﻿'; // BOM pour Excel UTF-8
+    const csvContent = rows.map(r => r.join(';')).join('\r\n');
+    const bom = '﻿'; // BOM UTF-8 pour Excel (empêche les problèmes d'accents)
     const blob = new Blob([bom + csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
 

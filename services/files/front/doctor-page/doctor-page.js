@@ -293,6 +293,14 @@ function setupViewButtons() {
         exportExcelBtn.onclick = () => exportToExcel();
     }
     
+    const exportCSVBtn2 = document.getElementById('exportCSV');
+    if (exportCSVBtn2) {
+        exportCSVBtn2.onclick = () => {
+            const ts = new Date().toISOString().slice(0,19).replace(/:/g,'-');
+            exportSparqlToCSV(currentData, `requetes_${ts}.csv`);
+        };
+    }
+
     const exportTurtleBtn = document.getElementById('exportTurtle');
     if (exportTurtleBtn) {
         exportTurtleBtn.onclick = () => exportToTurtle();
