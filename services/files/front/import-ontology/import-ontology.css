@@ -545,6 +545,60 @@ footer {
     border: 2px solid #e74c3c;
 }
 
+/* COMPARISON CARD */
+.comparison-card {
+    background: linear-gradient(135deg, #e8f4fd, #f0faf5);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #2980b9;
+}
+
+.comparison-card h3 {
+    color: #1a5276;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+}
+
+.compare-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.compare-label {
+    font-size: 11px;
+    color: #7f8c8d;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.compare-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.compare-arrow {
+    font-size: 22px;
+    color: #7f8c8d;
+    text-align: center;
+}
+
+.delta-plus { color: #27ae60; }
+.delta-minus { color: #e74c3c; }
+.delta-zero { color: #7f8c8d; }
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .import-container {

@@ -73,6 +73,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ================== VALIDATION ==================
 
+    async function fetchCurrentFusekiCounts() {
+        try {
+            const res = await fetch(`${serverURL}/api/fuseki-counts`);
+            if (!res.ok) return null;
+            return await res.json();
+        } catch (e) {
+            console.warn('Stats Fuseki non disponibles:', e.message);
+            return null;
+        }
+    }
+
     function readFileAsText(file) {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -122,9 +133,10 @@ document.addEventListener('DOMContentLoaded', function() {
         logToConsole('Lecture et analyse des fichiers CSV...');
 
         try {
-            const [dataText, classText] = await Promise.all([
+            const [dataText, classText, currentFusekiState] = await Promise.all([
                 readFileAsText(uploadedFiles.data),
-                readFileAsText(uploadedFiles.class)
+                readFileAsText(uploadedFiles.class),
+                fetchCurrentFusekiCounts()
             ]);
 
             const dataRows = parseCSV(dataText).filter(r => Object.values(r).some(v => v));
@@ -188,7 +200,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             showValidationReport({
                 nbAnalyses, uniqueVDs, uniqueVIs, uniqueACADS,
-                caseMismatch, knownAltLabels, trulyAbsent, missingCols, emptyVD, emptyVI, emptyACADS
+                caseMismatch, knownAltLabels, trulyAbsent, missingCols, emptyVD, emptyVI, emptyACADS,
+                currentFusekiState
             });
 
         } catch (err) {
@@ -247,7 +260,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
             </div>` : '';
 
+        const comparisonHtml = r.currentFusekiState && !r.currentFusekiState.error ? (() => {
+            const curr = r.currentFusekiState;
+            const deltaAnalyses = r.nbAnalyses - curr.analyses;
+            const deltaConcepts = r.uniqueACADS.length - curr.concepts;
+            const fmt = n => n > 0 ? `+${n}` : `${n}`;
+            const cls = n => n > 0 ? 'delta-plus' : n < 0 ? 'delta-minus' : 'delta-zero';
+            return `<div class="comparison-card">
+                <h3>Comparaison avec l'état actuel de la base</h3>
+                <div class="comparison-grid">
+                    <div class="compare-col">
+                        <div class="compare-label">Actuellement dans Fuseki</div>
+                        <div class="compare-value">${curr.analyses.toLocaleString()} analyses</div>
+                        <div class="compare-value">${curr.concepts.toLocaleString()} concepts ACAD</div>
+                    </div>
+                    <div class="compare-arrow">→</div>
+                    <div class="compare-col">
+                        <div class="compare-label">Nouveau fichier</div>
+                        <div class="compare-value">${r.nbAnalyses.toLocaleString()} analyses</div>
+                        <div class="compare-value">${r.uniqueACADS.length.toLocaleString()} ACADS uniques</div>
+                    </div>
+                    <div class="compare-col">
+                        <div class="compare-label">Delta</div>
+                        <div class="compare-value ${cls(deltaAnalyses)}">${fmt(deltaAnalyses)} analyses</div>
+                        <div class="compare-value ${cls(deltaConcepts)}">${fmt(deltaConcepts)} ACADS</div>
+                    </div>
+                </div>
+            </div>`;
+        })() : '';
+
         document.getElementById('validationContent').innerHTML = `
+            ${comparisonHtml}
             <div class="validation-stats">
                 <div class="stat-card">
                     <div class="stat-number">${r.nbAnalyses.toLocaleString()}</div>
@@ -310,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
         rebuildBtn.textContent = 'Valider les données';
         rebuildBtn.disabled = false;
 
-        logToConsole(`Validation terminée : ${r.nbAnalyses} analyses, ${r.unknownVDs.length} VD inconnues, ${r.emptyVD + r.emptyVI} champs vides`);
+        logToConsole(`Validation terminée : ${r.nbAnalyses} analyses, ${r.trulyAbsent.length} VD inconnues, ${r.emptyVD + r.emptyVI} champs vides`);
     }
 
     // ================== RECONSTRUCTION ==================
