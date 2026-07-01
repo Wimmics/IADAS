@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
         data: null
     };
 
+    let lastValidatedCount = null;
+
     const sportUpload = document.getElementById('sportUpload');
     const classUpload = document.getElementById('classUpload');
     const dataUpload = document.getElementById('dataUpload');
@@ -198,6 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const emptyVI = dataRows.filter(r => !r['VI']).length;
             const emptyACADS = dataRows.filter(r => !r['ACADS']).length;
 
+            lastValidatedCount = nbAnalyses;
             showValidationReport({
                 nbAnalyses, uniqueVDs, uniqueVIs, uniqueACADS,
                 caseMismatch, knownAltLabels, trulyAbsent, missingCols, emptyVD, emptyVI, emptyACADS,
@@ -423,8 +426,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateProgress(100, 'Reconstruction terminée !');
                 logToConsole('Reconstruction terminée avec succès !');
                 // Enregistrer l'entrée dans l'historique
+                const now = new Date().toISOString();
+                localStorage.setItem('lastOntologyUpdate', now);
                 const history = JSON.parse(localStorage.getItem('updateHistory') || '[]');
-                history.unshift({ date: new Date().toISOString(), analyses: null });
+                history.unshift({ date: now, analyses: lastValidatedCount });
                 localStorage.setItem('updateHistory', JSON.stringify(history.slice(0, 20)));
                 setTimeout(() => {
                     alert('Ontologie reconstruite avec succès !\nVous pouvez maintenant utiliser la nouvelle ontologie.');
