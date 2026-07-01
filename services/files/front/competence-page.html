@@ -44,6 +44,14 @@
                         Télécharger CSV
                     </button>
                 </div>
+
+                <div id="categoryFilterContainer" style="display:none; align-items:center; gap:8px; margin-left:auto; padding: 4px 10px; background:#f0f7ff; border-radius:8px; border:1px solid #c9dff5;">
+                    <label for="categoryFilter" style="font-size:13px; color:#1a3a5c; white-space:nowrap;">Catégorie VI :</label>
+                    <select id="categoryFilter" onchange="applyCategoryFilter()" style="padding:5px 10px; border:1px solid #b0c4de; border-radius:6px; font-size:13px; min-width:180px; color:#1a3a5c;">
+                        <option value="">Toutes les catégories</option>
+                    </select>
+                    <span id="filterCount" style="font-size:12px; color:#888; white-space:nowrap;"></span>
+                </div>
             </div>
             
             <div id="result-display"></div>

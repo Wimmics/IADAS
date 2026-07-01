@@ -1,6 +1,7 @@
 let currentData = null;
 let currentQuery = null;
 let currentMode = 'table';
+let allBindings = null;
 
 console.log("Script competence-page chargé !");
 
@@ -414,12 +415,52 @@ function showError(title, message, data) {
 function displayCompetenceResults(data, sparqlQuery) {
     currentData = data;
     currentQuery = sparqlQuery;
+    allBindings = data?.results?.bindings || null;
 
     // Activer les boutons de contrôle et d'export
     enableResultControls();
 
+    // Mettre à jour le filtre catégorie
+    setupCategoryFilter();
+
     // Afficher en mode tableau par défaut
     displayTableView();
+}
+
+function setupCategoryFilter() {
+    const container = document.getElementById('categoryFilterContainer');
+    const select = document.getElementById('categoryFilter');
+    if (!container || !select || !allBindings) { if (container) container.style.display = 'none'; return; }
+
+    const vars = currentData?.head?.vars || [];
+    const catCol = vars.find(v => v === 'categoryVI') || vars.find(v => /categori/i.test(v) && /vi/i.test(v));
+    if (!catCol) { container.style.display = 'none'; return; }
+
+    const values = new Set();
+    allBindings.forEach(b => { const v = b[catCol]?.value; if (v) values.add(v); });
+    if (values.size === 0) { container.style.display = 'none'; return; }
+
+    const sorted = [...values].sort();
+    select.innerHTML = '<option value="">Toutes les catégories</option>';
+    sorted.forEach(v => { const opt = document.createElement('option'); opt.value = v; opt.textContent = v.replace(/_/g, ' '); select.appendChild(opt); });
+    select.dataset.col = catCol;
+    container.style.display = 'flex';
+    updateFilterCount(allBindings.length, allBindings.length);
+}
+
+function applyCategoryFilter() {
+    const select = document.getElementById('categoryFilter');
+    const col = select?.dataset?.col;
+    const val = select?.value;
+    if (!allBindings) return;
+    const filtered = val ? allBindings.filter(b => (b[col]?.value || '') === val) : allBindings;
+    updateFilterCount(filtered.length, allBindings.length);
+    displayTableViewFiltered(filtered);
+}
+
+function updateFilterCount(shown, total) {
+    const span = document.getElementById('filterCount');
+    if (span) span.textContent = shown === total ? `${total} résultat(s)` : `${shown} / ${total}`;
 }
 
 function enableResultControls() {
@@ -492,9 +533,19 @@ function switchView(mode) {
     }
 }
 function displayTableView() {
+    const select = document.getElementById('categoryFilter');
+    const col = select?.dataset?.col;
+    const val = select?.value;
+    const bindings = (col && val && allBindings)
+        ? allBindings.filter(b => (b[col]?.value || '') === val)
+        : (allBindings || currentData?.results?.bindings);
+    displayTableViewFiltered(bindings);
+}
+
+function displayTableViewFiltered(bindings) {
     const displayDiv = document.getElementById('result-display');
 
-    if (!currentData || !currentData.results || !currentData.results.bindings) {
+    if (!currentData || !currentData.results || !bindings) {
         const template = document.getElementById('no-results-template');
         const clone = template.content.cloneNode(true);
         displayDiv.innerHTML = '';
@@ -502,7 +553,6 @@ function displayTableView() {
         return;
     }
 
-    const bindings = currentData.results.bindings;
     const variables = currentData.head.vars;
 
     let tableHTML = `
@@ -567,6 +617,7 @@ function displayTableView() {
     `;
 
     displayDiv.innerHTML = tableHTML;
+    if (allBindings) updateFilterCount(bindings.length, allBindings.length);
 }
 
 // Fonction pour détecter si une valeur est un ID d'analyse
@@ -1654,6 +1705,9 @@ function downloadFile(content, filename, contentType) {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 }
+
+// Exposer pour l'onchange inline
+window.applyCategoryFilter = applyCategoryFilter;
 
 // Debug global
 window.competenceDebug = {
