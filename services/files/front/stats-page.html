@@ -251,7 +251,7 @@ function loadStats() {
   content.style.display = 'none';
   errorBox.style.display = 'none';
 
-  const base = window.API_BASE_URL || 'http://localhost:8005';
+  const base = window.API_BASE_URL || `http://${window.location.hostname}:8005`;
 
   fetch(`${base}/stats`)
     .then(r => r.json())
