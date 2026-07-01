@@ -58,7 +58,7 @@ class ApiConfigManager {
             `http://localhost:${this.config.ports[service]}/${path}`, // fallback local
         ] : [
             primaryUrl,
-            `http://51.44.188.162:${this.config.ports[service]}/${path}` // fallback prod
+            `http://${window.location.hostname}:${this.config.ports[service]}/${path}` // fallback prod
         ];
 
         let lastError = null;

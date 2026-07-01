@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const response = await fetch(
                 window.location.hostname === 'localhost'
                     ? 'http://localhost:8003'
-                    : 'http://51.44.188.162:8003',
+                    : `http://${window.location.hostname}:8003`,
                 {
                     method: 'POST',
                     headers: {
@@ -611,7 +611,7 @@ WHERE {
             const response = await fetch(
                 window.location.hostname === 'localhost'
                     ? 'http://localhost:8003/delete-analysis'
-                    : 'http://51.44.188.162:8003/delete-analysis',
+                    : `http://${window.location.hostname}:8003/delete-analysis`,
                 {
                     method: 'POST',
                     headers: {
@@ -997,7 +997,7 @@ WHERE {
             const response = await fetch(
                 window.location.hostname === 'localhost'
                     ? 'http://localhost:8003/update-analysis'
-                    : 'http://51.44.188.162:8003/update-analysis',
+                    : `http://${window.location.hostname}:8003/update-analysis`,
                 {
                     method: 'POST',
                     headers: {

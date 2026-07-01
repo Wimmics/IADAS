@@ -1,8 +1,8 @@
 class HierarchyService {
   constructor() {
-    this.endpoint = window.location.hostname === 'localhost' 
-      ? 'http://localhost:8003' 
-      : 'http://51.44.188.162:8003';
+    this.endpoint = window.location.hostname === 'localhost'
+      ? 'http://localhost:8003'
+      : `http://${window.location.hostname}:8003`;
     
   }
 

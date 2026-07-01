@@ -75,11 +75,11 @@ class PageInitializer {
     async wakeupFuseki() {
         
         // Détection de l'environnement
-        const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-            ? 'http://localhost:8003/' 
-            : 'http://51.44.188.162:8003/';
-        
-        
+        const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'http://localhost:8003/'
+            : `http://${window.location.hostname}:8003/`;
+
+
         const warmupQuery = {
             queryType: 'generated',
             categoryVD: 'DEAB'
@@ -104,9 +104,9 @@ class PageInitializer {
     async testFusekiStability() {
         
         // Détection de l'environnement
-        const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-            ? 'http://localhost:8003/' 
-            : 'http://51.44.188.162:8003/';
+        const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'http://localhost:8003/'
+            : `http://${window.location.hostname}:8003/`;
         
         // Requête différente pour s'assurer de la stabilité
         const testQuery = {

@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const consoleContent = document.getElementById('consoleContent');
 
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    const serverURL = isLocal ? 'http://localhost:8000' : 'http://51.44.188.162:8000';
+    const serverURL = isLocal ? 'http://localhost:8000' : `http://${window.location.hostname}:8000`;
 
     // ================== UPLOAD ==================
 

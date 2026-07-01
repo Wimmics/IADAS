@@ -357,7 +357,7 @@ class InputInterrogationComponent extends HTMLElement {
         } else {
             // Appel à l'ontologie pour récupérer les facteurs VD filtrés
             try {
-                const response = await fetch(`http://localhost:8000/api/interface-data?categoryVD=${encodeURIComponent(selectedCategory)}`);
+                const response = await fetch(`${window.location.origin}/api/interface-data?categoryVD=${encodeURIComponent(selectedCategory)}`);
                 const data = await response.json();
                 
                 if (data.success) {
@@ -381,7 +381,7 @@ class InputInterrogationComponent extends HTMLElement {
         } else {
             // Appel à l'ontologie pour récupérer les facteurs VI filtrés
             try {
-                const response = await fetch(`http://localhost:8000/api/interface-data?categoryVI=${encodeURIComponent(selectedCategory)}`);
+                const response = await fetch(`${window.location.origin}/api/interface-data?categoryVI=${encodeURIComponent(selectedCategory)}`);
                 const data = await response.json();
                 
                 if (data.success) {
@@ -430,7 +430,7 @@ class InputInterrogationComponent extends HTMLElement {
             console.log('🔍 Filtrage sports pour catégorie:', category);
             
             // Faire appel à l'endpoint pour récupérer les sports de cette catégorie
-            const response = await fetch(`http://localhost:8000/api/interface-data?sportCategory=${encodeURIComponent(category)}`);
+            const response = await fetch(`${window.location.origin}/api/interface-data?sportCategory=${encodeURIComponent(category)}`);
             if (!response.ok) {
                 throw new Error(`Erreur HTTP: ${response.status}`);
             }
@@ -464,7 +464,7 @@ class InputInterrogationComponent extends HTMLElement {
         try {
             console.log('📡 Chargement des données depuis l\'ontologie...');
             
-            const response = await fetch('http://localhost:8000/api/interface-data');
+            const response = await fetch(`${window.location.origin}/api/interface-data`);
             if (!response.ok) {
                 throw new Error(`Erreur HTTP: ${response.status}`);
             }

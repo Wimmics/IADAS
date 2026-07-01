@@ -154,7 +154,7 @@ async function rechercher(data) {
         const response = await fetch(
             window.location.hostname === 'localhost'
                 ? 'http://localhost:8003'
-                : 'http://51.44.188.162:8003',
+                : `http://${window.location.hostname}:8003`,
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
