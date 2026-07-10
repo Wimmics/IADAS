@@ -268,6 +268,67 @@ for _top in _ROOTS_ORDER:
         _lbl = ("  " + _sub)[:42]
         print(_ROW.format(_lbl, *_p, sum(_p)))
 
+# --- EffectSize (donut + par categorie VI), separement pour les relations
+# positives (facteurs de risque) et negatives (facteurs protecteurs).
+# Demande des encadrantes : dedoubler ces 2 graphiques par direction de relation.
+def _print_effectsize_by_direction(direction_value, section_name):
+    d_es_dir = query(f"""
+    {PREFIX}
+    SELECT ?cat (COUNT(*) AS ?n)
+    WHERE {{
+      ?analysis a iadas:Analysis ; iadas:complexityOfAnalysis ?c ;
+                iadas:relationDirection ?direction ; iadas:hasRelation ?rel .
+      FILTER({FILTER_SIMPLES})
+      FILTER(?direction = "{direction_value}")
+      ?rel iadas:effectSize ?cat .
+    }}
+    GROUP BY ?cat ORDER BY DESC(?n)
+    """)
+    dir_total = sum(int(b["n"]["value"]) for b in d_es_dir["results"]["bindings"])
+    print(f"\n  EFFECTSIZE {section_name} (analyses simples)")
+    print("  " + "-" * 40)
+    for b in d_es_dir["results"]["bindings"]:
+        n = int(b["n"]["value"])
+        pct = round(n / dir_total * 100) if dir_total > 0 else 0
+        print(f"  {b['cat']['value']:<35} {n:>6}  ({pct}%)")
+    print(f"  {'Total effectSize peuple':<35} {dir_total:>6}")
+
+    d_vi_es_dir = query(f"""
+    {PREFIX}
+    SELECT ?concept ?esLevel (COUNT(DISTINCT ?analysis) AS ?nb)
+    WHERE {{
+      ?analysis a iadas:Analysis ; iadas:complexityOfAnalysis ?c ;
+                iadas:relationDirection ?direction ; iadas:hasRelation ?rel .
+      FILTER({FILTER_SIMPLES})
+      FILTER(?direction = "{direction_value}")
+      ?rel iadas:hasIndependentVariable ?vi ; iadas:effectSize ?esLevel .
+      ?vi iadas:refersToVariable ?concept .
+      FILTER(CONTAINS(STR(?concept), 'ACAD-vocab'))
+    }}
+    GROUP BY ?concept ?esLevel
+    """)
+    _es_cat_dir = _dd(lambda: _dd(int))
+    for _b in d_vi_es_dir["results"]["bindings"]:
+        _uri = _b["concept"]["value"]
+        _lvl = _b["esLevel"]["value"]
+        _nb = int(_b["nb"]["value"])
+        _root_lbl, _ = _get_root_and_level2(_uri)
+        if _root_lbl:
+            _es_cat_dir[_root_lbl][_lvl] += _nb
+
+    print(f"\n  EFFECTSIZE PAR CATEGORIE DE VI {section_name} (analyses simples)")
+    print("  " + "-" * 40)
+    print(_HDR.format("Categorie", "Strong", "Moderate", "Weak", "Negligible", "Total"))
+    print("  " + "-" * 90)
+    for _cat in sorted(_es_cat_dir.keys(), key=lambda c: -sum(_es_cat_dir[c].values())):
+        _d = _es_cat_dir[_cat]
+        _p = [_d.get(l, 0) for l in _ES]
+        print(_ROW.format(_cat[:42], *_p, sum(_p)))
+
+
+_print_effectsize_by_direction("+", "RISQUE (relations positives)")
+_print_effectsize_by_direction("-", "PROTECTEUR (relations negatives)")
+
 # --- VI par catégorie (analyses simples uniquement) ---
 print("\n  VI PAR CATEGORIE (analyses simples)")
 print("  " + "-" * 40)

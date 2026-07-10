@@ -150,6 +150,36 @@
       </div>
     </div>
 
+    <!-- Graphiques par direction de relation (facteurs de risque / protecteurs) -->
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h3>Répartition de l'effectSize — Facteurs de risque (+)</h3>
+        <div class="chart-wrapper">
+          <canvas id="esDonutChartRisque"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>Analyses par catégorie de VI — Facteurs de risque (+)</h3>
+        <div class="chart-wrapper">
+          <canvas id="esCatBarChartRisque"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h3>Répartition de l'effectSize — Facteurs protecteurs (-)</h3>
+        <div class="chart-wrapper">
+          <canvas id="esDonutChartProtecteur"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>Analyses par catégorie de VI — Facteurs protecteurs (-)</h3>
+        <div class="chart-wrapper">
+          <canvas id="esCatBarChartProtecteur"></canvas>
+        </div>
+      </div>
+    </div>
+
     <!-- EffectSize global -->
     <div class="section">
       <h3>Répartition globale de l'effectSize (analyses simples)</h3>
@@ -517,12 +547,89 @@ function renderComplexes(output) {
   }
 }
 
+const directionChartInstances = {};
+
+function extractSection(output, startLabelRegex) {
+  const re = new RegExp(startLabelRegex.source + '[\\s\\S]*?(?=\\r?\\n\\r?\\n  [A-Z]|$)', startLabelRegex.flags);
+  const m = output.match(re);
+  return m ? m[0] : '';
+}
+
+function parseValueIn(text, label) {
+  const re = new RegExp(label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s+(\\d+)');
+  const m = text.match(re);
+  return m ? parseInt(m[1]) : 0;
+}
+
+function renderDonut(canvasId, esCounts, nonClasseTotal) {
+  if (directionChartInstances[canvasId]) { directionChartInstances[canvasId].destroy(); }
+  const labels = ['Strong', 'Moderate', 'Weak', 'Negligible'];
+  const values = [esCounts.strong || 0, esCounts.moderate || 0, esCounts.weak || 0, esCounts.negligible || 0];
+  const colors = [COLORS.strong, COLORS.moderate, COLORS.weak, COLORS.negligible];
+  if (nonClasseTotal) {
+    labels.push('Non classifiée');
+    values.push(nonClasseTotal);
+    colors.push(COLORS.nonClasse);
+  }
+  const sum = values.reduce((a, b) => a + b, 0);
+  directionChartInstances[canvasId] = new Chart(document.getElementById(canvasId), {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data: values, backgroundColor: colors, borderWidth: 2 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { size: 12 } } },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.label} : ${ctx.raw.toLocaleString('fr-FR')} (${sum ? Math.round(ctx.raw/sum*100) : 0}%)` } }
+      }
+    }
+  });
+}
+
+function renderCatBarChart(canvasId, sectionText) {
+  if (directionChartInstances[canvasId]) { directionChartInstances[canvasId].destroy(); }
+  const catNames = [], catStrong = [], catModerate = [], catWeak = [], catNeg = [];
+  sectionText.split('\n').forEach(line => {
+    const m = line.match(/^\s{2}(.+?)\s{2,}(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)/);
+    if (m) {
+      const [, name, s, mo, w, n] = m;
+      const label = name.trim().replace(/_/g, ' ');
+      catNames.push(label.length > 28 ? label.slice(0, 26) + '…' : label);
+      catStrong.push(parseInt(s));
+      catModerate.push(parseInt(mo));
+      catWeak.push(parseInt(w));
+      catNeg.push(parseInt(n));
+    }
+  });
+  if (catNames.length === 0) return;
+  directionChartInstances[canvasId] = new Chart(document.getElementById(canvasId), {
+    type: 'bar',
+    data: {
+      labels: catNames,
+      datasets: [
+        { label: 'Strong',     data: catStrong,   backgroundColor: COLORS.strong,     stack: 'es' },
+        { label: 'Moderate',   data: catModerate, backgroundColor: COLORS.moderate,   stack: 'es' },
+        { label: 'Weak',       data: catWeak,     backgroundColor: COLORS.weak,       stack: 'es' },
+        { label: 'Negligible', data: catNeg,      backgroundColor: COLORS.negligible, stack: 'es' }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom', labels: { font: { size: 11 } } } },
+      scales: {
+        x: { stacked: true, ticks: { font: { size: 11 } } },
+        y: { stacked: true, ticks: { font: { size: 11 } } }
+      }
+    }
+  });
+}
+
 function renderCharts(esData, esSum, output, nonClasseTotal) {
   // Détruire les instances précédentes si recalcul
   if (esDonutInstance) { esDonutInstance.destroy(); esDonutInstance = null; }
   if (esCatBarInstance) { esCatBarInstance.destroy(); esCatBarInstance = null; }
 
-  // --- Donut effectSize ---
+  // --- Donut effectSize (toutes directions) ---
   const donutLabels = ['Strong', 'Moderate', 'Weak', 'Negligible'];
   const donutValues = [esData.strong || 0, esData.moderate || 0, esData.weak || 0, esData.negligible || 0];
   const donutColors = [COLORS.strong, COLORS.moderate, COLORS.weak, COLORS.negligible];
@@ -546,47 +653,31 @@ function renderCharts(esData, esSum, output, nonClasseTotal) {
     }
   });
 
-  // --- Barres catégories VI ---
+  // --- Barres catégories VI (toutes directions) ---
   const catSection = output.match(/EFFECTSIZE PAR CATEGORIE DE VI[\s\S]*?(?=\n\n  [A-Z]|\n\n  VI PAR)/);
-  const catNames = [], catTotals = [], catStrong = [], catModerate = [], catWeak = [], catNeg = [];
-  if (catSection) {
-    catSection[0].split('\n').forEach(line => {
-      const m = line.match(/^\s{2}(.+?)\s{2,}(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)/);
-      if (m) {
-        const [, name, s, mo, w, n] = m;
-        const label = name.trim().replace(/_/g, ' ');
-        catNames.push(label.length > 28 ? label.slice(0, 26) + '…' : label);
-        catStrong.push(parseInt(s));
-        catModerate.push(parseInt(mo));
-        catWeak.push(parseInt(w));
-        catNeg.push(parseInt(n));
-        catTotals.push(parseInt(s) + parseInt(mo) + parseInt(w) + parseInt(n));
-      }
-    });
-  }
-  if (catNames.length > 0) {
-    esCatBarInstance = new Chart(document.getElementById('esCatBarChart'), {
-      type: 'bar',
-      data: {
-        labels: catNames,
-        datasets: [
-          { label: 'Strong',     data: catStrong,   backgroundColor: COLORS.strong,     stack: 'es' },
-          { label: 'Moderate',   data: catModerate, backgroundColor: COLORS.moderate,   stack: 'es' },
-          { label: 'Weak',       data: catWeak,     backgroundColor: COLORS.weak,       stack: 'es' },
-          { label: 'Negligible', data: catNeg,      backgroundColor: COLORS.negligible, stack: 'es' }
-        ]
-      },
-      options: {
-        indexAxis: 'y',
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { position: 'bottom', labels: { font: { size: 11 } } } },
-        scales: {
-          x: { stacked: true, ticks: { font: { size: 11 } } },
-          y: { stacked: true, ticks: { font: { size: 11 } } }
-        }
-      }
-    });
-  }
+  if (catSection) renderCatBarChart('esCatBarChart', catSection[0]);
+
+  // --- Facteurs de risque (relations +) ---
+  const risqueSection = extractSection(output, /EFFECTSIZE RISQUE \(relations positives\) \(analyses simples\)/);
+  renderDonut('esDonutChartRisque', {
+    strong: parseValueIn(risqueSection, 'strong'),
+    moderate: parseValueIn(risqueSection, 'moderate'),
+    weak: parseValueIn(risqueSection, 'weak'),
+    negligible: parseValueIn(risqueSection, 'negligible')
+  });
+  const catRisqueSection = extractSection(output, /EFFECTSIZE PAR CATEGORIE DE VI RISQUE \(relations positives\) \(analyses simples\)/);
+  renderCatBarChart('esCatBarChartRisque', catRisqueSection);
+
+  // --- Facteurs protecteurs (relations -) ---
+  const protecteurSection = extractSection(output, /EFFECTSIZE PROTECTEUR \(relations negatives\) \(analyses simples\)/);
+  renderDonut('esDonutChartProtecteur', {
+    strong: parseValueIn(protecteurSection, 'strong'),
+    moderate: parseValueIn(protecteurSection, 'moderate'),
+    weak: parseValueIn(protecteurSection, 'weak'),
+    negligible: parseValueIn(protecteurSection, 'negligible')
+  });
+  const catProtecteurSection = extractSection(output, /EFFECTSIZE PAR CATEGORIE DE VI PROTECTEUR \(relations negatives\) \(analyses simples\)/);
+  renderCatBarChart('esCatBarChartProtecteur', catProtecteurSection);
 }
 </script>
 
