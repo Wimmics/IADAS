@@ -153,14 +153,16 @@
     <!-- EffectSize global -->
     <div class="section">
       <h3>Répartition globale de l'effectSize (analyses simples)</h3>
-      <div class="grid2">
-        <div>
-          <table>
-            <thead><tr><th>Catégorie</th><th class="right">Nb</th><th class="right">%</th></tr></thead>
-            <tbody id="esGlobalTable"></tbody>
-          </table>
-        </div>
-        <div class="bar-section" id="esGlobalBars"></div>
+      <table>
+        <thead><tr><th>Catégorie</th><th class="right">Nb</th><th class="right">%</th></tr></thead>
+        <tbody id="esGlobalTable"></tbody>
+      </table>
+      <div id="esNonClasseWrap" style="display:none; margin-top:16px">
+        <h4 style="margin:0 0 8px 0; font-size:0.95em; color:#566573">Détail des analyses non classifiées</h4>
+        <table>
+          <thead><tr><th>Raison</th><th class="right">Nb</th><th class="right">%</th></tr></thead>
+          <tbody id="esNonClasseTable"></tbody>
+        </table>
       </div>
     </div>
 
@@ -235,8 +237,14 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="./js/api-config.js"></script>
 <script>
-const COLORS = { strong: '#1a5276', moderate: '#2e86c1', weak: '#85c1e9', negligible: '#d6eaf8' };
-const COLORS_TEXT = { strong: 'white', moderate: 'white', weak: '#1a3a5c', negligible: '#1a3a5c' };
+const COLORS = { strong: '#1a5276', moderate: '#2e86c1', weak: '#85c1e9', negligible: '#d6eaf8', nonClasse: '#7f8c8d' };
+const COLORS_TEXT = { strong: 'white', moderate: 'white', weak: '#1a3a5c', negligible: '#1a3a5c', nonClasse: 'white' };
+const NON_CLASSE_REASONS = [
+  'non classifiable (R2, deltaR2, autre format)',
+  'non standardisee (hors -1..1)',
+  'valeur malformee',
+  'vide',
+];
 let esDonutInstance = null;
 let esCatBarInstance = null;
 
@@ -304,26 +312,48 @@ function renderStats(output) {
   document.getElementById('kpiCatVI').textContent = catVI || '—';
   document.getElementById('kpiConcepts').textContent = concepts?.toLocaleString('fr-FR') || '—';
 
-  // EffectSize global
+  // EffectSize global (weak/moderate/strong/negligible + non classifiees agregees)
   const esLabels = ['weak', 'moderate', 'strong', 'negligible'];
   const esData = {};
   esLabels.forEach(l => { esData[l] = parseValue(output, l); });
+
+  // Detail des raisons "non classifiees" (section EFFECTSIZE NON CLASSE)
+  const nonClasseData = {};
+  NON_CLASSE_REASONS.forEach(r => { nonClasseData[r] = parseValue(output, r) || 0; });
+  const nonClasseTotal = parseValue(output, 'Total non classe') || 0;
+
   const esSum = Object.values(esData).reduce((a, b) => (a || 0) + (b || 0), 0);
+  // Total dedie a la repartition globale (donut + tableau global) uniquement —
+  // esSum reste inchange pour le tableau "par categorie VI" plus bas.
+  const distTotal = esSum + nonClasseTotal;
+
+  const allLabels = esLabels.concat(nonClasseTotal ? ['nonClasse'] : []);
+  const allData = Object.assign({}, esData, nonClasseTotal ? { nonClasse: nonClasseTotal } : {});
+  const displayName = { weak: 'weak', moderate: 'moderate', strong: 'strong', negligible: 'negligible', nonClasse: 'Non classifiée' };
 
   let globalRows = '';
-  let globalBars = '';
-  esLabels.forEach(l => {
-    const n = esData[l] || 0;
-    const pct = esSum ? Math.round(n / esSum * 100) : 0;
-    globalRows += `<tr><td style="text-transform:capitalize">${l}</td><td class="right">${n.toLocaleString('fr-FR')}</td><td class="right">${pct}%</td></tr>`;
-    globalBars += `<div class="bar-row">
-      <span class="bar-label" style="text-transform:capitalize">${l}</span>
-      <div class="bar-bg"><div class="bar-fill" style="width:${pct}%; background:${COLORS[l]}; color:${COLORS_TEXT[l]}">${pct}%</div></div>
-      <span class="bar-val">${n.toLocaleString('fr-FR')}</span>
-    </div>`;
+  allLabels.forEach(l => {
+    const n = allData[l] || 0;
+    const pct = distTotal ? Math.round(n / distTotal * 100) : 0;
+    globalRows += `<tr><td style="text-transform:capitalize">${displayName[l]}</td><td class="right">${n.toLocaleString('fr-FR')}</td><td class="right">${pct}%</td></tr>`;
   });
   document.getElementById('esGlobalTable').innerHTML = globalRows;
-  document.getElementById('esGlobalBars').innerHTML = globalBars;
+
+  // Detail des 3-4 raisons sous le tableau global
+  const wrap = document.getElementById('esNonClasseWrap');
+  if (nonClasseTotal > 0) {
+    wrap.style.display = 'block';
+    let reasonRows = '';
+    NON_CLASSE_REASONS.forEach(r => {
+      const n = nonClasseData[r] || 0;
+      if (!n) return;
+      const pct = nonClasseTotal ? Math.round(n / nonClasseTotal * 100) : 0;
+      reasonRows += `<tr><td>${r}</td><td class="right">${n.toLocaleString('fr-FR')}</td><td class="right">${pct}%</td></tr>`;
+    });
+    document.getElementById('esNonClasseTable').innerHTML = reasonRows;
+  } else {
+    wrap.style.display = 'none';
+  }
 
   // EffectSize par catégorie
   const catSection = output.match(/EFFECTSIZE PAR CATEGORIE DE VI[\s\S]*?(?=\n\n  [A-Z]|\n\n  VI PAR)/);
@@ -368,7 +398,7 @@ function renderStats(output) {
   }
 
   // Graphiques
-  renderCharts(esData, esSum, output);
+  renderCharts(esData, distTotal, output, nonClasseTotal);
 
   // Analyses complexes
   renderComplexes(output);
@@ -487,7 +517,7 @@ function renderComplexes(output) {
   }
 }
 
-function renderCharts(esData, esSum, output) {
+function renderCharts(esData, esSum, output, nonClasseTotal) {
   // Détruire les instances précédentes si recalcul
   if (esDonutInstance) { esDonutInstance.destroy(); esDonutInstance = null; }
   if (esCatBarInstance) { esCatBarInstance.destroy(); esCatBarInstance = null; }
@@ -495,11 +525,17 @@ function renderCharts(esData, esSum, output) {
   // --- Donut effectSize ---
   const donutLabels = ['Strong', 'Moderate', 'Weak', 'Negligible'];
   const donutValues = [esData.strong || 0, esData.moderate || 0, esData.weak || 0, esData.negligible || 0];
+  const donutColors = [COLORS.strong, COLORS.moderate, COLORS.weak, COLORS.negligible];
+  if (nonClasseTotal) {
+    donutLabels.push('Non classifiée');
+    donutValues.push(nonClasseTotal);
+    donutColors.push(COLORS.nonClasse);
+  }
   esDonutInstance = new Chart(document.getElementById('esDonutChart'), {
     type: 'doughnut',
     data: {
       labels: donutLabels,
-      datasets: [{ data: donutValues, backgroundColor: [COLORS.strong, COLORS.moderate, COLORS.weak, COLORS.negligible], borderWidth: 2 }]
+      datasets: [{ data: donutValues, backgroundColor: donutColors, borderWidth: 2 }]
     },
     options: {
       responsive: true, maintainAspectRatio: false,

@@ -115,6 +115,58 @@ print(f"  {'Total effectSize peuple':<35} {es_total:>6}")
 couverture = round(es_total / analyses_simples * 100) if analyses_simples > 0 else 0
 print(f"  {'Couverture (sur simples)':<35} {couverture:>5}%")
 
+# --- EffectSize non classe : detail des raisons (analyses simples) ---
+# Reproduit la logique de add_effectsize_column_csv.py pour expliquer pourquoi
+# une analyse simple n'a pas de iadas:effectSize (r=/rho=/beta= en debut de texte,
+# valeur bornee a 1 pour r/beta).
+import re as _re
+_RE_R    = _re.compile(r"^\s*r\s*=\s*(-?[0-9.]+)", _re.IGNORECASE)
+_RE_RHO  = _re.compile(r"^\s*rho\s*=\s*(-?[0-9.]+)", _re.IGNORECASE)
+_RE_BETA = _re.compile(r"^\s*[β\U0001D6C3]\s*=\s*(-?[0-9.]+)")
+
+def _classify_non_es(raw):
+    text = (raw or "").strip()
+    if not text or text.upper() in ("N.A.", "NA", "N/A"):
+        return "vide"
+    for regex, bounded in ((_RE_R, True), (_RE_RHO, False), (_RE_BETA, True)):
+        m = regex.match(text)
+        if not m:
+            continue
+        try:
+            val = float(m.group(1))
+        except ValueError:
+            return "valeur malformee"
+        if bounded and abs(val) > 1.0:
+            return "non standardisee (hors -1..1)"
+        return None  # ne devrait pas arriver ici (serait deja classe par ailleurs)
+    return "non classifiable (R2, deltaR2, autre format)"
+
+d_non_es = query(f"""
+{PREFIX}
+SELECT ?rel ?raw WHERE {{
+  ?analysis a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel .
+  FILTER({FILTER_SIMPLES})
+  FILTER NOT EXISTS {{ ?rel iadas:effectSize ?cat }}
+  OPTIONAL {{ ?rel iadas:relationDegreeSecondary ?raw }}
+}}
+""")
+from collections import Counter as _Counter
+_non_es_reasons = _Counter()
+for b in d_non_es["results"]["bindings"]:
+    raw = b.get("raw", {}).get("value", "")
+    reason = _classify_non_es(raw)
+    if reason:
+        _non_es_reasons[reason] += 1
+
+print("\n  EFFECTSIZE NON CLASSE - DETAIL DES RAISONS (analyses simples)")
+print("  " + "-" * 40)
+_non_es_total = sum(_non_es_reasons.values())
+for reason, n in _non_es_reasons.most_common():
+    pct = round(n / _non_es_total * 100) if _non_es_total > 0 else 0
+    print(f"  {reason:<35} {n:>6}  ({pct}%)")
+print(f"  {'Total non classe':<35} {_non_es_total:>6}")
+print(f"  {'Verification (classe + non classe)':<35} {es_total + _non_es_total:>6}  (attendu: {analyses_simples})")
+
 # --- EffectSize par catégorie et sous-classe de VI (analyses simples) ---
 
 # Etape 1 : charger la hierarchie SKOS ACAD en Python
