@@ -67,7 +67,8 @@
                 <button id="viewTable" class="view-btn active" disabled>Tableau</button>
                 <button id="viewGraph" class="view-btn" disabled>Graphique</button>
                 <button id="viewSparql" class="view-btn" disabled>SPARQL</button>
-                
+                <button id="viewStats" class="view-btn" disabled>Stats</button>
+
                 <div style="margin-left: 20px; display: flex; gap: 10px; align-items: center;">
                     <!-- <button id="exportPNG" class="view-btn" style="background: #17a2b8;" disabled>
                         Export PNG
@@ -80,7 +81,7 @@
                     </button>
                 </div>
             </div>
-            
+
             <div id="result-display"></div>
         </div>
     </div>
@@ -215,6 +216,7 @@
     <script src="./graph-component/graph-renderer.js"></script>
     <script src="./input-intorregation-component/input-intorregation-component.js"></script>
     <script src="./js/export-csv.js"></script>
+    <script src="./js/query-stats.js"></script>
     <script src="./doctor-page/doctor-page.js"></script>
 
     <template id="error-template">

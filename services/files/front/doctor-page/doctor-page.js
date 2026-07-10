@@ -243,7 +243,7 @@ SELECT * WHERE {
 function displayResults(data, query = null) {
     currentData = data;
     currentQuery = query;
-    
+
     // Activer les boutons de contrôle et d'export
     enableResultControls();
 
@@ -260,6 +260,7 @@ function enableResultControls() {
     const exportExcel = document.getElementById('exportExcel');
     const exportCSV = document.getElementById('exportCSV');
     const exportTurtle = document.getElementById('exportTurtle');
+    const viewStats = document.getElementById('viewStats');
 
     if (viewTable) viewTable.disabled = false;
     if (viewGraph) viewGraph.disabled = false;
@@ -268,7 +269,8 @@ function enableResultControls() {
     if (exportExcel) exportExcel.disabled = false;
     if (exportCSV) exportCSV.disabled = false;
     if (exportTurtle) exportTurtle.disabled = false;
-    
+    if (viewStats) viewStats.disabled = false;
+
     // Configurer les événements si pas déjà fait
     setupViewButtons();
 }
@@ -277,11 +279,13 @@ function setupViewButtons() {
     const viewTable = document.getElementById('viewTable');
     const viewGraph = document.getElementById('viewGraph');
     const viewSparql = document.getElementById('viewSparql');
-    
+    const viewStats = document.getElementById('viewStats');
+
     if (viewTable) viewTable.onclick = () => switchView('table');
     if (viewGraph) viewGraph.onclick = () => switchView('graph');
     if (viewSparql) viewSparql.onclick = () => switchView('sparql');
-    
+    if (viewStats) viewStats.onclick = () => switchView('stats');
+
     // Event handlers pour les boutons d'export
     const exportPNGBtn = document.getElementById('exportPNG');
     if (exportPNGBtn) {
@@ -331,7 +335,14 @@ function switchView(mode) {
         case 'sparql':
             displaySparqlView();
             break;
+        case 'stats':
+            displayStatsView();
+            break;
     }
+}
+
+function displayStatsView() {
+    displayQueryStatsInContainer(currentData, 'result-display');
 }
 
 function displayTableView() {
