@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Configuration
     const SERVER_URL = window.location.hostname === 'localhost' ?
         'http://localhost:8003' :
-        `http://${window.location.hostname}:8003`;
+        '/api/query'; // passerelle en production
 
     // ================== UTILITAIRES ==================
 
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const response = await fetch(
                 window.location.hostname === 'localhost'
                     ? 'http://localhost:8003'
-                    : `http://${window.location.hostname}:8003`,
+                    : '/api/query', // passerelle en production
                 {
                     method: 'POST',
                     headers: {
@@ -611,7 +611,7 @@ WHERE {
             const response = await fetch(
                 window.location.hostname === 'localhost'
                     ? 'http://localhost:8003/delete-analysis'
-                    : `http://${window.location.hostname}:8003/delete-analysis`,
+                    : '/delete-analysis', // passerelle en production
                 {
                     method: 'POST',
                     headers: {
@@ -997,7 +997,7 @@ WHERE {
             const response = await fetch(
                 window.location.hostname === 'localhost'
                     ? 'http://localhost:8003/update-analysis'
-                    : `http://${window.location.hostname}:8003/update-analysis`,
+                    : '/update-analysis', // passerelle en production
                 {
                     method: 'POST',
                     headers: {

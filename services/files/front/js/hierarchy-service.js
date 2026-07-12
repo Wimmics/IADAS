@@ -1,8 +1,8 @@
 class HierarchyService {
   constructor() {
-    this.endpoint = window.location.hostname === 'localhost'
+    this.endpoint = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
       ? 'http://localhost:8003'
-      : `http://${window.location.hostname}:8003`;
+      : '/api/query'; // en production, on passe par la passerelle (port 8003 non expose publiquement)
     
   }
 

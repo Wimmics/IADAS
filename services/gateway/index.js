@@ -30,12 +30,18 @@ http.createServer(function (request, response) {
     try {
         if (filePath[1] === "api" && filePath[2] === "auth") {
             handleAuth(request, response);
-        } else if (filePath[1] === "api" && (filePath[2] === "query" || filePath[2] === "interface-data")) {
+        } else if (filePath[1] === "api" && (filePath[2] === "query" || filePath[2] === "interface-data" || filePath[2] === "export")) {
             console.log("REST API call, redirecting to SPARQL Generator");
             console.log(`Request URL: ${request.url}`);
             proxy.web(request, response, { target: "http://sparql-generator:8003" });
+        } else if ((request.url === '/update-analysis' || request.url === '/delete-analysis') && request.method === 'POST') {
+            console.log("SPARQL Generator call (update/delete-analysis), redirecting");
+            proxy.web(request, response, { target: "http://sparql-generator:8003" });
         } else if (request.url === '/rebuild-ontology' && request.method === 'POST') {
             console.log("Ontology rebuild request, redirecting to database service");
+            proxy.web(request, response, { target: "http://database-service:8005" });
+        } else if (request.url === '/stats' && request.method === 'GET') {
+            console.log("Stats request, redirecting to database service");
             proxy.web(request, response, { target: "http://database-service:8005" });
         } else if (filePath[1] === "api" && filePath[2] === "fuseki-counts" && request.method === "GET") {
             queryFusekiCounts(response);

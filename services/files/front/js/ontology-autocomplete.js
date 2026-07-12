@@ -3,7 +3,7 @@ class OntologyAutocompleteService {
     constructor() {
         // URL du serveur (utilise la même logique que FusekiAnalysisRetriever)
         const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-        this.serverURL = isLocal ? 'http://localhost:8003' : `http://${window.location.hostname}:8003`;
+        this.serverURL = isLocal ? 'http://localhost:8003' : '/api/query'; // passerelle en production
         
         // Cache des données pour éviter les requêtes répétitives
         this.cache = new Map();

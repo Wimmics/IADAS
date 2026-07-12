@@ -154,7 +154,7 @@ async function rechercher(data) {
         const response = await fetch(
             window.location.hostname === 'localhost'
                 ? 'http://localhost:8003'
-                : `http://${window.location.hostname}:8003`,
+                : '/api/query', // passerelle en production
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

@@ -77,7 +77,7 @@ class PageInitializer {
         // Détection de l'environnement
         const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
             ? 'http://localhost:8003/'
-            : `http://${window.location.hostname}:8003/`;
+            : '/api/query'; // passerelle en production
 
 
         const warmupQuery = {
@@ -106,7 +106,7 @@ class PageInitializer {
         // Détection de l'environnement
         const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
             ? 'http://localhost:8003/'
-            : `http://${window.location.hostname}:8003/`;
+            : '/api/query'; // passerelle en production
         
         // Requête différente pour s'assurer de la stabilité
         const testQuery = {

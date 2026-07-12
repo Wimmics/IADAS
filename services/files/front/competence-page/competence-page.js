@@ -105,7 +105,7 @@ async function rechercherCompetence(data) {
         console.log("   ENVIRONNEMENT: LOCAL");
         console.log("   URL API CHOISIE:", apiUrl);
     } else {
-        apiUrl = `http://${hostname}:8003`;
+        apiUrl = '/api/query'; // passerelle en production (port 8003 non expose publiquement)
         console.log("   ENVIRONNEMENT: DISTANT");
         console.log("   Hostname détecté:", hostname);
         console.log("   URL API CONSTRUITE:", apiUrl);
@@ -1668,10 +1668,10 @@ async function convertToTurtle(data) {
     try {
         // Déterminer l'URL API
         const hostname = window.location.hostname;
-        const apiUrl = hostname === 'localhost' || hostname === '127.0.0.1' 
-            ? 'http://localhost:8003' 
-            : `http://${hostname}:8003`;
-        
+        const apiUrl = hostname === 'localhost' || hostname === '127.0.0.1'
+            ? 'http://localhost:8003'
+            : ''; // passerelle en production (chemin relatif /api/export/turtle)
+
         const response = await fetch(`${apiUrl}/api/export/turtle`, {
             method: 'POST',
             headers: {

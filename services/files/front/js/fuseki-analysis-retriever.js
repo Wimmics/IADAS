@@ -9,10 +9,8 @@ class FusekiAnalysisRetriever {
     if (isLocal) {
         this.serverURL = 'http://localhost:8003';
     } else {
-        // Adaptez cette URL selon votre configuration de production
-        this.serverURL = `http://${window.location.hostname}:8003`;
-        // OU si votre API est sur le même serveur :
-        // this.serverURL = `${window.location.protocol}//${window.location.hostname}:8003`;
+        // En production, on passe par la passerelle (port 8003 non expose publiquement)
+        this.serverURL = '/api/query';
     }
     
     this.cache = new Map();

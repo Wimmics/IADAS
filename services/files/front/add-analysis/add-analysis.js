@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // ✅ CORRECTION : URL cohérente avec endpoint correct
         const serverURL = window.location.hostname === 'localhost'
             ? 'http://localhost:8003/update-analysis'
-            : `http://${window.location.hostname}:8003/update-analysis`;
+            : '/update-analysis'; // passerelle en production
 
         const payload = {
             formData: formData,

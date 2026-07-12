@@ -20,9 +20,12 @@ class ApiConfigManager {
                 }
             };
         } else {
+            // En production, le port 8003 n'est pas expose publiquement (seule la
+            // passerelle l'est). On passe donc par un chemin relatif proxifie par
+            // la passerelle (services/gateway/index.js) au lieu du port direct.
             return {
                 environment: 'production',
-                baseUrl: `${protocol}//${hostname}`,
+                baseUrl: '',
                 ports: {
                     sparql: 8003,
                     api: 8003,
@@ -34,6 +37,11 @@ class ApiConfigManager {
 
     // Méthode principale pour obtenir une URL d'endpoint
     getEndpoint(service, path = '') {
+        if (this.config.environment === 'production') {
+            // Chemin relatif via la passerelle : /api/query (le service SPARQL
+            // Generator accepte n'importe quel chemin pour une requete POST).
+            return path ? `/${path}` : '/api/query';
+        }
         const port = this.config.ports[service];
         const baseUrl = `${this.config.baseUrl}:${port}`;
         return path ? `${baseUrl}/${path}` : baseUrl;
