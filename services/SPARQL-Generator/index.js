@@ -2658,7 +2658,7 @@ WHERE {
     ?variableVI iadas:refersToVariable ?viURI .
     BIND(REPLACE(STR(?viURI), ".*ACAD-vocab/", "") AS ?vi)
     
-    ${params.get('categoryVI') ? `?viFilterSKOS skos:prefLabel ?viLabel . ?viFilterSKOS skos:broader+ ?viTopCat . ?viTopCat skos:prefLabel "${params.get('categoryVI')}" .` : ''}
+    ${params.get('categoryVI') ? `?viURI skos:broader+ ?viTopCat . ?viTopCat skos:prefLabel "${params.get('categoryVI')}" .` : ''}
 }
 GROUP BY ?vi
 ORDER BY DESC(?count)`,
@@ -2677,7 +2677,7 @@ WHERE {
     ?variableVD iadas:refersToVariable ?vdURI .
     BIND(REPLACE(STR(?vdURI), ".*ACAD-vocab/", "") AS ?vd)
     
-    ${params.get('categoryVD') ? `?vdFilterSKOS skos:prefLabel ?vdLabel . ?vdFilterSKOS skos:broader+ ?vdTopCat . ?vdTopCat skos:prefLabel "${params.get('categoryVD')}" .` : ''}
+    ${params.get('categoryVD') ? `?vdURI skos:broader+ ?vdTopCat . ?vdTopCat skos:prefLabel "${params.get('categoryVD')}" .` : ''}
 }
 GROUP BY ?vd
 ORDER BY DESC(?count)`,

@@ -162,20 +162,20 @@ function loadQualityBanner() {
 
     const doublons = q.doublons || 0;
     const broken = q.broken || 0;
-    const issues = doublons + (q.cycles || 0);
+    const issues = doublons + broken + (q.cycles || 0);
     const date = q.timestamp ? new Date(q.timestamp).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
 
     let icon, text, bg, color, border;
     if (issues === 0) {
         icon = '✓'; text = 'Ontologie en bon état'; bg = '#d4edda'; color = '#155724'; border = '#28a745';
     } else if (issues <= 2) {
-        icon = '⚠'; text = `${issues} doublon(s) de labels détecté(s)`; bg = '#fff3cd'; color = '#856404'; border = '#ffc107';
+        icon = '⚠'; text = `${issues} problème(s) de qualité détecté(s)`; bg = '#fff3cd'; color = '#856404'; border = '#ffc107';
     } else {
-        icon = '✕'; text = `${issues} doublons — vérification requise`; bg = '#f8d7da'; color = '#721c24'; border = '#dc3545';
+        icon = '✕'; text = `${issues} problèmes de qualité — vérification requise`; bg = '#f8d7da'; color = '#721c24'; border = '#dc3545';
     }
 
     const brokenLine = broken > 0
-        ? `<div style="font-size:11px; margin-top:3px; opacity:0.75;">${broken} analyse(s) avec variable non hiérarchisée</div>`
+        ? `<div style="font-size:11px; margin-top:3px; opacity:0.75;">dont ${broken} analyse(s) avec référence de variable cassée (concept introuvable dans le thésaurus)</div>`
         : '';
 
     banner.style.cssText = `display:flex; flex-direction:column; margin-top:10px; border-radius:6px; padding:9px 12px; font-size:13px; background:${bg}; color:${color}; border:1px solid ${border};`;
