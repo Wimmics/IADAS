@@ -10,6 +10,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Adaptive%20emotional%20state> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Positive%20affect> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Adaptive%20emotional%20state> <http://www.w3.org/2004/02/skos/core#prefLabel> "Adaptive emotional state" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Adaptive%20perfectionism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Adaptive%20perfectionism> <http://www.w3.org/2004/02/skos/core#altLabel> "Self oriented perfectionism" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Adaptive%20perfectionism> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Adaptive%20perfectionism> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Adaptive%20perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Conscientious%20perfectionism> .
@@ -248,6 +249,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority> <http://www.w3.org/2004/02/skos/core#prefLabel> "Authority" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority%20and%20Leadership%20Styles> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Authority%20and%20Leadership%20Styles> <http://www.w3.org/2004/02/skos/core#altLabel> "Coach leadership style negative feedback" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority%20and%20Leadership%20Styles> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Interpersonal%20factor%20related%20to%20DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority%20and%20Leadership%20Styles> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Authority%20and%20Leadership%20Styles> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s%20focus%20on%20results> .
@@ -679,6 +681,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s%20focus%20on%20results> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s%20focus%20on%20results> <http://www.w3.org/2004/02/skos/core#prefLabel> "Coach's focus on results" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s%20negative%20feedback> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s%20negative%20feedback> <http://www.w3.org/2004/02/skos/core#altLabel> "Coach leadership style negative feedback" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s%20negative%20feedback> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Authority%20and%20Leadership%20Styles> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s%20negative%20feedback> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s%20negative%20feedback> <http://www.w3.org/2004/02/skos/core#prefLabel> "Coach's negative feedback" .
@@ -748,6 +751,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Competitive%20state%20anxiety> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Competitive%20state%20anxiety> <http://www.w3.org/2004/02/skos/core#prefLabel> "Competitive state anxiety" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#altLabel> "Alcohol abuse or dependence" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#altLabel> "Compulsive spending" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#altLabel> "Sex addiction" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#altLabel> "Video game addiction" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Other%20behaviors> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Bodybuilding%20dependence> .
@@ -760,6 +767,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Substance%20addiction> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> <http://www.w3.org/2004/02/skos/core#prefLabel> "Compulsive and behavioral addictions" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20buying> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20buying> <http://www.w3.org/2004/02/skos/core#altLabel> "Compulsive spending" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20buying> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20buying> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20buying> <http://www.w3.org/2004/02/skos/core#prefLabel> "Compulsive buying" .
@@ -772,6 +780,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Concentration> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Concentration> <http://www.w3.org/2004/02/skos/core#prefLabel> "Concentration" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Concern%20over%20mistakes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Concern%20over%20mistakes> <http://www.w3.org/2004/02/skos/core#altLabel> "Concern over mistakes and doubts about actions" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Concern%20over%20mistakes> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Maladaptive%20perfectionism> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Concern%20over%20mistakes> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Concern%20over%20mistakes> <http://www.w3.org/2004/02/skos/core#prefLabel> "Concern over mistakes" .
@@ -838,7 +847,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Controlled%20forms%20of%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20for%20social> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Controlled%20forms%20of%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20to%20avoid%20negative%20affect> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Controlled%20forms%20of%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Exercise%20to%20improve%20mood> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Controlled%20forms%20of%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Extrinsic%20regulation%C2%A0for%20sport> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Controlled%20forms%20of%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Extrinsic%20regulation%20for%20sport> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Controlled%20forms%20of%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Introjection> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Controlled%20forms%20of%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Obligatory%20exercise> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Controlled%20forms%20of%20motivation> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Obsessive%20passion%20toward%20an%20activity> .
@@ -949,7 +958,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Dietary%20intention%20to%20restraint> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Dietary%20intention%20to%20restraint> <http://www.w3.org/2004/02/skos/core#prefLabel> "Dietary intention to restraint" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Dieting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Dieting> <http://www.w3.org/2004/02/skos/core#altLabel> "Diet, Dietary" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Dieting> <http://www.w3.org/2004/02/skos/core#altLabel> "Diet, Dietary, dietary restraint" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Dieting> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Restrictions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Dieting> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Dieting> <http://www.w3.org/2004/02/skos/core#prefLabel> "Dieting" .
@@ -1049,6 +1058,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20disturbance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20disturbance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Eating disturbance" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20psychopathology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Eating%20psychopathology> <http://www.w3.org/2004/02/skos/core#altLabel> "Eating pathology ; eating pathology symptoms" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20psychopathology> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20psychopathology> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20psychopathology> <http://www.w3.org/2004/02/skos/core#prefLabel> "Eating psychopathology" .
@@ -1057,6 +1067,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20related%20control> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20related%20control> <http://www.w3.org/2004/02/skos/core#prefLabel> "Eating related control" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20restriction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Eating%20restriction> <http://www.w3.org/2004/02/skos/core#altLabel> "Restrained eating ; restrictive eating behaviors ; restrictive eating" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20restriction> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Restrictions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20restriction> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating%20restriction> <http://www.w3.org/2004/02/skos/core#prefLabel> "Eating restriction" .
@@ -1254,10 +1265,6 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Expressive%20suppression> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Ineffective%20emotion%20regulation> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Expressive%20suppression> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Expressive%20suppression> <http://www.w3.org/2004/02/skos/core#prefLabel> "Expressive suppression" .
-<http://ns.inria.fr/iadas/ACAD-vocab/External%20%20ingestion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/External%20%20ingestion> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/External%20eating%20behavior> .
-<http://ns.inria.fr/iadas/ACAD-vocab/External%20%20ingestion> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/External%20%20ingestion> <http://www.w3.org/2004/02/skos/core#prefLabel> "External  ingestion" .
 <http://ns.inria.fr/iadas/ACAD-vocab/External%20comments> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/External%20comments> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Interpersonal%20factor%20related%20to%20DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/External%20comments> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -1272,8 +1279,12 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/External%20eating%20behavior> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/External%20eating%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/External%20eating%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/External%20eating%20behavior> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/External%20%20ingestion> .
+<http://ns.inria.fr/iadas/ACAD-vocab/External%20eating%20behavior> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/External%20ingestion> .
 <http://ns.inria.fr/iadas/ACAD-vocab/External%20eating%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "External eating behavior" .
+<http://ns.inria.fr/iadas/ACAD-vocab/External%20ingestion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/External%20ingestion> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/External%20eating%20behavior> .
+<http://ns.inria.fr/iadas/ACAD-vocab/External%20ingestion> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/External%20ingestion> <http://www.w3.org/2004/02/skos/core#prefLabel> "External ingestion" .
 <http://ns.inria.fr/iadas/ACAD-vocab/External%20locus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/External%20locus> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Locus%20of%20control> .
 <http://ns.inria.fr/iadas/ACAD-vocab/External%20locus> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -1309,10 +1320,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Extreme%20weight%20control%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20Control> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Extreme%20weight%20control%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Extreme%20weight%20control%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "Extreme weight control behavior" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Extrinsic%20regulation%C2%A0for%20sport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Extrinsic%20regulation%C2%A0for%20sport> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Controlled%20forms%20of%20motivation> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Extrinsic%20regulation%C2%A0for%20sport> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Extrinsic%20regulation%C2%A0for%20sport> <http://www.w3.org/2004/02/skos/core#prefLabel> "Extrinsic regulation for sport" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Extrinsic%20regulation%20for%20sport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Extrinsic%20regulation%20for%20sport> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Controlled%20forms%20of%20motivation> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Extrinsic%20regulation%20for%20sport> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Extrinsic%20regulation%20for%20sport> <http://www.w3.org/2004/02/skos/core#prefLabel> "Extrinsic regulation for sport" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Extroversion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Extroversion> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Maladaptive%20personality%20traits%20for%20the%20DEAB%20studies%20available%20to%20date> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Extroversion> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -1355,6 +1366,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Fluids%20avoidance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Fluids%20avoidance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Fluids avoidance" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20alcohol%20disturbance-alcohol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20alcohol%20disturbance-alcohol> <http://www.w3.org/2004/02/skos/core#altLabel> "Alcohol abuse or dependence" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20alcohol%20disturbance-alcohol> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20alcohol%20disturbance-alcohol> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Food%20and%20alcohol%20disturbance-alcohol> <http://www.w3.org/2004/02/skos/core#prefLabel> "Food and alcohol disturbance-alcohol" .
@@ -1499,6 +1511,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Hours%20spent%20on%20social%20media> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Hours%20spent%20on%20social%20media> <http://www.w3.org/2004/02/skos/core#prefLabel> "Hours spent on social media" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Hypersexual%20behavior> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Hypersexual%20behavior> <http://www.w3.org/2004/02/skos/core#altLabel> "Sex addiction" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Hypersexual%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Hypersexual%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Hypersexual%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "Hypersexual behavior" .
@@ -1725,6 +1738,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Maladaptive%20emotional%20state> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Somatization> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Maladaptive%20emotional%20state> <http://www.w3.org/2004/02/skos/core#prefLabel> "Maladaptive emotional state" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Maladaptive%20perfectionism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Maladaptive%20perfectionism> <http://www.w3.org/2004/02/skos/core#altLabel> "Concern over mistakes and doubts about actions" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Maladaptive%20perfectionism> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Maladaptive%20perfectionism> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Maladaptive%20perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Concern%20over%20mistakes> .
@@ -1839,6 +1853,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Motivational%20Climate> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Performance%20climate> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Motivational%20Climate> <http://www.w3.org/2004/02/skos/core#prefLabel> "Motivational Climate" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> <http://www.w3.org/2004/02/skos/core#altLabel> "Muscularity-oriented eating behaviours" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Degree%20of%20muscle%20dysmorphia%2Fbigorexia%20nervosa> .
@@ -1846,8 +1861,8 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20dysmorphic%20tendencies%20%28avoidance%20and%20psychological%20symptoms%29> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20dysmorphic%20tendencies%20%28behaviours%20and%20thoughts%29> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20disordered%20eating> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20eating> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Supplementation> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/muscularity%20oriented%20eating> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscle Dysmorphia" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20appearance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20appearance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Body%20appreciation> .
@@ -1901,9 +1916,14 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20daily%20life> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20daily%20life> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscularity daily life" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20disordered%20eating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20disordered%20eating> <http://www.w3.org/2004/02/skos/core#altLabel> "Muscularity-oriented eating behaviours" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20disordered%20eating> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20disordered%20eating> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20disordered%20eating> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscularity oriented disordered eating" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20eating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20eating> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20eating> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20oriented%20eating> <http://www.w3.org/2004/02/skos/core#prefLabel> "Muscularity oriented eating" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20sport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20sport> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20and%20Sports%20Practices> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Muscularity%20sport> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -1975,6 +1995,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Organization> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Organization> <http://www.w3.org/2004/02/skos/core#prefLabel> "Organization" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Orthorexia> <http://www.w3.org/2004/02/skos/core#altLabel> "Orthorexic eating behavior" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexia> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexia> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexia> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexia%20nervosa> .
@@ -1990,6 +2011,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexic%20attitude%20and%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexic%20attitude%20and%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "Orthorexic attitude and behavior" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexic%20behavior> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Orthorexic%20behavior> <http://www.w3.org/2004/02/skos/core#altLabel> "Orthorexic eating behavior" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexic%20behavior> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexia> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexic%20behavior> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexic%20behavior> <http://www.w3.org/2004/02/skos/core#prefLabel> "Orthorexic behavior" .
@@ -2041,6 +2063,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Paternal%20relationship> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Paternal%20relationship> <http://www.w3.org/2004/02/skos/core#prefLabel> "Paternal relationship" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Pathological%20computer%20gaming> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Pathological%20computer%20gaming> <http://www.w3.org/2004/02/skos/core#altLabel> "Video game addiction" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Pathological%20computer%20gaming> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Compulsive%20and%20behavioral%20addictions> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Pathological%20computer%20gaming> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Pathological%20computer%20gaming> <http://www.w3.org/2004/02/skos/core#prefLabel> "Pathological computer gaming" .
@@ -2271,6 +2294,8 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceptual%20dimension%20of%20body%20image%20and%20self-esteem> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Judgement%20of%20size%2C%20shape%20and%20weight> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perceptual%20dimension%20of%20body%20image%20and%20self-esteem> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perceptual dimension of body image and self-esteem" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#altLabel> "Concern over mistakes and doubts about actions" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#altLabel> "Self oriented perfectionism" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Personality> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Adaptive%20perfectionism> .
@@ -2282,6 +2307,7 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism%20other-oriented> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism%20other-oriented> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perfectionism other-oriented" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism%20self-oriented> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism%20self-oriented> <http://www.w3.org/2004/02/skos/core#altLabel> "Self oriented perfectionism" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism%20self-oriented> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Adaptive%20perfectionism> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism%20self-oriented> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Perfectionism%20self-oriented> <http://www.w3.org/2004/02/skos/core#prefLabel> "Perfectionism self-oriented" .
@@ -2334,6 +2360,8 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Personal%20standards> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Personal%20standards> <http://www.w3.org/2004/02/skos/core#prefLabel> "Personal standards" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Personality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Personality> <http://www.w3.org/2004/02/skos/core#altLabel> "Concern over mistakes and doubts about actions" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Personality> <http://www.w3.org/2004/02/skos/core#altLabel> "Self oriented perfectionism" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Personality> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Intrapersonal%20factor%20related%20to%20DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Personality> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Personality> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Athlete%20identity> .
@@ -2615,7 +2643,8 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Restraint> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Restraint> <http://www.w3.org/2004/02/skos/core#prefLabel> "Restraint" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Restrictions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/Restrictions> <http://www.w3.org/2004/02/skos/core#altLabel> "Diet, Dietary" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Restrictions> <http://www.w3.org/2004/02/skos/core#altLabel> "Diet, Dietary, dietary restraint" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Restrictions> <http://www.w3.org/2004/02/skos/core#altLabel> "Restrained eating ; restrictive eating behaviors ; restrictive eating" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Restrictions> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Restrictions> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Restrictions> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Behavioral%20restrained%20eating> .
@@ -2816,7 +2845,6 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20Sport%20pressure%20related%20to%20significant%20others> <http://www.w3.org/2004/02/skos/core#altLabel> "Coach-related pressures ; coach pressure" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20Sport%20pressure%20related%20to%20significant%20others> <http://www.w3.org/2004/02/skos/core#altLabel> "Parental expectations and parental criticism" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20Sport%20pressure%20related%20to%20significant%20others> <http://www.w3.org/2004/02/skos/core#altLabel> "Sport specific weight pressure" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20Sport%20pressure%20related%20to%20significant%20others> <http://www.w3.org/2004/02/skos/core#altLabel> "Weight pressures weight" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20Sport%20pressure%20related%20to%20significant%20others> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Interpersonal%20factor%20related%20to%20DEAB> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20Sport%20pressure%20related%20to%20significant%20others> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20Sport%20pressure%20related%20to%20significant%20others> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/General%20pressures> .
@@ -3172,7 +3200,6 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20pressure%20uniform> <http://www.w3.org/2004/02/skos/core#prefLabel> "Weight pressure uniform" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20pressures> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20pressures> <http://www.w3.org/2004/02/skos/core#altLabel> "Sport specific weight pressure" .
-<http://ns.inria.fr/iadas/ACAD-vocab/Weight%20pressures> <http://www.w3.org/2004/02/skos/core#altLabel> "Weight pressures weight" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20pressures> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20Sport%20pressure%20related%20to%20significant%20others> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20pressures> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Social%20and%20sport%20pressure%20related%20to%20significant%20others> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Weight%20pressures> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -3195,7 +3222,3 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Well-being> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Physical%20well-being> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Well-being> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/ACAD-vocab/Psychological%20well-being> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Well-being> <http://www.w3.org/2004/02/skos/core#prefLabel> "Well-being" .
-<http://ns.inria.fr/iadas/ACAD-vocab/muscularity%20oriented%20eating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<http://ns.inria.fr/iadas/ACAD-vocab/muscularity%20oriented%20eating> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Muscle%20Dysmorphia> .
-<http://ns.inria.fr/iadas/ACAD-vocab/muscularity%20oriented%20eating> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
-<http://ns.inria.fr/iadas/ACAD-vocab/muscularity%20oriented%20eating> <http://www.w3.org/2004/02/skos/core#prefLabel> "muscularity oriented eating" .
