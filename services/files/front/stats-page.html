@@ -267,8 +267,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="./js/api-config.js"></script>
 <script>
-const COLORS = { strong: '#1a5276', moderate: '#2e86c1', weak: '#85c1e9', negligible: '#d6eaf8', nonClasse: '#7f8c8d' };
-const COLORS_TEXT = { strong: 'white', moderate: 'white', weak: '#1a3a5c', negligible: '#1a3a5c', nonClasse: 'white' };
+const COLORS = { strong: '#1a5276', moderate: '#2e86c1', weak: '#85c1e9', negligible: '#d6eaf8', ns: '#f39c12', na: '#bdc3c7', nonClasse: '#7f8c8d' };
+const COLORS_TEXT = { strong: 'white', moderate: 'white', weak: '#1a3a5c', negligible: '#1a3a5c', ns: 'white', na: '#1a3a5c', nonClasse: 'white' };
 const NON_CLASSE_REASONS = [
   'non classifiable (R2, deltaR2, autre format)',
   'non standardisee (hors -1..1)',
@@ -343,24 +343,37 @@ function renderStats(output) {
   document.getElementById('kpiCatVI').textContent = catVI || '—';
   document.getElementById('kpiConcepts').textContent = concepts?.toLocaleString('fr-FR') || '—';
 
-  // EffectSize global (weak/moderate/strong/negligible + non classifiees agregees)
-  const esLabels = ['weak', 'moderate', 'strong', 'negligible'];
+  // EffectSize global (weak/moderate/strong/negligible/N.S./N.A. + non classifiees agregees)
+  // Recherche limitee a la section EFFECTSIZE (pas tout le texte), car "N.A." apparait
+  // aussi ailleurs dans la sortie (ex. "VD pointant vers N.A.") et matcherait le mauvais nombre.
+  const esSectionMatch = output.match(/EFFECTSIZE \(analyses simples[\s\S]*?Couverture \(sur simples\)\s*\d+%/);
+  const esSection = esSectionMatch ? esSectionMatch[0] : output;
+  const esStrengthLabels = ['weak', 'moderate', 'strong', 'negligible'];
   const esData = {};
-  esLabels.forEach(l => { esData[l] = parseValue(output, l); });
+  esStrengthLabels.forEach(l => { esData[l] = parseValue(esSection, l); });
+  // esSum = uniquement les 4 niveaux de force (weak/moderate/strong/negligible) —
+  // ne pas ajouter N.S./N.A. ici, c'est aussi le denominateur du tableau "par categorie VI"
+  // plus bas, qui ne compte que les relations significatives et classifiees.
+  const esSum = Object.values(esData).reduce((a, b) => (a || 0) + (b || 0), 0);
+
+  // N.S. / N.A. : comptes separement, affiches dans le graphique/tableau global uniquement.
+  const esNS = parseValue(esSection, 'N.S.') || 0;
+  const esNA = parseValue(esSection, 'N.A.') || 0;
 
   // Detail des raisons "non classifiees" (section EFFECTSIZE NON CLASSE)
   const nonClasseData = {};
   NON_CLASSE_REASONS.forEach(r => { nonClasseData[r] = parseValue(output, r) || 0; });
   const nonClasseTotal = parseValue(output, 'Total non classe') || 0;
 
-  const esSum = Object.values(esData).reduce((a, b) => (a || 0) + (b || 0), 0);
-  // Total dedie a la repartition globale (donut + tableau global) uniquement —
-  // esSum reste inchange pour le tableau "par categorie VI" plus bas.
-  const distTotal = esSum + nonClasseTotal;
+  // Total dedie a la repartition globale (donut + tableau global) uniquement.
+  const distTotal = esSum + esNS + esNA + nonClasseTotal;
 
-  const allLabels = esLabels.concat(nonClasseTotal ? ['nonClasse'] : []);
-  const allData = Object.assign({}, esData, nonClasseTotal ? { nonClasse: nonClasseTotal } : {});
-  const displayName = { weak: 'weak', moderate: 'moderate', strong: 'strong', negligible: 'negligible', nonClasse: 'Non classifiée' };
+  const allLabels = esStrengthLabels
+    .concat(esNS ? ['ns'] : [])
+    .concat(esNA ? ['na'] : [])
+    .concat(nonClasseTotal ? ['nonClasse'] : []);
+  const allData = Object.assign({}, esData, { ns: esNS, na: esNA }, nonClasseTotal ? { nonClasse: nonClasseTotal } : {});
+  const displayName = { weak: 'weak', moderate: 'moderate', strong: 'strong', negligible: 'negligible', ns: 'N.S. (non significatif)', na: 'N.A.', nonClasse: 'Non classifiée' };
 
   let globalRows = '';
   allLabels.forEach(l => {
@@ -429,7 +442,7 @@ function renderStats(output) {
   }
 
   // Graphiques
-  renderCharts(esData, distTotal, output, nonClasseTotal);
+  renderCharts(esData, distTotal, output, nonClasseTotal, esNS, esNA);
 
   // Analyses complexes
   renderComplexes(output);
@@ -625,7 +638,7 @@ function renderCatBarChart(canvasId, sectionText) {
   });
 }
 
-function renderCharts(esData, esSum, output, nonClasseTotal) {
+function renderCharts(esData, esSum, output, nonClasseTotal, esNS, esNA) {
   // Détruire les instances précédentes si recalcul
   if (esDonutInstance) { esDonutInstance.destroy(); esDonutInstance = null; }
   if (esCatBarInstance) { esCatBarInstance.destroy(); esCatBarInstance = null; }
@@ -634,6 +647,16 @@ function renderCharts(esData, esSum, output, nonClasseTotal) {
   const donutLabels = ['Strong', 'Moderate', 'Weak', 'Negligible'];
   const donutValues = [esData.strong || 0, esData.moderate || 0, esData.weak || 0, esData.negligible || 0];
   const donutColors = [COLORS.strong, COLORS.moderate, COLORS.weak, COLORS.negligible];
+  if (esNS) {
+    donutLabels.push('N.S. (non significatif)');
+    donutValues.push(esNS);
+    donutColors.push(COLORS.ns);
+  }
+  if (esNA) {
+    donutLabels.push('N.A.');
+    donutValues.push(esNA);
+    donutColors.push(COLORS.na);
+  }
   if (nonClasseTotal) {
     donutLabels.push('Non classifiée');
     donutValues.push(nonClasseTotal);
