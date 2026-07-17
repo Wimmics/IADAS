@@ -53,9 +53,10 @@ iadas-vocab:Dietary_restraint a skos:Concept ;
     skos:prefLabel "Dietary restraint" .
 
 iadas-vocab:Disordered_eating_behavior a skos:Concept ;
-    skos:broader iadas-vocab:Disturbed_eating_attitudes_and_behaviors ;
+    skos:broader iadas-vocab:Disordered_eating ;
     skos:inScheme iadas-vocab:ACAD-Vocabulary ;
     skos:prefLabel "Disordered eating behavior" .
+# Categorie proposee par Amandine Daubresse le 17/07/2026 : DEAB > Disordered eating > Disordered eating behavior
 
 iadas-vocab:Eating_pathology a skos:Concept ;
     skos:broader iadas-vocab:Eating_psychopathology ;
@@ -131,20 +132,29 @@ iadas-vocab:Self-regulation_of_eating_attitude a skos:Concept ;
 <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexic_behavior>
     skos:altLabel "Orthorexic eating behavior" .
 
-# 7. "Restrictive eating" = synonyme de "Restrictive eating behaviors"
-<http://ns.inria.fr/iadas/ACAD-vocab/Restrictive_eating_behaviors>
+# 7. "Restrictive eating" = synonyme de "Eating restriction"
+#    (confirme par Amandine Daubresse le 17/07/2026 ; le rapprochement automatique du
+#    29/06 pointait a tort vers "Restrictive eating behaviors", un concept voisin mais
+#    different - "Eating restriction" liste explicitement "restrictive eating" dans sa
+#    propre colonne Synonym du fichier VF officiel)
+<http://ns.inria.fr/iadas/ACAD-vocab/Eating_restriction>
     skos:altLabel "Restrictive eating" .
 
 # 8. "Eating pathology" = synonyme de "Eating psychopathology"
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating_psychopathology>
     skos:altLabel "Eating pathology" .
 
-# 9. "Restrained eating" = synonyme de "Behavioral restrained eating"
-<http://ns.inria.fr/iadas/ACAD-vocab/Behavioral_restrained_eating>
+# 9. "Restrained eating" = synonyme de "Eating restriction"
+#    (confirme par Amandine Daubresse le 17/07/2026 ; le rapprochement automatique du
+#    29/06 pointait a tort vers "Behavioral restrained eating", un concept voisin mais
+#    different)
+<http://ns.inria.fr/iadas/ACAD-vocab/Eating_restriction>
     skos:altLabel "Restrained eating" .
 
-# 10. "Dietary restraint" = synonyme de "Behavioral restrained eating"
-<http://ns.inria.fr/iadas/ACAD-vocab/Behavioral_restrained_eating>
+# 10. "Dietary restraint" = synonyme de "Dieting"
+#    (confirme par Amandine Daubresse le 17/07/2026 ; le rapprochement automatique du
+#    29/06 pointait a tort vers "Behavioral restrained eating")
+<http://ns.inria.fr/iadas/ACAD-vocab/Dieting>
     skos:altLabel "Dietary restraint" .
 
 # 11. "Dietary" = synonyme de "Dieting" (confirmé par Amandine Daubresse — 30/06/2026)
