@@ -541,9 +541,13 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationD
         ?population iadas:population ?populationType .
     }
     
-    OPTIONAL { 
+    OPTIONAL {
         ?analysis iadas:hasSport ?sportURI .
-    BIND(REPLACE(STR(?sportURI), ".*sport-vocab/", "") AS ?sportName)
+    BIND(REPLACE(STR(?sportURI), ".*sport-vocab/", "") AS ?sportRawName)
+    OPTIONAL { ?sportURI skos:prefLabel ?sportLabel }
+    BIND(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(?sportRawName, "_", " "), "%2C", ","), "%3B", ";"), "%28", "("), "%29", ")") AS ?sportDecoded1)
+    BIND(REPLACE(REPLACE(REPLACE(?sportDecoded1, "%2F", "/"), "%26", "&"), "%0A", ", ") AS ?sportDecoded)
+    BIND(COALESCE(?sportLabel, ?sportDecoded) AS ?sportName)
     }`;
 
   // === FILTRES D'ÂGE - AVEC SÉLECTIONS MULTIPLES ===
