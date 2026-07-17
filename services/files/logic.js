@@ -32,8 +32,30 @@ const mimeTypes = {
     'default': 'application/octet-stream'
 };
 
+// Chemins qui ne sont pas des fichiers statiques mais des appels API proxifies
+// par la passerelle (port 8000) en production. Depuis le fix routing (cce27de,
+// 12/07/2026), le frontend construit des chemins relatifs pour ces appels en
+// s'attendant a etre servi via la passerelle - donc si quelqu'un accede
+// directement au port 8002 (ancienne habitude), ces appels 404 sans redirection.
+const API_PATH_PREFIXES = ['/api/', '/stats', '/update-analysis', '/delete-analysis', '/rebuild-ontology'];
+
+function isApiPath(pathname) {
+    return API_PATH_PREFIXES.some(p => pathname === p || pathname.startsWith(p));
+}
+
 // Main method, exported at the end of the file. It's the one that will be called when a file is requested.
 function manageRequest(request, response) {
+    const requestUrl = url.parse(request.url);
+    if (isApiPath(requestUrl.pathname)) {
+        // 307 (pas 302) : garantit que la methode (POST) et le corps de la requete
+        // sont preserves lors de la redirection, contrairement a 302 historiquement.
+        const host = (request.headers.host || 'localhost:8002').split(':')[0];
+        response.statusCode = 307;
+        response.setHeader('Location', `http://${host}:8000${request.url}`);
+        response.end();
+        return;
+    }
+
     // First let's parse the URL, extract the path, and parse it into an easy-to-use object.
     // We add the baseFrontPath at the beginning to limit the places to search for files.
     const parsedUrl = url.parse(baseFrontPath + request.url);
