@@ -2,7 +2,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     loadLastUpdateDate();
     loadHistory();
-    refreshQualityBanner();
+    // Bandeau qualité retire de la page d'accueil : etait visible par tous les visiteurs
+    // (medecins/coachs) alors qu'il ne concerne que l'equipe qui gere les donnees, et
+    // pouvait afficher un etat obsolete a cause du cache navigateur d'1h.
 });
 
 async function loadLastUpdateDate() {
@@ -122,14 +124,9 @@ function toggleHistory() {
 window.toggleHistory = toggleHistory;
 
 async function refreshQualityBanner() {
-    const raw = localStorage.getItem('qualitySummary');
-    if (raw) {
-        try {
-            const q = JSON.parse(raw);
-            const age = Date.now() - new Date(q.timestamp).getTime();
-            if (age < 3600000) { loadQualityBanner(); return; } // cache 1h
-        } catch {}
-    }
+    // Toujours revérifier l'état réel à chaque chargement de page : la requête est rapide
+    // (<1s), et un cache d'1h pouvait afficher un état obsolète (ex. "Ontologie en bon état"
+    // alors que l'état réel avait changé entre-temps).
     try {
         const res = await fetch('/api/quality-check');
         if (!res.ok) throw new Error('unavailable');
