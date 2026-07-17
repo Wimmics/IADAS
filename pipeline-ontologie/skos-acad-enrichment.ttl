@@ -1,8 +1,8 @@
 # =============================================================================
 # Enrichissement SKOS — Vocabulaire ACAD-vocab
 # Auteure : Imane Amraoui — Stage IA-DAS, LAMHESS / Wimmics, Inria
-# Date : Mai 2026
-# Description : 157 concepts SKOS ajoutés au vocabulaire ACAD-vocab
+# Date : Juillet 2026
+# Description : 14 concepts SKOS ajoutés au vocabulaire ACAD-vocab
 #               Source originale : pipeline-ontologie/output/variable-hierarchy.ttl
 # Chargement : ce fichier doit être chargé dans Fuseki après le pipeline RML
 # =============================================================================
@@ -114,10 +114,12 @@ iadas-vocab:Self-regulation_of_eating_attitude a skos:Concept ;
     skos:altLabel "Compulsive spending" .
 
 # 3. "Negative reaction to imperfection" (singulier) = "Negative reactions to imperfection" (pluriel)
+#    (confirme par Amandine Daubresse le 17/07/2026)
 <http://ns.inria.fr/iadas/ACAD-vocab/Negative_reactions_to_imperfection>
     skos:altLabel "Negative reaction to imperfection" .
 
 # 4. "Psychotic disorder" (singulier) = "Psychotic disorders" (pluriel)
+#    (confirme par Amandine Daubresse le 17/07/2026)
 <http://ns.inria.fr/iadas/ACAD-vocab/Psychotic_disorders>
     skos:altLabel "Psychotic disorder" .
 
@@ -129,6 +131,7 @@ iadas-vocab:Self-regulation_of_eating_attitude a skos:Concept ;
 # 6-10. Synonymes détectés par la page de validation (29/06/2026)
 
 # 6. "Orthorexic eating behavior" = synonyme de "Orthorexic behavior"
+#    (confirme par Amandine Daubresse le 17/07/2026)
 <http://ns.inria.fr/iadas/ACAD-vocab/Orthorexic_behavior>
     skos:altLabel "Orthorexic eating behavior" .
 
