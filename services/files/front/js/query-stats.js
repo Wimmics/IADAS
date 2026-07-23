@@ -3,7 +3,66 @@
  * Calculees cote client, uniquement a partir des lignes deja retournees
  * par la requete en cours (aucun nouvel appel serveur).
  * Compatible avec les pages competence-page et doctor-page.
+ *
+ * Visualisations (donut/barres) alignees sur celles de la page Stats globale
+ * (stats-page.html) - demande encadrantes 24/07/2026 : mêmes visualisations
+ * pour les stats des requetes (personnalisees/guidees) que pour les stats
+ * globales.
  */
+
+// Meme palette que stats-page.html, pour une apparence coherente entre les deux pages.
+const QUERY_STATS_COLORS = { strong: '#1a5276', moderate: '#2e86c1', weak: '#85c1e9', negligible: '#d6eaf8', ns: '#f39c12', na: '#bdc3c7', nonClasse: '#7f8c8d' };
+const QUERY_STATS_QUALITATIVE = ['#1a5276', '#2e86c1', '#85c1e9', '#48c9b0', '#f4d03f', '#e67e22', '#c0392b', '#8e44ad', '#7f8c8d', '#27ae60'];
+const queryStatsChartInstances = {};
+
+function colorForLabel(label, index) {
+    const key = String(label).toLowerCase();
+    if (key === 'strong') return QUERY_STATS_COLORS.strong;
+    if (key === 'moderate') return QUERY_STATS_COLORS.moderate;
+    if (key === 'weak') return QUERY_STATS_COLORS.weak;
+    if (key === 'negligible') return QUERY_STATS_COLORS.negligible;
+    if (key === 'ns') return QUERY_STATS_COLORS.ns;
+    if (key === 'na' || key === 'n.a.') return QUERY_STATS_COLORS.na;
+    if (key.startsWith('non class') || key.startsWith('non renseign')) return QUERY_STATS_COLORS.nonClasse;
+    return QUERY_STATS_QUALITATIVE[index % QUERY_STATS_QUALITATIVE.length];
+}
+
+function renderQueryStatsDonut(canvasId, counts, total) {
+    if (queryStatsChartInstances[canvasId]) { queryStatsChartInstances[canvasId].destroy(); }
+    const entries = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    const labels = entries.map(([label]) => label);
+    const values = entries.map(([, n]) => n);
+    const colors = labels.map((label, i) => colorForLabel(label, i));
+    queryStatsChartInstances[canvasId] = new Chart(document.getElementById(canvasId), {
+        type: 'doughnut',
+        data: { labels, datasets: [{ data: values, backgroundColor: colors, borderWidth: 2 }] },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom', labels: { font: { size: 11 } } },
+                tooltip: { callbacks: { label: ctx => ` ${ctx.label} : ${ctx.raw.toLocaleString('fr-FR')} (${total ? Math.round(ctx.raw / total * 100) : 0}%)` } }
+            }
+        }
+    });
+}
+
+function renderQueryStatsBar(canvasId, counts) {
+    if (queryStatsChartInstances[canvasId]) { queryStatsChartInstances[canvasId].destroy(); }
+    const entries = Object.entries(counts);
+    const labels = entries.map(([label]) => label.length > 32 ? label.slice(0, 30) + '…' : label);
+    const values = entries.map(([, n]) => n);
+    const colors = labels.map((label, i) => colorForLabel(label, i));
+    queryStatsChartInstances[canvasId] = new Chart(document.getElementById(canvasId), {
+        type: 'bar',
+        data: { labels, datasets: [{ data: values, backgroundColor: colors }] },
+        options: {
+            indexAxis: 'y',
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: { x: { ticks: { font: { size: 11 } } }, y: { ticks: { font: { size: 11 } } } }
+        }
+    });
+}
 
 function computeQueryStats(sparqlData) {
     const vars = sparqlData?.head?.vars || [];
@@ -114,10 +173,22 @@ function renderQueryStatsHTML(stats) {
         return html;
     }
 
-    stats.blocks.forEach(block => {
+    stats.blocks.forEach((block, i) => {
         let entries = Object.entries(block.counts);
         if (!block.noSort) entries = entries.sort((a, b) => b[1] - a[1]);
         html += `<h4 style="margin:16px 0 6px 0; font-size:0.95em; color:#1a3a5c">${block.title}</h4>`;
+
+        // Graphique (donut pour une repartition courte type effectSize/direction/presence,
+        // barres horizontales pour les "top valeurs" categorielles) - meme logique que la
+        // page Stats globale (stats-page.html).
+        block.canvasId = `qstat-chart-${i}`;
+        block.chartType = block.noSort ? 'bar' : 'donut';
+        html += `<div style="background:#fff; border-radius:8px; padding:12px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.08); margin-bottom:10px;">
+            <div style="position:relative; height:${block.chartType === 'bar' ? Math.max(160, entries.length * 32) : 220}px;">
+                <canvas id="${block.canvasId}"></canvas>
+            </div>
+        </div>`;
+
         html += `<table style="width:100%; border-collapse:collapse; margin-bottom:8px;">
             <thead><tr>
                 <th style="text-align:left; border-bottom:2px solid #1a3a5c; padding:6px;">Valeur</th>
@@ -143,4 +214,14 @@ function displayQueryStatsInContainer(sparqlData, containerId) {
     if (!container) return;
     const stats = computeQueryStats(sparqlData);
     container.innerHTML = renderQueryStatsHTML(stats);
+
+    if (typeof Chart === 'undefined') return; // Chart.js non charge sur cette page
+    stats.blocks.forEach(block => {
+        if (!block.canvasId || !document.getElementById(block.canvasId)) return;
+        if (block.chartType === 'bar') {
+            renderQueryStatsBar(block.canvasId, block.counts);
+        } else {
+            renderQueryStatsDonut(block.canvasId, block.counts, block.total);
+        }
+    });
 }
