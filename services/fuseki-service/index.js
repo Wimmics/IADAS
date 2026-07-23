@@ -132,6 +132,7 @@ async function waitForFuseki(retries = 0) {
         console.log(' Données déjà chargées — chargement TTL ignoré pour éviter les doublons.');
         console.log(` Dataset "ds" contient ${existingCount} triples.`);
         await fixSkosUriMismatch();
+        await typeComplexRelations();
         return;
       }
 
@@ -143,6 +144,7 @@ async function waitForFuseki(retries = 0) {
       await uploadSportHierarchy();
       await uploadSkosEnrichment();
       await fixSkosUriMismatch();
+      await typeComplexRelations();
       
     } else {
       const errorText = await res.text();
@@ -220,6 +222,38 @@ async function fixSkosUriMismatch() {
       }
     } catch (e) {
       console.log(`  Exception fix ${label}: ${e.message}`);
+    }
+  }
+}
+
+async function typeComplexRelations() {
+  // Modelisation des relations complexes (validee par Molka Tounsi Dhouib, 24/07/2026) :
+  // RML ne permet pas de rr:class conditionnel (une TriplesMap type toutes ses lignes
+  // pareil), donc le typage ComplexRelation/MediatedRelation/ModeratedRelation est fait
+  // ici, apres coup, uniquement sur les relations qui ont reellement hasMediator/
+  // hasModerator (memes URI generees par le mapping RML).
+  console.log('\n=== TYPAGE COMPLEXRELATION / MEDIATEDRELATION / MODERATEDRELATION ===');
+  const UPDATE_URL = `${FUSEKI_URL}/update`;
+  const PREFIX = 'PREFIX iadas: <http://ns.inria.fr/iadas/ontology/>';
+
+  const queryMediated = `${PREFIX} INSERT { ?rel a iadas:ComplexRelation, iadas:MediatedRelation . } WHERE { ?rel iadas:hasMediator ?m . }`;
+  const queryModerated = `${PREFIX} INSERT { ?rel a iadas:ComplexRelation, iadas:ModeratedRelation . } WHERE { ?rel iadas:hasModerator ?m . }`;
+
+  for (const [label, query] of [['MediatedRelation', queryMediated], ['ModeratedRelation', queryModerated]]) {
+    try {
+      const res = await fetch(UPDATE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/sparql-update', 'Authorization': `Basic ${auth}` },
+        body: query
+      });
+      const body = await res.text();
+      if (res.ok) {
+        console.log(`  Typage ${label} applique avec succes.`);
+      } else {
+        console.log(`  Erreur typage ${label} — status: ${res.status} — body: ${body}`);
+      }
+    } catch (e) {
+      console.log(`  Exception typage ${label}: ${e.message}`);
     }
   }
 }

@@ -428,40 +428,22 @@ iadas:perspectives
     rdfs:range xsd:string .
 
 iadas:hasModerator
-    a owl:DatatypeProperty ;
+    a owl:ObjectProperty ;
     rdfs:label "a pour modérateur"@fr ;
     rdfs:label "has moderator"@en ;
-    rdfs:comment "Variable modératrice dans l'analyse"@fr ;
-    rdfs:comment "Moderating variable in the analysis"@en ;
-    rdfs:domain iadas:Analysis ;
-    rdfs:range xsd:string .
-
-iadas:moderatorMeasure
-    a owl:DatatypeProperty ;
-    rdfs:label "mesure du modérateur"@fr ;
-    rdfs:label "moderator measure"@en ;
-    rdfs:comment "Instrument de mesure du modérateur"@fr ;
-    rdfs:comment "Measurement instrument for the moderator"@en ;
-    rdfs:domain iadas:Analysis ;
-    rdfs:range xsd:string .
+    rdfs:comment "Variable modératrice dans la relation complexe"@fr ;
+    rdfs:comment "Moderating variable in the complex relation"@en ;
+    rdfs:domain iadas:ComplexRelation ;
+    rdfs:range iadas:VariableModeratrice .
 
 iadas:hasMediator
-    a owl:DatatypeProperty ;
+    a owl:ObjectProperty ;
     rdfs:label "a pour médiateur"@fr ;
     rdfs:label "has mediator"@en ;
-    rdfs:comment "Variable médiatrice dans l'analyse"@fr ;
-    rdfs:comment "Mediating variable in the analysis"@en ;
-    rdfs:domain iadas:Analysis ;
-    rdfs:range xsd:string .
-
-iadas:mediatorMeasure
-    a owl:DatatypeProperty ;
-    rdfs:label "mesure du médiateur"@fr ;
-    rdfs:label "mediator measure"@en ;
-    rdfs:comment "Instrument de mesure du médiateur"@fr ;
-    rdfs:comment "Measurement instrument for the mediator"@en ;
-    rdfs:domain iadas:Analysis ;
-    rdfs:range xsd:string .
+    rdfs:comment "Variable médiatrice dans la relation complexe"@fr ;
+    rdfs:comment "Mediating variable in the complex relation"@en ;
+    rdfs:domain iadas:ComplexRelation ;
+    rdfs:range iadas:VariableMediatrice .
 
 iadas:acads
     a owl:DatatypeProperty ;
@@ -904,6 +886,47 @@ iadas:VariableDependante
     rdfs:label "Dependent Variable"@en ;
     rdfs:comment "Comportement alimentaire dysfonctionnel mesuré dans l'étude (sous la catégorie DEAB)"@fr ;
     rdfs:comment "Dysfunctional eating behaviour measured in the study (under the DEAB category)"@en .
+
+# Modélisation des relations complexes (médiateur/modérateur) — validée par Molka Tounsi Dhouib, 24/07/2026
+iadas:VariableMediatrice
+    a owl:Class ;
+    rdfs:subClassOf iadas:Variable ;
+    rdfs:label "Variable médiatrice"@fr ;
+    rdfs:label "Mediating Variable"@en ;
+    rdfs:comment "Variable qui explique le mécanisme par lequel une variable indépendante influence une variable dépendante"@fr ;
+    rdfs:comment "Variable explaining the mechanism by which an independent variable influences a dependent variable"@en .
+
+iadas:VariableModeratrice
+    a owl:Class ;
+    rdfs:subClassOf iadas:Variable ;
+    rdfs:label "Variable modératrice"@fr ;
+    rdfs:label "Moderating Variable"@en ;
+    rdfs:comment "Variable qui influence la force ou la direction de la relation entre variable indépendante et dépendante"@fr ;
+    rdfs:comment "Variable influencing the strength or direction of the relation between independent and dependent variable"@en .
+
+iadas:ComplexRelation
+    a owl:Class ;
+    rdfs:subClassOf iadas:Relations ;
+    rdfs:label "Relation complexe"@fr ;
+    rdfs:label "Complex Relation"@en ;
+    rdfs:comment "Relation statistique impliquant un médiateur et/ou un modérateur"@fr ;
+    rdfs:comment "Statistical relation involving a mediator and/or a moderator"@en .
+
+iadas:MediatedRelation
+    a owl:Class ;
+    rdfs:subClassOf iadas:ComplexRelation ;
+    rdfs:label "Relation médiatisée"@fr ;
+    rdfs:label "Mediated Relation"@en ;
+    rdfs:comment "Relation complexe impliquant une variable médiatrice"@fr ;
+    rdfs:comment "Complex relation involving a mediating variable"@en .
+
+iadas:ModeratedRelation
+    a owl:Class ;
+    rdfs:subClassOf iadas:ComplexRelation ;
+    rdfs:label "Relation modérée"@fr ;
+    rdfs:label "Moderated Relation"@en ;
+    rdfs:comment "Relation complexe impliquant une variable modératrice"@fr ;
+    rdfs:comment "Complex relation involving a moderating variable"@en .
 
 # Propriétés inverses
 iadas:isAnalysisOf
