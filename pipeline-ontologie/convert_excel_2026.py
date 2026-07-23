@@ -24,10 +24,10 @@ OUTPUT_CSV = Path(__file__).parent / "data-csv" / "IA-DAS-Data.csv"
 HEADER_RENAMES = {
     "Analysis ID":       "Analysis_ID",       # template {Analysis_ID}
     "Sport name":        "Sport_name",         # template {Sport_name}
-    "Measure VD":        "Measure_VD",         # template {Measure_VD}
-    "VD_final sub-class": "VD_final_sub-class", # template {VD_final_sub-class}
-    "Measure VI":        "Measure_VI",          # template {Measure_VI}
-    "VI_final sub-class": "VI_final_sub-class", # template {VI_final_sub-class}
+    "DEAB measure":       "DEAB_measure",              # template {DEAB_measure}
+    "DEAB_final sub-class": "DEAB_final_sub-class",     # template {DEAB_final_sub-class}
+    "Related_Factor measure": "Related_Factor_measure", # template {Related_Factor_measure}
+    "Related_Factor_final sub-class": "Related_Factor_final_sub-class", # template {Related_Factor_final_sub-class}
 }
 
 
@@ -60,8 +60,8 @@ def convert():
     print(f"Lignes de donnees : {len(rows) - 1}")
 
     # Verifier les headers importants
-    required = ["Analysis_ID", "Sport_name", "Measure_VD", "VD_final_sub-class",
-                "Measure_VI", "VI_final_sub-class", "Title", "Country"]
+    required = ["Analysis_ID", "Sport_name", "DEAB_measure", "DEAB_final_sub-class",
+                "Related_Factor_measure", "Related_Factor_final_sub-class", "Title", "Country"]
     for r in required:
         if r in headers:
             print(f"  [OK] {r}")
