@@ -214,20 +214,20 @@
     rr:predicateObjectMap [
         rr:predicate iadas:refersToVariable ;
         rr:objectMap [
-            rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{VD_final_sub-class}"
+            rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{DEAB_final_sub-class}"
         ]
     ] ;
     rr:predicateObjectMap [
         rr:predicate iadas:measure ;
-        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/measurementTools-vocab/{Measure_VD}" ]
+        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/measurementTools-vocab/{DEAB_measure}" ]
     ] ;
     rr:predicateObjectMap [
         rr:predicate iadas:variableName ;
-        rr:objectMap [ rml:reference "VD" ]
+        rr:objectMap [ rml:reference "DEAB" ]
     ] ;
     rr:predicateObjectMap [
         rr:predicate iadas:specification ;
-        rr:objectMap [ rml:reference "Specification VD" ]
+        rr:objectMap [ rml:reference "Specifications of DEAB" ]
     ] .
 
  <#VariableMapVI> a rr:TriplesMap ;
@@ -240,20 +240,20 @@
     rr:predicateObjectMap [
         rr:predicate iadas:refersToVariable ;
         rr:objectMap [
-            rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{VI_final_sub-class}"
+            rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{Related_Factor_final_sub-class}"
         ]
     ] ;
     rr:predicateObjectMap [
         rr:predicate iadas:measure ;
-        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/measurementTools-vocab/{Measure_VI}" ]
+        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/measurementTools-vocab/{Related_Factor_measure}" ]
     ] ;
     rr:predicateObjectMap [
         rr:predicate iadas:variableName ;
-        rr:objectMap [ rml:reference "VI" ]
+        rr:objectMap [ rml:reference "Related_Factor" ]
     ] ;
     rr:predicateObjectMap [
         rr:predicate iadas:specification ;
-        rr:objectMap [ rml:reference "Specification VI" ]
+        rr:objectMap [ rml:reference "Specifications of related factor" ]
     ] .
 # 
 # 
