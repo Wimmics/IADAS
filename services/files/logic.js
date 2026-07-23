@@ -40,7 +40,10 @@ const mimeTypes = {
 const API_PATH_PREFIXES = ['/api/', '/stats', '/update-analysis', '/delete-analysis', '/rebuild-ontology'];
 
 function isApiPath(pathname) {
-    return API_PATH_PREFIXES.some(p => pathname === p || pathname.startsWith(p));
+    // Egalite exacte, ou prefixe suivi d'un "/" - evite qu'un fichier statique
+    // comme "/stats-page.html" ne soit pris pour l'API "/stats" (boucle de
+    // redirection avec la passerelle, cf ERR_TOO_MANY_REDIRECTS).
+    return API_PATH_PREFIXES.some(p => pathname === p || pathname.startsWith(p.endsWith('/') ? p : p + '/'));
 }
 
 // Main method, exported at the end of the file. It's the one that will be called when a file is requested.
