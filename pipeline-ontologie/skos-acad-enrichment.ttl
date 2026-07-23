@@ -1,8 +1,8 @@
 # =============================================================================
 # Enrichissement SKOS — Vocabulaire ACAD-vocab
 # Auteure : Imane Amraoui — Stage IA-DAS, LAMHESS / Wimmics, Inria
-# Date : Juillet 2026
-# Description : 14 concepts SKOS ajoutés au vocabulaire ACAD-vocab
+# Date : Juillet 2026 (corrections modélisation SKOS le 23/07/2026, validées par Molka Tounsi Dhouib)
+# Description : 7 concepts SKOS ajoutés au vocabulaire ACAD-vocab
 #               Source originale : pipeline-ontologie/output/variable-hierarchy.ttl
 # Chargement : ce fichier doit être chargé dans Fuseki après le pipeline RML
 # =============================================================================
@@ -10,22 +10,8 @@
 @prefix iadas-vocab: <http://ns.inria.fr/iadas/ACAD-vocab/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-# -----------------------------------------------------------------------------
-# Déclaration formelle des 5 concepts racines (topConceptOf)
-# Qualité SKOS : les concepts racines doivent déclarer leur appartenance au scheme
-# -----------------------------------------------------------------------------
-iadas-vocab:Variable skos:hasTopConcept
-    iadas-vocab:DEAB ,
-    iadas-vocab:Intrapersonal_factor_related_to_DEAB ,
-    iadas-vocab:Interpersonal_factor_related_to_DEAB ,
-    iadas-vocab:Other_behaviors ,
-    iadas-vocab:Sociocultural_factor_related_to_DEAB .
-
-iadas-vocab:DEAB skos:topConceptOf iadas-vocab:Variable .
-iadas-vocab:Intrapersonal_factor_related_to_DEAB skos:topConceptOf iadas-vocab:Variable .
-iadas-vocab:Interpersonal_factor_related_to_DEAB skos:topConceptOf iadas-vocab:Variable .
-iadas-vocab:Other_behaviors skos:topConceptOf iadas-vocab:Variable .
-iadas-vocab:Sociocultural_factor_related_to_DEAB skos:topConceptOf iadas-vocab:Variable .
+iadas-vocab:ACAD-Vocabulary a skos:ConceptScheme ;
+    skos:definition "Vocabulaire SKOS d'enrichissement ACAD-vocab : concepts ajoutés manuellement pour des variables présentes dans les données d'analyse mais absentes de la hiérarchie officielle des variables (Class_Hierarchy_VF)." .
 
 iadas-vocab:Coach_leadership_style_negative_feedback a skos:Concept ;
     skos:broader iadas-vocab:Authority_and_Leadership_Styles ;
@@ -37,41 +23,16 @@ iadas-vocab:Compulsive_spending a skos:Concept ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Compulsive spending" .
 
-iadas-vocab:Diet a skos:Concept ;
-    skos:broader iadas-vocab:Eating_behavior ;
-    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
-    skos:prefLabel "Diet" .
-
-iadas-vocab:Dietary a skos:Concept ;
-    skos:broader iadas-vocab:Eating_behavior ;
-    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
-    skos:prefLabel "Dietary" .
-
-iadas-vocab:Dietary_restraint a skos:Concept ;
-    skos:broader iadas-vocab:Restrictions ;
-    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
-    skos:prefLabel "Dietary restraint" .
-
 iadas-vocab:Disordered_eating_behavior a skos:Concept ;
     skos:broader iadas-vocab:Disordered_eating ;
-    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
+    skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Disordered eating behavior" .
 # Categorie proposee par Amandine Daubresse le 17/07/2026 : DEAB > Disordered eating > Disordered eating behavior
-
-iadas-vocab:Eating_pathology a skos:Concept ;
-    skos:broader iadas-vocab:Eating_psychopathology ;
-    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
-    skos:prefLabel "Eating pathology" .
 
 iadas-vocab:Negative_reaction_to_imperfection a skos:Concept ;
     skos:broader iadas-vocab:Perfectionism ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Negative reaction to imperfection" .
-
-iadas-vocab:Orthorexic_eating_behavior a skos:Concept ;
-    skos:broader iadas-vocab:Orthorexia ;
-    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
-    skos:prefLabel "Orthorexic eating behavior" .
 
 iadas-vocab:Physical_competence_evaluation a skos:Concept ;
     skos:broader iadas-vocab:Perceived_competence ;
@@ -82,16 +43,6 @@ iadas-vocab:Psychotic_disorder a skos:Concept ;
     skos:broader iadas-vocab:Psychological_symptoms ;
     skos:inScheme iadas-vocab:Variable ;
     skos:prefLabel "Psychotic disorder" .
-
-iadas-vocab:Restrained_eating a skos:Concept ;
-    skos:broader iadas-vocab:Restrictions ;
-    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
-    skos:prefLabel "Restrained eating" .
-
-iadas-vocab:Restrictive_eating a skos:Concept ;
-    skos:broader iadas-vocab:Restrictions ;
-    skos:inScheme iadas-vocab:ACAD-Vocabulary ;
-    skos:prefLabel "Restrictive eating" .
 
 iadas-vocab:Self-regulation_of_eating_attitude a skos:Concept ;
     skos:broader iadas-vocab:Emotion_regulation ;
