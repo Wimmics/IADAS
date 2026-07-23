@@ -98,23 +98,7 @@
         rr:predicate iadas:perspectives ; 
         rr:objectMap [ rml:reference "Perspectives" ] 
     ] ;
-    rr:predicateObjectMap [
-        rr:predicate iadas:hasModerator ;
-        rr:objectMap [ rml:reference "Moderator" ]
-    ] ;
-    rr:predicateObjectMap [
-        rr:predicate iadas:moderatorMeasure ;
-        rr:objectMap [ rml:reference "Measure Moderator" ]
-    ] ;
-    rr:predicateObjectMap [
-        rr:predicate iadas:hasMediator ;
-        rr:objectMap [ rml:reference "Mediator" ]
-    ] ;
-    rr:predicateObjectMap [
-        rr:predicate iadas:mediatorMeasure ;
-        rr:objectMap [ rml:reference "Measure Mediator" ]
-    ] ;
-    #  rr:predicateObjectMap [ 
+    #  rr:predicateObjectMap [
         #  rr:predicate iadas:acads ; 
         #  rr:objectMap [ rml:reference "ACADS " ] 
     #  ] ;
@@ -201,8 +185,56 @@
     rr:predicateObjectMap [
         rr:predicate iadas:effectSize ;
         rr:objectMap [ rml:reference "effectSize" ]
+    ] ;
+    # Modelisation des relations complexes (validee par Molka Tounsi Dhouib, 24/07/2026) :
+    # objectMap avec {Mediator}/{Moderator} dans le template -> triple non genere si la
+    # colonne source est vide (cf normalize_mediator_moderator_csv.py), donc seules les
+    # 116/31 analyses concernees recoivent hasMediator/hasModerator. Le typage
+    # ComplexRelation/MediatedRelation/ModeratedRelation est fait apres coup en SPARQL
+    # (services/fuseki-service/index.js), RML ne permettant pas de rr:class conditionnel.
+    rr:predicateObjectMap [
+        rr:predicate iadas:hasMediator ;
+        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/Variable_Mediator_{Analysis_ID}_{Mediator}" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:hasModerator ;
+        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/Variable_Moderator_{Analysis_ID}_{Moderator}" ]
     ]
      .
+
+<#VariableMapMediator> a rr:TriplesMap ;
+    rml:logicalSource <#LogicalSource> ;
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/iadas/data/Variable_Mediator_{Analysis_ID}_{Mediator}" ;
+        rr:class iadas:VariableMediatrice
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:variableName ;
+        rr:objectMap [ rml:reference "Mediator" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:specification ;
+        rr:objectMap [ rml:reference "Specification mediator" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:measure ;
+        rr:objectMap [ rml:reference "Measure Mediator" ]
+    ] .
+
+<#VariableMapModerator> a rr:TriplesMap ;
+    rml:logicalSource <#LogicalSource> ;
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/iadas/data/Variable_Moderator_{Analysis_ID}_{Moderator}" ;
+        rr:class iadas:VariableModeratrice
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:variableName ;
+        rr:objectMap [ rml:reference "Moderator" ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:measure ;
+        rr:objectMap [ rml:reference "Measure Moderator" ]
+    ] .
 
 <#VariableMapVD> a rr:TriplesMap ;
      rml:logicalSource <#LogicalSource> ;

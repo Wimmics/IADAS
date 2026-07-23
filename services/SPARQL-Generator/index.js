@@ -133,8 +133,8 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationD
       ?analysis iadas:relationDirection ?relationDirection 
     }
     
-    OPTIONAL { ?analysis iadas:hasMediator ?mediator }
-    OPTIONAL { ?analysis iadas:hasModerator ?moderator }
+    OPTIONAL { ?relation iadas:hasMediator ?medVar . ?medVar iadas:variableName ?mediator . }
+    OPTIONAL { ?relation iadas:hasModerator ?modVar . ?modVar iadas:variableName ?moderator . }
 }
 ORDER BY ?analysis
 `,
@@ -171,8 +171,8 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationD
       ?analysis iadas:relationDirection ?relationDirection 
     }
     
-    OPTIONAL { ?analysis iadas:hasMediator ?mediator }
-    OPTIONAL { ?analysis iadas:hasModerator ?moderator }
+    OPTIONAL { ?relation iadas:hasMediator ?medVar . ?medVar iadas:variableName ?mediator . }
+    OPTIONAL { ?relation iadas:hasModerator ?modVar . ?modVar iadas:variableName ?moderator . }
 }
 ORDER BY ?analysis`,
       timeout: 30000
@@ -205,8 +205,8 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationD
       ?analysis iadas:relationDirection ?relationDirection 
     }
     
-    OPTIONAL { ?analysis iadas:hasMediator ?mediator }
-    OPTIONAL { ?analysis iadas:hasModerator ?moderator }
+    OPTIONAL { ?relation iadas:hasMediator ?medVar . ?medVar iadas:variableName ?mediator . }
+    OPTIONAL { ?relation iadas:hasModerator ?modVar . ?modVar iadas:variableName ?moderator . }
 }
 ORDER BY ?analysis
 LIMIT 800`,
@@ -238,8 +238,8 @@ WHERE {
     OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
     OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
-    OPTIONAL { ?analysis iadas:hasMediator ?mediator }
-    OPTIONAL { ?analysis iadas:hasModerator ?moderator }
+    OPTIONAL { ?relation iadas:hasMediator ?medVar . ?medVar iadas:variableName ?mediator . }
+    OPTIONAL { ?relation iadas:hasModerator ?modVar . ?modVar iadas:variableName ?moderator . }
 }
 ORDER BY ?vd ?vi
 `,
@@ -1409,8 +1409,8 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationD
   query += `
     
     # Médiateur et modérateur (optionnels)
-    OPTIONAL { ?analysis iadas:hasMediator ?mediator }
-    OPTIONAL { ?analysis iadas:hasModerator ?moderator }`;
+    OPTIONAL { ?relation iadas:hasMediator ?medVar . ?medVar iadas:variableName ?mediator . }
+    OPTIONAL { ?relation iadas:hasModerator ?modVar . ?modVar iadas:variableName ?moderator . }`;
 
   // Finaliser la requête
   query += `
@@ -1562,8 +1562,8 @@ WHERE {
     OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
     
     OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
-    OPTIONAL { ?analysis iadas:hasMediator ?mediator }
-    OPTIONAL { ?analysis iadas:hasModerator ?moderator }
+    OPTIONAL { ?relation iadas:hasMediator ?medVar . ?medVar iadas:variableName ?mediator . }
+    OPTIONAL { ?relation iadas:hasModerator ?modVar . ?modVar iadas:variableName ?moderator . }
 }
 ORDER BY ?vd ?vi
 LIMIT 10000`;
@@ -2350,9 +2350,9 @@ SELECT DISTINCT ?vi ?vd ?mediator ?direction ?analysis
 WHERE {
     ?analysis a iadas:Analysis ;
               iadas:complexityOfAnalysis "Complex analyses" ;
-              iadas:hasMediator ?mediator ;
               iadas:hasRelation ?relation .
-    FILTER(?mediator != "N.A." && ?mediator != "")
+    ?relation iadas:hasMediator ?medVar .
+    ?medVar iadas:variableName ?mediator .
 
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
@@ -2380,9 +2380,9 @@ SELECT DISTINCT ?vi ?vd ?moderator ?direction ?analysis
 WHERE {
     ?analysis a iadas:Analysis ;
               iadas:complexityOfAnalysis "Complex analyses" ;
-              iadas:hasModerator ?moderator ;
               iadas:hasRelation ?relation .
-    FILTER(?moderator != "N.A." && ?moderator != "")
+    ?relation iadas:hasModerator ?modVar .
+    ?modVar iadas:variableName ?moderator .
 
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
@@ -2410,9 +2410,9 @@ SELECT DISTINCT ?categoryVI ?vi ?mediator ?vd ?analysis
 WHERE {
     ?analysis a iadas:Analysis ;
               iadas:complexityOfAnalysis "Complex analyses" ;
-              iadas:hasMediator ?mediator ;
               iadas:hasRelation ?relation .
-    FILTER(?mediator != "N.A." && ?mediator != "")
+    ?relation iadas:hasMediator ?medVar .
+    ?medVar iadas:variableName ?mediator .
 
     ?relation iadas:hasIndependentVariable ?variableVI ;
               iadas:hasDependentVariable ?variableVD .
@@ -2600,8 +2600,8 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationD
     OPTIONAL { SELECT ?vdLabel (MIN(REPLACE(REPLACE(STR(?catVDURIRaw), ".*/", ""), "%20", " ")) AS ?categoryVD) WHERE { ?vdConcept skos:prefLabel ?vdLabel . ?vdConcept skos:broader ?catVDURIRaw } GROUP BY ?vdLabel }
 
     OPTIONAL { ?analysis iadas:relationDirection ?relationDirection }
-    OPTIONAL { ?analysis iadas:hasMediator ?mediator }
-    OPTIONAL { ?analysis iadas:hasModerator ?moderator }
+    OPTIONAL { ?relation iadas:hasMediator ?medVar . ?medVar iadas:variableName ?mediator . }
+    OPTIONAL { ?relation iadas:hasModerator ?modVar . ?modVar iadas:variableName ?moderator . }
 }
 ORDER BY ?analysis
 LIMIT 100`;
