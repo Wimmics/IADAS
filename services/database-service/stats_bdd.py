@@ -438,9 +438,9 @@ for sp, dirs in top_sports:
 print("\n  ANALYSES COMPLEXES — VUE D'ENSEMBLE")
 print("  " + "-" * 40)
 cx_total  = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c . FILTER({FILTER_COMPLEXES}) }}")
-cx_med    = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasMediator ?m . FILTER({FILTER_COMPLEXES}) FILTER(?m != 'N.A.') }}")
-cx_mod    = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasModerator ?m . FILTER({FILTER_COMPLEXES}) FILTER(?m != 'N.A.') }}")
-cx_medmod = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasMediator ?med ; iadas:hasModerator ?mod . FILTER({FILTER_COMPLEXES}) FILTER(?med != 'N.A.') FILTER(?mod != 'N.A.') }}")
+cx_med    = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . ?rel iadas:hasMediator ?m . FILTER({FILTER_COMPLEXES}) }}")
+cx_mod    = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . ?rel iadas:hasModerator ?m . FILTER({FILTER_COMPLEXES}) }}")
+cx_medmod = count(f"{PREFIX} SELECT (COUNT(DISTINCT ?a) AS ?n) WHERE {{ ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel . ?rel iadas:hasMediator ?med ; iadas:hasModerator ?mod . FILTER({FILTER_COMPLEXES}) }}")
 print(f"  {'Total analyses complexes':<35} {cx_total:>6}")
 print(f"  {'Avec mediateur renseigne':<35} {cx_med:>6}")
 print(f"  {'Avec moderateur renseigne':<35} {cx_mod:>6}")
@@ -468,9 +468,10 @@ d_meds = query(f"""
 {PREFIX}
 SELECT ?mediateur (COUNT(DISTINCT ?a) AS ?n)
 WHERE {{
-  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasMediator ?mediateur .
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel .
+  ?rel iadas:hasMediator ?medVar .
+  ?medVar iadas:variableName ?mediateur .
   FILTER({FILTER_COMPLEXES})
-  FILTER(?mediateur != "N.A.")
 }}
 GROUP BY ?mediateur ORDER BY DESC(?n)
 """)
@@ -484,9 +485,10 @@ d_mods = query(f"""
 {PREFIX}
 SELECT ?moderateur (COUNT(DISTINCT ?a) AS ?n)
 WHERE {{
-  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasModerator ?moderateur .
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel .
+  ?rel iadas:hasModerator ?modVar .
+  ?modVar iadas:variableName ?moderateur .
   FILTER({FILTER_COMPLEXES})
-  FILTER(?moderateur != "N.A.")
 }}
 GROUP BY ?moderateur ORDER BY DESC(?n)
 """)
@@ -500,10 +502,10 @@ d_chemins = query(f"""
 {PREFIX}
 SELECT ?viNom ?mediateur ?vdNom (COUNT(DISTINCT ?a) AS ?n)
 WHERE {{
-  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ;
-     iadas:hasMediator ?mediateur ; iadas:hasRelation ?rel .
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel .
+  ?rel iadas:hasMediator ?medVar .
+  ?medVar iadas:variableName ?mediateur .
   FILTER({FILTER_COMPLEXES})
-  FILTER(?mediateur != "N.A.")
   ?rel iadas:hasIndependentVariable ?vi ; iadas:hasDependentVariable ?vd .
   ?vi iadas:variableName ?viNom . ?vd iadas:variableName ?vdNom .
 }}
@@ -524,10 +526,10 @@ d_med_cat = query(f"""
 {PREFIX}
 SELECT ?catVI ?mediateur (COUNT(DISTINCT ?a) AS ?n)
 WHERE {{
-  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ;
-     iadas:hasMediator ?mediateur ; iadas:hasRelation ?rel .
+  ?a a iadas:Analysis ; iadas:complexityOfAnalysis ?c ; iadas:hasRelation ?rel .
+  ?rel iadas:hasMediator ?medVar .
+  ?medVar iadas:variableName ?mediateur .
   FILTER({FILTER_COMPLEXES})
-  FILTER(?mediateur != "N.A.")
   ?rel iadas:hasIndependentVariable ?vi .
   ?vi iadas:refersToVariable ?concept .
   ?concept skos:broader+ ?top .
