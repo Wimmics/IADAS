@@ -188,7 +188,7 @@
         <tbody id="esGlobalTable"></tbody>
       </table>
       <div id="esNonClasseWrap" style="display:none; margin-top:16px">
-        <h4 style="margin:0 0 8px 0; font-size:0.95em; color:#566573">Détail des analyses non classifiées</h4>
+        <h4 style="margin:0 0 8px 0; font-size:0.95em; color:#566573">Détail des analyses non applicables (N.A)</h4>
         <table>
           <thead><tr><th>Raison</th><th class="right">Nb</th><th class="right">%</th></tr></thead>
           <tbody id="esNonClasseTable"></tbody>
@@ -368,12 +368,16 @@ function renderStats(output) {
   // Total dedie a la repartition globale (donut + tableau global) uniquement.
   const distTotal = esSum + esNS + esNA + nonClasseTotal;
 
+  // N.A. et "non classifiee" sont fusionnes en une seule categorie affichee :
+  // les deux designent des analyses sans force d'effet exploitable (valeur
+  // absente, ou presente mais dans un format non convertible en strong/moderate/weak).
+  const naTotal = esNA + nonClasseTotal;
+
   const allLabels = esStrengthLabels
     .concat(esNS ? ['ns'] : [])
-    .concat(esNA ? ['na'] : [])
-    .concat(nonClasseTotal ? ['nonClasse'] : []);
-  const allData = Object.assign({}, esData, { ns: esNS, na: esNA }, nonClasseTotal ? { nonClasse: nonClasseTotal } : {});
-  const displayName = { weak: 'weak', moderate: 'moderate', strong: 'strong', negligible: 'negligible', ns: 'N.S. (non significatif)', na: 'N.A.', nonClasse: 'Non classifiée' };
+    .concat(naTotal ? ['na'] : []);
+  const allData = Object.assign({}, esData, { ns: esNS, na: naTotal });
+  const displayName = { weak: 'weak', moderate: 'moderate', strong: 'strong', negligible: 'negligible', ns: 'N.S. (non significatif)', na: 'Non applicable (N.A)' };
 
   let globalRows = '';
   allLabels.forEach(l => {
@@ -581,9 +585,9 @@ function renderDonut(canvasId, esCounts, nonClasseTotal) {
   const values = [esCounts.strong || 0, esCounts.moderate || 0, esCounts.weak || 0, esCounts.negligible || 0];
   const colors = [COLORS.strong, COLORS.moderate, COLORS.weak, COLORS.negligible];
   if (nonClasseTotal) {
-    labels.push('Non classifiée');
+    labels.push('Non applicable (N.A)');
     values.push(nonClasseTotal);
-    colors.push(COLORS.nonClasse);
+    colors.push(COLORS.na);
   }
   const sum = values.reduce((a, b) => a + b, 0);
   directionChartInstances[canvasId] = new Chart(document.getElementById(canvasId), {
@@ -652,15 +656,11 @@ function renderCharts(esData, esSum, output, nonClasseTotal, esNS, esNA) {
     donutValues.push(esNS);
     donutColors.push(COLORS.ns);
   }
-  if (esNA) {
-    donutLabels.push('N.A.');
-    donutValues.push(esNA);
+  const naTotal = esNA + nonClasseTotal;
+  if (naTotal) {
+    donutLabels.push('Non applicable (N.A)');
+    donutValues.push(naTotal);
     donutColors.push(COLORS.na);
-  }
-  if (nonClasseTotal) {
-    donutLabels.push('Non classifiée');
-    donutValues.push(nonClasseTotal);
-    donutColors.push(COLORS.nonClasse);
   }
   esDonutInstance = new Chart(document.getElementById('esDonutChart'), {
     type: 'doughnut',
