@@ -91,34 +91,26 @@ iadas-vocab:Self-regulation_of_eating_attitude a skos:Concept ;
 #    29/06 pointait a tort vers "Restrictive eating behaviors", un concept voisin mais
 #    different - "Eating restriction" liste explicitement "restrictive eating" dans sa
 #    propre colonne Synonym du fichier VF officiel)
+#    CONSERVE malgre le fix de decoupage du 03/08/2026 : la casse officielle est
+#    "restrictive eating" (minuscule) alors que la validation (import-ontology.js)
+#    compare en sensible a la casse -> a retirer seulement apres correction de ce fichier JS.
 <http://ns.inria.fr/iadas/ACAD-vocab/Eating_restriction>
     skos:altLabel "Restrictive eating" .
 
-# 8. "Eating pathology" = synonyme de "Eating psychopathology"
-#    (confirme par Amandine Daubresse le 17/07/2026)
-<http://ns.inria.fr/iadas/ACAD-vocab/Eating_psychopathology>
-    skos:altLabel "Eating pathology" .
-
-# 9. "Restrained eating" = synonyme de "Eating restriction"
-#    (confirme par Amandine Daubresse le 17/07/2026 ; le rapprochement automatique du
-#    29/06 pointait a tort vers "Behavioral restrained eating", un concept voisin mais
-#    different)
-<http://ns.inria.fr/iadas/ACAD-vocab/Eating_restriction>
-    skos:altLabel "Restrained eating" .
+# 8, 9, 11, 12 retires le 03/08/2026 : "Eating pathology", "Restrained eating", "Dietary"
+# et "Diet" sont desormais generes automatiquement comme skos:altLabel individuels par le
+# pipeline (fix du bug de decoupage des cellules Synonym a valeurs multiples de
+# Class_Hierarchy_VF, meme casse exacte confirmee) -> devenus redondants avec ces entrees
+# manuelles, retires pour eviter la double declaration.
 
 # 10. "Dietary restraint" = synonyme de "Dieting"
 #    (confirme par Amandine Daubresse le 17/07/2026 ; le rapprochement automatique du
 #    29/06 pointait a tort vers "Behavioral restrained eating")
+#    CONSERVE malgre le fix de decoupage : la casse officielle est "dietary restraint"
+#    (minuscule) alors que la validation (import-ontology.js) compare en sensible a la
+#    casse -> a retirer seulement apres correction de ce fichier JS.
 <http://ns.inria.fr/iadas/ACAD-vocab/Dieting>
     skos:altLabel "Dietary restraint" .
-
-# 11. "Dietary" = synonyme de "Dieting" (confirmé par Amandine Daubresse — 30/06/2026)
-<http://ns.inria.fr/iadas/ACAD-vocab/Dieting>
-    skos:altLabel "Dietary" .
-
-# 12. "Diet" = synonyme de "Dieting" (confirmé par Amandine Daubresse — 30/06/2026)
-<http://ns.inria.fr/iadas/ACAD-vocab/Dieting>
-    skos:altLabel "Diet" .
 
 # 13. "Physical competence evaluation" = synonyme de "Perceived physical ability"
 #     (confirmé par Meggy Hayotte — colonne H Class-Hierarchy-V1.csv — 30/06/2026)
