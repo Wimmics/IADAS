@@ -221,11 +221,21 @@ class PipelineIADAS:
         for row in rows_non_empty:
             cleaned_row = [row[i] if i < len(row) else '' for i in non_empty_cols]
             cleaned_rows.append(cleaned_row)
-        
+
+        # Supprimer les espaces en debut/fin sur Country et Sport_name
+        # (le fichier source contient des valeurs comme "Dance " qui sinon
+        # deviennent des entites RDF distinctes de "Dance")
+        headers = cleaned_rows[0]
+        columns_to_strip = ['Country', 'Sport_name']
+        strip_indices = [headers.index(col) for col in columns_to_strip if col in headers]
+        for row in cleaned_rows[1:]:
+            for idx in strip_indices:
+                row[idx] = row[idx].strip()
+
         with open(output_file, 'w', encoding='utf-8', newline='') as f:
             writer = csv.writer(f, delimiter=';')
             writer.writerows(cleaned_rows)
-        
+
         print(f" Données principales nettoyées: {len(rows)} -> {len(cleaned_rows)} lignes, {len(non_empty_cols)} colonnes")
         return output_file
     

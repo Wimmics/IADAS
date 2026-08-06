@@ -58,7 +58,17 @@ def clean_main_data_csv():
     for row in rows_non_empty:
         cleaned_row = [row[i] if i < len(row) else '' for i in non_empty_cols]
         cleaned_rows.append(cleaned_row)
-    
+
+    # Supprimer les espaces en debut/fin sur Country et Sport_name
+    # (le fichier source contient des valeurs comme "Dance " qui sinon
+    # deviennent des entites RDF distinctes de "Dance")
+    headers_for_strip = cleaned_rows[0]
+    columns_to_strip = ['Country', 'Sport_name']
+    strip_indices = [headers_for_strip.index(col) for col in columns_to_strip if col in headers_for_strip]
+    for row in cleaned_rows[1:]:
+        for idx in strip_indices:
+            row[idx] = row[idx].strip()
+
     # Afficher les en-têtes
     if cleaned_rows:
         print(f"\n2. Apercu des en-têtes du fichier nettoyé:")
