@@ -1,3 +1,5 @@
+const INPUT_INTORREGATION_SCRIPT_URL = document.currentScript ? document.currentScript.src : window.location.href;
+
 class InputInterrogationComponent extends HTMLElement {
     constructor() {
         super();
@@ -498,7 +500,7 @@ class InputInterrogationComponent extends HTMLElement {
 
     async loadTemplate() {
         try {
-            const response = await fetch('../input-intorregation-component.html');
+            const response = await fetch(new URL('../input-intorregation-component.html', INPUT_INTORREGATION_SCRIPT_URL));
             if (!response.ok) {
                 throw new Error(`Erreur lors du chargement du template: ${response.status}`);
             }
