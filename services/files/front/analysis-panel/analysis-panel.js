@@ -1,3 +1,5 @@
+const ANALYSIS_PANEL_SCRIPT_URL = document.currentScript ? document.currentScript.src : window.location.href;
+
 class AnalysisPanel {
   
   constructor() {
@@ -46,7 +48,7 @@ class AnalysisPanel {
 
   async loadTemplate() {
     try {
-      const response = await fetch('./analysis-panel.html');
+      const response = await fetch(new URL('./analysis-panel.html', ANALYSIS_PANEL_SCRIPT_URL));
       if (!response.ok) {
         throw new Error(`Erreur HTTP: ${response.status}`);
       }
