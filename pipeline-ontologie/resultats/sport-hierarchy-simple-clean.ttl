@@ -87,11 +87,13 @@
 <http://ns.inria.fr/iadas/sport-vocab/Alpine_skiing> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Technical> .
 <http://ns.inria.fr/iadas/sport-vocab/Alpine_skiing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Alpine_skiing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Alpine_skiing> <http://www.w3.org/2004/02/skos/core#altLabel> "skiing" .
 <http://ns.inria.fr/iadas/sport-vocab/Alpine_skiing> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Alpine_skiing> <http://www.w3.org/2004/02/skos/core#prefLabel> "Alpine skiing" .
 <http://ns.inria.fr/iadas/sport-vocab/Anaerobic_exercise> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Power> .
 <http://ns.inria.fr/iadas/sport-vocab/Anaerobic_exercise> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Anaerobic_exercise> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Anaerobic_exercise> <http://www.w3.org/2004/02/skos/core#altLabel> "gymgoer HIIT" .
 <http://ns.inria.fr/iadas/sport-vocab/Anaerobic_exercise> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Anaerobic_exercise> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/sport-vocab/HIIT> .
 <http://ns.inria.fr/iadas/sport-vocab/Anaerobic_exercise> <http://www.w3.org/2004/02/skos/core#prefLabel> "Anaerobic exercise" .
@@ -110,6 +112,7 @@
 <http://ns.inria.fr/iadas/sport-vocab/Artistic_swimming> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Aesthetic> .
 <http://ns.inria.fr/iadas/sport-vocab/Artistic_swimming> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Artistic_swimming> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Artistic_swimming> <http://www.w3.org/2004/02/skos/core#altLabel> "Synchronized swimming" .
 <http://ns.inria.fr/iadas/sport-vocab/Artistic_swimming> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Artistic_swimming> <http://www.w3.org/2004/02/skos/core#prefLabel> "Artistic swimming" .
 <http://ns.inria.fr/iadas/sport-vocab/Badminton> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Ball_game> .
@@ -162,16 +165,19 @@
 <http://ns.inria.fr/iadas/sport-vocab/Canoing> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Antigravitation> .
 <http://ns.inria.fr/iadas/sport-vocab/Canoing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Canoing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Canoing> <http://www.w3.org/2004/02/skos/core#altLabel> "Canoeing-kayaking" .
 <http://ns.inria.fr/iadas/sport-vocab/Canoing> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Canoing> <http://www.w3.org/2004/02/skos/core#prefLabel> "Canoing" .
 <http://ns.inria.fr/iadas/sport-vocab/Cheerleading> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Aesthetic> .
 <http://ns.inria.fr/iadas/sport-vocab/Cheerleading> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Cheerleading> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Cheerleading> <http://www.w3.org/2004/02/skos/core#altLabel> "Cheer/pom" .
 <http://ns.inria.fr/iadas/sport-vocab/Cheerleading> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Cheerleading> <http://www.w3.org/2004/02/skos/core#prefLabel> "Cheerleading" .
 <http://ns.inria.fr/iadas/sport-vocab/Circus> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Aesthetic> .
 <http://ns.inria.fr/iadas/sport-vocab/Circus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Circus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Circus> <http://www.w3.org/2004/02/skos/core#altLabel> "Floor acrobatics" .
 <http://ns.inria.fr/iadas/sport-vocab/Circus> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Circus> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/sport-vocab/Circus_acrobatic> .
 <http://ns.inria.fr/iadas/sport-vocab/Circus> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/sport-vocab/Circus_equilibrium> .
@@ -180,6 +186,7 @@
 <http://ns.inria.fr/iadas/sport-vocab/Circus_acrobatic> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Aesthetic> .
 <http://ns.inria.fr/iadas/sport-vocab/Circus_acrobatic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Circus_acrobatic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Circus_acrobatic> <http://www.w3.org/2004/02/skos/core#altLabel> "Floor acrobatics" .
 <http://ns.inria.fr/iadas/sport-vocab/Circus_acrobatic> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/sport-vocab/Circus> .
 <http://ns.inria.fr/iadas/sport-vocab/Circus_acrobatic> <http://www.w3.org/2004/02/skos/core#description> "It is a mix of acrobatics and choreographies performed individually and collectively to music. It is a physical activity similar to acrobatic gymnastics." .
 <http://ns.inria.fr/iadas/sport-vocab/Circus_acrobatic> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
@@ -234,6 +241,7 @@
 <http://ns.inria.fr/iadas/sport-vocab/Cycling> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Endurance> .
 <http://ns.inria.fr/iadas/sport-vocab/Cycling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Cycling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Cycling> <http://www.w3.org/2004/02/skos/core#altLabel> "Biking" .
 <http://ns.inria.fr/iadas/sport-vocab/Cycling> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Cycling> <http://www.w3.org/2004/02/skos/core#prefLabel> "Cycling" .
 <http://ns.inria.fr/iadas/sport-vocab/Dance> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Aesthetic> .
@@ -354,11 +362,13 @@
 <http://ns.inria.fr/iadas/sport-vocab/Drill_team> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Aesthetic> .
 <http://ns.inria.fr/iadas/sport-vocab/Drill_team> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Drill_team> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Drill_team> <http://www.w3.org/2004/02/skos/core#altLabel> "Dance/drill team" .
 <http://ns.inria.fr/iadas/sport-vocab/Drill_team> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Drill_team> <http://www.w3.org/2004/02/skos/core#prefLabel> "Drill team" .
 <http://ns.inria.fr/iadas/sport-vocab/Equestrian> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Technical> .
 <http://ns.inria.fr/iadas/sport-vocab/Equestrian> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Equestrian> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Equestrian> <http://www.w3.org/2004/02/skos/core#altLabel> "Riding" .
 <http://ns.inria.fr/iadas/sport-vocab/Equestrian> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Equestrian> <http://www.w3.org/2004/02/skos/core#prefLabel> "Equestrian" .
 <http://ns.inria.fr/iadas/sport-vocab/Fell_running> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Endurance> .
@@ -409,6 +419,7 @@
 <http://ns.inria.fr/iadas/sport-vocab/Fitness> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Aesthetic> .
 <http://ns.inria.fr/iadas/sport-vocab/Fitness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Fitness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Fitness> <http://www.w3.org/2004/02/skos/core#altLabel> "Gym workouts" .
 <http://ns.inria.fr/iadas/sport-vocab/Fitness> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Fitness> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/sport-vocab/Aerobic_classes> .
 <http://ns.inria.fr/iadas/sport-vocab/Fitness> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/sport-vocab/Aerobics> .
@@ -454,6 +465,7 @@
 <http://ns.inria.fr/iadas/sport-vocab/HIIT> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Power> .
 <http://ns.inria.fr/iadas/sport-vocab/HIIT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/HIIT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/HIIT> <http://www.w3.org/2004/02/skos/core#altLabel> "gymgoer HIIT" .
 <http://ns.inria.fr/iadas/sport-vocab/HIIT> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/sport-vocab/Anaerobic_exercise> .
 <http://ns.inria.fr/iadas/sport-vocab/HIIT> <http://www.w3.org/2004/02/skos/core#description> "High-Intensity Interval Training (HIIT) is a physical training method alternating short bursts of intense effort with periods of recovery." .
 <http://ns.inria.fr/iadas/sport-vocab/HIIT> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
@@ -667,6 +679,8 @@
 <http://ns.inria.fr/iadas/sport-vocab/Running> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Endurance> .
 <http://ns.inria.fr/iadas/sport-vocab/Running> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Running> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Running> <http://www.w3.org/2004/02/skos/core#altLabel> "Distance running" .
+<http://ns.inria.fr/iadas/sport-vocab/Running> <http://www.w3.org/2004/02/skos/core#altLabel> "Long distance" .
 <http://ns.inria.fr/iadas/sport-vocab/Running> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Running> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/sport-vocab/Running_long_distance> .
 <http://ns.inria.fr/iadas/sport-vocab/Running> <http://www.w3.org/2004/02/skos/core#narrower> <http://ns.inria.fr/iadas/sport-vocab/Running_middle_distance> .
@@ -674,6 +688,7 @@
 <http://ns.inria.fr/iadas/sport-vocab/Running_long_distance> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Endurance> .
 <http://ns.inria.fr/iadas/sport-vocab/Running_long_distance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Running_long_distance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Running_long_distance> <http://www.w3.org/2004/02/skos/core#altLabel> "Long distance" .
 <http://ns.inria.fr/iadas/sport-vocab/Running_long_distance> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/sport-vocab/Running> .
 <http://ns.inria.fr/iadas/sport-vocab/Running_long_distance> <http://www.w3.org/2004/02/skos/core#description> "Refers to all endurance running events over significant distances, generally beyond 5000 metres, whether on track, road, or natural\nterrain." .
 <http://ns.inria.fr/iadas/sport-vocab/Running_long_distance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
@@ -700,6 +715,7 @@
 <http://ns.inria.fr/iadas/sport-vocab/Shooting> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Technical> .
 <http://ns.inria.fr/iadas/sport-vocab/Shooting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Shooting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Shooting> <http://www.w3.org/2004/02/skos/core#altLabel> "Sport shooting" .
 <http://ns.inria.fr/iadas/sport-vocab/Shooting> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Shooting> <http://www.w3.org/2004/02/skos/core#prefLabel> "Shooting" .
 <http://ns.inria.fr/iadas/sport-vocab/Skateboarding> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Technical> .
@@ -735,6 +751,7 @@
 <http://ns.inria.fr/iadas/sport-vocab/Sprint> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Power> .
 <http://ns.inria.fr/iadas/sport-vocab/Sprint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Sprint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Sprint> <http://www.w3.org/2004/02/skos/core#altLabel> "Track sprints" .
 <http://ns.inria.fr/iadas/sport-vocab/Sprint> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Sprint> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sprint" .
 <http://ns.inria.fr/iadas/sport-vocab/Squash> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Ball_game> .
@@ -765,6 +782,7 @@
 <http://ns.inria.fr/iadas/sport-vocab/Table_tennis> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Ball_game> .
 <http://ns.inria.fr/iadas/sport-vocab/Table_tennis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Table_tennis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Table_tennis> <http://www.w3.org/2004/02/skos/core#altLabel> "Ping pong" .
 <http://ns.inria.fr/iadas/sport-vocab/Table_tennis> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Table_tennis> <http://www.w3.org/2004/02/skos/core#prefLabel> "Table tennis" .
 <http://ns.inria.fr/iadas/sport-vocab/Taekwondo> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Weight_class> .
@@ -794,11 +812,13 @@
 <http://ns.inria.fr/iadas/sport-vocab/Throwing> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Power> .
 <http://ns.inria.fr/iadas/sport-vocab/Throwing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Throwing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Throwing> <http://www.w3.org/2004/02/skos/core#altLabel> "Track throws" .
 <http://ns.inria.fr/iadas/sport-vocab/Throwing> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Throwing> <http://www.w3.org/2004/02/skos/core#prefLabel> "Throwing" .
 <http://ns.inria.fr/iadas/sport-vocab/Track_and_field%2FAthletics> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Combined> .
 <http://ns.inria.fr/iadas/sport-vocab/Track_and_field%2FAthletics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Track_and_field%2FAthletics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Track_and_field%2FAthletics> <http://www.w3.org/2004/02/skos/core#altLabel> "Track" .
 <http://ns.inria.fr/iadas/sport-vocab/Track_and_field%2FAthletics> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Track_and_field%2FAthletics> <http://www.w3.org/2004/02/skos/core#prefLabel> "Track and field/Athletics" .
 <http://ns.inria.fr/iadas/sport-vocab/Trampoline_gymnastics> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Aesthetic> .
@@ -816,6 +836,7 @@
 <http://ns.inria.fr/iadas/sport-vocab/Ultimate_frisbee> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Ball_game> .
 <http://ns.inria.fr/iadas/sport-vocab/Ultimate_frisbee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Ultimate_frisbee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Ultimate_frisbee> <http://www.w3.org/2004/02/skos/core#altLabel> "Frisbee" .
 <http://ns.inria.fr/iadas/sport-vocab/Ultimate_frisbee> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Ultimate_frisbee> <http://www.w3.org/2004/02/skos/core#prefLabel> "Ultimate frisbee" .
 <http://ns.inria.fr/iadas/sport-vocab/Ultramarathon> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Endurance> .
@@ -843,11 +864,13 @@
 <http://ns.inria.fr/iadas/sport-vocab/Weight_training> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Power> .
 <http://ns.inria.fr/iadas/sport-vocab/Weight_training> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Weight_training> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Weight_training> <http://www.w3.org/2004/02/skos/core#altLabel> "Gymgoer weights" .
 <http://ns.inria.fr/iadas/sport-vocab/Weight_training> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Weight_training> <http://www.w3.org/2004/02/skos/core#prefLabel> "Weight training" .
 <http://ns.inria.fr/iadas/sport-vocab/Weightlifting> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Power> .
 <http://ns.inria.fr/iadas/sport-vocab/Weightlifting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Weightlifting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/sport-vocab/Weightlifting> <http://www.w3.org/2004/02/skos/core#altLabel> "Olympic weightlifting" .
 <http://ns.inria.fr/iadas/sport-vocab/Weightlifting> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/sport-category-vocab/Sport> .
 <http://ns.inria.fr/iadas/sport-vocab/Weightlifting> <http://www.w3.org/2004/02/skos/core#prefLabel> "Weightlifting" .
 <http://ns.inria.fr/iadas/sport-vocab/Wheelchair_basketball> <http://ns.inria.fr/iadas/ontology/sportCategory> <http://ns.inria.fr/iadas/sport-category-vocab/Ball_game> .

@@ -1465,6 +1465,14 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Goal%20setting%20and%20mental%20preparation> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Psychological%20skills> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Goal%20setting%20and%20mental%20preparation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Goal%20setting%20and%20mental%20preparation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Goal setting and mental preparation" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Guilt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Guilt> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Guilt%2Fshame> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Guilt> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Guilt> <http://www.w3.org/2004/02/skos/core#prefLabel> "Guilt" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Guilt%20if%20skipping%20training> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Guilt%20if%20skipping%20training> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Guilt%2Fshame> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Guilt%20if%20skipping%20training> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Guilt%20if%20skipping%20training> <http://www.w3.org/2004/02/skos/core#prefLabel> "Guilt if skipping training" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Guilt%2Fshame> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Guilt%2Fshame> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Maladaptive%20emotional%20state> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Guilt%2Fshame> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
@@ -1835,6 +1843,10 @@
 <http://ns.inria.fr/iadas/ACAD-vocab/Mood> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Maladaptive%20emotional%20state> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Mood> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Mood> <http://www.w3.org/2004/02/skos/core#prefLabel> "Mood" .
+<http://ns.inria.fr/iadas/ACAD-vocab/Mood%20modification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Mood%20modification> <http://www.w3.org/2004/02/skos/core#broader> <http://ns.inria.fr/iadas/ACAD-vocab/Mood> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Mood%20modification> <http://www.w3.org/2004/02/skos/core#inScheme> <http://ns.inria.fr/iadas/ACAD-vocab/Variable> .
+<http://ns.inria.fr/iadas/ACAD-vocab/Mood%20modification> <http://www.w3.org/2004/02/skos/core#prefLabel> "Mood modification" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> <http://www.w3.org/2004/02/skos/core#altLabel> "Compulsive exercise mood improvement ; Exercising for mood management" .
 <http://ns.inria.fr/iadas/ACAD-vocab/Motivation> <http://www.w3.org/2004/02/skos/core#altLabel> "Compulsive exercise weight control" .
