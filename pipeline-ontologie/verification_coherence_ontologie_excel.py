@@ -133,7 +133,13 @@ if EXCEL_HIERARCHY.exists():
         if not cells:
             continue
         excel_rows += 1
-        excel_leaves.add(str(cells[-1]).strip().lower())
+        # Meme nettoyage que clean_text() dans generate_hierarchy_from_vf.py (espace
+        # insecable -> espace normal, espaces doubles -> simple) : sans ca, le xlsx VF
+        # brut ne matche jamais l'ontologie sur "External ingestion"/"Extrinsic
+        # regulation for sport", qui sont pourtant deja nettoyes cote pipeline.
+        leaf = str(cells[-1]).replace("\xa0", " ")
+        leaf = re.sub(r" {2,}", " ", leaf).strip().lower()
+        excel_leaves.add(leaf)
 print(f"\n[4] Taxonomie Excel '{EXCEL_HIERARCHY.name}' (feuille Hierarchy)")
 print(f"    Lignes non vides = {excel_rows}, concepts distincts (case-insensitive) = {len(excel_leaves)}")
 print(f"    Source : openpyxl sur {EXCEL_HIERARCHY.relative_to(EXCEL_HIERARCHY.parent.parent)}")
