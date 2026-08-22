@@ -109,7 +109,12 @@ rr:predicateObjectMap [
         rr:predicate skos:prefLabel ;
         rr:objectMap [ rml:reference "Sub class 2" ]
     ] ;
-    # 
+
+    rr:predicateObjectMap [
+        rr:predicate skos:altLabel ;
+        rr:objectMap [ rml:reference "Synonym" ]
+    ] ;
+    #
     # rr:predicateObjectMap [
         # rr:predicate skos:description ;
         # rr:objectMap [ rml:reference "Definition" ]
@@ -154,7 +159,12 @@ rr:predicateObjectMap [
         rr:predicate skos:prefLabel ;
         rr:objectMap [ rml:reference "Sub class 3" ]
     ] ;
-    
+
+    rr:predicateObjectMap [
+        rr:predicate skos:altLabel ;
+        rr:objectMap [ rml:reference "Synonym" ]
+    ] ;
+
     rr:predicateObjectMap [
         rr:predicate skos:description ;
         rr:objectMap [ rml:reference "Definition" ]

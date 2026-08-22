@@ -287,9 +287,44 @@ rr:predicateObjectMap [
         rr:predicate skos:altLabel ;
         rr:objectMap [ rml:reference "Synonym" ]
     ] ;
-    # 
+    #
     # rr:predicateObjectMap [
         # rr:predicate iadas:measurementTool ;
         # rr:objectMap [ rml:reference "Outils" ]
-    # ] 
+    # ]
+    .
+
+
+<#VariableSubClass5> a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source "data-csv-converted/Class-Hierarchy-V1-cleaned.csv" ;
+        rml:referenceFormulation ql:CSV
+    ] ;
+
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 5}" ;
+        rr:class skos:Concept
+    ] ;
+
+    rr:predicateObjectMap [
+    rr:predicate skos:inScheme ;
+    rr:objectMap [
+        rr:constant <http://ns.inria.fr/iadas/ACAD-vocab/Variable> ;
+] ;
+] ;
+
+    rr:predicateObjectMap [
+        rr:predicate skos:broader ;
+        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 4}" ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate skos:prefLabel ;
+        rr:objectMap [ rml:reference "sub-class 5" ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate skos:altLabel ;
+        rr:objectMap [ rml:reference "Synonym" ]
+    ]
     .
