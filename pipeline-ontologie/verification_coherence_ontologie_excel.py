@@ -123,7 +123,7 @@ print(f"     => {len(rml_clean_uris)} (RML clean) + {enrich_count} (manuel) - {l
 # -----------------------------------------------------------------------
 # 4. Taxonomie de reference Excel (Class_Hierarchy_VF)
 # -----------------------------------------------------------------------
-excel_leaves = set()
+excel_labels = set()
 excel_rows = 0
 if EXCEL_HIERARCHY.exists():
     wb = openpyxl.load_workbook(EXCEL_HIERARCHY, data_only=True)
@@ -133,15 +133,23 @@ if EXCEL_HIERARCHY.exists():
         if not cells:
             continue
         excel_rows += 1
-        # Meme nettoyage que clean_text() dans generate_hierarchy_from_vf.py (espace
-        # insecable -> espace normal, espaces doubles -> simple) : sans ca, le xlsx VF
-        # brut ne matche jamais l'ontologie sur "External ingestion"/"Extrinsic
-        # regulation for sport", qui sont pourtant deja nettoyes cote pipeline.
-        leaf = str(cells[-1]).replace("\xa0", " ")
-        leaf = re.sub(r" {2,}", " ", leaf).strip().lower()
-        excel_leaves.add(leaf)
+        # mapping-hierarchy.ttl declare un skos:Concept a CHAQUE niveau (CLASS,
+        # sub-class 1 a 5), pas seulement a la feuille de la ligne. Un terme comme
+        # "Coping in sport" (sub-class 3) qui a toujours un enfant en sub-class 4
+        # n'est donc jamais "la derniere cellule remplie" d'aucune ligne -> ne
+        # prendre que cells[-1] le faisait passer a tort pour absent de l'Excel.
+        # On ajoute donc TOUTES les cellules non vides de la ligne, pas seulement
+        # la derniere.
+        for c in cells:
+            # Meme nettoyage que clean_text() dans generate_hierarchy_from_vf.py
+            # (espace insecable -> espace normal, espaces doubles -> simple) : sans
+            # ca, le xlsx VF brut ne matche jamais l'ontologie sur "External
+            # ingestion"/"Extrinsic regulation for sport", deja nettoyes cote pipeline.
+            val = str(c).replace("\xa0", " ")
+            val = re.sub(r" {2,}", " ", val).strip().lower()
+            excel_labels.add(val)
 print(f"\n[4] Taxonomie Excel '{EXCEL_HIERARCHY.name}' (feuille Hierarchy)")
-print(f"    Lignes non vides = {excel_rows}, concepts distincts (case-insensitive) = {len(excel_leaves)}")
+print(f"    Lignes non vides = {excel_rows}, concepts distincts (case-insensitive) = {len(excel_labels)}")
 print(f"    Source : openpyxl sur {EXCEL_HIERARCHY.relative_to(EXCEL_HIERARCHY.parent.parent)}")
 
 # -----------------------------------------------------------------------
@@ -170,9 +178,9 @@ SELECT ?c ?label WHERE {
 ontology_labels = {b["label"]["value"].strip().lower() for b in d["results"]["bindings"]}
 print(f"\n[6] Labels ontologie (skos:prefLabel, ACAD-vocab) = {len(ontology_labels)}")
 
-only_ontology = ontology_labels - excel_leaves
-only_excel = excel_leaves - ontology_labels
-inter = ontology_labels & excel_leaves
+only_ontology = ontology_labels - excel_labels
+only_excel = excel_labels - ontology_labels
+inter = ontology_labels & excel_labels
 
 print(f"\n    Intersection (presents des deux cotes)            = {len(inter)}")
 print(f"    Dans l'ontologie mais ABSENT de l'Excel            = {len(only_ontology)}")
@@ -211,7 +219,7 @@ print("=" * 70)
 print(f"  {'Total ontologie (vocabulaire ACAD complet)':<50} {total_ontologie:>6}")
 print(f"  {'  dont pipeline RML (output/variable-hierarchy.ttl)':<50} {rml_count:>6}")
 print(f"  {'  dont enrichissement manuel (skos-acad-enrichment.ttl)':<50} {enrich_count:>6}")
-print(f"  {'Taxonomie Excel (Class_Hierarchy_VF, feuille Hierarchy)':<50} {len(excel_leaves):>6}")
+print(f"  {'Taxonomie Excel (Class_Hierarchy_VF, feuille Hierarchy)':<50} {len(excel_labels):>6}")
 print(f"  {'Concepts mobilises (>=1 analyse, VI ou VD)':<50} {len(mobilises_uris):>6}")
 print(f"  {'Labels ontologie absents de l excel':<50} {len(only_ontology):>6}")
 print(f"  {'Labels excel absents de l ontologie':<50} {len(only_excel):>6}")
