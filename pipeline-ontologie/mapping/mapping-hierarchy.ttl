@@ -135,14 +135,14 @@ rr:predicateObjectMap [
     # 
     rr:predicateObjectMap [
         rr:predicate skos:altLabel ;
-        rr:objectMap [ rml:reference "Synonym" ]
+        rr:objectMap [ rml:reference "Synonym_level1" ]
     ] ;
-    # 
+    #
     # rr:predicateObjectMap [
         # rr:predicate iadas:measurementTool ;
         # rr:objectMap [ rml:reference "Outils" ]
-    # ] 
-           
+    # ]
+
    rr:predicateObjectMap [
        rr:predicate skos:narrower ;
        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 2}" ]
@@ -185,14 +185,14 @@ rr:predicateObjectMap [
     
     rr:predicateObjectMap [
         rr:predicate skos:altLabel ;
-        rr:objectMap [ rml:reference "Synonym" ]
+        rr:objectMap [ rml:reference "Synonym_level2" ]
     ] ;
-    # 
+    #
     # rr:predicateObjectMap [
         # rr:predicate iadas:measurementTool ;
         # rr:objectMap [ rml:reference "Outils" ]
-    # ] 
-           
+    # ]
+
    rr:predicateObjectMap [
        rr:predicate skos:narrower ;
        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 3}" ]
@@ -235,14 +235,14 @@ rr:predicateObjectMap [
     # 
     rr:predicateObjectMap [
         rr:predicate skos:altLabel ;
-        rr:objectMap [ rml:reference "Synonym" ]
+        rr:objectMap [ rml:reference "Synonym_level3" ]
     ] ;
-    # 
+    #
     # rr:predicateObjectMap [
         # rr:predicate iadas:measurementTool ;
         # rr:objectMap [ rml:reference "Outils" ]
-    # ] 
-           
+    # ]
+
    rr:predicateObjectMap [
        rr:predicate skos:narrower ;
        rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 4}" ]
@@ -285,7 +285,7 @@ rr:predicateObjectMap [
     
     rr:predicateObjectMap [
         rr:predicate skos:altLabel ;
-        rr:objectMap [ rml:reference "Synonym" ]
+        rr:objectMap [ rml:reference "Synonym_level4" ]
     ] ;
     #
     # rr:predicateObjectMap [
@@ -325,6 +325,6 @@ rr:predicateObjectMap [
 
     rr:predicateObjectMap [
         rr:predicate skos:altLabel ;
-        rr:objectMap [ rml:reference "Synonym" ]
+        rr:objectMap [ rml:reference "Synonym_level5" ]
     ]
     .
