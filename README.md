@@ -1,18 +1,15 @@
 # IA-DAS - Guide utilisateur
 
-**Auteur :** Sara  
+**Auteure :** Imane Amraoui  
 **Public :** Toutes personnes souhaitant utiliser l'interface du projet IA-DAS  
 
 ## 🚀 Installation et déploiement
-
-### Version hébergée (Recommandée)
-Une version hébergée en AWS est présente via le lien suivant : [URL à compléter]
 
 ### Version locale avec Docker
 
 **Prérequis :**
 - Docker et Docker Compose installés ([Guide d'installation Docker](https://docs.docker.com/get-docker/))
-- Ports 8000, 8002, 8003, 3030 disponibles
+- Ports 8000, 8002, 8003, 8005, 3030 disponibles
 
 > 💡 **Pas Docker ?** Si vous n'avez pas Docker installé, consultez la section "Installation alternative" plus bas.
 
@@ -21,8 +18,8 @@ Une version hébergée en AWS est présente via le lien suivant : [URL à compl�
 ### Option 1 : Avec Git (recommandée)
 1. Cloner le projet :
    ```bash
-   git clone [URL_DU_DEPOT]
-   cd IA-DAS
+   git clone https://github.com/Wimmics/IADAS.git
+   cd IADAS
    ```
 
 2. Lancer l'application :
@@ -32,7 +29,7 @@ Une version hébergée en AWS est présente via le lien suivant : [URL à compl�
 
 ### Option 2 : Sans Git (téléchargement direct)
 1. **Télécharger le projet :**
-   - Aller sur la page GitHub du projet : [URL_DU_DEPOT]
+   - Aller sur la page GitHub du projet : https://github.com/Wimmics/IADAS
    - Cliquer sur le bouton vert **"Code"** 
    - Sélectionner **"Download ZIP"**
    - Extraire le fichier ZIP dans le dossier de votre choix
@@ -40,7 +37,7 @@ Une version hébergée en AWS est présente via le lien suivant : [URL à compl�
 2. **Lancer l'application :**
    ```bash
    # Naviguer dans le dossier extrait
-   cd IA-DAS-main  # (ou nom du dossier extrait)
+   cd IADAS-main  # (ou nom du dossier extrait)
    
    # Lancer les services
    docker-compose up -d
@@ -54,6 +51,7 @@ Une version hébergée en AWS est présente via le lien suivant : [URL à compl�
 - Frontend : Interface utilisateur (port 8002)
 - Gateway : Serveur proxy et authentification (port 8000)  
 - SPARQL Generator : Génération de requêtes (port 8003)
+- Database Service : Reconstruction de l'ontologie et statistiques (port 8005)
 - Fuseki : Base de données RDF (port 3030)
 
 ### Installation alternative (sans Docker)
@@ -95,39 +93,42 @@ Une version hébergée en AWS est présente via le lien suivant : [URL à compl�
 
 ## 🎯 Scénarios d'utilisation
 
-Après avoir lu ce document, je vous invite à suivre les 3 scénarios ci-dessous :
+Après avoir lu ce document, je vous invite à suivre les scénarios ci-dessous :
 
 ## 📋 Navigation simple et présentation globale du site
 
-En arrivant sur la page d'accueil, vous avez 5 boutons à disposition :  
+En arrivant sur la page d'accueil, vous avez accès à :
 
-### 1. 🎨 **Interaction personnalisée**
+### 1. 🎨 **Interaction personnalisable**
 Vous permet de naviguer vers la page où vous pouvez composer vos propres requêtes SPARQL selon :
 - Les variables indépendantes (VI) / variables dépendantes (VD)
 - Le résultat de relation
 - L'âge, le sexe
 - Et autres critères personnalisés
 
-### 2. 📋 **Interaction prédéfinie** 
+### 2. 📋 **Interaction guidée**
 Vous permet de naviguer vers la page avec des requêtes SPARQL déjà prêtes pour répondre aux questions de compétences.
 
 **Exemple de question :**
 "Quels sont les ACADS dont le résultat de relation est ambigu ?"
 
-### 3. 🔧 **Modifier l'ontologie**
-Destiné à l'équipe de recherche et permet de modifier/ajouter/supprimer des analyses de l'ontologie. Un mot de passe est néanmoins requis. Si vous ne faites pas partie de l'équipe, vous pouvez trouver le contact dans la page contact.
+### 3. 🔧 **Mise à jour de l'ontologie**
+Destiné à l'équipe de recherche et permet de modifier/ajouter/supprimer des analyses, ou de reconstruire l'ontologie à partir de nouveaux fichiers CSV. Un mot de passe est néanmoins requis. Si vous ne faites pas partie de l'équipe, vous pouvez trouver le contact dans la page contact.
 
-### 4. 📞 **Contact**
+### 4. 📊 **Statistiques**
+Présente des statistiques globales calculées sur l'ensemble de la base de données (nombre d'analyses, répartition effectSize, doublons, hiérarchies...).
+
+### 5. 📞 **Contact**
 Permet d'accéder aux informations de contact de l'équipe de recherche.
 
-### 5. 📚 **En savoir plus**
+### 6. 📚 **En savoir plus**
 Contient les nouveautés et des informations complémentaires à savoir du projet IA-DAS. 
  
  
  
 ---
 
-## 🔍 Page d'interaction personnalisée
+## 🔍 Page d'interaction personnalisable
 
 Sur cette page, vous avez deux sections principales :
 - **Le desk (encadré en vert)** : Zone de paramètres et filtres
@@ -175,7 +176,7 @@ Vous avez 3 autres boutons d'export :
 
 ---
 
-## 🎓 Page de compétences (Interaction prédéfinie)
+## 🎓 Page de compétences (Interaction guidée)
 
 ### Interface accordéon
 En arrivant, vous avez un desk accordéon qui vous permet de :
@@ -184,7 +185,7 @@ En arrivant, vous avez un desk accordéon qui vous permet de :
 - Construire des requêtes guidées sans connaître SPARQL
 
 ### Résultats
-Le résultat est identique à celui de la page personnalisée :
+Le résultat est identique à celui de la page personnalisable :
 - Même options de visualisation (tableau, graphe, SPARQL)
 - Mêmes fonctionnalités d'export (PNG, Excel, Turtle)
 - Même interactivité sur les graphiques  
