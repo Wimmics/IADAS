@@ -281,8 +281,8 @@ sh-iadas:RelationsShape a sh:NodeShape ;
         sh:path iadas:effectSize ;
         sh:name "Taille d'effet" ;
         sh:minCount 0 ;
-        sh:in ( "negligible" "weak" "moderate" "strong" ) ;
-        sh:message "effectSize doit être : negligible, weak, moderate ou strong."
+        sh:in ( "negligible" "weak" "moderate" "strong" "N.A." "N.S." ) ;
+        sh:message "effectSize doit être : negligible, weak, moderate, strong, N.A. ou N.S."
     ] .
 
 
