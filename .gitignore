@@ -1,13 +1,39 @@
 # Fuseki TDB2 database binaries (données générées, ne pas versionner)
 fuseki/databases/
 fuseki/logs/
+fuseki/configuration/
+fuseki/system_files/
 
 # RMLMapper JAR (binaire volumineux)
 pipeline-ontologie/*.jar
 
-# Backups
+# Backups et fichiers de verification ponctuels
 *.backup
 *.bak
+*-backup.csv
+*.backup_avant_*
+*_CHECK.xlsx
+*_VIEW.xlsx
+pipeline-ontologie/_sample_check.txt
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Archives generees par le pipeline
+resultats.zip
+
+# Rapports/presentations generes pour les reunions (pas destines au depot)
+rapport_*.pdf
+rapport_*.html
+presentation_*.pdf
+presentation_*.html
+pitch_*.pdf
+pitch_*.html
+speech_*.txt
+PRESENTATION_TECHNIQUE_*.md
+generer_pdf*.py
+convert_to_pdf.py
 
 # Node modules
 node_modules/
