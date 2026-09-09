@@ -10,9 +10,11 @@ pipeline-ontologie/*.jar
 # Backups et fichiers de verification ponctuels
 *.backup
 *.bak
-*_backup_avant_*
+*-backup.csv
+*.backup_avant_*
 *_CHECK.xlsx
 *_VIEW.xlsx
+pipeline-ontologie/_sample_check.txt
 
 # Cache Python
 __pycache__/
@@ -29,6 +31,9 @@ presentation_*.html
 pitch_*.pdf
 pitch_*.html
 speech_*.txt
+PRESENTATION_TECHNIQUE_*.md
+generer_pdf*.py
+convert_to_pdf.py
 
 # Node modules
 node_modules/
