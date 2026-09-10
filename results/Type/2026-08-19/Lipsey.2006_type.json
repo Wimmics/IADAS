@@ -1,0 +1,420 @@
+{
+  "_article": "Lipsey.2006",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Pearson correlation",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The cross-sectional design precludes causal conclusions.",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Students",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorder psychopathology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Commitment to exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Commitment to Exercise Scale (CES)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Autonomous forms for motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Commitment to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Commitment to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.37
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "EDE-Q global score was positively correlated with commitment to exercise (r(258) = 0.37; p < .01)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorder psychopathology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Depression"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Depression, Anxiety and Stress Scale (DASS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Psychopathological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Depression",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Depression",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.48
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "EDE-Q global score was positively correlated with depression (r = 0.48; p < .01)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorder psychopathology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body mass index"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body mass index"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.3
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "EDE-Q global score was positively correlated with body mass index (r = 0.30; p < .01)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Commitment to exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "r(258) = 0.37; p<0.01"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Autonomous forms for motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Commitment to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Commitment to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Depression"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "r = 0.48; p<0.01"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Psychopathological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Depression",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Depression",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.37
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<0.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Commitment to exercise also varied across the sample with a mean score of 49.0 (SE ¼ 1.9), just below the mid-point of the scale. EDE-Q global score was positively correlated with commitment to exercise (r(258) = 0.37; p<0.01), depression (r = 0.48; p<0.01) and body mass index (r = 0.30; p<0.01), but was unrelated to either exercise frequency (r = -0.01) or total exercise duration (r = -0.09).",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Commitment to exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "r(258) = 0.37; p<0.01"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Autonomous forms for motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Commitment to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Commitment to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body mass index"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "r = 0.30; p<0.01"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.3
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<0.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Commitment to exercise also varied across the sample with a mean score of 49.0 (SE ¼ 1.9), just below the mid-point of the scale. EDE-Q global score was positively correlated with commitment to exercise (r(258) = 0.37; p<0.01), depression (r = 0.48; p<0.01) and body mass index (r = 0.30; p<0.01), but was unrelated to either exercise frequency (r = -0.01) or total exercise duration (r = -0.09).",
+      "_evidence_verified": false
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "In conclusion, there is sufficient evidence relating eating disorders and exercise participation, be it excessive or compulsive. In addition to the acknowledged risk to eating disorder development, for some individuals exercise plays a role in the maintenance of the syndrome."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Further studies are needed to test these coping strategies. Particularly valuable would be further investigations of thoughts and beliefs, especially in exercisers with fully developed eating disorders, before and during treatment."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 258
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 260
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "_article": "Lipsey.2006",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Fitness"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Aesthetic"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Commitment to exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Commitment to Exercise Scale (CES)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Autonomous forms for motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Commitment to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Commitment to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.37
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Depression"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Beck Depression Inventory (BDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Psychopathological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Depression",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Depression",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.48
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Eating disorder pathology was associated with commitment to exercise and depression suggesting that exercise commitment was linked to mood regulation in female with eating disorder features."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Further studies are needed to test these coping strategies. Particularly valuable would be further investigations of thoughts and beliefs, especially in exercisers with fully developed eating disorders, before and during the treatment."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 260
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Female from sports centres in a city in the North of England aged between 18 and 63 years."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 260
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

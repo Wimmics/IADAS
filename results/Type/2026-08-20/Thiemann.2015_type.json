@@ -1,0 +1,524 @@
+{
+  "_article": "Thiemann.2015",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-20",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:signeP",
+      "object": "p<.001",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Rhythmic gymnastics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Professional"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Figure skating"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Professional"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Artistic gymnastics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Professional"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Synchronized swimming"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Professional"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Field hockey"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Professional"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "BSQ scores were negatively correlated with EDE-Q scores (r = -.42, p < .001)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sports pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Societal Attitudes Towards Appearance Scale-3 (SATAQ-3) Pressures scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Sport specific pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Sport specific pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.185
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "SATAQ-3 Pressures scale was a significant predictor of EDE-Q global score (β = 0.185, p < .001)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Athlete Sport and Body"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Athlete Sport and Body scale"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.303
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Athlete Sport and Body scale was a significant predictor of EDE-Q global score (β = 0.303, p < .001)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Sports pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "0.185"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Sport specific pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Sport specific pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Athlete Sport and Body"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "0.303"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ],
+      "_evidence": "Table 3 Summary of hierarchical regression analysis for variables predicting eating disordered pathology (Eating Disorder Examination Questionnaire global score) among athletes (n = 103)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "0.365"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Athlete Sport and Body"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "0.303"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.365
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 3 Summary of hierarchical regression analysis for variables predicting eating disordered pathology (Eating Disorder Examination Questionnaire global score) among athletes (n = 103)",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Hierarchical multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Based on clinical interviews, this study confirms elevated prevalence of ED among female German aesthetic sports athletes and shows that risk assessment should be carried out individually for different sports. All investigated putative risk factors qualify to be further tested in a longitudinal design. In future research, special attention should be focused on sports pressure and body dissatisfaction. There are strong indications that both sport-specific and non-sport-specific factors need to be taken into account for prevention and treatment of ED in athletes."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The accuracy of prevalence rates in non-athletes might be affected by a possible selection effect and by the screening procedure, while the rates of aesthetic sports athletes might be underestimated by two coaches refusing their support and the heterogeneity of the group. It must be noted that, in general, cross-sectional findings are only the first step in terms of risk factor research and need to be followed by longitudinal studies. The interpretation is limited, furthermore, to the type of sports investigated, and not all putative risk factors were considered, for example, those outlined in the new contextual approach to body dissatisfaction (de Bruin, Oudejans, Bakker, & Woertman, 2011). The sample size led to adequate power at moderate to large effect size levels, but to less than adequate statistical power at a small effect size level. In addition, due to the small number of ED cases, no logistic regression analysis to assess the predictive power of putative risk factors for ED could be performed (for details, see Peduzzi, Concato, Kemper, Holford, & Feinstein, 1996)."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "One might need longitudinal risk factor studies and large-scale prevalence studies with single-sport groups, where athletes are approached directly and more putative risk factors are assessed."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 103
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 216
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Female professional athletes aged 12 to 34 years and age-matched female non-athletes; athletes recruited with assistance of their coaches; non-athletes recruited from high schools, universities, and summer camps; non-athletes required not to have competed at a professional level in any sports before and allowed to participate in recreational sports for up to 8 hours per week"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes and non-athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Aesthetic sports athletes (46) and Ballgame sports athletes (62)"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Professional athletes (competes on a national or international level)"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Germany"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

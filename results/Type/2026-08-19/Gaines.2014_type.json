@@ -1,0 +1,590 @@
+{
+  "_article": "Gaines.2014",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:signeP",
+      "object": "p<.001",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:signeP",
+      "object": "p<.001",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 200,
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Basketball"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Team sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Volleyball"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Team sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Softball"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Team sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Self-esteem"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Rosenberg Self-Esteem Scale (RSES)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Global self-worth",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Disordered eating was negatively related with self-esteem, and positively related with team, peer, and romantic pressure. Athletic status and disordered eating significantly predicted self-esteem in the first model ([F.sub.(2.251)] = 20.22, p < .001), with 14% of the variance being explained by the predictors (see Table 3). In this model, athletic status and disordered eating were significant predictors of self-esteem with being an athlete and lower disordered eating predicting self-esteem.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body image"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perceptual dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body self-perception",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Self-esteem"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Rosenberg Self-Esteem Scale (RSES)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Global self-worth",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Body image was positively correlated with self-esteem, and negatively related with disordered eating and peer pressure. Self-esteem was negatively related with peer pressure, while coach pressure was positively related with team and peer pressure. Team pressure was positively related with peer and romantic pressure, whereas peer pressure was positively related with romantic pressure only.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Peer pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Peer Pressure"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "General pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Peer pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Peer pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.58
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "In the first model, peer and romantic pressure collectively predicted individuals' body image, [F.sub.(2.169)] = 18.09, p < .001. Peer pressure contributed significantly to this model. The second model, peer and romantic pressure collectively predicted disordered eating behaviors, [F.sub.(2.169)] = 42.75, p < .001. Peer pressure contributed significantly to this model. In the third model, peer and romantic pressure predicted self-esteem, [F.sub.(2.169)] = 20.43, p < .001. Peer pressure contributed significantly to this model.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body image"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perceptual dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body self-perception",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Peer pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Peer Pressure"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "General pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Peer pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Peer pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "In the first model, peer and romantic pressure collectively predicted individuals' body image, [F.sub.(2.169)] = 18.09, p < .001. Peer pressure contributed significantly to this model. The second model, peer and romantic pressure collectively predicted disordered eating behaviors, [F.sub.(2.169)] = 42.75, p < .001. Peer pressure contributed significantly to this model. In the third model, peer and romantic pressure predicted self-esteem, [F.sub.(2.169)] = 20.43, p < .001. Peer pressure contributed significantly to this model.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Self-esteem"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Rosenberg Self-Esteem Scale (RSES)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Global self-worth",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Peer pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Peer Pressure"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "General pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Peer pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Peer pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "In the first model, peer and romantic pressure collectively predicted individuals' body image, [F.sub.(2.169)] = 18.09, p < .001. Peer pressure contributed significantly to this model. The second model, peer and romantic pressure collectively predicted disordered eating behaviors, [F.sub.(2.169)] = 42.75, p < .001. Peer pressure contributed significantly to this model. In the third model, peer and romantic pressure predicted self-esteem, [F.sub.(2.169)] = 20.43, p < .001. Peer pressure contributed significantly to this model.",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Hierarchical multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Athletes reported higher body image perceptions and lower disordered eating behaviors than non-athletes. Further, athletic status did not moderate the relationship of disordered eating with self-esteem. Finally, peer pressure significantly predicted females' body image perceptions, disordered eating behaviors, and self-esteem."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "First, the sample was primarily Hispanic, which is representative of the population where the data were collected, but reduces the generalizability of these findings. Second, only two sports where an emphasis is placed on the body by means of the uniform (e.g., volleyball and track/cross country) were examined in this study. Finally, the athlete sample was considerably smaller than the non-athlete sample, which made it necessary to pool data for some analyses."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "There are several avenues for future research that can overcome these limitations and delimitations, as well as provide additional insight into these variables. Furthermore, the present findings suggest that future study of body image perceptions and the link with self-esteem and social pressures is warranted. Related to the present study, ethnic and cultural differences on body image perceptions should be examined. Most of the research investigating these variables has examined Caucasians, who generally report greater disturbance with body image and higher incidence of disordered eating behaviors. Further work examining Hispanic, as well as other minority populations, will provide a clearer picture of body image perceptions in female college students."
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 254
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Students"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "58 Athletes 196 Non-athletes"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

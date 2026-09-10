@@ -1,0 +1,218 @@
+{
+  "_article": "Readdy.2011",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Aerobics and weight training"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Modified Muscle Dysmorphia Scale (MMDS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Stress related to physical unattractiveness\nFrequency of aerobics (days/week)\nStress related to emotional inexpressiveness\nSociocultural influences\nAge\nStress related to victimization\nStress related to behaving assertively\nStress related to physical inadequacy"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Gender Role Stress Scale (GRSS)\nSociodemographic information\nGender Role Stress Scale (GRSS)\nSociocultural Influences (SCA)\nSociodemographic information\nGender Role Stress Scale (GRSS)\nGender Role Stress Scale (GRSS)\nGender Role Stress Scale (GRSS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.28
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Modified Muscle Dysmorphia Scale (MMDS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Stress related to physical unattractiveness\nAge\nSociocultural influences"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Gender Role Stress Scale (GRSS)\nSociodemographic information\nSociocultural Influences (SCA)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.13
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Modified Muscle Dysmorphia Scale (MMDS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Stress related to wearing a bathing suit in public\nStress related to seeing yourself in the mirror\nStress related to appearing less athletic than a friend\nStress related to remarks by strangers\nStress related to telling your spouse you love him/her\nStress related to being heavier than your mate\nStress related to losing in a sports competition\nStress related to comforting a male friend who is upset\nStress related to remarks by male friends"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Gender Role Stress Scale (GRSS)\nSociocultural Influences (SCA)\nGender Role Stress Scale (GRSS)\nSociocultural Influences (SCA)\nGender Role Stress Scale (GRSS)\nGender Role Stress Scale (GRSS)\nGender Role Stress Scale (GRSS)\nGender Role Stress Scale (GRSS)\nSociocultural Influences (SCA)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.25
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Modified Muscle Dysmorphia Scale (MMDS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Stress related to feeling less attractive than you once were\nStress related to being heavier than your mate\nStress reated to seeing beautiful female/handsome male in movies, TV or ads\nStress related to finding you have gained 10 pounds (4.5kg)\nStress related to remarks by strangers"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Gender Role Stress Scale (GRSS)\nGender Role Stress Scale (GRSS)\nSociocultural Influences (SCA)\nGender Role Stress Scale (GRSS)\nSociocultural Influences (SCA)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.18
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Regression model"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Gender role stress (GRS) and sociocultural influences are impoortant correlated of muscle dysmorphia. Physical unattractiveness explained the greater variance in muscle dysmorphia symptoms of both Female and male. MD symptoms for male were associated with seeing beautiful Female or handsome male in movies, TV, or ads. MD symptoms in male were not related to remarks by male friends or remarks by Female friends. Remarks from male friendss and strangers were more predictive sociocultural influences of MD for Female."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "There was no measure of participants gender role identification. The assessment tools used to measure such haracteristics are inherently problematic. Absent from the discussion of the results are comments about the relative importance of individual scale items. It would be impossible to make meaningful judgmalets about the theoretical contributions of individual subscale items or even overall subscales scores to MD symptoms. The limited age range and lack of racial diversityin our sample restricted our ability to make conclusions about a broad segmalet of the population. We did not assess participants sexual orientation, further restricting the generalizability of our results. The level of MD reported in our sample was rather low."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 154
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Female and male undergraduate students from a large northwestern university"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "219 Males\n154 Females"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 373
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

@@ -1,0 +1,722 @@
+{
+  "_article": "Larrinaga.2024",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:signeP",
+      "object": "p<.01",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:signeP",
+      "object": "p<.01",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:signeP",
+      "object": "p<.01",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Rowing"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Endurance",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorder symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "SCOFF questionnaire for screening of eating disorders in women"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Self-concept of strength"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "CAF-A physical self-concept questionnaire abbreviated version, sub variables: ability, condition, attractiveness, and strength"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.18
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "self-perceived strength was positively associated with ED symptoms (β = 0.18, p < 0.01)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorder symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "SCOFF questionnaire for screening of eating disorders in women"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Pressure from teammates and the uniform"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "WSP weight pressures in sport-females questionnaire, two subscales coach and sport-specific pressures and Uniform and teammates"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.18
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "self-concept of strength was positively associated with ED symptoms (β = 0.18, p < 0.01) and pressure from teammates and the uniform were associated with higher ED symptoms",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorder symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "SCOFF questionnaire for screening of eating disorders in women"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Autonomy"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Ryff psychological well-being questionnaire, with subscale; acceptance, positive relationships, autonomy, environmental mastery, purpose in life, and personal"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Basic psychological needs",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Basic needs satisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Perceived autonomy",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Perceived autonomy",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Ryff autonomy was significantly negatively associated with ED symptoms (β = -0.18, p < 0.01)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Weight-related pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "WSP-F weight pressures in sport-Females questionnaire, two subscales coach and sport-specific pressures and Uniform and teammates"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Autonomy"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Ryff psychological well-being questionnaire, with subscale; acceptance, positive relationships, autonomy, environmental mastery, purpose in life, and personal"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Basic psychological needs",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Basic needs satisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Perceived autonomy",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Perceived autonomy",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": -0.21
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Ryff autonomy was significantly negatively associated with weight-related pressure (β = -0.21, p < 0.01)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Weight-related pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "WSP-F weight pressures in sport-Females questionnaire, two subscales coach and sport-specific pressures and Uniform and teammates"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Physical condition"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "CAF physical self-concept questionnaire abbreviated version, sub variables ability, condition, attractiveness, and strength"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Physical Self-Worth",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Physical condition",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Physical condition",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.22
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "CAF condition was significantly positively associated with weight-related pressure (β = 0.22, p < 0.01)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Weight-related pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "WSP-F weight pressures in sport-Females questionnaire, two subscales coach and sport-specific pressures and Uniform and teammates"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Attractiveness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "CAF physical self-concept questionnaire abbreviated version, sub variables ability, condition, attractiveness, and strength"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Affective dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Attractive body",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Sexual attractiveness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Sexual attractiveness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": -0.23
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "CAF attractiveness was significantly negatively associated with weight-related pressure (β = -0.23, p < 0.01)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Weight-related pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "WSP-F weight pressures in sport-Females questionnaire, two subscales coach and sport-specific pressures and Uniform and teammates"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Experience"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Experience (years)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ],
+      "_evidence": "experience was significantly positively associated with weight-related pressure (β = 0.15, p < 0.05)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Weight-related pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "WSP-F weight pressures in sport-Females questionnaire, two subscales coach and sport-specific pressures and Uniform and teammates"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Strength"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "CAF physical self-concept questionnaire abbreviated version, sub variables ability, condition, attractiveness, and strength"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Physical Self-Worth",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Physical strength",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Physical strength",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": "CAF strength was not significantly associated with weight-related pressure (β = 0.14, p > 0.05)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Age"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "years"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Autonomy"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "score"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Basic psychological needs",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Basic needs satisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Perceived autonomy",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Perceived autonomy",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Ryff autonomy 3.57 ± 3.5 vs 4.36 ± 0.91, p < 0.05",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Experience"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "years"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Autonomy"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "score"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Basic psychological needs",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Basic needs satisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Perceived autonomy",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Perceived autonomy",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Ryff autonomy 3.57 ± 3.5 vs 4.36 ± 0.91, p < 0.05",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Female fixed-bench rowers were at high risk of ED symptoms and perceived weight-related pressure. Teammates and the uniform pressure and self-concept of strength were associated with higher ED symptoms in female rowers, whereas better self-concept, psychological well-being, and more age showed less susceptibility of ED symptoms. Higher BMI, experience, self-concept of physical condition, and strength were associated with more weight-related pressure, whereas better self-concept of attractiveness and physical well-being of autonomy were significantly associated with less pressure. The psychological factors of self-concept, well-being and body composition analysis should be considered to identify the risk of ED symptoms and weight pressure in female fixed-bench rowers, which may help to design more targeted prevention strategies for this vulnerable athlete population."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The cross-sectional design did not allow for cause and effect to be determined, meaning that longitudinal and experimental studies are required to determine temporal relationships during and after competitive season. The SCOFF scale should be complemented by other ED questionnaires to obtain more specific information regarding to ED psychopathology. It would be interesting to include male athletes in future studies and to analyse the influence of the coach. Likewise, no parameter was included to determine the degree of training or energy intake and the relatively small size of the sample also may be a limitaion."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "More research is needed on the key protective/facilitating factors against the development of DE in order to tailor prevention and intervention programmes for athletes, coaches, parents and technical staff, and to ensure that sports policies include health professionals (psychologists, nutritionists or physiotherapists) who are aware of ED."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 206
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 208
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Female fixed-bench rowers from all clubs in the north coast of Spain, recruited to a cross-sectional study, excluding inactive rowers, underage rowers, and other coastal regions of the Iberian Peninsula"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "115 Female rowers performed body composition analysis by bioimpedance"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Competitive level breakdown: 22% in the first level, 78% in the second level"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Spain"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

@@ -1,0 +1,1441 @@
+{
+  "_article": "AleksicVeljkovic.2020",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-25",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "field",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.007",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.007' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.007",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.007' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.007",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.007' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 120,
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Synchronized swimming"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Artistic gymnastics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Rhythmic gymnastics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Dance"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Volleyball"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Track"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Soccer"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body image dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating disorder symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "EAT-26 scores were positively correlated with BSQ scores (r = .51, p < .01) in the aesthetic sports group",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "EAT-Dieting"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BMI"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.1
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "EAT-Dieting"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EAT-26"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.927
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "EAT-Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BMI"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.081
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "EAT-Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EAT-26"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.507
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "EAT-Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Dieting"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.32
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "EAT-Oral Control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BMI"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.472
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "EAT-Oral Control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EAT-26"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.708
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "EAT-Oral Control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Dieting"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.494
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "EAT-Oral Control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.108
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Dieting"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BSQ"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.513
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BSQ"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.116
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Oral control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Compensatory behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Oral control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Oral control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BSQ"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.326
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Dieting"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BID"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.239
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BID"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.164
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Oral control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Compensatory behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Oral control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Oral control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BID"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.062
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Dieting"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BIDS"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.174
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BIDS"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.238
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Oral control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Compensatory behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Oral control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Oral control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BIDS"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.15
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Dieting"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "E A T - O r a l Control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.05
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "E A T - O r a l Control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.125
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "BMI"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BSQ"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.106
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 2. Correlation matrix for aesthetic sports: Variables: BMI, EAT-26, Dieting, Bulimia, Oral control, BSQ, BID, BIDS; Correlation matrix: BMI - EAT-26 -0.077 - EAT-Dieting 0.100 - EAT-Bulimia 0.081 - EAT-Oral control -0.472** - BSQ 0.106 - BID 0.342** - BIDS 0.287*; Table 3. Correlation matrix for non-aesthetic sports: Variables: BMI, EAT-26, Dieting, Bulimia, Oral control, BSQ, BID, BIDS; Correlation matrix: BMI - EAT-26 0.041 - EAT-Dieting 0.125 - EAT-Bulimia 0.056 - EAT-Oral control -0.193 - BSQ 0.267* - BID 0.371** - BIDS 0.263*",
+      "_evidence_verified": false
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Pearson correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "The results of our study show that girls from aesthetic sports fight hard to make their bodies thin. If they are unsuccessful in that endeavor, they show dissatisfaction with their own bodies and use rigorous forms of dieting. This puts them at a greater risk of developing eating disorders, some of them already meeting the low weight criterion for anorexia nervosa."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Limitations in the present study include a small sample size from only one country where participants reported their height and weight and were at different levels of competition, from three different aesthetic sports."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "For all these sports, especially gymnastics, it is important to start a sport-specific career very early. The athletes in this investigation reported the start of their sport career at the age of 6.33 ± 2.45 years. The problem with the early start of sport-specific training is the risk of choosing a sport inappropriate for the athlete's body type (Sundgot-Borgen, 1994). Pubertal changes can affect the performance, so the earlier studies reported the importance to start primary prevention as early as 9-11 years, in order to protect athletes from different factors that can predispose them to develop eating disorders and bad eating habits (Coelho et al., 2014). Furthermore, engaging in sports associated with high levels of body preoccupation at an early and vulnerable age is also suggested as a factor for increasing the risk of eating disorders (Bratland-Sanda & Sundgot-Borgen, 2013; Currie, 2010). The regulation of body mass is a critical issue for the athletes and attention must be paid to their strategies for weight control. For this reason, educating athletes, as well as coaches and sport functionaries, regarding the causes and consequences of eating disorders seems to be a necessary form of prevention of these."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 54
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Athletes affiliated to clubs of different aesthetic and non-aesthetic sports in Serbia"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "23 from artistic and rhythmic gymnastics, 20 from dance, 11 from synchronized swimming (aesthetic sports); 20 from volleyball, 22 from soccer, 24 from basketball (non-aesthetic sports)"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Serbia"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

@@ -1,0 +1,1030 @@
+{
+  "_article": "Jankauskiene.2024",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Running",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:hasMediator",
+      "object": "Internalization of thin/low body fat appearance ideals\nInternalization of muscular/athletic body ideals",
+      "_rejected_reason": "prédicat 'hasMediator' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:mediatorMeasure",
+      "object": "Sociocultural Attitudes Towards Appearance Questionnaire (SATAQ-4)",
+      "_rejected_reason": "prédicat 'mediatorMeasure' absent de la classe Analysis"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "long-distance running"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "jumping in athletics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "judo"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "wrestling"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "lightweight rowing"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "rhythmic gymnastics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "artistic gymnastics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "figure skating"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "diving"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Internalization: thin/low body fat"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Internalization: thin/low body fat (ITH)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Cognitive dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body norms internalization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Internalization of thin/low body fat",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Internalization of thin/low body fat",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.07
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "χ2 = 3.492, p = 0.062; df = 1; CFI = 0.998; SRMR = 0.01; RMSEA = 0.07 (Figure 2)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Internalization: muscular/athletic"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Internalization: muscular/athletic (IM)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Cognitive dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body norms internalization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Internalization of muscular/athletic",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Internalization of muscular/athletic",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.059
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "χ2 = 2.794, p = 0.095; df = 1; CFI = 0.998; SRMR = 0.0095; RMSEA = 0.059",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Overweight preoccupation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Overweight preoccupation (OP)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perceptual dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Judgement of size, shape and weight",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Overweight preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Overweight preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.059
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "χ2 = 2.794, p = 0.095; df = 1; CFI = 0.998; SRMR = 0.0095; RMSEA = 0.059",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Perceived general sociocultural pressures"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Perceived general sociocultural pressures (GSP)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.053
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "β = 0.053, p = 0.061",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Perceived coach-related pressures"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Perceived coach-related pressures (CRP)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.05
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "β = 0.05, p = 0.094",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "General sociocultural pressures"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "GSP"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Overweight preoccupation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "OP"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perceptual dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Judgement of size, shape and weight",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Overweight preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Overweight preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.03
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 2. Mediated effects in the path models (women athletes, n = 515). Paths: GSP → OP, β = 0.03, 95% CI = 0.02-0.05, p = 0.001",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Coach-related pressures"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "CRP"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "General pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "General pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Overweight preoccupation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "OP"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perceptual dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Judgement of size, shape and weight",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Overweight preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Overweight preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 2. Mediated effects in the path models (women athletes, n = 515). Paths: CRP → OP, β = 0.02, 95% CI = 0.01-0.04, p = 0.007",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Internalization: thin/low body fat"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ITH"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Cognitive dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body norms internalization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Internalization of thin/low body fat",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Internalization of thin/low body fat",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Overweight preoccupation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "OP"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perceptual dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Judgement of size, shape and weight",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Overweight preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Overweight preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 2. Mediated effects in the path models (women athletes, n = 515). Paths: ITH → OP, β = 0.22, 95% CI = 0.18-0.26, p = 0.001",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Internalization: muscular/athletic"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "IM"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Cognitive dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body norms internalization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Internalization of muscular/athletic",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Internalization of muscular/athletic",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Overweight preoccupation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "OP"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perceptual dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Judgement of size, shape and weight",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Overweight preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Overweight preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.09
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 2. Mediated effects in the path models (women athletes, n = 515). Paths: IM → OP, β = 0.09, 95% CI = 0.05-0.13, p = 0.001",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Path analysis"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "General sociocultural pressures (parents, peers and media) are directly associated with disordered eating, and internalization of appearance ideals and overweight preoccupation mediate these associations in female competitive athletes. Controlling for general sociocultural pressures, perceived body weight and appearance-related pressures from coaches were associated with disordered eating through appearance internalization and overweight preoccupation in female competitive athletes. The tested mediation models were invariant across weight-sensitivity in sports and age groups."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The cross-sectional design precludes causal conclusions. Future studies should use designs other than cross-sectional ones to provide more knowledge on the directions between the studied variables. A full SEM to test the associations between latent variables was not conducted in this study, only a basic path analysis. Therefore, we strongly recommend SEM for future studies."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future studies should assess the sociocultural models assessing the development of positive body image in athletes and the role of the coach in this process. It is also important that future studies test Petrie and Greenleaf's and/or acceptance model of intuitive eating in men's samples since male athletes also face disordered eating in sports."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 515
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 515
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Being an athlete that competed for at least two years in any competitive sport and being an official member of a sports school, sports club, or national sports team"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "55.5% were <18 years, while 44.5% were 18 years and older"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "The duration of involvement in competitive sports varied from 2 to 11 years (mean ± SD: 7.1 ± 3.0 years). Athletes reported from 2 to 21 h (mean ± SD: 10.6 ± 5.1) of exercise per week"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Lithuania"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

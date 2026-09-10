@@ -1,0 +1,400 @@
+{
+  "_article": "DeSousaFortes.2015",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Track and field; basketball; boxing; canoeing; cycling; equestrian; jiu-jitsu; judo; swimming; water polo; rowing; diving; surfing; tae-kwon-do; tennis; triathlon; sailing; volleyball"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body fat dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body fat dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body fat dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.28
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Muscularity concern"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for Muscularity Scale (DMS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perceptual dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Judgement of size, shape and weight",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Muscularity concern",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscularity concern",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.13
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sociocultural factors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociocultural Attitudes Towards Appearance Questionnaire-3 (SATAQ-3)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Perception of sociocultural pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perception of sociocultural pressure from media",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Sociocultural factors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Sociocultural factors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.26
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sociocultural factors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociocultural Attitudes Towards Appearance Questionnaire-3 (SATAQ-3)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Perception of sociocultural pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perception of sociocultural pressure from media",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Sociocultural factors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Sociocultural factors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Only the sociocultural factors and body fat dissatisfaction adhered to etiological model of DE in Brazilian male athletes. Sociocultural factors (parents, friends and the media) exhibit a direct relationship to DE. The results of the structural equation model indicate that body fat dissatisfaction mediates the relationship between sociocultural factors and DE."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Because self-reporting instruments were used as evaluative tools, the results may not reflect the reality because the responses given were subjective. The study is also limited in that it applies a doubly indirect method to evaluate fat percentages. Weight and body fat measurements can influence the survey responses about body image and disordered eating. The heterogeneity of the sample with respect to age and type of sport could have influenced the results."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Sport professionals may use the present study findings to intervene in factors that promote disturbed eating in athletes. Because disordered eating can cause an attenuation of anaerobic potency and resistance, prevention/intervention programs that are designed to prevent disordered eating in athletes may indirectly improve athletic performance. The construction of a socio-sports model for Female is recommaleded."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 321
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Male"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Systematiccaly trained in a sport modality based on a training regimen of at least six hours of training per week (e.g., minimum of three days per week of two-hour sessions or six days per week of one hour sessions); participation in at least one regional competition in 2014 and; availability to respond to questionnaires and to participate in anthropometric evaluations."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "30% international level\n42% national level\n28% regional level"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 321
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Brazil"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

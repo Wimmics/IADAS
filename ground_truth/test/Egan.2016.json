@@ -1,0 +1,530 @@
+{
+  "_article": "Egan.2016",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Running, triathlon, ball sports (volleyball, football, baseball, basketball, golf, rugby, squash, netball, cricket, hockey, tennis, badminton), gym, other (water polo, sailing, surf lifesaving, pilates, skateboarding, hula hooping, equestrian), cycling, dance, yoga, athletics, rowing, swimming"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Perfectionism"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Clinical Pefectionism Questionnaire (CPQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Personality",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perfectionism",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Perfectionism",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.535
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Concern over mistakes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Multidimensional Perfectionism Scale (MPS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Personality",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perfectionism",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Maladaptive perfectionism",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Concern over mistakes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Concern over mistakes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.468
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Weight control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Compulsive Exercise Test (CET)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Weight control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Weight control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.779
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Exercise to improve mood"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Compulsive Exercise Test (CET)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Exercise to improve mood",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exercise to improve mood",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.117
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Clinical perfectionism\nConcern over mistakes\nAvoidance/rule driven behavior\nWeight control\nMood improvement"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Clinical Pefectionism Questionnaire (CPQ)\nFrost Multidimensional Perfectionism Scale (FMPS)\nThe 24-item CET\nThe 24-item CET\nThe 24-item CET"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.75
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Avoidance and rule driven behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Compulsive Exercise Test (CET)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Avoidance behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Avoidance and rule driven behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Avoidance and rule driven behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Other behaviors",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.431
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Intercorrelation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Direct and indirect effects were found between clinical perfectionism and eating pathology through compulsive exercise. Specifically, there were direct effects of clinical perfectionism on avoidance/rule driven behavior, weight control exercise, and mood improvement."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Participant recruitmalet was not random or stratified which limits generalizability. The sample comprised mainly of individuals who are actively involved in one particular type of athletic poursuit: individual endurance sports and particularly running. The sample may, therefore, not be representative of individuals involved in sport and exercise in general. In addition, the study was cross-sectional, therefore the bidirectional relationship between eating pathology and compulsive exercise could not be assessed as this requires a longitudinal design. While we hypothesized that perfectionism would affect compulsive exercise, which would impact eating pathology, it could equally be argued that perfectionism influences eating pathology, which then influences compulsive exercise (i.e., compulsive exercise is a symptom of eating pathology, rather than an antecedent). Indeed, Meyer et al.’s (2011) model proposed bidirectional links between eating pathology and compulsive exercise. Meyer et al. (2011) argued that dieting and exercise reinforce one another due to social reinforcers which accompany the initial weight loss from regular exercise, which then intensifies eating, shape and weight concerns."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "It would be useful to determine whether interventions for both perfectionism and compulsive exercise may help to improve the efficacy of standard treatments for eating disorders, above the gain already found in efficacious treatments such as CBT-E (Fairbunr et al., 2009) where clinical perfectionism is a focus if it is elevated. Future research could also examine the efficacy of specific stand-alone treatments for perfectionism (e.g., Egan et al., 2014) for compulsive exercise and perfectionism in eating disorders. Future research should measure perfectionism, compulsive exercise and eating pathology at two time points using a panel design and include a cross-lagged effects to determine the bidirectional relations between variables."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 368
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "The population was adults over the age of 18 years who participated in a diverse range of sport and exercise. The inclusion criteria of exercice twice or more per week was chosen to include people who exercised regularly but the criterion was relatively low as amount of exercise in not the defiing feature of compulsive exercise."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 368
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Australia"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

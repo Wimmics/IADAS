@@ -1,0 +1,662 @@
+{
+  "_article": "Stewart.2021",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-13",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 347,
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Appearance"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Contextual expressions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Appearance sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Appearance sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating disorder pathology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorders Examination Questionnaire (EDE-Q) global score"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.573
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Appearance dimensions predicted EDE-Q global scores at Time 2 when controlling for Time 1 EDE-Q global scores and BMI. The overall model accounted for 57.3% (adjusted R² of the variance (F(10, 301) = 41.40, p < .001)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Thin-Fat Self"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating disorder pathology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorders Examination Questionnaire (EDE-Q) global score"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.573
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Appearance dimensions predicted EDE-Q global scores at Time 2 when controlling for Time 1 EDE-Q global scores and BMI. The overall model accounted for 57.3% (adjusted R² of the variance (F(10, 301) = 41.40, p < .001)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Thin-Fat Others"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Thin-fat-others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Thin-fat-others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating disorder pathology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorders Examination Questionnaire (EDE-Q) global score"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.573
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Appearance dimensions predicted EDE-Q global scores at Time 2 when controlling for Time 1 EDE-Q global scores and BMI. The overall model accounted for 57.3% (adjusted R² of the variance (F(10, 301) = 41.40, p < .001)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Negative affect"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Positive and Negative Affect Schedule (PANAS) negative affect subscale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Exercise to avoid negative affect",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exercise to avoid negative affect",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sport Thin-Fat Others evaluation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.374
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Only Time 1 sport Thin-Fat Others predicted negative affect 6 months later (Time 2) when controlling for Time 1 PANAS scores and BMI. The overall model predicting negative affect accounted for 37.4% (adjusted R² of the variance (F(10, 304) = 19.19, p < .001)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body image dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.443
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Daily Life Appearance"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Appearance dimensions predicted EDE-Q global scores at Time 2 when controlling for Time 1 EDE-Q global scores and BMI."
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Contextual expressions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Appearance daily life",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Appearance daily life",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EDE-Q global score"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ],
+      "_evidence": "Table 5: Summary of multiple linear regression predicting ED pathology at 6-month follow-up (Time 2)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Sport Appearance"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Appearance dimensions predicted EDE-Q global scores at Time 2 when controlling for Time 1 EDE-Q global scores and BMI."
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Contextual expressions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Appearance sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Appearance sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EDE-Q global score"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Table 5: Summary of multiple linear regression predicting ED pathology at 6-month follow-up (Time 2)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Sport Thin-Fat Others"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Only Time 1 sport Thin-Fat Others predicted negative affect 6 months later (Time 2) when controlling for Time 1 PANAS scores and BMI."
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Thin-fat-others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Sport thin-fat-others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Sport thin-fat-others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Negative affect"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Exercise to avoid negative affect",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exercise to avoid negative affect",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 6: Summary of multiple linear regression predicting negative affect at 6-month follow-up (Time 2)",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Appearance-related scores could be used in a screening tool for athletes to predict future disordered eating and depression."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Limitations of the study include reliance on self-report data, attrition at follow-up, and that the CBIQA was delivered to participants 12 months into the FAB program as opposed to the beginning of the parent trial."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Further research on contextual body image is needed to evaluate the impact of these dual body images with female athletes-not only while in sport, but while away or retiring from sport, including periods of injury, between seasons and when completing sport."
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 380
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Female athletes aged 17-27 years at each university, with a mean age of 19 years and a mean BMI of 22.70 (SD = 2.91) at 12-month follow-up"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:studyType",
+      "object": "Longitudinal"
+    }
+  ]
+}

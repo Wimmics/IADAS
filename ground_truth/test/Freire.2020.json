@@ -1,0 +1,619 @@
+{
+  "_article": "Freire.2020",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Fitness; crossfit"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Orthorexic behavior"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-15"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Orthorexic behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexic behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.42
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.46
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Addiction to exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Scale of Dedication to Exercise (SDE)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Dependence and Excessive Exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.05
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Addiction to exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Scale of Dedication to Exercise (SDE)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Dependence and Excessive Exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.23
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": null
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-26)\nScale of Dedication to Exercise (SDE)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexic behavior"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-15"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Orthorexic behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexic behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.14
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexic behavior"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-15"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Orthorexic behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexic behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Addiction to exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Scale of Dedication to Exercise (SDE)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Dependence and Excessive Exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.14
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "There is a positive association of body dissatisfaction with risk behaviour for eating disorders and addiction to exercise."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Small number of participants and who were practitioners of only two modalities, which males impossible to generalize th results to practitioners of other exercises. \nThe cross sectional design which does not allow to make inferences of causality between the variables."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future researches should extend the study with practitioners from other regions of Brazilian population and exercises. \nA longitudinal study will be able to point to the causal nature of the association between BD, addiction to exercise and risk behavior for ED. \nIt is important that instructors and personal trainers analyse the real motives of the individuals to begin the practice of the exercise, always considering the chosen modality. Moreover, it is essential to emphasize the effects of long term training focusing on maintaining health and quality of life, always respecting the individuality and healthy evolution of training."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 60
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "To be at least 18 years old; to be a physical exercise practitioner for at least 3 months; to regularly attend the gym/crossfit box at least twice a week"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 60
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Brazil"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

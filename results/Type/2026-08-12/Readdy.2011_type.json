@@ -1,0 +1,852 @@
+{
+  "_article": "Readdy.2011",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-12",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 373,
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Physical unattractiveness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Female Gender Role Stress Questionnaire (Gillespie & Eisler, 1992)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.5
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "The Physical Unattractiveness subscale of the Female GRS scale was significantly related to MD symptoms in women (r = .50, p < .01).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Emotional inexpressiveness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Male Gender Role Stress Questionnaire (Eisler & Skidmore, 1987)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.45
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "The Emotional Inexpressiveness subscale of the Male GRS scale was significantly related to MD symptoms in men (r = .45, p < .01).",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sociocultural influences"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociocultural Influences Questionnaire"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.54
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "The Sociocultural Influences subscale was significantly related to MD symptoms in both women and men. For women, the correlation was r = .54 (p < .01), and for men, it was r = .40 (p < .01).",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Age"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.13
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Age was a significant predictor of MD symptoms in women (ß = .13, p < .05) and men (ß = .16, p < .05).",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Victimization"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Male Gender Role Stress Questionnaire (Eisler & Skidmore, 1987)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Conflicted and Negative Relationships",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Childhood victimization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Childhood victimization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "The Victimization subscale of the Male GRS scale was significantly related to MD symptoms in men (r = .42, p < .01).",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Behaving assertively"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Female Gender Role Stress Questionnaire (Gillespie & Eisler, 1992)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.57
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "The Behaving Assertively subscale of the Female GRS scale was significantly related to MD symptoms in women (r = .57, p < .01).",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Physical inadequacy"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Male Gender Role Stress Questionnaire (Eisler & Skidmore, 1987)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.43
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "The Physical Inadequacy subscale of the Male GRS scale was significantly related to MD symptoms in men (r = .43, p < .01).",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Frequency of aerobics (days/week)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.19
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Frequency of aerobic exercise was a significant predictor of MD symptoms in women (ß = .19, p < .05).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Frequency of weight training (days/week)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.21
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Frequency of weight training was a significant predictor of MD symptoms in men (ß = .21, p < .05).",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Feeling less attractive than you once were"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.43
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 6. Predictors of muscle dysmorphia symptomology for women and men separately using significant items from the 10 gender role stress subscales and the sociocultural scale: Step predictor 'Feeling less attractive than you once were' (R = .43, R2 = .18, ß = .19, p < .001)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Being heavier than your mate"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.5
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 6. Predictors of muscle dysmorphia symptomology for women and men separately using significant items from the 10 gender role stress subscales and the sociocultural scale: Step predictor 'Being heavier than your mate' (R = .50, R2 = .25, ß = .21, p < .001)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Seeing beautiful women/handsome men in movies, TV, or ads"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.54
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 6. Predictors of muscle dysmorphia symptomology for women and men separately using significant items from the 10 gender role stress subscales and the sociocultural scale: Step predictor 'Seeing beautiful women/handsome men in movies, TV, or ads' (R = .54, R2 = .29, ß = .18, p < .01)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Finding you have gained 10 pounds (4.5 kg)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.57
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 6. Predictors of muscle dysmorphia symptomology for women and men separately using significant items from the 10 gender role stress subscales and the sociocultural scale: Step predictor 'Finding you have gained 10 pounds (4.5 kg)' (R = .57, R2 = .32, ß = .19, p < .05)",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "The findings offer further areas of convergence between women and men with respect to muscularity, suggesting that GRS and sociocultural influences are important correlates of MD."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "First, there was no measure of participants' gender role identification. Second, the limited age range and lack of racial diversity in our sample restricted our ability to make conclusions about a broad segment of the population. Third, the level of MD symptoms reported in our sample was rather low."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research might use qualitative methods to illuminate the different meanings women and men might ascribe to 'muscularity' and the questionnaire items that attempt to measure this construct."
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Undergraduate students from a large northwestern university recruited from convenience samples of undergraduate courses; self-identified as Caucasian (79.89%) or Asian/Pacific Islander (13.14%); grade level distribution was freshman (41.48%), sophomore (21.43%), junior (19.51%), senior (17.31%), and postbaccalaureate (0.27%)."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Students"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

@@ -1,0 +1,743 @@
+{
+  "_article": "Costa.2016",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:hasMediator",
+      "object": "Maladaptive perfectionism",
+      "_rejected_reason": "prédicat 'hasMediator' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:moderatorMeasure",
+      "object": "Not applicable",
+      "_rejected_reason": "prédicat 'moderatorMeasure' absent de la classe Analysis"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Psychological control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Parental Psychological Control Scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Conflicted and Negative Relationships",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Inadequate parents' relationships",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Psychological control father",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Psychological control father",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.49
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.34
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.33
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.35
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.35
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ],
+      "_evidence": "Psychological control was related positively to maladaptive perfectionism in both the maternal (β = .49; p < .01) and paternal model (β = .42; p < .01). In turn, maladaptive perfectionism was related positively to eating disorders (β = .34; p < .01), and exercise dependence (β = .33; p < .01) in the maternal model. Maladaptive perfectionism was also related positively to eating disorders (β = .35; p < .01), and exercise dependence (β = .35; p < .01) in the paternal model.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Maladaptive perfectionism"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Maladaptive Perfectionism Scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Personality",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perfectionism",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Maladaptive perfectionism",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Maladaptive perfectionism",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.49
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.51
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.49
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.51
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.5
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ],
+      "_evidence": "Psychological control was related positively to maladaptive perfectionism in both the maternal (β = .49; p < .01) and paternal model (β = .42; p < .01). In turn, maladaptive perfectionism was related positively to eating disorders (β = .51; p < .01), and exercise dependence (β = .49; p < .01) in the maternal model. Maladaptive perfectionism was also related positively to eating disorders (β = .51; p < .01), and exercise dependence (β = .50; p < .01) in the paternal model.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Exercise dependence"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise Dependence Scale (EDS-R)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Psychopathological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Exercise dependence",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exercise dependence",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Psychological control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Parental Psychological Control Scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Conflicted and Negative Relationships",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Inadequate parents' relationships",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Psychological control father",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Psychological control father",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.49
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.51
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.49
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.51
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.5
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ],
+      "_evidence": "Psychological control was related positively to maladaptive perfectionism in both the maternal (β = .49; p < .01) and paternal model (β = .42; p < .01). In turn, maladaptive perfectionism was related positively to eating disorders (β = .51; p < .01), and exercise dependence (β = .49; p < .01) in the maternal model. Maladaptive perfectionism was also related positively to eating disorders (β = .51; p < .01), and exercise dependence (β = .50; p < .01) in the paternal model.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Exercise dependence"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise Dependence Scale (EDS-R)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Psychopathological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Exercise dependence",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exercise dependence",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Maladaptive perfectionism"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Maladaptive Perfectionism Scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Personality",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perfectionism",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Maladaptive perfectionism",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Maladaptive perfectionism",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.49
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.51
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.49
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.51
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.5
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ],
+      "_evidence": "Psychological control was related positively to maladaptive perfectionism in both the maternal (β = .49; p < .01) and paternal model (β = .42; p < .01). In turn, maladaptive perfectionism was related positively to eating disorders (β = .51; p < .01), and exercise dependence (β = .49; p < .01) in the maternal model. Maladaptive perfectionism was also related positively to eating disorders (β = .51; p < .01), and exercise dependence (β = .50; p < .01) in the paternal model.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body image dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.27
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "β = .48"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Conflicted and Negative Relationships",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Inadequate parents' relationships",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Psychological control father",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Psychological control father",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating disorder"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "β = .28"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.48
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 3. Path estimates, SEs and 95% CIs for models in the male sample",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Structural Equation Modelling (SEM)"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "The full mediation model was the most parsimonious and best fitting model for the maternal data, while the partially mediated model was the best fitting model for the paternal data."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The data were collected at one time point and not across multiple time points as it should be done for a true mediational analysis. Because of the cross-sectional and self-report design of our study, we cannot establish either the direction or causality of the effects. As well, the self-report data may have intrinsic limitations such as social desirability, so the use of objective and multi-informant measures and experimental designs are encouraged."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future researchers are encouraged to rely on larger and more heterogeneous samples, including clinical populations, to explore the generalizability of the hypothesized model."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 348
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 348
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Exercisers who had trained for at least 6 consecutive months, lived at home with both parents, and were at least 18 years of age"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Habitual exercisers"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Italy"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

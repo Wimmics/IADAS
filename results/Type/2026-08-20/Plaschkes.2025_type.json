@@ -1,0 +1,1093 @@
+{
+  "_article": "Plaschkes.2025",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-20",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:signeP",
+      "object": "p<.001",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:signeP",
+      "object": "p<.001",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Hierarchical multiple regression",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sports club membership"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "N/A"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.011
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Sports club membership was also associated with a significantly lower emotional problems sub scale score on the SDQ (F(1.521) = 5.92; p <.05; ηp 2 = .011).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Figure Rating Scale (FRS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sports club membership"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "N/A"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.031
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "There was a significant effect of sports membership on body dissatisfaction (F(1.532) = 16.81; p < .001; ηp 2 = .031; Sports Club Members: .97 (.86), Non-members: 1.33 (1.01)) and body appreciation only (F(1.529) = 6.43, p < .01; ηp 2 = .012; Sports Club Members: 3.32 (.84) Non-members: 3.11 (.89)).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body appreciation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Appreciation Scale-2 (BAS-2)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sports club membership"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "N/A"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.012
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "There was a significant effect of sports membership on body dissatisfaction (F(1.532) = 16.81; p < .001; ηp 2 = .031; Sports Club Members: .97 (.86), Non-members: 1.33 (1.01)) and body appreciation only (F(1.529) = 6.43, p < .01; ηp 2 = .012; Sports Club Members: 3.32 (.84) Non-members: 3.11 (.89)).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Belongingness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "General Belongingness Scale (GBS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Basic psychological needs",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Basic needs satisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Belongingness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Belongingness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Figure Rating Scale (FRS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.327
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Belongingness Body dissatisfaction Body appreciation EAT-26 -.327* .398* -.492* SDQ -.675* .294* -.506* Significant partial correlations while controlling for age and sex are indicated with asterisks (p <.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Belongingness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "General Belongingness Scale (GBS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Basic psychological needs",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Basic needs satisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Belongingness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Belongingness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body appreciation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Appreciation Scale-2 (BAS-2)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Belongingness Body dissatisfaction Body appreciation EAT-26 -.327* .398* -.492* SDQ -.675* .294* -.506* Significant partial correlations while controlling for age and sex are indicated with asterisks (p <.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Figure Rating Scale (FRS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Belongingness Body dissatisfaction Body appreciation EAT-26 -.327* .398* -.492* SDQ -.675* .294* -.506* Significant partial correlations while controlling for age and sex are indicated with asterisks (p <.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body appreciation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Appreciation Scale-2 (BAS-2)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Belongingness Body dissatisfaction Body appreciation EAT-26 -.327* .398* -.492* SDQ -.675* .294* -.506* Significant partial correlations while controlling for age and sex are indicated with asterisks (p <.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Belongingness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "negative"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Basic psychological needs",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Basic needs satisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Belongingness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Belongingness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EAT-26"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "negative"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": "-.327"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 3: Belongingness: EAT-26: -.327*",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Belongingness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "negative"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Basic psychological needs",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Basic needs satisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Belongingness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Belongingness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "SDQ"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "negative"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": "-.675"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 3: Belongingness: SDQ: -.675*",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "positive"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EAT-26"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "positive"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": ".398"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 3: Body dissatisfaction: EAT-26: .398*",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "positive"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "SDQ"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "positive"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": ".294"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 3: Body dissatisfaction: SDQ: .294*",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body appreciation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "negative"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EAT-26"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "negative"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": "-.492"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 3: Body appreciation: EAT-26: -.492*",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body appreciation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "negative"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "SDQ"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "negative"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": "-.506"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 3: Body appreciation: SDQ: -.506*",
+      "_evidence_verified": false
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "University sports club membership is associated with fewer symptoms of disordered eating and emotional problems. Sports club members had lower body dissatisfaction and higher body appreciation compared to non-members. These results were driven by significant differences between lean-sports members and non-members. Lean-sports membership was associated with the lowest levels of disordered eating symptoms, emotional and conduct problems. Lean sports members had the lowest levels of body dissatisfaction and highest body appreciation."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "First, there is likely to be heterogeneity within sports groupings which we were underpowered to investigate. Similarly, it is possible that there are sex*sports interactions regarding disordered eating symptoms and body image metrics (McDonald et al., 2020), however we were underpowered to investigate these. Second, we lacked information on clinical diagnosis of eating disorders and mental health conditions. We utilised industry standard questionnaire measures that have been validated for use in this population, but these may not be sensitive enough to identify those at slightly lower risk for disordered eating (Papini et al., 2022). Third, while the EAT-26 is a widely used and validated screening tool, it is not a diagnostic instrument. It is possible that the EAT-26 underestimates symptom severity due to underreporting or denial of symptoms, a known issue in clinical and non-clinical populations (Ali et al., 2020; Garner et al., 1982; Papini et al., 2022). As such, the true extent of disordered eating attitudes may be greater than reflected in the self-reported scores. Fourth, we did not measure competition level or physical activity frequency. This is important because both factors may confound the effects of sports membership (McMahon et al., 2017; Picard, 1999). Lastly, this study employed a cross-sectional design and is therefore limited in its ability to make causal inferences. Further work employing longitudinal designs is required."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "More work is needed to replicate and establish the mechanisms in which university lean-sports clubs achieve this effect."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 537
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 537
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "UK-based higher education students aged 18+ residing in the UK and studying at a UK-based higher education institution"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Students"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "295 Sports club members 242 Non-sports club members"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Sports club members"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

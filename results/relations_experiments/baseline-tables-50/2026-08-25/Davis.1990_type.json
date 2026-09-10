@@ -1,0 +1,119 @@
+{
+  "_article": "Davis.1990",
+  "_tag": "baseline-tables-50",
+  "_variant": "tables",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Emotional well-being"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Positive and Negative Affective States (PANAS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.54
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "the self-rating of emotional well-being (EMOT) is significantly correlated with the measure of body dissatisfaction (BD), r =0.54, p < .01",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Emotional well-being"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "EMOT"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Weight and diet concerns"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "WDC"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 3: Correlations for Exercisers and Non-exercisers: EMOT with WDC, r = 0.40 for exercisers; r = 0.15 for non-exercisers",
+      "_evidence_verified": false
+    }
+  ]
+}

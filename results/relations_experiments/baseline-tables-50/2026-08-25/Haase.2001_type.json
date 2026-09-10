@@ -1,0 +1,96 @@
+{
+  "_article": "Haase.2001",
+  "_tag": "baseline-tables-50",
+  "_variant": "tables",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Social physique anxiety"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Social Physique Anxiety Scale (SPAS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Appearance-related anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Social physique anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Social physique anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating attitudes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.6256
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "When SPA was introduced (step 1), the _R 2 was significant, F (1.236) = 62.56, p< .001.",
+      "_evidence_verified": true
+    }
+  ]
+}

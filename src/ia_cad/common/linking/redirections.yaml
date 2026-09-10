@@ -1,0 +1,77 @@
+# redirections.yaml — pansements de rangement (variable + sport)
+#
+# ATTENTION — statut different des corrections faites dans ontology/linking-tuned/ jusqu'ici :
+# celles-ci etaient toutes justifiees par une preuve deja presente dans le thesaurus
+# (un altLabel/prefLabel existant). Les entrees ci-dessous n'ont PAS cette garantie :
+# ce sont des rapprochements faits a l'appreciation (nom le plus proche dans le
+# thesaurus actuel), sans verification systematique dans l'ABox. A la demande
+# explicite d'Alban le 30/07, en connaissance du risque deja documente la semaine
+# precedente (retrait d'un fichier equivalent pour la meme raison : rangement
+# fausse par interpretation plutot que par le thesaurus lui-meme).
+#
+# A retirer/verifier des que le thesaurus source est corrige a la racine (variantes
+# orthographiques alignees, typos corriges) ou que l'equipe tranche la classification
+# des concepts qui n'ont aucune correspondance connue.
+#
+# Format : {section: {nom_brut_en_minuscule: libelle_cible_existant_dans_le_thesaurus}}
+
+variable:
+  # Variantes orthographiques / de formulation tres proches d'un concept existant
+  "appearance and performance weight pressures": "Appearance and performance weight pressure"
+  "athletic identity": "Athlete identity"
+  "athlete identity x competition level": "Athlete identity"
+  "coach athlete-relationship": "Coach-athlete relationship"
+  "emotional regulation": "Emotion regulation"
+  "exercise addiction": "Addiction to exercise"
+  "exercise dependence intention effects": "Exercise dependence intention effect"
+  "exercising for health": "Exercising for health/fitness"
+  "food and alcohol disturbance- alcohol": "Food and alcohol disturbance-alcohol"
+  "inadequate parents relationships": "Inadequate parents' relationships"
+  "muscularity oriented attitudes": "Muscularity-oriented attitudes"
+  "obsessive passion": "Obsessive passion toward an activity"
+  "perceived sociocultural pressure look more muscular": "Perceived sociocultural pressure be more muscular"
+  "sociocultural pressure influence of muscular ideals": "Perceived sociocultural pressure be more muscular"
+  "reduction in other activities": "Exercise dependence reduction in other activities"
+  "self critical perfectionism": "Self-critical perfectionism"
+  "self evaluative perfectionism": "Self-evaluative perfectionism"
+  "self identity": "Self-identity"
+  "severity of critical comments": "Severity of critical comment"
+  "shape and weight concern": "Weight and shape concern"
+  "sociocultural attitudes towards appearance": "Sociocultural attitudes toward appearance"
+  "sport muscularity": "Muscularity sport"
+  "uniform influence": "Uniform influences"
+  "withdrawal": "Exercise dependence withdrawal"
+
+  # Rattachements a l'appreciation (pas de variante orthographique proche, choix du
+  # concept parent/voisin le plus plausible -- a faire valider par l'equipe)
+  "cognitive reappraisal expressive suppression": "Emotion regulation"
+  "guilt": "Guilt/shame"
+  "guilt if skipping training": "Guilt/shame"
+  "shame and guilt": "Guilt/shame"
+  "mastery / autonomy support": "Perceived autonomy"
+  "mood modification": "Exercise dependence"
+  "objective binge episode": "Binge eating"
+  "social oriented perfectionism": "Perfectionism socially prescribed"
+  "social pressure from the sports environment": "Perception of social and sport pressure from other"
+
+  # Non rattaches : aucun concept proche trouve dans le thesaurus, le forcer vers un
+  # concept existant aurait ete faux plutot qu'approximatif -- a trancher avec l'equipe
+  # "intuitive eating": ???  (construit distinct, absent du thesaurus)
+
+sport:
+  # Fautes/variantes orthographiques qui font echouer la resolution
+  "cyclism": "Cycling"
+  "powerlifter": "Powerlifting"
+  "rhythmic gymnastics": "Rythmic gymnastics"  # typo existant dans le thesaurus source (sans 'h')
+
+  # NON inclus volontairement : les cas ou le rangement actuel donne une
+  # sous-categorie precise (ex. Aesthetic) alors que le GT attend "None" ou
+  # "Multisport" ne sont PAS des erreurs de rangement -- soit le GT lui-meme
+  # n'a pas de categorie pour ce sport dans la hierarchie (~140 cas, un vrai
+  # trou de donnee, pas une erreur d'algo), soit c'est une divergence de regle
+  # sur les listes multi-sports (l'algo garde la categorie commune quand tous
+  # les sports listes partagent la meme ; le GT semble toujours vouloir
+  # "Multisport" des que nbrSport > 1, meme si toutes les sous-disciplines sont
+  # identiques). Rediriger ces cas casserait des classifications aujourd'hui
+  # correctes juste pour matcher un score -- a corriger dans la regle
+  # d'agregation (classify_sport_field), pas ici.

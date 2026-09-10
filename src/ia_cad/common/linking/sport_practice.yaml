@@ -1,0 +1,13 @@
+# Catégorie de sport (iadas:sportCategory) -> typeOfSportPractice.
+# typeOfSportPractice n'existe dans aucun TTL (ni sur les concepts, ni sur les
+# catégories) ; cette table le fournit. Ajouter une catégorie = une ligne ici.
+default: Individual sport
+map:
+  Ball game: Team sport
+  Aesthetic: Individual sport
+  Antigravitation: Individual sport
+  Combined: Individual sport
+  Endurance: Individual sport
+  Power: Individual sport
+  Technical: Individual sport
+  Weight class: Individual sport

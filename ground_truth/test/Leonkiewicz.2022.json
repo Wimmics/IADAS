@@ -1,0 +1,163 @@
+{
+  "_article": "Leonkiewicz.2022",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Ballet, gymnastics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating behavior"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "8 dichotomous questions"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Perception of one's own body and self"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "8 dichotomous questions"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perceptual dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body self-perception",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Perception of one's own body and self",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Perception of one's own body and self",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Unhealthy eating behavior is significantly related to rigorous self perception."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The small size of the BGA group. Modification of the ARS questionnaire, which was adapted to the needs of the study of girls aged 10-12."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Our results indicate the need for early nutritional or dietary intervention in the group of 10-12 year old young ballet dancers and artistic gymnasts, including nutritional education, e.g. in terms of consuming an appropriate number of meals during the day, the role of individual nutrients, the harmfulness of fasting and taking slimming. The intervention should also include psychological care in order to raise self-esteem, which affects eating behavior, health and job satisfaction."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 120
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Female student of the state ballet school and artistic gymnastics classes, aged 10-12 and primary school Female students of the same age from the same urban centers."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "60 Females ballet and artistic gymnastics\n60 Females student"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 120
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Poland"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

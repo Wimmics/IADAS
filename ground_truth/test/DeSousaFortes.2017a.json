@@ -1,0 +1,191 @@
+{
+  "_article": "DeSousaFortes.2017a",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Surf"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Antigravitation"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Diet"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body Shape\nDrive for muscularity"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)\nDrive for Muscularity Scale (DMS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.2
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia and food preoccupation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Bulimia and food preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia and food preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body Shape\nDrive for muscularity"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)\nDrive for Muscularity Scale (DMS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.13
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=.01"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple linear regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Dissatisfaction based on body fat was more strongly related to DE than the drive for muscularity. Surfers dissatisfied with their body fat levels were more vulnerable to DE than those with a high drive for muscularity. The surfers who were more concerned with their amount of body fat appeared to be more vulnerable to the onset of anorexia and/or bulimia nervosa."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The Eating Attitude Test, may not be sensitive to the assessment of eating behaviors typical of individuals with a high drive for muscularity. Some intervening variables related to disordered eating were not evaluated, such as ethnicity, psychological dependence on exercise and socioeconomic level."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should use sensitive instruments to assess these behaviors."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 175
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Male"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Must be a surfing athlete for at least two years; must systematically train in surfing for at least 6 hours per week; must have participated in one of the steps of the Brazilian surfing circuit in 2014, wich is organized by the Brazilian surfing federation; and must have a willingness to asnwer questionnaires and participate in anthropometric measurements."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 175
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Brazil"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

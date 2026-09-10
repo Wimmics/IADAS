@@ -1,0 +1,231 @@
+{
+  "_article": "Krentz.2011a",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Figure skating, gymnastics, ballet, roller-skate figure skating, diving, rhythmic gymnastics, volleyball, handball, basketball"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Emotional distress resulting from missed exercise sessions\nSports related body dissatisfaction\nDesire to be leaner to improve sport performance\nSocial pressure from the sports environments"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Obligatory Exercise Questionnaire (OEQ)\nContour Drawing Rating Scale (CDRS)\nATHLETE Scale Drive for Thinness and Performance\nGerman Questionnaire on Appearance Related Social Pressure"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.59
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Emotional distress resulting from missed exercise sessions\nSports related body dissatisfaction\nDesire to be leaner to improve sport performance\nSocial pressure from the sports activities\nSocial pressure from the sports environments x emotional distress resulting from missed exercise sessions"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Obligatory Exercise Questiionnaire (OEQ)\nContour Drawing Rating Scale (CDRS)\nATHLETE Scale Drive for Thinness and Performance\nGerman Questionnaire on Appearance Related Social Pressure \nGerman Questionnaire on Appearance Related Social Pressure  -  Obligatory Exercise Questiionnaire (OEQ)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.04
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Emotional distress resulting from missed exercise sessions\nSports related body dissatisfaction\nDesire to be leaner to improve sport performance\nSocial pressure from the sports activities\nSocial pressure from the sports environments x emotional distress resulting from missed exercise sessions"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Obligatory Exercise Questiionnaire (OEQ)\nContour Drawing Rating Scale (CDRS)\nATHLETE Scale Drive for Thinness and Performance\nGerman Questionnaire on Appearance Related Social Pressure \nGerman Questionnaire on Appearance Related Social Pressure  -  Obligatory Exercise Questiionnaire (OEQ)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Hierarchical regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "From both sports, the emotional distress resulting from missed exercise sessions and the desire to be leaner to improve sports performance were significant predictors."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Further limitations of this study are due to sample characteristics ; the interpretation are limited to aesthetic and ballgames sports."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Larger sample sizes are necessary to test more differentiated models. More comparisons between types of sports are necessary to enhanance the knowledge of the specific risk factors in sports and to understand why prevalence rates for disordered eating vary between different types of sports."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 96
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Aesthetic sport athletes from two olympic training centers and three elite sport schools, aged between 11 and 17 ; ballgame sports athletes from two elite sport shcools, aged between 12 and 16 years"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Elite sport school/olympic training center"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 171
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Germany"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

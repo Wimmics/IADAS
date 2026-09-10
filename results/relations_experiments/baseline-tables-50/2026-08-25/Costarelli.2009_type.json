@@ -1,0 +1,175 @@
+{
+  "_article": "Costarelli.2009",
+  "_tag": "baseline-tables-50",
+  "_variant": "tables",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating attitudes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Disordered eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Anxiety levels"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "State-Trait Anxiety Inventory (STAI)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 2.986
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Regression analysis revealed that disordered eating attitudes were significantly positively correlated with anxiety levels (p < 0.001) and Self-Classified Weight (p < 0.001). In addition, subjects with higher levels of anxiety tended to have lower levels of EI (p < 0.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating attitudes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Disordered eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Self-Classified Weight"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Self-Classified Weight"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 4.055
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Regression analysis revealed that disordered eating attitudes were significantly positively correlated with anxiety levels (p < 0.001) and Self-Classified Weight (p < 0.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Anxiety levels"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "State-Trait Anxiety Inventory (STAI)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Emotional intelligence (BarOn EQ-I)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "BarOn Emotional Intelligence Questionnaire (BarOn EQ-I)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.347
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Spearman rank order correlation coefficients between anxiety levels (STAI) and different psychometric parameters of emotional intelligence (BarOn EQ-I) in the 60 study subjects",
+      "_evidence_verified": true
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "_article": "Annus.2009",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Dance"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Aesthetic"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for thinness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating disorder inventory body dissatisfaction subscale (EDI-BD)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Time spent in dance class\nLearning regarding thinness\nThinness/restricting expectancies"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Total time, in hours, spent in dance class\nTotal learning regarding thinness from all dance classes attended\nThinness and restricting expectancy inventory (TREI)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.35
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Time spent in dance class\nLearning regarding thinness\nThinness/restricting expectancies"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Total time, in hours, spent in dance class\nTotal learning regarding thinness from all dance classes attended\nThinness and restricting expectancy inventory (TREI)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.39
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Objective binge episode"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Number of reported objective binge episodes in the past 28 days"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Time spent in dance class\nLearning regarding thinness\nThinness/restricting expectancies"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Total time, in hours, spent in dance class\nTotal learning regarding thinness from all dance classes attended\nThinness and restricting expectancy inventory (TREI)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Purging"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Number of reported purge episodes in the past 28 days"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Compensatory behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Purging",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Purging",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Time spent in dance class\nLearning regarding thinness\nThinness/restricting expectancies"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Total time, in hours, spent in dance class\nTotal learning regarding thinness from all dance classes attended\nThinness and restricting expectancy inventory (TREI)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Hierarchical multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Symptom endorsement does not relate to dance involvement by itself, but rather to involvement in dance classes that teach and emphasize thinness"
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Sample was not a clinical sample. We did not show that dance class-related learning was related to diagnosable dysfunction. The study was cross-sectional and so does not constitute a test of the temporal or causal aspect of the proposed influences of dance class-related learning or of expectancy theory. Our measures of thinness-related learning in dance class was retrospective, so those learning reports may thus be subject to recall bis."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Research is needed whcich uses objective measures of thinness-related learning in dance class, such as behavioural observations of dance instructors, to begin to untangle the roles of actual learning experiences, individual perceptions and personality dispositions in the relationship between reported learning experiences and eating disorder symptoms."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 501
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Undergraduate college Female who received partial course credit for participation, informed consent."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Dancers N=232\nNon-dancers N=268"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Ten participants reported that they had danced professionally at one time, and 47 participants reported that they had danced semi-professionally at one time."
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 501
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

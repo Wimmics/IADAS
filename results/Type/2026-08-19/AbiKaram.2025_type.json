@@ -1,0 +1,332 @@
+{
+  "_article": "AbiKaram.2025",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.001",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.001' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:hasMediator",
+      "object": "Body dysmorphic concerns\nBody appreciation",
+      "_rejected_reason": "prédicat 'hasMediator' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:mediatorMeasure",
+      "object": "Body Appreciation Scale (BAS-2)\nDysmorphic Concern Questionnaire (DCQ)",
+      "_rejected_reason": "prédicat 'mediatorMeasure' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "124 Males 148 Females",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body appreciation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Appreciation Scale (BAS-2)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.06
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Body appreciation explained a significant amount of the variance in the association between exercise addiction and disordered eating (indirect effect: Beta = 0.06; Boot SE = 0.01; Boot CI 0.04; 0.08). Higher exercise addiction was significantly associated with lower body appreciation and directly associated with more disordered eating. Moreover, higher body appreciation was significantly associated with less disordered eating.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body dysmorphic concerns"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Dysmorphic Disorder Questionnaire (BDD-Y-BOCS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dysmorphic concerns",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dysmorphic concerns",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Body dysmorphic concerns explained a significant amount of the variance in the association between exercise addiction and disordered eating (indirect effect: Beta = 0.05; Boot SE = 0.01; Boot CI 0.03; 0.07). Higher exercise addiction was significantly associated with more body dysmorphic concerns and directly associated with more disordered eating. Moreover, higher body dysmorphic concerns were significantly associated with more disordered eating.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Physical activity"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "52.11 ± 15.97"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "4.93 ± 5.19"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 2: Physical activity 0.40***; Disordered eating -0.39***",
+      "_evidence_verified": false
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Pearson correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "The results indicate that body dysmorphic concerns and body appreciation function may be key mechanisms linking exercise addiction and disordered eating in young adult regular sport practitioners. The findings provide evidence of an association between exercise addiction and disordered eating in young adult regular sport practitioners, highlighting the importance of body dysmorphic concerns and body appreciation as intermediate variables."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "First, the study design is cross-sectional which limits our capacity to establish causality and temporal relationships between the variables studied. In addition, the study was based on self-reported questionnaires, which could introduce social desirability bias. There is also the potential for information bias, as participants may provide inaccurate or misleading responses."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research with a larger and more diverse sample is needed to further explore these relationships. Additionally, studies in other countries could determine whether these findings are specific to the local context or have broader applicability."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 321
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 321
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Lebanese adults older than 18, actively engaged in sports, participating in structured sports training sessions at least three times per week from a range of sports, including endurance, strength-based, and team sports"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Regular sport practitioners"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Lebanon"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

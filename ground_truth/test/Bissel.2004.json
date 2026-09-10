@@ -1,0 +1,1594 @@
+{
+  "_article": "Bissel.2004",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport (e.g., soccer, basketball, track and field, softball, swimming, diving, gymnastics)."
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for thinness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Interest in body-improvement TV content"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Question How interested would you be in a new 30 minute television show focused on the topics below?"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.36
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Interest in body-improvement TV content"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Question How interested would you be in a new 30 minute television show focused on the topics below?"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.36
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Anorexia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Anorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Exposure to entertainment TV"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Frequence of watch"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Exposure to entertainment TV",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exposure to entertainment TV",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.28
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Exposure to entertainment TV"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Frequence of watch"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Exposure to entertainment TV",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exposure to entertainment TV",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.34
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for thinness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Exposure to entertainment TV"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Frequence of watch"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Exposure to entertainment TV",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exposure to entertainment TV",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.44
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Anorexia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Anorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "interest in body-improvement TV content"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "single item: How interested would you be in a new 30-minute television show focused on the topics below?”"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.26
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "interest in body-improvement TV content"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "single item: How interested would you be in a new 30-minute television show focused on the topics below?”"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.33
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for thinness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "interest in body-improvement TV content"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "single item: How interested would you be in a new 30-minute television show focused on the topics below?”"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.47
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Exposure to sports on television"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Minutes per day spent in viewing"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Exposure to sports on television",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exposure to sports on television",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -24.0
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for thinness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Exposure to sports on television"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Minutes per day spent in viewing"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Exposure to sports on television",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exposure to sports on television",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -27.0
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Anorexia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Anorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sport magazine reading"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Frequency in reading"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Sport magazine reading",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Sport magazine reading",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.28
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sport magazine reading"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Frequency in reading"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Sport magazine reading",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Sport magazine reading",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.52
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for thinness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sport magazine reading"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Frequency in reading"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Sport magazine reading",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Sport magazine reading",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Anorexia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Anorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Interest in body-improvement TV content\nSports participation\nExposure to thin ideal TV"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Interest in body-improvement television, was measured using the question, “How interested would you be in a new 30-minute television show focused on the topics below?” The responses listed categories such as news and politics, violent crime, and dieting. The categories of dieting, sports, fitness, nutrition, and exercise were viewed as body-improvement television content. Thus, these five items were combined to create an additive score representing respondents’ interest in body-improvement television content.\nRespondents were asked several questions related to their participation in sports. Respondents were asked to report the sport they competed in primarily for the university. Participants were then asked to report the total amount of time they estimated practicing their sport for competition\nTo measure exposure to thin ideal TV, respondents were asked to indicate how frequently they watched specific programs by using a 5-point scale ranging from 0 (never) to 4 (regularly). Forty television shows airing on six networks—NBC, ABC,\nCBS, Fox, UPN, and WB—were selected from the Fall 2001 season."
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.06
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Interest in body-improvement TV content\nSports participation\nExposure to thin ideal TV"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Interest in body-improvement television, was measured using the question, “How interested would you be in a new 30-minute television show focused on the topics below?” The responses listed categories such as news and politics, violent crime, and dieting. The categories of dieting, sports, fitness, nutrition, and exercise were viewed as body-improvement television content. Thus, these five items were combined to create an additive score representing respondents’ interest in body-improvement television content.\nRespondents were asked several questions related to their participation in sports. Respondents were asked to report the sport they competed in primarily for the university. Participants were then asked to report the total amount of time they estimated practicing their sport for competition\nTo measure exposure to thin ideal TV, respondents were asked to indicate how frequently they watched specific programs by using a 5-point scale ranging from 0 (never) to 4 (regularly). Forty television shows airing on six networks—NBC, ABC,\nCBS, Fox, UPN, and WB—were selected from the Fall 2001 season."
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.11
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for thinness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude test (EAT-26) and Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Interest in body-improvement TV content\nSports participation\nExposure to thin ideal TV"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Interest in body-improvement television, was measured using the question, “How interested would you be in a new 30-minute television show focused on the topics below?” The responses listed categories such as news and politics, violent crime, and dieting. The categories of dieting, sports, fitness, nutrition, and exercise were viewed as body-improvement television content. Thus, these five items were combined to create an additive score representing respondents’ interest in body-improvement television content.\nRespondents were asked several questions related to their participation in sports. Respondents were asked to report the sport they competed in primarily for the university. Participants were then asked to report the total amount of time they estimated practicing their sport for competition\nTo measure exposure to thin ideal TV, respondents were asked to indicate how frequently they watched specific programs by using a 5-point scale ranging from 0 (never) to 4 (regularly). Forty television shows airing on six networks—NBC, ABC,\nCBS, Fox, UPN, and WB—were selected from the Fall 2001 season."
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.24
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Subscale of Eating Attitude Test (EAT- 26) / EDI"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Exposure to thin ideal TV"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "To measure exposure to thin ideal TV, respondents were asked to indicate how frequently they watched specific programs by using a 5-point scale ranging from 0 (never) to 4 (regularly). Forty television shows airing on six networks—NBC, ABC,\nCBS, Fox, UPN, and WB—were selected from the Fall 2001 season."
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Exposure to thin ideal TV",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exposure to thin ideal TV",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.11
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Anorexia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Subscale of Eating Attitude Test (EAT- 26) / EDI"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Anorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Exposure to thin ideal TV"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "To measure exposure to thin ideal TV, respondents were asked to indicate how frequently they watched specific programs by using a 5-point scale ranging from 0 (never) to 4 (regularly). Forty television shows airing on six networks—NBC, ABC,\nCBS, Fox, UPN, and WB—were selected from the Fall 2001 season."
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Exposure to thin ideal TV",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exposure to thin ideal TV",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.06
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Anorexia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Subscale of Eating Attitude Test (EAT- 26) / EDI"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Anorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "interest in body-improvement TV content"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "single item: How interested would you be in a new 30-minute television show focused on the topics below?”"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.26
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Subscale of Eating Attitude Test (EAT- 26) / EDI"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "interest in body-improvement TV content"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "single item: How interested would you be in a new 30-minute television show focused on the topics below?”"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Interest in body-improvement TV content",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.29
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Pearson correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Despite great attention paid to fitness, health, conditioning and skill, participants in this study still were largely dissatisfied with their body shape and size."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Small sample size. The reliability scores for some of the dependant variables was not as robust as it could have been, and the measure for the media viewing was not as precise as it could have been."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future projects should continue to examine sports media exposure and sports participation as a possibly mediating variable in the media-body image distorsion relationship."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 78
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Females competing in Division I athletics at a major state university in the South; competing in Female's soccer, basketball, track and field, softball, swimming and diving, and gymnastics."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 78
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

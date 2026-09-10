@@ -1,0 +1,188 @@
+{
+  "_article": "Haase.2001",
+  "_tag": "baseline-texte-50",
+  "_variant": "texte",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Social Physique Anxiety"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Social Physique Anxiety Scale (SPAS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Appearance-related anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Social physique anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Social physique anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating disorder symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.43
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.35
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.52
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.55
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Zero-order correlations between SPAS and EAT are; the PS-athletes, r = .43, 12<.01; the WR-athlet~s, r = .35, 1~< .05; the non-PS athletes, r = .52, l~< .01, and univ~ersity students, r = .55, p< .001.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Social Physique Anxiety"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "r = .43"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Appearance-related anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Social physique anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Social physique anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating Attitude Test scores"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "r = .43, p<.01"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.43
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Zero-order correlations between SPAS and EAT are; the PS-athletes, r = .43, p<.01;",
+      "_evidence_verified": true
+    }
+  ]
+}

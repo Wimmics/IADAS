@@ -1,0 +1,180 @@
+{
+  "_article": "Lane.2003",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Athletics, badminton, basketball, cricket, cycling, football, golf, gymnastics, hockey, judo, karate, netball, rugby, squash, surfing, swimming, tae kwon do, tennis, thai boxing, trampolining"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating attitudes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Anger\nConfusion\nDepression\nFatigue\nTension\nVigor\nDepression\nAnxiety"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Profile of Mood States-Adolescents (POMS-A)\nProfile of Mood States-Adolescents (POMS-A)\nProfile of Mood States-Adolescents (POMS-A)\nProfile of Mood States-Adolescents (POMS-A)\nProfile of Mood States-Adolescents (POMS-A)\nProfile of Mood States-Adolescents (POMS-A)\nHospital Anxiety and Depression Scale (HADS)\nHospital Anxiety and Depression Scale (HADS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.38
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating attitudes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Anger\nConfusion\nDepression\nFatigue\nTension\nVigor\nDepression\nAnxiety"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Profile of Mood States-Adolescents (POMS-A)\nProfile of Mood States-Adolescents (POMS-A)\nProfile of Mood States-Adolescents (POMS-A)\nProfile of Mood States-Adolescents (POMS-A)\nProfile of Mood States-Adolescents (POMS-A)\nProfile of Mood States-Adolescents (POMS-A)\nHospital Anxiety and Depression Scale (HADS)\nHospital Anxiety and Depression Scale (HADS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.29
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Structural equation modeling"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Mood accounted for 38% of the variance of EAT scores in male, and 29% of the variance in Female athletes. Findings show that depression mood, had the strongest relationship with EAT scores."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Four factors suggets that the present sample might not be representative of all athletes. Although some sports were not represented (boxing), some were represented by only a few cases (judo had 1 participant). Participants were university students and so might not represent the full range of socioeconomic backgrounds. The sample did not embrace the full age range of athletes as there were no children and only a few older athletes in the sample."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Findings should be cross-validated by replicating the method used in the present study on a larger and more culturally diverse sample."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": "99 (male)"
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Student athletes from a British University"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Male=99\nFemale=66"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 165
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

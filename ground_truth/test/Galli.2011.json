@@ -1,0 +1,541 @@
+{
+  "_article": "Galli.2011",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Football; baseball; track and field; swimming; basketball; lacrosse; cheerleading; cross-country; golf; ice hockey; diving; fencing; alpine skiing; wrestling; volleyball; soccer"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for muscularity"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for muscularity Scale (DMS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for muscularity",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for muscularity",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Weight pressure coach/teammate"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight Pressure in Sport (WPS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Weight pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Weight pressure coach/teammate",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Weight pressure coach/teammate",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for muscularity"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for muscularity Scale (DMS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for muscularity",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for muscularity",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Weight pressure appearance"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight Pressure in Sport (WPS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Weight pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Weight pressure appearance",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Weight pressure appearance",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimic symptomatology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Bulimia Test-Revised (BULIT-R)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Bulimic symptomatology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimic symptomatology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Weight pressure coach/teammate"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight Pressures Scale for Male Athletes (WPS-M)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Weight pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Weight pressure coach/teammate",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Weight pressure coach/teammate",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.25
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimic symptomatology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Bulimia Test-Revised (BULIT-R)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Bulimic symptomatology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimic symptomatology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Weight pressure appearance"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight Pressure in Sport (WPS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Weight pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Weight pressure appearance",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Weight pressure appearance",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.39
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimic symptomatology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Bulimia Test-Revised (BULIT-R)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Bulimic symptomatology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimic symptomatology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Coach/teammate weight pressures\nAppearance pressure\nBody image\nNegative affect\nSelf esteem"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight Pressure Scale (WPS)\nWeight Pressure Scale (WPS)\nMultidimensional Body Self Relations Questionnaire (MBSRQ)\nPositive and Negative Affect Schedule-Expanded Form (PANAS-X)\nThe Rosenberg Self-Esteem Scale (RSES)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.135
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for muscularity"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for muscularity Scale (DMS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for muscularity",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for muscularity",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Coach/teammate weight pressures\nAppearance pressure\nBody image\nNegative affect \nSelf esteem"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight Pressure Scale (WPS)\nWeight Pressure Scale (WPS)\nMultidimensional Body Self Relations Questionnaire (MBSRQ)\nPositive and Negative Affect Schedule-Expanded Form (PANAS-X)\nThe Rosenberg Self-Esteem Scale (RSES)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.22
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Weight pressure from coaches and teammates was a significant predictor of both bulimic tendencies and the drive for muscularity. Appearance pressures predicted athletes drive for muscularity, it did not predict bulimic symptomatology."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "A necessary next step in the advancement of the WPS-M is to further assess the two factor structure of the instrument by administering it to new sample of male athletes, and conducting confirmatory factor analysis on their responses. Samples in excess of 20 cases per item may further strenghten the generalizibility and replicability of the results."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Longitudinal studies will allow for an investigation of the predictive validity and test-retest reliability of the measure to continue the psychometric testing of the WPS-M. Future studies can allow for the inclusion of athletes from additional sports. Particularly for males is aesthetic sports, appearance pressures may prove to be an even more salient predictor of disordered eating, as appearance and performance are closely connected in sports such as diving and gymnastics. \nMale athletes often lack the vocabulary to discuss body image concerns, therefore clinicians need to be savy in helping them uncover their personal connections between body expectations, stress and performance."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 203
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Male"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Male athletes from three large NCAA Division I institutions in the US."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 203
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

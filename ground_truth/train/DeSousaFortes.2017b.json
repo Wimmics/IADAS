@@ -1,0 +1,125 @@
+{
+  "_article": "DeSousaFortes.2017b",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Volleyball"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Team sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": null
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-40)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Age\n% of body fat\nBody shape \nTraining instruction\nSocial support\nReinforcement\nDemocratic\nAutocratic"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Years\nBody fat percentage (BF%) was determined using the Siri equation\nBody Shape Questionnaire (BSQ)\nThe perception-athlete version of the Sports Leadership Scale (SLS)\nThe perception-athlete version of the Sports Leadership Scale (SLS)\nThe perception-athlete version of the Sports Leadership Scale (SLS)\nThe perception-athlete version of the Sports Leadership Scale (SLS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.01
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=.27"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Hierarchical regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "The coach's leadership style (social support and autocratic) influenced the adoption of DEB in young Female volleyball players."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Since responses are subjective, athletes may not have indicated total truthfulness in their responses. In addition, it is noteworthy that the BSQ and EAT-26, although presenting acceptable psychometric indexes for the Brazilian Female population, are not specific for athletes. However, there is still no scientifically validated psychometric tool seeking to evaluate DEB and body dissatisfaction related to thinness in athletes. The lack of evaluation of personality traits (anxiety and perfectionism) in athletes is also a limitation. Another limitation that should be maletioned was the use of a double indirect method to evaluat BF%."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future studies with longitudinal or prospective design with male volleyball athletes should be conducted in order to investigate the possible influence of the coach's leadership style in the adoption of DEB."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 73
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "To be included in the survey, athletes should (a) have been a volleyball athlete for at least two years; (b) systematically train volleyball for at least 6 hours per week; © enrolled in the state championship, organized by the Pernambuco Volleyball Federation and; (d) be weilling to answer questionnaires and participate in anthropometric assessments"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 73
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Brazil"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Prospective studies"
+    }
+  ]
+}

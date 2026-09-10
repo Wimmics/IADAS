@@ -1,0 +1,274 @@
+{
+  "_article": "Davis.1990",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:signeP",
+      "object": "p<.0025",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Regular sport practitioners",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Emotional well-being"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Self-Compassion Scale (SCS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.54
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Of particular interest is the finding that, in the exercise group, the self-rating of emotional well-being (EMOT) is significantly correlated with the measure of body dissatisfaction (BD), r =0*54, and with the measure of weight and diet concerns (WDC), r =0*40. On the other hand, these values approached zero (0.10 and 0.15, respectively) in the non-exercise group.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Weight and diet concerns"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Of particular interest is the finding that, in the exercise group, the self-rating of emotional well-being (EMOT) is significantly correlated with the measure of body dissatisfaction (BD), r =0*54, and with the measure of weight and diet concerns (WDC), r =0*40. On the other hand, these values approached zero (0.10 and 0.15, respectively) in the non-exercise group.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Emotional well-being"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "EMOT"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Weight and diet concerns"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "WDC"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 3 provides a correlation matrix of dependent variables listed by group. Of particular interest is the finding that, in the exercise group, the self-rating of emotional well-being (EMOT) is significantly correlated with the measure of body dissatisfaction (BD), r =0.54, and with the measure of weight and diet concerns (WDC), r =0.40.",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Among exercising women, a concern with dieting and a critical approach to appearance is not influenced by actual body mass, but rather by how they think they look and, indeed, that reality and impression are not closely related."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The observational design of this study does not allow any adequate determination of causality."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should explore whether a dedication to regular exercise tends to foster, in susceptible individuals, a heightened degree of body narcissism and a critical concern with appearance."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 86
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 158
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Exercisers (86) Non-exercisers (72)"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Canada"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

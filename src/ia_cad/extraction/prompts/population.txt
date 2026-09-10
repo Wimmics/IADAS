@@ -1,0 +1,72 @@
+TASK: Extract population/sample information from this scientific article for the IADAS knowledge graph.
+
+{ONTOLOGY_BLOCK}
+
+EXTRACTION RULES:
+1. Extract ONLY the predicates listed above — no other predicates.
+2. Only extract values explicitly stated or clearly implied by the text. Never invent.
+3. iadas:gender — the overall gender composition of the sample. Use ONE of the ALLOWED VALUES
+   above. Key signals:
+   - "Female"  : "female participants", "women", "girls", or a sample described as 100% one sex.
+   - "Male"    : "male participants", "men", "boys", or a sample described as 100% one sex.
+   - "Mixed"   : both sexes present in any split (e.g. "124 males, 148 females") — use Mixed
+                 regardless of how unequal the split is, do NOT pick the majority sex.
+   Omit only if the text gives no indication of sex composition at all.
+4. iadas:sampleSize — integer. The TOTAL number of participants recruited/included in the study
+   (not the number in a specific sub-analysis — that is iadas:sampleSizeMobilized, extracted
+   elsewhere). Use the number BEFORE any exclusions described later, if both are given. When
+   several counts appear (recruited / eligible / final), prefer the one explicitly framed as the
+   total sample (e.g. "A total of N participants...", "N athletes took part"), not a per-group count.
+5. iadas:inclusionCriteria — the eligibility criteria stated for participation (age range, sport
+   experience, health status, competition level, etc.), as a short free-text summary. Omit if no
+   explicit inclusion criteria are stated.
+6. iadas:population — how the participants are characterized overall. Prefer one of the ALLOWED
+   VALUES above ("Athletes" or "Students") when it clearly fits; if the sample does not clearly
+   fit either (e.g. general population, non-athlete non-student adults, a study comparing
+   athletes to non-athletes), write the term used in the text instead of forcing a bad fit
+   (e.g. "Athletes and non-athletes", "General population").
+   ⚠ NEVER leave this empty if the article describes the sample at all — omitting is only for
+   when the text gives no population information whatsoever, not when it doesn't fit the two
+   allowed values.
+   ⚠ "Students" vs "Athletes" — this is the most common confusion for this field. A university
+   or school named only as the RECRUITMENT CHANNEL or DATA-COLLECTION SITE is NOT enough for
+   "Students": if the participants are recruited there BECAUSE they practice a sport (student
+   athletes, a sport-science/PE student sample defined by their sport practice), the population
+   is "Athletes". Use "Students" only when the sample is framed as students/pupils in general,
+   with no sport-practice criterion defining who was recruited.
+7. iadas:hasSubgroup — a free-text description of subgroups within the sample, if the article
+   breaks the sample down (e.g. by gender counts, by sport, by competition level, by site).
+   Trigger: a sentence or small table giving a per-subgroup count ("n=..." repeated for several
+   groups), e.g. "161 Males 160 Females" or "MDD n=60, MLD n=156, WMD n=61, WLD n=123". Combine
+   multiple crossed factors (e.g. distance x sex) into ONE free-text description rather than
+   inventing separate predicates. Omit if the sample is not described in subgroups.
+8. iadas:sportingPopulation — a free-text characterization of the sporting population specifically
+   (e.g. "Regular sport practitioners", "Elite competitive athletes", "Recreational exercisers",
+   or a competitive-tier breakdown such as "87.67% varsity, 6.85% recreational, 5.48% club").
+   Trigger: look in Participants/Method for how the article itself qualifies the athletes'
+   competitive level or practice regularity, beyond the broad iadas:population category above.
+   Distinct from iadas:population — this is a more specific sporting descriptor. Omit if the
+   article gives no such qualifier beyond the broad category.
+
+OUTPUT FORMAT — a JSON object with a "population" key containing the array of predicate/object pairs
+(only include the predicates actually supported by the text — this example shows all 6 for
+reference, a real extraction will usually have fewer):
+{
+  "population": [
+    {"predicate": "iadas:gender", "object": "Mixed"},
+    {"predicate": "iadas:sampleSize", "object": 321},
+    {"predicate": "iadas:inclusionCriteria", "object": "Competitive swimmers aged 16-22 training at least 10 hours per week"},
+    {"predicate": "iadas:population", "object": "Athletes"},
+    {"predicate": "iadas:hasSubgroup", "object": "161 Males 160 Females"},
+    {"predicate": "iadas:sportingPopulation", "object": "Regular sport practitioners"}
+  ]
+}
+
+EXAMPLES OF CORRECT OUTPUT:
+{FEW_SHOTS}
+
+--- TEXT TO ANALYZE ---
+{TEXT}
+--- END ---
+
+Return ONLY the JSON object with the "population" key, no explanation:

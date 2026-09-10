@@ -1,0 +1,125 @@
+{
+  "_article": "Jauregui-Lobera.2016",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Dance (e.g., spanish flamenco contemporary, neoclassic)"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Professional"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": null
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-40)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body appreciation\nGeneral health\nDrive for thinness\nBulimia\nBody dissatisfaction\nBody image\nSelf esteem"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Apprecisation Scale (BAS)\nGeneral Health Questionnaire (GHQ)\nEating Disorders Inventory (EDI)\nEating Disorders Inventory (EDI)\nEating Disorders Inventory (EDI)\nBody Image Quality of Life Inventory (BIQLI)\nThe Self Esteem Scale (SES)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": -0.0946
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Huber's M-estimation for regression analysis"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Body appreciation and drive for thinness significantly predicted the scores on the EAT-40. Lower scores on body apprecisation and higher scores on drive for thinness predict higher scores on EAT-40. The relationship between EAT-40 and self esteem and general health was negative but not significant statistically."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "This sample would be considered as a small one, so it is difficult to generalize the results. Another trouble to etablish comparisons refers to the fact that while in our study the mean age was 21.22 others have reported mean ages from 14.4 to 20.9. The characteristics of the center of dance must be taken into account. Our work does not have considered a control group."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 77
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Dancers from the Centro Andaluz de Danza; aged between 18 and 32; practising one of the three modalities of dance: Spanish flamaleco dance, contemporary dance or neoclassic dance"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Semi professional"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 77
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Spain"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

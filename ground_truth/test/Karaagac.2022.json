@@ -1,0 +1,298 @@
+{
+  "_article": "Karaagac.2022",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Football, volleyball, basketball, sailing, athletics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-40)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Exercise dependence"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise Dependence Scale (EDS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Psychopathological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Exercise dependence",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exercise dependence",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.397
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-40)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Orthorexia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-11"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.53
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-11"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Exercise dependence"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise Dependence Scale (EDS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Psychopathological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Exercise dependence",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exercise dependence",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.446
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "A positive correlation was found between exercise dependence, orthorexic tendency and disordered eating attitudes. Higher EAT-40 scores were associated with lower ORTO-11 scores."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Due to the cross sectional design, only associations bewteen exercise dependence and orthorexia and eating disorders could be determined, but it could not explain causality between the variables and whether exercise dependence is primary or secondary. The orthorexic tendencies of the students were evaluated with the ORTO scale. Studies reported that the psychometric quality of the ORTO scale was poor, as it was unable to distinguish between healthy and pathological healthy eating. The exercise dependence risks and eating behaviors of university students could not be examined according to exercise types due to the limited sample size."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should examine associations between these phenomalea according to exercise type in a larger sample. Healthy profesionals who work in the sports teams should be aware of these risks and monitor the students in terms of exercise dependence and orthorexia."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 168
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Undergraduate students studying in Izmir province"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Students"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "66 Student athletes\n102 Regular students"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 168
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Turkey"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

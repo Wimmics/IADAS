@@ -1,0 +1,75 @@
+{
+  "_article": "Krentz.2011a",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-12",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "cycling",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "swimming",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "hiking",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Running"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Endurance",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [],
+  "Analysis": [],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 150
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes and non-athletes"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

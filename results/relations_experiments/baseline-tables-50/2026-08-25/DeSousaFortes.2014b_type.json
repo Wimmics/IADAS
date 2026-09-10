@@ -1,0 +1,159 @@
+{
+  "_article": "DeSousaFortes.2014b",
+  "_tag": "baseline-tables-50",
+  "_variant": "tables",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "State trait anxiety inventory-state"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "State Trait Anxiety Inventory-State (STAI-S)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.27",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "STAI-S (F(1, 87)=1.95; p=0.25) and STAI-T (F(1, 87)=2.36; p=0.21) had no significant influence on this score.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "State trait anxiety inventory-trait"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "State Trait Anxiety Inventory-Trait (STAI-T)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.27",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "STAI-S (F(1, 87)=1.95; p=0.25) and STAI-T (F(1, 87)=2.36; p=0.21) had no significant influence on this score.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "STAI-T"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "State-Trait Anxiety Inventory-Trait"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EAT-26's Oral Control subscale"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Oral Control subscale score"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.048
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "STAI-T (F(1, 87)=6.61; p=0.048)",
+      "_evidence_verified": true
+    }
+  ]
+}

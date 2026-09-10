@@ -1,0 +1,390 @@
+{
+  "_article": "LevArey.2025",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": null
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Addiction to exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise Addiction Inventory (EAI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Dependence and Excessive Exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Muscularity-oriented eating behaviours"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscularity-Oriented Eating Test (MOET)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Muscularity oriented disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscularity oriented disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.57
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Addiction to exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise Addiction Inventory (EAI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Dependence and Excessive Exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Dysmorphic Disorder Inventory (MDDI)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.4
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Dysmorphic Disorder Inventory (MDDI)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Muscularity-oriented eating behaviours"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscularity-Oriented Eating Test (MOET)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Muscle Dysmorphia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Muscularity oriented disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscularity oriented disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.69
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Addiction to exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise Addiction Inventory (EAI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Dependence and Excessive Exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Muscularity-oriented eating behaviours Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscularity-Oriented Eating Test (MOET) Muscle Dysmorphic Disorder Inventory (MDDI)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Addiction to exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise Addiction Inventory (EAI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Dependence and Excessive Exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Addiction to exercise",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Muscularity-oriented eating behaviours Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscularity-Oriented Eating Test (MOET) Muscle Dysmorphic Disorder Inventory (MDDI)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.486
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Pearson correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Muscularity-oriented eating behaviours, muscle dysmorphia, and exercise addiction are strongly interconnected in men, with sexual orientation intensifying these relationships, particularly among gay men. Findings highlight the need for integrated and identity-sensitive assessment and treatment approaches"
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The cross-sectional design, reliance on self-report, exclusion of bisexual/fluid individuals, and lack of key variables (e.g., minority stress) limit causal interpretation and generalizability"
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future studies should use longitudinal and more inclusive designs, and directly assess underlying mechanisms (e.g., stigma, body surveillance) to better understand and target these interconnected issues"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 168
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Male"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Engaged in structured exercise at least three times per week for the past six months, without medical restrictions"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Heterosexual n=104 Gay n=64"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 168
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Israel"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

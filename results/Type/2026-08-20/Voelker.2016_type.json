@@ -1,0 +1,318 @@
+{
+  "_article": "Voelker.2016",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-20",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Female collegiate gymnasts and swimmers and divers aged 18-71 years old",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Gymnastics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Swimming"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Diving"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Negative affect"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Positive and Negative Affect Schedule (PANAS-X)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Exercise to avoid negative affect",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exercise to avoid negative affect",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Dietary restraint"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Dietary Intent Scale (DIS) and Dutch Restrained Eating Scale (DRES)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": -0.12
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Time 1 Negative Affect (b ¼  -0.12, p < 0.05) predicted decreases in Time 2 Dietary Restraint, beyond the variance already accounted for by Time 1 Dietary Restraint",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body satisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "BPSS e Body, BPSS e Overall"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body appreciation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body satisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body satisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Negative affect"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Anger, Guilt, Sadness"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Exercise to avoid negative affect",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Exercise to avoid negative affect",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Negative affect. The 6-item Anger, 6-item Guilt, and 5-item Sadness scales from the Positive and Negative Affect Schedule e Expanded Form (PANAS-X; Watson & Clark, 1992) represented this LV. Asked to indicate the extent to which, on average, they had experienced each emotion during the past three months, the athletes indicated their level of agreement on a 5-point scale (1 ¼ very slightly or not at all; 5 ¼ extremely). The total score for each mood state is the mean of those items; higher scores indicate stronger negative affect.",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Structural Equation Modelling (SEM) - Confirmatory factor analysis (CFA)"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Given these longitudinal connections, body satisfaction and bulimic-related eating behaviors in particular might be addressed in intervention programs for female collegiate athletes. Programming delivered at the beginning of a season may help athletes to maintain a positive body image over the course of their season and be less likely to succumb to a negative mood state."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "This research has limitations worthy of acknowledgement. First, the sample consisted of women, who were predominantly Caucasian, in NCAA Division I athletic programs in the U.S., and in the sports of gymnastics, swimming, and diving. Generalizability is thus limited to female athletes with similar characteristics. Future studies should examine female athletes in other sports, competitive levels, and racial/ethnic groups to determine whether the current findings are generalizable."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "More longitudinal research is necessary to identify and confirm true risk factors in this population. Researchers may also want to more closely examine the potential influence of athletes' exercise frequency and intensity on bulimic symptomatology as compensatory exercise is easily masked among athlete populations who already are required to exercise."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 325
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 325
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "219 Female collegiate gymnasts 106 Female swimmers and divers"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:studyType",
+      "object": "Longitudinal"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+version: 2.0.0
+source: Onto/sport-hierarchy-simple-clean.ttl
+sportName:
+  description: Canonical sport names from IADAS sport-hierarchy.ttl. Use the exact name listed here for sportName.
+  canonical:
+  - 100 meters
+  - 10000m
+  - 100m hurdles
+  - 1500m
+  - 200 meters
+  - 3000m
+  - 400m hurdles
+  - 5000m
+  - Acrobatic gymnastic
+  - Acrobatic skiing
+  - Aerobic classes
+  - Aerobic endurance training
+  - Aerobic exercise
+  - Aerobic gymnastic
+  - Alpine skiing
+  - Anaerobic exercise
+  - Archery
+  - Artistic swimming
+  - Artistics gymnastics
+  - Badminton
+  - Baseball
+  - Basketball
+  - Beach volleyball
+  - Biathlon
+  - Bocce
+  - Bodybuilding
+  - Bowling
+  - Boxing
+  - Canoing
+  - Cheerleading
+  - Circus
+  - Circus acrobatic
+  - Circus equilibrium
+  - Circus object manipulation
+  - Climbing
+  - Crew
+  - Cricket
+  - Cross training
+  - Cross-country
+  - Cross-country skiing
+  - Crossfit
+  - Cycling
+  - Dance
+  - Dance African
+  - Dance Irish
+  - Dance Kathak
+  - Dance Korea traditional
+  - Dance ballet
+  - Dance classical
+  - Dance contemporary
+  - Dance flamenco
+  - Dance hip hop
+  - Dance jazz/modern
+  - Dance musical theater
+  - Dance neoclassic
+  - Dance spanish folk
+  - Dance tap
+  - Diving
+  - Drill team
+  - Equestrian
+  - Fencing
+  - Field hockey
+  - Figure skating
+  - Figure skating ice dancing
+  - Figure skating pairs
+  - Figure skating single
+  - Figure skating synchronized
+  - Fitness
+  - Floorball
+  - Football
+  - Futsal
+  - Golf
+  - Gymnastics
+  - Gymnastics tumbling
+  - HIIT
+  - Half marathon
+  - Handball
+  - High jump
+  - Hike
+  - Hockey
+  - Hula hooping
+  - Ice hockey
+  - Javelin throw
+  - Jiu-jitsu
+  - Jogging
+  - Judo
+  - Jumping
+  - Karate
+  - Kayaking
+  - Kickboxing
+  - Kite surfing
+  - Lacrosse
+  - Long distance speed skating
+  - Long jump
+  - MMA
+  - Marathon
+  - Martial arts
+  - Muscular fitness
+  - Netball
+  - Orienteering
+  - Ornamental jumping
+  - Pilates
+  - Pole vault
+  - Powerlifting
+  - Precision figure skating
+  - Race walking
+  - Rifle
+  - Rock climbing
+  - Roller-skate figure skating
+  - Rowing
+  - Rowing heavyweight
+  - Rowing lightweight
+  - Rugby
+  - Running
+  - Running long distance
+  - Running middle distance
+  - Rythmic gymnastics
+  - Sailing
+  - Shooting
+  - Skateboarding
+  - Skating
+  - Snowboarding
+  - Soccer
+  - Softball
+  - Speed skating
+  - Sprint
+  - Squash
+  - Strenght training
+  - Surf
+  - Surf lifesaving
+  - Swimming
+  - Table tennis
+  - Taekwondo
+  - Tennis
+  - Thai boxing
+  - Throwing
+  - Track and field/Athletics
+  - Trampoline gymnastics
+  - Triathlon
+  - Ultimate frisbee
+  - Ultramarathon
+  - Urban dance
+  - Volleyball
+  - Water polo
+  - Weight training
+  - Weightlifting
+  - Wheelchair basketball
+  - Wrestling
+  - Wushu
+  - Yoga
+  - Yoga ashtanga
+sportPracticeType:
+  description: Individual or collective character of the sport. Assigned by sport_practice.yaml lookup — the LLM extracts
+    the sport name; sportPracticeType is inferred algorithmically.
+  canonical:
+  - Individual sport
+  - Team sport
+  - Mixed sport
+  - Dual sport
+sportLevel:
+  description: Level of the study participants. Controlled vocabulary (values present in the IADAS knowledge graph) — choose
+    the single best match.
+  canonical:
+  - Amateur
+  - Professional
+  - Student
+  definitions:
+    Amateur: 'Non-professional practitioners not in an academic program. Includes club athletes, gym members, recreational
+      or fitness participants. Key signal: ''amateur'', ''club'', ''gym'', ''recreational'', ''fitness'', ''non-professional''.'
+    Professional: 'Athletes for whom sport is a primary occupation, or competing at elite/Olympic level with compensation.
+      Key signal: ''professional'', ''elite'', ''national team'', ''Olympic'', ''paid''.'
+    Student: 'Participants enrolled in an academic program (university, college, conservatory, sport school, dance academy)
+      as their primary status. Key signal: ''students'', ''university'', ''college'', ''collegiate'', ''enrolled'', ''school'',
+      ''conservatory''.'
+  aliases:
+    gym member: Amateur
+    gym members: Amateur
+    recreational athlete: Amateur
+    recreational athletes: Amateur
+    leisure: Amateur
+    non-competitive: Amateur
+    fitness: Amateur
+    amateur athlete: Amateur
+    amateur athletes: Amateur
+    competitive athlete: Amateur
+    competitive athletes: Amateur
+    sub-elite: Amateur
+    national-level: Amateur
+    international-level: Professional
+    elite athlete: Professional
+    elite athletes: Professional
+    high-level: Professional
+    high level: Professional
+    high performance: Professional
+    top-level: Professional
+    professional athlete: Professional
+    professional athletes: Professional
+    pro: Professional
+    student athlete: Student
+    student athletes: Student
+    university student: Student
+    university students: Student
+    university athlete: Student
+    university athletes: Student
+    collegiate: Student
+    college student: Student
+    college athlete: Student
+    conservatory student: Student
+    dance student: Student
+    dance students: Student
+    school student: Student
+    university-level: Student
+nbrSport:
+  description: Whether the study focuses on one or multiple distinct sports.
+  canonical:
+  - One
+  - Multiple

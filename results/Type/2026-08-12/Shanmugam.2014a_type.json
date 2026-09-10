@@ -1,0 +1,172 @@
+{
+  "_article": "Shanmugam.2014a",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-12",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Swimming",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 120,
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Judo"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Weight class",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Depressive symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Symptom Checklist-90R (SCL-90)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Psychopathological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Depression",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Depressive symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Depressive symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating psychopathology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating psychopathology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating psychopathology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "T1 Depressive symptoms and T1 Eating psychopathology, r = 0.42, P < .001; T2 Depressive symptoms and T2 Eating psychopathology, r = 0.57, P < .001",
+      "_evidence_verified": false
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Hierarchical multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Athletes' eating psychopathology predicted their depressive symptoms 6 months later, signifying elevated eating psychopathology as a potential risk factor for the onset of depression."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "This includes methodological issues pertaining to the use of self-report measures, a small sample composed largely of Caucasian female athletes and the use of parametric methods to analyse nonparametric data. Next, athletes' scores on both measures were relatively healthy; therefore it is unclear whether the relationships observed in this study would extend to athletes with eating disorders and depression. Finally, it is not possible to make definitive conclusions about causality, as the findings are essentially correlational."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future studies should aim to replicate and confirm the present findings using experimental designs as this is considered the next step in identifying true causal risk factors. An avenue of interest for future studies should focus on depression in sport, particularly examining the prevalence of eating disordered, depressive and comorbidity symptoms in athletes."
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 122
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "British athletes aged 16-45, currently participating in sport (not injured), not receiving treatment for any medical or mental illness including eating disorders, and not pregnant (females only)"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "36 Males 86 Females"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Longitudinal"
+    }
+  ]
+}

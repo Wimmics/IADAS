@@ -1,0 +1,384 @@
+{
+  "_article": "Goodwin.2014b",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.001",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.001' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:hasMediator",
+      "object": "Self-esteem",
+      "_rejected_reason": "prédicat 'hasMediator' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:mediatorMeasure",
+      "object": "Rosenberg Self-Esteem Scale (RSES)",
+      "_rejected_reason": "prédicat 'mediatorMeasure' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Students",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Dance"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Aesthetic",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Severity of critical comment"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Severity of critical comment"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "External comments",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Severity of critical comment",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Severity of critical comment",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.46
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.69
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "The first regression found a significant relationship between the independent variable (IV; severity of critical comment) and the outcome variable (EDE-Q Global; F(1.51) = 45.35, p \\ 0.001; R = 0.46; Beta = 0.69, p \\ 0.001)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Self-esteem"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Rosenberg Self Esteem Scale (RSES)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Global self-worth",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Severity of critical comment"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Severity of critical comment"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "External comments",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Severity of critical comment",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Severity of critical comment",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": -0.6
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "The second regression assessed the relationship between the IV (severity of critical comments) and the mediator (RSE Global), and found a significant model (F(1.51) = 28.00, p \\ 0.001; Beta = -0.60, p \\ 0.001)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Severity of critical comment"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "R = 0.46"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "External comments",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Severity of critical comment",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Severity of critical comment",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EDE-Q Global"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "F(1.51) = 45.35, p < 0.001"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.46
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "The first regression found a significant relationship between the independent variable (IV; severity of critical comment) and the outcome variable (EDE-Q Global; F(1.51) = 45.35, p < 0.001; R = 0.46; Beta = 0.69, p < 0.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Severity of critical comment"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Beta = -0.60"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "External comments",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Severity of critical comment",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Severity of critical comment",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "RSE Global"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "F(1.51) = 28.00, p < 0.001"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": 0.69,
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "The second regression assessed the relationship between the IV (severity of critical comments) and the mediator (RSE Global), and found a significant model (F(1.51) = 28.00, p < 0.001; Beta = -0.60, p < 0.001), accounting for 34 % of the variance.",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Linear regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "The severity of appearance-based critical comments, and lower self-esteem were associated with heightened eating psychopathology."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The study is primarily limited by the lack of an age- and gender-matched control group of non-dancing individuals. The inclusion of a non-dancing control group would have allowed for comparisons to be made between the two groups, to establish whether or not the effects are more pronounced in the dancing population."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should look to extend the current findings by examining the effects in a dancing versus non-dancing population."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 74
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 74
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

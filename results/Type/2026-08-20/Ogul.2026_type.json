@@ -1,0 +1,977 @@
+{
+  "_article": "Ogul.2026",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-20",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Track",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:signeP",
+      "object": "p<.1",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.05",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.05' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.05",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.05' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.05",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.05' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.05",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.05' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Pearson correlation",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 64,
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Football"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "field/Athletics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Volleyball"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Taekwondo"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Wrestling"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Fitness training"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Alexithymia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Toronto Alexithymia Scale (TAS-20)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Alexithymia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Alexithymia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body image perception"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Scale (BIS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:relationDegreeSecondary",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Alexithymia was found to be related to age and body image perception (p<0.05), and eating attitudes were also related to age and body image perception (p<0.05).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating attitudes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body image perception"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Scale (BIS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:relationDegreeSecondary",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Alexithymia was found to be related to age and body image perception (p<0.05), and eating attitudes were also related to age and body image perception (p<0.05).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Age"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Age"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Toronto Alexithymia Scale (TAS-20) scores"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Toronto Alexithymia Scale (TAS-20)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.253
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Correlation analysis revealed a negative correlation between TAS-20 scores and age, while total BIS scores, Negative Perception of the Body, Evaluation Sensitivity, and Body Change subscale scores showed weak positive correlations with TAS-20 scores (r<0.30).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Age"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Age"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Total Body Image Scale (BIS) scores"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Scale (BIS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.613
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Correlation analysis revealed a negative correlation between TAS-20 scores and age, while total BIS scores, Negative Perception of the Body, Evaluation Sensitivity, and Body Change subscale scores showed weak positive correlations with TAS-20 scores (r<0.30).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Age"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Age"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Negative Perception of the Body subscale scores"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Scale (BIS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.181
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Correlation analysis revealed a negative correlation between TAS-20 scores and age, while total BIS scores, Negative Perception of the Body, Evaluation Sensitivity, and Body Change subscale scores showed weak positive correlations with TAS-20 scores (r<0.30).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Age"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Age"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Evaluation Sensitivity subscale scores"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Scale (BIS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.137
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Correlation analysis revealed a negative correlation between TAS-20 scores and age, while total BIS scores, Negative Perception of the Body, Evaluation Sensitivity, and Body Change subscale scores showed weak positive correlations with TAS-20 scores (r<0.30).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Age"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Age"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body Change subscale scores"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Scale (BIS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Correlation analysis revealed a negative correlation between TAS-20 scores and age, while total BIS scores, Negative Perception of the Body, Evaluation Sensitivity, and Body Change subscale scores showed weak positive correlations with TAS-20 scores (r<0.30).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating attitudes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Age"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Age"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.137
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "EAT-26 scores were negatively correlated with age, whereas Evaluation Sensitivity, Positive Perception of the Body, and Body Change subscale scores showed weak positive correlations with EAT-26 scores (r<0.30).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating attitudes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Evaluation Sensitivity subscale scores"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Scale (BIS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ],
+      "_evidence": "EAT-26 scores were negatively correlated with age, whereas Evaluation Sensitivity, Positive Perception of the Body, and Body Change subscale scores showed weak positive correlations with EAT-26 scores (r<0.30).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating attitudes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Positive Perception of the Body subscale scores"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Scale (BIS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ],
+      "_evidence": "EAT-26 scores were negatively correlated with age, whereas Evaluation Sensitivity, Positive Perception of the Body, and Body Change subscale scores showed weak positive correlations with EAT-26 scores (r<0.30).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating attitudes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body Change subscale scores"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Scale (BIS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.146
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "EAT-26 scores were negatively correlated with age, whereas Evaluation Sensitivity, Positive Perception of the Body, and Body Change subscale scores showed weak positive correlations with EAT-26 scores (r<0.30).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating attitudes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Total Body Image Scale (BIS) scores"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Scale (BIS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.362
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "EAT-26 scores had a moderate positive correlation with total BIS scores (r=0.362) and Negative Perception of the Body subscale scores (r=0.341), (Table 5).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating attitudes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating attitudes",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Negative Perception of the Body subscale scores"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Scale (BIS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.341
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "EAT-26 scores had a moderate positive correlation with total BIS scores (r=0.362) and Negative Perception of the Body subscale scores (r=0.341), (Table 5).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body image dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Age"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "years"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Positive Perception of the Body subscale scores"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "r"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.115"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Age (years) r -0.110 p 0.115",
+      "_evidence_verified": false
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Given the potential impacts of sports on body image, it is important to screen athletes psychosocially from an early age and encourage them to seek support when needed."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The study was designed cross-sectionally, causality inference could not be made. In this context, future studies need to incorporate follow-up periods where tests are repeated over time. Additionally, the impact of the stress factor on eating behavior was not assessed."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should include qualitative and longitudinal studies that more thoroughly evaluate factors such as sport-specific pressures, social media usage, and family support on body image and alexithymia."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 206
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Athletes aged between 14 and 40 years with sufficient Turkish literacy skills who provided informed consent"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Turkey"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

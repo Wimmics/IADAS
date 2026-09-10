@@ -1,0 +1,506 @@
+{
+  "_article": "Chaba.2021",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:hasMediator",
+      "object": "Attitude\nSubjective norm\nPerceived behavioral control",
+      "_rejected_reason": "prédicat 'hasMediator' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:mediatorMeasure",
+      "object": "Not explicitly stated",
+      "_rejected_reason": "prédicat 'mediatorMeasure' absent de la classe Analysis"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Bodybuilding"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportName",
+      "object": "Running"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Autonomous motivation for sport"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Autonomous motivation for sport"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Autonomous forms for motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Autonomous motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Autonomous motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.37
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "The AM was signiﬁcantly, indirectly, and positively related to eating disorders via perceived behavioral control (β = 0.37, p < .001) and intention to gain muscle mass (β = 0.15, p < .001)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Controlled motivation for sport"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Controlled motivation for sport"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Controlled motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Controlled motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.34
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "CM was signiﬁcantly, directly, and positively related to eating disorders (dieting, control, and bulimia behaviors) (respectively, β = 0.34, p < .001; β = 0.27, p < .001; β = 0.32, p < .001)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Controlled motivation for sport"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "CM"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Controlled motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Controlled motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Dieting behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "β = 0.39, p < .001"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.39
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 3: CM was signiﬁcantly, directly, and positively related to dieting, control, and bulimia behaviors (respectively, β = 0.39, p < .001; β = 0.37, p < .001; β = 0.36, p < .001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Controlled motivation for sport"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "CM"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Controlled motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Controlled motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Control behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "β = 0.37, p < .001"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.37
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 3: CM was signiﬁcantly, directly, and positively related to dieting, control, and bulimia behaviors (respectively, β = 0.39, p < .001; β = 0.37, p < .001; β = 0.36, p < .001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Controlled motivation for sport"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "CM"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Controlled motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Controlled motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Bulimia behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "β = 0.36, p < .001"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.36
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 3: CM was signiﬁcantly, directly, and positively related to dieting, control, and bulimia behaviors (respectively, β = 0.39, p < .001; β = 0.37, p < .001; β = 0.36, p < .001).",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Structural Equation Modelling (SEM) - Confirmatory factor analysis (CFA)"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Despite some limitations, this study pointed to some important relationships embedded in the theoretically integrated model of the SDT and the TPB. It showed that even though male bodybuilders and runners pursue opposite physical goals, they display similarities in the motivational sequence influencing their eating disorders. These results indicated that the TCM was partially supported in the context of eating disorders in these two populations. Both types of motivations for sport were direct or indirect risk factors for the development of deviant behaviors, but CM seemed to indicate greater risk than autonomous motivation for the development of eating disorders."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "First, our sample was composed of young men with different numbers of years of practice, hours of practice per week, and types of practices (i.e., noncompetitors, future competitors, competitors), which might have influenced their motivation and engagement. Second, the runners were older than the bodybuilders, and younger people are more at risk of developing eating disorders than older people. Third, the data were collected using a self-report survey and might have been influenced by social desirability. The model would be deepened by including implicit attitude measures of eating behaviors. Fourth, no model/theory on body image in men was used in this study, although body dissatisfaction was clearly present. Fifth, although applying the TCM to male athletes was fruitful, another model that also takes into account sociocognitive variables, such as the Health Action Process Approach, might be applied in future research. Sixth, it would be useful to determine a cutoff for eating disorders in male athletes because the EAT is not adapted to measure eating disorders in male athletes desiring to gain muscle mass. This would enable researchers to distinguish male athletes with and without eating disorders to compare the models between these two subsamples and determine whether positive relationships between AM and eating disorders are present only in healthy male athletes. Finally, the motivational mechanisms explaining the development of eating disorders in male bodybuilders and runners who desire to gain muscle mass/lean body mass need to be further investigated in terms of motivational profiles."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future studies could also specifically measure body satisfaction and analyze the link between this variable, behaviors to gain muscle mass/lean body mass, and the development of eating disorders."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 489
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Male"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 489
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Minimum age of 16 years, minimum of 3 hours of physical training per week, and minimum of 3 years of bodybuilding or running experience"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "272 Male bodybuilders 217 Male runners"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Regular sport practitioners"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Switzerland"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

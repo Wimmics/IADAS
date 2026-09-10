@@ -1,0 +1,650 @@
+{
+  "_article": "Maiano.2015",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "46 different sports (e.g., badminton, basketball, boxing, gymnastics, judo, soccer) and exercises (e.g., fitness, jogging, weight training), these sports were categorized into leanness (coded 1) or non-leanness (coded 0), individual (coded 1) or team (coded 0)"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Generic disturbed eating attitudes and behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-18)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Generic disturbed eating attitudes and behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Generic disturbed eating attitudes and behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body related motive"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "List of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body related motive",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body related motive",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.35
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Vomiting-purging behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-18)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Compensatory behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Vomiting-purging behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Vomiting-purging behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body related motive"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "List of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body related motive",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body related motive",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.14
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating related control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-18)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating related control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating related control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body related motive"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "List of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body related motive",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body related motive",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.15
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Generic disturbed eating attitudes and behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-18)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Generic disturbed eating attitudes and behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Generic disturbed eating attitudes and behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Age \nBMI\nWeekly time of sport and exercise \nWeekly frequency of sport and exercise\nBody related motive\nGender\nOrganized\nLeanness\nIndividual\nCompetition"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Years\nKg/m²\nSociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008)\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.29
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=.32"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Generic disturbed eating attitudes and behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-18)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Generic disturbed eating attitudes and behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Generic disturbed eating attitudes and behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Age \nBMI\nWeekly time of sport and exercise \nWeekly frequency of sport and exercise\nBody related motive\nGender\nOrganized\nLeanness\nIndividual\nCompetition\nGender x organized\nGender x leanness\nGender x competition\nGender x individual \nBody related motives x gender\nBody related motives x organized\nBody related motives x leanness\nBody related motives x competition\nBody related motives x individual"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Years\nKg/m²\nSociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008)\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire - sociodemographic questionnaire \nSociodemographic questionnaire - sociodemographic questionnaire \nSociodemographic questionnaire - sociodemographic questionnaire \nSociodemographic questionnaire - sociodemographic questionnaire \nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.35
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=.37"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Vomiting-purging behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-18)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Compensatory behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Vomiting-purging behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Vomiting-purging behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Age \nBMI\nWeekly time of sport and exercise \nWeekly frequency of sport and exercise\nBody related motive\nGender\nOrganized\nLeanness\nIndividual\nCompetition"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Years\nKg/m²\nSociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008)\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.06
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=.03"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Vomiting-purging behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-18)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Compensatory behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Vomiting-purging behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Vomiting-purging behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Age \nBMI\nWeekly time of sport and exercise \nWeekly frequency of sport and exercise\nBody related motive\nGender\nOrganized\nLeanness\nIndividual\nCompetition\nGender x organized\nGender x leanness\nGender x competition\nGender x individual \nBody related motives x gender\nBody related motives x organized\nBody related motives x leanness\nBody related motives x competition\nBody related motives x individual"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Years\nKg/m²\nSociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008)\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire - sociodemographic questionnaire \nSociodemographic questionnaire - sociodemographic questionnaire \nSociodemographic questionnaire - sociodemographic questionnaire \nSociodemographic questionnaire - sociodemographic questionnaire \nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.11
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=.03"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating related control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-18)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating related control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating related control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Age \nBMI\nWeekly time of sport and exercise \nWeekly frequency of sport and exercise\nBody related motive\nGender\nOrganized\nLeanness\nIndividual\nCompetition"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Years\nKg/m²\nSociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008)\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.13
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating related control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-18)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating related control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating related control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Age \nBMI\nWeekly time of sport and exercise \nWeekly frequency of sport and exercise\nBody related motive\nGender\nOrganized\nLeanness\nIndividual\nCompetition\nGender x organized\nGender x leanness\nGender x competition\nGender x individual \nBody related motives x gender\nBody related motives x organized\nBody related motives x leanness\nBody related motives x competition\nBody related motives x individual"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Years\nKg/m²\nSociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008)\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire\nSociodemographic questionnaire - sociodemographic questionnaire \nSociodemographic questionnaire - sociodemographic questionnaire \nSociodemographic questionnaire - sociodemographic questionnaire \nSociodemographic questionnaire - sociodemographic questionnaire \nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire\nList of 26 possibilities then classified into four categories according to Markland and Ingledew (1997, 2008) - sociodemographic questionnaire"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.15
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "There is a significant and positive relationship between body related sport and exercise motives and generic DEAB and vomiting purging behaviors. The relationship between body related motives and DEAB may be amplified when adolescents practice individual and competitive sports and exercises. Involvement in sport and exercise for body related motives predicted higher levels of vomiting purging behaviours in adolescents involved in individual sports or exercises and do not generalize to those not involved in this type of practice. Involvement in sport and exercise for body related motives predicts higher levels of vomiting purging behaviours in adolescents who compete, but not in those who do not compete."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The adolescents reporting exercising or practicing sports for at least one body related motive were coded in the category of body related motive. However for those indicating two or three motives, no information on the ranking of their motives was available. It is probable that adolescents for whom body related motives are only a minor reason for engaging in sport and exercise were still included in this category. This study relied on a cross sectional design, precluding examination of the direction of the associations between body related sport and exercise motives and DEAB. Only a small proportion reported exercising and practicing sports for a body related motive. This study neglected to examine more pathogenic behaviours (i.e., dieting, vomiting, fasting, use of laxatives and/or diuretics, enemas, appetite suppressants)"
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "The relationship between body related sport and exercise motives and DEAB could be moderated by the physical self perceptions (e.g., physical condition, sport competence, flexbility). This hypothesis should be the object of future research. Little is known about the beliefs of youth with body related motives regarding sport and exercises as a means to attain their goal and their reasons for engaging in DEAB. These issues should be addressed in future research, particularly in qualitative studies. It would be interesting to focus more on the role of self presentation concerns (i.e., social physique anxiety) or socio-contextual factors (parents, peers, coaches) in the relationships between body related sport and exercise motives and DEAB. \nPreventive intervention should aim to encourage adolescents to become involved in sport and exercise for self-determined motives (e.g., social engagement and enjoyment) rather than for external motives (e.g., body related)."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 335
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Adolescents from educational institutions aged between 11 and 18 years ; attended regular physical education classes; exercising their main sport between one and eight times per week, for a weekly total of between 25 minutes and 12 hours."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 335
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "France"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

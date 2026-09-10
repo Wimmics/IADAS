@@ -1,0 +1,114 @@
+{
+  "_article": "Babusa.2012",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Bodybuilding"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Aesthetic"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Group (bodybuilder, undergraduate)\nBody weight\nIdeal body weight\nBody dissatisfaction \nIneffectiveness\nPerfectionism\nInterpersonal distrust\nInteroceptive awareness\nMaturity fears\nBody attitude\nAge"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Group\nKg\nKg\nEating Disorder Inventory-2 (EDI-2)\nEating Disorder Inventory-2 (EDI-2)\nEating Disorder Inventory-2 (EDI-2)\nEating Disorder Inventory-2 (EDI-2)\nEating Disorder Inventory-2 (EDI-2)\nEating Disorder Inventory-2 (EDI-2)\nBody Attitude Test (BAT)\nYears"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.459
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": -0.373
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple linear regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Muscle dysmorphia was associated with current bodybuilding activity, higher ideal body weight and eating disorder characteristics, i.e. interoceptive awareness. The study results highlight the positive relationship between muscle dysmorphia symptoms and eating disorder characteristics."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "The question for further research is: Does this tendency manifest in male body image pathologies or remain as a transiet fashion trend ? Where are we now in the progress of assimilation of the Western ideals ?"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 120
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Male"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Non-competitive male bodybuilders recruited in fitness centers and gyms; control group undergraduate male students reporting no bodybuilding activity."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Sample 1: non-competitive male bodybuilders (N=60)\nSample 2: control group, undergraduate male students (N=60)"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 120
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Hungary"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

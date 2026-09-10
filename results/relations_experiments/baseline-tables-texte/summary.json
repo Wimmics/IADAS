@@ -1,0 +1,131 @@
+{
+  "tag": "baseline-tables-texte",
+  "variant": "tables+texte",
+  "date": "2026-08-23",
+  "model": "qwen2.5:7b",
+  "stems": [
+    "Abras.2022",
+    "Adam.2021",
+    "AleksicVeljkovic.2020",
+    "Arbinaga.2024",
+    "Arcelus.2015",
+    "Baric.2024",
+    "Benau.2020",
+    "Biedron.2025",
+    "Borowiec.2023",
+    "Button.2024"
+  ],
+  "n_articles": 10,
+  "n_errors": 0,
+  "aggregate": {
+    "n_matched": 59,
+    "n_gt_rels": 180,
+    "n_res_rels": 103,
+    "precision": 29.1,
+    "recall": 21.7,
+    "f1": 19.1
+  },
+  "per_article": [
+    {
+      "stem": "Abras.2022",
+      "n_matched": 2,
+      "n_gt_rels": 24,
+      "n_res_rels": 6,
+      "precision": 17.1,
+      "recall": 3.7,
+      "f1": 6.0,
+      "n_rejected": 3
+    },
+    {
+      "stem": "Adam.2021",
+      "n_matched": 25,
+      "n_gt_rels": 54,
+      "n_res_rels": 30,
+      "precision": 46.9,
+      "recall": 22.2,
+      "f1": 30.1,
+      "n_rejected": 12
+    },
+    {
+      "stem": "AleksicVeljkovic.2020",
+      "n_matched": 11,
+      "n_gt_rels": 24,
+      "n_res_rels": 22,
+      "precision": 41.8,
+      "recall": 18.3,
+      "f1": 25.4,
+      "n_rejected": 3
+    },
+    {
+      "stem": "Arbinaga.2024",
+      "n_matched": 1,
+      "n_gt_rels": 1,
+      "n_res_rels": 8,
+      "precision": 7.1,
+      "recall": 25.0,
+      "f1": 11.1,
+      "n_rejected": 0
+    },
+    {
+      "stem": "Arcelus.2015",
+      "n_matched": 5,
+      "n_gt_rels": 16,
+      "n_res_rels": 8,
+      "precision": 20.9,
+      "recall": 9.8,
+      "f1": 13.4,
+      "n_rejected": 4
+    },
+    {
+      "stem": "Baric.2024",
+      "n_matched": 7,
+      "n_gt_rels": 29,
+      "n_res_rels": 10,
+      "precision": 48.2,
+      "recall": 14.2,
+      "f1": 21.9,
+      "n_rejected": 5
+    },
+    {
+      "stem": "Benau.2020",
+      "n_matched": 4,
+      "n_gt_rels": 20,
+      "n_res_rels": 9,
+      "precision": 18.4,
+      "recall": 7.1,
+      "f1": 10.2,
+      "n_rejected": 3
+    },
+    {
+      "stem": "Biedron.2025",
+      "n_matched": 1,
+      "n_gt_rels": 1,
+      "n_res_rels": 5,
+      "precision": 10.9,
+      "recall": 50.0,
+      "f1": 17.9,
+      "n_rejected": 2
+    },
+    {
+      "stem": "Borowiec.2023",
+      "n_matched": 1,
+      "n_gt_rels": 1,
+      "n_res_rels": 3,
+      "precision": 34.6,
+      "recall": 60.0,
+      "f1": 43.9,
+      "n_rejected": 1
+    },
+    {
+      "stem": "Button.2024",
+      "n_matched": 2,
+      "n_gt_rels": 10,
+      "n_res_rels": 2,
+      "precision": 45.5,
+      "recall": 6.5,
+      "f1": 11.4,
+      "n_rejected": 2
+    }
+  ],
+  "errors": []
+}

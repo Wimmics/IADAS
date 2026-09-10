@@ -1,0 +1,192 @@
+======================================================================
+Évaluation des rangements vs GT Type  (216 article(s))
+======================================================================
+
+######################################################################
+VARIABLES — VariableRangement vs GT Type
+######################################################################
+Variables classées (GT)      : 4230
+Variables sans classif. GT   : 516  (ignorées)
+----------------------------------------------------------------------
+Chaîne complète identique    : 4228  (100.0%)
+hasCategory (CLASS) correct  : 4230  (100.0%)
+finalClass correct           : 4228  (100.0%)
+Non trouvées (→ None)        :    0  (  0.0%)
+
+######################################################################
+SPORTS — SportRangement vs GT Type
+######################################################################
+Articles avec sport (GT)     : 195
+Articles sans sportName (GT) : 21  (ignorés)
+----------------------------------------------------------------------
+subcategory + type corrects  :  144  ( 73.8%)
+sportSubcategory correct     :  163  ( 83.6%)
+sportPracticeType correct    :  174  ( 89.2%)
+Non trouvés (→ None)         :    2  (  1.0%)
+
+======================================================================
+
+VARIABLES — 2 cas d'erreur (chaîne différente ou non trouvée) :
+
+[Pajaujiene.2012] V 'Appearance evaluation'
+    GT   : {'iadas:subClass1': 'Body image and self-esteem', 'iadas:subClass2': 'Cognitive dimension of body image and self-esteem', 'iadas:subClass3': 'Body norms internalization', 'iadas:subClass4': 'Sociocultural attitudes toward appearance-internalization', 'iadas:finalClass': 'Sociocultural attitudes toward appearance-internalization', 'iadas:hasCategory': 'Intrapersonal factor related to DEAB'}
+    pred : {'iadas:subClass1': 'Body image and self-esteem', 'iadas:subClass2': 'Perceptual dimension of body image and self-esteem', 'iadas:subClass3': 'Body self-perception', 'iadas:subClass4': 'Appearance evaluation', 'iadas:finalClass': 'Appearance evaluation', 'iadas:hasCategory': 'Intrapersonal factor related to DEAB'}
+[Scoffier-Meriaux.2016] V 'Supportive friendship'
+    GT   : {'iadas:subClass1': 'Positive relationships with significant others', 'iadas:subClass2': 'Positive relationships with peer/teammate/friend', 'iadas:subClass3': 'Sport friendship quality', 'iadas:finalClass': 'Sport friendship quality', 'iadas:hasCategory': 'Interpersonal factor related to DEAB'}
+    pred : {'iadas:subClass1': 'Positive relationships with significant others', 'iadas:subClass2': 'Positive relationships with peer/teammate/friend', 'iadas:subClass3': 'Supportive friendships', 'iadas:finalClass': 'Supportive friendships', 'iadas:hasCategory': 'Interpersonal factor related to DEAB'}
+
+SPORTS — 51 cas d'erreur :
+
+[Anderson.2012] S 'gymnastics, swimming, and divers'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[Arbinaga.2024] S 'Dance (e.g., Classical dance, flamenco, contemporary dance, Spanish dance, urban dance)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Arcelus.2015] S 'Dance (e.g., ballet, contemporary, flamenco, spanish folk)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Ausmus.2021] S 'gymnastics'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Bissel.2004] S 'Mixed sport (e.g., soccer, basketball, track and field, softball, swimming, diving, gymnastics).'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : ∅ (non trouvé)
+[Burgon.2024] S 'Running, cycling, swimming, hiking, gymgoer HIIT, gymgoer weights, gymnastics, dance, crossfit'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[Cerea.2026] S 'Powerlifter'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Power', 'iadas:sportPracticeType': 'Individual sport'}
+[Clermont.2022] S 'Endurance, power/technical, ball game, weight dependent, technical, aesthetic, high mass'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[Coelho.2025] S 'Volleyball, futsal, football, handball, basketball'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Team sport'}
+[Davis.1990] S 'Running, swimming, cycling, aerobics classes'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[DeSousaFortes.2014b] S 'Track and field (100 meters, 200 meters, 100 meter hurdles, 400 meter hurdles, pole vault, long jump, high jump and javelin throw)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Mixed sport'}
+[DeSousaFortes.2017b] S 'Volleyball'
+    GT   : {'iadas:sportPracticeType': 'Team sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Ball game', 'iadas:sportPracticeType': 'Team sport'}
+[Drury.2024] S 'Dance (ballet, contemporary, modern, musical theatre, contemporary ballet, hip hop, jazz)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Egan.2016] S 'Running, triathlon, ball sports (volleyball, football, baseball, basketball, golf, rugby, squash, netball, cricket, hockey, tennis, badminton), gym, other (water polo, sailing, surf lifesaving, pilates, skateboarding, hula hooping, equestrian), cycling, dance, yoga, athletics, rowing, swimming'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[Estanol.2013] S 'Dance'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Fernandes.2023] S 'Gyms and fitness centers (i.e., cross training and weightlifting)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Mixed sport'}
+[Ferrand.2004] S 'Cyclism'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Endurance', 'iadas:sportPracticeType': 'Individual sport'}
+[Ferrand.2005] S 'Synchronised Swimming, basketball, handball, volleyball and soccer'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Team sport'}
+[Ferrand.2007] S 'Synchronized swimming'
+    GT   : {'iadas:sportPracticeType': 'Team sport; Individual sport', 'iadas:sportSubcategory': None}
+    pred : ∅ (non trouvé)
+[Goodwin.2014a] S 'Dance (ballet, jazz/modern, contemporary dance, hip hop, tap, other)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Gorell.2018] S 'Half marathon; marathon'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Endurance', 'iadas:sportPracticeType': 'Individual sport'}
+[Haase.1999] S 'Rowing (i.e., Heavyweight and lightweight rowing)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Endurance', 'iadas:sportPracticeType': 'Individual sport'}
+[Harriger.2014] S 'gymnastics'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Jauregui-Lobera.2016] S 'Dance (e.g., spanish flamenco contemporary, neoclassic)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Kipp.2015] S 'gymnastics'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Kiss-Leizer.2019] S 'Athletics; circus; ashtanga yoga'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[Kontele.2022] S 'gymnastics (artistic, rhythmic, trampoline, tumbling, aerobic, acrobatic)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Kosmidou.2018] S 'Rhythmic gymnastics'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Kulshreshtha.2020] S 'Kathak dance'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[LameiradeOliveira.2017] S 'Rhythmic gymnastics, running (middle and long distance- above 800m), rowers, junior synchronized swimming, senior synchronized swimming and university athletes'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[Lanfranchi.2014] S '46 different sports categorized on (1) leanness, (2) nonleanness, (3) individual, (4) team, (5) organized or (6) not, (7) competitive or (8) not'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[Lantz.2004] S 'Ultramarathons'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Endurance', 'iadas:sportPracticeType': 'Individual sport'}
+[Leger.2025] S 'Running, powerlifting, figure skating, karate, dance'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[Markovic.2026] S 'Rhythmic gymnastics'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Mazaraki.2024] S 'Cyclism'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Endurance', 'iadas:sportPracticeType': 'Individual sport'}
+[Neves.2016] S 'gymnastics'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Nordin.2003] S 'gymnastics (artistic, rhythmic, sport acrobatics)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Padham.2014] S 'Dance (Ballet, contemporary, modern, other styles like Irish, African, musical theater, hip-hop and jazz)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Penniment.2012] S 'Dance (jazz, classical)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Reel.2013] S 'gymnastics'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Scoffier-Meriaux.2022] S 'Aesthetic, endurance, weight category'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[Scott.2019] S 'Aesthetic, endurance, weight-class, team, ball-game, power, technical'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[Scott.2020] S 'Aesthetic, endurance, weight-class, team, ball-game, power, technical'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[Senturk.2025] S 'Taekwondo, rowing'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}
+[Thiemann.2015] S 'Team vaulters, rythmic gymnasts, figure-skaters, artistic gymnasts, synchronized swimmers, field hockey'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Team sport'}
+[Toro.2009] S 'Dance (classical ballet; Spanish dance)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Turton.2017] S 'Long distance running (1500m, 3000m, 5000m, 10000m, half marathon, marathon, cross-country, ultramarathon, fell running and other)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Endurance', 'iadas:sportPracticeType': 'Individual sport'}
+[VanRens.2022] S 'Circus (acrobatics, floor acrobatics, object manipulation, equilibrium)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Voelker.2014] S 'Figure skating (singles, multiple, synchronized, ice dancing, pairs)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Voelker.2018] S 'Figure skating (singles skaters, ice dancers, synchronized, multiple disciplines)'
+    GT   : {'iadas:sportPracticeType': 'Individual sport', 'iadas:sportSubcategory': None}
+    pred : {'iadas:sportSubcategory': 'Aesthetic', 'iadas:sportPracticeType': 'Individual sport'}
+[Wachten.2024] S 'Endurance, resistance and fitness, health, ball and team, antigravitation, technical, aesthetical, rehabilitation, martial arts'
+    GT   : {'iadas:sportPracticeType': 'Mixed sport', 'iadas:sportSubcategory': 'Multisport'}
+    pred : {'iadas:sportSubcategory': 'Multisport', 'iadas:sportPracticeType': 'Individual sport'}

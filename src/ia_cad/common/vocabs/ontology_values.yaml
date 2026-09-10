@@ -1,0 +1,129 @@
+version: 2.0.0
+source: Onto/ia-das-ontology-clean.ttl (SELECT DISTINCT par propriété)
+values:
+  sportLevel:
+  - Amateur
+  - Professional
+  - Student
+  gender:
+  - Female
+  - Male
+  - Mixed
+  studyType:
+  - Case study
+  - Cohort studies
+  - Cross-sectional studies
+  - Longitudinal
+  - Prospective studies
+  population:
+  - Athletes
+  - Students
+  numberOfSportStudied:
+  - Multiple
+  - One
+  relationDirection:
+  - +
+  - '-'
+  - N.A.
+  - NS
+  complexityOfAnalysis:
+  - Complex analyses
+  - Simple analyses
+  groupStatisticalAnalysis:
+  - Correlation
+  - Model-based analyses
+  - Regression
+  continent:
+  - America
+  - Asia
+  - Europe
+  - Multiple countries
+  - Oceania
+  country:
+  - Australia
+  - Brazil
+  - Canada
+  - China
+  - Chypre
+  - Croatia
+  - England
+  - France
+  - Germany
+  - Greece
+  - Hungary
+  - India
+  - Israel
+  - Italy
+  - Lebanon
+  - Lithuania
+  - Malaysia
+  - Mexico
+  - Netherlands
+  - New Zealand
+  - New Zealand Australia
+  - Norway
+  - Pakistan
+  - Palestine
+  - Philippines
+  - Poland
+  - Portugal
+  - Serbia
+  - Slovenia
+  - Spain
+  - Sweden
+  - Switzerland
+  - Turkey
+  - United Kingdom
+  - United States of America
+  typeOfAnalysis:
+  - Binary logistic regression
+  - Bivariate correlation
+  - Canonical correlation
+  - Correlation
+  - Cross sectional correlations
+  - Cross-lagged partial correlation
+  - First order correlation controling social desirability
+  - Hierarchical linear regression
+  - Hierarchical multiple regression
+  - Hierarchical multivariate regression
+  - Hierarchical regression
+  - Huber's M-estimation for regression analysis
+  - Intercorrelation
+  - Linear regression
+  - Linear regression analyses
+  - Linear regression model
+  - Linear ridge regression model
+  - Logistic regression
+  - Mediation analyses
+  - Mediation model
+  - Mediation model with bootstap
+  - Mediator model
+  - Model prediction
+  - Moderated mediation
+  - Moderated mediation model
+  - Moderation analyses
+  - Moderation model
+  - Moderation regression
+  - Multiple linear regression
+  - Multiple mediation analyses
+  - Multiple regression
+  - Multiple regression analysis
+  - Multiple regression analysis with descending method
+  - Multiple regression model
+  - Multiple stepwise regressions
+  - Partial correlation
+  - Partial correlation with BMI included as covariate
+  - Path analysis
+  - Pearson correlation
+  - Predictive relationship/regression
+  - Regression
+  - Regression model
+  - Relative weight analysis
+  - Simple linear regression
+  - Simple quadratic regression
+  - Spearman correlation
+  - Structural Equation Modelling (SEM) - Confirmatory factor analysis (CFA)
+  - Structural equation modeling
+  - Structural model
+  - Structural path analysis
+  - Zero-order correlation

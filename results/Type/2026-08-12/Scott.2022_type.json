@@ -1,0 +1,523 @@
+{
+  "_article": "Scott.2022",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-12",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Non-elite - 72% (n = 460), Elite - 28% (n = 186)",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Disordered eating/compulsive exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Inventory-2 (EDI-2)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.18
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Athletes with higher body dissatisfaction reported significantly greater disordered eating/compulsive exercise symptoms (r = .18, p < .05)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating/compulsive exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Inventory-2 (EDI-2)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Self-esteem"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Rosenberg Self-Esteem Scale (RSES)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Global self-worth",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "disordered eating symptoms were a significant negative predictor of self-esteem (β = -.19, p < .05)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating/compulsive exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Inventory-2 (EDI-2)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Anxiety"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Hospital Anxiety and Depression Scale (HADS-Anxiety)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ],
+      "_evidence": "disordered eating symptoms were a significant positive predictor of anxiety (β = .17, p < .05)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating/compulsive exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Inventory-2 (EDI-2)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Avoidance of weight control behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Compulsive Exercise Test-Athlete (CET-A-Avoidance)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.14
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "greater levels of disordered eating/compulsive exercise predicted higher CET-A-Avoidance scores (β = .14, p < .05)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating/compulsive exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Inventory-2 (EDI-2)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Inventory-2 (EDI-2)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.12
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "greater levels of disordered eating/compulsive exercise predicted higher EDI-2-Bulimia scores (β = .12, p < .05)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating/compulsive exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Inventory-2 (EDI-2)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Drive for thinness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Inventory-2 (EDI-2)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for thinness",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.18
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "greater levels of disordered eating/compulsive exercise predicted higher EDI-2-Drive for Thinness scores (β = .18, p < .05)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating/compulsive exercise"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "EDI-2-Drive for Thinness, EDI-2-Bulimia, EDI-2-Body Dissatisfaction, CET-A-Avoidance, CET-A-Mood Improvement, CET-A-Weight Control"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Severity of Critical Comment"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "β = 0.25-0.32 for EDI-Drive for Thinness, EDI-Body Dissatisfaction and CET-Avoidance; β = 0.23 for EDI-Bulimia; β = 0.28 for CET-Avoidance"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "External comments",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Severity of critical comment",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Severity of critical comment",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ],
+      "_evidence": "Table 2: Descriptive statistics and tests of difference between the Critical Comment (CC) and the No-Critical Comment (No-CC) groups on study variables.",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Structural Equation Modelling (SEM)"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Critical weight/shape comments from teammates have a strong negative impact on athletes' wellbeing, with female athletes reporting comments to be more severe compared to males. Explicit critical comments are more important than implicit influences when predicting increased body dissatisfaction, eating and exercise psychopathology."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The cross-sectional design precludes causal conclusions; there is a higher prevalence of athletes with an eating disorder history in the critical comment group which may influence results. The accuracy of findings could be limited by poor recall/reconstruction, and future research should employ longitudinal designs to track athletes' wellbeing over time."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should employ prospective designs to disentangle the true cause and effect relationship between the impact of a critical comment and poor wellbeing. Longitudinal studies with frequent sampling points are needed, as well as exploring variables that may mediate the relationship between critical comment severity and eating/exercise psychopathology."
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 646
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Athletes who received a critical comment from a teammate concerning their weight and/or shape, matched with athletes who did not receive such a comment"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

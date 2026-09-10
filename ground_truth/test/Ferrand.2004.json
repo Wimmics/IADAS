@@ -1,0 +1,110 @@
+{
+  "_article": "Ferrand.2004",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Cyclism"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": null
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": null
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Perfectionism self-oriented\nOther oriented perfectionism\nPerfectionism socially prescribed"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Multidimensional Perfectionism Scale (MPS)\nMultidimensional Perfectionism Scale (MPS)\nMultidimensional Perfectionism Scale (MPS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.18
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression analysis with descending method"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Self oriented perfectionism was not relevant in predicting ED. Analysis showed the contribution of other-oriented perfectionism scores in the prediction of log-transformed global EAT, dieting, bulimia scores, and socially prescribed perfectionism scores in the prediction of oral control scores."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "EAT-26 alone does not yield a specific diagnosis of an eating disorder."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Other methodologies such as interviews or other eating disorder tests are necessary to analyze the association between perfectionism and eating disorders. Education of coaches might be the first step in awareness and prevention of eating disorder symptoms."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 42
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Male"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "12 regional\n13 national\n17 elite"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 42
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "France"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "_article": "Cerea.2026",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "negative",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Powerlifting"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Power",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Dysmorphic Disorder Inventory (MDDI)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Appearance comparison"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Instagram Appearance Comparison Scale (IACS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perception of social and sport pressure from other",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Appearance comparison",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Appearance comparison",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ],
+      "_evidence": "The IACS emerged as a significant predictor of the MDDI total score (β = .20; p = .036).",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Dysmorphic Disorder Inventory (MDDI)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Self-esteem"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Rosenberg Self Esteem Scale (RSES)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Global self-worth",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "The RSES emerged as a significant predictor of the MDDI total score (β = -.45; p = .001).",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Dysmorphic Disorder Inventory (MDDI)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "International Powerlifting Federation Points"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "International Powerlifting Federation Points (IPF GL points)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "The IPF GL points emerged as a significant predictor of the MDDI total score (β = -.20; p = .046).",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "RSES"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "β = -.21; p = .035"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "MDDI total score"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "β = .20; p = .036"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 3: RSES (β = -.21; p = .035) and the IACS (β = .20; p = .036) emerged as the only significant predictors of the MDDI total score.",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Among competitive men powerlifters, MD symptoms may be associated with appearance-based comparison processes and self-evaluative psychological factors. Among women powerlifters, lower self-esteem and poorer competitive performance were associated with higher MD symptoms."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The cross-sectional design precludes causal conclusions. The number of women powerlifters was relatively small, and the recruitment strategy may have introduced selection bias."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future studies should include larger samples, particularly among women, and compare competitive powerlifters with athletes in other sport disciplines. Longitudinal studies are needed to clarify temporal dynamics."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 180
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 180
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Being at least 18 years old; currently competing in powerlifting competitions; absence of a self-reported Body Image Disorder (BID)"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "127 Men 53 Women"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Competitive powerlifters"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Italy"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

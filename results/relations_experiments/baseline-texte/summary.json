@@ -1,0 +1,131 @@
+{
+  "tag": "baseline-texte",
+  "variant": "texte",
+  "date": "2026-08-23",
+  "model": "qwen2.5:7b",
+  "stems": [
+    "Abras.2022",
+    "Adam.2021",
+    "AleksicVeljkovic.2020",
+    "Arbinaga.2024",
+    "Arcelus.2015",
+    "Baric.2024",
+    "Benau.2020",
+    "Biedron.2025",
+    "Borowiec.2023",
+    "Button.2024"
+  ],
+  "n_articles": 10,
+  "n_errors": 0,
+  "aggregate": {
+    "n_matched": 29,
+    "n_gt_rels": 180,
+    "n_res_rels": 72,
+    "precision": 25.0,
+    "recall": 19.3,
+    "f1": 13.5
+  },
+  "per_article": [
+    {
+      "stem": "Abras.2022",
+      "n_matched": 0,
+      "n_gt_rels": 24,
+      "n_res_rels": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "n_rejected": 1
+    },
+    {
+      "stem": "Adam.2021",
+      "n_matched": 3,
+      "n_gt_rels": 54,
+      "n_res_rels": 3,
+      "precision": 61.9,
+      "recall": 3.2,
+      "f1": 6.1,
+      "n_rejected": 0
+    },
+    {
+      "stem": "AleksicVeljkovic.2020",
+      "n_matched": 11,
+      "n_gt_rels": 24,
+      "n_res_rels": 26,
+      "precision": 32.4,
+      "recall": 18.3,
+      "f1": 23.4,
+      "n_rejected": 3
+    },
+    {
+      "stem": "Arbinaga.2024",
+      "n_matched": 0,
+      "n_gt_rels": 1,
+      "n_res_rels": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "n_rejected": 0
+    },
+    {
+      "stem": "Arcelus.2015",
+      "n_matched": 6,
+      "n_gt_rels": 16,
+      "n_res_rels": 8,
+      "precision": 29.0,
+      "recall": 13.2,
+      "f1": 18.2,
+      "n_rejected": 12
+    },
+    {
+      "stem": "Baric.2024",
+      "n_matched": 3,
+      "n_gt_rels": 29,
+      "n_res_rels": 6,
+      "precision": 23.7,
+      "recall": 3.7,
+      "f1": 6.4,
+      "n_rejected": 2
+    },
+    {
+      "stem": "Benau.2020",
+      "n_matched": 2,
+      "n_gt_rels": 20,
+      "n_res_rels": 9,
+      "precision": 10.3,
+      "recall": 4.0,
+      "f1": 5.8,
+      "n_rejected": 24
+    },
+    {
+      "stem": "Biedron.2025",
+      "n_matched": 1,
+      "n_gt_rels": 1,
+      "n_res_rels": 6,
+      "precision": 8.1,
+      "recall": 50.0,
+      "f1": 13.9,
+      "n_rejected": 7
+    },
+    {
+      "stem": "Borowiec.2023",
+      "n_matched": 1,
+      "n_gt_rels": 1,
+      "n_res_rels": 4,
+      "precision": 32.6,
+      "recall": 93.3,
+      "f1": 48.3,
+      "n_rejected": 3
+    },
+    {
+      "stem": "Button.2024",
+      "n_matched": 2,
+      "n_gt_rels": 10,
+      "n_res_rels": 2,
+      "precision": 52.4,
+      "recall": 7.2,
+      "f1": 12.6,
+      "n_rejected": 8
+    }
+  ],
+  "errors": []
+}

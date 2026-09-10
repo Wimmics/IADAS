@@ -1,0 +1,311 @@
+{
+  "_article": "Abrante.2025",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:hasMediator",
+      "object": "Appearance-based motivation",
+      "_rejected_reason": "prédicat 'hasMediator' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:mediatorMeasure",
+      "object": "Motives for Physical Activities Measure-Revised (MPAM-R) Appearance subscale",
+      "_rejected_reason": "prédicat 'mediatorMeasure' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:hasModerator",
+      "object": "Cognitive flexibility",
+      "_rejected_reason": "prédicat 'hasModerator' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:moderatorMeasure",
+      "object": "Cognitive Flexibility Inventory (CFI) Control subscale",
+      "_rejected_reason": "prédicat 'moderatorMeasure' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "124 Males 148 Females",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia (MD) symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Cognitive flexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Cognitive Flexibility Inventory (CFI) Control subscale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Cognitive process",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Cognitive flexibility",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Cognitive flexibility",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.48
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.043",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "The moderated mediation model, with age included as a covariate, was significant and accounted for 48.0 % of the variance in MD symptoms (R2 = 0.48, F(5, 89) = 16.46, p < .001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Influence of appearance ideals"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Cuestionario de Influencia del Modelo Estético Corporal (CIMEC-V-17)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Muscle dysmorphia (MD) symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.16
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Consistent with Hypothesis 1, a significant indirect association was found between the influence of appearance ideals and MD symptoms via appearance-based motivation (b = 0.16, 95 % CI [0.03, 0.36]).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Influence of appearance ideals"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Cuestionario de Influencia del Modelo Estético Corporal (CIMEC-V-17)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Cognitive flexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Cognitive Flexibility Inventory (CFI) Control subscale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Cognitive process",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Cognitive flexibility",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Cognitive flexibility",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": -0.06
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Sup porting Hypothesis 2, a significant interaction between the influence of appearance ideals and cognitive flexibility emerged (b = −0.06, p = .043).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Cognitive flexibility (CFI Control)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "25.06"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Muscle Dysmorphia (MASS Total Score)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "40.48"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.48
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.043",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Table 1: Descriptive statistics for age and key study variables (N = 95).",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Moderated mediation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "This study supported a dual-pathway statistical model of muscle dysmorphia (MD) in male exercisers. Findings suggest MD symptom endorsement is a complex issue related to the interplay of social pressure, personal motivation, and cognitive resources."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The cross-sectional design precludes causal inferences. The findings' generalizability is limited by the non-probabilistic convenience sample. The study exclusively included male participants."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should replicate this model in larger, more diverse samples, including women and gender-diverse individuals. The instrument assessing sociocultural pressure was not designed specifically for muscularity ideals, which future studies could address."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 95
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Male"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 95
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Spain"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

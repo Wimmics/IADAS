@@ -1,0 +1,134 @@
+{
+  "_article": "Gomes.2019",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Crossfit; weight training; soccer; basketball; handball; swimming; athletics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating behavior"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorders Cognitions and Behaviors"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Disordered eating behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Muscularity oriented body image\nMuscularity oriented behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for Muscularity Scale (DMS)\nDrive for Muscularity Scale (DMS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.39
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<0.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Structural equation modeling"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Structural equation models indicated that cognitive appraisal mediated the relation between drive for muscularity and disordered eating behavior. The mediation improved the explained variance of disordered eating behavior, from 34% in the direct model and 15% in the full mediation model to 39% in the partial model."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The cross sectional design cannot be inferred from the current results and the use of self-report measures, the use of convenience sample that may not be representative for the male population who practice sports regularly, the combination of fitness center athletes and competitive athletes that may have different body perceptions, motives and values related to the sport's practice."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Further research should, evaluate differences between these specific samples regarding the role of cognitive appraisal in the association between drive for muscularity and disordered eating. The results require replication throughout the inclusion of other important theoretical elements proposed by transactional perspectives (e.g., secondary cognitive appraisal) and the inclusion of sport activities even more prone to drive for muscularity (e.g., bodybuidling)"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 308
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Male"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Males practicing exercise at fitness centres and sport clubs"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Fitness centers\nSports clubs"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 308
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Portugal"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

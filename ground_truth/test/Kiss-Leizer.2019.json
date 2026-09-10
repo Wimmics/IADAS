@@ -1,0 +1,615 @@
+{
+  "_article": "Kiss-Leizer.2019",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Athletics; circus; ashtanga yoga"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexia nervosa"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-11-Hu"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Health anxiety"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Short Health Anxiety Inventory (SHAI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Specific anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Health anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Health anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.31
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexia nervosa"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-11-Hu"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Mood modification"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Motivation for Healthy Behaviors in Orthorexia Nervosa Qyestionnaire (MHBONQ)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.34
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexia nervosa"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-11-Hu"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Weight control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Motivation for Healthy Behaviors in Orthorexia Nervosa Qyestionnaire (MHBONQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Weight control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Weight control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.34
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexia nervosa"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-11-Hu"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Social desirability"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Motivation for Healthy Behaviors in Orthorexia Nervosa Qyestionnaire (MHBONQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Global self-worth",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Social desirability",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Social desirability",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.48
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexia nervosa"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-11-Hu"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Guilt if skipping training"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Do you feel guilty if you skip a training ? Participants respond on a four-point scale (1= always ; 4=never)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.46
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexia nervosa"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-11-Hu"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Gender\nAge\nWeekly occasions of training\nHours spent with training\nGuilt if skipping training\nCalorie counting during training"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociodemographic questionnaire\nYears\nQuestionnaire about sport habits \nQuestionnaire about sport habits \nDo you feel guilty if you skip a training ? Participants respond on a four-point scale (1= always ; 4=never)\nDo you monitor how many calories have you burnt during the exercise ?"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexia nervosa"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-11-Hu"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Gender\nAge\nWeekly occasions of training\nHours spent with training\nGuilt if skipping training\nCalorie counting during training\nHealth anxiety"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociodemographic questionnaire\nYears\nQuestionnaire about sport habits \nQuestionnaire about sport habits \nDo you feel guilty if you skip a training ? Participants respond on a four-point scale (1= always ; 4=never)\nDo you monitor how many calories have you burnt during the exercise ?\nShort Health Anxiety Inventory (SHAI)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexia nervosa"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-11-Hu"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Gender\nAge\nWeekly occasions of training\nHours spent with training\nGuilt if skipping training\nCalorie counting during training\nHealth anxiety\nMood modification\nWeight control\nSocial desirability\nHealthy lifestyle"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociodemographic questionnaire\nYears\nQuestionnaire about sport habits \nQuestionnaire about sport habits \nDo you feel guilty if you skip a training ? Participants respond on a four-point scale (1= always ; 4=never)\nDo you monitor how many calories have you burnt during the exercise ?\nShort Health Anxiety Inventory (SHAI)\nMotivation for Healthy Behaviors in Orthorexia Nervosa Qyestionnaire (MHBONQ)\nMotivation for Healthy Behaviors in Orthorexia Nervosa Qyestionnaire (MHBONQ)\nMotivation for Healthy Behaviors in Orthorexia Nervosa Qyestionnaire (MHBONQ)\nMotivation for Healthy Behaviors in Orthorexia Nervosa Qyestionnaire (MHBONQ)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Health anxiety, mood modification are a strong predictor of orthorexia nervosa."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The results of the present study were based on online data gathering which questions the representative nature of the sample. Although participants were represented in a broad range of age and educational level, the highest proportion of participants were young and highly qualified Female. The participation in the research was voluntary thus the increased interest towards the topic of the examination might bias the results. The correlational desing of the present study does not allow causal inferences. The subject of the present study was the tendency to orthorexia nercosa, not orthorexia nervosa as a diagnosis, the results cannot be fully transposed into orthorexia nervosa since no orthorexia diagnosed patients are available yet."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "A viable next step in orthorexia nervosa research could be the use of experience sampling method which could provide important information about the daily fluctuation of orthorexia nervosa and the related variables. It would be benefical to collect information about the type of the exercise as well, because some sport activities (category sports, aesthetic sport) can mean a higher vulnerability to orthorexia."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 739
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Participants aged between 18 to 72 years"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 739
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Hungary"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

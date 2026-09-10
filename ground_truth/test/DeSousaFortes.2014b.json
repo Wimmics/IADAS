@@ -1,0 +1,239 @@
+{
+  "_article": "DeSousaFortes.2014b",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Track and field (100 meters, 200 meters, 100 meter hurdles, 400 meter hurdles, pole vault, long jump, high jump and javelin throw)"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Dieting"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Anxiety trait\nAnxiety state"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "State Trait Anxiety Inventory-Trait (STAI-T)\nState Trait Anxiety Inventory-State (STAI-S)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.06
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia and food preoccupation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Bulimia and food preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia and food preoccupation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Anxiety trait\nAnxiety state"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "State Trait Anxiety Inventory-Trait (STAI-T)\nState Trait Anxiety Inventory-State (STAI-S)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.01
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Oral control"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Compensatory behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Oral control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Oral control",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Anxiety trait\nAnxiety state"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "State Trait Anxiety Inventory-Trait (STAI-T)\nState Trait Anxiety Inventory-State (STAI-S)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.02
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple linear regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "The results of the first regression model (dieting) show that state and trait anxiety were not associated with long fasting periods in Female athletes. The regression model using the bulimia subscale score as the criterion variable showed that anxiety was not related to self-induced vomiting and binge eating in Female athletes. The last regression model showed that trait anxiety influences the type and amount of foods consumed by the athletes."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "One is the cross- sectional study design, preventing the inference of causality. This means that it is not possible to assess the intensity and direction of the associations found between the outcome variable and the independent variables. Another limitation may be the non-assessment of the athletes’ malestrual cycle phase since the malestrual cycle may affect anxiety."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "More specifically, coaches should pay attention to anxiety symptoms in their young athletes. Additionally, athletes’ anxiety level should be assessed by STAI. Coaches should watch high-anxiety athletes for binge eating and self- induced vomiting, and keep track of the types and amounts of foods they consume. Athletes with abnormal eating behaviors should be referred to a psychologist, psychiatrist, and/or dietician."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 88
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "The inclusion criteria were: having signed the informed consent form; training at least twho hours a day, five days a week; having participated in a regional competition in 2013; having answered the questionnaires; and having undergone anthropometric assessments. The exclusion criteria were: having physical and/or intellectual disabilities; and taking psychoactive medication periodically."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 88
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Brazil"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

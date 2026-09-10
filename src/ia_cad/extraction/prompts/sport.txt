@@ -1,0 +1,62 @@
+TASK: Extract sport information from this scientific article for the IADAS knowledge graph.
+
+{ONTOLOGY_BLOCK}
+
+EXTRACTION RULES:
+1. Extract ONLY iadas:sportName and iadas:sportLevel — no other predicates.
+2. Only extract values explicitly stated or clearly implied by the text. Never invent.
+3. iadas:sportName — the actual sport(s) studied.
+   - List EVERY sport named anywhere in the article (participants, methods, results, tables),
+     separated by ", " (e.g. "Football, Basketball, Swimming"). Do NOT stop at the first one,
+     and do NOT collapse a named list into a single generic label.
+   - Write the literal value "Mixed sport" ONLY when participants are described as athletes
+     from several sports but NOT A SINGLE sport is named anywhere in the text.
+   - Prefer the exact canonical name from the ALLOWED VALUES list above when the article's sport
+     matches one (or a close variant, e.g. singular/plural, spelling). Otherwise use the sport name
+     as written in the text — do not force a bad fit.
+   - Omit this predicate if no specific sport is named or implied.
+4. iadas:sportLevel — use ONE of these three values exactly as written. Judge by how the
+   PARTICIPANTS are recruited/described, NOT by the authors' university affiliations.
+   - Student      : participants recruited THROUGH an educational institution and described as
+                    students/pupils of it. This includes US/Canadian "collegiate", "intercollegiate",
+                    "NCAA", "varsity" athletes; any "Division I / II / III / IV" (NCAA division) team;
+                    "college students", "university students", "high-school" or "adolescent" school
+                    athletes; and "conservatory", "dance academy" or "sport school" students. Key
+                    signals: "collegiate", "intercollegiate", "NCAA", "Division I/II/III/IV", "varsity",
+                    "college students", "university students", "high school", "conservatory", "academy".
+   - Amateur      : non-professional practitioners recruited through CLUBS, GYMS, fitness centres,
+                    sport federations, or the general community — NOT through a school. This is the
+                    DEFAULT for athletes who are not students of an institution and not paid
+                    professionals, even if they are described only as "athletes". Also use Amateur for
+                    competition framed as "local", "departmental", "regional" or "national federation"
+                    level when unpaid. Key signals: "club", "affiliated to clubs", "amateur", "local",
+                    "departmental", "regional", "gym", "fitness", "recreational", "community", "federation".
+   - Professional : sport is a primary paid occupation, OR a professional company / elite-international
+                    athlete with compensation. Key signals: "professional", "professional company",
+                    "elite", "international", "national team", "Olympic", "paid".
+   IMPORTANT: these are the ONLY valid values. Never write anything else — no "National",
+   "International", "Recreational", "Competitive", "Semi-professional", etc.
+   When unsure between Student and Amateur: choose Student ONLY if the text explicitly frames
+   participants as students/collegiate/varsity athletes; otherwise choose Amateur.
+   A university or college named only as the DATA-COLLECTION SITE, the recruitment channel, or
+   the AUTHORS' affiliation is NOT a Student signal — the participants themselves must be framed
+   as students/pupils. In this corpus Amateur is the most common level and Student is over-used;
+   do not assign Student by default just because a university is mentioned.
+5. Omit a predicate entirely if its value cannot be determined from the text.
+
+OUTPUT FORMAT — a JSON object with a "sport" key containing the array of predicate/object pairs:
+{
+  "sport": [
+    {"predicate": "iadas:sportName", "object": "Football"},
+    {"predicate": "iadas:sportLevel", "object": "Amateur"}
+  ]
+}
+
+EXAMPLES OF CORRECT OUTPUT:
+{FEW_SHOTS}
+
+--- TEXT TO ANALYZE ---
+{TEXT}
+--- END ---
+
+Return ONLY the JSON object with the "sport" key, no explanation:

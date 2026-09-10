@@ -1,0 +1,346 @@
+{
+  "_article": "Kontele.2022",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should explore how body-dissatisfaction constructs vary across different athletic contexts.",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Gymnastics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Aesthetic",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorder symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sport and coaches weight pressures"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight-Pressures in Sport-Females (WPS-F)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.303
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "In the group of competitive gymnasts, the sport and coaches' weight pressures sub-scale, the appearance and performance weight pressures sub-scale and the BMI accounted for 30.3% of the variance in EAT-26 (adjusted R2 = 0.303, F(3.143) = 22.165, p < 0.001) (Table 4).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorder symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Appearance and performance weight pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight-Pressures in Sport-Females (WPS-F)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Weight pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Appearance and performance weight pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Appearance and performance weight pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.303
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "In the group of competitive gymnasts, the sport and coaches' weight pressures sub-scale, the appearance and performance weight pressures sub-scale and the BMI accounted for 30.3% of the variance in EAT-26 (adjusted R2 = 0.303, F(3.143) = 22.165, p < 0.001) (Table 4).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorder symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BMI"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Mass Index"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.303
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "In the group of competitive gymnasts, the sport and coaches' weight pressures sub-scale, the appearance and performance weight pressures sub-scale and the BMI accounted for 30.3% of the variance in EAT-26 (adjusted R2 = 0.303, F(3.143) = 22.165, p < 0.001) (Table 4).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Sport and coaches weight pressures"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "0.217"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EAT-26 score"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "0.403"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.403
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "In the competitive level group, positive correlations were found between the total score in EAT-26 and the total WPS-F score (r = 0.403, p ≤0.01), the sport and coaches' weight pressures sub-scale (r = 0.353, p ≤0.01) and the appearance and performance weight pressures sub-scale (r = 0.351, p ≤0.01), while there was a negative correlation between the total score in EAT-26 and BMI (r = −0.186, p = 0.024).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Appearance and performance weight pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "0.449"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Weight pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Appearance and performance weight pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Appearance and performance weight pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EAT-26 score"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "0.353"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.353
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "In the competitive level group, positive correlations were found between the total score in EAT-26 and the total WPS-F score (r = 0.403, p ≤0.01), the sport and coaches' weight pressures sub-scale (r = 0.353, p ≤0.01) and the appearance and performance weight pressures sub-scale (r = 0.351, p ≤0.01), while there was a negative correlation between the total score in EAT-26 and BMI (r = −0.186, p = 0.024).",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Competitive female adolescent gymnasts present higher eating disorder symptomatology, as well as higher sport-related weight pressures, than their non-competitive peers. Weight pressures from the sport environment are associated with the development of ED symptoms. In competitive athletes, weight pressures that come from the nature of the sport and from the coaches, along with the pressures that are related to appearance, performance and BMI contribute to the risk of ED. Nevertheless, it was found that in non-competitive athletes only appearance and performance-related weight pressures contribute significantly to ED risk."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "First, the study's cross-sectional design makes it impossible to demonstrate a causal relationship between the variables studied. Second, self-reported questionnaires were used for data collection, which may have increased the risk of producing socially acceptable responses. To reduce this risk, the SDS was used to exclude athletes who gave answers that were judged as 'socially desirable' rather than accurate. Furthermore, in this study, an eating disorder diagnostic assessment was not performed. Gymnastics sports have a high prevalence of disordered eating behaviors and it is possible that some athletes are unaware of their symptoms or choose not to report them. This is a serious constraint that we attempted to overcome by ensuring that the athletes' answers were anonymous and confidential and by asking parents/guardians (via the consent form) to report any nutrition-related condition (such as diabetes, celiac disease, or anorexia nervosa) of their child. Another limitation that should be noted is that it was chosen to include athletes from different disciplines of gymnastics and not only by the more widely studied disciplines of artistic and rhythmic gymnastics. This decision was made in order to include a greater number of adolescent female gymnasts in the study, taking into account the fact that in Greece all different disciplines of gymnastics are popular among adolescent females. However, it is a common belief that artistic and rhythmic gymnastics are considered disciplines with higher training demands and weight pressures than the rest of the disciplines. Moreover, in this study only female gymnasts participated."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 269
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 269
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Female gymnasts aged 11-17 years old, training in one of the disciplines of gymnastics, providing personal and parental consent"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "147 Competitive 122 Non-Competitive"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Greece"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

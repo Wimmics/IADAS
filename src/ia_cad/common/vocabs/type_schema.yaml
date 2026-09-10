@@ -1,0 +1,224 @@
+version: 2.0.0
+source: Onto/IADAS-Model.ttl
+classes:
+  AgeStatistics:
+    ageDescription:
+      range: string
+      comment: Textual description of age characteristics
+    maxAge:
+      range: decimal
+      comment: Maximum age of participants
+    meanAge:
+      range: decimal
+      comment: Mean age of participants
+    minAge:
+      range: decimal
+      comment: Minimum age of participants
+    sdAge:
+      range: decimal
+      comment: Standard deviation of participants' age
+  Analysis:
+    acads:
+      range: string
+      comment: ACADS score or measure (domain-specific)
+    analysisId:
+      range: string
+      comment: Unique identifier of the analysis
+    analysisMultiplicity:
+      range: string
+      comment: Indicates whether the analysis covers multiple variables or conditions
+    authorConclusion:
+      range: string
+      comment: Main conclusion drawn by the authors
+    complexityOfAnalysis:
+      range: string
+      comment: Complexity level of the statistical analysis
+    groupStatisticalAnalysis:
+      range: string
+      comment: Group or category of the statistical analysis method used
+    limites:
+      range: string
+      comment: Methodological or conceptual limitations of the analysis
+    numberOfSportStudied:
+      range: integer
+      comment: Number of distinct sports included in the analysis
+    perspectives:
+      range: string
+      comment: Future research perspectives identified
+    relationDegree:
+      range: string
+      comment: Strength or intensity of the observed relation
+    sampleSizeMobilized:
+      range: integer
+      comment: Number of participants mobilized in the analysis
+    typeOfAnalysis:
+      range: string
+      comment: Type of statistical analysis used
+  BMIStatistics:
+    bmiDescription:
+      range: string
+      comment: Textual description of BMI characteristics
+    maxBMI:
+      range: decimal
+      comment: Maximum BMI of participants
+    meanBMI:
+      range: decimal
+      comment: Mean BMI of participants
+    minBMI:
+      range: decimal
+      comment: Minimum BMI of participants
+    sdBMI:
+      range: decimal
+      comment: Standard deviation of participants' BMI
+  ExerciseFrequencyStatistics:
+    exerciseFreqDescription:
+      range: string
+      comment: Textual description of exercise frequency
+    freqBase:
+      range: string
+      comment: Temporal base of frequency (per week, per month, etc.)
+    freqUnit:
+      range: string
+      comment: Unit of frequency measurement
+    maxExFR:
+      range: decimal
+      comment: Maximum exercise frequency
+    meanExFR:
+      range: decimal
+      comment: Mean exercise frequency
+    minExFR:
+      range: decimal
+      comment: Minimum exercise frequency
+    sdExFR:
+      range: decimal
+      comment: Standard deviation of exercise frequency
+  Population:
+    gender:
+      range: string
+      comment: Gender distribution in the population
+    hasSubgroup:
+      range: string
+      comment: Specific subgroup of the population
+    inclusionCriteria:
+      range: string
+      comment: Inclusion criteria for study participation
+    population:
+      range: string
+      comment: Description of the study population
+    sampleSize:
+      range: integer
+      comment: Total number of participants in the population
+    sousGroupeAnalyse1:
+      range: string
+      comment: First subgroup for population analysis
+    sousGroupeAnalyse2:
+      range: string
+      comment: Second subgroup for the analysis
+    sportingPopulation:
+      range: string
+      comment: Characteristics of the sporting population
+  Relations:
+    degreBeta:
+      range: decimal
+      comment: Beta regression coefficient
+    degreP:
+      range: decimal
+      comment: Statistical significance value
+    degreR:
+      range: decimal
+      comment: Correlation coefficient
+    degreR2:
+      range: decimal
+      comment: R² coefficient of determination
+    effectSize:
+      range: string
+      comment: 'Strength or magnitude of the statistical relation between IV and DV, classified by r coefficient: negligible
+        (<0.1), weak (0.1-0.3), moderate (0.3-0.5), strong (>0.5)'
+    relationDegreeSecondary:
+      range: string
+      comment: Secondary or alternative relation degree
+    resultatRelation:
+      range: string
+      comment: Result or conclusion of the statistical relation
+    signeP:
+      range: string
+      comment: Sign of the p-value
+    sousGroupeAnalyse:
+      range: string
+      comment: Specific subgroup for the analysis
+    sousGroupeAnalyse2:
+      range: string
+      comment: Second subgroup for the analysis
+  Sport:
+    sportLevel:
+      range: string
+      comment: Level of sport practice
+    sportName:
+      range: string
+      comment: Name of the sport activity
+    sportPracticeType:
+      range: string
+      comment: Type or modality of sport practice
+    sportSubcategory:
+      range: string
+      comment: Subcategory or specialization of the sport
+  SportPsychologyArticle:
+    continent:
+      range: string
+      comment: Continent where the study was conducted
+    country:
+      range: string
+      comment: Country where the study was conducted
+    studyType:
+      range: string
+      comment: Methodological type of the study
+  Variable:
+    VD:
+      range: string
+      comment: Final dependent variable name
+    VI:
+      range: string
+      comment: Final independent variable name
+    finalClass:
+      range: string
+      comment: Final classification of the variable
+    hasCategory:
+      range: string
+      comment: Category of the variable (DEAB, interpersonal, intrapersonal, etc.)
+    measure:
+      range: string
+      comment: Instrument or method for measuring the variable
+    subClass1:
+      range: string
+      comment: First level of sub-classification
+    subClass2:
+      range: string
+      comment: Second level of sub-classification
+    subClass3:
+      range: string
+      comment: Third level of sub-classification
+    subClass4:
+      range: string
+      comment: Fourth level of sub-classification (IV only)
+    variableType:
+      range: string
+      comment: Type of variable (DV or IV)
+  YearsOfExperienceStatistics:
+    expUnit:
+      range: string
+      comment: Unit of experience measurement (years, months, etc.)
+    experienceDescription:
+      range: string
+      comment: Textual description of years of experience
+    maxYOE:
+      range: decimal
+      comment: Maximum number of years of experience
+    meanYOE:
+      range: decimal
+      comment: Mean number of years of experience
+    minYOE:
+      range: decimal
+      comment: Minimum number of years of experience
+    sdYOE:
+      range: decimal
+      comment: Standard deviation of years of experience

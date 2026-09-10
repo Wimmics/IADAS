@@ -1,0 +1,125 @@
+{
+  "_article": "Petrie.2009b",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "gymnastics; rowing; softball; synchronized swimming; tennis; alpine skiing; basketball; cross country; cheerleading; diving; golf; field hockey; lacrosse; soccer; swimming; track and field, volleyball"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Questionnaire for Eating Disorder Diagnoses (Q-EDD)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Concerns about mistakes\nPersonal standards\nParental expectations\nParental criticism\nDoubts about actions\nSelf esteem\nDispositional optimism\nExercising for mood management\nExercising for appearance\nExercising for health/fitness\nAppearance orientation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Multidimensional Perfectionism Scale (MPS)\nMultidimensional Perfectionism Scale (MPS)\nMultidimensional Perfectionism Scale (MPS)\nMultidimensional Perfectionism Scale (MPS)\nMultidimensional Perfectionism Scale (MPS)\nRosenberg Self-Esteem Scale (RSES)\nLife Orientation Test-Revised (LOT-R)\nReasons for Exercise Inventory (REI)\nReasons for Exercise Inventory (REI)\nReasons for Exercise Inventory (REI)\nMultidimensional Body Self Relations Questionnaire (MBSRQ)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.34
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Logistic regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "When all the personality and psychological variables were considered simultaneously, three emerged as primary predictors of QEDD group classification (i.e., appearance orientation, exercising for appearance/attractiveness, self esteem), accounting for 34% of the variance."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "All data were obtained through self-report, which makes it vulnerable to mono-method reporting biases. Only a small percentage of the athletess were racial/ethnic minorities, limiting the extent to which that variable could be considered statistically in this analyses. Equal numbers of athletes from each team could not be obtained nor could data from athletes in all possible sports. Its is possible that the results would have been different if athletes from each team were represented more equally."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Such cognitive-dissonance based intervention programs have been found to be effective with Female athletes (Smith & Petrie, 2008), the results from this study suggest that counselors may want to integrate into such interventions material and activities that are designed to improve self-esteem and perhaps change athletes motives for exercising."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 204
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Female collegiate athletes from three universities located in the Midwest, Southwest and Mountain regions of the United States."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 204
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

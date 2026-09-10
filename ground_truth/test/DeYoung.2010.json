@@ -1,0 +1,130 @@
+{
+  "_article": "DeYoung.2010",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": null
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Restraint"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Restraint",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Restraint",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Obligatory exercise\nSubgroup\nAge"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Obligatory Exercise Questionnaire (OEQ)\nGroup\nYears"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.295
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Obligatory exercise is associated with eating and body image concerns only in individuals who exercise in response to negative affect. This was true for eating, weight, and shape concerns as measured by the EDE-Q."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should attempt to identify for whom this type of exercise behavior is helpful and for whom it is harmful. Future research should investigate exercising in response to negative affect alongside other measures of psychosocial functioning and quality of life to determine whom it is an adaptive coping strategy, for whom it is one of a number of disordered eating behaviors, and for whom it may represent an eating disorder in itself. The findings of the present study add valuable information to the field by further refining what exercise-related qualities distinguish exercise that is and is not related t eating disordered psychopathology."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 226
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Participants had to engage in physical exercise at least occasionally in order to participate in this study"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Negative affect exercisers\nComparison exercisers"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 226
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

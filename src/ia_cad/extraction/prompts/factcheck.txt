@@ -1,0 +1,24 @@
+TASK: Verify whether each predicate-object pair is explicitly supported by the source text.
+
+For each triplet, answer:
+- VRAI  : the value is explicitly stated in the text (literal or very close paraphrase)
+- FAUX  : the value is absent, invented, inferred, or only implied
+
+Be strict: inferences and paraphrases that change the meaning count as FAUX.
+Only confirm what the text states directly.
+
+SOURCE TEXT:
+{TEXT}
+
+TRIPLETS TO VERIFY:
+{TRIPLETS}
+
+OUTPUT FORMAT — a JSON object with a "verdicts" key containing the same array with "verdict" added, same order and length:
+{
+  "verdicts": [
+    {"predicate": "iadas:sportName", "object": "Football", "verdict": "VRAI"},
+    {"predicate": "iadas:sportLevel", "object": "National", "verdict": "FAUX"}
+  ]
+}
+
+Return ONLY the JSON object with the "verdicts" key, no explanation:

@@ -1,0 +1,308 @@
+{
+  "_article": "Zasiekina.2026",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Weight sensitive sport, non-weight sensitive sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating psychopathology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Pathology Symptoms Inventory (EPSI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating psychopathology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating psychopathology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Gender Age Type of sport Living arrangements Membership duration Shame and guilt"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociodemographic questionnaire Sociodemographic questionnaire Sociodemographic questionnaire Sociodemographic questionnaire State Shame and Guilt Scale"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.195
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=.199"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Restrictions"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Pathology Symptoms Inventory (EPSI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Shame and guilt"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "State Shame and Guilt Scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Emotional states",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Maladaptive emotional state",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Guilt/shame",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Guilt/shame",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.287
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Purging"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Pathology Symptoms Inventory (EPSI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Compensatory behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Purging",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Purging",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Shame and guilt"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "State Shame and Guilt Scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Emotional states",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Maladaptive emotional state",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Guilt/shame",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Guilt/shame",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.202
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=.021"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Hierarchical regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Weight-sensitive sports and higher levels of shame and guilt were associated with greater eating pathology symptoms (EPS), while non-weight-sensitive sports may have a protective effect. The findings highlight the role of both sport environment and moral emotions in understanding disordered eating in athletes"
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The study relied on self-reported data and a nonclinical, relatively homogeneous sample, limiting generalizability and introducing potential biases. Additionally, modest effect sizes and the cross-sectional design restrict causal interpretations"
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should use longitudinal and mixed-method approaches to examine additional factors like perfectionism and coaching pressure. This could improve early detection and inform targeted prevention strategies in athletic settings"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 130
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Had a current membership in the university of Exeter Sports Society, was aged between 18 and 25 years, and had no personal history of diagnosed eating disorders or related mental health conditions"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Males N=51 Females N=76 Other n=3"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "University athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 130
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

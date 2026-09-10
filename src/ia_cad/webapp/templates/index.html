@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACAD/IADAS — Pilotage du pipeline</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Pipeline ACAD/IADAS</h1>
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="extract">Articles &amp; Extraction</button>
+      <button class="tab-btn" data-tab="results">Résultats</button>
+      <button class="tab-btn" data-tab="compare">Comparaison</button>
+      <button class="tab-btn" data-tab="evidence">Audit preuves</button>
+      <button class="tab-btn" data-tab="relvariants">Tableaux (relations)</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ═══════════════ TAB 1 : ARTICLES & EXTRACTION ═══════════════ -->
+    <section id="tab-extract" class="tab-panel active">
+      <div class="panel options-panel">
+        <h2>Options d'extraction</h2>
+        <div class="options-grid">
+          <label class="field">
+            Modèle
+            <select id="opt-model"></select>
+            <span class="hint">Modèle Ollama utilisé pour l'extraction. qwen2.5:14b est plus précis mais plus lent ; qwen2.5:7b (défaut) est le compromis vitesse/qualité ; mistral-small:24b ne tient pas sur un portable 16 Go.</span>
+          </label>
+
+          <fieldset class="field chunks-field">
+            <legend>Blocs (--chunks)</legend>
+            <span class="hint">Un extracteur LLM par bloc de données (découpe le texte, pas le prompt). Décocher un bloc le retire entièrement du résultat.</span>
+            <label><input type="checkbox" class="opt-chunk" value="sport" checked> sport <span class="hint-inline">— sport pratiqué, niveau, sous-catégorie</span></label>
+            <label><input type="checkbox" class="opt-chunk" value="relations" checked> relations <span class="hint-inline">— corrélations/régressions entre variables (V1/V2 + statistiques)</span></label>
+            <label><input type="checkbox" class="opt-chunk" value="analysis" checked> analysis <span class="hint-inline">— type d'analyse, conclusions, limites, perspectives</span></label>
+            <label><input type="checkbox" class="opt-chunk" value="population" checked> population <span class="hint-inline">— échantillon, genre, critères d'inclusion, sous-groupes</span></label>
+            <label><input type="checkbox" class="opt-chunk" value="bibliographic" checked> bibliographic <span class="hint-inline">— pays, type d'étude, + titre/auteurs/année/revue si le DOI est trouvé</span></label>
+          </fieldset>
+
+          <fieldset class="field flags-field">
+            <legend>Options</legend>
+            <label><input type="checkbox" id="opt-no-factcheck"> --no-factcheck</label>
+            <span class="hint">Désactive la validation factuelle LLM (un prompt VRAI/FAUX qui vérifie chaque triplet contre le texte source). Extraction plus rapide, mais rien ne filtre plus les hallucinations.</span>
+            <label><input type="checkbox" id="opt-debug"> --debug</label>
+            <span class="hint">Affiche la réponse brute du LLM pour chaque bloc dans le journal du job — utile pour diagnostiquer un problème de prompt ou de format JSON.</span>
+            <label><input type="checkbox" id="opt-no-split"> --no-split</label>
+            <span class="hint">Envoie le texte entier de l'article à chaque prompt au lieu du texte découpé par section (abstract/méthode/résultats…). Désactive le routage par section : plus lent, plus de bruit — surtout utile pour comparer les deux approches (A/B).</span>
+            <label><input type="checkbox" id="opt-no-metadata"> --no-metadata</label>
+            <span class="hint">Désactive la recherche de métadonnées par DOI (CrossRef/OpenAlex) qui complète le bloc bibliographic (titre, auteurs, année, revue, pays). Utile hors ligne, ou pour une extraction plus rapide.</span>
+          </fieldset>
+        </div>
+        <div class="launch-row">
+          <button id="btn-launch" disabled>Lancer l'extraction (0 sélectionné)</button>
+          <span id="launch-error" class="error-text"></span>
+        </div>
+      </div>
+
+      <div class="panel job-panel hidden" id="job-panel">
+        <h2>Job en cours</h2>
+        <div class="job-progress">
+          <div class="progress-bar"><div class="progress-fill" id="job-progress-fill"></div></div>
+          <span id="job-progress-text"></span>
+        </div>
+        <div class="job-articles" id="job-articles"></div>
+        <details class="job-log-details">
+          <summary>Journal</summary>
+          <pre id="job-log"></pre>
+        </details>
+      </div>
+
+      <div class="panel">
+        <div class="table-toolbar">
+          <input type="search" id="article-search" placeholder="Filtrer par stem ou titre…">
+          <label class="select-all-label"><input type="checkbox" id="select-all-visible"> Tout sélectionner (visible)</label>
+          <span class="corpus-select-group">
+            <span class="muted">Sélectionner par corpus :</span>
+            <label class="select-all-label"><input type="checkbox" class="select-corpus" data-corpus="train"> train</label>
+            <label class="select-all-label"><input type="checkbox" class="select-corpus" data-corpus="test"> test</label>
+            <label class="select-all-label"><input type="checkbox" class="select-corpus" data-corpus="production"> production</label>
+          </span>
+          <span id="article-count" class="muted"></span>
+        </div>
+        <div class="table-wrap">
+          <table id="articles-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Stem</th>
+                <th>Titre</th>
+                <th>Corpus</th>
+                <th>Dernière extraction</th>
+              </tr>
+            </thead>
+            <tbody id="articles-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ TAB 2 : RÉSULTATS ═══════════════ -->
+    <section id="tab-results" class="tab-panel">
+      <div class="panel">
+        <div class="picker-row">
+          <label class="field">
+            Article
+            <select id="res-stem"></select>
+          </label>
+          <label class="field">
+            Date
+            <select id="res-date"></select>
+          </label>
+          <label class="raw-toggle"><input type="checkbox" id="res-raw-toggle"> Voir le JSON brut</label>
+        </div>
+      </div>
+      <div class="panel" id="res-content">
+        <p class="muted">Sélectionnez un article extrait pour voir le résultat.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════ TAB 3 : COMPARAISON ═══════════════ -->
+    <section id="tab-compare" class="tab-panel">
+      <div class="panel">
+        <div class="picker-row">
+          <label class="field">
+            Article
+            <select id="cmp-stem"></select>
+          </label>
+          <label class="field">
+            Date
+            <select id="cmp-date"></select>
+          </label>
+        </div>
+      </div>
+      <div class="panel" id="cmp-content">
+        <p class="muted">Sélectionnez un article du corpus annoté pour comparer au ground truth.</p>
+      </div>
+
+      <div class="panel">
+        <h2>Score agrégé</h2>
+        <span class="hint">Moyenne sur l'extraction la plus récente de chaque article — comparer le corpus entier au sous-ensemble d'articles ayant un tableau de corrélation/régression isole la contribution des tableaux au score.</span>
+        <div class="picker-row">
+          <label class="field">
+            Portée
+            <select id="cmp-summary-scope">
+              <option value="all">Tous les articles annotés</option>
+              <option value="tables">Articles à tableaux uniquement</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="panel" id="cmp-summary-content">
+        <p class="muted">Chargement…</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════ TAB 4 : AUDIT PREUVES ═══════════════ -->
+    <section id="tab-evidence" class="tab-panel">
+      <div class="panel">
+        <p class="muted">Agrège le signal <code>_evidence_verified</code> (calculé par le pipeline pour chaque relation, jamais filtré) sur tous les résultats déjà extraits — pour repérer où une citation-preuve ne se retrouve pas dans le texte source, sans relire chaque article un par un.</p>
+      </div>
+      <div class="panel" id="evidence-summary">
+        <p class="muted">Chargement…</p>
+      </div>
+      <div class="panel" id="evidence-articles"></div>
+    </section>
+
+    <!-- ═══════════════ TAB 5 : TABLEAUX (RELATIONS) ═══════════════ -->
+    <section id="tab-relvariants" class="tab-panel">
+      <div class="panel">
+        <p class="muted">Harness A/B pour le bloc relations seul : extrait avec le texte des tableaux
+          seuls ou tableaux+texte, sous un tag nommé, et compare deux tags pour savoir si un changement
+          de prompt/parseur améliore vraiment l'extraction (voir <code>tools/relations_variants.py</code>).</p>
+      </div>
+
+      <div class="panel options-panel">
+        <h2>Lancer un run</h2>
+        <div class="options-grid">
+          <label class="field">
+            Tag
+            <input type="text" id="rv-tag" placeholder="ex: baseline">
+            <span class="hint">Nom réutilisable ensuite pour comparer deux runs.</span>
+          </label>
+
+          <fieldset class="field">
+            <legend>Variante (--variant)</legend>
+            <label><input type="radio" name="rv-variant" value="tables+texte" checked> tables + texte <span class="hint-inline">— comportement actuel (abstract/résultats/tableaux)</span></label>
+            <label><input type="radio" name="rv-variant" value="tables"> tableaux seuls <span class="hint-inline">— uniquement la section tableaux</span></label>
+            <label><input type="radio" name="rv-variant" value="texte"> texte seul <span class="hint-inline">— abstract/résultats, sans les tableaux</span></label>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>Portée</legend>
+            <label><input type="radio" name="rv-scope" value="fast" checked> rapide <span class="hint-inline">— ~16 articles, pour itérer</span></label>
+            <label><input type="radio" name="rv-scope" value="table-subset"> articles à tableaux <span class="hint-inline">— ~100 articles</span></label>
+            <label><input type="radio" name="rv-scope" value="full-corpus"> corpus complet <span class="hint-inline">— 198 articles, avant de valider un changement</span></label>
+          </fieldset>
+
+          <label class="field">
+            Modèle
+            <select id="rv-model"></select>
+          </label>
+        </div>
+        <div class="launch-row">
+          <button id="rv-btn-launch">Lancer le run</button>
+          <span id="rv-launch-error" class="error-text"></span>
+        </div>
+      </div>
+
+      <div class="panel job-panel hidden" id="rv-job-panel">
+        <h2>Job en cours</h2>
+        <div class="job-progress">
+          <div class="progress-bar"><div class="progress-fill" id="rv-job-progress-fill"></div></div>
+          <span id="rv-job-progress-text"></span>
+        </div>
+        <div class="job-articles" id="rv-job-articles"></div>
+        <details class="job-log-details">
+          <summary>Journal</summary>
+          <pre id="rv-job-log"></pre>
+        </details>
+      </div>
+
+      <div class="panel">
+        <h2>Comparer deux runs</h2>
+        <div class="picker-row">
+          <label class="field">
+            Tag A
+            <select id="rv-diff-a"></select>
+          </label>
+          <label class="field">
+            Tag B
+            <select id="rv-diff-b"></select>
+          </label>
+          <button id="rv-btn-diff">Comparer</button>
+        </div>
+      </div>
+      <div class="panel" id="rv-diff-content"></div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

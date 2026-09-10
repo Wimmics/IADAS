@@ -1,0 +1,64 @@
+[
+  {
+    "_article": "Bashir.2021",
+    "_note": "Simple case: single gender, no subgroup breakdown, no distinct sporting-population descriptor beyond the broad 'Athletes' category.",
+    "output": {
+      "population": [
+        {"predicate": "iadas:gender", "object": "Male"},
+        {"predicate": "iadas:sampleSize", "object": 211},
+        {"predicate": "iadas:inclusionCriteria", "object": "Male bodybuilders aged 18-32 who had trained regularly at a gym for at least 2 years and had not competed in any bodybuilding competition; history of depression, bulimia nervosa, or antipsychotic drug use excluded."},
+        {"predicate": "iadas:population", "object": "Athletes"}
+      ]
+    }
+  },
+  {
+    "_article": "Ausmus.2021",
+    "_note": "iadas:sportingPopulation captures the article's own competitive-level breakdown of the sporting group — distinct from the broad iadas:population category above it.",
+    "output": {
+      "population": [
+        {"predicate": "iadas:gender", "object": "Female"},
+        {"predicate": "iadas:sampleSize", "object": 72},
+        {"predicate": "iadas:inclusionCriteria", "object": "Female competitive gymnasts aged 18-25 who had competed within the last three years, recruited from club gyms and colleges."},
+        {"predicate": "iadas:population", "object": "Athletes"},
+        {"predicate": "iadas:sportingPopulation", "object": "87.67% competed at varsity level, 6.85% recreational gymnastics, 5.48% club gymnastics"}
+      ]
+    }
+  },
+  {
+    "_article": "Al-Amouri.2025",
+    "_note": "Participants are called 'students' in the text, but they are physical-education students defined by their sport practice — apply the rule 'university students who are athletes -> Athletes, NOT Students'.",
+    "output": {
+      "population": [
+        {"predicate": "iadas:gender", "object": "Mixed"},
+        {"predicate": "iadas:sampleSize", "object": 272},
+        {"predicate": "iadas:inclusionCriteria", "object": "Students from the physical education department at An-Najah National University"},
+        {"predicate": "iadas:population", "object": "Athletes"},
+        {"predicate": "iadas:hasSubgroup", "object": "124 Males 148 Females"}
+      ]
+    }
+  },
+  {
+    "_article": "Anderson.2016",
+    "_note": "hasSubgroup can combine two crossed factors (distance x sex) in a single free-text description — do not invent separate subgroup predicates for each factor.",
+    "output": {
+      "population": [
+        {"predicate": "iadas:gender", "object": "Mixed"},
+        {"predicate": "iadas:sampleSize", "object": 400},
+        {"predicate": "iadas:inclusionCriteria", "object": "Completing one of four running events (5k, 10k, half-marathon, full marathon) in the northeast United States; 18-71 years old."},
+        {"predicate": "iadas:population", "object": "Athletes"},
+        {"predicate": "iadas:hasSubgroup", "object": "Male Middle-Distance (MDD) n=60\nMale Long-Distance (MLD) n=156\nFemale Middle-Distance (WMD) n=61\nFemale Long-Distance (WLD) n=123"}
+      ]
+    }
+  },
+  {
+    "_article": "hypothetical_general_population",
+    "_note": "Sample is neither athletes nor students and does not clearly fit either ALLOWED VALUE — write the term used in the text ('community adults') instead of forcing a bad fit.",
+    "output": {
+      "population": [
+        {"predicate": "iadas:gender", "object": "Mixed"},
+        {"predicate": "iadas:sampleSize", "object": 150},
+        {"predicate": "iadas:population", "object": "community adults"}
+      ]
+    }
+  }
+]

@@ -1,0 +1,125 @@
+{
+  "_article": "Galli.2014",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Football; baseball; track and field; swimming; basketball; lacross; cheerleading; cross-country; golf; ice hockey; diving; fencing; alpine skiing; wrestling; volleyball; soccer"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Questionnaire for Eating Disorder Diagnoses (Q-EDD)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Concerns about mistakes\nPersonal standards\nParental expectations\nParental criticism\nDoubts about actions\nSelf esteem\nDispositional optimism\nExercise for mood management\nExercising for appearance\nExercising for health/fitness\nAppearance orientation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Multidimensional Perfectionism Scale (MPS)\nMultidimensional Perfectionism Scale (MPS)\nMultidimensional Perfectionism Scale (MPS)\nMultidimensional Perfectionism Scale (MPS)\nMultidimensional Perfectionism Scale (MPS)\nRosenberg Self Esteem Scale (RSES)\nLife Orientation Test-Revised (LOT-R)\nReasons for Exercise Inventory (REI)\nMultidimensional Body Self Relations Questionnaire-Appearance Orientation (MBSRQ-AO)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.6
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Logistic regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "The personality and psychological variables were unable to significantly predict the male athletes disordered eating grouping, explaining only 6% of the eating disorder classification."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "We had few non Hispanic/black athlete participants limiting the conclusions that can be drawn about that group of male athletes. All constructs were measured through self-report so monomethod reporting biais is a consideration. We used reliable and valid measures and collected data in a manner that assured anonymiity and no direct influence from coaches or other athletic department personnel. Our convenience sample countained relatively few athletes from sports with an explicit emphasis on leanness and body weight which have shown to be associated with higher eating disorder risk in male and Female athletes."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Further research will want to consider other psychological variables that may be more relevant to male athletes such as identity foreclosure, fear of stigmatization, low social support, and need for social approval, and examine other disordered eating outcomes such as drive for muscularity, drive for leanness, and anabolic steroid use. It might be interesting to employ measures of eating disorder diagnosis specific to male, such as the recently developed Eating Disorder assessment for male (EDAM)."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 203
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Male"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Male athletes from three NCAA Division I institutions in the Mountain West, Southwest and Midwest regions of the United States; participated in a varsity sport at the time of recruitmalet"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 203
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

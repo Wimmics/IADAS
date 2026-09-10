@@ -1,0 +1,29 @@
+TASK: The predicate-object pairs below were checked against the source text and judged INCORRECT
+(the stated value does not match what the text reports). For each one, find the CORRECT value
+actually reported in the text for that same statistic, and correct it.
+
+Do not simply repeat the incorrect value. Do not invent a value that is not in the text — if you
+cannot find ANY value for that statistic in the text, say so ("found": false) rather than guessing.
+
+For iadas:signeP specifically, the correct value is a BUCKET, not a literal p-value:
+  reported p < .001            -> "p<.001"
+  .001 <= reported p < .01     -> "p<.01"
+  .01  <= reported p < .05     -> "p<.05"
+  reported p >= .05, or N.S.   -> "N.S."
+
+REJECTED (predicate, incorrect object):
+{REJECTED}
+
+SOURCE TEXT:
+{TEXT}
+
+OUTPUT FORMAT — a JSON object with a "corrections" key, SAME ORDER AND LENGTH as the REJECTED list
+above, exactly one correction per entry:
+{
+  "corrections": [
+    {"predicate": "iadas:signeP", "object": "p<.01", "found": true},
+    {"predicate": "iadas:degreBeta", "object": null, "found": false}
+  ]
+}
+
+Return ONLY the JSON object with the "corrections" key, no explanation:

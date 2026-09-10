@@ -1,0 +1,61 @@
+[
+  {
+    "_article": "Bashir.2021",
+    "_note": "Male amateur bodybuilders using the gym regularly, not competing and not students — Amateur (the DEFAULT level)",
+    "output": {
+      "sport": [
+        {"predicate": "iadas:sportName", "object": "Bodybuilding"},
+        {"predicate": "iadas:sportLevel", "object": "Amateur"}
+      ]
+    }
+  },
+  {
+    "_article": "Burgon.2024",
+    "_note": "Athletes practicing many amateur/recreational activities, recruited via gyms/community, ALL named — list every one, level Amateur (default for gym/community-recruited practitioners)",
+    "output": {
+      "sport": [
+        {"predicate": "iadas:sportName", "object": "Running, cycling, swimming, hiking, gymgoer HIIT, gymgoer weights, gymnastics, dance, crossfit"},
+        {"predicate": "iadas:sportLevel", "object": "Amateur"}
+      ]
+    }
+  },
+  {
+    "_article": "Annus.2009",
+    "_note": "Dance students enrolled in a pre-professional training program — Student (explicit student/enrollment framing)",
+    "output": {
+      "sport": [
+        {"predicate": "iadas:sportName", "object": "Dance"},
+        {"predicate": "iadas:sportLevel", "object": "Student"}
+      ]
+    }
+  },
+  {
+    "_article": "Francisco.2013a",
+    "_note": "Dancers and gymnasts training/competing at an elite/professional level — Professional",
+    "output": {
+      "sport": [
+        {"predicate": "iadas:sportName", "object": "Dance; gymnastics"},
+        {"predicate": "iadas:sportLevel", "object": "Professional"}
+      ]
+    }
+  },
+  {
+    "_article": "hypothetical_no_level",
+    "_note": "Sport clearly stated but participant level not mentioned — omit sportLevel",
+    "output": {
+      "sport": [
+        {"predicate": "iadas:sportName", "object": "Running"}
+      ]
+    }
+  },
+  {
+    "_article": "hypothetical_no_sport_name",
+    "_note": "Athletes from several sports but NOT ONE named anywhere — only here use the literal 'Mixed sport'; club athletes default to Amateur",
+    "output": {
+      "sport": [
+        {"predicate": "iadas:sportName", "object": "Mixed sport"},
+        {"predicate": "iadas:sportLevel", "object": "Amateur"}
+      ]
+    }
+  }
+]

@@ -1,0 +1,184 @@
+{
+  "_article": "Franzoni.2026",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Weight-sensitive sports (i.e., gravitational (e.g., ski jumping), weight dependent (e.g., boxing), aesthetic (e.g., synchronized swimming), or endurance sport (e.g., rowing), non-weight-sensitive sports (i.e., ball games (e.g., basketball), power (e.g., powerlifting), technical (e.g., fencing), or motor sports (e.g., motorcycling))"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sociocultural pressure Internalization Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociocultural Attitudes Towards Appearance Questionnaire-4 revised for female (SATAQ-4R-Female) Sociocultural Attitudes Towards Appearance Questionnaire-4 revised for female (SATAQ-4R-Female) Body Image Matrix of Thinness and Muscularity-Female Bodies (BIMTM-FB)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.774
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sociocultural pressure Internalization Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociocultural Attitudes Towards Appearance Questionnaire-4 revised for female (SATAQ-4R-Female) Sociocultural Attitudes Towards Appearance Questionnaire-4 revised for female (SATAQ-4R-Female) Body Image Matrix of Thinness and Muscularity-Female Bodies (BIMTM-FB)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.337
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Structural equation modeling"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Sociocultural pressures play a central role in disordered eating across genders, with gender-specific pathways—emotion regulation and self-esteem in females, and sport pressures and negative mood in males"
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The cross-sectional, self-reported design, lack of model validation, small sample (especially males), and absence of sport-type comparisons limit causal inference and generalizability"
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future studies should use longitudinal designs, larger and more diverse samples, and examine differences across sport types, competition levels, and developmental stages"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 415
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Aged between 14 ans 20, officially registered in a sports club, participated in organized regional, national, or international competitions and club training and fluent in one of the official languages (French, German, or Italian)"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Males n=276 Females n=415"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "National, regional, interrogeional, international levels"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 691
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Switzerland"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

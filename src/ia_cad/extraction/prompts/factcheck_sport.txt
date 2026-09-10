@@ -1,0 +1,33 @@
+TASK: Verify whether each predicate-object pair is supported by the source text.
+
+For each triplet, answer:
+- VRAI  : the value is explicitly stated OR clearly implied by the text
+- FAUX  : the value is absent or contradicts the text
+
+IMPORTANT — controlled vocabulary fields follow semantic mapping rules:
+- iadas:sportLevel (Recreational / Amateur / Semi-professional / Professional / National / International)
+  Answer VRAI if the text clearly implies the level, even if the exact word differs.
+  Examples: "amateur athletes" → "Amateur" is VRAI. "national competition" → "National" is VRAI.
+- iadas:sportPracticeType (Individual sport / Team sport / Mixed sport)
+  Answer VRAI if the sport type is evident from context.
+- iadas:sportSubcategory (taxonomy label e.g. "Aesthetic", "Ball game", "Endurance")
+  Answer VRAI if the sport name clearly belongs to that category.
+
+For iadas:sportName: be strict — every sport in the list must be explicitly named in the text.
+  If the object contains multiple sports separated by ", ", answer VRAI only if ALL of them
+  appear in the text. Answer FAUX if any sport in the list is not mentioned.
+
+SOURCE TEXT:
+{TEXT}
+
+TRIPLETS TO VERIFY:
+{TRIPLETS}
+
+OUTPUT FORMAT — a JSON object with a "verdicts" key, same order and length as input:
+{
+  "verdicts": [
+    {"predicate": "iadas:sportName", "object": "Football", "verdict": "VRAI"}
+  ]
+}
+
+Return ONLY the JSON object with the "verdicts" key, no explanation:

@@ -1,0 +1,129 @@
+{
+  "_article": "Scoffier.2010b",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Dance; artistic gymnastics; rythmic gymnastics; figure skating; synchronized swimming"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disturbed eating attitudes and behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disturbed eating attitudes and behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disturbed eating attitudes and behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sport friendship quality\nCoach relationship quality\nPerceived peer acceptance\nParent relationship quality"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sport Friendship Quality Scale (SFQS)\nModified version of the SFQS version; word friend was changed to coach.\nSelf Description Questionnaire (SDQ-II)\nSelf Description Questionnaire (SDQ-II)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.847
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Structural equation modeling"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "A high quality of parent child relationship plays a protective role regarding disrtubed eating attitudes. Peer acceptance negatively influenced disturbed eating attitudes. The quality of the coach athlete relationship was not a direct predictor of disordered eating attitudes. The quality of this relationship, such as sport friendship quality, positively and significantly influenced disordered eating attitudes through perceived physical ability. Perceived physical ability appeared to be positively associated with disordered eating attitudes. No significant relationship between perceived physical appearance and disordered eating attitudes was observed."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The data was self reported and thus may have been biased by social desirability. This study was cross sectional, which limits the stability across time of the relationships between variables. This study was only performed with a girl subsample, whose constituents practiced esthetic sport at elite level, the results cannot be generalized to a boy subsample or to other athletes. The sporting hero influence was not considered in our tested model."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Other variables from the model of Shroff and Thompson, such as internalized norms and mechanisms of social comparison, could be examined. Moreover, along with the media influence in the original model of Shroff and Thompson, it could be interest to examine the influence of the sporting hero. This would require developing and validating an appropriate measure to assess athlete perceptions regarding the body ideal of sporting heroes. The Thompson et al. model indicated the interest in also examining the reciprocal relationships between disordered eating attitudes and self perception and between disordered eating attitudes and social relationship variables."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 227
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "French adolescents from elite sport structures which exclusively practiced an esthetic sport."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "National or international experience"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 227
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "France"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

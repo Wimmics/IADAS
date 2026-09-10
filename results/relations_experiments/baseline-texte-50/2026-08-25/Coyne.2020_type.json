@@ -1,0 +1,137 @@
+{
+  "_article": "Coyne.2020",
+  "_tag": "baseline-texte-50",
+  "_variant": "texte",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body image overall"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Multidimensional Body-Self Relations Questionnaire: Body Areas Satisfaction Scale (MBSRQ-BASS1)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "CrossFit skill level"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "CrossFit Skill Level"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.383
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "A significant regression equation was reported, F(3, 145) = 8.269, p < .001. Based on the model, predictor variables accounted for 13% (adjusted R2 = .128). Results suggest that only CrossFit skill (t = 3.901, p< .001) contributed significantly and positively to the model.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body image evaluative dimension"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Multidimensional Body-Self Relations Questionnaire: Body Areas Satisfaction Scale (MBSRQ-BASS1)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "CrossFit skill level"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "CrossFit Skill Level"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ],
+      "_evidence": "A significant regression equation was reported, F(3, 145) = 8.487, p < .001. Based on the model, predictor variables accounted for 13% (adjusted R2 = .132). Results suggest that only CrossFit skill (t = -2.765, p = .006) contributed significantly to the model.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "CrossFit length"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "CrossFit Length"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "A significant regression equation was found, F(3, 145) = 3.530, p = .017. Based on the model, predictor variables accounted for 7% (adjusted R2 = .068). Results suggest that only CrossFit length (t = -2.600, p = .010) contributed significantly to the model.",
+      "_evidence_verified": true
+    }
+  ]
+}

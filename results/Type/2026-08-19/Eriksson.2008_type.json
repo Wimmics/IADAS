@@ -1,0 +1,433 @@
+{
+  "_article": "Eriksson.2008",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Bratman's orthorexia test (BOT)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Social physique anxiety"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Social Physique Anxiety Scale (SPAS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Appearance-related anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Social physique anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Social physique anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.28
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.0001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "SPAS score (b = 0.28, p < 0.0001, 95% CI 0.21-0.34) had the highest partial correlation with the dependent variable, the BOT score in women.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Bratman's orthorexia test (BOT)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Exercise frequency"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise frequency"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.88
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.0001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Exercise frequency (b = 0.88, p < 0.0001, 95% CI 0.40-1.36) followed by SPAS scores (b = 0.17, p < 0.0001, 95% CI 0.09-0.24) and the SATAQ subdomains internalization (b = 0.47, p = 0.013, 95% CI 0.10-0.84) and awareness (b = 0.38, p = 0.048, 95% CI 0.004-0.753) completed the final model, indicating that these independent variables could together explain the variation in BOT scores.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Orthorexia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Bratman's orthorexia test (BOT)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sociocultural attitudes toward appearance"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociocultural Attitudes Towards Appearance Questionnaire (SATAQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Perception of sociocultural pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perception of sociocultural pressure related to body and appearance",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Sociocultural attitudes toward appearance",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Sociocultural attitudes toward appearance",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.14
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.019"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "SATAQ subdomain internalization (b = 0.14, p = 0.019, 95% CI 0.03-0.26) could itself explain the variation in BOT scores in men.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Exercise frequency"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "b 5 0.91; CI 0.42-1.40"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BOT score"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "b 5 0.28; CI 0.21-0.34"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.91
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.0001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Model 2. SPAS score 0.23; o0.0001; 0.17-0.30\nModel 3. SPAS score 0.20; o0.0001; 0.14-0.27\nModel 4. SPAS score 0.17; o0.0001; 0.09-0.24",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "SATAQ internalization"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "b 5 0.59; CI 0.23-0.94"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BOT score"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "b 5 0.28; CI 0.21-0.34"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.59
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.0001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Model 2. SPAS score 0.23; o0.0001; 0.17-0.30\nModel 3. SPAS score 0.20; o0.0001; 0.14-0.27\nModel 4. SPAS score 0.17; o0.0001; 0.09-0.24",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "SATAQ awareness"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "b 5 0.38; CI 0.004-0.753"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BOT score"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "b 5 0.28; CI 0.21-0.34"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.38
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.0001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Model 2. SPAS score 0.23; o0.0001; 0.17-0.30\nModel 3. SPAS score 0.20; o0.0001; 0.14-0.27\nModel 4. SPAS score 0.17; o0.0001; 0.09-0.24",
+      "_evidence_verified": false
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression analysis"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Female fitness center participants who exercised more frequently had high BOT scores, supporting previous findings linking high amounts of exercise to pathological weight control behavior and eating disorders."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The consecutive selection process used in this study can be regarded as appropriate, as random selection was impossible because not all participants were registered members of the fitness centers sampled. The high level of participation in the study can be regarded as representative of the chosen sample (fitness center participants); however, because selection was not random, it may be difficult to generalize from the results."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Further research could use a different design, i.e., follow-up or longitudinal, to investigate fitness center participants in the areas examined in the present study, and also include a larger sample. Another important approach would be to investigate fitness center participants and orthorexia nervosa in relation to variables other than social physique anxiety and sociocultural attitudes toward appearance, in an attempt to create more knowledge of this unexplored area."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 251
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 251
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "85 Males 166 Females"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Sweden"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

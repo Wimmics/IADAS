@@ -1,0 +1,442 @@
+{
+  "_article": "Fernandes.2023",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Gyms and fitness centers (i.e., cross training and weightlifting)"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "External ingestion"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Dutch Eating Behavior Questionnaire Portuguese version"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "External eating behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "External ingestion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "External ingestion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating behavior self-determined motivational"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Regulation of Eating Behavior Scale Portuguese version"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for eating behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Eating behavior self-determined motivational",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating behavior self-determined motivational",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.69
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "External ingestion"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Dutch Eating Behavior Questionnaire Portuguese version"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "External eating behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "External ingestion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "External ingestion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating behavior non-self determined motivational"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Regulation of Eating Behavior Scale Portuguese version"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for eating behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Eating behavior non-self determined motivational",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating behavior non-self determined motivational",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.64
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Emotional ingestion"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Dutch Eating Behavior Questionnaire Portuguese version"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotional eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Emotional ingestion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Emotional ingestion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating behavior self-determined motivational"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Regulation of Eating Behavior Scale Portuguese version"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for eating behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Eating behavior self-determined motivational",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating behavior self-determined motivational",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.71
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Emotional ingestion"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Dutch Eating Behavior Questionnaire Portuguese version"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotional eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Emotional ingestion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Emotional ingestion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating behavior non-self determined motivational"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Regulation of Eating Behavior Scale Portuguese version"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for eating behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Eating behavior non-self determined motivational",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating behavior non-self determined motivational",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.67
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": null
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Dutch Eating Behavior Questionnaire Portuguese version"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Metabolic Equivalent of Task (MET)\nNon-self-determined motivation\nSelf-determined motivation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The International Physical Activity Questionnaire Portuguese short version\nThe Regulation of Eating Behavior Scale Portuguese version \nThe Regulation of Eating Behavior Scale Portuguese version"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=0.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Self determined motivation was negatively associated with external ingestion, emotional ingestion, and constraint. In constrast, non self determined motivation was associated with external ingestion, emotional ingestion, and constraint. Individuals who engage in more physical activity have a more self-determined regulation of their eating habits, whereas those who engage in less physical activity have a less determined regulation of their eating habits."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The fact that the data were self-reported and collected online is a clear limitation. In addition, due to the sample's characteritics, we were unable to explore possible differences across age groups and sex. The International Physical Activity Questionnaire shirt version is a validated and simple method for estimating physical activity levels. However, it is not an objecive assessment and only considers a limited period (only 7 days). Furthermore, only the MET was assessed, with no cinsideration given to other characteristics such as sedentary behaviors. This study is a cross-sectional, which is also a limitation due to the fact that individuals were evaluated in a single moment, which may not fully reflect their eating behaviors."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "We suggest that future studies explore possible moderation variables (age, sex, gym facility and exercise activity) that could influence the current results. It is worth emphasizing the scarcity of longitudinal and experimental research that investigates how interventions grounded in self determination theory could enhance physical activity as a mean to increase healthy eating habits."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 440
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 440
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Portugal"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

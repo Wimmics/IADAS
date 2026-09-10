@@ -1,0 +1,43 @@
+TASK: You already extracted a list of statistical relations from this article. Before finalizing,
+check carefully whether you MISSED any.
+
+ALREADY FOUND (do not repeat these — compare by variable pair, not exact wording):
+{ALREADY_FOUND}
+
+Re-read the text below, in particular:
+- every correlation or regression TABLE (rows/columns can report several relations you may not
+  have transcribed all of),
+- every paragraph reporting a numeric statistical result (r, beta, R², or p-value) about a
+  relation between two variables.
+
+List ONLY relations that are:
+1. explicitly supported by a numeric statistic in the text (r, beta, R², or p-value), AND
+2. NOT already in the ALREADY FOUND list above.
+
+Do not invent a relation that lacks an explicit statistic. Do not repeat or lightly reword an
+entry that is already found — only genuinely additional pairs. If you find nothing more, return
+an empty list; returning nothing is the correct answer far more often than finding something.
+
+SOURCE TEXT:
+{TEXT}
+
+OUTPUT FORMAT — a JSON object with a "missed_relations" key, same structure as the main relation
+extraction (omit V1_measure/V2_measure/evidence only if genuinely not determinable):
+{
+  "missed_relations": [
+    {
+      "V1": "...",
+      "V1_measure": "...",
+      "V2": "...",
+      "V2_measure": "...",
+      "evidence": "the exact sentence or table row reporting this statistic",
+      "stats": [
+        {"predicate": "iadas:degreR", "object": 0.0},
+        {"predicate": "iadas:signeP", "object": "p<.05"},
+        {"predicate": "iadas:resultatRelation", "object": "positive"}
+      ]
+    }
+  ]
+}
+
+Return ONLY the JSON object with the "missed_relations" key, no explanation:

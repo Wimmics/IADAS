@@ -1,0 +1,80 @@
+TASK: Extract analysis-level information from this scientific article for the IADAS knowledge graph.
+
+{ONTOLOGY_BLOCK}
+
+EXTRACTION RULES:
+1. Extract ONLY the predicates listed above — no other predicates.
+2. Only extract values explicitly stated or clearly implied by the text. Never invent.
+3. iadas:typeOfAnalysis — the name of the primary statistical method used for the main
+   analysis. If several analyses are reported, pick the one used for the MAIN research question
+   (usually the one producing the article's headline result), not a secondary/descriptive one.
+   The ALLOWED VALUES list above has many near-duplicate entries (e.g. "Multiple regression" vs
+   "Multiple regression analysis" vs "Hierarchical multiple regression") — use these common
+   buckets as key signals, picking the MOST SPECIFIC one that matches what the text actually says:
+   - "Pearson correlation" / "Spearman correlation": simple bivariate correlation, no prediction.
+   - "Hierarchical multiple regression" / "Hierarchical regression": predictors entered in
+     STEPS/BLOCKS ("Step 1... Step 2...", "entered hierarchically") — do not use plain
+     "Multiple regression" if the text explicitly describes steps/blocks.
+   - "Multiple regression" / "Multiple regression analysis": several predictors, one outcome, NOT
+     described as stepped/hierarchical.
+   - "Mediation analyses" / "Mediation model": an indirect-effect/mediation model explicitly
+     tested (bootstrapping, Sobel test, PROCESS macro, indirect effect reported).
+   - "Moderation analyses" / "Moderation model": an interaction term explicitly tested.
+   - "Structural equation modeling": a full SEM/path model with latent variables or fit indices
+     (CFI, RMSEA, chi-square/df) reported.
+   Prefer the exact ALLOWED VALUES wording when the article's method matches one (or a close
+   variant). Otherwise use the term as written in the text — do not force a bad fit.
+4. iadas:authorConclusion — the main conclusion drawn by the authors, usually stated in the
+   Discussion or Conclusion section. One or two sentences, in the authors' own terms (paraphrase
+   allowed, do not invent claims they did not make). Trigger: the sentence(s) that directly answer
+   the study's research question, typically the first paragraph of the Discussion/Conclusion.
+5. iadas:limites — methodological or conceptual limitations explicitly acknowledged by the
+   authors. Trigger phrases: "a limitation of this study", "should be interpreted with caution",
+   "limitations include", "this study is not without limitations", usually in a dedicated
+   subsection near the end of the Discussion. Omit if the article does not discuss limitations
+   explicitly — do not infer limitations the authors did not state themselves.
+6. iadas:perspectives — future research directions explicitly suggested by the authors. Trigger
+   phrases: "future studies/research should...", "further work is needed to...", "it would be
+   valuable to examine...", usually right after or inside the limitations paragraph. Omit if none
+   are suggested — do not turn a limitation into a perspective unless the authors explicitly
+   propose it as a direction for future work.
+7. iadas:hasMediator / iadas:hasModerator — the name of a mediating / moderating variable
+   EXPLICITLY TESTED in a mediation or moderation analysis (an indirect effect or interaction term
+   actually modeled — see typeOfAnalysis signals above). A subgroup difference described only
+   narratively ("this pattern was stronger among women"), without a moderation model that
+   actually tested an interaction term, does NOT qualify — omit both predicates in that case.
+   Omit both if the article does not report a mediation or moderation analysis at all.
+8. iadas:mediatorMeasure / iadas:moderatorMeasure — the name or abbreviation of the instrument
+   used to measure the mediator / moderator (e.g. "MDI", "BSQ-8"). Only extract if the
+   corresponding hasMediator / hasModerator is also extracted. Omit if no instrument is named.
+9. iadas:sampleSizeMobilized — integer. The number of participants ACTUALLY INCLUDED in the
+   main statistical analysis (may be smaller than the total recruited sample because of missing
+   data, exclusions, or attrition). This is distinct from the total sample size of the study
+   (iadas:sampleSize, extracted in the population block) — always check for this gap (a
+   "complete cases" / "after exclusions" / "N included in the analysis" count) rather than
+   repeating the total. Omit if the text only gives the total recruited sample with no separate
+   analytic sample size.
+
+OUTPUT FORMAT — a JSON object with an "analysis" key containing the array of predicate/object pairs
+(only include the predicates actually supported by the text — this example shows all 8 for
+reference, a real extraction will usually have fewer):
+{
+  "analysis": [
+    {"predicate": "iadas:typeOfAnalysis", "object": "Pearson correlation"},
+    {"predicate": "iadas:authorConclusion", "object": "..."},
+    {"predicate": "iadas:limites", "object": "The cross-sectional design precludes causal conclusions."},
+    {"predicate": "iadas:perspectives", "object": "Future studies should use a longitudinal design."},
+    {"predicate": "iadas:hasMediator", "object": "Anxiety"},
+    {"predicate": "iadas:mediatorMeasure", "object": "Depression Anxiety Stress Scale-21 (DASS-21)"},
+    {"predicate": "iadas:sampleSizeMobilized", "object": 200}
+  ]
+}
+
+EXAMPLES OF CORRECT OUTPUT:
+{FEW_SHOTS}
+
+--- TEXT TO ANALYZE ---
+{TEXT}
+--- END ---
+
+Return ONLY the JSON object with the "analysis" key, no explanation:

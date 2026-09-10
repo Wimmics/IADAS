@@ -1,0 +1,269 @@
+{
+  "_article": "Kontele.2022",
+  "_tag": "baseline-tables-texte-50",
+  "_variant": "tables+texte",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorder symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Sport and coaches weight pressures"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight-Pressures in Sport-Females (WPS-F)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.303
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "In the group of competitive gymnasts, the sport and coaches' weight pressures sub-scale, the appearance and performance weight pressures sub-scale and the BMI accounted for 30.3% of the variance in EAT-26 (adjusted R2 = 0.303, F(3.143) = 22.165, p < 0.001) (Table 4).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorder symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Appearance and performance weight pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight-Pressures in Sport-Females (WPS-F)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Weight pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Appearance and performance weight pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Appearance and performance weight pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.303
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "In the group of competitive gymnasts, the sport and coaches' weight pressures sub-scale, the appearance and performance weight pressures sub-scale and the BMI accounted for 30.3% of the variance in EAT-26 (adjusted R2 = 0.303, F(3.143) = 22.165, p < 0.001) (Table 4).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorder symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BMI"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Mass Index"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.303
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "In the group of competitive gymnasts, the sport and coaches' weight pressures sub-scale, the appearance and performance weight pressures sub-scale and the BMI accounted for 30.3% of the variance in EAT-26 (adjusted R2 = 0.303, F(3.143) = 22.165, p < 0.001) (Table 4).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Sport and coaches weight pressures"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "0.217"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EAT-26 score"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "0.403"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.403
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "In the competitive level group, positive correlations were found between the total score in EAT-26 and the total WPS-F score (r = 0.403, p ≤0.01), the sport and coaches' weight pressures sub-scale (r = 0.353, p ≤0.01) and the appearance and performance weight pressures sub-scale (r = 0.351, p ≤0.01), while there was a negative correlation between the total score in EAT-26 and BMI (r = −0.186, p = 0.024).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Appearance and performance weight pressure"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "0.449"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Social and Sport pressure related to significant others",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Weight pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Appearance and performance weight pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Appearance and performance weight pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EAT-26 score"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "0.353"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.353
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "In the competitive level group, positive correlations were found between the total score in EAT-26 and the total WPS-F score (r = 0.403, p ≤0.01), the sport and coaches' weight pressures sub-scale (r = 0.353, p ≤0.01) and the appearance and performance weight pressures sub-scale (r = 0.351, p ≤0.01), while there was a negative correlation between the total score in EAT-26 and BMI (r = −0.186, p = 0.024).",
+      "_evidence_verified": true
+    }
+  ]
+}

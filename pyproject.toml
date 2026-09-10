@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ia-cad"
+version = "1.0.0"
+description = "Extraction structurée d'articles scientifiques (ACAD/DEAB) vers l'ontologie IADAS, par LLM local et entity linking SPARQL."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Alban Maveyraud" }]
+license = { text = "Usage interne, équipe IADAS, LAMHESS / Université Côte d'Azur" }
+dependencies = [
+    "ollama>=0.3.0",
+    "pymupdf>=1.24.0",
+    "pyyaml>=6.0",
+    "pandas>=2.0.0",
+    "openpyxl>=3.1.0",
+    "rapidfuzz>=3.0.0",
+    "rdflib>=7.0.0",
+    "flask>=3.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+iacad-extract            = "ia_cad.extraction.extract:main"
+iacad-compare            = "ia_cad.tools.evaluation.compare_results:main"
+iacad-eval-linking       = "ia_cad.tools.evaluation.eval_linking:main"
+iacad-report             = "ia_cad.tools.evaluation.report_production:main"
+iacad-relations-variants = "ia_cad.tools.evaluation.relations_variants:main"
+iacad-audit-evidence     = "ia_cad.tools.evaluation.audit_evidence:main"
+iacad-split-articles     = "ia_cad.tools.corpus.split_articles:main"
+iacad-build-vocab        = "ia_cad.tools.corpus.build_vocab:main"
+iacad-abox-to-gt         = "ia_cad.tools.corpus.abox_to_gt:main"
+iacad-try-linking        = "ia_cad.tools.inspection.try_linking:main"
+iacad-coverage           = "ia_cad.tools.inspection.article_coverage_report:main"
+iacad-webapp             = "ia_cad.webapp.app:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ia_cad"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

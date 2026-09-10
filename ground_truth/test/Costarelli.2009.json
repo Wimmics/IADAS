@@ -1,0 +1,129 @@
+{
+  "_article": "Costarelli.2009",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Taekwondo; judo"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Professional"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Exercise frequency\nAnxiety\nSelf-classified weight\nAppearance orientation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "General background and lifestyle questionnaire\nState and Trait Anxiety Inventory (STAI)\nMultidimensional Body Self Relations Questionnaire (MBSRQ)\nMultidimensional Body Self Relations Questionnaire (MBSRQ)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=.059"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Regression analysis revealed that disordered eating attitudes were significantly positively correlated with anxiety levels (p < 0.001) and Self-Classified Weight (p < 0.001)."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The number of athletes surveyed was relatively small and, in particular, the number of male subjects was too small for firm conclusions to be drawn with regard to possible sex differences."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "This study showed that combat sport athletes seem to have higher levels of emotional intelligence and a healthier body image than non-athletes. Due to the reported susceptibility of athletes to develop eating disorders, the investigation of the possible role of emotional intelligence, anxiety levels and disturbed body image as weel as their interrelationships in the etiology of disordered eating warrants further investigation"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 60
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "The athletes were recruited from four known world taekwondo federation clubs and one judo club in Athens, Greece. The non athletes were recruited from the student population of Harokopio university and the technological institution of Athens; they did not engage in any competitive sports or trained for one type of sport in particular"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "20 Athletes\n40 Non-athletes"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "National and international"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 60
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Greece"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

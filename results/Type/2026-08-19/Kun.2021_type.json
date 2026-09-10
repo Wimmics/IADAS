@@ -1,0 +1,149 @@
+{
+  "_article": "Kun.2021",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:hasMediator",
+      "object": "Emotion dysregulation",
+      "_rejected_reason": "prédicat 'hasMediator' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:mediatorMeasure",
+      "object": "Difﬁculties in Emotion Regulation Scale (DERS)",
+      "_rejected_reason": "prédicat 'mediatorMeasure' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Structural Equation Modelling (SEM) - Confirmatory factor analysis (CFA)",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Brief Symptom Inventory (BSI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Psychopathological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Psychological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Psychological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Risk of exercise addiction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise Dependence Scale (EDS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.235
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "The standardized total effect between the latent factor of psychological symptoms and the risk of exercised addiction was moderate, β = .235; 95% CI [.172, .297] from which the total indirect paths of the presented model",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "The results support three theoretical models of exercise addiction: cognitive appraisal hypothesis, affect regulation hypothesis, and interactional model. Emotion dysregulation is an expected possible risk factor for both exercise addiction and eating disorders."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The cross-sectional design precludes establishing any casual relationships. The model is based on theoretical assumptions and cannot help refute alternative models. The sample includes regular exercisers, which may downplay the results, and the study should be replicated with avid exercisers. Self-report measures may have biases, and the SCOFF questionnaire showed questionable internal consistency."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future studies should explore the possible mediation role of body image in the relationship between emotion regulation and exercise addiction. Longitudinal studies should examine the role of psychological symptoms and emotion dysregulation in subsequent exercise addiction patterns."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 1789
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 1790
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "community adults"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Hungary"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

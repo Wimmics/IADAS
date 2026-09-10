@@ -1,0 +1,481 @@
+{
+  "_article": "FrancodaCunha.2022",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 172,
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "CrossFit"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Power",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Age"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Single item"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:relationDegreeSecondary",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Main analyses The results showed that, on average, women have higher disordered eating symptoms (M = 14.98, SD = 9.37) compared with men (M = 12.05, SD = 8.68), t (192) = -2.26, p < .05, d = -0.32, and greater dietary restriction and excessive concern for thinness (M = 10.74, SD = 6.00; men: M = 8.43 SD = 6.00), t (173.21) = -2.36, p < .05, d = -0.34. There were no significant differences on scores of the subscale \"bulimia and concern with food\" between men (M = 1.66, SD = 2.50) and women (M = 2.00, SD = 2.74), t (192) = -.90, p = .367, d = -0.13, neither on the subscale \"oral control\", t (192) = -.83, p = .406, d = -0.12 (men: M = 1.96, SD = 2.30; women: M = 2.24, SD = 2.39).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body Mass Index (BMI)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Single item"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:relationDegreeSecondary",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Main analyses The results showed that, on average, women have higher disordered eating symptoms (M = 14.98, SD = 9.37) compared with men (M = 12.05, SD = 8.68), t (192) = -2.26, p < .05, d = -0.32, and greater dietary restriction and excessive concern for thinness (M = 10.74, SD = 6.00; men: M = 8.43 SD = 6.00), t (173.21) = -2.36, p < .05, d = -0.34. There were no significant differences on scores of the subscale \"bulimia and concern with food\" between men (M = 1.66, SD = 2.50) and women (M = 2.00, SD = 2.74), t (192) = -.90, p = .367, d = -0.13, neither on the subscale \"oral control\", t (192) = -.83, p = .406, d = -0.12 (men: M = 1.96, SD = 2.30; women: M = 2.24, SD = 2.39).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Drive for muscularity"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for Muscularity Scale (DMS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for muscularity",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for muscularity",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:relationDegreeSecondary",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Main analyses The results showed that, on average, women have higher disordered eating symptoms (M = 14.98, SD = 9.37) compared with men (M = 12.05, SD = 8.68), t (192) = -2.26, p < .05, d = -0.32, and greater dietary restriction and excessive concern for thinness (M = 10.74, SD = 6.00; men: M = 8.43 SD = 6.00), t (173.21) = -2.36, p < .05, d = -0.34. There were no significant differences on scores of the subscale \"bulimia and concern with food\" between men (M = 1.66, SD = 2.50) and women (M = 2.00, SD = 2.74), t (192) = -.90, p = .367, d = -0.13, neither on the subscale \"oral control\", t (192) = -.83, p = .406, d = -0.12 (men: M = 1.96, SD = 2.30; women: M = 2.24, SD = 2.39).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "General internalization"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociocultural Attitudes Towards Appearance Questionnaire-3 (SATAQ-3)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Cognitive dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body norms internalization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "General internalization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "General internalization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:relationDegreeSecondary",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Main analyses The results showed that, on average, women have higher disordered eating symptoms (M = 14.98, SD = 9.37) compared with men (M = 12.05, SD = 8.68), t (192) = -2.26, p < .05, d = -0.32, and greater dietary restriction and excessive concern for thinness (M = 10.74, SD = 6.00; men: M = 8.43 SD = 6.00), t (173.21) = -2.36, p < .05, d = -0.34. There were no significant differences on scores of the subscale \"bulimia and concern with food\" between men (M = 1.66, SD = 2.50) and women (M = 2.00, SD = 2.74), t (192) = -.90, p = .367, d = -0.13, neither on the subscale \"oral control\", t (192) = -.83, p = .406, d = -0.12 (men: M = 1.96, SD = 2.30; women: M = 2.24, SD = 2.39).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Muscularity-oriented behavior"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for Muscularity Scale (DMS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Exercise and sport practice",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Muscularity and Sports Practices",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Muscularity-oriented behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscularity-oriented behaviors",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Other behaviors",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:relationDegreeSecondary",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "For men, the results are shown in Table 4. The model was also significant, and the \"muscularity-oriented behavior\" subscale emerged as a predictor, meaning that the higher the behaviors in which men engage to become bigger and more muscular the higher the disordered eating symptoms.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Muscularity-oriented body image"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociocultural Attitudes Towards Appearance Questionnaire-3 (SATAQ-3)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body and muscularity attitude",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Muscularity-oriented body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Muscularity-oriented body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:relationDegreeSecondary",
+          "object": "p<.05",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "For men, the results are shown in Table 4. The model was also significant, and the \"muscularity-oriented behavior\" subscale emerged as a predictor, meaning that the higher the behaviors in which men engage to become bigger and more muscular the higher the disordered eating symptoms.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body image dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.27
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": null,
+      "_evidence_verified": null
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "In conclusion, our data suggest that women who practice CrossFit tend to have higher disordered eating, dietary restrictions, and excessive concerns about thinness than men. In addition, muscularity-oriented behaviors in men and the drive for muscularity, body-ideal internalization, BMI and age in women are predictors of disordered eating."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "First, the sample may not be representative of the Brazilian population, as it was carried out in a single city in a single state. Second, there is a need to study other constructs, such as body dissatisfaction, which can predict other aspects of disordered eating in this population. Third, reported weight and height may be a bias, despite being a common finding in body image and eating behavior studies. Finally, even though the EAT-26 is frequently used in Brazil, the measure is not validated for adults in the country. Moreover, the EAT-26 appears to be a more focused instrument for investigating the symptoms of disordered eating often seen in women, while recent studies have shown that disordered eating among men has its own characteristics."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "With these results in mind, coaches should pay attention to the possible presence of disordered eating within this population. Although performance is directly related to diet, some disordered nutritional strategies can impair this performance and increase the risk of eating disorders in athletes."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 194
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Individuals aged 18-40 practicing CrossFit for at least 6 months, enrolled in a specialized CrossFit gym in São Paulo state, Brazil"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "197 individuals of both sexes"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Brazil"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

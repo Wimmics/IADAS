@@ -1,0 +1,148 @@
+{
+  "_article": "Leger.2025",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Running, powerlifting, figure skating, karate, dance"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorders Screen for Athletes (EDSA)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.858
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Pearson correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "EDSA scores indicate that study participants were at relatively high risk of ED, with this risk potentially being higher for certain athletes depending on their sport category and gender, particularly females in aesthetic and weight class sports. Findings align with existing evidence indicating that athletes in weight-sensitive performance sports a"
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The small sample size, lack of a control group, and limited diversity (gender and ethnicity) restrict generalizability, while the mixed-method design may not fully capture all aspects of athletes’ experiences"
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should include more diverse and larger samples, longitudinal designs, and focus on younger athletes, while interventions should target sociocultural factors and strengthen multidisciplinary support, especially involving dietitians"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 50
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "18 years old, reside in New Brunswick, be engaged in a weight-sensitive performance sport, have competed in at least one sporting event in the past 12 months, and understand English or French"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Males n=16 Females n=33 EDSA respondents n=50 EDE-Q respondents n=47"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 50
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Canada"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

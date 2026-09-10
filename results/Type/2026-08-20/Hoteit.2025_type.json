@@ -1,0 +1,573 @@
+{
+  "_article": "Hoteit.2025",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:degreP",
+      "object": "p<.001",
+      "_rejected_reason": "'p<.001' n'est pas un decimal (attendu pour degreP)"
+    },
+    {
+      "predicate": "iadas:degreP",
+      "object": "p<.01",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreP)"
+    },
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR2",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR2)"
+    },
+    {
+      "predicate": "iadas:degreP",
+      "object": "p<.05",
+      "_rejected_reason": "'p<.05' n'est pas un decimal (attendu pour degreP)"
+    },
+    {
+      "predicate": "iadas:degreP",
+      "object": "p<.001",
+      "_rejected_reason": "'p<.001' n'est pas un decimal (attendu pour degreP)"
+    },
+    {
+      "predicate": "iadas:degreP",
+      "object": "p<.01",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreP)"
+    },
+    {
+      "predicate": "iadas:degreP",
+      "object": "p<.01",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreP)"
+    },
+    {
+      "predicate": "iadas:degreP",
+      "object": "p<.01",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreP)"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": 29,
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreBeta",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreBeta)"
+    },
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.006",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.006' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.006",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.006' n'est pas un decimal (attendu pour degreR)"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Taekwondo"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Weight class",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Anxiety"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sport Mental Health Assessment Tool-1 (SMHAT-1)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.006",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Anxiety was not associated with eating disorders (ED) but was linked to disordered eating (DE) among participants (p = 0.000)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Depression"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sport Mental Health Assessment Tool-1 (SMHAT-1)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Psychopathological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Depression",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Depression",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "stats": [],
+      "_evidence": "Depression, however, was associated with both ED and DE (p = 0.03 and p = 0.000, respectively)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Thoughts of self-harm"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sport Mental Health Assessment Tool-1 (SMHAT-1)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.006",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Additionally, thoughts of self-harm related to depression were associated with DE (p = 0.02) but not with ED",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychosis"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sport Mental Health Assessment Tool-1 (SMHAT-1)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.005
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.006",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "In contrast, psychosis was associated with both ED and DE (p = 0.005 and p = 0.000, respectively)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Unemployment"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "N/A"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.006",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Among participants who were unemployed, 23.6% are at high risk of ED compared to those who are employed (p = 0.01)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "High physical activity (>10 hours/week)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "N/A"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.006",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Not only that, participants who exercise 10 hours and more per week presented also high risk (p = 0.007)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Reduction in monthly income"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "N/A"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.006",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Around 9.5% of the participants who faced a reduction in monthly income were at risk of developing ED (p = 0.01)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Household monthly income >300$"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "N/A"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        }
+      ],
+      "_evidence": "As for DE, household monthly income (>300$) and ADHD were strongly associated with DE patterns ([OR=15 [2.7-83] and OR=29 [5-158]) respectively) (Table 5)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "ADHD"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "N/A"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test-26 (EAT-26)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        }
+      ],
+      "_evidence": "As for DE, household monthly income (>300$) and ADHD were strongly associated with DE patterns ([OR=15 [2.7-83] and OR=29 [5-158]) respectively) (Table 5)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Monthly income >300$"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "52.6%"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Disordered eating (DE)"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "p = 0.002"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.002
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Table 5: Monthly income >300$ vs < 300$ (B = 2.711, p = 0.002, Exp(B) = 15.043)",
+      "_evidence_verified": false
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Binary logistic regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "This study highlights the complex interplay of psychological, socioeconomic, and sport-related factors contributing to the risk of eating disorders (ED) and disordered eating (DE) among Taekwondo athletes. Mental health challenges such as depression, anxiety, and ADHD emerged as significant predictors of disordered eating behaviors. Additionally, unemployment and fluctuations in income were found to influence the risk of ED and DE, reflecting the broader impact of economic stress on athlete well-being."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "This study's cross-sectional design prevents determining causality. Additionally, self-reported data may introduce bias, with some responses possibly underreported or overreported. Although the EAT-26 and SMHAT-1 questionnaires are valid tools, their length (20-40 minutes to complete) made them impractical, potentially affecting participants' motivation and response accuracy. This likely contributed to the low participation rate, with only 110 out of 161 athletes completing the questionnaire. The lack of clinical diagnoses for high-risk participants limits the ability to confirm the accuracy of the results. Furthermore, the convenience sampling method may limit the generalizability of the findings. The exclusive focus on black belt athletes may limit the generalizability of the findings to lower-level or recreational Taekwondo practitioners, who may experience different levels of stress, competition, and training-related pressures."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 110
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 110
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Individuals aged 11-64 years, Lebanese nationals, holding a black belt in Taekwondo (including both coaches and players of both genders)"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "161 athletes initially recruited, 110 eligible participants"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "National-level Taekwondo black belt athletes"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Lebanon"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

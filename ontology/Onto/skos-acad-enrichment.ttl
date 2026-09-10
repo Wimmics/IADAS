@@ -1,0 +1,118 @@
+# =============================================================================
+# Enrichissement SKOS — Vocabulaire ACAD-vocab
+# Auteure : Imane Amraoui — Stage IA-DAS, LAMHESS / Wimmics, Inria
+# Date : Juillet 2026 (corrections modélisation SKOS le 23/07/2026, validées par Molka Tounsi Dhouib)
+# Description : 7 concepts SKOS ajoutés au vocabulaire ACAD-vocab
+#               Source originale : pipeline-ontologie/output/variable-hierarchy.ttl
+# Chargement : ce fichier doit être chargé dans Fuseki après le pipeline RML
+# =============================================================================
+
+@prefix iadas-vocab: <http://ns.inria.fr/iadas/ACAD-vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+iadas-vocab:ACAD-Vocabulary a skos:ConceptScheme ;
+    skos:definition "Vocabulaire SKOS d'enrichissement ACAD-vocab : concepts ajoutés manuellement pour des variables présentes dans les données d'analyse mais absentes de la hiérarchie officielle des variables (Class_Hierarchy_VF)." .
+
+iadas-vocab:Coach_leadership_style_negative_feedback a skos:Concept ;
+    skos:broader iadas-vocab:Authority_and_Leadership_Styles ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Coach leadership style negative feedback" .
+
+iadas-vocab:Compulsive_spending a skos:Concept ;
+    skos:broader iadas-vocab:Compulsive_and_behavioral_addictions ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Compulsive spending" .
+
+iadas-vocab:Disordered_eating_behavior a skos:Concept ;
+    skos:broader iadas-vocab:Disordered_eating ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Disordered eating behavior" .
+# Categorie proposee par Amandine Daubresse le 17/07/2026 : DEAB > Disordered eating > Disordered eating behavior
+
+iadas-vocab:Negative_reaction_to_imperfection a skos:Concept ;
+    skos:broader iadas-vocab:Perfectionism ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Negative reaction to imperfection" .
+
+iadas-vocab:Physical_competence_evaluation a skos:Concept ;
+    skos:broader iadas-vocab:Perceived_competence ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Physical competence evaluation" .
+
+iadas-vocab:Psychotic_disorder a skos:Concept ;
+    skos:broader iadas-vocab:Psychological_symptoms ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Psychotic disorder" .
+
+iadas-vocab:Self-regulation_of_eating_attitude a skos:Concept ;
+    skos:broader iadas-vocab:Emotion_regulation ;
+    skos:inScheme iadas-vocab:Variable ;
+    skos:prefLabel "Self-regulation of eating attitude" .
+
+# =============================================================================
+# Synonymes (skos:altLabel) — décisions encadrantes 27/06/2026
+# Variables présentes dans la base sous un nom alternatif
+# =============================================================================
+
+# 1. "Coach leadership style negative feedback" est un synonyme de "Coach's negative feedback"
+#    (confirmé par Meggy — présent colonne H dans Class_Hierarchy_VF_09avr26.xlsx)
+<http://ns.inria.fr/iadas/ACAD-vocab/Coach%27s_negative_feedback>
+    skos:altLabel "Coach leadership style negative feedback" .
+
+# 2. "Compulsive spending" est un synonyme de "Compulsive buying"
+#    (confirmé par Meggy — présent colonne H dans Class_Hierarchy_VF_09avr26.xlsx)
+<http://ns.inria.fr/iadas/ACAD-vocab/Compulsive_buying>
+    skos:altLabel "Compulsive spending" .
+
+# 3. "Negative reaction to imperfection" (singulier) = "Negative reactions to imperfection" (pluriel)
+#    (confirme par Amandine Daubresse le 17/07/2026)
+<http://ns.inria.fr/iadas/ACAD-vocab/Negative_reactions_to_imperfection>
+    skos:altLabel "Negative reaction to imperfection" .
+
+# 4. "Psychotic disorder" (singulier) = "Psychotic disorders" (pluriel)
+#    (confirme par Amandine Daubresse le 17/07/2026)
+<http://ns.inria.fr/iadas/ACAD-vocab/Psychotic_disorders>
+    skos:altLabel "Psychotic disorder" .
+
+# 5. "Self-regulation of eating attitude" = synonyme de "Self-regulatory eating attitude in sport"
+#    (ajouté par Amandine Daubresse le 27/06/2026)
+<http://ns.inria.fr/iadas/ACAD-vocab/Self-regulatory_eating_attitude_in_sport>
+    skos:altLabel "Self-regulation of eating attitude" .
+
+# 6-10. Synonymes détectés par la page de validation (29/06/2026)
+
+# 6. "Orthorexic eating behavior" = synonyme de "Orthorexic behavior"
+#    (confirme par Amandine Daubresse le 17/07/2026)
+<http://ns.inria.fr/iadas/ACAD-vocab/Orthorexic_behavior>
+    skos:altLabel "Orthorexic eating behavior" .
+
+# 7. "Restrictive eating" = synonyme de "Eating restriction"
+#    (confirme par Amandine Daubresse le 17/07/2026 ; le rapprochement automatique du
+#    29/06 pointait a tort vers "Restrictive eating behaviors", un concept voisin mais
+#    different - "Eating restriction" liste explicitement "restrictive eating" dans sa
+#    propre colonne Synonym du fichier VF officiel)
+#    CONSERVE malgre le fix de decoupage du 03/08/2026 : la casse officielle est
+#    "restrictive eating" (minuscule) alors que la validation (import-ontology.js)
+#    compare en sensible a la casse -> a retirer seulement apres correction de ce fichier JS.
+<http://ns.inria.fr/iadas/ACAD-vocab/Eating_restriction>
+    skos:altLabel "Restrictive eating" .
+
+# 8, 9, 11, 12 retires le 03/08/2026 : "Eating pathology", "Restrained eating", "Dietary"
+# et "Diet" sont desormais generes automatiquement comme skos:altLabel individuels par le
+# pipeline (fix du bug de decoupage des cellules Synonym a valeurs multiples de
+# Class_Hierarchy_VF, meme casse exacte confirmee) -> devenus redondants avec ces entrees
+# manuelles, retires pour eviter la double declaration.
+
+# 10. "Dietary restraint" = synonyme de "Dieting"
+#    (confirme par Amandine Daubresse le 17/07/2026 ; le rapprochement automatique du
+#    29/06 pointait a tort vers "Behavioral restrained eating")
+#    CONSERVE malgre le fix de decoupage : la casse officielle est "dietary restraint"
+#    (minuscule) alors que la validation (import-ontology.js) compare en sensible a la
+#    casse -> a retirer seulement apres correction de ce fichier JS.
+<http://ns.inria.fr/iadas/ACAD-vocab/Dieting>
+    skos:altLabel "Dietary restraint" .
+
+# 13. "Physical competence evaluation" = synonyme de "Perceived physical ability"
+#     (confirmé par Meggy Hayotte — colonne H Class-Hierarchy-V1.csv — 30/06/2026)
+<http://ns.inria.fr/iadas/ACAD-vocab/Perceived_physical_ability>
+    skos:altLabel "Physical competence evaluation" .

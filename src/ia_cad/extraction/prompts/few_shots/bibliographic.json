@@ -1,0 +1,52 @@
+[
+  {
+    "_article": "Bashir.2021",
+    "_note": "Country = where the study population was recruited, not the journal's country. studyType left at the Cross-sectional default (single time-point questionnaire study, no cohort/longitudinal framing).",
+    "output": {
+      "bibliographic": [
+        {"predicate": "iadas:country", "object": "Pakistan"},
+        {"predicate": "iadas:studyType", "object": "Cross-sectional studies"}
+      ]
+    }
+  },
+  {
+    "_article": "Boyda.2011",
+    "_note": "Article explicitly calls itself 'retrospective and cross-sectional' — still maps to the single ALLOWED VALUE 'Cross-sectional studies', there is no separate 'retrospective' category.",
+    "output": {
+      "bibliographic": [
+        {"predicate": "iadas:country", "object": "United Kingdom"},
+        {"predicate": "iadas:studyType", "object": "Cross-sectional studies"}
+      ]
+    }
+  },
+  {
+    "_article": "Al-Amouri.2025",
+    "_note": "Country of the university where participants were recruited (Palestine), not of any co-author's home institution if that differs.",
+    "output": {
+      "bibliographic": [
+        {"predicate": "iadas:country", "object": "Palestine"},
+        {"predicate": "iadas:studyType", "object": "Cross-sectional studies"}
+      ]
+    }
+  },
+  {
+    "_article": "hypothetical_longitudinal",
+    "_note": "Participants completed the same questionnaires at three time points 6 months apart — repeated measures over time on the same sample = 'Longitudinal', not the Cross-sectional default.",
+    "output": {
+      "bibliographic": [
+        {"predicate": "iadas:country", "object": "Canada"},
+        {"predicate": "iadas:studyType", "object": "Longitudinal"}
+      ]
+    }
+  },
+  {
+    "_article": "hypothetical_affiliation_mismatch",
+    "_note": "Authors are affiliated with a Spanish university, but the Method section states participants were recruited from athletes in Portugal — use Portugal (data collection site), not the authors' institution country.",
+    "output": {
+      "bibliographic": [
+        {"predicate": "iadas:country", "object": "Portugal"},
+        {"predicate": "iadas:studyType", "object": "Cross-sectional studies"}
+      ]
+    }
+  }
+]

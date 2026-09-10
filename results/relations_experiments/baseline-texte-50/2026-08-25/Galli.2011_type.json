@@ -1,0 +1,307 @@
+{
+  "_article": "Galli.2011",
+  "_tag": "baseline-texte-50",
+  "_variant": "texte",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Appearance pressures"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight Pressures in Sport Scale (WPS-M)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Sport specific pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Sport appearance pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Sport appearance pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Fear"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "PANAS-X Fear subscale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Fear",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Fear",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.54
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "As expected, the appearance pressures factor had significant (p < .01) positive relationships with the Fear, Sadness, and Guilt subscales of the PANAS-X, and a negative correlation with the RSES",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Weight pressures from coaches and teammates"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight Pressures in Sport Scale (WPS-M)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Bulimic symptomatology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Bulimia Test-Revised (BULIT-R)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Bulimic symptomatology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimic symptomatology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.156
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "For the first regression, coach/teammate weight pressures and appearance pressures explained 13.5% (Adj R² =. 126, p < .001) of the variance in bulimic symptomology. The body image measures accounted for an additional 8.1% of the variance (p < .00 I), whereas the block of negative affect measures contributed a nonsignificant additional 3.5% of the variance. Self-esteem was entered last, and accounted for 3.0% of the variance (p = .005). The final model was significant, F (9.193) = 8.34,p < .001, and accounted for 28% (Adj R² = .246) of the BULIT-R variance. Specifically, more weight pressures from coaches and teammates (β =. 156,p = .05) and lower self-esteem (β = -.246,p < .01) were related to higher levels of bulimic symptomatology",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Appearance pressures"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight Pressures in Sport Scale (WPS-M)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Sport specific pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Sport appearance pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Sport appearance pressures",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Drive for muscularity"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for Muscularity Scale (DMS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for muscularity",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for muscularity",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.221
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "For the second regression, weight pressures from coaches and teammates and appearance pressure explained 22% of the variance in the drive for muscularity (Adj R² = .212, p < .00l). The full model was significant, F(9.193) = 7.31,p < .001, and accounted for 25.4% (Adj R² = .219) of the DMS variance. Specifically, more weight pressures related to appearance (β = .221 p = .000), and more weight pressures from coaches and teammates (β = .251, p = .002) predicted a stronger drive for muscularity",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Weight pressures from coaches and teammates"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight Pressures in Sport Scale (WPS-M)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Drive for muscularity"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for Muscularity Scale (DMS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Behavioral dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Drive for muscularity",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Drive for muscularity",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.251
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "For the second regression, weight pressures from coaches and teammates and appearance pressure explained 22% of the variance in the drive for muscularity (Adj R² = .212, p < .00l). The full model was significant, F(9.193) = 7.31,p < .001, and accounted for 25.4% (Adj R² = .219) of the DMS variance. Specifically, more weight pressures related to appearance (β = .221 p = .000), and more weight pressures from coaches and teammates (β = .251, p = .002) predicted a stronger drive for muscularity",
+      "_evidence_verified": true
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+[
+  {
+    "_article": "DeSousaFortes.2020a",
+    "_signals": ["baseline"],
+    "_note": "Eating disorders (DEAB construct) is V1 (the focal construct). Sociocultural attitudes towards appearance is V2 (predictor, hasCategory='Sociocultural factor related to DEAB' — not every predictor is Intrapersonal). Measure is NEVER null — always write Full Name (ABBREV). Evidence is the literal sentence reporting the statistic.",
+    "output": {
+      "relations": [
+        {
+          "V1": "Eating disorders",
+          "V1_measure": "Eating Attitudes Test (EAT-26)",
+          "V2": "Sociocultural attitudes towards appearance",
+          "V2_measure": "Sociocultural Attitudes Towards Appearance Questionnaire-3 (SATAQ-3)",
+          "evidence": "EAT-26 scores were positively correlated with SATAQ-3 scores (r = .54, p < .05)",
+          "stats": [
+            {"predicate": "iadas:degreR", "object": 0.54},
+            {"predicate": "iadas:signeP", "object": "p<.05"},
+            {"predicate": "iadas:resultatRelation", "object": "positive"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_article": "hypothetical_out_of_scope",
+    "_signals": ["baseline"],
+    "_note": "NEGATIVE EXAMPLE — this article ALSO reports 'task goal orientation was positively correlated with coach's negative feedback (r = .36, p < .01)'. This has a valid statistical value but NEITHER variable is a DEAB construct (neither is an eating-disorder / body-image construct — see the DEAB category in the reference below), so it is OUT OF SCOPE and must NOT appear below, even though it looks exactly like a normal extractable relation. It is silently omitted, not flagged or explained in the output — only the eating-disorder relation is extracted.",
+    "output": {
+      "relations": [
+        {
+          "V1": "Eating disorders",
+          "V1_measure": "Eating Attitudes Test (EAT-26)",
+          "V2": "Insensitivity to athletes' well-being",
+          "V2_measure": "Coach's Insensitivity Scale (CIS)",
+          "evidence": "EAT-26 scores were positively correlated with coaches' insensitivity to athletes' well-being (r = .27, p < .01)",
+          "stats": [
+            {"predicate": "iadas:degreR", "object": 0.27},
+            {"predicate": "iadas:signeP", "object": "p<.01"},
+            {"predicate": "iadas:resultatRelation", "object": "positive"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_article": "hypothetical_reversal",
+    "_signals": ["reversal"],
+    "_note": "Body dissatisfaction (DEAB construct) is V1 even though the sentence frames depression as what results from it. V1/V2 is decided by hasCategory (DEAB=V1), never by which variable the sentence presents as cause or outcome.",
+    "output": {
+      "relations": [
+        {
+          "V1": "Body dissatisfaction",
+          "V1_measure": "Body Shape Questionnaire (BSQ)",
+          "V2": "Depression",
+          "V2_measure": "Beck Depression Inventory (BDI)",
+          "evidence": "Athletes with higher body dissatisfaction reported significantly greater depressive symptoms (r = .45, p < .001)",
+          "stats": [
+            {"predicate": "iadas:degreR", "object": 0.45},
+            {"predicate": "iadas:signeP", "object": "p<.001"},
+            {"predicate": "iadas:resultatRelation", "object": "positive"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_article": "Boyda.2011",
+    "_signals": ["multiple_same_v1", "non_significant"],
+    "_note": "Multiple correlations with the same V1. One is non-significant (r=.232, N.S.) — signeP='N.S.' and resultatRelation='non-significant'. Both predictors use the same instrument; write the full name each time. Each relation gets its own evidence quote, even when several rows come from the same table.",
+    "output": {
+      "relations": [
+        {
+          "V1": "Muscle dysmorphia",
+          "V1_measure": "Muscle Appearance Satisfaction Scale (MASS)",
+          "V2": "Anxiety",
+          "V2_measure": "Depression, Anxiety and Stress Scale (DASS)",
+          "evidence": "MASS was positively correlated with the DASS anxiety subscale (r = .424, p < .001)",
+          "stats": [
+            {"predicate": "iadas:degreR", "object": 0.424},
+            {"predicate": "iadas:signeP", "object": "p<.001"},
+            {"predicate": "iadas:resultatRelation", "object": "positive"}
+          ]
+        },
+        {
+          "V1": "Muscle dysmorphia",
+          "V1_measure": "Muscle Appearance Satisfaction Scale (MASS)",
+          "V2": "Depression",
+          "V2_measure": "Depression, Anxiety and Stress Scale (DASS)",
+          "evidence": "the correlation between MASS and the DASS depression subscale was not significant (r = .232, ns)",
+          "stats": [
+            {"predicate": "iadas:degreR", "object": 0.232},
+            {"predicate": "iadas:signeP", "object": "N.S."},
+            {"predicate": "iadas:resultatRelation", "object": "non-significant"}
+          ]
+        },
+        {
+          "V1": "Muscle dysmorphia",
+          "V1_measure": "Muscle Appearance Satisfaction Scale (MASS)",
+          "V2": "Childhood victimization",
+          "V2_measure": "Retrospective Bullying Questionnaire (RBQ)",
+          "evidence": "MASS scores were positively correlated with RBQ scores (r = .335, p < .05)",
+          "stats": [
+            {"predicate": "iadas:degreR", "object": 0.335},
+            {"predicate": "iadas:signeP", "object": "p<.05"},
+            {"predicate": "iadas:resultatRelation", "object": "positive"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_article": "hypothetical_subscales",
+    "_signals": ["subscales"],
+    "_note": "EAT-26 reports THREE subscales (Dieting, Bulimia, Oral control) — one separate relation per subscale, never collapse them into 'Eating disorders'. Each keeps EAT-26 as its measure. Evidence quotes the table row for each subscale, not a generic sentence.",
+    "output": {
+      "relations": [
+        {
+          "V1": "Dieting",
+          "V1_measure": "Eating Attitudes Test (EAT-26)",
+          "V2": "Body dissatisfaction",
+          "V2_measure": "Body Shape Questionnaire (BSQ)",
+          "evidence": "EAT-26 Dieting subscale was positively correlated with BSQ scores (r = .51, p < .01)",
+          "stats": [
+            {"predicate": "iadas:degreR", "object": 0.51},
+            {"predicate": "iadas:signeP", "object": "p<.01"},
+            {"predicate": "iadas:resultatRelation", "object": "positive"}
+          ]
+        },
+        {
+          "V1": "Bulimia",
+          "V1_measure": "Eating Attitudes Test (EAT-26)",
+          "V2": "Body dissatisfaction",
+          "V2_measure": "Body Shape Questionnaire (BSQ)",
+          "evidence": "EAT-26 Bulimia subscale was positively correlated with BSQ scores (r = .34, p < .05)",
+          "stats": [
+            {"predicate": "iadas:degreR", "object": 0.34},
+            {"predicate": "iadas:signeP", "object": "p<.05"},
+            {"predicate": "iadas:resultatRelation", "object": "positive"}
+          ]
+        },
+        {
+          "V1": "Oral control",
+          "V1_measure": "Eating Attitudes Test (EAT-26)",
+          "V2": "Body dissatisfaction",
+          "V2_measure": "Body Shape Questionnaire (BSQ)",
+          "evidence": "the EAT-26 Oral control subscale was not significantly correlated with BSQ scores (r = -.06, ns)",
+          "stats": [
+            {"predicate": "iadas:degreR", "object": -0.06},
+            {"predicate": "iadas:signeP", "object": "N.S."},
+            {"predicate": "iadas:resultatRelation", "object": "non-significant"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_article": "hypothetical_regression",
+    "_signals": ["regression"],
+    "_note": "Regression analysis reports a standardized beta, not a correlation r. Use iadas:degreBeta instead of iadas:degreR when the text reports a regression coefficient.",
+    "output": {
+      "relations": [
+        {
+          "V1": "Body dissatisfaction",
+          "V1_measure": "Body Shape Questionnaire (BSQ)",
+          "V2": "Appearance comparison",
+          "V2_measure": "Physical Appearance Comparison Scale (PACS)",
+          "evidence": "appearance comparison significantly predicted body dissatisfaction (β = .28, p < .01)",
+          "stats": [
+            {"predicate": "iadas:degreBeta", "object": 0.28},
+            {"predicate": "iadas:signeP", "object": "p<.01"},
+            {"predicate": "iadas:resultatRelation", "object": "positive"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_article": "hypothetical_predicted_by",
+    "_signals": ["reversal", "regression"],
+    "_note": "Regression language ('X was a significant predictor of Y') never decides V1/V2 here. Eating disorders is the DEAB construct, so it is V1 even though the sentence names it as the predictor (X) and self-esteem as what is predicted (Y).",
+    "output": {
+      "relations": [
+        {
+          "V1": "Eating disorders",
+          "V1_measure": "Eating Disorder Examination Questionnaire (EDE-Q)",
+          "V2": "Self-esteem",
+          "V2_measure": "Rosenberg Self-Esteem Scale (RSES)",
+          "evidence": "disordered eating symptoms were a significant negative predictor of self-esteem (β = -.24, p < .01)",
+          "stats": [
+            {"predicate": "iadas:degreBeta", "object": -0.24},
+            {"predicate": "iadas:signeP", "object": "p<.01"},
+            {"predicate": "iadas:resultatRelation", "object": "negative"}
+          ]
+        }
+      ]
+    }
+  }
+]

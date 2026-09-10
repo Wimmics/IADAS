@@ -1,0 +1,53 @@
+TASK: Extract study-design bibliographic information from this scientific article for the IADAS knowledge graph.
+
+{ONTOLOGY_BLOCK}
+
+EXTRACTION RULES:
+1. Extract ONLY the predicates listed above — no other predicates.
+2. Only extract values explicitly stated or clearly implied by the text. Never invent.
+3. iadas:country — the country where the study / data collection took place. This is usually
+   stated in the Method/Participants section (e.g. "participants were recruited in Croatia",
+   "conducted in the United States", "N athletes from Belgian clubs"). Prefer the exact wording
+   from the ALLOWED VALUES list above when the article's country matches one (or a close variant,
+   e.g. "USA"/"US" -> "United States of America", "UK" -> "United Kingdom").
+   Do NOT use the country of the journal's publisher, or of a co-author's affiliation if that
+   author did not collect the data — only the country of the STUDY POPULATION / data collection.
+   If participants were recruited from MULTIPLE countries, write them together as they appear in
+   the text (e.g. "New Zealand Australia") rather than picking only one.
+   Omit if the country cannot be determined from the text.
+4. iadas:studyType — the methodological design of the study. Use ONE of the ALLOWED VALUES above:
+   - "Cross-sectional studies": data collected at a single time point (most common — the DEFAULT
+     whenever the text does not describe repeated measurements over time, even if the article
+     never uses the literal word "cross-sectional").
+   - "Longitudinal": participants followed and measured at multiple time points over time,
+     without necessarily being framed as a formal cohort. Key signals: "at three time points",
+     "6 months apart", "follow-up assessment", "T1/T2/T3".
+   - "Cohort studies": a defined group (cohort) followed over time, often with explicit cohort
+     terminology or comparison between exposed/unexposed groups.
+   - "Prospective studies": data collection planned and carried out forward in time from the
+     study's start (explicitly described as "prospective").
+   - "Case study": a single participant or a very small number of individually described cases.
+   When both "Longitudinal" and "Cohort studies" could apply, prefer whichever term the article
+   itself uses to describe its own design.
+   ⚠ Do NOT omit this field just because the design isn't named explicitly. A Method section
+   describing ONE round of questionnaires/measurements with no follow-up or repeated time point
+   IS a cross-sectional design — extract "Cross-sectional studies" in that case. Only omit when
+   the text genuinely gives no basis to judge (extremely rare — e.g. a pure literature review
+   with no primary data collection at all).
+
+OUTPUT FORMAT — a JSON object with a "bibliographic" key containing the array of predicate/object pairs:
+{
+  "bibliographic": [
+    {"predicate": "iadas:country", "object": "Croatia"},
+    {"predicate": "iadas:studyType", "object": "Cross-sectional studies"}
+  ]
+}
+
+EXAMPLES OF CORRECT OUTPUT:
+{FEW_SHOTS}
+
+--- TEXT TO ANALYZE ---
+{TEXT}
+--- END ---
+
+Return ONLY the JSON object with the "bibliographic" key, no explanation:

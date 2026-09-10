@@ -1,0 +1,353 @@
+{
+  "_article": "Arbinaga.2024",
+  "_tag": "baseline-tables-50",
+  "_variant": "tables",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire II (AAQ-II)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EADES-TOTAL"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating appraisal due to emotions and stress questionnaire (EADES-TOTAL)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.647
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Psychological inﬂexibility was significantly correlated with EADES-TOTAL (r = 0.647, p < 0.001)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire II (AAQ-II)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EADES-F1"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Score on Factor 1. Self-efﬁcacy in emotion- and stress-related eating (EADES-F1)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.258
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Psychological inﬂexibility was significantly correlated with EADES-F1 (r = −0.258, p < 0.001)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire II (AAQ-II)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EADES-F2"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Score on Factor 2. Self-conﬁdence in emotion- and stress-related eating (EADES-F2)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Psychological inﬂexibility was significantly correlated with EADES-F2 (r = −0.135, p = 0.002)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire II (AAQ-II)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EADES-F3"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Score on Factor 3. Appraisal of resources and ability to cope (EADES-F3)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.622
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Psychological inﬂexibility was significantly correlated with EADES-F3 (r = −0.622, p < 0.001)",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire II (AAQ-II)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "HEIS-TOTAL"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Score on the healthy eating index for the Spanish population (HEIS-TOTAL)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.085
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "No significant correlations were found between psychological inﬂexibility and scores on the healthy eating index (r = −0.085, p = 0.369)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological inflexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Total score in AAQ-II"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Personality",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Personality traits",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Maladaptive personality traits for the DEAB studies available to date",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Psychological inflexibility",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Psychological inflexibility",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EADES-F2"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Score on Factor 2. Self-confidence in emotion- and stress-related eating"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=0.058"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": 0.066,
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "EADES-F2\n29.88 (7.05)\n33.21 (6.50)\n29.41 (7.02)\n1.914\n0.058",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological inflexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Total score in AAQ-II"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Personality",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Personality traits",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Maladaptive personality traits for the DEAB studies available to date",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Psychological inflexibility",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Psychological inflexibility",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "EADES-F3"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Score on Factor 3. Appraisal of resources and ability to cope"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=0.090"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": 0.066,
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "EADES-F3\n67.59 (7.54)\n70.79 (8.77)\n67.14 (7.29)\n1.710\n0.090",
+      "_evidence_verified": true
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "_article": "Boyda.2011",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Bodybuilding"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Aesthetic"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Anxiety"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Depression, Anxiety and Stress Scale (DASS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Anxiety",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.424
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Depression"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Depression, Anxiety and Stress Scale (DASS)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Psychopathological symptoms",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Depression",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Depression",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.232
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Childhood victimization"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Retrospective Bullying Questionnaire (RBQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Conflicted and Negative Relationships",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Childhood victimization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Childhood victimization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.335
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Appearance Satisfaction Scale (MASS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Childhood victimization"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Retrospective Bullying Questionnaire (RBQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Conflicted and Negative Relationships",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Childhood victimization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Childhood victimization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.23
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Anxiety was significantly associated with muscle dysmorphia. Anxiety and depression do not both mediate the relationship between victimisation experiences and muscle dysmorphia, the unique mediating effect of anxiety represents a possible and plausible route from childhood victimisation to muscle dysmorphia. Victimisation during childhood increases anxiety levels, as a consequence, individuals negatively evaluate their self-image resulting in a body image distorsion and ultimately muscle dysmorphia. Children who are victimised by family or peers during childhood via physical, verbal or social means may have an increased risk of developing a pathological fixation with their body and this may have an impact or increase the risk for muscle dysmorphia later in adulthood."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The study was retrospective and cross-sectional and this as such limited conclusions regarding mediation. The study did not ascertain the temporal ordering of experiences which may limit analysis and interpretation, while childhood memories recalled during adulthood maybe subject to negative recall bias. In addition, it should not be discounted that the mediation model contained too few mediators to accurately predict an association between the childhood victimisation and muscle dysmorphia. Also the sample size was relatively small and this sample is not likely to be representative of the general population due to the sampling method. However, recruited participants through bodybuidling forum ensured adequate levels of variability in muscle dysmorphia scores: a general population sample likely have produced scores heavily positively skewed. Finally, low participation from the three large forums was unexpected."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "A more appropriate recruitmalet strategy should be considered as an increased sample size xould contribute to more stable estimation of the mediation model. \nThe future direction for a follow-up study should consider if such early experiences and subsequent manifestation of muscle dysmorphia lead to a gateway for the use of performance-enhancing drugs wich may further magnify the effects of msucle dysmorphia on their psychological functioning. This could be considered an important extension to this study as indivdiuals who use performance-enhancing drugs can rapidly change aspects of their muscularity including fat distribution as after all, this is the holy grail for those who have muscle dysmorphia."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 89
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Male"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "male who practicing bodybuiling. The study excluding those who had recorded they were currently experiencing a mental health illness, those who were attending a gymnasium less than three days per week as this was considered to represent casual membership. Those who recorded that gym attendance of less than four years were also excluded."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 89
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

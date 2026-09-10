@@ -1,0 +1,180 @@
+{
+  "_article": "Larrinaga.2024",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Rowing"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Endurance"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "SCOFF questionnaire"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Physical self-concept related to attractiveness\nPressures from teammates and due to the uniform\nPsychological well-being autonomy\nPhysical self-concept related to strength\nAge"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Physical Self-Concept Questionnaire (CAF-A)\nSpanish version of Weight Pressures in Sport-Females questionnaire (WPS-F)\nSpanish version of the Ryff Scales of Psychological Well-Being\nPhysical Self-Concept Questionnaire (CAF-A)\nSociodemographic information"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.35
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "SCOFF questionnaire"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Psychological well-being environmental mastery\nPhysical self-concept related to attractiveness\nPhysical self-concept related to strength\nPhysical self-concept related to ability\nPressures from teammates and due to the uniform"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Ryff Scales of Psychological Well-Being\nPhysical Self-Concept Questionnaire (CAF-A)\nPhysical Self-Concept Questionnaire (CAF-A)\nPhysical Self-Concept Questionnaire (CAF-A)\nWeight Pressures in Sport-Females questionnaire (WPS-F)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.42
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Teammates and the uniform pressure and self-concept of strength were associated with higher ED symptoms in female rowers, whereas better self-concept, psychological well-being and more age showed less susceptibility of ED symptoms."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The SCOFF scale should be complemented by other ED questionnaires to obtain more specific information regarding to ED psychopathology. Small size of the sample also may be a limitation."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "More research is needed on the key protective/facilitating factors against the development of DE in order to tailor prevention and intervention programmes for athletes, coaches, parents and technical staff, and to ensure that sports policies include health professionals (psychologists, nutritionists of physiotherapists) who are aware of ED."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": "206 (total sample)"
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Female fixed-bench rowers from all clubs, athletes participated on the two competitive levels allocated on the Cantabrian Sea"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Total female sample (n=208)\nSample with body composition analysis (n=115)"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 208
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Spain"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "_article": "Fernandes.2023",
+  "_tag": "baseline-tables-50",
+  "_variant": "tables",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Metabolic equivalent of task"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "M: 3269.76, SD: 2834.24"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "constraint"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "β: -0.008, IC95%: -0.073, 0.052, p: 0.001"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.008
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Metabolic equivalent of task →Constraint\n-0.008\n-0.073, 0.052\n0.001",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Metabolic equivalent of task"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "M: 3269.76, SD: 2834.24"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "emotional ingestion"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "β: -0.012, IC95%: -0.076, 0.047, p: 0.729"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotional eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Emotional ingestion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Emotional ingestion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.012
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p>.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Metabolic equivalent of task →emotional ingestion\n-0.012\n-0.076, 0.047\n0.729",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Metabolic equivalent of task"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "M: 3269.76, SD: 2834.24"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "external ingestion"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "β: -0.009, IC95%: -0.072, 0.050, p: 0.787"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "External eating behavior",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "External ingestion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "External ingestion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.009
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p>.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Metabolic equivalent of task →constraint\n-0.009\n-0.072, 0.050\n0.787",
+      "_evidence_verified": true
+    }
+  ]
+}

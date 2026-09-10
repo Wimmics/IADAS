@@ -1,0 +1,160 @@
+# Règles de normalisation du pipeline ACAD
+#
+# Structure par champ :
+#   canonical    : liste FERMÉE des valeurs autorisées (toute valeur hors liste → validation requise)
+#   known_values : liste OUVERTE des valeurs connues (peut s'agrandir après validation humaine)
+#   aliases      : mapping variante (insensible à la casse) → valeur canonique/connue
+#
+# Ce fichier sert à :
+#   1. Normaliser les valeurs extraites (aliases → forme canonique)
+#   2. Informer le LLM des valeurs attendues (section canonical/known_values)
+#   3. Détecter les nouvelles valeurs qui nécessitent une validation humaine
+
+# ─── Champs à vocabulaire FERMÉ ───────────────────────────────────────────────
+
+studyType:
+  canonical:
+    - Cross-sectional studies
+    - Longitudinal
+    - Longitudinal studies
+    - Case-control
+    - Systematic review
+    - Meta-analysis
+    - Qualitative
+    - Experimental
+    - Cohort
+  aliases:
+    # Termes français (sortie LLM par défaut)
+    transversale: Cross-sectional studies
+    longitudinale: Longitudinal studies
+    cas-témoins: Case-control
+    revue systématique: Systematic review
+    méta-analyse: Meta-analysis
+    qualitative: Qualitative
+    expérimentale: Experimental
+    cohorte: Cohort
+    # Variants anglais courants
+    cross-sectional: Cross-sectional studies
+    cross-sectional study: Cross-sectional studies
+    cross-sectional studies: Cross-sectional studies
+    cross sectional: Cross-sectional studies
+    cross-sectional study design: Cross-sectional studies
+    longitudinal study: Longitudinal studies
+    longitudinal study design: Longitudinal studies
+    longitudinal studies: Longitudinal studies
+    case-control study: Case-control
+    case control study: Case-control
+    systematic review and meta-analysis: Systematic review
+    randomized controlled trial: Experimental
+    randomised controlled trial: Experimental
+    rct: Experimental
+    cohort study: Cohort
+    prospective cohort: Cohort
+    retrospective cohort: Cohort
+    mixed methods: Qualitative
+    qualitative study: Qualitative
+
+continent:
+  canonical:
+    - Europe
+    - America
+    - Asia
+    - Africa
+    - Oceania
+  aliases:
+    # Formes françaises retournées par pays_continent.py
+    amérique du nord: America
+    amérique du sud: America
+    océanie: Oceania
+    asie: Asia
+    afrique: Africa
+    # Variants anglais
+    north america: America
+    south america: America
+    latin america: America
+    central america: America
+
+# ─── Champs à vocabulaire OUVERT ──────────────────────────────────────────────
+# Les valeurs dans known_values sont validées.
+# Toute nouvelle valeur extraite hors liste est envoyée dans pending_validation.json
+# pour validation humaine avant d'être ajoutée ici.
+
+country:
+  known_values:
+    - Spain
+    - Croatia
+    - United States of America
+    - Canada
+    - United Kingdom
+    - France
+    - Germany
+    - Italy
+    - Netherlands
+    - Belgium
+    - Switzerland
+    - Austria
+    - Sweden
+    - Norway
+    - Denmark
+    - Finland
+    - Portugal
+    - Greece
+    - Poland
+    - Australia
+    - New Zealand
+    - Brazil
+    - Argentina
+    - Japan
+    - China
+    - South Korea
+    - India
+    - Israel
+    - Turkey
+    - Iran
+  aliases:
+    # Variantes pour les États-Unis
+    united states: United States of America
+    usa: United States of America
+    us: United States of America
+    u.s.: United States of America
+    u.s.a.: United States of America
+    # Variantes pour le Royaume-Uni
+    uk: United Kingdom
+    great britain: United Kingdom
+    england: United Kingdom
+    # Autres
+    czechia: Czech Republic
+    republic of korea: South Korea
+    korea: South Korea
+    people's republic of china: China
+    cyprus: Cyprus
+    chypre: Cyprus
+    northern cyprus: Cyprus
+    trnc: Cyprus
+
+journal:
+  known_values:
+    - Humanities and Social Sciences Communications
+    - Sports
+    - Eating Behaviors
+    - PLOS ONE
+    - International Journal of Eating Disorders
+    - Body Image
+    - Appetite
+    - Journal of Eating Disorders
+    - European Eating Disorders Review
+    - International Journal of Sport and Exercise Psychology
+    - Psychology of Sport and Exercise
+    - Journal of Sport and Exercise Psychology
+    - Journal of Sports Sciences
+    - Frontiers in Psychology
+    - PLOS One
+
+# ─── Format d'auteur ──────────────────────────────────────────────────────────
+# Format attendu dans la BDD : "Initiales. NomDeFamille" (ex: "C.R. Drury")
+# La comparaison tolère les prénoms complets ("Catherine R. Drury" ≡ "C.R. Drury")
+# grâce à la clé (initiales + nom de famille) calculée à la volée.
+# Pas de validation par liste (les auteurs sont trop nombreux).
+authors:
+  format: "Initials. LastName"
+  example: "C.R. Drury"

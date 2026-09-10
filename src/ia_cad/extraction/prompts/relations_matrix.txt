@@ -1,0 +1,48 @@
+TASK: Below is ONE correlation table from a scientific article (sport psychology / eating disorders), given in two forms.
+
+A "STRUCTURED VIEW" comes first: each row label mechanically regrouped with its numeric values,
+in table order ("Label: v1, v2, ..."). This is your PRIMARY source for which values belong to
+which row — trust its grouping. Use the "RAW TABLE TEXT" that follows it only to (a) recover a
+row label that looks truncated or abbreviated in the structured view, or (b) catch a value the
+structured view may have dropped — PyMuPDF linearizes the original table, so variable names and
+their correlation values are split across many lines, sometimes as a triangular matrix (row i has
+i-1 values aligned to columns 1..i-1). If the two forms disagree on a value, prefer the structured
+view unless the raw text clearly shows it grouped a value under the wrong row.
+
+Reconstruct the correlations that involve an EATING-DISORDER / BODY-IMAGE construct (the focal outcomes of this field).
+
+FOCAL constructs (and their subscales) include, non-exhaustively:
+  Eating disorders, Disordered eating, Drive for thinness, Bulimia, Dieting, Oral control,
+  Dietary restraint, Eating concern, Shape concern, Weight concern, Body dissatisfaction,
+  Body image dissatisfaction, Orthorexia, Compulsive exercise, Muscularity-oriented disordered eating.
+
+RULES:
+1. Output ONE relation per correlation where AT LEAST ONE side is a focal eating/body construct.
+   - Exactly one side focal: that side is V1, the other variable is V2.
+   - BOTH sides focal (e.g. two eating-disorder/body-image scales correlated with each other,
+     such as EAT-26 x BSQ — this happens regularly, do not discard it): keep the pair, V1 = the
+     row variable, V2 = the column variable.
+   NEVER output a pair where NEITHER side is a focal eating/body construct (e.g. two
+   coach-behaviour or two motivation variables together).
+2. Use the STRUCTURED VIEW's row groupings to align each value to the correct pair of variables —
+   its column position within a row (1st, 2nd, 3rd value...) tells you which other row/column it
+   pairs with; consult the RAW TABLE TEXT to resolve which variable that position refers to.
+3. r = the decimal coefficient (a number, e.g. -0.42, not a string).
+4. Significance from the asterisks next to the value, using the table legend if shown:
+   ***  → "p<.001"   ;   **  → "p<.01"   ;   *  → "p<.05"   ;   no asterisk → "N.S."
+5. Use the canonical CONSTRUCT name for V1/V2, not the instrument abbreviation
+   (e.g. "Drive for thinness", not "EDI-DT"; "Eating disorders", not "EAT-26").
+6. Do not invent values. Only transcribe what is in the table.
+
+OUTPUT FORMAT — JSON only:
+{
+  "relations": [
+    {"V1": "Eating disorders", "V2": "Body image dissatisfaction", "r": 0.27, "signeP": "p<.01"}
+  ]
+}
+
+--- CORRELATION TABLE ---
+{TEXT}
+--- END ---
+
+Return ONLY the JSON object with the "relations" key, no explanation:

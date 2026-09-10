@@ -1,0 +1,167 @@
+{
+  "_article": "Arbinaga.2024",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Dance (e.g., Classical dance, flamenco, contemporary dance, Spanish dance, urban dance)"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": null
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Emotional eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Eating and Appraisal Due to Emotions and Stress Questionnaire (EADES)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotional eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Emotional eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Psychological inflexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Acceptance and Action Questionnaire (AAQ-II)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Personality",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Personality traits",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Maladaptive personality traits for the DEAB studies available to date",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Psychological inflexibility",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Psychological inflexibility",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.504
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Students with high psychological inflexibility reported greater use of food as an emotion regulator."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The design used does not allow for establishing causal relationships that determine the directionality between the variables analyzed. It could be worthwhile to use a larger sample and control more rigorously the variables related to dance."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "It would be interesting to analyze whether the index of healthy eating and emotional eating is related in a different way to psychological inflexibility according to the specialty of dance. It would be interesting to analyze the impact of psychological inflexibility across a ranges of specialities, considering the importance of weight in each dance discipline. Dance education can be understood from a perspective that considers the dancer-teacher dyad."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 114
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "To be of legal age, to have been studying dance for at least 3 years and always with a teacher, to be enrolled in a conservatory course (elementary, intermediate, or professional level) or dance school-academy"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "87.7% females"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "53 elementary-intermediate \n34 higher\n27 school"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 114
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Spain"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

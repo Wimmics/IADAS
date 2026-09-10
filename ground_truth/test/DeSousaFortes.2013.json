@@ -1,0 +1,125 @@
+{
+  "_article": "DeSousaFortes.2013",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Artistic gymnastics, synchronized swimming and diving"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-40)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "% body fat\ncommitment to exercise\nBody shape \nAll variables"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Triceps and subscapular skinfold thickness\nwas measured according to the standards of the International Society for the Advancement of Kinanthropometry23 using a Lange® caliper (Cambridge Scientific Industries, Inc.), to the nearest 1 mm. Measurements were taken in a rotational order and the mean of three measurements was used for analysis\nCommitment to Exercise Scale (CES)\nBody Shape Questionnaire (BSQ)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.004
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.73"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple linear regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "In the final model, all variables together explained 17% of the variation in EAT-26 scores. These results suggest that concern with body weight and physical appearance and a high level of psychological commitment to exercise are predictors of unhealthy eating habits in athletes."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "One limitation of this study was the small sample size, a fact impairing generalization of the results."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future studies that include larger samples and additional aesthetic modalities and that evaluate the influence of others factors on the eating behavior of athletes are needed."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 47
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Criteria for inclusion in the study were a consent form signed by the responsible person; a training frequency of at least 5 days per week in the respective modality; with a minimum duration of 2h/training; participation in at least one regional competition in 2011, and voluntary agreement to answer the questionnaires and to participate in the anthropometric assessments"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 47
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Brazil"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

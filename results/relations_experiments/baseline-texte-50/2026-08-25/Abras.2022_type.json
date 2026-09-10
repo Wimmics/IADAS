@@ -1,0 +1,104 @@
+{
+  "_article": "Abras.2022",
+  "_tag": "baseline-texte-50",
+  "_variant": "texte",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle perception disorder"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Perception Disorder Inventory"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Orthorexia nervosa"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ORTO-11"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Orthorexia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Orthorexia nervosa",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "A significant difference is observed between use of ergogenic supplements and muscle perception disorder. As muscle perception disorder increases orthorexia neurosis will also increase (p<0.05).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Use of ergogenic supplements"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ergogenic nutritional support products"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Muscle perception disorder"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "muscle perception disorder"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "With the bodybuilding sport, which has increased in popularity in recent years, there has been a significant increase in the number of individuals who have muscle dysmorphia in direct proportion. Some symptoms observed in individuals with muscle dysmorphia are constantly observing their body in front of the mirror, excessively long exercise times, unconscious and compelling sports, high expenditures on ergogenic nutritional support products, and anabolic steroid use (Ozoglu and Hocaoglu, 2019).",
+      "_evidence_verified": true
+    }
+  ]
+}

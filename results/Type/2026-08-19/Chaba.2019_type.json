@@ -1,0 +1,492 @@
+{
+  "_article": "Chaba.2019",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    },
+    {
+      "predicate": "iadas:hasMediator",
+      "object": "Perceived behavioral control\nIntention to gain muscle mass",
+      "_rejected_reason": "prédicat 'hasMediator' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:mediatorMeasure",
+      "object": "Not explicitly stated",
+      "_rejected_reason": "prédicat 'mediatorMeasure' absent de la classe Analysis"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Bodybuilding"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Aesthetic",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for muscularity behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for Muscularity Scale (DMS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Autonomous motivation for sport"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Motivation Scale in Sports-II"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Autonomous forms for motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Autonomous motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Autonomous motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.18
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Autonomous motivation for sport was significantly, directly and positively related to the intention to gain muscle mass (ß = .18, p < .01), but non-significantly related to DM.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for muscularity behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for Muscularity Scale (DMS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Perceived behavioral control related to gain muscle mass"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Perceived Behavioral Control Scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Self-efficacy",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perceived behavioral control related to gain muscle mass",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Perceived behavioral control related to gain muscle mass",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.36
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Autonomous motivation for sport was significantly, indirectly and positively related to DM through the mediating role of perceived behavioral control (ß = .36, p < .001) and the intention to gain muscle mass (ß = .41, p < .001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for muscularity behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for Muscularity Scale (DMS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Intention to gain muscle mass"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Intention to Gain Muscle Mass Scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Cognitive dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Muscularity-related intentions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Intention to gain muscle mass",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Intention to gain muscle mass",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.41
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Autonomous motivation for sport was significantly, indirectly and positively related to DM through the mediating role of perceived behavioral control (ß = .36, p < .001) and the intention to gain muscle mass (ß = .41, p < .001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for muscularity behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for Muscularity Scale (DMS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Controlled motivation for sport"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Controlled Motivation for Sport Scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Controlled motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Controlled motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.24
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Controlled motivation for sport was significantly, directly and positively related to DM (ß = .24, p < .001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for muscularity behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for Muscularity Scale (DMS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Attitude related to drive for muscularity"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Attitude Scale"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.37
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Controlled motivation for sport was also significantly, indirectly and positively related to DM through the mediating role of attitude (ß = .37, p < .001) and the intention to gain muscle mass (ß = .42, p < .001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Drive for muscularity behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for Muscularity Scale (DMS)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Subjective norm related to gain muscle mass"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Subjective Norm Scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Cognitive dimension of body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body norms internalization",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Subjective norm related to gain muscle mass",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Subjective norm related to gain muscle mass",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.18
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Controlled motivation for sport was significantly and positively related to subjective norm related to gain muscle mass, well (ß = .18, p < .01), but this variable was non-significantly related to the intention to gain muscle mass.",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Path analysis"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Autonomous motivation for sport had a significant, indirect and positive association with DM via perceived behavioral control and intention to gain muscle, and that controlled motivation for sport was related to DM both directly and via attitude and intention to gain muscle mass."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "First, our data are limited because our sample was composed only of young men with different levels of expertise, which might have influenced their motivation and engagement in DM. A possible solution would be to measure the level of competition and include it in the analyses. Moreover, these bodybuilders trained between 3 and 24 h per week, and the amount of practice time might have limited the homogeneity of our sample. Also, the sex orientation was not controlled among the male bodybuilders. Second, subjective norm is a questionable variable as it might indicate a measurement issue in the sense that such variables reflect greater pressure and controlling rather than supportive forms of motivation. They therefore are not likely to capture the shared variance between the need for relatedness and physical activity behaviors. Importantly, the relationship between autonomous motivation and subjective norm casts doubt on the TCM, as the results to date have been varied, with studies from different countries finding positive, negative, or no relationships. Third, the data were collected using a self-report survey and might have been influenced by social desirability. Fourth, the internal consistency of some measures was quite low and this might have been linked to our heterogeneous sample or to the psychometric quality concerning the controlled motivation scale, or the inconsistency between the external regulation and the introjected regulation. Moreover, our study was correlational and had the typical limitations of this type of design; it would thus be interesting to conduct a longitudinal study to more closely examine the causal relationships between variables. The motivational mechanisms underlying DM could be fruitfully deepened by complementary analyses of motivational profiles. These future investigations would help to develop programs to equip bodybuilders to avoid the risks associated with DM."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Methodologically, an important perspective for the future would be to determine a cutoff for DM, which might then function as a reference when using DM as a screening instrument for disordered eating. Moreover, eating disorders are very common in male bodybuilders and it might be of value to examine the relationships between motivation for sport, DM and other specified feeding or eating disorders such as food restriction or night eating syndrome, or binge eating."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 171
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Male"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 175
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "French-speaking Swiss male athletes practicing bodybuilding who met the following eligibility criteria: (a) minimum age of 16 years, (b) minimum of 3 h of physical training per week, and (c) minimum of 3 years of bodybuilding."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Switzerland"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

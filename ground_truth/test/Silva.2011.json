@@ -1,0 +1,138 @@
+{
+  "_article": "Silva.2011",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Handball, volleyball, basketball, swimming, athletics, karate, taekwondo"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Restraint"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Restraint",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Restraint",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Gender\nSatisfaction with body shape and physical appearance\nWeight related coach pressure \nSport records\nPerformance anxiety\nEgo orientation\nTask orientation\nCognitive appraisal\nSelf presentation processes"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociodemographic information\nSport Condition Questionnaire (SCQ)\nSport Condition Questionnaire (SCQ)\nSociodemographic information\nSport Anxiety Scale (SAS-2)\nTask and Ego Orientation in Sport Questionnaire (TEOSQ)\nTask and Ego Orientation in Sport Questionnaire (TEOSQ)\nCognitive Evaluation of Sport-Threat Perception (CES-TP)\nSelf Presentation Exercise Questionnaire (SPEQ)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.05
+        },
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.23
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Regression model"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Both dimensions of motivational orientation were not significant in the prediction of EDE-Q factors. In the predction we should stress the importance of satisfaction with body shape and physical appearance, impression motivation, somatic anxiety and worry, threat perception and weight related coach pressure."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Need to further examine the impact of the psychological variables in eating disordered behaviors, since as this study showed some unexpected results. For example, impression motivation (which was related to an increased tendency for eating disordered behaviors) also tends to be associated with positive effects, particularly in the prevention of risk behaviors to health. The aalysis of these relationships can not only improve our understanding about the impact of psychological factors on eating disorders but also help in the prevention of this problems in sports contexts."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 299
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Athletes aged 14 to 39 years practiced collective sports or individuals sports"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "Juvenile group (n=133)\nJunior groupe (n=90)\nSenior groupe (n=76)"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "National"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 299
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Portugal"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

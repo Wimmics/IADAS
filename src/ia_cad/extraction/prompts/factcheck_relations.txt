@@ -1,0 +1,43 @@
+TASK: Verify whether each predicate-object pair is explicitly supported by the source text.
+
+For each triplet, answer:
+- VRAI  : the value is explicitly stated in the text (literal or very close paraphrase)
+- FAUX  : the value is absent, invented, or contradicts the text
+
+STRICT RULES for statistical values:
+- iadas:degreR, iadas:degreP, iadas:degreBeta, iadas:degreR2
+  The exact numeric value (or a rounding of it) must appear in the text. Answer FAUX if
+  the number does not appear at all, or if a clearly different number appears instead.
+- iadas:signeP — a BUCKETED significance threshold, NOT a literal transcription of the p-value.
+  Only 4 values exist: "p<.001", "p<.01", "p<.05", "N.S.". Find the actual p-value reported in
+  the text and check it falls in the CLAIMED bucket — do not require the bucket label to match
+  the reported number's exact wording:
+    reported p < .001             -> bucket must be "p<.001"
+    .001 <= reported p < .01      -> bucket must be "p<.01"
+    .01  <= reported p < .05      -> bucket must be "p<.05"
+    reported p >= .05, or "N.S."/"ns" stated -> bucket must be "N.S."
+  Answer VRAI whenever the reported p-value falls in the claimed bucket (e.g. text "p = .006"
+  with claimed "p<.01" is VRAI — .006 falls in [.001, .01)). Answer FAUX only when the reported
+  p-value falls in a DIFFERENT bucket than the one claimed (e.g. text "p = .006" with claimed
+  "p<.001" is FAUX), or when no p-value at all is reported for that relation.
+- iadas:resultatRelation (positive / negative / non-significant)
+  Answer VRAI if the sign of the correlation and its significance match the text.
+  A negative r value → "negative" is VRAI. A non-significant result → "non-significant" is VRAI.
+- iadas:relationDegree (weak / moderate / strong)
+  Accept VRAI if the text uses equivalent terms (e.g. "low correlation" → "weak").
+
+SOURCE TEXT:
+{TEXT}
+
+TRIPLETS TO VERIFY:
+{TRIPLETS}
+
+OUTPUT FORMAT — a JSON object with a "verdicts" key, same order and length as input:
+{
+  "verdicts": [
+    {"predicate": "iadas:degreR", "object": 0.45, "verdict": "VRAI"},
+    {"predicate": "iadas:signeP", "object": "p<.001", "verdict": "FAUX"}
+  ]
+}
+
+Return ONLY the JSON object with the "verdicts" key, no explanation:

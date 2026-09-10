@@ -1,0 +1,362 @@
+{
+  "_article": "Arbinaga.2024",
+  "_tag": "baseline-tables-texte-50",
+  "_variant": "tables+texte",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire (AAQ-II)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Emotional eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Appraisal Due to Emotions and Stress Questionnaire (EADES)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotional eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Emotional eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.504
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Pearson's correlation tests revealed a negative correlation between psychological inﬂexibility and the total score on the emotional eating test (r = −0.504, p < 0.001), along with the subscales self-efﬁcacy in emotion- and stress-related eating (r = −0.303, p = 0.001), self-conﬁdence in emotion- and stress-related eating (r = −0.258, p = 0.001), and appraisal of resources and ability to cope (r = −0.647, p < 0.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire (AAQ-II)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Healthy eating index"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Healthy Eating Index for the Spanish population (HEIS-TOTAL)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.085
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "non-significant"
+        }
+      ],
+      "_evidence": "However, no signiﬁcant correlations were found between psychological inﬂexibility and scores on the healthy eating index (r = −0.085, p = 0.369).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Self-efﬁcacy in emotion- and stress-related eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Appraisal Due to Emotions and Stress Questionnaire (EADES)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire (AAQ-II)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.303
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Pearson's correlation tests revealed a negative correlation between psychological inﬂexibility and the total score on the emotional eating test (r = −0.504, p < 0.001), along with the subscales self-efﬁcacy in emotion- and stress-related eating (r = −0.303, p = 0.001), self-conﬁdence in emotion- and stress-related eating (r = −0.258, p = 0.001), and appraisal of resources and ability to cope (r = −0.647, p < 0.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Self-conﬁdence in emotion- and stress-related eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Appraisal Due to Emotions and Stress Questionnaire (EADES)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire (AAQ-II)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.258
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Pearson's correlation tests revealed a negative correlation between psychological inﬂexibility and the total score on the emotional eating test (r = −0.504, p < 0.001), along with the subscales self-efﬁcacy in emotion- and stress-related eating (r = −0.303, p = 0.001), self-conﬁdence in emotion- and stress-related eating (r = −0.258, p = 0.001), and appraisal of resources and ability to cope (r = −0.647, p < 0.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Appraisal of resources and ability to cope"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Appraisal Due to Emotions and Stress Questionnaire (EADES)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire (AAQ-II)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.647
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "Pearson's correlation tests revealed a negative correlation between psychological inﬂexibility and the total score on the emotional eating test (r = −0.504, p < 0.001), along with the subscales self-efﬁcacy in emotion- and stress-related eating (r = −0.303, p = 0.001), self-conﬁdence in emotion- and stress-related eating (r = −0.258, p = 0.001), and appraisal of resources and ability to cope (r = −0.647, p < 0.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire (AAQ-II)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Number of years studying with a teacher"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.358
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Finally, when considering how psychological inﬂexibility is related to the various dance variables that have been considered in this study, negative correlations were found with the number of years studying with a teacher (r = −0.358, p < 0.001), the reported number of days per week (r = −0.284, p = 0.002) and number of hours per week spent dancing (r = −0.298, p = 0.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire (AAQ-II)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Number of days per week dancing"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.284
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Finally, when considering how psychological inﬂexibility is related to the various dance variables that have been considered in this study, negative correlations were found with the number of years studying with a teacher (r = −0.358, p < 0.001), the reported number of days per week (r = −0.284, p = 0.002) and number of hours per week spent dancing (r = −0.298, p = 0.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Psychological inﬂexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Acceptance and Action Questionnaire (AAQ-II)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Number of hours per week dancing"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": null
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.298
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Finally, when considering how psychological inﬂexibility is related to the various dance variables that have been considered in this study, negative correlations were found with the number of years studying with a teacher (r = −0.358, p < 0.001), the reported number of days per week (r = −0.284, p = 0.002) and number of hours per week spent dancing (r = −0.298, p = 0.001).",
+      "_evidence_verified": true
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "_article": "Fatt.2025a",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:resultatRelation",
+      "object": "positive",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:degreR",
+      "object": "p<.01",
+      "_source": "self_refine",
+      "_rejected_reason": "'p<.01' n'est pas un decimal (attendu pour degreR)"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Athletic Disordered Eating (ADE) scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Self-reported performance"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Not explicitly stated, but assumed to be a general performance measure"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.39
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Greater disordered eating was significantly associated with poorer self-reported performance across timepoints (r = − .23, p = .027 to r = − .39, p < .001); however, T1-disordered eating did not predict a significant change in performance over time, controlling for gender.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Athletic Disordered Eating (ADE) scale"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Days missed from training/competition due to injury"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Not explicitly stated, but assumed to be a general injury measure"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 1.041
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "As hypothesised, T1-disordered eating predicted significantly more days missed from training/competition due to injury in the following 6-months (OR = 1.041), controlling for gender and T1-days missed due to injury.",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Disordered eating did not predict improvements in self-reported performance over a 6- or 12-month period in a sample of male and female elite athletes competing across various sports. Rather, disordered eating at baseline was associated with poorer performance across timepoints. Further, disordered eating predicted an increased number of days missed from training/competition due to injury over 6-months, even when controlling for days missed due to injury at baseline and gender."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Several limitations should be considered when interpreting these findings. Given the lack of existing research in this area, performance and injury were measured broadly using self-report. This approach had practical benefits (e.g., low time and resource burden) which allowed for the longitudinal design. However, athletes' ratings of performance may be biased by other factors, such as recent competitive results, mood, perfectionistic traits, or even the misattribution of one's body composition/appearance as an indicator of performance. Similarly, an athlete's recollection of days missed due to injury over the last six months may have been biased by recent injuries. These findings provide rationale for future research investigating more objective and varied outcomes, such as biophysiological metrics (e.g., max power), specific outcomes (e.g., race times, personal bests), and external ratings of performance/injury severity."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research is needed investigating more specific and objective performance and injury outcomes associated with disordered eating, over various time-frames and across various athlete populations."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 178
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 178
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Current elite athletes (national, international, professional, or NCAA D1 level) who participated in the baseline, 6-month follow-up, and 12-month follow-up surveys"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "72.4% female, 27.0% male, 0.6% other gender"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "A variety of sports, with approximately half competing in lean sports (endurance, weight-class, aesthetic, anti-gravitational)"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Australia"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Longitudinal"
+    }
+  ]
+}

@@ -1,0 +1,522 @@
+{
+  "_article": "Ausmus.2021",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "gymnastics"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": null
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Hours spent on social media"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Two questions developed by Sidani, Shensa, Hoffman, Hanmer, and Primack (2015) were used to estimate how often participants used social media in a 24-hour period"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Media exposure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Hours spent on social media",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Hours spent on social media",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.199
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p>.01"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Severity of critical comment about physical appearance"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Social Hassles Questionnaire (SHQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "External comments",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Severity of critical comment",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Severity of critical comment about physical appearance",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Severity of critical comment about physical appearance",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Interpersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.722
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Emotional reaction to critical comments about physical appearance"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Social Hassles Questionnaire (SHQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Emotional states",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Maladaptive emotional state",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Emotional reaction to critical comments about physical appearance",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Emotional reaction to critical comments about physical appearance",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.566
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Emotional reaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Social Hassles Questionnaire with modifications made to identify how the participants reacted to critical comments made on social media"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Emotions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Emotional states",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Maladaptive emotional state",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Emotional reaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Emotional reaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.143
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p>.01"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Severity of the comment made on social media"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Social Hassles Questionnaire with modifications made to identify how the participants reacted to critical comments made on social media"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Perception of sociocultural pressure",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Perception of sociocultural pressure from media",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Severity of the comment made on social media",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Severity of the comment made on social media",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Sociocultural factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": -0.026
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p>.01"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Criticism received by coach\nSeverity of comment\nEmotional reaction to comment\nYears of participation\nBody satisfaction\nInstragram usage\nSnapchat usage"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The Social Hassles Questionnaire (SHQ)\nThe Social Hassles Questionnaire (SHQ)\nThe Social Hassles Questionnaires with modification made to identify how the participant reacted to critical comments made on social media about their aesthetic \nDemographic questionnaire\nDemographic questionnaire to explore perception of ideal body image for their sport\nQuestions about social media engagement \nTwo questions developed by Sidani, Shensa, Hoffman, Hanmer, and Primack were used to estimate how often participant used social media in a 24-hour period and how often participants visited nine common social media platforms"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.428
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Pearson correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "This study did not find significant correlations between criticism received on social media and disordered eating behaviors in college gymnasts. Combining variables related to social hassles, body satisfaction, usage of certain social media outlets, and years of participation could perdict disordered eating. No relationship were found between social media variables and disordered eating behaviors."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The main limitation of this study was the sample size of the participants. Although measures were exhausted in the recruitmalet of participants; it may have been beneficial to have sent the recruitmalet materials out earlier in the off season as opposed to a month before the college gymnastics season started. Another limitation was the limited reliability data for the Social Hassles Questionnaire, as it is relatively new instrument and has not been extensively tested. Furthermore this study did not account for mental health status beyond possible disordered eating behaviors."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Since depression and anxiety have been linked to disordered eating patterns, future studies should also consider these pathologies, along with self-esteem. Research should aim to better understand the relationship between social media criticism and disordered eating behaviors in athletic populations. Athletes from different sports may respond differently to criticism than gymnasts, so it could be valuable to study these variables in other aesthetic sports, such as figure skating, diving, cheerleading, or even non-aesthetic sports like softball or basketball. Additionally, exploring these factors in males involved in aesthetic sports and the overall impact of social media on athletes' mental health could provide important insights.\n\nIt would also be beneficial for athletes, parents, and other significant figures in athletes' lives to be trained in recognizing the signs of disordered eating behaviors. Such training could help raise awareness of the potential dangers of social media platforms like Snapchat and offer guidance on how to support athletes if disordered eating behaviors arise.\n\nTo counter the effects of social media criticism on athletes, education initiatives should target coaches, families, friends, and athletes themselves to prevent the development of harmful eating behaviors and patterns, both now and in the future."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 72
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Participants were recruited from club gyms and colleges throughout the united states via email, social media, and word of mouth to coaches, support staff and directly to athletes; Females between 18-25 years; self identify as competitive gymnasts; must have competed within the last three years"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "87.67% competed in varsity level gymnastics, 6.85% stated that they participated in recreational gymnastics, 5.48% competed in clubs gymnastics"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 72
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

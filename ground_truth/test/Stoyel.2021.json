@@ -1,0 +1,134 @@
+{
+  "_article": "Stoyel.2021",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Basketball, swimming, distance running, football, dancing, tennis, volleyball, track and field, hockey, badminton, lacrosse, cricket, cycling, golf, triathlon, rugby, boxing, rowing"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Inventory (EDI)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Social pressures \ninformation\nSocial pressures \nSocial media\nBody dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociocultural Attitudes Towards Appearance Questionnaire (SATAQ)\nSociocultural Attitudes Towards Appearance Questionnaire (SATAQ)\nSociocultural Attitudes Towards Appearance Questionnaire (SATAQ)\nSociocultural Attitudes Towards Appearance Questionnaire (SATAQ)\nEating Disorder Inventory Body Dissatisfaction (EDI-BD)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.28
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Structural equation modeling"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Societal pressures in the forms of pressures, information, and social media significantly predicted bulimic symptomatology a year later, mediated by general internalization."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Poor reliabilities of measurement tools across time. Confirmatory factor analyses revealed issues with metric and scalar invariance, that while not so ill-fitting that structural equation modelling was invalid, this does show that gold standard measures from non-athlete studies do not perform as well within this athlete sample. Recruitmalet was done via social media and participants were rewarded with a voucher. These decisions may have encouraged careless or dishonest responding and meant some items and participants had to be removed from analysis. Increasing the number of time points either within the year period, or extending the research for a longer period would have allowed for even more sophisticated latent growth curve analysis, as ideally four or more time points are needed for nonlinear analysis."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should focus efforts on developing valid and reliable questionnaires to operationalise disordered eating, eating disorders, and related concepts specifically for athletes. How we operationalise, measure and therefore diagnose disordered eating and eating disorders in athletes needs to be tailored to them specifically. There is a power in words, and the wording must be appropriate to the context."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 1017
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Participants had to be over 18; had to consider themselves to be an athlete, and a minimum of 10 hours a week participating in their sport as well as have been actively competing."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "T1 Non-elite (83.5%), T2 (53.3%), T3 (39%)\nT1 Elite (16.5%), T2 (46.6%), T3 (61%)"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 1017
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Prospective studies"
+    }
+  ]
+}

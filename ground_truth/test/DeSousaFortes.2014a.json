@@ -1,0 +1,176 @@
+{
+  "_article": "DeSousaFortes.2014a",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Track and field, basketball, fencing, soccer, artistic gymnastics, handball, judo, swimming, synchronised swimming, water polo, diving, tae-kwon-do, triathlon and volleyball"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-40)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body shape\nPsychological commitment to exercise\nBMI\n% of body fat\nBrazil economic classification criteria\nAge\nEthnicity\nCompetitive level\nAll"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)\nCommitment Exercise Scale (CES)\nkg/m²\nThe body fat percentage was estimated using the doubly indirect method, which measures the triceps and dubscapular skinfolds\nBrazilian Economic Classification Criteria (ABEP)\nDemographics questionnaire\nDemographics questionnaire\nDemographics questionnaire"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.4
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitude Test (EAT-40)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body shape\nPsychological commitment to exercise\nBMI\n% of body fat\nBrazil economic classification criteria\nAge\nEthnicity\nCompetitive level\nAll"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)\nCommitment Exercise Scale (CES)\nkg/m²\nThe body fat percentage was estimated using the doubly indirect method, which measures the triceps and dubscapular skinfolds\nBrazilian Economic Classification Criteria (ABEP)\nDemographics questionnaire\nDemographics questionnaire\nDemographics questionnaire"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.12
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple linear regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Dissatisfaction with body image and fat percentage influenced risk behaviour for ED in both sexes. Dissatisfaction with body image may be the primary variable affecting Females. In males, several factors influenced their EAT-26 scores."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Doubly indirect method to estimate body fat, which is subject to measurement errors. The design of transversal does not permit causality inferences to be posited, meaning that there is no way to assess the intensity and direction of the associations found between the outcome and the independent variables. Participants mood states (e.g., anger, stress, anxiety and fatigue) were not controlled for in the statistical analysis of this research."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Among athletes, particularly Females, a number of unknown factors that have not been studied may explain the risk factors for eating disorders and these factors should be examined in the near future. Psychological variables, such as emotional intelligence, perfectionism, self-esteem, and depression, may better explain the variance in risk behaviour for eating disorders. Furthermore, we argue that studies should include perceptual ratings of body size in young athletes, as the deleterious health risks associated with public eating behaviours may result from distorsions in body size."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": "116 (Female)"
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "(a) available to answer questionnaires and perform athropometric measurements, (b) between the ages of ten and nineteen years, (c) systematically training for their respective sport at least five times a week, with a minimum of one hour per session, and (d) participating at a tournament regional or more competitive level at the time of data collection."
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 580
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Brazil"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "_article": "Chaba.2019",
+  "_tag": "baseline-tables-50",
+  "_variant": "tables",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Autonomous motivation for sport"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Autonomous motivation for sport"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Autonomous forms for motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Autonomous motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Autonomous motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Drive for muscularity behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for muscularity behaviors"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.56
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "autonomous motivation for sport was non-significantly related to DM directly, while it was significantly related indirectly (a path coef = .56***, b path coef = .40***, c path coef = .45**, c' path coef = .13, d path coef = .80***, mean indirect effect = .18, SE of mean = .05, Bias-corrected 95% CI = [.09 to .30])",
+      "_evidence_verified": false
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Controlled motivation for sport"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Controlled motivation for sport"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Self-determination for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Controlled forms of motivation",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Controlled motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Controlled motivation for sport",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Drive for muscularity behaviors"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Drive for muscularity behaviors"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.75
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "controlled motivation for sport was significantly, indirectly and positively related to DM via attitude and intention to gain muscle mass (a path coef = .75***, b path coef = .37***, c path coef = .62***, c' path coef = .41**, d path coef = .50***, mean indirect effect = .14, SE of mean = .04, Bias-corrected 95% CI = [.07 to .24])",
+      "_evidence_verified": false
+    }
+  ]
+}

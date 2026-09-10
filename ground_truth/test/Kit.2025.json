@@ -1,0 +1,162 @@
+{
+  "_article": "Kit.2025",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Track and field, swimming, diving, soccer"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire-Short Form (EDE-QS)"
+          },
+          {
+            "predicate": "iadas:specification",
+            "object": "T1 T2"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Self-compassion"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Self-Compassion Scale-Short form (SCS-SF)"
+          },
+          {
+            "predicate": "iadas:specification",
+            "object": "T1 T2"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Global self-worth",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Self-compassion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Self-compassion",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.4
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.0001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Structural equation modeling"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Self-compassion (SC) directly improved body satisfaction and reduced disordered eating (DE) in women athletes over time, although no indirect effect via body satisfaction was found. Overall, DE and body image remained relatively stable, highlighting persistent vulnerabilities without intervention"
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The sample lacked diversity (mainly White female athletes), relied on self-report measures, and examined a short 3–4 month period, limiting generalizability and the ability to capture long-term effects"
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should include more diverse samples, additional body image dimensions, and longer longitudinal designs to better understand how SC influences DE over time and across different athlete populations"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 1678
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Women collegiate athletes competed at the national collegiate athletic association division I level"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "National Collegiate Athletic Association (NCAA) Division I level"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 1678
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Longitudinal"
+    }
+  ]
+}

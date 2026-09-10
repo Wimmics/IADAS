@@ -1,0 +1,102 @@
+
+==============================================================================
+  RESUME TYPE — 10 article(s)
+==============================================================================
+  Article                    Date           Sport  Rels match  Rels champs  Analysis  Population   Biblio
+  ----------------------------------------------------------------------------
+  Abras.2022                 2026-08-25      100%    7/24     29%          14%      60%         0%     50%
+  Adam.2021                  2026-08-25       75%   25/54     46%          22%      40%        80%    100%
+  AleksicVeljkovic.2020      2026-08-25      100%   11/24     46%          18%      80%        60%    100%
+  Arbinaga.2024              2026-08-25      100%    1/1     100%          25%      60%        33%    100%
+  Arcelus.2015               2026-08-25       67%    5/16     31%          10%      40%        40%    100%
+  Baric.2024                 2026-08-25      100%    7/29     24%          14%      60%        67%    100%
+  Benau.2020                 2026-08-25       67%    4/20     20%           7%       0%        33%     50%
+  Biedron.2025               2026-08-25      100%    1/1     100%          50%      20%        60%    100%
+  Borowiec.2023              2026-08-25       75%    1/1     100%          67%      20%        60%    100%
+  Button.2024                2026-08-25       75%    2/10     20%           7%      60%        50%    100%
+
+  Moyennes  Sport: 85.8%   Rels-match: 51.7%   Rels-champs: 23.4%   Analysis: 44.0%   Population: 48.3%   Biblio: 90.0%
+
+==============================================================================
+  PRECISION / RAPPEL / F1 — moyenne macro par article (meme methode que le Rappel)
+==============================================================================
+    Sport                                         precision= 80.0%(n=10)  rappel= 85.8%(n=10)  F1= 82.5%
+    Relations (champs, sur relations appariees)   precision= 31.9%(n=10)  rappel= 23.4%(n=10)  F1= 21.1%
+    Analysis                                      precision= 48.0%(n=10)  rappel= 44.0%(n=10)  F1= 45.8%
+    Population                                    precision= 65.2%(n=10)  rappel= 48.3%(n=10)  F1= 55.3%
+    Bibliographic                                 precision= 90.0%(n=10)  rappel= 90.0%(n=10)  F1= 90.0%
+    Relations (detection)                         precision= 54.0%(n=10)  rappel= 51.7%(n=10)  F1= 39.1%
+
+==============================================================================
+  SPORT — détail par prédicat
+==============================================================================
+    sportLevel                      60%  (  10 evals)
+    sportName                       89%  (   9 evals)
+    sportPracticeType              100%  (  10 evals)
+    sportSubcategory               100%  (   8 evals)
+
+==============================================================================
+  RELATIONS — appariement
+==============================================================================
+    Appariées   : 64/180  (35.6%)
+    Manquantes  : 116  (dans GT, non extraites)
+    En trop     : 44  (extraites hors GT)
+    (Precision/Rappel/F1 de détection en moyenne macro : voir le bloc PRECISION / RAPPEL / F1 ci-dessus)
+
+==============================================================================
+  RELATIONS — champs (toutes relations GT : appariées + manquantes)
+==============================================================================
+
+    V1
+      V1                              17%  ( 179 evals)  1 NA
+      finalClass                      17%  ( 179 evals)
+      hasCategory                     25%  ( 179 evals)
+      measure                          2%  ( 180 evals)
+      subClass1                       17%  ( 179 evals)
+      subClass2                       19%  ( 107 evals)
+      subClass3                        0%  (   0 evals)
+      subClass4                        0%  (   0 evals)
+
+    V2
+      V2                              21%  ( 180 evals)
+      finalClass                      21%  ( 155 evals)
+      hasCategory                     26%  ( 155 evals)
+      measure                          6%  ( 180 evals)
+      specification                    0%  (   2 evals)
+      subClass1                       24%  ( 155 evals)
+      subClass2                       21%  ( 155 evals)
+      subClass3                       19%  ( 133 evals)
+      subClass4                       13%  (  83 evals)
+
+    stats
+      degreBeta                        0%  (   0 evals)
+      degreR                           3%  ( 175 evals)
+      degreR2                          0%  (  12 evals)
+      effectSize                       0%  (   0 evals)
+      resultatRelation                18%  ( 115 evals)
+      signeP                          11%  ( 180 evals)
+
+==============================================================================
+  ANALYSIS — détail par prédicat
+==============================================================================
+    authorConclusion                40%  (  10 evals)
+    limites                         80%  (  10 evals)
+    perspectives                    20%  (  10 evals)
+    sampleSizeMobilized             60%  (  10 evals)
+    typeOfAnalysis                  20%  (  10 evals)
+
+==============================================================================
+  POPULATION — détail par prédicat
+==============================================================================
+    gender                          70%  (  10 evals)
+    hasSubgroup                     14%  (   7 evals)
+    inclusionCriteria               40%  (  10 evals)
+    population                      60%  (  10 evals)
+    sampleSize                      80%  (  10 evals)
+    sportingPopulation               0%  (   6 evals)
+
+==============================================================================
+  BIBLIOGRAPHIC — détail par prédicat
+==============================================================================
+    country                         80%  (  10 evals)
+    studyType                      100%  (  10 evals)

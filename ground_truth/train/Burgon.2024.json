@@ -1,0 +1,219 @@
+{
+  "_article": "Burgon.2024",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Running, cycling, swimming, hiking, gymgoer HIIT, gymgoer weights, gymnastics, dance, crossfit"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:specification",
+            "object": "T2"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:specification",
+            "object": "T1"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.63
+        },
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.79
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          },
+          {
+            "predicate": "iadas:specification",
+            "object": "T2"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body appreciation\nAppearance evaluation\nMuscularity evaluation\nThin-fat self\nThin-fat others"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Appreciation Scale-2 (BAS-2)\nContextual Body Image Questionnaire for Athletes (CBIQA)\nContextual Body Image Questionnaire for Athletes (CBIQA)\nContextual Body Image Questionnaire for Athletes (CBIQA)\nContextual Body Image Questionnaire for Athletes (CBIQA)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.66
+        },
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.81
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Simple linear regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "This longitudinal study contributes to understanding of the relationship between poor body image and eating psychopathology over time, and across sporting sub-samples (competitive, non-competitive and sports non-engagers). Poor body appreciation and better appearance-related sporting body image predicted eating psychopathology for the whole sample."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The longitudinal analysis were under-powered and could not be conducted separately for each group. The sample had a majority of females, meaning that any gender-specific regression analysis would have been underpowered for males. The age range was wider than in other studies and individuals engaged in a range of different sports, which might have impacted findings. The measures might not have been the optimum set."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Futures studies could recruit different samples to explain the body image-eating psychopathology link, such as all genders and gender identities and other sports types. Ethnicity should also be considered, given the fact that the thin-ideal is differently experienced in different groups."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 230
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Adults aged 18+ who were fluent in English"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "400 Females\n108 Males\nOne non-binary\nOne declined to say\n117 Competitive sports engagers\n276 Con-competitive sport engager\n117 Sports non-engagers"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "117 competitive sports engagers\n276 non-competitive sport engager\n117 sports non-engagers"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 510
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Longitudinal"
+    }
+  ]
+}

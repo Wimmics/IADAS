@@ -1,0 +1,213 @@
+{
+  "_article": "Fatt.2025b",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:hasMediator",
+      "object": "DLP\nAthletic identity\nBody image concerns",
+      "_rejected_reason": "prédicat 'hasMediator' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:mediatorMeasure",
+      "object": "Drive for leanness for performance (ATHLETE-DLP)\nAthletic identity (ATHLETE-AI)\nMultifaceted Instrument for Body Image Disturbance (MI-BoD)",
+      "_rejected_reason": "prédicat 'mediatorMeasure' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 157,
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Athletic Disordered Eating (ADE)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "T1-weight pressures in sport"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Weight Pressures in Sport (WPS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.18
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Increased disordered eating over 12-months was significantly predicted by higher levels of T1-weight pressures in sport (β = 0.18, p = .046)",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Athletic Disordered Eating (ADE)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "T1-drive for leanness for performance"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "ATHLETE drive for leanness for performance subscale (ATHLETE-DLP)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.21
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.05"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Increased disordered eating over 12-months was significantly predicted by higher levels of T1-drive for leanness for performance (β = 0.21, p = .025)",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Increased disordered eating over 12 months was predicted by greater weight pressures in sport and DLP at baseline, but not societal pressures, athletic identity, or body image concerns, in a sample of elite athletes. None of the mediating pathways were supported."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The sample was limited to adult elite athletes and was predominantly from Australia and the US. Further investigations of these findings are needed across diverse athlete demographics and various timeframes."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should consider the role of other factors for these pathways, such as negative affect and various moderators (e.g., perfectionism, self-esteem)."
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 178
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Current adult athletes who had competed at a national, international, professional, or NCAA D1 level, recruited through advertising via elite sporting organisations, social media, and snowball sampling"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "72.4% female, 27.0% male"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Current athletes who had competed at a national, international, professional, or NCAA D1 level"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Australia"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Longitudinal"
+    }
+  ]
+}

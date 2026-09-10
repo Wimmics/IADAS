@@ -1,0 +1,55 @@
+[
+  {
+    "_article": "Boyda.2011",
+    "_note": "Mediation analysis tested with two mediators sharing one instrument — hasMediator lists both (newline-separated), mediatorMeasure is given once since the same scale measures both.",
+    "output": {
+      "analysis": [
+        {"predicate": "iadas:typeOfAnalysis", "object": "Correlation"},
+        {"predicate": "iadas:authorConclusion", "object": "Anxiety was significantly associated with muscle dysmorphia; anxiety, not depression, represents a plausible mediating route from childhood victimisation to muscle dysmorphia."},
+        {"predicate": "iadas:limites", "object": "The study was retrospective and cross-sectional, which limits conclusions regarding mediation and the temporal ordering of experiences."},
+        {"predicate": "iadas:perspectives", "object": "A larger, more representative sample would allow more stable estimation of the mediation model."},
+        {"predicate": "iadas:hasMediator", "object": "Anxiety\nDepression"},
+        {"predicate": "iadas:mediatorMeasure", "object": "The Depression Anxiety Stress Scale-21 (DASS-21)"},
+        {"predicate": "iadas:sampleSizeMobilized", "object": 89}
+      ]
+    }
+  },
+  {
+    "_article": "Anderson.2016",
+    "_note": "sampleSizeMobilized (184, complete cases used in the main analysis) is smaller than the total recruited sampleSize (400, extracted separately in the population block) — always check for this gap rather than repeating the total.",
+    "output": {
+      "analysis": [
+        {"predicate": "iadas:typeOfAnalysis", "object": "Pearson correlation"},
+        {"predicate": "iadas:authorConclusion", "object": "Appearance- and performance-related body dissatisfaction significantly relate to eating disorder symptoms among females but not males."},
+        {"predicate": "iadas:limites", "object": "Generalization is limited to healthy adult runners with low eating-disorder symptomatology; findings may not generalize to other types of athletes."},
+        {"predicate": "iadas:perspectives", "object": "Future research should explore how body-dissatisfaction constructs vary across different athletic contexts."},
+        {"predicate": "iadas:sampleSizeMobilized", "object": 184}
+      ]
+    }
+  },
+  {
+    "_article": "Bashir.2021",
+    "_note": "No 'Limitations' subsection in this article -> iadas:limites is simply omitted, never invented.",
+    "output": {
+      "analysis": [
+        {"predicate": "iadas:typeOfAnalysis", "object": "Pearson correlation"},
+        {"predicate": "iadas:authorConclusion", "object": "The drive for muscularity was found to be prevalent in Pakistani males, who are becoming victims of the current trend toward a more muscular, V-shaped body ideal."},
+        {"predicate": "iadas:perspectives", "object": "More studies are needed on muscle dysmorphia in comparison with other variables, and the female population should also be studied."},
+        {"predicate": "iadas:sampleSizeMobilized", "object": 211}
+      ]
+    }
+  },
+  {
+    "_article": "hypothetical_moderator",
+    "_note": "hasModerator / moderatorMeasure are ONLY filled when the article reports a formal moderation analysis (an interaction term actually tested) — a subgroup difference described narratively without a moderation model does not qualify (cf. Bravata.2003, where the discussion says 'sex appeared to moderate' but no interaction term was tested, so no moderator is extracted there).",
+    "output": {
+      "analysis": [
+        {"predicate": "iadas:typeOfAnalysis", "object": "Moderated regression analysis"},
+        {"predicate": "iadas:authorConclusion", "object": "Competitive anxiety predicted disordered eating symptoms more strongly among athletes with low self-esteem than among those with high self-esteem."},
+        {"predicate": "iadas:hasModerator", "object": "Self-esteem"},
+        {"predicate": "iadas:moderatorMeasure", "object": "Rosenberg Self-Esteem Scale (RSES)"},
+        {"predicate": "iadas:sampleSizeMobilized", "object": 143}
+      ]
+    }
+  }
+]

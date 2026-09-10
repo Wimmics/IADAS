@@ -1,0 +1,129 @@
+{
+  "_article": "Kraus.2018",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Rowing"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Endurance"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "SCOFF questionnaire"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Age\nGender\nBMI\nPerformance group\nDrive for thinness\nBulimia\nBody dissatisfaction\nIneffectiveness\nPerfectionism\nInteroceptive awareness\nAsceticism\nImpulse regulation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Questionnaire sociodemographic\nQuestionnaire sociodemographic\nKg/m²\nQuestionnaire sociodemographic\nEating Disorder Inventory-2 (EDI-2)\nEating Disorder Inventory-2 (EDI-2)\nEating Disorder Inventory-2 (EDI-2)\nEating Disorder Inventory-2 (EDI-2)\nEating Disorder Inventory-2 (EDI-2)\nEating Disorder Inventory-2 (EDI-2)\nEating Disorder Inventory-2 (EDI-2)\nEating Disorder Inventory-2 (EDI-2)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.65
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Hierarchical regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "The predictors (age, gender, BMI, performance group, drive for thinness, bulimia, body dissatisfaction, ineffectiveness, perfectionism, interoceptive awareness, asceticism, impulse regulation) explained about 60% of variance in ED symptom level."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Age and sex differed between competitive lightweight, competitive heavyweight and non-competitive rowers three rowing groups. Age and sex have been controlled statistically, narrower age groups and more balanced sex distributions should be aspired in follow-up research. Screening questionnaires have been applied only to assess the key ED symptoms and mental disorder symptoms."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Follow up research is needed to examine differences in the occurrence of the symptoms between the seasons and to estimate weather the risky behavior is stable, varies, regresses or increases during and after the competition career."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 113
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "German rowers"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "45 Lightweight\n31 Heavyweight\n37 Non-competitive rowers\n76 Competitive rowers"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 113
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Germany"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

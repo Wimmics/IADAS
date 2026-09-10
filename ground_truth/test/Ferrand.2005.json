@@ -1,0 +1,190 @@
+{
+  "_article": "Ferrand.2005",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Synchronised Swimming, basketball, handball, volleyball and soccer"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Dieting"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The French Version of Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "BMI\nBody esteem appearance\nbody esteem weight\nBody esteem attribution"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "kg/m²\nThe Canadian French Version of Body Esteem Scale\nThe Canadian French Version of Body Esteem Scale\nThe Canadian French Version of Body Esteem Scale"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.41
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Dieting"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "The French Version of Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Restrictions",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Dieting",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body mass index\nBody esteem appearance\nbody esteem weight\nBody esteem attribution"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "kg/m²\nThe Canadian French Version of Body Esteem Scale\nThe Canadian French Version of Body Esteem Scale\nThe Canadian French Version of Body Esteem Scale"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.6
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "N.S."
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Elite synchronized swimming athletes did not show significantly more eating problems than members of the other groups. Body mass index and body esteem : apperance accounted for a significant amount of variance in dieting scores. It was body mass index, body esteem : appearance but non body estime weight which were related to dieting scores in synchronized swimming athletes."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "First as any study using self-report measures, findings mey be susceptible to selective or erroneous reporting. Self-report measures always carry risks, especially with athletes who might not be forthcoming in their answers for fear of being eliminated from the team if they appear to be eating disordered. Second, the EAT-26 alone does not yield a specific diagnosis of an eating disorder."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "It would be interesting to take into account the distinction between the different dimensions of body esteem when studying athletes in aesthetic sports. The present data suggest a need for additional research, such as longitudinal studies including competitive and non-competitive periods and also the importance of ascertaining the meaning of eating problem measures with athletes is needed to gain a more complete understanding of Female athletes eating behaviors and their relation with body esteem."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 42
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "42 Elite synchronized swimming\n40 National in sports in which weight is not a central issue"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Elite\nNational"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 42
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "France"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

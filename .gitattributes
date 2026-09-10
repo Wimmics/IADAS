@@ -1,0 +1,10 @@
+# Fins de ligne normalisées : LF dans le dépôt, quel que soit l'OS du contributeur.
+* text=auto eol=lf
+
+# Fichiers binaires : jamais de conversion.
+*.pdf   binary
+*.docx  binary
+*.pptx  binary
+*.xlsx  binary
+*.png   binary
+*.jpg   binary

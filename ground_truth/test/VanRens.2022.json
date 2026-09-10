@@ -1,0 +1,129 @@
+{
+  "_article": "VanRens.2022",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Circus (acrobatics, floor acrobatics, object manipulation, equilibrium)"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Professional"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": null
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Disordered eating"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Disordered eating",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Intercept\nAge\nGender male\nTransgender\nTrain and perf \nExperience \nState resilience\nTrait resilience\nFloor acrobatics\nObject manipulation\nEquilibrium\nStudent\nPart time professionals\nFull time professional\nRetired\nCircus addiction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Sociodemographic information\nSociodemographic information\nSociodemographic information\nSociodemographic information\nSociodemographic information\nState Trait assessment of Resilience (STARS)\nState Trait assessment of Resilience (STARS)\nSociodemographic information\nSociodemographic information\nSociodemographic information\nSociodemographic information\nSociodemographic information\nSociodemographic information\nSociodemographic information\nCircus Addiction Inventory (CAI)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p=.19"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Model prediction"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "For disordered eating, category prediction accuracy based on psychological resilience, circus factors and demographics was estimated to be approximately 69%. Trait resilience was associated with decreased likelihood of being at risk of an eating disorder. Modality of engagement in circus was not associated with disordered eating. Of the demographic factors, only age was associated with eating disorders."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The circus-specific exercise addiction questionnaire demonstrated low reliability, thereby potentially attenuating the correlations between this variable and the model predictors. Self report natures of screening tool"
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "We recommaled future research adopts a longitudinal study design to allow for assessment of patterns of emergence of disordered eating and exercise addictions. Ths could also shed light into the question whether disordered eating or exercise addiction emerge first among those circus artists who experience both mental health problemes."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 500
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Circus artists ranged from 18 to 69 years of age"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "415 Females\n62 Males\n23 Transgender/gender diverse"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Amateur level (n=248), part-time professional circus artists (n=140), full-time professional (n=64), full-time students at national circus schools (n=31), retired circus artists (n=17)"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 500
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Australia"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

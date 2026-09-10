@@ -1,0 +1,360 @@
+{
+  "_article": "Baric.2024",
+  "_tag": "baseline-texte-50",
+  "_variant": "texte",
+  "_include_keywords": false,
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Shape Questionnaire (BSQ)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.31
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "The risk of ED was significantly correlated (p < 0.001) with taekwondo athletes' body dissatisfaction, coach pressure, and task goal orientation.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Coach pressure on diet and weight"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Negative Coach Behavior Questionnaire"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.156
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.005"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "The risk of ED was significantly correlated (p < 0.001) with taekwondo athletes' body dissatisfaction, coach pressure, and task goal orientation.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Attitudes Test (EAT-26)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Task goal orientation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Croatian Task and Ego Orientation in Sport Questionnaire"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.12
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.032"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "In general, regression analyses showed that athletes' body image dissatisfaction (β = 0.310; p < 0.001), coach pressure on diet and weight (β = 0.156; p < 0.005), and athletes' task goal orientation (β = 0.120; p < 0.032) are statistically significant predictors that explain the variance in ED symptoms in Croatian taekwondo athletes.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Coach behavior"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Negative"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "ED symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Prominent"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.156
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.005"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "According to goal orientation theory [47.48], athletes evaluate their success and sporting competence according to two different goals, namely, task goal orientation and ego goal orientation, which determine athletes' choices, beliefs, and behaviors in the context of sports. Task-oriented athletes are primarily motivated by learning, personal improvement and mastery, and using self-referenced criteria to evaluate their achievements, and for them, to be successful means to be better than before [49-52]. They are intrinsically motivated [53], choose challenging goals, appreciate feedback [54], take responsibility for any sporting outcome, feel more optimistic, and show more positive attitudes toward themselves. An ego-goal-oriented athlete is primarily motivated by surpassing others and needs to demonstrate superior abilities and to be the best. Their success criteria are normative, based on constant comparison to other athletes [54]. This type of athlete believes that talent is the most important factor for sporting success [55], and their motivation depends on results and external recognition. Talent can be a strong source of pressure, and these athletes are ready to take all necessary measures to achieve the desired advantage and results and to win. De Bruin et al. [22], studying a sample of young female gymnasts and dancers with ED, found that ego goal orientation correlates with more pronounced dieting habits, higher peer pressure related to body mass, higher perfectionism, and lower self-esteem, leading to DE behaviors.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Body dissatisfaction"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "High"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Body image and self-esteem",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Attitudinal dimension of body image",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Body image dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass4",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Body dissatisfaction",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "Intrapersonal factor related to DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "ED symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Prominent"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.31
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "The risk of ED was significantly correlated (p < 0.001) with taekwondo athletes' body dissatisfaction, coach pressure, and task goal orientation. In general, regression analyses showed that athletes' body image dissatisfaction (β = 0.310; p < 0.001), coach pressure on diet and weight (β = 0.156; p < 0.005), and athletes' task goal orientation (β = 0.120; p < 0.032) are statistically significant predictors that explain the variance in ED symptoms in Croatian taekwondo athletes.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Task goal orientation"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "High"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "ED symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Prominent"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.032"
+        }
+      ],
+      "_evidence": "The risk of ED was significantly correlated (p < 0.001) with taekwondo athletes' body dissatisfaction, coach pressure, and task goal orientation. In general, regression analyses showed that athletes' body image dissatisfaction (β = 0.310; p < 0.001), coach pressure on diet and weight (β = 0.156; p < 0.005), and athletes' task goal orientation (β = 0.120; p < 0.032) are statistically significant predictors that explain the variance in ED symptoms in Croatian taekwondo athletes.",
+      "_evidence_verified": true
+    }
+  ]
+}

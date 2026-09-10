@@ -1,0 +1,41 @@
+models:
+  qwen2.5:14b:
+    provider: ollama
+    priority: 1
+    # num_ctx : plafond de la fenêtre de contexte. ollama_options() calcule le num_ctx
+    # minimal réel pour chaque appel (prompt_chars/3 + OUTPUT_RESERVE), donc allouer
+    # 131072 ici ne coûte rien sur les petits prompts.
+    num_ctx: 131072
+    temperature: 0.0
+    format: json
+    num_predict: 16384
+    keep_alive: "10m"
+
+  qwen2.5:7b:
+    provider: ollama
+    priority: 2
+    num_ctx: 131072
+    temperature: 0.0
+    format: json
+    num_predict: 16384
+    keep_alive: "10m"
+
+  gemma3:12b:
+    provider: ollama
+    priority: 3
+    num_ctx: 131072
+    temperature: 0.0
+    format: json
+    num_predict: 16384
+    keep_alive: "10m"
+
+  mistral-small:24b:
+    provider: ollama
+    priority: 5
+    num_ctx: 131072
+    temperature: 0.0
+    format: json
+    num_predict: 16384
+    keep_alive: "10m"
+
+default_model: qwen2.5:7b

@@ -1,0 +1,268 @@
+{
+  "_article": "Zasiekina.2026",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-20",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:hasMediator",
+      "object": "Shame\nGuilt",
+      "_rejected_reason": "prédicat 'hasMediator' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:mediatorMeasure",
+      "object": "State Shame and Guilt Scale (SSGS)",
+      "_rejected_reason": "prédicat 'mediatorMeasure' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 106,
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Amateur"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating pathology symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Pathology Symptoms Inventory"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating psychopathology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating psychopathology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Type of sport"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Type of sport"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.16
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.01",
+          "_source": "self_refine"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "The first model was significant, F (5.124) = 3.28, p =.008, explaining 11.7% of the variance in EPS (Adj. R² = 0.081). However, after adding the SSGS score in Model 2, the overall model fit improved significantly, F (6.123) = 4.95, p <.001, increasing the explained variance to 19.5% (Adj. R²= 0.16). The inclusion of SSGS led to a statistically significant ∆F (1.123) = 11.88, p <.001, ∆R2 = 0.078, demonstrating that SSGS added substantial explanatory power to the model.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating pathology symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Pathology Symptoms Inventory"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating psychopathology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating psychopathology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "SSGS"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "State Shame and Guilt Scale"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.357
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Most notably, SSGS demonstrated a strong positive correlation with body dissatisfaction (r =.357, p <.001), restrictions (r =.287, p <.001), and purging (r =.202, p =.021).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "State Shame and Guilt Scale"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Total Score"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Eating pathology symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "positive"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating psychopathology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Eating psychopathology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR",
+          "object": 0.357
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "A Pearson correlational analysis was conducted to examine the relationships between the SSGS and the subscales of the EPSI. This analysis revealed several significant associations. Most notably, SSGS demonstrated a strong positive correlation with body dissatisfaction (r =.357, p <.001), restrictions (r =.287, p <.001), and purging (r =.202, p =.021).",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Hierarchical multiple regression"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "Weight-sensitive sports and higher levels of shame and guilt were significantly associated with greater EPS. In contrast, participation in non-weight-sensitive sports may serve as a protective factor against disordered eating."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "Recruitment challenges such as low response rates from university sport societies may have introduced self-selection bias. Reliance on self-reported data introduces potential biases, such as social desirability or underreporting of sensitive behaviors."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future research should employ longitudinal studies and mixed-method designs to examine potential risk and protective factors against EPS, including perfectionism and coaching pressure."
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 130
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Current membership in the University of Exeter Sports Society, aged between 18 and 25 years, no personal history of diagnosed eating disorders or related mental health conditions"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "58.5% Female, 39.2% Male"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United Kingdom"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

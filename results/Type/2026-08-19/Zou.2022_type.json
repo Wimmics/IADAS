@@ -1,0 +1,261 @@
+{
+  "_article": "Zou.2022",
+  "_model": "qwen2.5:7b",
+  "_date": "2026-08-19",
+  "_pipeline": "type-baeo",
+  "_rejected": [
+    {
+      "predicate": "iadas:hasMediator",
+      "object": "BII",
+      "_rejected_reason": "prédicat 'hasMediator' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:mediatorMeasure",
+      "object": "Body Image Acceptance and Action Questionnaire (BI-AAQ)",
+      "_rejected_reason": "prédicat 'mediatorMeasure' absent de la classe Analysis"
+    },
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed",
+      "_rejected_reason": "factcheck FAUX"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "124 Males 148 Females",
+      "_rejected_reason": "factcheck FAUX"
+    }
+  ],
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Mixed sport"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport",
+      "_source": "classifier"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Mixed sport",
+      "_source": "classifier"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Exercise dependence symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise Dependence Scale-Revised (EDS-R)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body image inflexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Acceptance and Action Questionnaire (BI-AAQ)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.26
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Higher body image inflexibility significantly and positively contributed to severe exercise dependence (β = 0.26, p < 0.001) as well as abnormal eating attitudes and behaviors (β = 0.74, p < 0.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Exercise dependence symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise Dependence Scale-Revised (EDS-R)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Generalized anxiety symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Generalized Anxiety Disorder-7 (GAD-7)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.14
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "p<.001",
+          "_source": "self_refine"
+        }
+      ],
+      "_evidence": "Generalized anxiety is a significant contributor to exercise dependence symptoms (β = 0.14, p < 0.001) but not eating disorders symptoms.",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Eating disorders symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Eating Disorder Examination Questionnaire (EDE-Q)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body image inflexibility"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body Image Acceptance and Action Questionnaire (BI-AAQ)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": 0.74
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "positive"
+        }
+      ],
+      "_evidence": "Higher body image inflexibility significantly and positively contributed to severe exercise dependence (β = 0.26, p < 0.001) as well as abnormal eating attitudes and behaviors (β = 0.74, p < 0.001).",
+      "_evidence_verified": true
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Exercise dependence symptoms"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Exercise Dependence Scale-Revised (EDS-R)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Body mass index"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Body mass index (BMI)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreBeta",
+          "object": -0.08
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        },
+        {
+          "predicate": "iadas:resultatRelation",
+          "object": "negative"
+        }
+      ],
+      "_evidence": "After controlling for age, gender, and field of study, lower BMI was linked to more exercise dependence symptoms but this association was not statistically significant, while a greater BMI was significantly associated with a higher risk of developing eating disorders (β = −0.08, p < 0.001).",
+      "_evidence_verified": true
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Pearson correlation"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "BII and generalized anxiety are contributing factors to EXD, but not BMI. In addition, BMI and BII can be predictive of ED symptoms."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The cross-sectional design precludes causal conclusions. The sample comprises only university students, which limits generalizability. The study did not consider other possible variables such as self-compassion, perfectionism personality, and obsessive-compulsive personality disorder."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future studies should focus on other cohorts than college students, and consider other possible variables such as self-compassion, perfectionism personality, and obsessive-compulsive personality disorder."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 878
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 1282
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "China"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

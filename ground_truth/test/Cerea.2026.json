@@ -1,0 +1,162 @@
+{
+  "_article": "Cerea.2026",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "Powerlifter"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Professional"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": null
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Dysmorphic Disorder Inventory (MDDI)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Depression anxiety and stress Depression anxiety and stress Self esteem Social phobia Instagram Image activities Instagram appearance comparison"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Depression Anxiety Stress Scale-21 (DASS-21) Depression Anxiety Stress Scale-21 (DASS-21) Rosenberg Self Esteem Scale (RSES) Social Phobia Scale (SPS) Instagram Image Activities Scale (IIAS) Instagram Appearance Comparison Scale (IACS)"
+          },
+          {
+            "predicate": "iadas:specification",
+            "object": "Males competitive powerlifters"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.16
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    },
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Muscle dysmorphia"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Muscle Dysmorphic Disorder Inventory (MDDI)"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Depression anxiety and stress Depression anxiety and stress Self esteem Perfectionism Social phobia Instagram appearance comparison Objective performance indicators"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Depression Anxiety Stress Scale-21 (DASS-21) Depression Anxiety Stress Scale-21 (DASS-21) Rosenberg Self Esteem Scale (RSES) Eating Disorder Inventory-3 (EDI-3) Social Phobia Scale (SPS) Instagram Appearance Comparison Scale (IACS) International Powerlifting Federation Points"
+          },
+          {
+            "predicate": "iadas:specification",
+            "object": "Females competitive powerlifters"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.389
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<.001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Multiple regression analysis"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "This study highlights gender differences in muscle dysmorphia (MD) symptoms among powerlifters, with men showing higher symptom levels and women experiencing greater body-related distress. Self-esteem, social media comparisons, and performance emerge as key associated factors."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The cross-sectional design limits causal inference, and the small, non-representative sample—particularly among women—reduces generalizability. Potential selection bias and reliance on self-reported data also affect validity."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "Future longitudinal and cross-cultural studies with larger samples are needed. Interventions targeting self-esteem, media literacy, and performance-related pressures may help reduce MD risk in athletes."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 127
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Mixed"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Being at least 18 years old, currently competing in powerlifting competitions and absence of self-reported body image disorder"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "127 Males 53 Females"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "National or international level"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 180
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "Italy"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Cross-sectional studies"
+    }
+  ]
+}

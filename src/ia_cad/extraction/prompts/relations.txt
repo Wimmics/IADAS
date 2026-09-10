@@ -1,0 +1,108 @@
+TASK: Extract statistical relations between variables from this scientific article for the IADAS knowledge graph.
+
+{VARIABLE_BLOCK}
+
+Extract EVERY relation that has at least one explicit statistical value (r, beta, R², p-value) in the text or tables.
+Include all rows from correlation tables and all coefficients from regression tables.
+
+VARIABLE IDENTIFICATION:
+- V1 = the DEAB construct — the disordered-eating / body-image variable itself (see the "DEAB"
+  category in the IADAS ONTOLOGY VARIABLE NAMING REFERENCE below: eating disorders, disordered
+  eating, body image, body dissatisfaction, drive for thinness, dietary restraint, etc.).
+- V2 = the OTHER variable in the pair — it can be ANYTHING: another DEAB construct, an
+  Intrapersonal / Interpersonal / Sociocultural factor related to DEAB, an "Other behaviors"
+  variable, or any other variable mentioned in the article.
+
+  ⚠ V1 IS DECIDED BY CATEGORY, NEVER BY GRAMMAR:
+  Ignore whether the article calls a variable the "predictor", "independent variable", "outcome",
+  "dependent variable", or "criterion variable" — that framing does NOT decide V1/V2 here.
+  Whichever side of the relation is the DEAB construct is ALWAYS V1, even when the article's own
+  regression or narrative language frames it as the predictor.
+    Example: "self-esteem was a significant predictor of disordered eating symptoms" -> V1 =
+    "Eating disorders" (the DEAB construct), V2 = "Self-esteem" — exactly the same result as if
+    the sentence had been phrased the other way around ("disordered eating symptoms predicted
+    lower self-esteem").
+  - If BOTH variables are DEAB constructs (e.g. two eating-disorder scales correlated with each
+    other), keep the order they appear in the text/table (first-mentioned = V1).
+  - If NEITHER variable is a DEAB construct, do not extract the relation — it is out of scope.
+
+VARIABLE FIELDS (for each relation):
+- V1         : the psychological CONSTRUCT — NOT the instrument abbreviation
+  ⚠ EXACT WORDING: if the construct matches a name in the IADAS ONTOLOGY VARIABLE NAMING
+    REFERENCE below, copy that name VERBATIM — do not add, remove, or reorder words
+    (write "Eating disorders", not "Eating disorder symptoms"; "Body dissatisfaction",
+    not "Body image dissatisfaction level"). Only write a different phrase when the
+    construct genuinely matches none of the reference names.
+- V1_measure : psychometric instrument in format "Full Name (ABBREV)" e.g. "Eating Disorder Inventory-3 (EDI-3)"
+               NEVER null for V1 or V2 — every measured variable in a scientific article has an instrument.
+               If the text gives only an abbreviation (EDE-Q, MDDI…), expand it to "Full Name (ABBREV)".
+               If no abbreviation exists in the text, write just the full instrument name.
+- V2         : the psychological CONSTRUCT for the second variable
+- V2_measure : same format as V1_measure — NEVER null
+- If the text uses only an abbreviation (ORTO-11, MDDI, EDE-Q...), resolve it to the full construct name for V1/V2
+
+⚠ SUBSCALE GRANULARITY — extract EACH subscale as its own variable, never the global scale:
+  Most instruments report several subscales in their correlation tables. Use the subscale as the
+  variable, NOT the umbrella name.
+    - EAT-26      → "Dieting", "Bulimia", "Oral control"  (NOT "Eating disorders")
+    - EDE-Q       → "Restraint", "Eating concern", "Shape concern", "Weight concern"
+    - EDI / EDI-3 → "Drive for thinness", "Bulimia", "Body dissatisfaction"
+    - DERS        → "Difficulty identifying feelings", "Difficulty describing feelings", ...
+    - Self-Compassion Scale → "Self-kindness", "Common humanity", "Mindfulness",
+                              "Self-judgment", "Isolation", "Over-identification"
+  A correlation table row "EAT-Dieting | EAT-Bulimia | EAT-Oral control" means THREE separate
+  variables → produce a separate relation for each subscale, each keeping the instrument as measure.
+  Only use the umbrella construct (e.g. "Eating disorders") when the table reports a single global
+  score with no subscales.
+
+STATISTICAL PREDICATES (for the "stats" array):
+{STATS_BLOCK}
+
+EVIDENCE (for each relation):
+- evidence: the exact sentence or table row from the text that reports this correlation
+  (the one containing the r/beta/p value itself). Copy it VERBATIM — do not paraphrase,
+  summarize, or reconstruct it from memory. If it comes from a table, copy the row as
+  written (variable names + values), not an invented sentence. This is used to verify
+  the triplet against the source, so a fabricated or approximate quote defeats its purpose.
+
+FORMAT RULES:
+- Decimal values MUST be numbers, not strings: -0.42 not "-0.42"
+- iadas:signeP: ONLY these 4 values are valid — map the reported p-value to the correct threshold:
+    p < .001            → "p<.001"
+    .001 ≤ p < .01      → "p<.01"
+    .01 ≤ p < .05       → "p<.05"
+    p ≥ .05 (or N.S.)   → "N.S."
+  Never use exact p-values like "p<.3", "p<.9", "p<.00", "p=.04" — always round UP to the threshold above
+- iadas:resultatRelation: derive from BOTH the sign AND significance:
+    significant positive correlation/effect  → "positive"
+    significant negative correlation/effect  → "negative"
+    non-significant (signeP = N.S.)          → "non-significant"
+
+OUTPUT FORMAT:
+{
+  "relations": [
+    {
+      "V1": "Body image dissatisfaction",
+      "V1_measure": "Body Shape Questionnaire (BSQ)",
+      "V2": "Eating disorder symptoms",
+      "V2_measure": "Eating Disorder Examination Questionnaire (EDE-Q)",
+      "evidence": "BSQ scores were negatively correlated with EDE-Q scores (r = -.42, p < .001)",
+      "stats": [
+        {"predicate": "iadas:degreR", "object": -0.42},
+        {"predicate": "iadas:signeP", "object": "p<.001"},
+        {"predicate": "iadas:resultatRelation", "object": "negative"}
+      ]
+    }
+  ]
+}
+
+EXAMPLES OF CORRECT OUTPUT:
+{FEW_SHOTS}
+
+--- TEXT TO ANALYZE ---
+{TEXT}
+--- END ---
+
+{DETECTED_STATS}
+
+Return ONLY the JSON object with the "relations" key, no explanation:

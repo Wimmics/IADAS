@@ -1,0 +1,143 @@
+{
+  "_article": "Voelker.2016",
+  "_source": "abox",
+  "Sport": [
+    {
+      "predicate": "iadas:sportName",
+      "object": "gymnastics, swimming, diving"
+    },
+    {
+      "predicate": "iadas:sportLevel",
+      "object": "Student"
+    },
+    {
+      "predicate": "iadas:sportPracticeType",
+      "object": "Individual sport"
+    },
+    {
+      "predicate": "iadas:sportSubcategory",
+      "object": "Multisport"
+    }
+  ],
+  "Relations": [
+    {
+      "V1": {
+        "triplets": [
+          {
+            "predicate": "iadas:V1",
+            "object": "Bulimic symptomatology"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Bulimia Test-Revised (BULIT-R)"
+          },
+          {
+            "predicate": "iadas:subClass1",
+            "object": "Eating disorders",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass2",
+            "object": "Bulimia",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:subClass3",
+            "object": "Bulimic symptomatology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:finalClass",
+            "object": "Bulimic symptomatology",
+            "_source": "classifier"
+          },
+          {
+            "predicate": "iadas:hasCategory",
+            "object": "DEAB",
+            "_source": "classifier"
+          }
+        ]
+      },
+      "V2": {
+        "triplets": [
+          {
+            "predicate": "iadas:V2",
+            "object": "Negative affect\nBody satisfaction\nDietary restraint"
+          },
+          {
+            "predicate": "iadas:measure",
+            "object": "Positive and Negative Affect Schedule-Expanded\nBody Parts Satisfaction Scale Revised (BPSS-R)\nDietary Intent Scale (DIS)"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "predicate": "iadas:degreR2",
+          "object": 0.332
+        },
+        {
+          "predicate": "iadas:signeP",
+          "object": "p<0.0001"
+        }
+      ]
+    }
+  ],
+  "Analysis": [
+    {
+      "predicate": "iadas:typeOfAnalysis",
+      "object": "Structural model"
+    },
+    {
+      "predicate": "iadas:authorConclusion",
+      "object": "For self reported intentions to engage in dietary restraint and bulimic symptomatology, respectively, time 1 scores predicted 64% and 66% of the variance in the athletes time 2 scores. Times 1 scores for negative affect, body satisfaction and self reported untentions to engage in dietary restraint did not predict time 2 levels of bulimic symptomatology. Time 1 negative affect predicted a decrease in the athletes self reported intentions to engage in dietary restraint at time 2, after controlling for time 1 dietary restraint."
+    },
+    {
+      "predicate": "iadas:limites",
+      "object": "The sample consisted of Female who were predominantly Caucasian in NCAA Division I athletic programs in the US and in the sports of gymnastics, swimming and diving. Generalizability is thus limited. The study is limited to the focus on 5-month season. The self report nature of the survey. Some studies indicate that dietary restraint scales measuring self reported intentions to restrict caloric intake are not actually associated with changes in acute eating behaviors but rather may reflect temporary attempts to inhibit overeating tendencies."
+    },
+    {
+      "predicate": "iadas:perspectives",
+      "object": "To better understand the stability of bulimic symptomatology and the psychosocial factors that may influence risk, researchers should examine these variables at more than two-time points and over a period of time longer than a single season. For example, it would be interesting to assess bulimic symptomatology over the course of athletes off-seasons or as they transition from sport into retirement. Further examining bulimic symptomatology in Female athletes between early adolescence and college may also offer a better understanding of when symptoms are more stable and help to identify the period when intervention is most critical."
+    },
+    {
+      "predicate": "iadas:sampleSizeMobilized",
+      "object": 325
+    }
+  ],
+  "Population": [
+    {
+      "predicate": "iadas:gender",
+      "object": "Female"
+    },
+    {
+      "predicate": "iadas:inclusionCriteria",
+      "object": "Female collegiate gymnasts and swimmers and divers"
+    },
+    {
+      "predicate": "iadas:population",
+      "object": "Athletes"
+    },
+    {
+      "predicate": "iadas:hasSubgroup",
+      "object": "219 Gymnasts\n106 Swimmers and divers"
+    },
+    {
+      "predicate": "iadas:sportingPopulation",
+      "object": "Division I"
+    },
+    {
+      "predicate": "iadas:sampleSize",
+      "object": 325
+    }
+  ],
+  "Bibliographic": [
+    {
+      "predicate": "iadas:country",
+      "object": "United States of America"
+    },
+    {
+      "predicate": "iadas:studyType",
+      "object": "Longitudinal"
+    }
+  ]
+}
