@@ -54,6 +54,10 @@
 - Database Service : Reconstruction de l'ontologie et statistiques (port 8005)
 - Fuseki : Base de données RDF (port 3030)
 
+### Déploiement en production (serveur i3S)
+
+Le `docker-compose.yml` à la racine sert à l'installation locale : il construit les images à partir du code. La version en ligne (http://iadas.i3s.unice.fr/iadas/index.html) utilise une configuration différente, décrite dans [deploy/README.md](deploy/README.md).
+
 ### Installation alternative (sans Docker)
 
 > ⚠️ **Plus complexe** - Cette méthode nécessite des connaissances techniques
