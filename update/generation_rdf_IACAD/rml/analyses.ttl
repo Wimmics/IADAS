@@ -1,0 +1,198 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix iadas: <http://ns.inria.fr/iadas/ontology/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<http://ns.inria.fr/iadas/data/#AgeStatsMap> a rr:TriplesMap ;
+    rml:logicalSource <http://ns.inria.fr/iadas/data/#LogicalSource> ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "Mean_Age" ] ;
+            rr:predicate iadas:hasMeanValue ],
+        [ rr:objectMap [ rml:reference "Range_Age" ] ;
+            rr:predicate iadas:hasRange ] ;
+    rr:subjectMap [ rr:class iadas:AgeStatistics ;
+            rr:template "http://ns.inria.fr/iadas/data/AgeStats_{Analysis_ID}" ] .
+
+<http://ns.inria.fr/iadas/data/#AnalysisMap> a rr:TriplesMap ;
+    rml:logicalSource <http://ns.inria.fr/iadas/data/#LogicalSource> ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "Analysis_ID" ] ;
+            rr:predicate iadas:analysisId ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/Population_{Analysis_ID}" ] ;
+            rr:predicate iadas:hasPopulation ],
+        [ rr:objectMap [ rml:reference "Degree of relationship" ] ;
+            rr:predicate iadas:relationDegree ],
+        [ rr:objectMap [ rml:reference "Type of analysis" ] ;
+            rr:predicate iadas:typeOfAnalysis ],
+        [ rr:objectMap [ rml:reference "Authors' conclusions" ] ;
+            rr:predicate iadas:authorConclusion ],
+        [ rr:objectMap [ rml:reference "Limits" ] ;
+            rr:predicate iadas:limites ],
+        [ rr:objectMap [ rml:reference "Perspectives" ] ;
+            rr:predicate iadas:perspectives ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/sport-vocab/{Sport_name}" ] ;
+            rr:predicate iadas:hasSport ],
+        [ rr:objectMap [ rml:reference "Type of sport practice" ] ;
+            rr:predicate iadas:sportPracticeType ],
+        [ rr:objectMap [ rml:reference "Number of sport studied" ] ;
+            rr:predicate iadas:numberOfSportStudied ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/Relations_{Analysis_ID}" ] ;
+            rr:predicate iadas:hasRelation ],
+        [ rr:objectMap [ rml:reference "N mobilized in analyses" ] ;
+            rr:predicate iadas:sampleSizeMobilized ],
+        [ rr:objectMap [ rml:reference "Complexity of Analysis" ] ;
+            rr:predicate iadas:complexityOfAnalysis ],
+        [ rr:objectMap [ rml:reference "Direction of the relationship" ] ;
+            rr:predicate iadas:relationDirection ],
+        [ rr:objectMap [ rml:reference "Group of statistical analysis" ] ;
+            rr:predicate iadas:groupStatisticalAnalysis ],
+        [ rr:objectMap [ rml:reference "Subcategory of sport" ] ;
+            rr:predicate iadas:sportSubcategory ] ;
+    rr:subjectMap [ rr:class iadas:Analysis ;
+            rr:template "http://ns.inria.fr/iadas/data/Analysis_{Analysis_ID}" ] .
+
+<http://ns.inria.fr/iadas/data/#ArticleMap> a rr:TriplesMap ;
+    rml:logicalSource <http://ns.inria.fr/iadas/data/#LogicalSource> ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "Journal" ] ;
+            rr:predicate bibo:journal ],
+        [ rr:objectMap [ rml:reference "Country" ] ;
+            rr:predicate iadas:country ],
+        [ rr:objectMap [ rml:reference "Continent" ] ;
+            rr:predicate iadas:continent ],
+        [ rr:objectMap [ rml:reference "Types of study" ] ;
+            rr:predicate iadas:studyType ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/Analysis_{Analysis_ID}" ] ;
+            rr:predicate iadas:hasAnalysis ],
+        [ rr:objectMap [ rml:reference "DOI" ] ;
+            rr:predicate bibo:doi ],
+        [ rr:objectMap [ rml:reference "Title" ] ;
+            rr:predicate dcterms:title ],
+        [ rr:objectMap [ rml:reference "Year" ] ;
+            rr:predicate dcterms:date ],
+        [ rr:objectMap [ rml:reference "Authors" ] ;
+            rr:predicate dcterms:creator ] ;
+    rr:subjectMap [ rr:class iadas:SportPsychologyArticle ;
+            rr:template "http://ns.inria.fr/iadas/data/Article_{Analysis_ID}" ] .
+
+<http://ns.inria.fr/iadas/data/#BmiStatsMap> a rr:TriplesMap ;
+    rml:logicalSource <http://ns.inria.fr/iadas/data/#LogicalSource> ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "Mean_BMI" ] ;
+            rr:predicate iadas:hasMeanValue ],
+        [ rr:objectMap [ rml:reference "Range_BMI" ] ;
+            rr:predicate iadas:hasRange ] ;
+    rr:subjectMap [ rr:class iadas:BMIStatistics ;
+            rr:template "http://ns.inria.fr/iadas/data/BmiStats_{Analysis_ID}" ] .
+
+<http://ns.inria.fr/iadas/data/#ExFreqStatsMap> a rr:TriplesMap ;
+    rml:logicalSource <http://ns.inria.fr/iadas/data/#LogicalSource> ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "Mean_Exercise frequency" ] ;
+            rr:predicate iadas:hasMeanValue ],
+        [ rr:objectMap [ rml:reference "Range_Exercise frequency" ] ;
+            rr:predicate iadas:hasRange ] ;
+    rr:subjectMap [ rr:class iadas:ExerciseFrequencyStatistics ;
+            rr:template "http://ns.inria.fr/iadas/data/ExFreqStats_{Analysis_ID}" ] .
+
+<http://ns.inria.fr/iadas/data/#ExpStatsMap> a rr:TriplesMap ;
+    rml:logicalSource <http://ns.inria.fr/iadas/data/#LogicalSource> ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "Mean_Years of experience" ] ;
+            rr:predicate iadas:hasMeanValue ],
+        [ rr:objectMap [ rml:reference "Range_Years of experience" ] ;
+            rr:predicate iadas:hasRange ] ;
+    rr:subjectMap [ rr:class iadas:YearsOfExperienceStatistics ;
+            rr:template "http://ns.inria.fr/iadas/data/ExpStats_{Analysis_ID}" ] .
+
+<http://ns.inria.fr/iadas/data/#PopulationMap> a rr:TriplesMap ;
+    rml:logicalSource <http://ns.inria.fr/iadas/data/#LogicalSource> ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "Sex" ] ;
+            rr:predicate iadas:gender ],
+        [ rr:objectMap [ rml:reference "N" ] ;
+            rr:predicate iadas:sampleSize ],
+        [ rr:objectMap [ rml:reference "Population" ] ;
+            rr:predicate iadas:population ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/AgeStats_{Analysis_ID}" ] ;
+            rr:predicate iadas:hasStatistics ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/BmiStats_{Analysis_ID}" ] ;
+            rr:predicate iadas:hasStatistics ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/ExFreqStats_{Analysis_ID}" ] ;
+            rr:predicate iadas:hasStatistics ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/ExpStats_{Analysis_ID}" ] ;
+            rr:predicate iadas:hasStatistics ],
+        [ rr:objectMap [ rml:reference "Population subgroup" ] ;
+            rr:predicate iadas:hasSubgroup ],
+        [ rr:objectMap [ rml:reference "Sporting population" ] ;
+            rr:predicate iadas:sportingPopulation ],
+        [ rr:objectMap [ rml:reference "Inclusion criteria" ] ;
+            rr:predicate iadas:inclusionCriteria ],
+        [ rr:objectMap [ rml:reference "Sport level" ] ;
+            rr:predicate iadas:sportLevel ] ;
+    rr:subjectMap [ rr:class iadas:Population ;
+            rr:template "http://ns.inria.fr/iadas/data/Population_{Analysis_ID}" ] .
+
+<http://ns.inria.fr/iadas/data/#RelationMap> a rr:TriplesMap ;
+    rml:logicalSource <http://ns.inria.fr/iadas/data/#LogicalSource> ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/Variable_VD_{Analysis_ID}" ] ;
+            rr:predicate iadas:hasDependentVariable ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/Variable_VI_{Analysis_ID}" ] ;
+            rr:predicate iadas:hasIndependentVariable ],
+        [ rr:objectMap [ rml:reference "Degree of relationship" ] ;
+            rr:predicate iadas:relationDegreeSecondary ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/Variable_Mediator_{Analysis_ID}_{Mediator}" ] ;
+            rr:predicate iadas:hasMediator ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/Variable_Moderator_{Analysis_ID}_{Moderator}" ] ;
+            rr:predicate iadas:hasModerator ] ;
+    rr:subjectMap [ rr:class iadas:Relations ;
+            rr:template "http://ns.inria.fr/iadas/data/Relations_{Analysis_ID}" ] .
+
+<http://ns.inria.fr/iadas/data/#VariableMapMediator> a rr:TriplesMap ;
+    rml:logicalSource <http://ns.inria.fr/iadas/data/#LogicalSource> ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "Mediator" ] ;
+            rr:predicate iadas:variableName ],
+        [ rr:objectMap [ rml:reference "Specification mediator" ] ;
+            rr:predicate iadas:specification ],
+        [ rr:objectMap [ rml:reference "Measure Mediator" ] ;
+            rr:predicate iadas:measure ] ;
+    rr:subjectMap [ rr:class iadas:VariableMediatrice ;
+            rr:template "http://ns.inria.fr/iadas/data/Variable_Mediator_{Analysis_ID}_{Mediator}" ] .
+
+<http://ns.inria.fr/iadas/data/#VariableMapModerator> a rr:TriplesMap ;
+    rml:logicalSource <http://ns.inria.fr/iadas/data/#LogicalSource> ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "Moderator" ] ;
+            rr:predicate iadas:variableName ],
+        [ rr:objectMap [ rml:reference "Measure Moderator" ] ;
+            rr:predicate iadas:measure ] ;
+    rr:subjectMap [ rr:class iadas:VariableModeratrice ;
+            rr:template "http://ns.inria.fr/iadas/data/Variable_Moderator_{Analysis_ID}_{Moderator}" ] .
+
+<http://ns.inria.fr/iadas/data/#VariableMapVD> a rr:TriplesMap ;
+    rml:logicalSource <http://ns.inria.fr/iadas/data/#LogicalSource> ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{DEAB_final_sub-class}" ] ;
+            rr:predicate iadas:refersToVariable ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/measurementTools-vocab/{DEAB_measure}" ] ;
+            rr:predicate iadas:measure ],
+        [ rr:objectMap [ rml:reference "DEAB" ] ;
+            rr:predicate iadas:variableName ],
+        [ rr:objectMap [ rml:reference "Specifications of DEAB" ] ;
+            rr:predicate iadas:specification ] ;
+    rr:subjectMap [ rr:class iadas:VariableDependante ;
+            rr:template "http://ns.inria.fr/iadas/data/Variable_VD_{Analysis_ID}" ] .
+
+<http://ns.inria.fr/iadas/data/#VariableMapVI> a rr:TriplesMap ;
+    rml:logicalSource <http://ns.inria.fr/iadas/data/#LogicalSource> ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{Related_Factor_final_sub-class}" ] ;
+            rr:predicate iadas:refersToVariable ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/measurementTools-vocab/{Related_Factor_measure}" ] ;
+            rr:predicate iadas:measure ],
+        [ rr:objectMap [ rml:reference "Related_Factor" ] ;
+            rr:predicate iadas:variableName ],
+        [ rr:objectMap [ rml:reference "Specifications of related factor" ] ;
+            rr:predicate iadas:specification ],
+        [ rr:objectMap [ rml:reference "Related_Factor_CLASS" ] ;
+            rr:predicate iadas:sourceFactorCategory ],
+        [ rr:objectMap [ rml:reference "Related_Factor_sub-class 1" ] ;
+            rr:predicate iadas:sourceFactorSubClass1 ] ;
+    rr:subjectMap [ rr:class iadas:VariableIndependante ;
+            rr:template "http://ns.inria.fr/iadas/data/Variable_VI_{Analysis_ID}" ] .
+
+<http://ns.inria.fr/iadas/data/#LogicalSource> rml:referenceFormulation ql:CSV ;
+    rml:source "csv/analyses.csv" .
+

@@ -1,0 +1,89 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix iadas: <http://ns.inria.fr/iadas/ontology/> .
+@prefix iadascategory: <http://ns.inria.fr/iadas/sport-category-vocab/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://ns.inria.fr/iadas/sport-vocab/#SportClass2> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "csv/sport.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant iadascategory:Sport ] ;
+            rr:predicate skos:inScheme ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/sport-category-vocab/{Class 1}" ] ;
+            rr:predicate iadas:sportCategory ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/sport-vocab/{Sub class 3}" ] ;
+            rr:predicate skos:narrower ],
+        [ rr:objectMap [ rml:reference "Sub class 2" ] ;
+            rr:predicate skos:prefLabel ],
+        [ rr:objectMap [ rml:reference "Synonym" ] ;
+            rr:predicate skos:altLabel ] ;
+    rr:subjectMap [ rr:class iadas:Sport,
+                skos:Concept ;
+            rr:template "http://ns.inria.fr/iadas/sport-vocab/{Sub class 2}" ] .
+
+<http://ns.inria.fr/iadas/sport-vocab/#SportClass3> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "csv/sport.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant iadascategory:Sport ] ;
+            rr:predicate skos:inScheme ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/sport-vocab/{Sub class 2}" ] ;
+            rr:predicate skos:broader ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/sport-category-vocab/{Class 1}" ] ;
+            rr:predicate iadas:sportCategory ],
+        [ rr:objectMap [ rml:reference "Sub class 3" ] ;
+            rr:predicate skos:prefLabel ],
+        [ rr:objectMap [ rml:reference "Synonym" ] ;
+            rr:predicate skos:altLabel ],
+        [ rr:objectMap [ rml:reference "Definition" ] ;
+            rr:predicate skos:description ],
+        [ rr:objectMap [ rml:reference "Références" ] ;
+            rr:predicate dcterms:source ] ;
+    rr:subjectMap [ rr:class iadas:Sport,
+                skos:Concept ;
+            rr:template "http://ns.inria.fr/iadas/sport-vocab/{Sub class 3}" ] .
+
+<http://ns.inria.fr/iadas/sport-vocab/#SportClass4Update> a rr:TriplesMap ;
+    rml:logicalSource _:na26e89fe74e94bf68bf693cfa1e49595b1 ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/sport-category-vocab/{Class 1}" ] ;
+            rr:predicate iadas:sportCategory ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/sport-vocab/{Sub class 3}" ] ;
+            rr:predicate skos:broader ],
+        [ rr:objectMap [ rml:reference "Sub class 4" ] ;
+            rr:predicate skos:prefLabel ],
+        [ rr:objectMap [ rr:constant iadascategory:Sport ] ;
+            rr:predicate skos:inScheme ] ;
+    rr:subjectMap [ rr:class iadas:Sport,
+                skos:Concept ;
+            rr:template "http://ns.inria.fr/iadas/sport-vocab/{Sub class 4}" ] .
+
+<http://ns.inria.fr/iadas/sport-vocab/#SportConceptSheme> a rr:TriplesMap ;
+    rml:logicalSource _:na26e89fe74e94bf68bf693cfa1e49595b1 ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant "Équipe de recherche IA-DAS" ;
+                    rr:language "en" ] ;
+            rr:predicate dcterms:creator ],
+        [ rr:objectMap [ rr:constant "2025-11-25" ;
+                    rr:language "en" ] ;
+            rr:predicate dcterms:created ],
+        [ rr:objectMap [ rr:constant "1.0" ;
+                    rr:language "en" ] ;
+            rr:predicate dcterms:version ],
+        [ rr:objectMap [ rr:constant "IA-DAS - Thésaurus de sport" ;
+                    rr:language "fr" ] ;
+            rr:predicate dcterms:title ],
+        [ rr:objectMap [ rr:constant "IA-DAS - Sport thesaurus" ;
+                    rr:language "en" ] ;
+            rr:predicate dcterms:title ],
+        [ rr:objectMap [ rr:constant "Thésaurus pour décrire les sports citées dans les articles" ;
+                    rr:language "fr" ] ;
+            rr:predicate dcterms:description ],
+        [ rr:objectMap [ rr:constant "Tesaurus descriping sport cited on scientific papers" ;
+                    rr:language "en" ] ;
+            rr:predicate dcterms:description ] ;
+    rr:subjectMap [ rr:class skos:ConceptScheme ;
+            rr:constant iadascategory:Sport ] .
+
+_:na26e89fe74e94bf68bf693cfa1e49595b1 rml:referenceFormulation ql:CSV ;
+    rml:source "csv/sport.csv" .
+

@@ -1,0 +1,1558 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix iadas: <http://ns.inria.fr/iadas/ontology/> .
+@prefix iadascategory: <http://ns.inria.fr/iadas/sport-category-vocab/> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+iadascategory:Sport a skos:ConceptScheme;
+  dcterms:created "2025-11-25"@en;
+  dcterms:creator "Équipe de recherche IA-DAS"@en;
+  dcterms:description "Tesaurus descriping sport cited on scientific papers"@en, "Thésaurus pour décrire les sports citées dans les articles"@fr;
+  dcterms:title "IA-DAS - Sport thesaurus"@en, "IA-DAS - Thésaurus de sport"@fr;
+  dcterms:version "1.0"@en .
+
+<http://ns.inria.fr/iadas/sport-vocab/100%20meters> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "Athletes stick to a lane and run down a straight 100m track, which is generally the straight section of a standard 400m track. Athletes start the race on blocks, which include sensors to detect false starts. The starting pistol is fired to signal the start of the race. Athletes then push off from the starting blocks by putting all their power into both legs. The fastest time wins the race and often places are separated by thousandths of a second. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "100 meters" .
+
+<http://ns.inria.fr/iadas/sport-vocab/10000m> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "The 10,000m is a long-distance running event that takes place on a standard 400m running track. Athletes complete 25 circuits of the track and the winner is the runner who crosses the finish line in the fastest time.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "10000m" .
+
+<http://ns.inria.fr/iadas/sport-vocab/100m%20hurdles> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "The 100m hurdles is a women’s track and field event where athletes sprint over a series of 10 hurdles of 83,8cm (2ft 9in) set over a distance of 100m. The goal is to successfully clear the hurdles and cross the finish line in the fastest time.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "100m hurdles" .
+
+<http://ns.inria.fr/iadas/sport-vocab/1500m> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "The 1500m is the marquee middle-distance running event. Athletes compete by running three and three-quarters laps of a standard outdoor 400m track and the winner is the athlete who crosses the finish line first.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "1500m" .
+
+<http://ns.inria.fr/iadas/sport-vocab/200%20meters> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "The 200m sprint is a popular track and field event where athletes race around half of a standard 400m outdoor track.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "200 meters" .
+
+<http://ns.inria.fr/iadas/sport-vocab/3000m> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Middle-distance running event that covers 7 and a half laps of a standard 400m track. The winner is the athletes who crosses the finish line in the fastest time. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "3000m" .
+
+<http://ns.inria.fr/iadas/sport-vocab/400m%20hurdles> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "The 400m hurdles is a demanding short-distance track and field event where athletes race one lap of a standard 400m track. Throughout the lap, runners must jump cleanly over 10 hurdles that are spaced evenly apart.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "400m hurdles" .
+
+<http://ns.inria.fr/iadas/sport-vocab/5000m> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "The 5000m is a classic long-distance track and field event that covers 12-and-a-half laps of a standard 400m track. The winner is the athlete who crosses the finish line first.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "5000m" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Acrobatic%20gymnastic> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Gymnastics>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Acrobatic gymnastic" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Acrobatic%20skiing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Olympics.com";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "A winter sport that combines traditional skiing with aerial acrobatics and high-speed tricks. Athletes perform jumps, spins and flips while hurtling down courses littered with obstacles such as moguls, ramps and halfpipes. It is also called freestyle skiing.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Acrobatic skiing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Aerobic%20classes> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Fitness>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Aerobic classes" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Aerobic%20endurance%20training> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "American College of Sports Medicine (2021)";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Refers to continuous and rhythmic physical activity that relies primarily on the aerobic energy system. It aims to improve the efficiency of the cardiovascular and respiratory systems in supplying oxygen to working muscles over extended periods.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Aerobic endurance training" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Aerobic%20gymnastic> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Gymnastics>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Aerobic gymnastic" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Aerobics> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Fitness>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Aerobics" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Aesthetic> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:altLabel "Cheer/pom", "Dance/drill team", "Floor acrobatics", "Gym workouts",
+    "Irish style", "Synchronized swimming", "aesthetic sport, aesthetical, Lean aesthetic sports";
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/Artistic%20swimming>, <http://ns.inria.fr/iadas/sport-vocab/Bodybuilding>,
+    <http://ns.inria.fr/iadas/sport-vocab/Cheerleading>, <http://ns.inria.fr/iadas/sport-vocab/Circus>,
+    <http://ns.inria.fr/iadas/sport-vocab/Dance>, <http://ns.inria.fr/iadas/sport-vocab/Diving>,
+    <http://ns.inria.fr/iadas/sport-vocab/Drill%20team>, <http://ns.inria.fr/iadas/sport-vocab/Figure%20skating>,
+    <http://ns.inria.fr/iadas/sport-vocab/Fitness>, <http://ns.inria.fr/iadas/sport-vocab/Gymnastics>,
+    <http://ns.inria.fr/iadas/sport-vocab/Ornamental%20jumping>, <http://ns.inria.fr/iadas/sport-vocab/Pilates>,
+    <http://ns.inria.fr/iadas/sport-vocab/Yoga>;
+  skos:prefLabel "Aesthetic" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Alpine%20skiing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sportsdenature.gouv";
+  skos:altLabel "skiing";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "Discipline that consists of climbing a mountain to ski down it as quickly as possible. Alpine skiing comprises 6 events: downhill, super-G, giant slalom, slalom, alpine combined and team events. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Alpine skiing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Anaerobic%20exercise> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "American College of Sports Medicine (2013)", "OMS 2021";
+  skos:altLabel "gymgoer HIIT";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "Anaerobic exercise has been defined by the ACSM as intense physical activity of very short duration, fueled by the energy sources within the contracting muscles and independent of the use of inhaled oxygen as an energy source",
+    "High-Intensity Interval Training (HIIT) is a physical training method alternating short bursts of intense effort with periods of recovery. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Anaerobic exercise" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Antigravitation> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:altLabel "Anti-gravitational sports, gravitational", "Canoeing-kayaking";
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/Canoing>, <http://ns.inria.fr/iadas/sport-vocab/Kayaking>,
+    <http://ns.inria.fr/iadas/sport-vocab/Rock%20climbing>, <http://ns.inria.fr/iadas/sport-vocab/Ski%20jumping>,
+    <http://ns.inria.fr/iadas/sport-vocab/Surf>;
+  skos:prefLabel "Antigravitation" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Archery> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World aquery federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "Target archery is the discipline of shooting at stationary circular targets set at specific distances. The competition rounds at international events use the recognisable yellow, red, blue, black and white targets set at distances of 70 metres for recurve archers and 50 metres for compound archers. Other internationally recognised formats, like the 1440 Round, use distances of 90, 70, 60, 50 and 30 metres.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Archery" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Artistic%20gymnastic> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Gymnastics>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Artistic gymnastic" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Artistic%20swimming> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Larousse";
+  skos:altLabel "Synchronized swimming";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description "A form of water ballet involving a series of figures that are judged and scored. An aquatic choreography is performed by a solo swimmer, a duo, or a team of up to eight swimmers, set to musical accompaniment, with the figures evaluated by official judges.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Artistic swimming" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Badminton> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sports.gouv";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Racquet sport played between two players (singles) or two pairs (doubles) in two half-courts separated by a net. The players, known as badminton players, score points by hitting a shuttlecock with a racket into the opponent's court. The game ends as soon as the shuttlecock hits the ground or gets caught in the net.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Badminton" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Ball%20and%20team> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Sport-type%20grouping>;
+  skos:description "Sport category comprising sports classified as ball games or team sports in the original studies";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Ball and team" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Ball%20game> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:altLabel "Frisbee", "Ping pong", "ball-game, ball sport, ball games";
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/Badminton>, <http://ns.inria.fr/iadas/sport-vocab/Baseball>,
+    <http://ns.inria.fr/iadas/sport-vocab/Basketball>, <http://ns.inria.fr/iadas/sport-vocab/Beach%20volleyball>,
+    <http://ns.inria.fr/iadas/sport-vocab/Bocce>, <http://ns.inria.fr/iadas/sport-vocab/Cricket>,
+    <http://ns.inria.fr/iadas/sport-vocab/Field%20hockey>, <http://ns.inria.fr/iadas/sport-vocab/Floorball>,
+    <http://ns.inria.fr/iadas/sport-vocab/Football>, <http://ns.inria.fr/iadas/sport-vocab/Handball>,
+    <http://ns.inria.fr/iadas/sport-vocab/Hockey>, <http://ns.inria.fr/iadas/sport-vocab/Ice%20hockey>,
+    <http://ns.inria.fr/iadas/sport-vocab/Lacrosse>, <http://ns.inria.fr/iadas/sport-vocab/Netball>,
+    <http://ns.inria.fr/iadas/sport-vocab/Rugby>, <http://ns.inria.fr/iadas/sport-vocab/Soccer>,
+    <http://ns.inria.fr/iadas/sport-vocab/Softball>, <http://ns.inria.fr/iadas/sport-vocab/Squash>,
+    <http://ns.inria.fr/iadas/sport-vocab/Table%20tennis>, <http://ns.inria.fr/iadas/sport-vocab/Tennis>,
+    <http://ns.inria.fr/iadas/sport-vocab/Ultimate%20frisbee>, <http://ns.inria.fr/iadas/sport-vocab/Volleyball>,
+    <http://ns.inria.fr/iadas/sport-vocab/Water%20polo>, <http://ns.inria.fr/iadas/sport-vocab/Wheelchair%20basketball>;
+  skos:prefLabel "Ball game" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Baseball> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Baseball and Softball Federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description """Sport that pits two teams of 5 players on a small field, with no specific equipment required: only a ball is necessary. A game is played
+over 5 innings. The objective is to hit the ball, run the bases, and score points by returning to the starting point.""";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Baseball" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Basketball> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Olympics.com";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Team sport played on a rectangular court, in which two teams of five players play against each other and try to score by throwing the ball into the opponent's basket. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Basketball" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Beach%20volleyball> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération Française de Volley";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Discipline in which two teams of two players compete on an outdoor sand court measuring 8x16m, separated by a net, with a ball that they throw back and forth using their hands or feet.  A match is played in 2 winning sets of 21 points (+ a tie-break of 15 points).";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Beach volleyball" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Biathlon> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sports.gouv";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "Discipline combines cross-country skiing and rifle shooting (22 long rifle) at a distance of 50 metres in 2 different positions: prone and standing. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Biathlon" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Bocce> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Federal Boccia Commission, French Federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Precision sport intended for people with motor disabilities. It is played individually, in pairs, or in teams of 3. The court measures 12.5 by 6 meters, with a hard, smooth surface. Each team has 6 colored balls and attempts to place them as close as possible to a white ball called the \"jack\". The game is played over several rounds.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Bocce" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Bodybuilding> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dictionnaire l'internaute";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description "Physical and sports activity aimed at developing muscle mass for aesthetic purposes.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Bodybuilding" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Boxing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dicodusport";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Weight-sensitive>;
+  skos:description "A combat sport in which two athletes, wearing protective gloves, punch each other in a boxing ring. Boxing is supervised by a referee over a series of one- to three-minute intervals called rounds. The result is decided when an opponent is deemed unable to continue by a referee, is disqualified for breaking a rule, gives up by throwing a towel, or is declared the winner or loser according to the judges' scorecards at the end of the contest.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Boxing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Brazilian%20jiu-jitsu> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Martial%20arts>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Brazilian jiu-jitsu" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Canoing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sportsdenature.gouv";
+  skos:altLabel "Canoeing-kayaking";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Antigravitation>;
+  skos:description "Sport practised from a boat propelled by a paddle, in calm water, at sea and in white water. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Canoing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Cheerleading> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Cambridge dictionary";
+  skos:altLabel "Cheer/pom";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description "Activity of leading the crowd in shouting encouragement and supporting a team at a sports event. The activity involves chanting, gymnastics, dance and teamwork.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Cheerleading" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Circus> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Larousse", "Le dictionnaire", "Sports.gouv";
+  skos:altLabel "Floor acrobatics";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description "A set of exercises involving skill, strength, tricks, and training performed as a show.",
+    "Artistic and physical practice that involves skillfully manipulating objects such as balls, clubs, or rings. It requires coordination, dexterity, and concentration, and is often performed solo or in groups as part of circus acts or street performances.",
+    "It is a mix of acrobatics and choreographies performed individually and collectively to music. It is a physical activity similar to acrobatic gymnastics.",
+    "The exercises of balance artists consist either in keeping their body still while positioned unstably, or in maintaining stable objects stacked in an apparently fragile manner. Includes events such as Rolla Bolla, balance ball, stilts, unicycles, slackline, and tightrope.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Circus" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Circus%20acrobatic> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Circus>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Circus acrobatic" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Circus%20equilibrium> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Circus>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Circus equilibrium" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Circus%20object%20manipulation> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Circus>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Circus object manipulation" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Combat%20sports> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  dcterms:source "(Barreira, 2017; Fuller, 1988; Moore et al., 2020; Valdés-Badilla et al., 2021, 2022)";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Combined>;
+  skos:description "Represent athletic activities with specific rules involving fighting through striking, kicking and/or throwing, where the participants try to physically overcome the opponent while avoiding being overcome";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Combat sports" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Combined> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:altLabel "Track";
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/Combat%20sports>, <http://ns.inria.fr/iadas/sport-vocab/Track%20and%20field%2FAthletics>,
+    <http://ns.inria.fr/iadas/sport-vocab/Winter%20sports>;
+  skos:prefLabel "Combined" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Competition%20status> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  dcterms:source "Cambridge dictionary", "Office Québécois de la langue Française";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Sport%20participation%20characteristics>;
+  skos:description "A sport governed by official bodies and practiced in the form of competitions at various levels, where the competitor aims for maximum personal or absolute performance with a view to comparing performances",
+    "Practice of sport or physical activity not involving competition";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Competition status" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Competitive%20sport> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Competition%20status>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Competitive sport" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Crew> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Larousse";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "In rally or long-distance circuit racing, the group of drivers in a car or the group formed by the driver and the navigator responsible for guiding him.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Crew" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Cricket> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sports.gouv";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Batting and ball sport played between two teams of 11 players. The game is played on a cricket pitch, with a 20-metre pitch in the centre. There are two wickets at either end of the pitch. Cricket is a popular game, the aim of which is to score the most runs.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Cricket" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Cross%20training> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Cambridge dictionary", "Dictionnaire Lerobert";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "Exercise that makes your whole body stronger by combining several different activities",
+    "Sporting activity combining gymnastics, weightlifting, and endurance";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Cross training" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Cross-country> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Races, for both teams and individuals, are run on either grass or woodland courses and might also include stretches of gravel paths, road and hills. Races usually take place in the winter months, outside the usual track and field season. The IAAF recommend for international competitions that there is a main course loop of between 1750m and 2000m with natural obstacles used where possible, and the likes of deep ditches, dangerous ascents and descents as well as thick undergrowth should be avoided.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Cross-country" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Cross-country%20skiing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sportsdenature.gouv";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "A cross-country sport involving skiing on hilly or flat slopes. The skis used are long, narrow, have no metal edges and are attached only to the front of the boot. Cross-country skis can be used in two ways: the traditional technique, known as the ‘classic’ or ‘alternating stride’, which consists of moving forward in two parallel tracks.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Cross-country skiing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Crossfit> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Cross%20training>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Crossfit" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Cycling> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Larousse";
+  skos:altLabel "Biking";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Any sporting activity performed on a bicycle, consisting of covering a certain distance.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Cycling" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Cambridge dictionary", "Dictionnaire l'internaute ", "Dictionnaire la langue Française",
+    "Dictionnaire larousse ", "Fédération francaise de danse", "Keita, 1959. Le Courrier de l'UNESCO: une fenêtre ouverte sur le monde, XII, 1 ",
+    "Larousse", "Larousse ", "Sports.gouv";
+  skos:altLabel "Irish style";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description "A rhythmic and energetic dance form from northern India. It represents a fusion of Hindu and Muslim cultures, characterized by powerful footwork.",
+    "A type of dancing where carefully organized movements tell a story or express an idea, or a theatre work that uses this type of dancing: Dancers often wear elaborate costumes and pointe shoes, which allow them to dance on the tips of their toes.",
+    "Choreographic composition design in which dance takes precedence over music and scenery.",
+    "Dance based on the principle of turnout and the five positions of the feet and arms, which was taught in the classes of the Royal Academy of Dance.",
+    "Dance combining rhythm and movement. Characterized by rites, magic, enchantment, exorcism, and the expression of freedom, morality, and various emotions. In Africa, no dance is performed without a specific purpose.",
+    "Dance that emphasizes torso mobility, parallel feet, stylistic individuality, and improvisation, combining sensuality, acrobatics, and dynamic expressiveness.",
+    "Hip-hop culture brings together graffiti, DJing, rap, and urban dances such as breakdance, locking, and popping.",
+    "It is a blend of dance, theatre, and music, featuring narrative and scenic interpretation.",
+    "It is a street dance practiced in the form of duels called battles, where dancers compete by performing sequences of footwork and floor moves.",
+    "Spanish folk dance. It is a solo dance style characterized by its fusion with singing, hand clapping, and percussive footwork (similar to tap dancing). This dance can be accompanied by castanets. There is a traditional costume. For women, it consists of high-heeled shoes, a long, colorful dress (often red and black or white with polka dots) adorned with ruffles, as well as a fringed shawl. For men, it involves a short Andalusian suit.",
+    "The activity of moving your feet and body to music.", "This dance is created based on classical dance, with added improvisation and freedom of movement for the dancer. It involves a strong connection to the floor and features an abstract form of storytelling.",
+    "Traditional dance style from Ireland, characterized by quick footwork and a stiff upper body.",
+    "Traditional folk dance, originating in rural or village contexts, passed down orally, resulting in variations depending on the region or performers.",
+    "Type of dance in which the rhythm is kept by the noise of the dancer's shoes on the floor.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20African> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance African" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20Irish> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance Irish" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20Kathak> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance Kathak" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20ballet> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance ballet" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20classical> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance classical" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20contemporary> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance contemporary" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20flamenco> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance flamenco" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20hip%20hop> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance hip hop" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20jazz%2Fmodern> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance jazz/modern" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20musical%20theater> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance musical theater" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20neoclassic> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance neoclassic" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20spanish%20folk> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance spanish folk" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Dance%20tap> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Dance tap" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Diving> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sports.gouv";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description "Sport in which divers are required to perform acrobatic figures at a height of 1, 3 or 10m. Can be practised individually or in synchronised pairs. Judged on both difficulty and quality of execution in space. These figures are classified in order of difficulty. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Diving" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Drill%20team> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Collins dictionary";
+  skos:altLabel "Dance/drill team";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description """A group trained, esp. for exhibition purposes, in precision marching, the manual of arms, etc
+Also called: drill corps""";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Drill team" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Endurance> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:altLabel "Biking", "Distance running", "Long distance", "endurance sport";
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/10000m>, <http://ns.inria.fr/iadas/sport-vocab/1500m>,
+    <http://ns.inria.fr/iadas/sport-vocab/3000m>, <http://ns.inria.fr/iadas/sport-vocab/5000m>,
+    <http://ns.inria.fr/iadas/sport-vocab/Aerobic%20endurance%20training>, <http://ns.inria.fr/iadas/sport-vocab/Cross-country>,
+    <http://ns.inria.fr/iadas/sport-vocab/Cycling>, <http://ns.inria.fr/iadas/sport-vocab/Fell%20running>,
+    <http://ns.inria.fr/iadas/sport-vocab/Half%20marathon>, <http://ns.inria.fr/iadas/sport-vocab/Hike>,
+    <http://ns.inria.fr/iadas/sport-vocab/Jogging>, <http://ns.inria.fr/iadas/sport-vocab/Long%20distance%20speed%20skating>,
+    <http://ns.inria.fr/iadas/sport-vocab/Marathon>, <http://ns.inria.fr/iadas/sport-vocab/Race%20walking>,
+    <http://ns.inria.fr/iadas/sport-vocab/Rowing>, <http://ns.inria.fr/iadas/sport-vocab/Running>,
+    <http://ns.inria.fr/iadas/sport-vocab/Swimming>, <http://ns.inria.fr/iadas/sport-vocab/Triathlon>,
+    <http://ns.inria.fr/iadas/sport-vocab/Ultramarathon>;
+  skos:prefLabel "Endurance" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Equestrian> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sportsdenature.gouv";
+  skos:altLabel "Riding ";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "Technique of driving a horse under human control. It can be practised as an art, a leisure activity or a sport. In this discipline, the human partner is an equine, most often a horse or pony. There are twenty-two equestrian sports, including four outdoor sports: eventing (CCE), equestrian endurance, driving and TREC.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Equestrian" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Fell%20running> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fell Runners Association";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "A type of hill or mountain running often involves routes with no paths. You will also be required to navigate (without GPS) and usually be self-sufficient.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Fell running" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Fencing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération internationale d'escrime";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description """Fencing is a combat sport practiced with a bladed weapon.In fencing, two opponents face each other on a raised strip, sometimes called the \"field of play.\"
+The strip is 14 meters long and 1.5 meters wide.If a fencer steps off the side of the strip, they must retreat by 1 meter.If a fencer crosses the rear end of the strip, a point is awarded to their opponent.A bout between two fencers with a recorded score is called a “match.” A match consists of three periods of three minutes.During a match, the objective is to score a valid hit on the opponent.Each valid hit counts as one point. The first fencer to reach 15 points wins.
+""";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Fencing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Field%20hockey> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Hockey Federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Team sport that pits two teams of 11 players, including a goalkeeper, on an outdoor field measuring 91.4 by 55 meters. Each player uses a stick to manipulate a hard ball. The objective is to score in the opponent’s goal. A match is played in 4 quarters of 15 minutes each.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Field hockey" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Figure%20skating> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération Française de Roller & Skateboard", "Larousse", "Sports.gouv",
+    "US figure skating";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description """A sport discipline performed with quad roller skates on a smooth and flat surface measuring at least 20 x 40 meters (parquet, smooth concrete, terrazzo, etc.). It can be practiced individually or in pairs. This is a technical and acrobatic discipline that requires speed, power, precision, and artistic expression. Athletes can compete in compulsory figures or free skating.
+Each event is judged separately. An athlete participating in both events will also receive a combined ranking.""",
+    "Disciplines that consist of two segments: the short program and the free skate. The short program includes required elements (jumps, spins, steps) and demands clean execution. The free skate is longer, allowing more elements but no credit for extras beyond the limit. Both programs are scored technically and artistically, and the combined scores determine the final ranking.",
+    "It is a discipline close to pair figure skating. The skaters should not give the impression of skating but of dancing on ice, often in synchronization with their partner.",
+    "Team sport with 8 to 20 skaters. The goal is to perform figures such as blocks, wheels, and intersections in a perfectly synchronized, smooth, and harmonious way to the rhythm of music.",
+    "The discipline of ice dance pairs stands out from ice dancing by many overhead lifts held at arm’s length above the boy’s head, the famous 'death spiral,' and throw jumps.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Figure skating" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Figure%20skating%20ice%20dancing> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Figure%20skating>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Figure skating ice dancing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Figure%20skating%20pairs> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Figure%20skating>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Figure skating pairs" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Figure%20skating%20synchronized> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Figure%20skating>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Figure skating synchronized" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Fitness> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "(Hurley et al., 2019; Miele and Headley, 2017)", "Larousse", "Sports.gouv";
+  skos:altLabel "Gym workouts";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description "A discipline combining fitness and acrobatics. It allows you to demonstrate your ability to perform a series of dynamic movements to music. A truly creative discipline, it requires you to capture the audience's attention and harmoniously combine dance elements with elements of difficulty. Movements can be performed individually, in duets, trios or groups (5 gymnasts).",
+    "A set of fitness activities including strength training, stretching, and cardio training. It can be practiced using machines.",
+    "Aerobic exercise is a type of sustained exercise that mainly depends on energy generation via aerobic metabolism and provides cardiovascular conditioning, like running, swimming, and cycling.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Fitness" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Floorball> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Floorball Federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Team sport derived from hockey, played indoors with two teams of 5 field players and 1 goalkeeper. The court measures 40 by 20 meters and is surrounded by low boards about 50 cm high. A lightweight stick and a plastic ball are used. A match lasts 3 periods of 20 minutes. The aim is to score in the opponent’s goal by controlling the ball with the stick.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Floorball" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Football> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Larousse";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Sport in which two teams of eleven players each compete on a rectangular pitch between 90 and 120 metres long and between 45 and 90 metres wide. The aim is to kick a spherical ball into the opponent's goal using the feet, head or any other part of the body (except the hand or arm).";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Football" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Freestyle%20skiing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sports.gouv";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "Sport that combines skiing and acrobatics. It includes a range of disciplines such as mogul skiing, ski jumping, ski cross, and slopestyle, halfpipe, and big air skiing.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Freestyle skiing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Golf> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Larousse";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description """Golf is a sport in which players aim to hit a ball into 18 successive holes on a large course using clubs, with the fewest possible strokes. The course covers an area between 40 and 60 hectares. On the course, the golfer encounters obstacles such as ponds, lakes, streams, and sandy areas called “bunkers.”
+The 18 holes are spaced at distances ranging from 130 to 530 meters. Depending on the golf course, the total distance for all 18 holes ranges from 5,700 to 6,500 meters. The hole has a diameter of 10.8 cm and a minimum depth of 10 cm, and is marked with a flag.""";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Golf" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Gymnastics> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération Française de gymnastique", "Larousse", "Sports.gouv";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description "A discipline combining fitness and acrobatics. It requires strength, endurance, and flexibility. Gymnasts perform to music lasting 1 minute 30 seconds on a surface of 7 x 7 meters for individuals, and 10 x 10 meters for groups. The movements can be performed individually, in pairs, in trios, or in groups (5 gymnasts).",
+    "A discipline for women practiced on 4 apparatus: the vault, the uneven bars, the balance beam, and the floor. The combination of these 4 apparatuses makes it a very complete discipline. For men, it is practiced on 6 apparatus: the floor, the pommel horse, the rings, the vault, the parallel bars, and the high bar.",
+    "A discipline in which gymnasts perform a series of acrobatics on a dynamic track. The Tumbling track is 25 meters long and 2 meters wide. Gymnasts must perform a sequence of 8 consecutive acrobatic moves, ending with a \"dismount.\" The landing area measures 6 meters by 4 meters.",
+    "A set of physical exercises, performed with or without apparatus and light equipment, aimed at stretching, developing, or rehabilitating the body.",
+    "A sport that combines acrobatics and choreography performed individually and collectively, to music. Pyramids are the special feature of this discipline. It requires strength, flexibility, agility and acrobatic skills. The exercises are performed on a platform similar to that used in artistic gymnastics.",
+    "An acrobatic discipline that can be practiced individually or in pairs (called synchronized). Gymnasts perform on a trampoline measuring 4 meters by 2 meters, positioned 1.15 meters above the ground. 120 springs surrounding the trampoline allow the gymnasts to reach a height of up to 8 meters. The exercises consist of 10 trampoline touches, during which gymnasts can perform numerous acrobatic moves (jumps, flips, twists, etc.). These acrobatics must be performed in succession.",
+    "Sport practised to music using apparatus: hoop, ball, clubs, ribbon and rope. In competition, it can be practised either individually or in a group of 5 gymnasts. It is a complete discipline combining flexibility, grace and skill.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Gymnastics" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Gymnastics%20tumbling> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Gymnastics>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Gymnastics tumbling" .
+
+<http://ns.inria.fr/iadas/sport-vocab/HIIT> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Anaerobic%20exercise>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "HIIT" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Half%20marathon> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Athletics Federation / World Athletics / Larousse dictionary";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Road running event with an official distance of 21.0975 kilometres, half a marathon. The half-marathon is not part of major international athletics competitions like the Olympic Games or World Championships.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Half marathon" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Handball> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dicodusport";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Discipline in which two teams of seven players play on a rectangular pitch measuring 40 metres by 20 metres, divided into two halves. The winner of a match is the team with the most goals at the end of the two 30-minute periods. Each goal is scored by kicking the ball into the opposing goal. The ball is handled by the players and ‘ball in hand’ movements are limited to three steps, except when dribbling. However, the attacker is allowed to jump over the goal area and take his shot before touching down again, in order to be closer to the goal.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Handball" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Health%20sport> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  dcterms:source "Sports.gouv";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Health-oriented%20practices>;
+  skos:description "Engagement in physical or sporting activities that contribute to health and well-being in their physical, psychological, and social dimensions";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Health sport" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Health-oriented%20practices> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/Health%20sport>;
+  skos:prefLabel "Health-oriented practices" .
+
+<http://ns.inria.fr/iadas/sport-vocab/High%20body%20mass%20emphasis> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/High%20mass>;
+  skos:prefLabel "High body mass emphasis" .
+
+<http://ns.inria.fr/iadas/sport-vocab/High%20jump> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "The high jump is a track and field event in which competitors leap (unaided) from one foot over a four-metre-long horizontal bar. Athletes accelerate down the runway, take off on one foot and aim to clear the greatest height without knocking the bar to the ground. Once they’ve completed their jump, athletes land on a crash mat.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "High jump" .
+
+<http://ns.inria.fr/iadas/sport-vocab/High%20mass> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/High%20body%20mass%20emphasis>;
+  skos:description "Sports in which a high body mass is emphasized or considered advantageous for athletic performance";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "High mass" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Hike> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sports de nature.gouv";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "A nature sport that involves designing and traveling a route by walking, not running. A hike is a walking route with an actual walking time of more than 4 hours (effort index from 26). It can be practiced on all supports allowing a pedestrian path without equipment and/or progression techniques related to mountaineering.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Hike" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Hockey> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération Française de Hockey";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Collective ball sport pitting two teams of eleven players against each other, including an equipped goalkeeper. Field hockey is played outdoors on a large playing field (91.40 m x 55 m). It is played with a ball that players try to send into the opponent's goal with a stick.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Hockey" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Hula%20hooping> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Larousse";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "Hula hooping is an activity that involves spinning a hoop around the body (mainly the waist) using quick hip movements; the hoop itself is also referred to as a hula hoop.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Hula hooping" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Ice%20hockey> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Ice Hockey Federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Team sport played 6 vs 6, with 1 goalkeeper and 5 field players per team, on a rink surrounded by boards, measuring up to 60 by 30 meters (Olympic size). The objective is to score in the opponent’s net by sending a puck with a stick. A match consists of 3 periods of 15 to 20 minutes depending on the category. The rink is divided into 3 zones: defensive, neutral, and attacking. This sport allows regulated physical contact and permits unlimited substitutions. In case of a tie, overtime and shootouts can decide the winner.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Ice hockey" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Individual> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Participation%20format>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Individual" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Javelin%20throw> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "The javelin is a track and field event where athletes compete to throw a javelin, a long spear-like object with a metal head, the farthest distance. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Javelin throw" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Jiu-jitsu> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Martial%20arts>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Jiu-jitsu" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Jogging> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Larousse";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Running practiced for physical fitness, on a wide variety of terrains such as woods and countryside, roads, and city streets.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Jogging" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Judo> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Martial%20arts>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Judo" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Jumping> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dictionnaire de la langue Française";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "An equestrian sport consisting of an obstacle course.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Jumping" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Karate> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Martial%20arts>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Karate" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Kayaking> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Larousse";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Antigravitation>;
+  skos:description "Sport practised in a boat propelled by a double paddle. A kayak for flatwater racing is propelled by one, two or four paddlers. In slalom and downriver racing, it is used by a single paddler.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Kayaking" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Kickboxing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dicodusport";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Weight-sensitive>;
+  skos:description "A combat discipline that can be considered a martial art. It belongs to the fist and foot boxing (FBO) group, meaning that the fighter essentially uses leg techniques.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Kickboxing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Kite%20surfing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération Française de Vol Libre (FFVL) – www.ffvl.fr";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description """Kite or traction kite sports, combine a gliding device (a board) or a rolling device (such as a skateboard) with a traction wing. The mix of gliding, speed, and aerial movements allows for a wide variety of expressive styles: freestyle (jumps and aerial tricks), long distance, and pure speed.
+The wing, which first appeared on sand in the 2000s (kitewing), has seen rapid growth since 2018. Kite and wing can be practiced on different natural surfaces: On water: kitesurfing and wingfoiling, On snow: snowkiting (with skis or snowboard) or wingskiing, On land or sand: with a buggy (tricycle), a mountainboard, or a specific wing board.""";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Kite surfing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Lacrosse> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Cambridge dictionary";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Discipline played by two teams of 10 outdoor site in which the players each use a long stick with a net at the end to catch, carry, and throw a small ball, and try to get the ball in the other team's goal.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Lacrosse" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Lean%20non-aesthetic%20sports> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Lean non-aesthetic sports" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Lean%20sport> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  dcterms:source "Mancine et al. (2020)";
+  skos:altLabel "Leanness";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Leanness%20emphasis>;
+  skos:description "Sports in which achieving or maintaining a low body weight is emphasized because it is perceived to improve athletic performance";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Lean sport" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Leanness%20emphasis> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:altLabel "Leanness";
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/Lean%20sport>;
+  skos:prefLabel "Leanness emphasis" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Long%20distance%20speed%20skating> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "US Speed skating";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Long track speed skating is done on a 400m ice oval. Most long track is raced in a time-trial format, where two skaters will go head to head during a race. During the Mass Start event, a skater will go to the line with over 15 other skaters. Long track is also traditionally done on a clap-blade skate. This means that the blade partially separates from the skating boot to help keep the blade on the ice for longer, similar to cross country skis.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Long distance speed skating" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Long%20jump> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "The long jump is a track and field event that requires competitors to sprint along a runway until they reach a take-off board. From here, they jump as far as possible into a sandpit. The distance travelled, from the edge of the board to the closest indentation in the sand, is then measured and the winner is the athlete who jumps the farthest.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Long jump" .
+
+<http://ns.inria.fr/iadas/sport-vocab/MMA> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sports.gouv";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Weight-sensitive>;
+  skos:description "A combat sport that incorporates percussion techniques (professional foot, fist, knee and elbow), both standing and on the ground (ground and pound). There are also throwing and sweeping techniques, as well as submissions (joint locks, blood chokes).";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "MMA" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Marathon> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Athletics Federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Long-distance running event of 42.195 kilometres, recognized as one of the premier athletics disciplines. It is held exclusively on roads and has been part of the Olympic Games since 1896 for men, and since 1984 for women.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Marathon" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Martial%20arts> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dicodusport", "Fédération Française de judo", "IWUF – International Wushu Federation – www.iwuf.org",
+    "Larousse";
+  skos:altLabel "Tae-kwon-do";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Weight-sensitive>;
+  skos:description "A combat sport similar to American boxing, which allows elbow and knee strikes and is practised barefoot with gloves. Almost all blows are permitted; only blows to the head are prohibited. Among the techniques most commonly used are kicks to the neck, face and head, knee hooks to the ribs and kicks to the calves. In most matches, knee and elbow strikes win the decision. Boxers are divided into 16 weight categories. They compete in a 7.30 m2 ring surrounded by ropes held up by padded poles. A match follows a meticulous ritual. The match is preceded by the ram muay (the boxing dance), which is a tribute to the fighter's guru (khruu) and the guardian spirit of Thai boxing. ",
+    "A group of combat sports of Japanese (or more generally Asian) origin, such as judo, karate, aikido, kendo, taekwondo, viet vo dao, etc., based on a moral code (which was notably that of the samurai) and which combatants must respect.",
+    "A martial art of South Korean origin that differs from other arts in that it is highly specialised in kicking techniques. To avoid serious injury, martial artists wear a wide range of protective gear when fighting. It is the only Olympic combat sport that allows kicking. ",
+    "A martial art that is also a Japanese way of life, consisting of throwing techniques, ground control, chokes and joint locks.",
+    "Ancestral Japanese martial art, grouping together combat techniques developed by the samurai to defend themselves when they were unarmed. These techniques are sometimes classified into five main categories: atemi-waza: striking techniques; nage-waza: throwing techniques; ne-waza: ground techniques; kansetsu-waza: arthralgic techniques (injuring joints); shime-waza: strangulation techniques; Kuatsu: ‘return to life’ or ‘resuscitation’ technique; Kyusho: technique of the vital points of the human body.",
+    "Brazilian Jiu-Jitsu is a grappling martial art focused on ground fighting and submission techniques. It allows a smaller or weaker practitioner to control and defeat a larger opponent through technique, leverage, and positional strategy.",
+    "Japanese martial art, although its origins are Okinawan. Karate is a martial art whose techniques aim to defend oneself and then respond with an attack targeting different parts of the body: fingers, open and closed hands, forearms, feet, elbows and knees. The fighter responds by defending or anticipating, known as Sendosei, which allows the attack to be made before the opponent's attack is made, followed by an attack in response to the opponent.",
+    """Wushu is a modern, codified Chinese martial art that includes two main forms:
+Taolu: technical routines performed solo
+Sanda: free combat with strikes (kicks and punches)""";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Martial arts" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Motor> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:altLabel "Motor sports";
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/Motorcycling>;
+  skos:prefLabel "Motor" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Motorcycling> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération internationale de motocyclisme";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Motor>;
+  skos:description "Sporting activities involving the riding of motorcycles, encompassing disciplines such as circuit racing, motocross, trial, enduro, and track racing";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Motorcycling" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Multiple%20sports> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:altLabel "Multiple disciplines, Mixed sport, range of sports";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Unspecified%20sports>;
+  skos:description "Category referring to study populations comprising athletes from two or more distinct sports or sporting disciplines";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Multiple sports" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Muscular%20fitness> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source """Wilder et al. (2006)
+""";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "Muscular fitness refers to the combined status of muscular strength and muscular endurance. Muscular strength is the maximal force a specific muscle or muscle group can generate, while muscular endurance is the ability to perform repeated contractions over time until fatigue. Strength can be assessed dynamically or through isokinetic testing. Musculoskeletal flexibility, often evaluated alongside muscular fitness, focuses on joint-related structures and is commonly assessed using tests like the sit-and-reach.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Muscular fitness" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Netball> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dicodusport";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Discipline derived from basketball, primarily played by women, in which two teams of seven players compete on a rectangular court. Each team must pass the ball and attempt to score by throwing it into elevated hoops located at either end of the court. The match lasts sixty minutes. A player in possession of the ball may hold it for only three seconds before passing it to a teammate or attempting a shot. Players are assigned specific positions that define their roles within the team and restrict their movement on the court.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Netball" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Non%20lean%20sport> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:altLabel "Nonleanness";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Non lean sport" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Non-competitive%20sport> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Competition%20status>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Non-competitive sport" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Non-weight%20sensitive%20sport> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Non-weight sensitive sport" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Organization%20status> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  dcterms:source "Logan et al. (2019)";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Sport%20participation%20characteristics>;
+  skos:description "Organized sport is defined as physical activity that is directed by adult or youth leaders and involves rules and formal practice and competition. School and club sports are included in this definition";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Organization status" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Organized%20sport> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Organization%20status>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Organized sport" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Orienteering> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "International Orienteering Federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "Foot orienteering is an endurance sport which involves a huge mental element. There is no marked route – the orienteer must navigate with map and compass while running. The map gives detailed information on the terrain such as hills, ground surface, obstacles etc. To be successful in foot orienteering, the athlete needs excellent map reading skills, absolute concentration and the ability to make quick decisions on the best route while running at high speed. Orienteers run over rough ground, completely unprepared forest terrain or rough open hills – cross country in the true sense of the word. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Orienteering" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Ornamental%20jumping> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sports.gouv";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description "Show jumping consists of a rider and his horse completing a series of obstacles in the allotted time, without knocking over any bars. The type of obstacle, the angles and the turns are varied, and it's up to the rider to adapt by modifying the speed, amplitude, impulsion and trajectory of his horse to make the course a success.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Ornamental jumping" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Other> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:altLabel "Other sport, divers";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Unspecified%20sports>;
+  skos:description "Residual category encompassing sports or sporting disciplines that cannot be classified within any of the predefined sport categories";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Other" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Participation%20format> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  dcterms:source "Collins English Dictionary", "Office Québécois de la langue Française";
+  skos:altLabel "Team sports";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Sport%20participation%20characteristics>;
+  skos:description "A sport in which individuals perform on an individual basis", "A sport in which teams play against each other";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Participation format" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Pilates> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dictionnaire Larousse";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description "Gentle gymnastics combining deep breathing and slow movements, aimed at strengthening postural muscles to develop the body in a harmonious way.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Pilates" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Pole%20vault> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "The pole vault is a track and field event in which an athlete vaults over a 4.5-metre long horizontal bar. The vaulter sprints down a runway, plants a long, flexible pole (usually made of carbon fibre or fibreglass) against a ‘stop board’ at the back of a recessed metal box sited centrally at the base of the uprights. They then launch themselves into the air, seeking to clear the greatest height without knocking the bar to the ground.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Pole vault" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Power> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:altLabel "Gymgoer weights", "Olympic weightlifting", "Resistance and fitness",
+    "Track sprints", "Track throws", "gymgoer HIIT", "power sport", "strength-based ";
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/100%20meters>, <http://ns.inria.fr/iadas/sport-vocab/200%20meters>,
+    <http://ns.inria.fr/iadas/sport-vocab/Anaerobic%20exercise>, <http://ns.inria.fr/iadas/sport-vocab/Cross%20training>,
+    <http://ns.inria.fr/iadas/sport-vocab/Javelin%20throw>, <http://ns.inria.fr/iadas/sport-vocab/Muscular%20fitness>,
+    <http://ns.inria.fr/iadas/sport-vocab/Powerlifting>, <http://ns.inria.fr/iadas/sport-vocab/Resistance%20fitness>,
+    <http://ns.inria.fr/iadas/sport-vocab/Speed%20skating>, <http://ns.inria.fr/iadas/sport-vocab/Sprint>,
+    <http://ns.inria.fr/iadas/sport-vocab/Strenght%20training>, <http://ns.inria.fr/iadas/sport-vocab/Throwing>,
+    <http://ns.inria.fr/iadas/sport-vocab/Weight%20training>, <http://ns.inria.fr/iadas/sport-vocab/Weightlifting>;
+  skos:prefLabel "Power" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Power%2Ftechnical> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Sport-type%20grouping>;
+  skos:description "Sport category encompassing sports in which performance primarily relies on the production of muscular power and/or the execution of sport-specific technical skills";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Power/technical" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Powerlifting> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération Française de Force";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "A strength sport with categories based on age, body weight, and gender, recognized at a high-performance level. It consists of three lifts: the Squat, the Bench Press, and the Deadlift. In competition, athletes aim to lift the maximum weight possible in each lift. They are allowed three attempts per movement, and the best successful attempt in each is used to calculate a 'Total.' The highest Total determines the winner in each category";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Powerlifting" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Race%20walking> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Dictionary / National Race Walking Commission";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Athletics discipline in which participants must walk while keeping one foot in contact with the ground at all times, never running, and with the supporting leg straight from the moment it touches the ground until it passes under the body.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Race walking" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Rehabilitation%20practices> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  dcterms:source "OMS ";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Rehabilitation-oriented%20practices>;
+  skos:description "The WHO defines rehabilitation as a set of interventions aimed at optimizing functioning and reducing disability in people with health conditions. It specifically cites physical exercises designed to improve strength, movement, and balance";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Rehabilitation practices" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Rehabilitation-oriented%20practices> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/Rehabilitation%20practices>;
+  skos:prefLabel "Rehabilitation-oriented practices" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Resistance%20fitness> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Faigenbaum and Myer (2010)";
+  skos:altLabel "Resistance and fitness";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "Resistance fitness refers to specialized physical conditioning methods that apply a variety of resistance loads, different movement speeds, and various training methods, including weight machines, free weights (barbells and dumbbells), elastic bands, medicine balls, and plyometrics.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Resistance fitness" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Rock%20climbing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Cambridge dictionary";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Antigravitation>;
+  skos:description "The sport of climbing on rocks or in mountains, or on specially designed walls inside or outdoors.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Rock climbing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Roller-skate%20figure%20skating> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Figure%20skating>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Roller-skate figure skating" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Rowing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dicodusport", "International Olympic Committee";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "A speed and glide sport practiced in long, streamlined boats made of carbon fiber, wood, or composite materials. The unique feature of this discipline lies in the rower's position: facing away from the direction of travel, seated above the water level on a sliding seat called a 'slide', and propelling the boat using oars. Depending on the type of boat, the rower uses either a single sweep oar (measuring between 3.5 to 4 meters) held with both hands, or two sculling oars (about 3 meters each), one in each hand.",
+    "Category of athletes who compete with no weight restriction, as opposed to lightweight. This specialty includes rowers whose body mass may be high, enabling them to develop maximum power during races. Heavyweight competitions include various boat classes such as the single scull, coxless pair, coxless four, or eight.",
+    "Olympic rowing category introduced at the Atlanta Games in 1996. This specialty is distinguished by precise weight restrictions: for women, each athlete must not exceed 59 kg, and the crew’s average weight cannot exceed 57 kg. For men, the individual limit is set at 72.5 kg, with a crew average maximum of 70 kg. These constraints ensure balanced competition among lighter rowers while maintaining the high physical, technical, and strategic demands of high-level rowing.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Rowing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Rowing%20heavyweight> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Rowing>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Rowing heavyweight" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Rowing%20lightweight> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Rowing>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Rowing lightweight" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Rugby> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dictionnaire le Robert";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Discipline in which two teams of fifteen players compete, aiming to either ground an oval-shaped ball behind the opponent’s goal line (➙ try), or to kick it between the goalposts.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Rugby" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Running> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Cambridge dictionary", "Dictionnaire le Robert", "Larousse Dictionary / French Athletics Federation";
+  skos:altLabel "Distance running", "Long distance";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Middle-distance running (between 800 and 3,000 metres)", """Refers to all endurance running events over significant distances, generally beyond 5000 metres, whether on track, road, or natural
+terrain. """,
+    "The sport of moving on your feet at a speed faster than walking";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Running" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Running%20long%20distance> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Running>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Running long distance" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Running%20middle%20distance> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Running>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Running middle distance" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Rythmic%20gymnastics> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Gymnastics>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Rythmic gymnastics" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Sailing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dicodusport";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "The sport of sailing on water using different types of craft, from a simple float, as in windsurfing, to a real boat powered by the wind. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Sailing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Shooting> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "ISSF – International Shooting Sport Federation – www.issf-sports.org";
+  skos:altLabel "Sport shooting";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description """Sport shooting is a precision sport where participants aim at targets with firearms (rifle, pistol, shotgun).
+There are various disciplines: shooting at 10 m, 25 m, 50 m, or in Olympic trap (skeet, trap).""";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Shooting" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Skateboarding> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Olympics.com";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "The discipline of riding and performing tricks on a skateboard. Skateboarders stand on this flat wooden board, made up of a tail, a concave and a nose, on which their combined momentum and footwork enable them to perform tricks.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Skateboarding" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Skating> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération Française des Sports de Glace (FFSG) – www.ffsg.org";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description """Skating is an ice sport that includes several disciplines:
+Figure skating is a sport that combines acrobatics with precision movements. It can be performed individually or as a pair. The technical elements – such as jumps and spins – are very recognizable and punctuate the choreography.
+Pair skating differs from ice dance by including many overhead lifts, the famous \"death spiral,\" and throw jumps.
+Synchronized figure skating is a spectacular team sport judged and appreciated by audiences, where 12 to 16 skaters move in perfect harmony on the ice, with a mostly female audience.""";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Skating" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Ski%20jumping> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Cambridge dictionary";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Antigravitation>;
+  skos:description "A sport in which a person on skis moves very fast down a specially made steep slope that turns up at the end, and jumps off from the bottom of it, landing on a lower level";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Ski jumping" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Snowboarding> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération internationale de ski";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description """Snowboarding involves descending a slope while on a snowboard attached to a rider's feet.
+
+Alpine Snowboarding is a head-to-head competition that features riders going down an alpine-style course alternating between gates. It features a knock-out format with several rounds before a winner is determined.
+
+Snowboard Cross has a mass start of six racers designed to test the skiers’ skills in turns of a variety of types and sizes, flat sections and traverses, as well as rolls, banks and ridges. The fastest skier wins.""";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Snowboarding" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Soccer> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Cambridge dictionary";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Canadian discipline to designate football. Opposed two teams of eleven people, where each team tries to win by kicking a ball into the other team's goal.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Soccer" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Softball> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Baseball and Softball Federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description """Team sport played with a larger, softer ball than baseball, thrown underhand from a mound on a smaller, more compact field than baseball. It pits two teams composed of 9 players in defense and up to 10 in offense. National disciplines include women’s, men’s,
+and mixed softball, organized in leagues such as Division 1 or 2, the Super League, and the France Challenges.""";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Softball" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Speed%20skating> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sports.gouv";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "A discipline practiced on a 400m ice rink. Races are held between two skaters, each in a lane. Each lap, on the straight, the skaters switch lanes to cover the same distance.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Speed skating" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Sport%20participation%20characteristics> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:altLabel "Team sports";
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/Competition%20status>, <http://ns.inria.fr/iadas/sport-vocab/Organization%20status>,
+    <http://ns.inria.fr/iadas/sport-vocab/Participation%20format>;
+  skos:prefLabel "Sport participation characteristics" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Sport-type%20grouping> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/Ball%20and%20team>, <http://ns.inria.fr/iadas/sport-vocab/Power%2Ftechnical>;
+  skos:prefLabel "Sport-type grouping" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Sprint> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "World athletics federation";
+  skos:altLabel "Track sprints";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "Sprint is an athletics event consisting of a race at maximum speed over a short distance, typically 100 meters, where athletes use all their speed, agility, and strength to reach the finish line as quickly as possible.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Sprint" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Squash> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Squash Federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Racket sport played by two players in an enclosed court. With their rackets, players alternately hit a ball against the front wall, following precise rules. Each rally begins with a serve. A point is scored on every rally, and the first player to reach 11 points (with a 2-point margin) wins the game. A match is played in 3 or 5 games. The ball, racket, and court must comply with World Squash Federation standards. The game is supervised by a referee and a marker, responsible for the score and game decisions.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Squash" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Strenght%20training> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "OMS 2021";
+  skos:altLabel "strength-based ";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "Strength training (or weight training) consists of physical activities aimed at increasing muscle strength, power, endurance, and muscle mass through exercises such as weightlifting, pull-ups, or push-ups.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Strenght training" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Surf> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Larousse";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Antigravitation>;
+  skos:description "The sport of balancing on a board carried by a breaking wave.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Surf" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Surf%20lifesaving> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source """Fédération Française de Sauvetage et de Secourisme (FFSS) – www.ffss.fr
+""";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "Lifesaving sport at sea is a discipline that simulates real rescue situations. It combines pool and ocean events (finswimming, mannequin towing, rescue board, surf ski, etc.). This sport requires lifeguard swimming skills and is often practiced by members of lifesaving clubs affiliated with the FFSS.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Surf lifesaving" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Swimming> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Swimming Federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Sport encompasses all aquatic activities practiced in pools or open water: competitive swimming, artistic swimming, water polo, diving, or open-water swimming. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Swimming" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Table%20tennis> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Table Tennis Federation";
+  skos:altLabel "Ping pong";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Racket sport played by 2 or 4 players on a table separated by a net. Players exchange a lightweight ball using wooden rackets covered with rubber. The objective is to score points by making the ball bounce on the opponent’s side in such a way that the opponent cannot return it correctly. A match is played to 3 or 4 winning games of 11 points (with a 2-point margin). ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Table tennis" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Taekwondo> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Martial%20arts>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Taekwondo" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Team> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Participation%20format>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Team" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Team%20vaulters> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération Equestre Internationale";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Technical>;
+  skos:description "Refers to gymnastics on a horse: the vaulter performs acrobatics on the back of a galloping horse";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Team vaulters" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Technical> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:altLabel "Riding ", "Sport shooting", "skiing";
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/100m%20hurdles>, <http://ns.inria.fr/iadas/sport-vocab/400m%20hurdles>,
+    <http://ns.inria.fr/iadas/sport-vocab/Acrobatic%20skiing>, <http://ns.inria.fr/iadas/sport-vocab/Alpine%20skiing>,
+    <http://ns.inria.fr/iadas/sport-vocab/Archery>, <http://ns.inria.fr/iadas/sport-vocab/Biathlon>,
+    <http://ns.inria.fr/iadas/sport-vocab/Crew>, <http://ns.inria.fr/iadas/sport-vocab/Cross-country%20skiing>,
+    <http://ns.inria.fr/iadas/sport-vocab/Equestrian>, <http://ns.inria.fr/iadas/sport-vocab/Fencing>,
+    <http://ns.inria.fr/iadas/sport-vocab/Freestyle%20skiing>, <http://ns.inria.fr/iadas/sport-vocab/Golf>,
+    <http://ns.inria.fr/iadas/sport-vocab/High%20jump>, <http://ns.inria.fr/iadas/sport-vocab/Hula%20hooping>,
+    <http://ns.inria.fr/iadas/sport-vocab/Jumping>, <http://ns.inria.fr/iadas/sport-vocab/Kite%20surfing>,
+    <http://ns.inria.fr/iadas/sport-vocab/Long%20jump>, <http://ns.inria.fr/iadas/sport-vocab/Orienteering>,
+    <http://ns.inria.fr/iadas/sport-vocab/Pole%20vault>, <http://ns.inria.fr/iadas/sport-vocab/Sailing>,
+    <http://ns.inria.fr/iadas/sport-vocab/Shooting>, <http://ns.inria.fr/iadas/sport-vocab/Skateboarding>,
+    <http://ns.inria.fr/iadas/sport-vocab/Skating>, <http://ns.inria.fr/iadas/sport-vocab/Snowboarding>,
+    <http://ns.inria.fr/iadas/sport-vocab/Surf%20lifesaving>, <http://ns.inria.fr/iadas/sport-vocab/Team%20vaulters>;
+  skos:prefLabel "Technical" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Tennis> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Tennis Federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Racket sport played in singles (1 vs 1) or doubles (2 vs 2), on a rectangular court divided by a net. The objective is to exchange the ball by hitting it before the second bounce to score points. A match is played in sets (2 or 3 winning sets depending on the competition).";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Tennis" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Thai%20boxing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Martial%20arts>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Thai boxing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Throwing> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dictionnaire de l'académie Française";
+  skos:altLabel "Track throws";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "An event in which athletes throw the discus, javelin, hammer, or shot put as far as possible.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Throwing" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Track%20and%20field%2FAthletics> a iadas:Sport,
+    skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  dcterms:source "French Athletics Federation";
+  skos:altLabel "Track";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Combined>;
+  skos:description "Sport encompassing several disciplines: running, jumping, throwing, combined events, race walking, cross-country, trail, and mountain running. It is practiced in stadiums or outside, both recreationally and competitively. The goal is individual or team performance in codified events. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Track and field/Athletics" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Trampoline%20gymnastics> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Gymnastics>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Trampoline gymnastics" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Triathlon> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération Française de Triathlon";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Triathlon consists of a sequence of three sporting activities: swimming, cycling and running. The sequence is completed without external assistance and without stopping the stopwatch when changing disciplines (transition). Olympic Distance, Long Distance, Sprint Distance and Mixed Relay triathlons are recognized as high-level disciplines. Women's and men's individual events are run over Distance M (Olympic Distance), i.e. 1.5 km swimming, 40 km cycling and 10 km running.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Triathlon" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Ultimate%20frisbee> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Sports.gouv";
+  skos:altLabel "Frisbee";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Discipline played with two teams of seven players each and a disc (Frisbee). The players pass the disc back and forth across the field to land it in the opponent's goal. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Ultimate frisbee" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Ultramarathon> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Athletics Federation / World Athletics / Larousse dictionary";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Endurance>;
+  skos:description "Refers to any running event longer than the marathon distance (42.195 km). These races fall into two main categories: fixed-distance events (50 km, 100 km, 160 km –100 miles, etc.) and time-based events (6 hours, 12 hours, 24 hours or several days), where runners seek to cover the greatest distance possible within the allotted time. Ultra races take place across various environments: roads, tracks, or natural trails (trail).";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Ultramarathon" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Unspecified%20sports> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  skos:altLabel "Multiple disciplines, Mixed sport, range of sports", "Other sport, divers";
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/Multiple%20sports>, <http://ns.inria.fr/iadas/sport-vocab/Other>;
+  skos:prefLabel "Unspecified sports" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Urban%20dance> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Dance>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Urban dance" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Volleyball> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "French Volleyball Federation";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description """Spors played between two teams of 6 players on a court measuring 18 by 9 meters, separated by a net. The ball is touched a maximum of three times before being sent into the opponent's court. The objective is to make the ball land in the opponent's court. The match
+is played to 3 winning sets, each set up to 25 points.""";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Volleyball" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Water%20polo> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dicodusport";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Team sport played in an aquatic environment, in a swimming pool. Two teams of seven players play against each other, with the aim of scoring more goals than their opponents in four eight-minute periods.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Water polo" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Weight%20class> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Maurin et al. (2024)";
+  skos:altLabel "weight-class, weight-class sport, weight category, weight-dependent sports";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Weight-sensitive>;
+  skos:description "Sports where athletes are divided by weight category with specific weight rules to face an opponent with a similar physique to theirs. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Weight class" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Weight%20training> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Cambridge dictionary";
+  skos:altLabel "Gymgoer weights";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "The activity of lifting heavy objects for exercise, especially to improve the strength of muscles and the appearance of the body.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Weight training" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Weight-sensitive> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:altLabel "Tae-kwon-do", "Weight sensitive sport, Weight-sensitive sports, weight sensitive",
+    "weight-class, weight-class sport, weight category, weight-dependent sports";
+  skos:inScheme iadascategory:Sport;
+  skos:narrower <http://ns.inria.fr/iadas/sport-vocab/Boxing>, <http://ns.inria.fr/iadas/sport-vocab/Kickboxing>,
+    <http://ns.inria.fr/iadas/sport-vocab/MMA>, <http://ns.inria.fr/iadas/sport-vocab/Martial%20arts>,
+    <http://ns.inria.fr/iadas/sport-vocab/Weight%20class>, <http://ns.inria.fr/iadas/sport-vocab/Wrestling>;
+  skos:prefLabel "Weight-sensitive" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Weightlifting> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Fédération Française d'haltérophilie";
+  skos:altLabel "Olympic weightlifting";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Power>;
+  skos:description "Weightlifting is an exercise that requires strength, flexibility, and explosiveness. This sport is divided into two movements: the snatch, and the clean and jerk.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Weightlifting" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Wheelchair%20basketball> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Paralympic.org";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Ball%20game>;
+  skos:description "Discipline adaptation of the able-bodied basketball version in wheelchair. The object of the game is to score the most points in the opposing team’s basket. The team with the most points by the time the clock expires wins. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Wheelchair basketball" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Winter%20sports> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Other%20kind%20of%20sport%20categorisation;
+  dcterms:source "Cambridge dictionary";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Combined>;
+  skos:description "Sports that are done on snow or ice";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Winter sports" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Wrestling> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dicodusport";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Weight-sensitive>;
+  skos:description "Combat sport practised with bare hands in which opponents compete hand-to-hand. There are many varieties, but the three main ones are freestyle wrestling (LL), Greco-Roman wrestling (GR) and women's wrestling (LF). The aim is to win the match either by knocking your opponent to the ground, keeping both shoulders pressed against the mat, known as a ‘fall’, or by winning on points. ";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Wrestling" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Wushu> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Martial%20arts>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Wushu" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Yoga> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  dcterms:source "Dictionnaire Larousse", "Fédération yoga";
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Aesthetic>;
+  skos:description "Dynamic and demanding form of yoga that synchronizes breathing with a progressive series of postures. Ashtanga Is organised around six series of progressively demanding postures. These series are designed not only to strengthen the body but also to increase flexibility. Mysore practice, the hallmark of this discipline, emphasises students' independence while following a traditional pattern of movement.",
+    "Spiritual and physical discipline derived from this method, aimed at freeing the mind from the body's constraints through the mastery of movement, rhythm, and breath.";
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Yoga" .
+
+<http://ns.inria.fr/iadas/sport-vocab/Yoga%20ashtanga> a iadas:Sport, skos:Concept;
+  iadas:sportCategory iadascategory:Categories%20defined%20by%20type%20of%20sport;
+  skos:broader <http://ns.inria.fr/iadas/sport-vocab/Yoga>;
+  skos:inScheme iadascategory:Sport;
+  skos:prefLabel "Yoga ashtanga" .

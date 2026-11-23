@@ -1,0 +1,121 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://ns.inria.fr/iadas/ACAD-vocab/#CategoryConceptSheme> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "csv/variables.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant "Équipe de recherche IA-DAS" ;
+                    rr:language "en" ] ;
+            rr:predicate dcterms:creator ],
+        [ rr:objectMap [ rr:constant "2025-11-25" ;
+                    rr:language "en" ] ;
+            rr:predicate dcterms:created ],
+        [ rr:objectMap [ rr:constant "1.0" ;
+                    rr:language "en" ] ;
+            rr:predicate dcterms:version ],
+        [ rr:objectMap [ rr:constant "IA-DAS - Thésaurus des Variables" ;
+                    rr:language "fr" ] ;
+            rr:predicate dcterms:title ],
+        [ rr:objectMap [ rr:constant "IA-DAS - Variables thesaurus" ;
+                    rr:language "en" ] ;
+            rr:predicate dcterms:title ],
+        [ rr:objectMap [ rr:constant "Thésaurus pour décrire les variables ACAD citées dans les articles" ;
+                    rr:language "fr" ] ;
+            rr:predicate dcterms:description ],
+        [ rr:objectMap [ rr:constant "Tesaurus descriping ACAD variables cited on scientific papers" ;
+                    rr:language "en" ] ;
+            rr:predicate dcterms:description ] ;
+    rr:subjectMap [ rr:class skos:ConceptScheme ;
+            rr:constant <http://ns.inria.fr/iadas/ACAD-vocab/Variable> ] .
+
+<http://ns.inria.fr/iadas/ACAD-vocab/#VariableClass> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "csv/variables.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant <http://ns.inria.fr/iadas/ACAD-vocab/Variable> ] ;
+            rr:predicate skos:inScheme ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 1}" ] ;
+            rr:predicate skos:narrower ],
+        [ rr:objectMap [ rml:reference "CLASS" ] ;
+            rr:predicate skos:prefLabel ] ;
+    rr:subjectMap [ rr:class skos:Concept ;
+            rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{CLASS}" ] .
+
+<http://ns.inria.fr/iadas/ACAD-vocab/#VariableSubClass1> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "csv/variables.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant <http://ns.inria.fr/iadas/ACAD-vocab/Variable> ] ;
+            rr:predicate skos:inScheme ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{CLASS}" ] ;
+            rr:predicate skos:broader ],
+        [ rr:objectMap [ rml:reference "sub-class 1" ] ;
+            rr:predicate skos:prefLabel ],
+        [ rr:objectMap [ rml:reference "Synonym_level1" ] ;
+            rr:predicate skos:altLabel ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 2}" ] ;
+            rr:predicate skos:narrower ] ;
+    rr:subjectMap [ rr:class skos:Concept ;
+            rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 1}" ] .
+
+<http://ns.inria.fr/iadas/ACAD-vocab/#VariableSubClass2> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "csv/variables.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant <http://ns.inria.fr/iadas/ACAD-vocab/Variable> ] ;
+            rr:predicate skos:inScheme ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 1}" ] ;
+            rr:predicate skos:broader ],
+        [ rr:objectMap [ rml:reference "sub-class 2" ] ;
+            rr:predicate skos:prefLabel ],
+        [ rr:objectMap [ rml:reference "Synonym_level2" ] ;
+            rr:predicate skos:altLabel ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 3}" ] ;
+            rr:predicate skos:narrower ] ;
+    rr:subjectMap [ rr:class skos:Concept ;
+            rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 2}" ] .
+
+<http://ns.inria.fr/iadas/ACAD-vocab/#VariableSubClass3> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "csv/variables.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant <http://ns.inria.fr/iadas/ACAD-vocab/Variable> ] ;
+            rr:predicate skos:inScheme ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 2}" ] ;
+            rr:predicate skos:broader ],
+        [ rr:objectMap [ rml:reference "sub-class 3" ] ;
+            rr:predicate skos:prefLabel ],
+        [ rr:objectMap [ rml:reference "Synonym_level3" ] ;
+            rr:predicate skos:altLabel ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 4}" ] ;
+            rr:predicate skos:narrower ] ;
+    rr:subjectMap [ rr:class skos:Concept ;
+            rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 3}" ] .
+
+<http://ns.inria.fr/iadas/ACAD-vocab/#VariableSubClass4> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "csv/variables.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant <http://ns.inria.fr/iadas/ACAD-vocab/Variable> ] ;
+            rr:predicate skos:inScheme ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 3}" ] ;
+            rr:predicate skos:broader ],
+        [ rr:objectMap [ rml:reference "sub-class 4" ] ;
+            rr:predicate skos:prefLabel ],
+        [ rr:objectMap [ rml:reference "Synonym_level4" ] ;
+            rr:predicate skos:altLabel ] ;
+    rr:subjectMap [ rr:class skos:Concept ;
+            rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 4}" ] .
+
+<http://ns.inria.fr/iadas/ACAD-vocab/#VariableSubClass5> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "csv/variables.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant <http://ns.inria.fr/iadas/ACAD-vocab/Variable> ] ;
+            rr:predicate skos:inScheme ],
+        [ rr:objectMap [ rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 4}" ] ;
+            rr:predicate skos:broader ],
+        [ rr:objectMap [ rml:reference "sub-class 5" ] ;
+            rr:predicate skos:prefLabel ],
+        [ rr:objectMap [ rml:reference "Synonym_level5" ] ;
+            rr:predicate skos:altLabel ] ;
+    rr:subjectMap [ rr:class skos:Concept ;
+            rr:template "http://ns.inria.fr/iadas/ACAD-vocab/{sub-class 5}" ] .
+
