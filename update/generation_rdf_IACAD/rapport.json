@@ -1,0 +1,30 @@
+{
+  "sport": {
+    "source": "C:\\Users\\Fatima Zahra AMARA\\IACAD 28102026\\IADAS\\update\\csv_iadas\\Sport_Hierarchy.csv",
+    "lignes": 185,
+    "proprietes_non_disponibles": [],
+    "triplets": 1623
+  },
+  "variables": {
+    "source": "C:\\Users\\Fatima Zahra AMARA\\IACAD 28102026\\IADAS\\update\\csv_iadas\\Class_Hierarchy.csv",
+    "lignes": 632,
+    "proprietes_non_disponibles": [],
+    "triplets": 3245
+  },
+  "analyses": {
+    "source": "C:\\Users\\Fatima Zahra AMARA\\IACAD 28102026\\IADAS\\update\\csv_iadas_normalized\\IA-DAS-Data-simple-par-sport.csv",
+    "lignes": 12057,
+    "proprietes_non_disponibles": [
+      "Degre_RS",
+      "Degre_beta",
+      "Degre_p ",
+      "Degre_r",
+      "Resultat_de_relation",
+      "Signe_p",
+      "effectSize"
+    ],
+    "analyses_distinctes_attendues": 1975,
+    "triplets": 142222,
+    "analyses_rdf": 1975
+  }
+}
