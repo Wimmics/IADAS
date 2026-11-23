@@ -57,7 +57,11 @@
     rr:predicateObjectMap [ 
         rr:predicate iadas:hasAnalysis ; 
         rr:objectMap [ rr:template "http://ns.inria.fr/iadas/data/Analysis_{Analysis_ID}" ] 
-    ] .
+    ] ;
+    rr:predicateObjectMap [
+    rr:predicate iadas:articleId ;
+    rr:objectMap [ rml:reference "Article ID" ]
+] .
 
 
 <#AnalysisMap> a rr:TriplesMap ;
@@ -135,7 +139,12 @@
     rr:predicateObjectMap [
         rr:predicate iadas:groupStatisticalAnalysis ;
         rr:objectMap [ rml:reference "Group of statistical analysis" ]
-    ] .
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:sportSubcategory ;
+        rr:objectMap [
+        rml:reference "Subcategory of sport"]
+] .
 
 
 
@@ -286,7 +295,15 @@
     rr:predicateObjectMap [
         rr:predicate iadas:specification ;
         rr:objectMap [ rml:reference "Specifications of related factor" ]
-    ] .
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate iadas:sourceFactorCategory ;
+        rr:objectMap [rml:reference "Related_Factor_CLASS"]
+];
+rr:predicateObjectMap [
+    rr:predicate iadas:sourceFactorSubClass1 ;
+    rr:objectMap [ rml:reference "Related_Factor_sub-class 1" ]
+] .
 # 
 # 
 
