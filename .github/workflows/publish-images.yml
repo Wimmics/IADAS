@@ -1,0 +1,69 @@
+﻿name: Images IADAS
+
+on:
+  workflow_dispatch:
+    inputs:
+      publier:
+        description: "Publier les images sur GHCR"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  images:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - image: iadas-frontend
+            context: services/files
+          - image: iadas-gateway
+            context: services/gateway
+          - image: iadas-sparql-generator
+            context: services/SPARQL-Generator
+          - image: iadas-database-service
+            context: services/database-service
+          - image: iadas-fuseki-init
+            context: services/fuseki-service
+
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Preparer le nom et la version
+        id: image
+        shell: bash
+        env:
+          OWNER: ${{ github.repository_owner }}
+          IMAGE: ${{ matrix.image }}
+        run: |
+          echo "tag=ghcr.io/${OWNER,,}/${IMAGE}:sha-${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
+
+      - name: Configurer Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Connexion a GHCR
+        if: ${{ inputs.publier }}
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Construire les images
+        uses: docker/build-push-action@v7
+        with:
+          context: ${{ matrix.context }}
+          platforms: linux/amd64
+          push: ${{ inputs.publier }}
+          tags: ${{ steps.image.outputs.tag }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}

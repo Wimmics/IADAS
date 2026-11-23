@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: imanemed/iadas-frontend:latest
+    image: ghcr.io/ia-cad/iadas-frontend:${IADAS_VERSION:?Definir IADAS_VERSION}
     container_name: frontend
     ports:
       - "8002:8002"
@@ -9,7 +9,7 @@ services:
       - webnet
 
   sparql-generator:
-    image: imanemed/iadas-sparql-generator:latest
+    image: ghcr.io/ia-cad/iadas-sparql-generator:${IADAS_VERSION:?Definir IADAS_VERSION}
     container_name: sparql-generator
     ports:
       - "8003:8003"
@@ -21,10 +21,13 @@ services:
       - webnet
 
   gateway:
-    image: imanemed/iadas-gateway:latest
+    image: ghcr.io/ia-cad/iadas-gateway:${IADAS_VERSION:?Definir IADAS_VERSION}
     container_name: gateway
     ports:
       - "8000:8000"
+    environment:
+      JWT_SECRET: "${JWT_SECRET:?Definir JWT_SECRET}"
+      ADMIN_PASSWORD_HASH: "${ADMIN_PASSWORD_HASH:?Definir ADMIN_PASSWORD_HASH}"
     restart: unless-stopped
     depends_on:
       - frontend
@@ -40,7 +43,7 @@ services:
       - FUSEKI_DATASET=ds
       - ADMIN_PASSWORD=admin
     healthcheck:
-      test: ["CMD-SHELL", "wget -q -O- http://localhost:3030/$/ping || exit 1"]
+      test: ["CMD-SHELL", "wget -q -O- http://localhost:3030/$$/ping || exit 1"]
       interval: 5s
       timeout: 3s
       retries: 15
@@ -49,7 +52,7 @@ services:
       - webnet
 
   fuseki-init:
-    image: imanemed/iadas-fuseki-init:latest
+    image: ghcr.io/ia-cad/iadas-fuseki-init:${IADAS_VERSION:?Definir IADAS_VERSION}
     container_name: fuseki-init
     depends_on:
       fuseki:
@@ -59,10 +62,12 @@ services:
       - webnet
 
   database-service:
-    image: imanemed/iadas-database-service:latest
+    image: ghcr.io/ia-cad/iadas-database-service:${IADAS_VERSION:?Definir IADAS_VERSION}
     container_name: database-service
     ports:
       - "8005:8005"
+    environment:
+      JWT_SECRET: "${JWT_SECRET:?Definir JWT_SECRET}"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:

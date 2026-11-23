@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function fetchCurrentFusekiCounts() {
         try {
-            const res = await fetch(`${serverURL}/api/fuseki-counts`);
+            const res = await fetch('api/fuseki-counts');
             if (!res.ok) return null;
             return await res.json();
         } catch (e) {
@@ -378,10 +378,13 @@ document.addEventListener('DOMContentLoaded', function() {
             logToConsole('Upload des fichiers CSV vers le serveur...');
             updateProgress(10, 'Upload des fichiers...');
 
-            const response = await fetch(`${serverURL}/rebuild-ontology`, {
-                method: 'POST',
-                body: formData
-            });
+            const response = await fetch('rebuild-ontology', {
+    method: 'POST',
+    headers: {
+        Authorization: `Bearer ${sessionStorage.getItem('adminToken') || ''}`
+    },
+    body: formData
+});
 
             if (!response.ok) throw new Error(`Erreur serveur: ${response.status} ${response.statusText}`);
 
@@ -432,7 +435,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 history.unshift({ date: now, analyses: lastValidatedCount });
                 localStorage.setItem('updateHistory', JSON.stringify(history.slice(0, 20)));
                 // Rafraîchir le cache qualité après rebuild
-                fetch(`${serverURL}/api/quality-check`).then(r => r.json()).then(data => {
+               fetch('api/quality-check').then(r => r.json()).then(data => {
                     if (!data.error) {
                         localStorage.setItem('qualitySummary', JSON.stringify({
                             doublons: data.doublons || 0,
