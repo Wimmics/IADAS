@@ -4,6 +4,13 @@ const fs = require('fs');
 const path = require('path');
 const { spawn, exec } = require('child_process');
 
+const jwt = require('jsonwebtoken');
+const JWT_SECRET = process.env.JWT_SECRET;
+
+if (!JWT_SECRET || !JWT_SECRET.trim()) {
+    throw new Error('La variable JWT_SECRET doit être définie');
+}
+
 const PORT = 8005;
 
 console.log(`🗄️ Database Service démarrant sur le port ${PORT}`);
@@ -12,7 +19,7 @@ http.createServer(async (req, res) => {
   // Headers CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
   if (req.method === 'OPTIONS') {
     res.writeHead(200);
@@ -21,6 +28,29 @@ http.createServer(async (req, res) => {
   }
 
   if (req.url === '/rebuild-ontology' && req.method === 'POST') {
+const authHeader = req.headers.authorization || '';
+
+if (!authHeader.startsWith('Bearer ')) {
+    res.writeHead(401, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: 'Connexion admin requise' }));
+    return;
+}
+
+try {
+    const payload = jwt.verify(authHeader.slice(7), JWT_SECRET, {
+        algorithms: ['HS256']
+    });
+
+    if (!payload || payload.role !== 'admin') {
+        res.writeHead(403, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Accès administrateur requis' }));
+        return;
+    }
+} catch (error) {
+    res.writeHead(401, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: 'Session invalide ou expirée' }));
+    return;
+}
     const startTime = Date.now();
     console.log('\n=== RECONSTRUCTION ONTOLOGIE DATASET DS ===');
     
@@ -228,7 +258,7 @@ http.createServer(async (req, res) => {
 
     res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
 
-    const py = spawn('python', [statsScript], {
+    const py = spawn('python3', [statsScript], {
       cwd: pipelineDir,
       env: { ...process.env, FUSEKI_URL: 'http://fuseki:3030/ds/sparql' }
     });

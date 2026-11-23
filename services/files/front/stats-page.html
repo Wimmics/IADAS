@@ -287,7 +287,7 @@ function loadStats() {
   const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
   const base = window.API_BASE_URL || (isLocal ? `http://${window.location.hostname}:8005` : ''); // passerelle en production
 
-  fetch(`${base}/stats`)
+  fetch('stats')
     .then(r => r.json())
     .then(data => {
       spinner.classList.remove('active');

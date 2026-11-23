@@ -5,8 +5,16 @@ const crypto = require('crypto');
 
 const proxy = httpProxy.createProxyServer();
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
-const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'; // 'password' hashe
+const JWT_SECRET = process.env.JWT_SECRET;
+const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH;
+
+if (!JWT_SECRET || !JWT_SECRET.trim()) {
+    throw new Error('La variable JWT_SECRET doit être définie');
+}
+
+if (!ADMIN_PASSWORD_HASH || !/^[a-f0-9]{64}$/i.test(ADMIN_PASSWORD_HASH)) {
+    throw new Error('ADMIN_PASSWORD_HASH doit être une empreinte SHA-256 valide');
+}
 
 http.createServer(function (request, response) {
 
@@ -22,7 +30,16 @@ http.createServer(function (request, response) {
     }
 
     // Ensuite seulement on analyse l'URL (ignorer les paramètres GET)
-    let urlWithoutParams = request.url.split("?")[0];
+    const queryIndex = request.url.indexOf('?');
+const originalPath = queryIndex === -1
+    ? request.url
+    : request.url.slice(0, queryIndex);
+const queryString = queryIndex === -1
+    ? ''
+    : request.url.slice(queryIndex);
+
+const urlWithoutParams = originalPath.replace(/\/{2,}/g, '/');
+request.url = urlWithoutParams + queryString;
     let filePath = urlWithoutParams.split("/").filter(function (elem) {
         return elem !== "..";
     });
@@ -38,6 +55,30 @@ http.createServer(function (request, response) {
             console.log("SPARQL Generator call (update/delete-analysis), redirecting");
             proxy.web(request, response, { target: "http://sparql-generator:8003" });
         } else if (request.url === '/rebuild-ontology' && request.method === 'POST') {
+
+const authHeader = request.headers.authorization || '';
+
+if (!authHeader.startsWith('Bearer ')) {
+    response.writeHead(401, { 'Content-Type': 'application/json' });
+    response.end(JSON.stringify({ error: 'Connexion admin requise' }));
+    return;
+}
+
+try {
+    const payload = jwt.verify(authHeader.slice(7), JWT_SECRET, {
+        algorithms: ['HS256']
+    });
+
+    if (payload.role !== 'admin') {
+        response.writeHead(403, { 'Content-Type': 'application/json' });
+        response.end(JSON.stringify({ error: 'Accès administrateur requis' }));
+        return;
+    }
+} catch (error) {
+    response.writeHead(401, { 'Content-Type': 'application/json' });
+    response.end(JSON.stringify({ error: 'Session invalide ou expirée' }));
+    return;
+}
             console.log("Ontology rebuild request, redirecting to database service");
             proxy.web(request, response, { target: "http://database-service:8005" });
         } else if (request.url === '/stats' && request.method === 'GET') {
@@ -72,7 +113,7 @@ function handleAuth(request, response) {
                 const { password } = JSON.parse(body);
                 const passwordHash = crypto.createHash('sha256').update(password).digest('hex');
                 
-                if (passwordHash === ADMIN_PASSWORD_HASH) {
+                if (passwordHash === ADMIN_PASSWORD_HASH.toLowerCase()) {
                     const token = jwt.sign(
                         { role: 'admin', exp: Math.floor(Date.now() / 1000) + (30 * 60) }, 
                         JWT_SECRET

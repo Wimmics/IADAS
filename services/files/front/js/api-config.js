@@ -36,16 +36,9 @@ class ApiConfigManager {
     }
 
     // Méthode principale pour obtenir une URL d'endpoint
-    getEndpoint(service, path = '') {
-        if (this.config.environment === 'production') {
-            // Chemin relatif via la passerelle : /api/query (le service SPARQL
-            // Generator accepte n'importe quel chemin pour une requete POST).
-            return path ? `/${path}` : '/api/query';
-        }
-        const port = this.config.ports[service];
-        const baseUrl = `${this.config.baseUrl}:${port}`;
-        return path ? `${baseUrl}/${path}` : baseUrl;
-    }
+  getEndpoint(service, path = '') {
+    return path ? path.replace(/^\/+/, '') : 'api/query';
+}
 
     // Méthodes spécifiques pour chaque service
     getSparqlEndpoint(path = '') {
@@ -61,13 +54,7 @@ class ApiConfigManager {
         const primaryUrl = this.getEndpoint(service, path);
         
         // URLs de fallback selon l'environnement
-        const fallbackUrls = this.config.environment === 'production' ? [
-            primaryUrl,
-            `http://localhost:${this.config.ports[service]}/${path}`, // fallback local
-        ] : [
-            primaryUrl,
-            `http://${window.location.hostname}:${this.config.ports[service]}/${path}` // fallback prod
-        ];
+        const fallbackUrls = [primaryUrl];
 
         let lastError = null;
 

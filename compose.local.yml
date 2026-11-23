@@ -1,0 +1,36 @@
+﻿services:
+  frontend:
+    container_name: iadas-local-frontend
+    ports: !override
+      - "127.0.0.1:18002:8002"
+
+  sparql-generator:
+    container_name: iadas-local-sparql-generator
+    ports: !override
+      - "127.0.0.1:18003:8003"
+    depends_on:
+      fuseki-init:
+        condition: service_completed_successfully
+
+  gateway:
+    container_name: iadas-local-gateway
+    ports: !override
+      - "127.0.0.1:18000:8000"
+    environment:
+      JWT_SECRET: "${JWT_SECRET:?JWT_SECRET doit etre definie}"
+      ADMIN_PASSWORD_HASH: "${ADMIN_PASSWORD_HASH:?ADMIN_PASSWORD_HASH doit etre definie}"
+
+  fuseki:
+    container_name: iadas-local-fuseki
+    ports: !override
+      - "127.0.0.1:13030:3030"
+
+  fuseki-init:
+    container_name: iadas-local-fuseki-init
+
+  database-service:
+    container_name: iadas-local-database-service
+    ports: !override
+      - "127.0.0.1:18005:8005"
+    environment:
+      JWT_SECRET: "${JWT_SECRET:?JWT_SECRET doit etre definie}"

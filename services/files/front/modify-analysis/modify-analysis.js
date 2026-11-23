@@ -609,9 +609,7 @@ WHERE {
 
             // Envoyer au serveur - Utiliser l'endpoint /update-analysis pour la suppression
             const response = await fetch(
-                window.location.hostname === 'localhost'
-                    ? 'http://localhost:8003/delete-analysis'
-                    : '/delete-analysis', // passerelle en production
+                'delete-analysis', // passerelle en production
                 {
                     method: 'POST',
                     headers: {
@@ -995,9 +993,7 @@ WHERE {
             showMessage('info', 'Envoi des modifications au serveur...');
 
             const response = await fetch(
-                window.location.hostname === 'localhost'
-                    ? 'http://localhost:8003/update-analysis'
-                    : '/update-analysis', // passerelle en production
+                'update-analysis', // passerelle en production
                 {
                     method: 'POST',
                     headers: {

@@ -373,7 +373,7 @@ class PipelineIADAS:
             
             try:
                 with open(output_file, 'w', encoding='utf-8') as f_out:
-                    result = subprocess.run(cmd, stdout=f_out, text=True, shell=True)
+                    result = subprocess.run(cmd, stdout=f_out, text=True)
                     
                 if result.returncode == 0:
                     print(f" URIs nettoyées: {file_name}")
@@ -477,16 +477,24 @@ class PipelineIADAS:
             return False
     
     def _count_analyses(self):
-        """Compte le nombre d'analyses dans l'ontologie finale"""
+        """Compte les sujets distincts de type Analysis."""
         try:
             ontology_file = self.results_dir / 'ia-das-ontology-clean.ttl'
-            if ontology_file.exists():
-                with open(ontology_file, 'r', encoding='utf-8') as f:
-                    content = f.read()
-                    count = content.count('rdf:type> <http://ia-das.org/onto#Analysis>')
-                    return count
-            return "?"
-        except:
+
+            if not ontology_file.exists():
+                return "?"
+
+            analysis_type = '<http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ns.inria.fr/iadas/ontology/Analysis> .'
+
+            with open(ontology_file, 'r', encoding='utf-8') as f:
+                subjects = {
+                    line.split()[0]
+                    for line in f
+                    if analysis_type in line
+                }
+
+            return len(subjects)
+        except Exception:
             return "?"
 
 
