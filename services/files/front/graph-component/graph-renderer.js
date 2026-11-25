@@ -1,6 +1,10 @@
 // Moteur de rendu D3.js pour graphe réseau ontologique
 // Modifié pour utiliser les couleurs du parser + panneau latéral + liens courbés + chargement forcé Excel
-
+function formatGraphLabel(label) {
+    return String(label ?? '')
+        .replace(/%20/g, ' ')
+        .replace(/%2F/gi, '/');
+}
 class GraphRenderer {
   constructor(container, parsedData) {
     this.container = container;
@@ -105,7 +109,7 @@ class GraphRenderer {
       .style('fill', '#666')
       .style('text-anchor', 'middle')
       .style('pointer-events', 'none')
-      .text(d => d.label);
+      .text(d => formatGraphLabel(d.label));
 
     // Dessiner les nœuds
     const node = this.g.append('g')
@@ -139,7 +143,7 @@ class GraphRenderer {
       .style('fill', '#333')
       .style('text-anchor', 'middle')
       .style('pointer-events', 'none')
-      .text(d => this.truncateLabel(d.label, 40));
+      .text(d => this.truncateLabel(formatGraphLabel(d.label), 40));
 
     // ✅ GESTIONNAIRES D'ÉVÉNEMENTS CORRIGÉS
 
@@ -445,7 +449,7 @@ class GraphRenderer {
       .style('fill', '#333')
       .style('text-anchor', 'middle')
       .style('pointer-events', 'none')
-      .text(d => this.truncateLabel(d.label, 40));
+      .text(d => this.truncateLabel(formatGraphLabel(d.label), 40));
 
     // Tooltip amélioré avec catégories et instruction
     node.on('mouseover', (event, d) => this.showTooltip(event, d))
@@ -732,7 +736,7 @@ class GraphRenderer {
       .style('font-size', '12px')
       .style('opacity', 0);
 
-    let tooltipText = `<strong>${d.label}</strong><br/>`;
+    let tooltipText = `<strong>${formatGraphLabel(d.label)}</strong><br/>`;
     tooltipText += `Type: ${d.type}<br/>`;
     if (d.category) tooltipText += `Catégorie: ${d.category}<br/>`;
     if (d.analyses) tooltipText += `Analyses: ${d.analyses.length}<br/>`;
@@ -1397,7 +1401,7 @@ class GraphRenderer {
       .style('font-weight', 'bold')
       .style('fill', 'white')
       .style('pointer-events', 'none')
-      .text(d => this.truncateLabel(d.label, Math.max(4, 8 - d.level)));
+      .text(d => this.truncateLabel(formatGraphLabel(d.label), Math.max(4, 8 - d.level)));
 
     // Labels complets à côté avec position adaptée
     nodeGroups.append('text')
@@ -1598,7 +1602,7 @@ class GraphRenderer {
     const relationText = d.type === 'hierarchy_parent' 
       ? `Parent (niveau ${d.level})` 
       : `Enfant (niveau ${d.level})`;
-    const tooltipText = `<strong>${d.label}</strong><br/>${relationText} de "${this.currentHierarchyConcept}"<br/><em>Hiérarchie ontologique</em>`;
+    const tooltipText = `<strong>${formatGraphLabel(d.label)}</strong> <br/>${relationText} de "${this.currentHierarchyConcept}"<br/><em>Hiérarchie ontologique</em>`;
 
     tooltip.html(tooltipText)
       .style('left', (event.pageX + 10) + 'px')
@@ -1623,7 +1627,7 @@ class GraphRenderer {
       .style('opacity', 0);
 
     const relationText = d.type === 'hierarchy_parent' ? 'Parent de' : 'Enfant de';
-    const tooltipText = `<strong>${d.label}</strong><br/>${relationText} "${this.currentHierarchyConcept}"<br/><em>Concept ontologique</em>`;
+    const tooltipText = `<strong>${formatGraphLabel(d.label)}</strong><br/>${relationText} "${formatGraphLabel(this.currentHierarchyConcept)}"<br/><em>Concept ontologique</em>`;
 
     tooltip.html(tooltipText)
       .style('left', (event.pageX + 10) + 'px')

@@ -389,7 +389,8 @@ function displayTableView() {
             const displayValue = value ? (value.value || value) : '';
             
             // Détecter si c'est un ID d'analyse et le rendre cliquable
-            let cellContent = displayValue;
+            let cellContent = String(displayValue).replace(/%20/g, ' ')
+             .replace(/%2F/gi, '/');
             if (isAnalysisId(variable, displayValue)) {
                 cellContent = `<a href="#" onclick="openAnalysisPanelFromTable('${displayValue}', event)" 
                     style="color: #2980b9; text-decoration: underline; cursor: pointer;">

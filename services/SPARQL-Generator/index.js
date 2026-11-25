@@ -1319,13 +1319,16 @@ SELECT ?analysis ?vi ?vd ?categoryVI ?categoryVD ?mediator ?moderator ?relationD
   }
 
   // Filtre catégorie VI 
-  if (filters.categoryVI && filters.categoryVI !== '') {
-    query += `
-    
-    # Filtrer sur les VI de catégorie spécifique
-    FILTER(?categoryVI = "${filters.categoryVI}")`;
-    console.log(" Filtre catégorie VI ajouté:", filters.categoryVI);
-  }
+if (filters.categoryVI && filters.categoryVI !== '') {
+  const categoryLabel = JSON.stringify(filters.categoryVI);
+  query += `
+    FILTER EXISTS {
+      ?viURI skos:broader+ ?selectedCategoryVI .
+      ?selectedCategoryVI skos:prefLabel ?selectedCategoryVILabel .
+      FILTER(STR(?selectedCategoryVILabel) = ${categoryLabel})
+    }`;
+  console.log(" Filtre catégorie VI ajouté:", filters.categoryVI);
+}
 
   // Filtre catégories sport multiples
   if (filters.sportCategories && filters.sportCategories.length > 0) {

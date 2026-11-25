@@ -101,7 +101,7 @@ async function rechercherCompetence(data) {
     let apiUrl;
     
     if (hostname === 'localhost' || hostname === '127.0.0.1') {
-        apiUrl = 'http://localhost:8003';
+        apiUrl = '/api/query';
         console.log("   ENVIRONNEMENT: LOCAL");
         console.log("   URL API CHOISIE:", apiUrl);
     } else {
@@ -301,7 +301,7 @@ SELECT * WHERE {
         
         console.log("Requête SPARQL récupérée:", sparqlQuery);
         
-        displayCompetenceResults(parsedData, sparqlQuery);
+        displayCompetenceResults(responseData, sparqlQuery);
         console.log("    Résultats affichés");
         
         // ===== SUCCÈS FINAL =====
