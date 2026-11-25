@@ -194,9 +194,9 @@ SELECT ?analyses ?concepts WHERE {
 }`;
     const body = 'query=' + encodeURIComponent(sparql);
     const options = {
-        hostname: 'fuseki',
+        hostname: 'host.docker.internal',
         port: 3030,
-        path: '/ds/sparql',
+        path: '/ds_up/sparql',
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
