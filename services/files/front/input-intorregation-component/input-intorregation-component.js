@@ -679,7 +679,7 @@ class InputInterrogationComponent extends HTMLElement {
     async handleSearch() {
         try {
             if (window.loadingManager) {
-                window.loadingManager.show("Recherche dans la base IA-DAS...");
+                window.loadingManager.show("Recherche dans la base IA-CAD...");
             }
 
             // Récupérer les valeurs des champs existants avec vérifications

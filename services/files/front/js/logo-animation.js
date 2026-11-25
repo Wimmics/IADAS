@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const subtitle = document.getElementById('logoSubtitle');
     if (!subtitle) return;
     
-    const fullText = "IA-DAS : Utilisation de l'Intelligence Artificielle pour mieux Détecter et prévenir les Attitudes et comportements alimentaires dysfonctionnels en Sport";
+    const fullText = "IA-CAD : Utilisation de l'Intelligence Artificielle pour mieux Détecter et prévenir les attitudes et comportements alimentaires défavorables à la santé en Sport";
     let currentIndex = 0;
     
     // Ajouter la classe typewriter pour l'effet de curseur

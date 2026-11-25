@@ -398,3 +398,22 @@ footer {
     text-align: center;
     margin-top: 10px;
 }
+.home-layout {
+    position: relative;
+    isolation: isolate;
+}
+
+.home-layout::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url("../assets/logo_IA-CAD-No-Background.png")
+        center / min(65%, 600px) auto no-repeat;
+    opacity: 0.12;
+}
+
+.home-layout .presentation {
+    background-color: rgba(255, 255, 255, 0.65);
+}

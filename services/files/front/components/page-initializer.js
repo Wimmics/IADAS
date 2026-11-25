@@ -22,7 +22,7 @@ class PageInitializer {
         try {
             
             // Afficher le loading d'initialisation
-            window.loadingManager.show("Initialisation de IA-DAS...");
+            window.loadingManager.show("Initialisation de IA-CAD...");
             window.loadingManager.updateStep('warmup', 'Réveil de Fuseki...', 'active');
             
             // 1. Réveiller Fuseki avec la première requête
@@ -169,7 +169,7 @@ class PageInitializer {
         // Petit toast de confirmation
         const toast = document.createElement('div');
         toast.className = 'ready-toast';
-        toast.innerHTML = '✅ IA-DAS est prêt à utiliser !';
+        toast.innerHTML = '✅ IA-CAD est prêt à utiliser !';
         toast.style.cssText = `
             position: fixed;
             top: 20px;

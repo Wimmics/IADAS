@@ -940,7 +940,7 @@ async function loadHtml2Canvas() {
 
 async function addLogoAndTitleToCanvas(originalCanvas, searchFilters = null) {
     return new Promise((resolve, reject) => {
-        const logoPath = './../assets/logo_IA-DAS-No-Background.png'; 
+        const logoPath = './../assets/logo_IA-CAD-No-Background.png'; 
         const logoImg = new Image();
         
         logoImg.onload = () => {
@@ -1079,7 +1079,7 @@ function generateExportTitle(searchFilters) {
         // Pour les questions de compétence
         if (data.questionType) {
             return {
-                main: "IA-DAS - Analyse de Compétences",
+                main: "IA-CAD - Analyse de Compétences",
                 filters: getCompetenceQuestionTitle(data.questionType)
             };
         }
@@ -1093,7 +1093,7 @@ function generateExportTitle(searchFilters) {
             if (data.filters.selectedVD) filters.push(`VD: ${data.filters.selectedVD}`);
             
             return {
-                main: "IA-DAS - Recherche Personnalisée",
+                main: "IA-CAD - Recherche Personnalisée",
                 filters: filters.join(' • ')
             };
         }
@@ -1101,7 +1101,7 @@ function generateExportTitle(searchFilters) {
     
     // Titre par défaut
     return {
-        main: "IA-DAS - Graphique Ontologique",
+        main: "IA-CAD - Graphique Ontologique",
         filters: null
     };
 }
@@ -1368,7 +1368,7 @@ function createCompleteCompetenceExcelExport(completeAnalyses, originalData, que
         ['Date Export', new Date().toLocaleString('fr-FR')],
         ['Nombre de Résultats', originalData.results.bindings.length],
         ['Variables Recherchées', originalData.head.vars.join(', ')],
-        ['Source', 'Ontologie IA-DAS - Questions de Compétences']
+        ['Source', 'Ontologie IA-CAD - Questions de Compétences']
     ];
     
     const questionSheet = XLSX.utils.aoa_to_sheet(questionData);

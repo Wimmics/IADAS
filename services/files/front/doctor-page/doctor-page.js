@@ -152,9 +152,7 @@ async function rechercher(data) {
         };
 
         const response = await fetch(
-            window.location.hostname === 'localhost'
-                ? 'http://localhost:8003'
-                : '/api/query', // passerelle en production
+           window.apiConfig.getSparqlEndpoint(),
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -534,7 +532,7 @@ async function exportToExcel() {
         const excelData = createCompleteExcelExport(completeAnalyses, currentData);
         
         const timestamp = new Date().toISOString().slice(0, 16).replace(/[:-]/g, '');
-        downloadExcelFile(excelData, `IA-DAS-Export-Complet-${timestamp}.xlsx`);
+        downloadExcelFile(excelData, `IA-CAD-Export-Complet-${timestamp}.xlsx`);
         console.log('Export Excel complet réussi');
         
         // Restaurer le bouton
@@ -936,7 +934,7 @@ async function loadHtml2Canvas() {
 
 async function addLogoAndTitleToCanvas(originalCanvas, searchFilters = null) {
     return new Promise((resolve, reject) => {
-        const logoPath = './../assets/logo_IA-DAS-No-Background.png'; 
+        const logoPath = './../assets/logo_IA-CAD-No-Background.png'; 
         const logoImg = new Image();
         
         logoImg.onload = () => {
@@ -1075,7 +1073,7 @@ function generateExportTitle(searchFilters) {
         // Pour les questions de compétence
         if (data.questionType) {
             return {
-                main: "IA-DAS - Analyse de Compétences",
+                main: "IA-CAD - Analyse de Compétences",
                 filters: getCompetenceQuestionTitle(data.questionType)
             };
         }
@@ -1089,7 +1087,7 @@ function generateExportTitle(searchFilters) {
             if (data.filters.selectedVD) filters.push(`VD: ${data.filters.selectedVD}`);
             
             return {
-                main: "IA-DAS - Recherche Personnalisée",
+                main: "IA-CAD - Recherche Personnalisée",
                 filters: filters.join(' • ')
             };
         }
@@ -1097,7 +1095,7 @@ function generateExportTitle(searchFilters) {
     
     // Titre par défaut
     return {
-        main: "IA-DAS - Graphique Ontologique",
+        main: "IA-CAD - Graphique Ontologique",
         filters: null
     };
 }

@@ -506,7 +506,7 @@ exportAnalysesToPDF(queryInfo = null) {
     doc.setFontSize(8);
     doc.setFont(undefined, 'italic');
     doc.setTextColor(120, 120, 120);
-    const footerText = `Généré par IA-DAS Ontologie Analysis Panel - ${new Date().toLocaleString('fr-FR')}`;
+    const footerText = `Généré par IA-CAD Ontologie Analysis Panel - ${new Date().toLocaleString('fr-FR')}`;
     const footerWidth = doc.getTextWidth(footerText);
     doc.text(footerText, (pageWidth - footerWidth) / 2, footerY);
     
