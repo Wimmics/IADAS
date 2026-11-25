@@ -1,7 +1,9 @@
-# IA-DAS - Guide utilisateur
+# IA-CAD - Guide utilisateur
 
-**Auteure :** Imane Amraoui  
-**Public :** Toutes personnes souhaitant utiliser l'interface du projet IA-DAS  
+<img src="services/files/front/assets/logo_IA-CAD-No-Background.png" alt="Logo IA-CAD" width="220">
+
+**Auteure :** Fatima Zahra Amara, Imane Amraoui  
+**Public :** Toutes personnes souhaitant utiliser l'interface du projet IA-  
 
 ## 🚀 Installation et déploiement
 
@@ -53,6 +55,16 @@
 - SPARQL Generator : Génération de requêtes (port 8003)
 - Database Service : Reconstruction de l'ontologie et statistiques (port 8005)
 - Fuseki : Base de données RDF (port 3030)
+
+#### Lancer une deuxième copie en local
+
+Si une autre copie de l’application utilise déjà le port 8000, utilisez la configuration `compose.local.yml`. Avant le lancement, définissez `JWT_SECRET` et `ADMIN_PASSWORD_HASH` dans votre terminal. `ADMIN_PASSWORD_HASH` doit contenir l’empreinte SHA-256 du mot de passe administrateur.
+
+```powershell
+docker compose -p iadas-local -f docker-compose.yml -f compose.local.yml up -d --build
+```
+
+Ouvrez l’interface sur http://localhost:18000. Fuseki est accessible sur http://localhost:13030.
 
 ### Déploiement en production (serveur i3S)
 
@@ -126,7 +138,7 @@ Présente des statistiques globales calculées sur l'ensemble de la base de donn
 Permet d'accéder aux informations de contact de l'équipe de recherche.
 
 ### 6. 📚 **En savoir plus**
-Contient les nouveautés et des informations complémentaires à savoir du projet IA-DAS. 
+Contient les nouveautés et des informations complémentaires à savoir du projet IA-CAD. 
  
  
  
@@ -228,7 +240,7 @@ Le résultat est identique à celui de la page personnalisable :
 
 ---
 
-*Guide utilisateur IA-DAS - Version mise à jour*
+*Guide utilisateur IA-CAD - Version mise à jour*
  
 
  

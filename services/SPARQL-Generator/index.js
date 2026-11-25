@@ -87,7 +87,7 @@ async function performStartupWarmup() {
   warmupInProgress = true;
   console.log('\n === WARMUP AU DÉMARRAGE DU SPARQL GENERATOR ===');
 
-  const fusekiEndpoint = 'http://fuseki:3030/ds/sparql';
+  const fusekiEndpoint = 'http://host.docker.internal:3030/ds_up/sparql';
   const startTime = Date.now();
 
   // Requêtes de warmup - LES MÊMES que ton code utilise vraiment
@@ -2629,7 +2629,7 @@ http.createServer(async (req, res) => {
       
       console.log('Paramètres de filtrage:', Object.fromEntries(params));
       
-      const fusekiEndpoint = 'http://fuseki:3030/ds/sparql';
+      const fusekiEndpoint = 'http://host.docker.internal:3030/ds_up/sparql';
       
       // Requêtes pour alimenter l'interface depuis les ontologies hiérarchiques
       const queries = {
@@ -3002,7 +3002,7 @@ ORDER BY DESC(?count)`
         console.log(" Timestamp:", new Date().toISOString());
 
         // Configuration Fuseki
-        const fusekiEndpoint = 'http://fuseki:3030/ds/sparql';
+        const fusekiEndpoint = 'http://host.docker.internal:3030/ds_up/sparql';
 
        
         if (requestPayload.queryType === 'predefined_competence') {
@@ -3170,7 +3170,7 @@ ORDER BY DESC(?count)`
             usedFallback: usedFallback,
             maxRetries: MAX_RETRIES,
             queryLength: sparqlQuery?.length || 0,
-            endpoint: 'fuseki:3030/ds/sparql',
+            endpoint: 'host.docker.internal:3030/ds_up/sparql',
             warmupAttempted: true,
             fusekiWarmed: isFusekiWarmed
           }
