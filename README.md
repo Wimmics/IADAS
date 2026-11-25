@@ -2,7 +2,7 @@
 
 <img src="services/files/front/assets/logo_IA-CAD-No-Background.png" alt="Logo IA-CAD" width="220">
 
-**Auteure :** Fatima Zahra Amara, Imane Amraoui  
+**Auteures :** Fatima Zahra Amara, Imane Amraoui  
 **Public :** Toutes personnes souhaitant utiliser l'interface du projet IA-  
 
 ## 🚀 Installation et déploiement
